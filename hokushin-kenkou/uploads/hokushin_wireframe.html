@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>株式会社北新建工 リニューアル ワイヤーフレーム(全14P・コピー入り)</title>
+<style>
+  :root{
+    --navy:#16324F; --slate:#3B6690; --sky:#DCE8F0; --brass:#B99457; --paper:#F7F7F4; --ink:#1E252B; --sub:#6B7280; --line:#999;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:var(--ink);margin:0;background:var(--paper);}
+  .tabbar{position:sticky;top:0;z-index:100;background:var(--navy);display:flex;flex-wrap:wrap;gap:0;padding:0;box-shadow:0 2px 6px rgba(0,0,0,.2);}
+  .tabbar button{flex:1 1 auto;min-width:110px;background:var(--navy);color:#cfd9e3;border:none;border-right:1px solid #24425f;padding:10px 6px;font-size:11px;cursor:pointer;line-height:1.4;}
+  .tabbar button.active{background:var(--slate);color:#fff;font-weight:bold;}
+  .tabbar button:hover{background:#204264;}
+  .page{display:none;max-width:1000px;margin:0 auto;padding:24px 16px 60px;}
+  .page.active{display:block;}
+  .pagetitle{font-size:11px;color:var(--sub);letter-spacing:.05em;margin-bottom:4px;}
+  h1.wf{font-size:20px;margin:0 0 6px;border-bottom:2px solid var(--navy);padding-bottom:8px;}
+  .metanote{background:#fff3cd;border:1px solid #e0c26b;color:#7a5b00;font-size:11px;padding:6px 10px;margin-bottom:16px;}
+  .block{border:1px solid var(--sky);background:#fff;margin-bottom:14px;padding:16px;}
+  .label{font-size:11px;color:var(--sub);margin-bottom:8px;font-weight:bold;border-left:3px solid var(--slate);padding-left:6px;}
+  .imgbox{background:var(--sky);border:1px dashed var(--slate);text-align:center;color:var(--sub);font-size:12px;padding:24px 8px;}
+  .imgbox.tall{padding:50px 8px;}
+  .copy{background:#fff;}
+  .headline{font-size:19px;font-weight:bold;color:var(--navy);line-height:1.5;margin:0 0 8px;}
+  .subhead{font-size:14px;color:var(--slate);margin:0 0 10px;line-height:1.6;}
+  .body-text{font-size:13px;line-height:1.9;margin:0 0 6px;}
+  .cta-btn{display:inline-block;background:var(--navy);color:#fff;font-size:12px;padding:8px 18px;margin-right:8px;margin-top:6px;}
+  .cta-btn.brass{background:var(--brass);}
+  .row{display:flex;gap:12px;flex-wrap:wrap;}
+  .row > div{flex:1;min-width:150px;}
+  .row3 > div{flex:1 1 30%;}
+  .row4 > div{flex:1 1 22%;}
+  .nav-wf{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--navy);background:var(--navy);color:#fff;padding:10px 14px;font-size:11px;}
+  .nav-wf .logo{background:#fff;color:var(--navy);padding:6px 14px;font-weight:bold;}
+  .nav-wf .items{display:flex;gap:8px;flex-wrap:wrap;}
+  .nav-wf .items span{background:rgba(255,255,255,.08);border:1px solid #33526f;padding:4px 8px;}
+  .nav-wf .items span.hot{background:var(--brass);color:#2a2100;border-color:var(--brass);font-weight:bold;}
+  .nav-wf .cta{background:var(--brass);color:#2a2100;padding:6px 14px;font-weight:bold;}
+  .footer-wf{border:1px solid var(--navy);background:var(--navy);color:#dfe8ef;padding:16px;font-size:11px;margin-top:20px;}
+  .footer-wf .row div{background:rgba(255,255,255,.06);border:1px solid #33526f;padding:6px;text-align:center;}
+  .card{border:1px solid var(--sky);background:#fff;padding:12px;font-size:12px;}
+  .card .img{background:var(--sky);height:80px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:10px;border:1px dashed var(--slate);}
+  .card h3{font-size:13px;color:var(--navy);margin:0 0 4px;}
+  .accordion{border:1px solid var(--sky);background:#fff;margin-bottom:8px;padding:0;}
+  .accordion .q{display:flex;justify-content:space-between;background:var(--sky);padding:10px 12px;font-size:13px;font-weight:bold;color:var(--navy);}
+  .accordion .a{padding:10px 12px;font-size:12px;line-height:1.8;}
+  table.priceTbl{width:100%;border-collapse:collapse;font-size:12px;}
+  table.priceTbl th,table.priceTbl td{border:1px solid var(--sky);padding:10px;text-align:left;}
+  table.priceTbl th{background:var(--navy);color:#fff;}
+  table.priceTbl td.price{color:var(--brass);font-weight:bold;}
+  .compareTbl{width:100%;border-collapse:collapse;font-size:12px;}
+  .compareTbl th,.compareTbl td{border:1px solid var(--sky);padding:10px;text-align:center;vertical-align:top;}
+  .compareTbl th{background:var(--navy);color:#fff;}
+  .compareTbl td.us{background:#eef4f9;font-weight:bold;color:var(--navy);}
+  .timeline{border-left:3px solid var(--navy);margin-left:10px;padding-left:18px;}
+  .timeline .yr{background:#fff;border:1px solid var(--sky);padding:10px 12px;margin-bottom:14px;font-size:12px;}
+  .timeline .yr b{color:var(--navy);}
+  .staffcard{border:1px solid var(--sky);background:#fff;padding:16px;margin-bottom:14px;}
+  .staffcard .head{display:flex;gap:14px;align-items:flex-start;margin-bottom:8px;}
+  .staffcard .photo{width:90px;height:90px;background:var(--sky);border:1px dashed var(--slate);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--sub);}
+  .staffcard .name{font-size:15px;color:var(--navy);font-weight:bold;}
+  .staffcard .role{font-size:12px;color:var(--slate);}
+  .note{font-size:11px;color:#b33;margin-top:4px;}
+  .step-flow{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+  .flowstep{background:var(--sky);border:1px solid var(--slate);padding:10px;text-align:center;font-size:11px;flex:1;min-width:100px;color:var(--navy);font-weight:bold;}
+  .arrow{align-self:center;font-size:16px;color:var(--slate);}
+</style>
+</head>
+<body>
+
+<div class="tabbar" id="tabbar"></div>
+<div id="pages"></div>
+
+<script>
+const pages = [
+{id:"sitemap", label:"サイトマップ/ナビ", title:"サイトマップ・共通ヘッダー/フッター", content: `
+  <div class="block">
+    <div class="label">メインナビ(8項目)</div>
+    <div class="nav-wf">
+      <div class="logo">北新建工</div>
+      <div class="items">
+        <span>HOME</span><span class="hot">リフォーム</span><span>業務案内</span>
+        <span>施工実績・お客様の声</span><span>料金表</span><span>会社概要</span><span>採用情報</span>
+      </div>
+      <div class="cta">無料お見積り</div>
+    </div>
+  </div>
+  <div class="block">
+    <div class="label">サブナビ・フッターリンク</div>
+    <div class="row row4">
+      <div class="imgbox">スタッフ紹介</div><div class="imgbox">FAQ</div><div class="imgbox">北新建工のあゆみ</div><div class="imgbox">ブログ</div>
+    </div>
+  </div>
+  <div class="block">
+    <div class="label">全14ページ構成と回遊フロー</div>
+    <p class="body-text">検索・広告からの入口は主に「HOME」と「⑦リフォームLP」の2つを想定。⑦は水回りリフォーム・フローリング張替えの検索キーワードでの着地を想定した単独完結ページ、HOMEは会社名検索・指名検索での着地を想定。①PRハブは両方からの「もっと詳しく知りたい」層の受け皿として機能させ、②料金・③実績で不安を解消しお問い合わせへ収束させる。</p>
+  </div>
+`},
+
+{id:"home", label:"1. HOME", title:"HOME(改修)", content: `
+  <div class="metanote">※価格・実績件数はたたき台の仮数値です。9/2訪問時に社長へ実数を確認のうえ差し替えてください。</div>
+  <div class="block"><div class="label">ヘッダー</div><div class="imgbox">共通ヘッダー(サイトマップタブ参照)</div></div>
+  <div class="block copy">
+    <div class="label">ファーストビュー</div>
+    <div class="headline">上尾市の水回りリフォーム・フローリング張替えは、<br>地域で59年の北新建工へ</div>
+    <div class="subhead">新築からリフォームまで、自社の職人が最後まで責任を持って施工します。下請け任せにしない「顔の見える工事」で、上尾市を中心に多くのご家庭の暮らしを支えてきました。</div>
+    <a class="cta-btn">無料お見積りを依頼する</a><a class="cta-btn brass">電話で相談する(048-725-8000)</a>
+    <p class="note">背景: 実際の施工現場・自然光の入る室内写真を想定(ストック感のある家族写真は避ける)</p>
+  </div>
+  <div class="block"><div class="label">実績バッジ帯</div>
+    <div class="row row4">
+      <div class="card"><h3>創業59年</h3>昭和42年創業、地域に根づいた実績</div>
+      <div class="card"><h3>自社施工体制</h3>下請け任せにしない一貫対応</div>
+      <div class="card"><h3>ご相談・お見積り無料</h3>まずはお気軽にご連絡ください</div>
+      <div class="card"><h3>Google口コミ受付中</h3>お客様の声を随時掲載</div>
+    </div>
+  </div>
+  <div class="block"><div class="label">サービス3本柱</div>
+    <div class="row row3">
+      <div class="card"><h3>新築工事</h3>理想の暮らしをカタチにする、一からの家づくり。</div>
+      <div class="card"><h3>リフォーム工事(注力)</h3>水回り・フローリングなど、暮らしの「困った」を解消。</div>
+      <div class="card"><h3>増改築工事</h3>家族構成の変化に合わせた間取りの見直し。</div>
+    </div>
+  </div>
+  <div class="block copy"><div class="label">リフォームLP誘導バナー</div>
+    <div class="headline" style="font-size:16px;">お風呂・キッチン・トイレ、そのままで大丈夫ですか?</div>
+    <p class="body-text">水回りの不便やお悩みは、放っておくと大きなトラブルにつながることも。まずは無料相談から、あなたの暮らしに合った解決策をご提案します。</p>
+    <a class="cta-btn brass">リフォームについて詳しく見る</a>
+  </div>
+  <div class="block"><div class="label">お客様の声 抜粋</div>
+    <div class="row row3">
+      <div class="card">★★★★★<br>「水回りの相談から丁寧に対応いただき、想像以上の仕上がりでした。」(上尾市・K様)</div>
+      <div class="card">★★★★★<br>「職人さんの対応が丁寧で、近所への配慮も感じました。」(桶川市・S様)</div>
+      <div class="card">★★★★☆<br>「見積りが分かりやすく、追加費用の説明も納得できました。」(伊奈町・T様)</div>
+    </div>
+  </div>
+  <div class="block"><div class="label">施工実績ピックアップ</div>
+    <div class="row row3">
+      <div class="card"><div class="img">Before/After写真</div><h3>浴室のユニットバス化</h3>寒さの厳しい在来浴室を暖かいユニットバスへ</div>
+      <div class="card"><div class="img">写真</div><h3>フローリング全面張替え</h3>傷んだ床材を明るい色合いへ一新</div>
+      <div class="card"><div class="img">写真</div><h3>新築住宅の完成事例</h3>ご家族の暮らしに合わせた間取り設計</div>
+    </div>
+  </div>
+  <div class="block copy"><div class="label">選ばれる理由</div>
+    <div class="row row3">
+      <div><h3 style="color:var(--navy)">自社施工体制</h3><p class="body-text">下請けに丸投げせず、自社の職人が現場を担当。中間マージンが発生しない分、適正な価格でご提供できます。</p></div>
+      <div><h3 style="color:var(--navy)">徹底した現場管理</h3><p class="body-text">工程管理・近隣配慮まで一貫して対応。安全第一で、施工中も安心してお過ごしいただけます。</p></div>
+      <div><h3 style="color:var(--navy)">確かな技術力</h3><p class="body-text">昭和42年の創業以来、新築からリフォームまで幅広い工事で培った技術で、細部までこだわった施工を実現します。</p></div>
+    </div>
+  </div>
+  <div class="block"><div class="label">NEWS/ブログ最新3件</div><div class="row row3"><div class="imgbox">水回りリフォーム施工事例</div><div class="imgbox">井戸小屋の施工事例</div><div class="imgbox">増改築工事の実例</div></div></div>
+  <div class="block copy"><div class="label">採用バナー</div><div class="headline" style="font-size:15px;">建築工事スタッフ、募集中です</div><p class="body-text">経験の有無や年齢は問いません。未経験者には一から丁寧にお教えします。</p><a class="cta-btn">採用情報を見る</a></div>
+  <div class="block"><div class="label">アクセス・地図</div><div class="imgbox tall">Googleマップ埋め込み + 住所:埼玉県上尾市中新井508-4 / 電話:048-725-8000</div></div>
+  <div class="footer-wf"><div class="label" style="color:#cfd9e3;">フッター</div><div class="row row4"><div>会社概要</div><div>採用情報</div><div>お問い合わせ</div><div>サイトマップ</div></div></div>
+`},
+
+{id:"prhub", label:"① PRハブ", title:"①ご依頼を検討中の方へ(集客用PRハブページ)", content: `
+  <div class="block copy"><div class="label">ヒーロー</div>
+    <div class="headline">ご依頼の前に、まずこちらをご覧ください</div>
+    <div class="subhead">工事は決して安い買い物ではありません。だからこそ、北新建工がどんな会社で、どんな流れで工事を進めるのか。ご不安を解消してから、安心してご依頼いただきたいと考えています。</div>
+  </div>
+  <div class="block"><div class="label">お悩み共感セクション</div>
+    <div class="row row3">
+      <div class="card"><h3>水回りが古くて不便…</h3>「タイルの浴室が寒い」「キッチンの使い勝手が悪い」というお悩み、よく伺います。</div>
+      <div class="card"><h3>フローリングの傷・軋みが気になる…</h3>床のきしみや傷みは、放置すると下地の劣化に繋がることも。</div>
+      <div class="card"><h3>どの業者に頼めばいいか分からない…</h3>相見積りをとっても違いが分からない、という声にお応えします。</div>
+    </div>
+  </div>
+  <div class="block copy"><div class="label">選ばれる理由(3つ・本文付き)</div>
+    <div class="row row3">
+      <div><h3 style="color:var(--navy)">自社施工体制</h3><p class="body-text">元請けから下請けへ、さらに孫請けへ…という多重構造ではなく、北新建工の職人が直接施工します。中間マージンが発生しない分、価格にも反映されます。</p></div>
+      <div><h3 style="color:var(--navy)">徹底した現場管理</h3><p class="body-text">工程・安全・近隣への配慮まで、現場責任者が一貫して管理。工事中の「音」「匂い」「時間帯」にも気を配ります。</p></div>
+      <div><h3 style="color:var(--navy)">確かな技術力</h3><p class="body-text">新築からリフォームまで幅広く手がけてきた経験があるからこそ、建物の構造を理解した上での提案ができます。</p></div>
+    </div>
+  </div>
+  <div class="block"><div class="label">ご依頼〜完成までの流れ</div>
+    <div class="step-flow">
+      <div class="flowstep">①お問い合わせ</div><div class="arrow">→</div>
+      <div class="flowstep">②現地調査・お見積り</div><div class="arrow">→</div>
+      <div class="flowstep">③ご契約</div><div class="arrow">→</div>
+      <div class="flowstep">④施工</div><div class="arrow">→</div>
+      <div class="flowstep">⑤お引き渡し・アフター</div>
+    </div>
+  </div>
+  <div class="block"><div class="label">各コンテンツへの回遊カード群</div>
+    <div class="row row4">
+      <div class="card">料金の目安を見る</div><div class="card">お客様の声・施工実績</div><div class="card">スタッフ紹介</div><div class="card">よくある質問</div>
+    </div>
+  </div>
+  <div class="block copy"><div class="label">CTA</div><div class="headline" style="font-size:16px;">まずは無料のご相談から</div><a class="cta-btn brass">無料お見積りを依頼する</a></div>
+`},
+
+{id:"price", label:"② 料金表", title:"②料金表", content: `
+  <div class="metanote">※以下の価格・工期は打ち合わせ内容から作成したデモ用の仮数値です。実際の相場と社長の意向を確認のうえ必ず差し替えてください。</div>
+  <div class="block copy"><div class="label">ヒーロー</div>
+    <div class="headline">安心してご依頼いただける、料金の目安</div>
+    <p class="body-text">「工事の費用が分からず不安」という声にお応えして、代表的な工事の価格帯を公開しています。正式なお見積りは現地調査のうえ無料でご提示します。</p>
+  </div>
+  <div class="block"><div class="label">工事種別 価格帯テーブル</div>
+    <table class="priceTbl">
+      <tr><th>工事内容</th><th>価格目安</th><th>工期目安</th></tr>
+      <tr><td>浴室リフォーム(在来浴室→ユニットバス化)</td><td class="price">80万円〜150万円</td><td>5日〜10日</td></tr>
+      <tr><td>キッチンリフォーム(交換)</td><td class="price">60万円〜120万円</td><td>3日〜5日</td></tr>
+      <tr><td>トイレ交換</td><td class="price">15万円〜35万円</td><td>1日〜2日</td></tr>
+      <tr><td>洗面台交換</td><td class="price">10万円〜25万円</td><td>1日</td></tr>
+      <tr><td>フローリング張替え(6畳程度)</td><td class="price">8万円〜18万円</td><td>1日〜2日</td></tr>
+      <tr><td>増改築工事</td><td class="price">150万円〜(規模により変動)</td><td>要相談</td></tr>
+      <tr><td>新築工事</td><td class="price">坪単価60万円〜80万円</td><td>要相談</td></tr>
+    </table>
+  </div>
+  <div class="block copy"><div class="label">価格に幅がある理由</div>
+    <p class="body-text">同じ「浴室リフォーム」でも、建物の状態(土台の傷み具合、配管の劣化状況など)や選ばれる設備のグレードによって費用は変わります。現地調査で状態を確認したうえで、内訳の分かるお見積りをお渡ししますのでご安心ください。</p>
+  </div>
+  <div class="block"><div class="label">お見積りの流れ</div>
+    <div class="step-flow"><div class="flowstep">お問い合わせ</div><div class="arrow">→</div><div class="flowstep">現地調査(無料)</div><div class="arrow">→</div><div class="flowstep">お見積り提示</div><div class="arrow">→</div><div class="flowstep">ご契約</div></div>
+  </div>
+  <div class="block copy"><div class="label">追加費用が発生するケース</div>
+    <p class="body-text">解体してみて初めて分かる床下・壁内の腐食や、給排水管の劣化などが見つかった場合、追加費用をご相談させていただくことがあります。その際は必ず事前にご説明し、ご了承いただいてから作業を進めますので、後から知らされる高額請求のようなことはございません。詳しくは<b>よくある質問</b>もご覧ください。</p>
+  </div>
+  <div class="block copy"><div class="label">CTA</div><a class="cta-btn brass">まずは無料お見積り</a></div>
+`},
+
+{id:"voice", label:"③ 実績・お客様の声", title:"③お客様の声・施工実績(既存施工実績ページ改修)", content: `
+  <div class="block copy"><div class="label">ヒーロー</div>
+    <div class="headline">上尾市を中心に、地域の暮らしに寄り添ってきました</div>
+    <p class="body-text">水回りリフォームからフローリング張替え、新築・増改築まで。これまでの施工実績と、お客様からいただいた声をご紹介します。</p>
+  </div>
+  <div class="block"><div class="label">絞り込みタブ</div>
+    <div class="row row4"><div class="imgbox">すべて</div><div class="imgbox">水回り</div><div class="imgbox">フローリング</div><div class="imgbox">新築/増改築</div></div>
+  </div>
+  <div class="block"><div class="label">施工実績カード一覧</div>
+    <div class="row row3">
+      <div class="card"><div class="img">Before/After</div><h3>浴室のユニットバス化</h3>寒さが厳しい在来浴室を、断熱性の高いユニットバスへ。費用目安:100万円前後/工期:7日間。「冬でも暖かくお風呂に入れるようになりました」とのお声をいただきました。</div>
+      <div class="card"><div class="img">Before/After</div><h3>フローリング全面張替え</h3>傷みの目立っていた床材を明るい色合いへ一新。費用目安:15万円前後/工期:2日間。ペットの爪痕にも強い素材を採用しました。</div>
+      <div class="card"><div class="img">Before/After</div><h3>増改築工事(子供部屋増設)</h3>ご家族の成長に合わせて2階に居室を増設。費用目安:280万円前後/工期:約1ヶ月。</div>
+    </div>
+  </div>
+  <div class="block"><div class="label">お客様の声</div>
+    <div class="row row3">
+      <div class="card">★★★★★<br>「水回りの相談から丁寧に対応いただき、想像以上の仕上がりでした。工事中の音や近所への配慮もしっかりしていて安心できました。」(上尾市・K様)</div>
+      <div class="card">★★★★★<br>「複数社に相見積りを取りましたが、内訳が明確で信頼できたので北新建工さんにお願いしました。」(桶川市・S様)</div>
+      <div class="card">★★★★☆<br>「工事後のアフター対応も丁寧で、些細な相談にも乗ってもらえました。」(伊奈町・T様)</div>
+    </div>
+  </div>
+  <div class="block copy"><div class="label">Googleクチコミ誘導バナー</div><p class="body-text">実際にご依頼いただいたお客様の声をもっと知りたい方は、Google上の口コミもぜひご覧ください。</p><a class="cta-btn">Googleクチコミを見る</a></div>
+  <div class="block copy"><div class="label">CTA</div><a class="cta-btn brass">お見積り依頼はこちら</a></div>
+`},
+
+{id:"staff", label:"④ スタッフ紹介", title:"④スタッフ紹介(仮想人物・たたき台)", content: `
+  <div class="metanote">※実在スタッフの情報が未確定のため、以下は仮想人物による長文プロフィールのたたき台です。文章量・トーンの「型」として扱い、実データ確定後に差し替えてください。</div>
+  <div class="block copy"><div class="label">ヒーロー</div>
+    <div class="headline">現場を支える、北新建工のスタッフをご紹介します</div>
+    <p class="body-text">お客様の大切な住まいを預かる仕事だからこそ、一人ひとりが責任と誇りを持って現場に立っています。</p>
+  </div>
+  <div class="block copy"><div class="label">代表メッセージ</div>
+    <div class="staffcard">
+      <div class="head"><div class="photo">代表写真</div><div><div class="name">代表取締役 北山 建一(仮名)</div><div class="role">代表取締役社長</div></div></div>
+      <p class="body-text">昭和42年の創業以来、上尾市を中心に多くのお客様の「暮らし」に携わらせていただきました。工事は決して安い買い物ではありません。だからこそ、私たちは「顔の見える会社」であり続けたいと考えています。下請けに任せきりにせず、自社の職人が最後まで責任を持つ。それが北新建工のものづくりです。これからも地域の皆様に信頼していただける会社を目指し、社員一同、日々技術を磨いてまいります。どうぞお気軽にご相談ください。</p>
+    </div>
+  </div>
+  <div class="block"><div class="label">スタッフ一覧(長文プロフィール)</div>
+    <div class="staffcard">
+      <div class="head"><div class="photo">写真</div><div><div class="name">工事部長 田村 誠(仮名)・52歳</div><div class="role">現場責任者/勤続28年</div></div></div>
+      <p class="body-text">入社28年、現場一筋のベテランです。若手時代は新築工事の大工として腕を磨き、ここ10年は水回りリフォームを中心とした現場管理を担当しています。「工事は段取りが8割」が口癖で、事前の現地調査を人一倍丁寧に行うことで知られています。近隣への挨拶回りも自ら率先して行い、「工事中、ご近所トラブルを一件も起こしたことがない」ことが密かな誇りです。休日は釣りが趣味で、現場でもお客様との会話のきっかけになることも。</p>
+    </div>
+    <div class="staffcard">
+      <div class="head"><div class="photo">写真</div><div><div class="name">大工職人 小林 一輝(仮名)・41歳</div><div class="role">大工・水回りリフォーム担当/勤続15年</div></div></div>
+      <p class="body-text">建築系専門学校を卒業後、北新建工一筋で15年。木造住宅の構造を熟知しており、リフォーム時に発見される下地の傷みなどにもすぐに対応できる知識と技術を持っています。「見えなくなる部分ほど丁寧に」を信条に、床下や壁の中の施工にも手を抜きません。フローリング張替えの技術指導も担当し、若手の育成にも力を入れています。二児の父で、子育て世代のお客様の「暮らしやすさ」への視点にも定評があります。</p>
+    </div>
+    <div class="staffcard">
+      <div class="head"><div class="photo">写真</div><div><div class="name">若手職人 佐藤 蓮(仮名)・26歳</div><div class="role">大工見習い/勤続4年</div></div></div>
+      <p class="body-text">未経験からこの世界に入り、4年目。最初は道具の名前を覚えるところからのスタートでしたが、先輩たちの丁寧な指導のもと、着実に現場での経験を積んでいます。「お客様から直接『ありがとう』と言っていただけるのがこの仕事の一番の魅力」と話す、まっすぐな性格の持ち主。フローリング張替えや小規模な内装工事を任されることが増え、日々成長を実感しているところです。将来は水回りリフォームの現場を一人で任せられる職人を目指しています。</p>
+    </div>
+  </div>
+  <div class="block copy"><div class="label">資格・体制</div><p class="body-text">2級建築施工管理技士、木造建築士などの有資格者が在籍。現場責任者を中心に、施工品質と安全管理を徹底する体制を整えています。</p></div>
+  <div class="block copy"><div class="label">採用情報への誘導</div><div class="headline" style="font-size:15px;">一緒に働く仲間を募集しています</div><a class="cta-btn">採用情報を見る</a></div>
+`},
+
+{id:"faq", label:"⑤ FAQ", title:"⑤よくある質問", content: `
+  <div class="block copy"><div class="label">ヒーロー</div><div class="headline">よくいただくご質問</div></div>
+  <div class="block"><div class="label">カテゴリタブ</div>
+    <div class="row row4"><div class="imgbox">料金について</div><div class="imgbox">工期について</div><div class="imgbox">対応エリア</div><div class="imgbox">保証・アフター</div></div>
+  </div>
+  <div class="block">
+    <div class="label">Q&A(本文入り)</div>
+    <div class="accordion"><div class="q">Q. 対応エリアはどこまでですか?<span>▼</span></div><div class="a">A. 上尾市を中心に、桶川市・伊奈町・北本市・鴻巣市など、埼玉県内を中心に対応しております。エリア外でもお気軽にご相談ください。</div></div>
+    <div class="accordion"><div class="q">Q. 見積り後に追加費用が発生することはありますか?<span>▼</span></div><div class="a">A. 解体してみて初めて分かる床下・壁内の劣化などが見つかった場合、追加費用が発生することがあります。その際は必ず事前にご説明し、ご了承いただいてから作業を進めますのでご安心ください。</div></div>
+    <div class="accordion"><div class="q">Q. 支払い方法は?<span>▼</span></div><div class="a">A. 銀行振込に対応しております。工事規模によっては着手金・中間金・完工金の分割払いも可能です。詳しくはお見積り時にご相談ください。</div></div>
+    <div class="accordion"><div class="q">Q. 工事後の保証はありますか?<span>▼</span></div><div class="a">A. 工事内容に応じた保証期間を設けております。工事完了後も気になる点がございましたらお気軽にご連絡ください。</div></div>
+    <div class="accordion"><div class="q">Q. 見積りだけでも依頼できますか?<span>▼</span></div><div class="a">A. もちろんです。ご相談・現地調査・お見積りはすべて無料です。他社と比較検討いただいて構いません。</div></div>
+  </div>
+  <div class="block copy"><div class="label">解決しない場合のCTA</div><p class="body-text">その他ご不明な点は、お気軽にお問い合わせください。</p><a class="cta-btn brass">お問い合わせフォームへ</a></div>
+`},
+
+{id:"history", label:"⑥ あゆみ", title:"⑥北新建工のあゆみ", content: `
+  <div class="metanote">※沿革の詳細年・出来事は仮の内容です。実際の沿革情報に差し替えてください。</div>
+  <div class="block copy"><div class="label">ヒーロー</div><div class="headline">創業から今日まで、上尾市とともに</div></div>
+  <div class="block"><div class="label">沿革タイムライン</div>
+    <div class="timeline">
+      <div class="yr"><b>昭和42年(1967年)</b> 上尾市にて創業。大工職人としての請負工事を開始。</div>
+      <div class="yr"><b>昭和50年代</b> 新築工事の受注が拡大し、法人化。従業員を増やし組織体制を整備。</div>
+      <div class="yr"><b>平成期</b> リフォーム・増改築工事へも事業を拡大。地域の口コミで依頼が広がる。</div>
+      <div class="yr"><b>2022年5月</b> ホームページを開設。</div>
+      <div class="yr"><b>現在</b> 新築・リフォーム・増改築を通じ、上尾市を中心に地域の住まいづくりを支え続けている。</div>
+    </div>
+  </div>
+  <div class="block copy"><div class="label">代表の想い</div>
+    <p class="body-text">「お客さま第一」というモットーは、創業当初から変わらず受け継いできたものです。工事は一度きりの大きな買い物だからこそ、施工後もお付き合いが続くような関係を大切にしています。</p>
+  </div>
+  <div class="block copy"><div class="label">地域とのつながり</div>
+    <p class="body-text">上尾市を中心に、桶川市・伊奈町など近隣エリアで長年施工を重ねてきました。ご近所からのご紹介でご依頼をいただくことも多く、それこそが何よりの信頼の証だと考えています。</p>
+  </div>
+  <div class="block copy"><div class="label">CTA</div><a class="cta-btn">お問い合わせはこちら</a><a class="cta-btn brass">採用情報を見る</a></div>
+`},
+
+{id:"reform", label:"⑦ リフォームLP", title:"⑦リフォーム(独立集客ページ・LP構成)", content: `
+  <div class="metanote">※ヘッダー/フッターは共通のまま維持し、本文をLP的な一直線導線にする方針。価格・比較の数値はたたき台です。</div>
+  <div class="block"><div class="label">ヘッダー(共通・維持)</div><div class="imgbox">共通ヘッダー</div></div>
+  <div class="block copy"><div class="label">①ファーストビュー</div>
+    <div class="headline">その水回りの悩み、もう我慢しなくて大丈夫です</div>
+    <div class="subhead">寒い浴室、使いにくいキッチン、きしむ床。上尾市の北新建工が、自社施工で根本から解決します。まずは無料の現地調査から。</div>
+    <a class="cta-btn brass">今すぐ無料お見積り</a><a class="cta-btn">電話で相談(048-725-8000)</a>
+  </div>
+  <div class="block copy"><div class="label">②共感・危機感セクション</div>
+    <div class="row row3">
+      <div><h3 style="color:var(--navy)">放置すると進行するリスク</h3><p class="body-text">在来浴室のタイルのひび割れや、キッチン下の水漏れは、放置すると下地の腐食やカビの原因になります。早めの対応が結果的に費用を抑えることも。</p></div>
+      <div><h3 style="color:var(--navy)">安さだけで選んだ後悔</h3><p class="body-text">「安いと思って頼んだら、下請けの下請けが来て対応が雑だった」というお声を耳にすることがあります。価格だけでなく、誰が施工するかも重要です。</p></div>
+      <div><h3 style="color:var(--navy)">今の暮らしにくさが続く</h3><p class="body-text">「そのうち直そう」と先延ばしにした分だけ、毎日の暮らしにくさが続きます。まずは無料相談で、解決の一歩を踏み出しませんか。</p></div>
+    </div>
+  </div>
+  <div class="block"><div class="label">③他社比較セクション</div>
+    <table class="compareTbl">
+      <tr><th></th><th>北新建工</th><th>元請け経由の他社</th><th>リフォーム仲介業者</th></tr>
+      <tr><td>施工体制</td><td class="us">自社の職人が直接施工</td><td>下請け・孫請けへ丸投げされることも</td><td>提携先の業者へ外注</td></tr>
+      <tr><td>価格</td><td class="us">中間マージンなしの適正価格</td><td>元請けマージンが上乗せ</td><td>仲介マージンが上乗せ</td></tr>
+      <tr><td>現場対応</td><td class="us">現場責任者が一貫して管理</td><td>担当が分断されがち</td><td>現場を直接知らないケースも</td></tr>
+      <tr><td>連絡・相談</td><td class="us">現場の職人に直接相談可能</td><td>間に人が入り伝達が遅れがち</td><td>コールセンター経由になることも</td></tr>
+    </table>
+  </div>
+  <div class="block copy"><div class="label">④自社PR(選ばれる理由)</div>
+    <div class="row row3">
+      <div><h3 style="color:var(--navy)">自社施工体制</h3><p class="body-text">中間マージンが発生しないため、同じ予算でもより良い提案が可能です。</p></div>
+      <div><h3 style="color:var(--navy)">徹底した現場管理</h3><p class="body-text">工程・安全・近隣配慮まで一貫対応。工事中も安心してお過ごしいただけます。</p></div>
+      <div><h3 style="color:var(--navy)">確かな技術力</h3><p class="body-text">創業59年、新築からリフォームまで培った技術で、細部までこだわった施工を実現します。</p></div>
+    </div>
+  </div>
+  <div class="block"><div class="label">⑤施工事例(水回り中心)</div>
+    <div class="row row3">
+      <div class="card"><div class="img">Before/After</div><h3>浴室リフォーム</h3>在来浴室からユニットバスへ。寒さの悩みを解消。</div>
+      <div class="card"><div class="img">Before/After</div><h3>キッチンリフォーム</h3>使い勝手の悪い古いキッチンを最新設備へ刷新。</div>
+      <div class="card"><div class="img">Before/After</div><h3>洗面・トイレリフォーム</h3>掃除のしやすい設備へ交換し、清潔感がアップ。</div>
+    </div>
+  </div>
+  <div class="block"><div class="label">⑥お客様の声</div>
+    <div class="row row3">
+      <div class="card">★★★★★<br>「冬でも暖かくお風呂に入れるようになりました。」</div>
+      <div class="card">★★★★★<br>「見積りの内訳が明確で安心して依頼できました。」</div>
+      <div class="card">★★★★☆<br>「工事中の対応が丁寧で近所トラブルもありませんでした。」</div>
+    </div>
+  </div>
+  <div class="block"><div class="label">⑦料金の目安(②より抜粋)</div>
+    <table class="priceTbl">
+      <tr><th>工事内容</th><th>価格目安</th></tr>
+      <tr><td>浴室リフォーム(ユニットバス化)</td><td class="price">80万円〜150万円</td></tr>
+      <tr><td>キッチンリフォーム</td><td class="price">60万円〜120万円</td></tr>
+      <tr><td>フローリング張替え(6畳)</td><td class="price">8万円〜18万円</td></tr>
+    </table>
+  </div>
+  <div class="block"><div class="label">⑧ご依頼の流れ</div>
+    <div class="step-flow"><div class="flowstep">お問い合わせ</div><div class="arrow">→</div><div class="flowstep">現地調査</div><div class="arrow">→</div><div class="flowstep">お見積り</div><div class="arrow">→</div><div class="flowstep">施工</div><div class="arrow">→</div><div class="flowstep">完成</div></div>
+  </div>
+  <div class="block copy"><div class="label">⑨FAQ抜粋</div>
+    <div class="accordion"><div class="q">Q. 追加費用は発生しますか?<span>▼</span></div><div class="a">A. 解体後に判明する劣化がある場合のみ、事前説明・ご了承のうえで発生することがあります。</div></div>
+    <div class="accordion"><div class="q">Q. 工期はどのくらいですか?<span>▼</span></div><div class="a">A. 浴室リフォームで5〜10日程度、キッチンで3〜5日程度が目安です。</div></div>
+  </div>
+  <div class="block copy"><div class="label">⑩安心要素・会社概要抜粋</div><p class="body-text">昭和42年創業、上尾市に根ざした自社施工体制。埼玉県上尾市中新井508-4。</p></div>
+  <div class="block copy"><div class="label">⑪最終CTA</div>
+    <div class="headline" style="font-size:16px;">まずは無料の現地調査から</div>
+    <a class="cta-btn brass">無料お見積りフォームへ</a><a class="cta-btn">電話で相談する</a>
+  </div>
+  <div class="block"><div class="label">フッター(共通・維持)</div><div class="imgbox">共通フッター</div></div>
+`},
+
+{id:"work", label:"2. 業務案内", title:"2. 業務案内(既存・維持+導線追加)", content: `
+  <div class="block copy"><div class="label">現状維持+改修方針</div>
+    <p class="body-text">新築・リフォーム・増改築それぞれの業務内容説明は維持しつつ、リフォーム項目の説明文末尾に「詳しくはリフォームページへ」「①ご依頼を検討中の方へ」への誘導リンクを追加する。</p>
+  </div>
+`},
+
+{id:"recruit", label:"4. 採用情報", title:"4. 採用情報(既存・維持+導線追加)", content: `
+  <div class="block copy"><div class="label">現状維持+改修方針</div>
+    <p class="body-text">求人内容・応募方法は維持。「先輩スタッフの声」として④スタッフ紹介ページへの相互リンクを追加し、実際に働くスタッフのイメージを持ってもらう。</p>
+  </div>
+`},
+
+{id:"company", label:"5. 会社概要", title:"5. 会社概要(既存・維持+導線追加)", content: `
+  <div class="block copy"><div class="label">現状維持+改修方針</div>
+    <p class="body-text">会社基本情報(所在地・代表者名・設立年・事業内容)は維持。沿革の詳細は⑥北新建工のあゆみページに譲り、「詳しい沿革はこちら」の導線リンクを追加する。</p>
+  </div>
+`},
+
+{id:"contact", label:"6. お問い合わせ", title:"6. お問い合わせ(既存・維持+項目追加)", content: `
+  <div class="block copy"><div class="label">現状維持+強化方針</div>
+    <p class="body-text">フォーム項目は基本維持しつつ、「ご希望の工事内容」の選択肢に「水回りリフォーム」「フローリング張替え」を明示的に追加し、検索から来た人が迷わず選択できるようにする。</p>
+  </div>
+`},
+
+{id:"blog", label:"7. ブログ", title:"7. ブログ(既存・維持+運用強化)", content: `
+  <div class="block copy"><div class="label">現状維持+運用強化方針</div>
+    <p class="body-text">一覧・詳細フォーマットは維持。週1回以上の更新(施工実績+コラム、5,000字程度)を継続し、カテゴリタグに「水回りリフォーム」「フローリング張替え」「新築工事」等を整備してSEO面でも回遊しやすくする。</p>
+  </div>
+`},
+];
+
+const tabbar = document.getElementById('tabbar');
+const pagesDiv = document.getElementById('pages');
+
+pages.forEach((p, i) => {
+  const btn = document.createElement('button');
+  btn.textContent = p.label;
+  btn.onclick = () => showPage(i);
+  btn.id = 'tab-' + p.id;
+  tabbar.appendChild(btn);
+
+  const div = document.createElement('div');
+  div.className = 'page';
+  div.id = 'page-' + p.id;
+  div.innerHTML = `<div class="pagetitle">株式会社北新建工 / ワイヤーフレーム</div><h1 class="wf">${p.title}</h1>${p.content}`;
+  pagesDiv.appendChild(div);
+});
+
+function showPage(i){
+  pages.forEach((p, j) => {
+    document.getElementById('page-'+p.id).classList.toggle('active', i===j);
+    document.getElementById('tab-'+p.id).classList.toggle('active', i===j);
+  });
+  window.scrollTo(0,0);
+}
+showPage(0);
+</script>
+</body>
+</html>

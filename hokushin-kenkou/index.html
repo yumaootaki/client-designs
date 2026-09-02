@@ -1,0 +1,1253 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>株式会社EWリフォーム ｜ 住み継ぐ家に、あたらしい時間を。</title>
+<meta name="description" content="一戸建て専門のリフォーム／リノベーション。設計から施工、アフターまで自社一貫。株式会社EWリフォーム（※仮）。" />
+
+<!--
+  ============================================================================
+  株式会社EWリフォーム コーポレートサイト（モック / 1ファイル・ビュー切替）
+  指示書 v3 準拠：白×トープ・細明朝・縦書き・パララックス・図解中心。
+  参考LPからは「演出方針（イントロ／文字のせり上げ／clip拡大／reveal／カウント）」のみ継承。
+  配色・コピー・コンポーネント・構成・DOMは独自再構成。全データ ※仮。
+  ============================================================================
+-->
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: {
+        base:'#FBFAF7', pale:'#EDE7DD', light:'#CBBFAE',
+        mid:'#9C8E7B', deep:'#5B5043', ink:'#33302B', brass:'#8A6E4B'
+      },
+      fontFamily: {
+        mincho:['"Shippori Mincho"','serif'],
+        serifjp:['"Noto Serif JP"','serif'],
+        sans:['"Noto Sans JP"','sans-serif'],
+        disp:['"Cormorant Garamond"','"EB Garamond"','serif']
+      },
+      maxWidth:{ wrap:'1340px' }
+    }}
+  }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/site.css" />
+</head>
+
+<body>
+
+<!-- ============================ イントロローダー ============================ -->
+<div id="intro">
+  <div id="intro-mark">
+    <div class="intro-seal">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect class="frame" id="seal-outer" x="8" y="8" width="104" height="104"/>
+        <rect class="frame" id="seal-inner" x="20" y="20" width="80" height="80" opacity="0.55"/>
+      </svg>
+      <span class="intro-ew" id="intro-ew">EW</span>
+    </div>
+    <div id="intro-cap"><span class="ln"></span><span class="tx">RENOVATION</span><span class="ln"></span></div>
+  </div>
+  <div class="intro-curtain" id="intro-top"></div>
+  <div class="intro-curtain" id="intro-bot"></div>
+</div>
+
+<!-- ============================ ヘッダー ============================ -->
+<header id="hdr" class="on-dark">
+  <div class="mx-auto max-w-wrap px-5 md:px-10 h-[68px] md:h-[88px] flex items-center justify-between">
+    <a href="#top" data-go="top" class="flex items-center gap-3" aria-label="EWリフォーム トップへ">
+      <span class="hdr-logo-mark f-disp text-[15px] tracking-[.06em] leading-none">EW</span>
+      <span class="hidden sm:block leading-tight">
+        <span class="block f-mincho text-[15px] tracking-[.10em]">EWリフォーム</span>
+        <span class="block f-disp text-[10px] tracking-[.22em] opacity-60 -mt-0.5">EW RENOVATION</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-6 xl:gap-7 f-disp text-[13px] xl:text-[14px] tracking-[.06em]">
+      <a class="roll nav-link" data-go="about"   href="#about"><span class="a">About</span><span class="b">私たち</span></a>
+      <a class="roll nav-link" data-go="service" href="#service"><span class="a">Service</span><span class="b">メニュー</span></a>
+      <a class="roll nav-link" data-go="works"   href="#works"><span class="a">Works</span><span class="b">施工事例</span></a>
+      <a class="roll nav-link" data-go="flow"    href="#flow"><span class="a">Flow</span><span class="b">流れ</span></a>
+      <a class="roll nav-link" data-go="reasons" href="#reasons"><span class="a">Reasons</span><span class="b">選ばれる理由</span></a>
+      <a class="roll nav-link" data-go="voice"   href="#voice"><span class="a">Voice</span><span class="b">お客様の声</span></a>
+      <a class="roll nav-link" data-go="faq"     href="#faq"><span class="a">FAQ</span><span class="b">よくある質問</span></a>
+      <a class="roll nav-link" data-go="recruit" href="#recruit"><span class="a">Recruit</span><span class="b">採用情報</span></a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a data-go="contact" href="#contact" class="cta hidden md:inline-flex items-center gap-2 bg-ink text-white px-6 py-3 text-[13px] tracking-[.10em] f-serifjp">
+        無料相談 <span class="arr">→</span>
+      </a>
+      <button id="burger" class="burger lg:hidden grid place-items-center w-10 h-10" aria-label="メニュー" aria-expanded="false">
+        <span class="block w-6 space-y-[6px]">
+          <span class="block h-px bg-current"></span>
+          <span class="block h-px bg-current"></span>
+          <span class="block h-px bg-current"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="h-px bg-transparent"><div id="scrollprog"></div></div>
+</header>
+
+<!-- ============================ モバイルメニュー ============================ -->
+<div id="mobilemenu">
+  <div class="h-full flex flex-col justify-center px-8 gap-4 f-mincho text-[22px] tracking-[.10em]">
+    <a class="flex items-baseline gap-4" data-go="about"   href="#about"><span class="f-disp text-sm opacity-50 w-10">02</span>私たちについて</a>
+    <a class="flex items-baseline gap-4" data-go="service" href="#service"><span class="f-disp text-sm opacity-50 w-10">03</span>メニュー</a>
+    <a class="flex items-baseline gap-4" data-go="works"   href="#works"><span class="f-disp text-sm opacity-50 w-10">04</span>施工事例</a>
+    <a class="flex items-baseline gap-4" data-go="flow"    href="#flow"><span class="f-disp text-sm opacity-50 w-10">05</span>ご依頼の流れ</a>
+    <a class="flex items-baseline gap-4" data-go="reasons" href="#reasons"><span class="f-disp text-sm opacity-50 w-10">06</span>選ばれる理由</a>
+    <a class="flex items-baseline gap-4" data-go="voice"   href="#voice"><span class="f-disp text-sm opacity-50 w-10">07</span>お客様の声</a>
+    <a class="flex items-baseline gap-4" data-go="faq"     href="#faq"><span class="f-disp text-sm opacity-50 w-10">08</span>よくあるご質問</a>
+    <a class="flex items-baseline gap-4" data-go="recruit" href="#recruit"><span class="f-disp text-sm opacity-50 w-10">09</span>採用情報</a>
+    <a class="cta mt-5 inline-flex items-center gap-2 bg-white text-ink px-7 py-4 text-base w-max" data-go="contact" href="#contact">無料相談 <span class="arr">→</span></a>
+  </div>
+</div>
+
+<!-- ============================ サイド縦書きレール ============================ -->
+<aside id="side-rail" class="hidden md:flex" aria-hidden="true">
+  <span id="rail-num" class="rail-num">01</span>
+  <span class="rail-line"><i id="rail-fill"></i></span>
+  <span id="rail-label" class="rail-label">トップ</span>
+</aside>
+
+<main id="app">
+
+<!-- ============================================================================
+     ① トップ
+     ============================================================================ -->
+<section id="view-top" class="view active">
+
+  <!-- ============================ ヒーロー（分割エディトリアル） ============ -->
+  <section id="hero" class="relative bg-base">
+    <div class="mx-auto max-w-wrap min-h-[100svh] grid md:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+
+      <!-- 左：クリーム地の活字パネル（タイトルはトープのグラデーション文字） -->
+      <div class="relative order-2 md:order-1 flex flex-col px-6 md:px-12 lg:px-16 pt-10 md:pt-0 pb-16 md:pb-12 bg-base">
+        <!-- 上：英字ラベル -->
+        <div class="hidden md:flex items-center gap-3 pt-[120px] fade-late">
+          <span class="h-px w-9 bg-mid/50"></span>
+          <span class="f-disp tracking-[.30em] text-[12px] text-mid">EW RENOVATION</span>
+        </div>
+
+        <!-- 中：縦書き大タイトル（トープのグラデーション） -->
+        <div class="flex-1 flex items-center md:items-center md:justify-end md:pr-2">
+          <h1 class="hero-title vtext f-mincho is-display font-[400] leading-[1.7] text-[clamp(2.3rem,7.2vw,5.4rem)]"
+              aria-label="住み継ぐ家に、新しい時間を。">
+            <span id="fv-line1" data-text="住み継ぐ"></span><br />
+            <span id="fv-line2" data-text="家に、"></span><br />
+            <span id="fv-line3" data-text="新しい"></span><br />
+            <span id="fv-line4" data-text="時間を。"></span>
+          </h1>
+        </div>
+
+        <!-- 下：サブコピー＋CTA -->
+        <div class="max-w-md">
+          <p class="fade-late f-serifjp text-ink/70 text-[14px] md:text-[15px] leading-[2.1] font-[300] mb-7 jp-keep">
+            古さを建て替えるのではなく、住まいの記憶を活かして編みなおす。<br class="hidden md:block" />戸建てリフォーム専門の設計事務所です。
+          </p>
+          <div class="fade-late flex flex-wrap items-center gap-5">
+            <a data-go="contact" href="#contact" class="cta inline-flex items-center gap-3 bg-ink text-white px-8 py-4 text-[14px] tracking-[.10em] f-serifjp">
+              無料相談を予約する <span class="arr">→</span>
+            </a>
+            <a data-go="works" href="#works" class="ulink inline-flex items-center gap-2 text-ink/70 text-[14px] tracking-[.10em] py-2">
+              施工事例を見る
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右：写真パネル（細フレーム＋ブラインドせり上げ＋クロスフェード） -->
+      <div class="relative order-1 md:order-2 min-h-[52svh] md:min-h-0 md:py-7 md:pr-7">
+        <div id="hero-photo" class="relative w-full h-full overflow-hidden">
+          <div class="blind reveal-blind absolute inset-0">
+            <img class="story-img on kenburns" data-i="0" src="assets/living-minimal-warm.jpg"
+                 alt="リノベーション後の戸建てリビング。やわらかな自然光と無垢の床（イメージ ※仮）" />
+            <img class="story-img" data-i="1" src="assets/living-leather-arch.jpg"
+                 alt="アーチ壁と左官仕上げのリビング。革張りソファと真鍮の照明（イメージ ※仮）" />
+            <img class="story-img" data-i="2" src="assets/bedroom-ocean-sunset.jpg"
+                 alt="海を望む大開口のベッドルーム。夕景の光が室内に満ちる（イメージ ※仮）" />
+            <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(120deg, rgba(40,35,29,.12), rgba(40,35,29,0) 45%)"></div>
+          </div>
+          <!-- 写真上の小キャプション（SINCE） -->
+          <div class="fade-late absolute left-5 bottom-5 md:left-7 md:bottom-7 text-white">
+            <p class="f-disp tracking-[.24em] text-[10px] text-white/70">SINCE</p>
+            <p id="fv-count" class="f-disp text-[30px] md:text-[40px] leading-none tabular-nums" data-count="1998" data-start="1960" data-plain>1960</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- スクロールキュー -->
+    <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 bottom-5 flex-col items-center gap-2 text-ink/45">
+      <span class="f-disp text-[10px] tracking-[.24em]">SCROLL</span>
+      <span class="block w-px h-9 bg-ink/20 overflow-hidden relative"><span class="scrollcue block w-px h-5 bg-ink/70 absolute top-0"></span></span>
+    </div>
+  </section>
+
+  <!-- ============================ 理念（静かな暗転ステートメント） ============ -->
+  <section class="relative bg-deep text-white overflow-hidden">
+    <span class="bg-vrun en parallax" style="top:14%; left:-1%; font-size:clamp(4.2rem,15vw,12rem);" data-speed="0.12" aria-hidden="true">renovation</span>
+    <div class="relative mx-auto max-w-[1040px] px-6 md:px-10 py-28 md:py-44">
+      <div class="flex items-start gap-7 md:gap-14">
+        <span class="reveal f-disp text-[12px] text-white/55 tracking-[.34em] mt-1 shrink-0" style="writing-mode:vertical-rl;">PHILOSOPHY</span>
+        <p class="reveal f-mincho is-display leading-[1.95] text-[clamp(1.5rem,4.1vw,2.6rem)] jp-keep" data-d="1">
+          建て替えるべきか、リフォームか。<br />
+          その問いの前にあるのは、<br />
+          この家で重ねてきた<span class="text-white/55">時間の記憶</span>だと、<br />
+          わたしたちは考えています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 問題提起 -->
+  <section class="bg-pale">
+    <div class="mx-auto max-w-[1100px] px-6 md:px-10 py-24 md:py-36">
+      <p class="reveal f-disp tracking-[.22em] text-[12px] text-brass mb-6">THE CONCERN</p>
+      <h2 class="reveal f-mincho text-[clamp(1.7rem,4.6vw,2.9rem)] leading-[1.55] tracking-[.08em] max-w-3xl font-[400]">
+        戸建てのリフォームには、<br />見えない不安がつきまといます。
+      </h2>
+      <div class="mt-14 md:mt-20 grid md:grid-cols-3 gap-px bg-light/60">
+        <div class="reveal bg-pale p-9 md:p-10" data-d="1">
+          <div class="h-12 mb-6 text-mid">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" class="h-12 w-12">
+              <rect x="7" y="18" width="34" height="22"/><path d="M5 18 24 7l19 11"/><path d="M19 40V28h10v12"/>
+              <path d="M30 13v-4M27 11h6" stroke-dasharray="0"/>
+            </svg>
+          </div>
+          <p class="f-disp text-[13px] tracking-[.22em] text-ink/40 mb-3">01</p>
+          <p class="f-mincho text-[19px] leading-[1.7] tracking-[.08em] mb-3 font-[400]">どこまで直せるのか</p>
+          <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300]">構造・配管・断熱――既存の家のどこに手を入れられるのか、判断がつきにくい。</p>
+        </div>
+        <div class="reveal bg-pale p-9 md:p-10" data-d="2">
+          <div class="h-12 mb-6 text-mid">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" class="h-12 w-12">
+              <circle cx="24" cy="24" r="16"/><path d="M24 15v9l6 4"/><path d="M24 9v-2M39 24h2"/>
+            </svg>
+          </div>
+          <p class="f-disp text-[13px] tracking-[.22em] text-ink/40 mb-3">02</p>
+          <p class="f-mincho text-[19px] leading-[1.7] tracking-[.08em] mb-3 font-[400]">費用が読めない</p>
+          <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300]">開けてみないと分からない、と言われ、総額の見通しが最後まで持てない。</p>
+        </div>
+        <div class="reveal bg-pale p-9 md:p-10" data-d="3">
+          <div class="h-12 mb-6 text-mid">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" class="h-12 w-12">
+              <path d="M24 7C15 14 11 20 11 27a13 13 0 0 0 26 0c0-7-4-13-13-20Z"/><path d="M24 22v10M19 27h10"/>
+            </svg>
+          </div>
+          <p class="f-disp text-[13px] tracking-[.22em] text-ink/40 mb-3">03</p>
+          <p class="f-mincho text-[19px] leading-[1.7] tracking-[.08em] mb-3 font-[400]">仕上がりが見えない</p>
+          <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300]">耐震や断熱の性能も、完成後の暮らし心地も、契約前には確かめづらい。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- サービス抜粋 -->
+  <section class="bg-base">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 py-24 md:py-36">
+      <div class="reveal flex items-end justify-between flex-wrap gap-6 mb-14 md:mb-20">
+        <div>
+          <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-4">SERVICE</p>
+          <h2 class="f-mincho text-[clamp(2rem,5vw,3.3rem)] leading-[1.3] tracking-[.08em] font-[400]">メニュー</h2>
+        </div>
+        <p class="max-w-md f-sans text-[14px] leading-[2] text-ink/65 font-[300]">
+          部分の手直しから、住まい全体の編みなおしまで。<span class="text-ink">設計〜施工〜アフターを自社一貫</span>で。
+          <span class="text-ink/40">（※仮）</span>
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5 md:gap-7">
+        <article class="reveal group cursor-pointer" data-go="service" data-d="1">
+          <div class="imgzoom relative aspect-[4/3] bg-pale">
+            <img class="w-full h-full object-cover" src="assets/living-leather-arch.jpg" alt="全面リノベーション後のリビング（イメージ ※仮）" style="object-position:center 60%" />
+            <span class="absolute top-5 left-5 f-disp text-[12px] tracking-[.22em] text-white/85">01 / FULL</span>
+          </div>
+          <h3 class="f-mincho text-[22px] tracking-[.08em] mt-6 mb-3 font-[400]">全面リノベーション</h3>
+          <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300]">間取り・性能・意匠を一度に編みなおす、住まいの再構築。</p>
+        </article>
+        <article class="reveal group cursor-pointer" data-go="service" data-d="2">
+          <div class="imgzoom relative aspect-[4/3] bg-pale">
+            <img class="w-full h-full object-cover" src="assets/living-white-ocean.jpg" alt="水まわりリフォーム（イメージ ※仮）" />
+            <span class="absolute top-5 left-5 f-disp text-[12px] tracking-[.22em] text-white/85">02 / WATER</span>
+          </div>
+          <h3 class="f-mincho text-[22px] tracking-[.08em] mt-6 mb-3 font-[400]">水まわり</h3>
+          <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300]">キッチン・浴室・洗面・トイレ。毎日の心地よさを底上げする。</p>
+        </article>
+        <article class="reveal group cursor-pointer" data-go="service" data-d="3">
+          <div class="imgzoom relative aspect-[4/3] bg-pale">
+            <img class="w-full h-full object-cover" src="assets/living-grey-art.jpg" alt="耐震・断熱改修（イメージ ※仮）" />
+            <span class="absolute top-5 left-5 f-disp text-[12px] tracking-[.22em] text-white/85">03 / PERFORMANCE</span>
+          </div>
+          <h3 class="f-mincho text-[22px] tracking-[.08em] mt-6 mb-3 font-[400]">耐震・断熱</h3>
+          <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300]">見えない部分こそ丁寧に。これからの安心を、構造から。</p>
+        </article>
+      </div>
+      <div class="reveal mt-12">
+        <a data-go="service" href="#service" class="ulink inline-flex items-center gap-2 text-[14px] tracking-[.10em] text-brass">すべてのメニューを見る <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 施工事例（sticky 番号送り） -->
+  <section class="relative bg-deep text-white">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 pt-24 md:pt-32 pb-8">
+      <p class="reveal f-disp tracking-[.22em] text-[12px] text-white/55 mb-4">CASE STUDIES</p>
+      <h2 class="catch-io f-disp leading-none text-[clamp(3.2rem,14vw,10rem)] tracking-[.02em]" data-text="Works"></h2>
+    </div>
+    <div id="works-scroll" class="relative" style="height:340vh;">
+      <div class="sticky top-0 h-[100svh] overflow-hidden">
+        <div class="absolute inset-0">
+          <img data-bg="0" class="works-bg on absolute inset-0 w-full h-full object-cover" src="assets/living-leather-arch.jpg" alt="全面リノベの事例（イメージ ※仮）" />
+          <img data-bg="1" class="works-bg absolute inset-0 w-full h-full object-cover" src="assets/living-minimal-warm.jpg" alt="平屋改修の事例（イメージ ※仮）" />
+          <img data-bg="2" class="works-bg absolute inset-0 w-full h-full object-cover" src="assets/bedroom-ocean-sunset.jpg" alt="水まわり＋断熱の事例（イメージ ※仮）" />
+        </div>
+        <div id="works-overlay" class="absolute inset-0" style="background:rgba(25,22,18,.42)"></div>
+        <div class="relative h-full mx-auto max-w-wrap px-6 md:px-10 flex flex-col justify-center">
+          <div class="flex items-baseline gap-5 mb-6">
+            <div class="f-disp text-[clamp(3rem,9vw,7rem)] leading-none tabular-nums"><span id="works-num" class="roll-y block leading-none">01</span></div>
+            <span class="f-disp text-[clamp(1rem,2.4vw,1.6rem)] text-white/45">/ 03</span>
+          </div>
+          <div class="mb-3"><h3 id="works-title" class="roll-y f-mincho text-[clamp(1.5rem,4.4vw,3rem)] leading-[1.35] tracking-[.08em] font-[400]">築28年、二度目の家。</h3></div>
+          <p id="works-meta" class="roll-y text-white/65 text-[14px] leading-[1.6] tracking-[.10em] f-sans">全面リノベ ／ 戸建 ／ 〇〇市（※仮）</p>
+          <div class="mt-10 imgzoom w-[min(78vw,420px)] aspect-[16/10] overflow-hidden">
+            <img id="works-thumb" class="works-thumb on w-full h-full object-cover" src="assets/living-leather-arch.jpg" alt="事例ディテール（イメージ ※仮）" />
+          </div>
+          <div class="mt-9"><a data-go="works" href="#works" class="ulink inline-flex items-center gap-2 text-[14px] tracking-[.10em] text-white/85">事例の一覧を見る <span>→</span></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 選ばれる理由 抜粋 -->
+  <section class="bg-base">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 py-24 md:py-36">
+      <div class="reveal mb-14 md:mb-20">
+        <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-4">REASONS</p>
+        <h2 class="f-mincho text-[clamp(2rem,5vw,3.3rem)] leading-[1.3] tracking-[.08em] font-[400]">選ばれる理由</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-px bg-light/60">
+        <div class="reveal bg-base p-9 md:p-11" data-d="1">
+          <p class="f-disp text-[clamp(2rem,4vw,2.8rem)] leading-none text-brass mb-5">01</p>
+          <h3 class="f-mincho text-[20px] tracking-[.08em] mb-4 font-[400]">自社一貫体制</h3>
+          <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300]">設計・施工・アフターを分断せず、同じ顔ぶれで最後まで。責任の所在が明快です。</p>
+        </div>
+        <div class="reveal bg-base p-9 md:p-11" data-d="2">
+          <p class="f-disp text-[clamp(2rem,4vw,2.8rem)] leading-none text-brass mb-5">02</p>
+          <h3 class="f-mincho text-[20px] tracking-[.08em] mb-4 font-[400]">耐震・断熱を標準に</h3>
+          <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300]">意匠だけでなく、見えない性能を標準仕様で。これからの安心を構造から整えます。</p>
+        </div>
+        <div class="reveal bg-base p-9 md:p-11" data-d="3">
+          <p class="f-disp text-[clamp(2rem,4vw,2.8rem)] leading-none text-brass mb-5">03</p>
+          <h3 class="f-mincho text-[20px] tracking-[.08em] mb-4 font-[400]">長期アフター保証</h3>
+          <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300]">引き渡しは終わりではなく始まり。定期点検と長期保証で住み継ぐ時間を支えます。</p>
+        </div>
+      </div>
+      <div class="reveal mt-12">
+        <a data-go="reasons" href="#reasons" class="ulink inline-flex items-center gap-2 text-[14px] tracking-[.10em] text-brass">理由のすべてを見る <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative bg-deep text-white overflow-hidden">
+    <span class="bg-vrun en parallax" style="top:8%; right:2%; font-size:clamp(5rem,16vw,13rem);" data-speed="0.14" aria-hidden="true">contact</span>
+    <div class="relative mx-auto max-w-[1000px] px-6 md:px-10 py-28 md:py-40 text-center">
+      <p class="reveal f-disp tracking-[.22em] text-[12px] text-white/60 mb-6">CONTACT</p>
+      <h2 class="reveal f-mincho text-[clamp(1.9rem,5vw,3.2rem)] leading-[1.5] tracking-[.08em] mb-8 font-[400]">
+        まずは、いまの家のことを<br />聞かせてください。
+      </h2>
+      <p class="reveal max-w-xl mx-auto f-sans text-[15px] leading-[2] text-white/75 font-[300] mb-10" data-d="1">
+        ご相談は無料です。建て替えと迷っている段階でも、構想だけでも、どうぞお気軽に。<span class="text-white/45">（※仮）</span>
+      </p>
+      <a data-go="contact" href="#contact" class="reveal cta inline-flex items-center gap-3 bg-white text-ink px-9 py-4 text-[14px] tracking-[.10em]" data-d="2">無料相談を予約する <span class="arr">→</span></a>
+    </div>
+  </section>
+</section>
+
+<!-- ============================================================================
+     ② 私たちについて
+     ============================================================================ -->
+<section id="view-about" class="view">
+  <!-- ページヒーロー -->
+  <section class="relative bg-deep text-white overflow-hidden pt-[120px] md:pt-[160px] pb-20 md:pb-28">
+    <img class="absolute inset-0 w-full h-full object-cover opacity-30" src="assets/living-minimal-warm.jpg" alt="" aria-hidden="true" style="object-position:center 55%" />
+    <div class="absolute inset-0" style="background:rgba(91,80,67,.42)"></div>
+    <div class="relative mx-auto max-w-wrap px-6 md:px-10 flex items-start gap-8 md:gap-16">
+      <h1 class="page-hero-vtext vtext f-mincho font-[400] leading-[1.4] tracking-[.18em] text-[clamp(2.2rem,6.5vw,4.6rem)]" data-text="私たちについて"></h1>
+      <div class="pt-3">
+        <p class="f-disp tracking-[.22em] text-[12px] text-white/65 mb-6">ABOUT US</p>
+        <p class="f-mincho text-[clamp(1.3rem,3.2vw,2.1rem)] leading-[1.8] tracking-[.08em] font-[300] max-w-xl">
+          壊して、つくり直すのではなく。<br />
+          いまある家を、丁寧に育て直す。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 想い -->
+  <section class="relative bg-base overflow-hidden">
+    <span class="bg-vrun en parallax" style="top:7%; right:0%; font-size:clamp(4.5rem,14vw,11rem); color:var(--mid);" data-speed="0.16" aria-hidden="true">memory</span>
+    <div class="relative mx-auto max-w-[1100px] px-6 md:px-10 py-24 md:py-36 grid md:grid-cols-[auto_1fr] gap-10 md:gap-20">
+      <h2 class="reveal vtext f-mincho text-[clamp(1.8rem,4vw,2.8rem)] tracking-[.16em] leading-[1.5] font-[400] text-deep">住み継ぐという、選択。</h2>
+      <div class="reveal space-y-7 f-sans text-[15px] leading-[2.2] text-ink/75 font-[300] max-w-xl self-center" data-d="1">
+        <p>家は、家族の時間が染み込んだ器です。間取りのクセも、陽の入り方も、すべてがその家ならではの記憶。私たちEWリフォームは、その記憶を消してしまう建て替えではなく、活かして編みなおすリフォームを専門にしています。<span class="text-ink/40">（※仮）</span></p>
+        <p>価格の安さを競うのではなく、十年後・二十年後に「直してよかった」と思える質を。設計から施工、引き渡し後のアフターまでを自社で受け持ち、顔の見える関係で、一邸ずつ丁寧に向き合います。<span class="text-ink/40">（※仮）</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 代表メッセージ -->
+  <section class="bg-pale">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 py-24 md:py-36 grid md:grid-cols-[5fr_7fr] gap-12 md:gap-20 items-center">
+      <div class="reveal">
+        <div class="relative aspect-[4/5] overflow-hidden" style="background:repeating-linear-gradient(135deg,#E0D8CC,#E0D8CC 11px,#D8CFC0 11px,#D8CFC0 22px)">
+          <div class="absolute inset-0 grid place-items-center text-center px-6">
+            <div>
+              <p class="f-disp text-[12px] tracking-[.22em] text-deep/55" style="font-family:'Courier New',monospace">［ PORTRAIT ］</p>
+              <p class="f-sans text-[12px] text-deep/55 mt-2 font-[300]">代表ポートレート（※仮）</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" data-d="1">
+        <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-5">MESSAGE</p>
+        <h2 class="f-mincho text-[clamp(1.6rem,4vw,2.6rem)] leading-[1.6] tracking-[.08em] mb-8 font-[400]">
+          直すことは、<br />家の時間をのばすこと。
+        </h2>
+        <div class="space-y-6 f-sans text-[15px] leading-[2.2] text-ink/75 font-[300] max-w-xl">
+          <p>戸建てのリフォームで最も大切なのは、図面や数字の前にある「この家をどうしたいか」という想いだと考えています。だからこそ、私たちは現地でじっくり時間をいただくことから始めます。<span class="text-ink/40">（※仮）</span></p>
+          <p>建て替えという選択肢も含めて、いちばん納得できる道を一緒に探す。それが専門会社としての責任だと思っています。<span class="text-ink/40">（※仮）</span></p>
+        </div>
+        <p class="mt-9 f-mincho text-[18px] tracking-[.08em]">代表取締役　〇〇　〇〇 <span class="text-ink/40 text-[13px]">（※仮）</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 沿革（縦ライン＋年号） -->
+  <section class="bg-base">
+    <div class="mx-auto max-w-[1000px] px-6 md:px-10 py-24 md:py-36">
+      <div class="reveal mb-16 md:mb-20">
+        <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-4">HISTORY</p>
+        <h2 class="f-mincho text-[clamp(1.8rem,4.5vw,2.8rem)] tracking-[.08em] font-[400]">沿革</h2>
+      </div>
+      <div class="relative pl-10 md:pl-16">
+        <span class="absolute left-2 md:left-3 top-1 bottom-1 w-px bg-light rule-draw-y reveal"></span>
+        <div class="space-y-12 md:space-y-16">
+          <div class="reveal relative" data-d="1">
+            <span class="absolute -left-[34px] md:-left-[54px] top-1 w-3 h-3 rounded-full bg-brass"></span>
+            <p class="f-disp text-[clamp(1.6rem,3.5vw,2.4rem)] leading-none tabular-nums text-deep" data-count="1998" data-start="1990" data-plain>1990</p>
+            <p class="f-mincho text-[18px] tracking-[.08em] mt-3 mb-2 font-[400]">創業</p>
+            <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] max-w-lg">〇〇県〇〇市にて、戸建て改修を中心とした工務店として創業。（※仮）</p>
+          </div>
+          <div class="reveal relative" data-d="1">
+            <span class="absolute -left-[34px] md:-left-[54px] top-1 w-3 h-3 rounded-full bg-brass"></span>
+            <p class="f-disp text-[clamp(1.6rem,3.5vw,2.4rem)] leading-none tabular-nums text-deep" data-count="2008" data-start="2000" data-plain>2000</p>
+            <p class="f-mincho text-[18px] tracking-[.08em] mt-3 mb-2 font-[400]">設計部門を新設</p>
+            <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] max-w-lg">一級建築士事務所を登録し、設計から施工までの自社一貫体制を確立。（※仮）</p>
+          </div>
+          <div class="reveal relative" data-d="1">
+            <span class="absolute -left-[34px] md:-left-[54px] top-1 w-3 h-3 rounded-full bg-brass"></span>
+            <p class="f-disp text-[clamp(1.6rem,3.5vw,2.4rem)] leading-none tabular-nums text-deep" data-count="2018" data-start="2010" data-plain>2010</p>
+            <p class="f-mincho text-[18px] tracking-[.08em] mt-3 mb-2 font-[400]">リフォーム専門へ</p>
+            <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] max-w-lg">耐震・断熱を標準仕様とし、一戸建てリフォーム／リノベーション専門に。（※仮）</p>
+          </div>
+          <div class="reveal relative" data-d="1">
+            <span class="absolute -left-[34px] md:-left-[54px] top-1 w-3 h-3 rounded-full bg-deep"></span>
+            <p class="f-disp text-[clamp(1.6rem,3.5vw,2.4rem)] leading-none tabular-nums text-deep" data-count="2026" data-start="2020" data-plain>2020</p>
+            <p class="f-mincho text-[18px] tracking-[.08em] mt-3 mb-2 font-[400]">累計1,200邸を超える</p>
+            <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] max-w-lg">長期アフター保証を拡充。住み継ぐ家のパートナーとして歩み続ける。（※仮）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 会社概要テーブル -->
+  <section class="bg-pale">
+    <div class="mx-auto max-w-[900px] px-6 md:px-10 py-24 md:py-32">
+      <div class="reveal mb-12">
+        <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-4">COMPANY</p>
+        <h2 class="f-mincho text-[clamp(1.8rem,4.5vw,2.6rem)] tracking-[.08em] font-[400]">会社概要</h2>
+      </div>
+      <dl class="reveal divide-y divide-light/70 text-[14px] f-sans" data-d="1">
+        <div class="grid grid-cols-[7rem_1fr] md:grid-cols-[12rem_1fr] gap-4 py-5"><dt class="text-ink/45 tracking-[.10em]">商号</dt><dd class="f-mincho tracking-[.08em] text-[15px]">株式会社EWリフォーム（※仮）</dd></div>
+        <div class="grid grid-cols-[7rem_1fr] md:grid-cols-[12rem_1fr] gap-4 py-5"><dt class="text-ink/45 tracking-[.10em]">所在地</dt><dd>〇〇県〇〇市〇〇 0-0-0（※仮）</dd></div>
+        <div class="grid grid-cols-[7rem_1fr] md:grid-cols-[12rem_1fr] gap-4 py-5"><dt class="text-ink/45 tracking-[.10em]">事業内容</dt><dd>一戸建てのリフォーム／リノベーション（設計・施工・アフター一貫）（※仮）</dd></div>
+        <div class="grid grid-cols-[7rem_1fr] md:grid-cols-[12rem_1fr] gap-4 py-5"><dt class="text-ink/45 tracking-[.10em]">従業員数</dt><dd>〇〇名（うち一級建築士〇名）（※仮）</dd></div>
+        <div class="grid grid-cols-[7rem_1fr] md:grid-cols-[12rem_1fr] gap-4 py-5"><dt class="text-ink/45 tracking-[.10em]">許可・登録</dt><dd>建設業許可（※仮）／ 一級建築士事務所登録（※仮）</dd></div>
+      </dl>
+    </div>
+  </section>
+</section>
+
+<!-- ============================================================================
+     ③ リフォームメニュー
+     ============================================================================ -->
+<section id="view-service" class="view">
+  <section class="relative bg-base pt-[120px] md:pt-[160px] pb-16 md:pb-24">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 flex items-start gap-8 md:gap-16">
+      <h1 class="page-hero-vtext vtext f-mincho font-[400] leading-[1.4] tracking-[.18em] text-[clamp(2.2rem,6.5vw,4.6rem)] text-deep" data-text="メニュー"></h1>
+      <div class="pt-3">
+        <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-6">SERVICE</p>
+        <p class="f-mincho text-[clamp(1.3rem,3.2vw,2.1rem)] leading-[1.8] tracking-[.08em] font-[300] max-w-xl">
+          部分の手直しから、<br />住まい全体の編みなおしまで。
+        </p>
+        <p class="f-sans text-[14px] leading-[2] text-ink/60 font-[300] max-w-lg mt-6">費用は戸建て一般の目安レンジです。現地調査のうえ、お見積りいたします。<span class="text-ink/40">（※仮）</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- メニュー一覧 -->
+  <section class="bg-base pb-10">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-light/60 border border-light/60">
+      <!-- カードテンプレート：ピクトグラム＋一言＋費用目安 -->
+      <div class="reveal bg-base p-8 md:p-9" data-d="1">
+        <div class="text-mid mb-6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" class="w-11 h-11"><rect x="6" y="16" width="36" height="26"/><path d="M4 16 24 5l20 11"/><path d="M16 42V26h16v16"/><path d="M22 31h4"/></svg></div>
+        <h3 class="f-mincho text-[20px] tracking-[.08em] mb-3 font-[400]">全面リノベーション</h3>
+        <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] mb-6">スケルトンから間取り・性能・意匠を一度に編みなおす、住まいの再構築。</p>
+        <p class="f-disp text-[12px] tracking-[.16em] text-ink/40">EST. COST</p>
+        <p class="f-mincho text-[18px] tracking-[.06em] text-brass tabular-nums">800〜2,000万円<span class="text-ink/40 text-[12px] f-sans">（※仮）</span></p>
+      </div>
+      <div class="reveal bg-base p-8 md:p-9" data-d="2">
+        <div class="text-mid mb-6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" class="w-11 h-11"><path d="M10 20h28v18a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4Z"/><path d="M10 20V14a4 4 0 0 1 4-4h6v10"/><path d="M28 28v6M20 28v6"/></svg></div>
+        <h3 class="f-mincho text-[20px] tracking-[.08em] mb-3 font-[400]">水まわり</h3>
+        <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] mb-6">キッチン・浴室・洗面・トイレ。毎日の心地よさと家事のしやすさを底上げ。</p>
+        <p class="f-disp text-[12px] tracking-[.16em] text-ink/40">EST. COST</p>
+        <p class="f-mincho text-[18px] tracking-[.06em] text-brass tabular-nums">50〜350万円<span class="text-ink/40 text-[12px] f-sans">（※仮）</span></p>
+      </div>
+      <div class="reveal bg-base p-8 md:p-9" data-d="3">
+        <div class="text-mid mb-6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" class="w-11 h-11"><path d="M6 22 24 9l18 13"/><path d="M9 22v18h30V22"/><path d="M24 9V4M14 17l-4-3M34 17l4-3"/></svg></div>
+        <h3 class="f-mincho text-[20px] tracking-[.08em] mb-3 font-[400]">外装（屋根・外壁・塗装）</h3>
+        <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] mb-6">家の寿命を左右する外皮を、点検のうえ最適な工法で守りなおす。</p>
+        <p class="f-disp text-[12px] tracking-[.16em] text-ink/40">EST. COST</p>
+        <p class="f-mincho text-[18px] tracking-[.06em] text-brass tabular-nums">80〜400万円<span class="text-ink/40 text-[12px] f-sans">（※仮）</span></p>
+      </div>
+      <div class="reveal bg-base p-8 md:p-9" data-d="1">
+        <div class="text-mid mb-6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" class="w-11 h-11"><rect x="9" y="9" width="30" height="30"/><path d="M9 9l30 30M39 9 9 39"/></svg></div>
+        <h3 class="f-mincho text-[20px] tracking-[.08em] mb-3 font-[400]">耐震補強</h3>
+        <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] mb-6">耐震診断にもとづき、壁・基礎・接合部を補強。これからの安心を構造から。</p>
+        <p class="f-disp text-[12px] tracking-[.16em] text-ink/40">EST. COST</p>
+        <p class="f-mincho text-[18px] tracking-[.06em] text-brass tabular-nums">100〜300万円<span class="text-ink/40 text-[12px] f-sans">（※仮）</span></p>
+      </div>
+      <div class="reveal bg-base p-8 md:p-9" data-d="2">
+        <div class="text-mid mb-6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" class="w-11 h-11"><rect x="8" y="8" width="32" height="32"/><path d="M14 8v32M20 8v32M26 8v32M32 8v32"/></svg></div>
+        <h3 class="f-mincho text-[20px] tracking-[.08em] mb-3 font-[400]">断熱・省エネ</h3>
+        <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] mb-6">壁・床・天井・窓の断熱を見直し、夏涼しく冬あたたかい住まいへ。</p>
+        <p class="f-disp text-[12px] tracking-[.16em] text-ink/40">EST. COST</p>
+        <p class="f-mincho text-[18px] tracking-[.06em] text-brass tabular-nums">100〜500万円<span class="text-ink/40 text-[12px] f-sans">（※仮）</span></p>
+      </div>
+      <div class="reveal bg-base p-8 md:p-9" data-d="3">
+        <div class="text-mid mb-6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" class="w-11 h-11"><rect x="7" y="14" width="20" height="26"/><rect x="27" y="22" width="14" height="18"/><path d="M7 14 17 7l10 7M27 22l7-5 7 5"/></svg></div>
+        <h3 class="f-mincho text-[20px] tracking-[.08em] mb-3 font-[400]">増改築・間取り変更</h3>
+        <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] mb-6">家族構成の変化にあわせ、つなぐ・広げる・分ける。暮らしの形を更新。</p>
+        <p class="f-disp text-[12px] tracking-[.16em] text-ink/40">EST. COST</p>
+        <p class="f-mincho text-[18px] tracking-[.06em] text-brass tabular-nums">200〜800万円<span class="text-ink/40 text-[12px] f-sans">（※仮）</span></p>
+      </div>
+    </div>
+    <div class="mx-auto max-w-wrap px-6 md:px-10 mt-px">
+      <div class="reveal bg-deep text-white p-8 md:p-10 grid md:grid-cols-[1fr_auto] gap-6 items-center" data-d="1">
+        <div>
+          <h3 class="f-mincho text-[20px] tracking-[.08em] mb-2 font-[400]">バリアフリー・二世帯化</h3>
+          <p class="f-sans text-[14px] leading-[2] text-white/70 font-[300] max-w-2xl">段差解消・手すり・水まわり改修から、世帯を分ける大規模改修まで。住み継ぐ家を、次の世代へ。<span class="text-white/45">（※仮）</span></p>
+        </div>
+        <a data-go="contact" href="#contact" class="cta inline-flex items-center gap-2 bg-white text-ink px-7 py-3.5 text-[14px] tracking-[.10em] w-max">相談する <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 建替え vs リフォーム 比較表 -->
+  <section class="bg-pale mt-10">
+    <div class="mx-auto max-w-[1000px] px-6 md:px-10 py-24 md:py-32">
+      <div class="reveal mb-12">
+        <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-4">COMPARE</p>
+        <h2 class="f-mincho text-[clamp(1.7rem,4.2vw,2.6rem)] tracking-[.08em] font-[400]">建て替え と リフォーム</h2>
+      </div>
+      <div class="reveal overflow-hidden border border-light/70" data-d="1">
+        <div class="grid grid-cols-[1.2fr_1fr_1fr] f-sans text-[13px] md:text-[14px]">
+          <div class="bg-base p-4 md:p-5 border-b border-light/70"></div>
+          <div class="bg-base p-4 md:p-5 border-b border-l border-light/70 f-mincho text-[16px] tracking-[.06em] text-center">建て替え</div>
+          <div class="bg-deep text-white p-4 md:p-5 border-b border-light/70 f-mincho text-[16px] tracking-[.06em] text-center">リフォーム</div>
+          <div class="bg-base p-4 md:p-5 border-b border-light/70 text-ink/55 tracking-[.06em]">費用感</div>
+          <div class="bg-base p-4 md:p-5 border-b border-l border-light/70 text-center text-ink/70">高くなりやすい</div>
+          <div class="bg-pale/60 p-4 md:p-5 border-b border-light/70 text-center text-deep">抑えやすい</div>
+          <div class="bg-base p-4 md:p-5 border-b border-light/70 text-ink/55 tracking-[.06em]">工期</div>
+          <div class="bg-base p-4 md:p-5 border-b border-l border-light/70 text-center text-ink/70">長い</div>
+          <div class="bg-pale/60 p-4 md:p-5 border-b border-light/70 text-center text-deep">短め</div>
+          <div class="bg-base p-4 md:p-5 border-b border-light/70 text-ink/55 tracking-[.06em]">家の記憶</div>
+          <div class="bg-base p-4 md:p-5 border-b border-l border-light/70 text-center text-ink/70">一度リセット</div>
+          <div class="bg-pale/60 p-4 md:p-5 border-b border-light/70 text-center text-deep">活かせる</div>
+          <div class="bg-base p-4 md:p-5 text-ink/55 tracking-[.06em]">仮住まい</div>
+          <div class="bg-base p-4 md:p-5 border-l border-light/70 text-center text-ink/70">原則必要</div>
+          <div class="bg-pale/60 p-4 md:p-5 text-center text-deep">住みながらも可</div>
+        </div>
+      </div>
+      <p class="reveal f-sans text-[12px] text-ink/45 mt-4 font-[300]" data-d="2">※ 一般的な傾向の比較です。建物の状態により最適な選択は異なります。（※仮）</p>
+    </div>
+  </section>
+</section>
+
+<!-- ============================================================================
+     ⑤ リフォームの流れ（図解の主役）
+     ============================================================================ -->
+<section id="view-flow" class="view">
+  <section class="relative bg-base pt-[120px] md:pt-[160px] pb-16 md:pb-24">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 flex items-start gap-8 md:gap-16">
+      <h1 class="page-hero-vtext vtext f-mincho font-[400] leading-[1.4] tracking-[.18em] text-[clamp(2.2rem,6.5vw,4.6rem)] text-deep" data-text="ご依頼の流れ"></h1>
+      <div class="pt-3">
+        <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-6">FLOW</p>
+        <p class="f-mincho text-[clamp(1.3rem,3.2vw,2.1rem)] leading-[1.8] tracking-[.08em] font-[300] max-w-xl">
+          はじめての方にも、<br />全体が見えるように。
+        </p>
+        <p class="f-sans text-[14px] leading-[2] text-ink/60 font-[300] max-w-lg mt-6">ご相談からアフター点検まで、8つのステップ。所要の目安とともにご案内します。<span class="text-ink/40">（※仮）</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 縦フロー：進捗ラインがスクロールで伸びる -->
+  <section class="bg-base pb-28 md:pb-40">
+    <div id="flow-track" class="relative mx-auto max-w-[920px] px-6 md:px-10">
+      <!-- ライン -->
+      <span class="absolute left-[35px] md:left-[51px] top-2 bottom-2 w-px bg-light/70"></span>
+      <span id="flow-progress" class="absolute left-[35px] md:left-[51px] top-2 w-px bg-brass flow-progress" style="height:0%"></span>
+
+      <div class="space-y-10 md:space-y-14">
+        <!-- STEP -->
+        <div class="flow-step relative grid grid-cols-[44px_1fr] md:grid-cols-[72px_1fr] gap-5 md:gap-9 items-start">
+          <span class="relative z-10 grid place-items-center w-[44px] h-[44px] md:w-[72px] md:h-[72px] rounded-full bg-base border border-light text-mid"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" class="w-6 h-6 md:w-8 md:h-8"><path d="M6 9h20v13H14l-5 4v-4H6Z"/><path d="M11 14h10M11 18h6"/></svg></span>
+          <div class="pt-1 md:pt-3">
+            <div class="flex items-baseline gap-4 mb-2"><span class="f-disp text-[15px] tracking-[.18em] text-brass">STEP 01</span><span class="f-sans text-[12px] text-ink/45 tracking-[.08em]">目安：随時</span></div>
+            <h3 class="f-mincho text-[clamp(1.2rem,2.6vw,1.6rem)] tracking-[.08em] mb-3 font-[400]">ご相談・お問い合わせ</h3>
+            <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] max-w-xl">まずはお電話・フォームから。建て替えと迷っている段階でも、構想だけでも構いません。<span class="text-ink/40">（※仮）</span></p>
+          </div>
+        </div>
+        <div class="flow-step relative grid grid-cols-[44px_1fr] md:grid-cols-[72px_1fr] gap-5 md:gap-9 items-start">
+          <span class="relative z-10 grid place-items-center w-[44px] h-[44px] md:w-[72px] md:h-[72px] rounded-full bg-base border border-light text-mid"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" class="w-6 h-6 md:w-8 md:h-8"><circle cx="14" cy="14" r="8"/><path d="M20 20l6 6"/></svg></span>
+          <div class="pt-1 md:pt-3">
+            <div class="flex items-baseline gap-4 mb-2"><span class="f-disp text-[15px] tracking-[.18em] text-brass">STEP 02</span><span class="f-sans text-[12px] text-ink/45 tracking-[.08em]">目安：1〜2週間</span></div>
+            <h3 class="f-mincho text-[clamp(1.2rem,2.6vw,1.6rem)] tracking-[.08em] mb-3 font-[400]">現地調査・建物診断</h3>
+            <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] max-w-xl">構造・配管・断熱の状態を専門家が確認。どこまで直せるかを、根拠とともにご説明します。<span class="text-ink/40">（※仮）</span></p>
+          </div>
+        </div>
+        <div class="flow-step relative grid grid-cols-[44px_1fr] md:grid-cols-[72px_1fr] gap-5 md:gap-9 items-start">
+          <span class="relative z-10 grid place-items-center w-[44px] h-[44px] md:w-[72px] md:h-[72px] rounded-full bg-base border border-light text-mid"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" class="w-6 h-6 md:w-8 md:h-8"><path d="M7 5h13l5 5v17H7Z"/><path d="M19 5v6h6"/><path d="M11 16h10M11 20h7"/></svg></span>
+          <div class="pt-1 md:pt-3">
+            <div class="flex items-baseline gap-4 mb-2"><span class="f-disp text-[15px] tracking-[.18em] text-brass">STEP 03</span><span class="f-sans text-[12px] text-ink/45 tracking-[.08em]">目安：2〜4週間</span></div>
+            <h3 class="f-mincho text-[clamp(1.2rem,2.6vw,1.6rem)] tracking-[.08em] mb-3 font-[400]">プランのご提案</h3>
+            <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] max-w-xl">調査をもとに、間取り・性能・意匠の方針を設計担当がご提案。図面とパースで具体化します。<span class="text-ink/40">（※仮）</span></p>
+          </div>
+        </div>
+        <div class="flow-step relative grid grid-cols-[44px_1fr] md:grid-cols-[72px_1fr] gap-5 md:gap-9 items-start">
+          <span class="relative z-10 grid place-items-center w-[44px] h-[44px] md:w-[72px] md:h-[72px] rounded-full bg-base border border-light text-mid"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" class="w-6 h-6 md:w-8 md:h-8"><rect x="8" y="5" width="16" height="22"/><path d="M12 10h8M12 14h8M12 18h5"/></svg></span>
+          <div class="pt-1 md:pt-3">
+            <div class="flex items-baseline gap-4 mb-2"><span class="f-disp text-[15px] tracking-[.18em] text-brass">STEP 04</span><span class="f-sans text-[12px] text-ink/45 tracking-[.08em]">目安：1〜2週間</span></div>
+            <h3 class="f-mincho text-[clamp(1.2rem,2.6vw,1.6rem)] tracking-[.08em] mb-3 font-[400]">お見積り</h3>
+            <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] max-w-xl">工事項目を一式で明示。「開けてみないと分からない」を極力なくし、総額の見通しを共有します。<span class="text-ink/40">（※仮）</span></p>
+          </div>
+        </div>
+        <div class="flow-step relative grid grid-cols-[44px_1fr] md:grid-cols-[72px_1fr] gap-5 md:gap-9 items-start">
+          <span class="relative z-10 grid place-items-center w-[44px] h-[44px] md:w-[72px] md:h-[72px] rounded-full bg-base border border-light text-mid"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" class="w-6 h-6 md:w-8 md:h-8"><path d="M7 6h13l5 5v15H7Z"/><path d="M11 19l3 3 6-6"/></svg></span>
+          <div class="pt-1 md:pt-3">
+            <div class="flex items-baseline gap-4 mb-2"><span class="f-disp text-[15px] tracking-[.18em] text-brass">STEP 05</span><span class="f-sans text-[12px] text-ink/45 tracking-[.08em]">目安：1日</span></div>
+            <h3 class="f-mincho text-[clamp(1.2rem,2.6vw,1.6rem)] tracking-[.08em] mb-3 font-[400]">ご契約</h3>
+            <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] max-w-xl">内容・金額・工程・保証にご納得いただいたうえで契約。着工日と段取りを確定します。<span class="text-ink/40">（※仮）</span></p>
+          </div>
+        </div>
+        <div class="flow-step relative grid grid-cols-[44px_1fr] md:grid-cols-[72px_1fr] gap-5 md:gap-9 items-start">
+          <span class="relative z-10 grid place-items-center w-[44px] h-[44px] md:w-[72px] md:h-[72px] rounded-full bg-base border border-light text-mid"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" class="w-6 h-6 md:w-8 md:h-8"><path d="M5 27 23 9l4 4L9 31H5Z" transform="translate(0 -4)"/><path d="M19 7l4 4"/></svg></span>
+          <div class="pt-1 md:pt-3">
+            <div class="flex items-baseline gap-4 mb-2"><span class="f-disp text-[15px] tracking-[.18em] text-brass">STEP 06</span><span class="f-sans text-[12px] text-ink/45 tracking-[.08em]">目安：1〜4ヶ月</span></div>
+            <h3 class="f-mincho text-[clamp(1.2rem,2.6vw,1.6rem)] tracking-[.08em] mb-3 font-[400]">着工</h3>
+            <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] max-w-xl">自社の現場監督が常駐管理。進捗は写真と定例でこまめに共有。住みながらの工事にも配慮します。<span class="text-ink/40">（※仮）</span></p>
+          </div>
+        </div>
+        <div class="flow-step relative grid grid-cols-[44px_1fr] md:grid-cols-[72px_1fr] gap-5 md:gap-9 items-start">
+          <span class="relative z-10 grid place-items-center w-[44px] h-[44px] md:w-[72px] md:h-[72px] rounded-full bg-base border border-light text-mid"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" class="w-6 h-6 md:w-8 md:h-8"><path d="M6 16 16 7l10 9"/><path d="M9 16v11h14V16"/><path d="M14 27v-7h4v7"/></svg></span>
+          <div class="pt-1 md:pt-3">
+            <div class="flex items-baseline gap-4 mb-2"><span class="f-disp text-[15px] tracking-[.18em] text-brass">STEP 07</span><span class="f-sans text-[12px] text-ink/45 tracking-[.08em]">目安：1日</span></div>
+            <h3 class="f-mincho text-[clamp(1.2rem,2.6vw,1.6rem)] tracking-[.08em] mb-3 font-[400]">竣工・お引渡し</h3>
+            <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] max-w-xl">仕上がりをご一緒に確認し、設備の使い方や保証書をお渡し。あたらしい時間の始まりです。<span class="text-ink/40">（※仮）</span></p>
+          </div>
+        </div>
+        <div class="flow-step relative grid grid-cols-[44px_1fr] md:grid-cols-[72px_1fr] gap-5 md:gap-9 items-start">
+          <span class="relative z-10 grid place-items-center w-[44px] h-[44px] md:w-[72px] md:h-[72px] rounded-full bg-deep border border-deep text-white"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" class="w-6 h-6 md:w-8 md:h-8"><circle cx="16" cy="16" r="10"/><path d="M16 11v5l3 3"/></svg></span>
+          <div class="pt-1 md:pt-3">
+            <div class="flex items-baseline gap-4 mb-2"><span class="f-disp text-[15px] tracking-[.18em] text-brass">STEP 08</span><span class="f-sans text-[12px] text-ink/45 tracking-[.08em]">目安：最長20年</span></div>
+            <h3 class="f-mincho text-[clamp(1.2rem,2.6vw,1.6rem)] tracking-[.08em] mb-3 font-[400]">アフター点検・長期保証</h3>
+            <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] max-w-xl">定期点検と長期保証で、引き渡し後の暮らしを継続的にサポート。住み継ぐ家のパートナーに。<span class="text-ink/40">（※仮）</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto max-w-[920px] px-6 md:px-10 mt-16 md:mt-20 text-center">
+      <a data-go="contact" href="#contact" class="reveal cta inline-flex items-center gap-3 bg-ink text-white px-9 py-4 text-[14px] tracking-[.10em]">STEP 01 から始める <span class="arr">→</span></a>
+    </div>
+  </section>
+</section>
+
+<!-- ============================================================================
+     ⑥ 選ばれる理由（図解の主役）
+     ============================================================================ -->
+<section id="view-reasons" class="view">
+  <section class="relative bg-deep text-white overflow-hidden pt-[120px] md:pt-[160px] pb-20 md:pb-28">
+    <img class="absolute inset-0 w-full h-full object-cover opacity-25" src="assets/living-grey-art.jpg" alt="" aria-hidden="true" />
+    <div class="absolute inset-0" style="background:rgba(91,80,67,.45)"></div>
+    <div class="relative mx-auto max-w-wrap px-6 md:px-10 flex items-start gap-8 md:gap-16">
+      <h1 class="page-hero-vtext vtext f-mincho font-[400] leading-[1.4] tracking-[.18em] text-[clamp(2.2rem,6.5vw,4.6rem)]" data-text="選ばれる理由"></h1>
+      <div class="pt-3">
+        <p class="f-disp tracking-[.22em] text-[12px] text-white/65 mb-6">REASONS</p>
+        <p class="f-mincho text-[clamp(1.3rem,3.2vw,2.1rem)] leading-[1.8] tracking-[.08em] font-[300] max-w-xl">
+          見えない部分こそ、<br />仕組みで信頼を。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 指標 4つ -->
+  <section class="bg-deep text-white">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 pb-20 md:pb-28">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
+        <div class="reveal bg-deep px-6 py-10" data-d="0"><p class="f-disp text-[clamp(2.2rem,5vw,3.4rem)] leading-none tabular-nums" data-count="1998" data-start="1980" data-plain>1980</p><p class="f-sans text-[12px] tracking-[.10em] text-white/55 mt-3">創業（※仮）</p></div>
+        <div class="reveal bg-deep px-6 py-10" data-d="1"><p class="f-disp text-[clamp(2.2rem,5vw,3.4rem)] leading-none tabular-nums"><span data-count="1200" data-start="0">0</span><span class="text-[.45em] align-top">邸超</span></p><p class="f-sans text-[12px] tracking-[.10em] text-white/55 mt-3">累計施工（※仮）</p></div>
+        <div class="reveal bg-deep px-6 py-10" data-d="2"><p class="f-disp text-[clamp(2.2rem,5vw,3.4rem)] leading-none tabular-nums"><span data-count="12" data-start="0">0</span><span class="text-[.45em] align-top">名</span></p><p class="f-sans text-[12px] tracking-[.10em] text-white/55 mt-3">有資格者在籍（※仮）</p></div>
+        <div class="reveal bg-deep px-6 py-10" data-d="3"><p class="f-disp text-[clamp(2.2rem,5vw,3.4rem)] leading-none tabular-nums">最長<span data-count="20" data-start="0">0</span><span class="text-[.45em] align-top">年</span></p><p class="f-sans text-[12px] tracking-[.10em] text-white/55 mt-3">アフター保証（※仮）</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 理由01：自社一貫体制（連結図） -->
+  <section class="bg-base">
+    <div class="mx-auto max-w-[1080px] px-6 md:px-10 py-24 md:py-32">
+      <div class="reveal mb-12 md:mb-16">
+        <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-4">REASON 01</p>
+        <h2 class="f-mincho text-[clamp(1.7rem,4.2vw,2.6rem)] tracking-[.08em] font-[400] mb-4">自社一貫体制</h2>
+        <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] max-w-2xl">設計・施工・アフターを分断せず、同じ顔ぶれが最後まで担当。「誰が責任を持つのか分からない」不安を、体制そのもので解消します。<span class="text-ink/40">（※仮）</span></p>
+      </div>
+      <div class="reveal grid md:grid-cols-2 gap-8 md:gap-12 items-center" data-d="1">
+        <!-- EW：連結図 -->
+        <div class="bg-pale p-8 md:p-10">
+          <p class="f-mincho text-[15px] tracking-[.08em] text-deep mb-7">EWリフォーム ＝ ひとつながり</p>
+          <div class="flex items-center justify-between">
+            <div class="text-center flex-1"><span class="grid place-items-center w-14 h-14 mx-auto rounded-full bg-deep text-white"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" class="w-7 h-7"><path d="M5 27 16 7l11 20"/><path d="M11 27v-6h10v6"/></svg></span><p class="f-sans text-[13px] mt-3 text-ink/75">設計</p></div>
+            <span class="h-px flex-1 bg-brass"></span>
+            <div class="text-center flex-1"><span class="grid place-items-center w-14 h-14 mx-auto rounded-full bg-deep text-white"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" class="w-7 h-7"><path d="M20 6l6 6-3 3-6-6Z"/><path d="M17 9 7 19v6h6L23 15"/></svg></span><p class="f-sans text-[13px] mt-3 text-ink/75">施工</p></div>
+            <span class="h-px flex-1 bg-brass"></span>
+            <div class="text-center flex-1"><span class="grid place-items-center w-14 h-14 mx-auto rounded-full bg-deep text-white"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" class="w-7 h-7"><path d="M16 6C9 11 7 15 7 19a9 9 0 0 0 18 0c0-4-2-8-9-13Z"/></svg></span><p class="f-sans text-[13px] mt-3 text-ink/75">アフター</p></div>
+          </div>
+          <p class="f-sans text-[12px] text-deep/60 mt-7 leading-[1.9] font-[300]">情報が途切れず、責任の所在が明快。</p>
+        </div>
+        <!-- 他社：分断図 -->
+        <div class="bg-base border border-light/70 p-8 md:p-10">
+          <p class="f-mincho text-[15px] tracking-[.08em] text-ink/45 mb-7">分業の場合 ＝ つなぎ目が増える</p>
+          <div class="flex items-center justify-between">
+            <div class="text-center flex-1"><span class="grid place-items-center w-14 h-14 mx-auto rounded-full border border-dashed border-light text-mid"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" class="w-7 h-7"><path d="M5 27 16 7l11 20"/></svg></span><p class="f-sans text-[13px] mt-3 text-ink/45">設計会社</p></div>
+            <span class="text-light text-[18px]">／</span>
+            <div class="text-center flex-1"><span class="grid place-items-center w-14 h-14 mx-auto rounded-full border border-dashed border-light text-mid"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" class="w-7 h-7"><path d="M20 6l6 6-3 3-6-6Z"/></svg></span><p class="f-sans text-[13px] mt-3 text-ink/45">施工会社</p></div>
+            <span class="text-light text-[18px]">／</span>
+            <div class="text-center flex-1"><span class="grid place-items-center w-14 h-14 mx-auto rounded-full border border-dashed border-light text-mid"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" class="w-7 h-7"><path d="M16 6C9 11 7 15 7 19a9 9 0 0 0 18 0c0-4-2-8-9-13Z"/></svg></span><p class="f-sans text-[13px] mt-3 text-ink/45">別の窓口</p></div>
+          </div>
+          <p class="f-sans text-[12px] text-ink/45 mt-7 leading-[1.9] font-[300]">つなぎ目ごとに、伝達ロスと責任の曖昧さが生まれがち。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 理由02：断熱の断面図 -->
+  <section class="bg-pale">
+    <div class="mx-auto max-w-[1080px] px-6 md:px-10 py-24 md:py-32">
+      <div class="reveal mb-12 md:mb-16">
+        <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-4">REASON 02</p>
+        <h2 class="f-mincho text-[clamp(1.7rem,4.2vw,2.6rem)] tracking-[.08em] font-[400] mb-4">耐震・断熱を標準仕様に</h2>
+        <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] max-w-2xl">仕上げの美しさだけでなく、壁の中で効く性能を標準で。夏の熱と冬の寒さを、構造から断ちます。<span class="text-ink/40">（※仮）</span></p>
+      </div>
+      <div class="reveal grid md:grid-cols-[1.1fr_1fr] gap-10 md:gap-14 items-center" data-d="1">
+        <!-- 写真：断熱・耐震を標準に（イメージ） -->
+        <div class="imgzoom relative aspect-[4/3] bg-pale overflow-hidden">
+          <img class="w-full h-full object-cover" src="assets/living-white-ocean.jpg" alt="高断熱の窓まわりと明るいリビング。複層ガラスの大開口（イメージ ※仮）" />
+          <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(120deg, rgba(40,35,29,.18), rgba(40,35,29,0) 50%)"></div>
+          <span class="absolute top-4 left-4 f-disp text-[11px] tracking-[.22em] text-white/90">PERFORMANCE</span>
+          <span class="absolute bottom-4 left-4 f-mincho text-[14px] tracking-[.06em] text-white/90">高断熱の窓まわり<span class="text-white/55 text-[11px]">（イメージ ※仮）</span></span>
+        </div>
+        <div>
+          <ul class="space-y-6">
+            <li class="flex gap-4"><span class="f-disp text-brass text-[15px] tracking-[.1em] pt-1">01</span><div><p class="f-mincho text-[16px] tracking-[.06em] mb-1">壁・床・天井をまるごと</p><p class="f-sans text-[13px] leading-[1.9] text-ink/60 font-[300]">部分ではなく外皮全体で断熱を見直し、温度ムラを抑えます。（※仮）</p></div></li>
+            <li class="flex gap-4"><span class="f-disp text-brass text-[15px] tracking-[.1em] pt-1">02</span><div><p class="f-mincho text-[16px] tracking-[.06em] mb-1">窓は熱の出入口</p><p class="f-sans text-[13px] leading-[1.9] text-ink/60 font-[300]">内窓・複層ガラスで、いちばん逃げやすい窓からの熱損失を低減。（※仮）</p></div></li>
+            <li class="flex gap-4"><span class="f-disp text-brass text-[15px] tracking-[.1em] pt-1">03</span><div><p class="f-mincho text-[16px] tracking-[.06em] mb-1">耐震とセットで</p><p class="f-sans text-[13px] leading-[1.9] text-ink/60 font-[300]">壁を開ける断熱工事は、耐震補強と同時に行うのが合理的です。（※仮）</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 理由03：長期アフター保証 -->
+  <section class="bg-base">
+    <div class="mx-auto max-w-[1080px] px-6 md:px-10 py-24 md:py-32">
+      <div class="reveal mb-12 md:mb-16">
+        <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-4">REASON 03</p>
+        <h2 class="f-mincho text-[clamp(1.7rem,4.2vw,2.6rem)] tracking-[.08em] font-[400] mb-4">引き渡し後を、支え続ける</h2>
+        <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] max-w-2xl">完成はゴールではなく始まり。定期点検のサイクルと長期保証で、住み継ぐ時間に伴走します。<span class="text-ink/40">（※仮）</span></p>
+      </div>
+      <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-px bg-light/60 border border-light/60" data-d="1">
+        <div class="bg-base p-7 text-center"><p class="f-disp text-[28px] text-brass leading-none">6<span class="text-[.5em]">ヶ月</span></p><p class="f-sans text-[12px] text-ink/55 mt-3">初回点検</p></div>
+        <div class="bg-base p-7 text-center"><p class="f-disp text-[28px] text-brass leading-none">2<span class="text-[.5em]">年</span></p><p class="f-sans text-[12px] text-ink/55 mt-3">定期点検</p></div>
+        <div class="bg-base p-7 text-center"><p class="f-disp text-[28px] text-brass leading-none">5<span class="text-[.5em]">年</span></p><p class="f-sans text-[12px] text-ink/55 mt-3">定期点検</p></div>
+        <div class="bg-base p-7 text-center"><p class="f-disp text-[28px] text-brass leading-none">10<span class="text-[.5em]">年〜</span></p><p class="f-sans text-[12px] text-ink/55 mt-3">長期保証・点検</p></div>
+      </div>
+      <p class="reveal f-sans text-[12px] text-ink/45 mt-4 font-[300]" data-d="2">※ 保証年数・点検サイクルは工事内容により異なります。（※仮）</p>
+    </div>
+  </section>
+</section>
+
+<!-- ============================================================================
+     ④ 施工事例
+     ============================================================================ -->
+<section id="view-works" class="view">
+  <section class="relative bg-deep text-white overflow-hidden pt-[120px] md:pt-[160px] pb-20 md:pb-28">
+    <img class="absolute inset-0 w-full h-full object-cover opacity-30" src="assets/living-leather-arch.jpg" alt="" aria-hidden="true" style="object-position:center 60%" />
+    <div class="absolute inset-0" style="background:rgba(91,80,67,.42)"></div>
+    <div class="relative mx-auto max-w-wrap px-6 md:px-10 flex items-start gap-8 md:gap-16">
+      <h1 class="page-hero-vtext vtext f-mincho font-[400] leading-[1.4] tracking-[.18em] text-[clamp(2.2rem,6.5vw,4.6rem)]" data-text="施工事例"></h1>
+      <div class="pt-3">
+        <p class="f-disp tracking-[.22em] text-[12px] text-white/65 mb-6">WORKS</p>
+        <p class="f-mincho text-[clamp(1.3rem,3.2vw,2.1rem)] leading-[1.8] tracking-[.08em] font-[300] max-w-xl">
+          直す前と、直したあと。<br />その差を、ご覧ください。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 注目事例：Before/After スライダー -->
+  <section class="bg-base">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 py-20 md:py-28">
+      <div class="reveal flex items-center gap-4 mb-8"><span class="f-disp text-[12px] tracking-[.22em] text-brass">FEATURED CASE</span><span class="h-px flex-1 bg-light/70"></span></div>
+      <div class="grid lg:grid-cols-[1.4fr_1fr] gap-10 md:gap-14 items-center">
+        <div class="reveal">
+          <div class="ba-wrap aspect-[16/10] bg-pale">
+            <img src="assets/living-leather-arch.jpg" class="w-full h-full object-cover" alt="リフォーム後のリビング（イメージ ※仮）" />
+            <div class="ba-after"><img src="assets/living-leather-arch.jpg" class="object-cover" style="filter:grayscale(.9) brightness(.82) contrast(.95);" alt="リフォーム前のリビング（イメージ ※仮）" /></div>
+            <div class="ba-handle"></div>
+            <span class="absolute top-4 left-4 f-disp text-[12px] tracking-[.22em] text-white/90 bg-black/25 px-3 py-1">BEFORE</span>
+            <span class="absolute top-4 right-4 f-disp text-[12px] tracking-[.22em] text-white/90 bg-black/25 px-3 py-1">AFTER</span>
+          </div>
+          <p class="f-sans text-[12px] text-ink/45 mt-3 font-[300]">← ドラッグで Before / After を比較できます（※デモ：同一写真を加工）</p>
+        </div>
+        <div class="reveal" data-d="1">
+          <p class="f-disp text-[13px] tracking-[.22em] text-brass mb-3">CASE 01</p>
+          <h2 class="f-mincho text-[clamp(1.5rem,3.4vw,2.2rem)] tracking-[.08em] leading-[1.5] mb-6 font-[400]">築28年、二度目の家。</h2>
+          <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300] mb-8 max-w-md">細かく仕切られ暗かったLDKを、壁を抜いてひと続きに。断熱と耐震を同時に見直し、これからの30年に備えました。<span class="text-ink/40">（※仮）</span></p>
+          <dl class="grid grid-cols-3 gap-px bg-light/60 border border-light/60">
+            <div class="bg-base p-5 text-center"><dt class="f-sans text-[11px] text-ink/45 tracking-[.08em] mb-2">工期</dt><dd class="f-disp text-[22px] text-deep tabular-nums">3<span class="text-[.5em] f-sans">ヶ月</span></dd></div>
+            <div class="bg-base p-5 text-center"><dt class="f-sans text-[11px] text-ink/45 tracking-[.08em] mb-2">面積</dt><dd class="f-disp text-[22px] text-deep tabular-nums">96<span class="text-[.5em] f-sans">㎡</span></dd></div>
+            <div class="bg-base p-5 text-center"><dt class="f-sans text-[11px] text-ink/45 tracking-[.08em] mb-2">費用</dt><dd class="f-disp text-[22px] text-deep tabular-nums">1,480<span class="text-[.5em] f-sans">万</span></dd></div>
+          </dl>
+          <p class="f-sans text-[11px] text-ink/40 mt-3 font-[300]">（※仮）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 事例一覧 -->
+  <section class="bg-pale">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 py-20 md:py-28">
+      <div class="reveal flex items-center gap-4 mb-10"><span class="f-disp text-[12px] tracking-[.22em] text-brass">ALL CASES</span><span class="h-px flex-1 bg-light/70"></span></div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <article class="reveal group cursor-default" data-d="1">
+          <div class="imgzoom relative aspect-[4/3] bg-base overflow-hidden">
+            <img class="w-full h-full object-cover" src="assets/living-minimal-warm.jpg" alt="平屋改修の事例（イメージ ※仮）" />
+            <span class="absolute top-4 left-4 f-sans text-[11px] tracking-[.08em] text-white bg-deep/70 px-3 py-1">間取り変更</span>
+          </div>
+          <div class="flex items-baseline justify-between mt-5"><h3 class="f-mincho text-[18px] tracking-[.06em] font-[400]">光をいれる、平屋改修。</h3><span class="f-disp text-[12px] text-ink/40">02</span></div>
+          <p class="f-sans text-[13px] text-ink/55 mt-2 font-[300]">平屋 ／ 〇〇市 ／ 工期2ヶ月（※仮）</p>
+        </article>
+        <article class="reveal group cursor-default" data-d="2">
+          <div class="imgzoom relative aspect-[4/3] bg-base overflow-hidden">
+            <img class="w-full h-full object-cover" src="assets/bedroom-ocean-sunset.jpg" alt="水まわり＋断熱の事例（イメージ ※仮）" />
+            <span class="absolute top-4 left-4 f-sans text-[11px] tracking-[.08em] text-white bg-deep/70 px-3 py-1">水まわり＋断熱</span>
+          </div>
+          <div class="flex items-baseline justify-between mt-5"><h3 class="f-mincho text-[18px] tracking-[.06em] font-[400]">海を望む、終の住処へ。</h3><span class="f-disp text-[12px] text-ink/40">03</span></div>
+          <p class="f-sans text-[13px] text-ink/55 mt-2 font-[300]">戸建 ／ 〇〇市 ／ 工期3ヶ月（※仮）</p>
+        </article>
+        <article class="reveal group cursor-default" data-d="3">
+          <div class="imgzoom relative aspect-[4/3] bg-base overflow-hidden">
+            <img class="w-full h-full object-cover" src="assets/living-white-ocean.jpg" alt="二世帯化の事例（イメージ ※仮）" />
+            <span class="absolute top-4 left-4 f-sans text-[11px] tracking-[.08em] text-white bg-deep/70 px-3 py-1">二世帯化</span>
+          </div>
+          <div class="flex items-baseline justify-between mt-5"><h3 class="f-mincho text-[18px] tracking-[.06em] font-[400]">親子で住む、白い家。</h3><span class="f-disp text-[12px] text-ink/40">04</span></div>
+          <p class="f-sans text-[13px] text-ink/55 mt-2 font-[300]">戸建 ／ 〇〇市 ／ 工期4ヶ月（※仮）</p>
+        </article>
+        <article class="reveal group cursor-default" data-d="1">
+          <div class="imgzoom relative aspect-[4/3] bg-base overflow-hidden">
+            <img class="w-full h-full object-cover" src="assets/living-grey-art.jpg" alt="全面リノベの事例（イメージ ※仮）" />
+            <span class="absolute top-4 left-4 f-sans text-[11px] tracking-[.08em] text-white bg-deep/70 px-3 py-1">全面リノベ</span>
+          </div>
+          <div class="flex items-baseline justify-between mt-5"><h3 class="f-mincho text-[18px] tracking-[.06em] font-[400]">石とグレーの、静かな家。</h3><span class="f-disp text-[12px] text-ink/40">05</span></div>
+          <p class="f-sans text-[13px] text-ink/55 mt-2 font-[300]">戸建 ／ 〇〇市 ／ 工期5ヶ月（※仮）</p>
+        </article>
+        <article class="reveal group cursor-default" data-d="2">
+          <div class="imgzoom relative aspect-[4/3] bg-base overflow-hidden">
+            <img class="w-full h-full object-cover" src="assets/balcony-skyline-night.jpg" alt="眺望を活かした事例（イメージ ※仮）" style="object-position:center 40%" />
+            <span class="absolute top-4 left-4 f-sans text-[11px] tracking-[.08em] text-white bg-deep/70 px-3 py-1">眺望リノベ</span>
+          </div>
+          <div class="flex items-baseline justify-between mt-5"><h3 class="f-mincho text-[18px] tracking-[.06em] font-[400]">夜景を、特等席に。</h3><span class="f-disp text-[12px] text-ink/40">06</span></div>
+          <p class="f-sans text-[13px] text-ink/55 mt-2 font-[300]">戸建 ／ 〇〇市 ／ 工期2ヶ月（※仮）</p>
+        </article>
+        <article class="reveal group cursor-pointer bg-deep text-white flex flex-col justify-center items-start p-8" data-go="contact" data-d="3">
+          <p class="f-mincho text-[20px] tracking-[.08em] leading-[1.6] mb-4">あなたの家も、<br />ここに加わります。</p>
+          <span class="ulink inline-flex items-center gap-2 text-[14px] tracking-[.10em] text-white/85">相談してみる <span>→</span></span>
+        </article>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================================================================
+     ⑦ お客様の声（Voice）
+     ============================================================================ -->
+<section id="view-voice" class="view">
+  <section class="relative bg-base pt-[120px] md:pt-[160px] pb-16 md:pb-24">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 flex items-start gap-8 md:gap-16">
+      <h1 class="page-hero-vtext vtext f-mincho font-[400] leading-[1.4] tracking-[.18em] text-[clamp(2.2rem,6.5vw,4.6rem)] text-deep" data-text="お客様の声"></h1>
+      <div class="pt-3">
+        <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-6">VOICE</p>
+        <p class="f-mincho text-[clamp(1.3rem,3.2vw,2.1rem)] leading-[1.8] tracking-[.08em] font-[300] max-w-xl">
+          直したあとの暮らしを、<br />住まい手の言葉で。
+        </p>
+        <p class="f-sans text-[14px] leading-[2] text-ink/60 font-[300] max-w-lg mt-6">完成は通過点。住み継ぐ時間のなかで届いた声を、そのままご紹介します。<span class="text-ink/40">（※仮）</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 注目の声（大きな引用） -->
+  <section class="bg-deep text-white">
+    <div class="mx-auto max-w-[1080px] px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-[1fr_1.2fr] gap-10 md:gap-16 items-center">
+      <div class="reveal">
+        <div class="relative aspect-[4/5] overflow-hidden imgzoom">
+          <img class="w-full h-full object-cover" src="assets/living-leather-arch.jpg" alt="リフォーム後のお住まい（イメージ ※仮）" style="object-position:center 60%" />
+        </div>
+      </div>
+      <div class="reveal" data-d="1">
+        <span class="f-mincho text-brass text-[clamp(3rem,7vw,5rem)] leading-[0.6] block mb-2">“</span>
+        <p class="f-mincho is-display text-[clamp(1.4rem,3vw,2.05rem)] leading-[1.8] tracking-[.04em] jp-keep mb-8">
+          建て替えも考えましたが、慣れ親しんだ間取りや庭を残せたのが何よりでした。寒かった廊下まで暖かくなり、住み心地は新築以上だと感じています。
+        </p>
+        <div class="flex items-center gap-4">
+          <span class="grid place-items-center w-12 h-12 rounded-full bg-white/10 f-disp text-[13px] tracking-[.06em] text-white/70">K.S</span>
+          <div>
+            <p class="f-mincho text-[15px] tracking-[.06em]">K・S 様 <span class="text-white/45 text-[12px] f-sans">（※仮）</span></p>
+            <p class="f-sans text-[12px] text-white/55 mt-0.5">全面リノベーション ／ 戸建 ／ 〇〇市</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 声の一覧 -->
+  <section class="bg-base">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 py-20 md:py-28">
+      <div class="reveal flex items-center gap-4 mb-12"><span class="f-disp text-[12px] tracking-[.22em] text-brass">ALL VOICES</span><span class="h-px flex-1 bg-light/70"></span></div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
+        <!-- card -->
+        <article class="reveal bg-pale p-8 md:p-9 flex flex-col" data-d="1">
+          <span class="f-mincho text-brass text-[40px] leading-[0.5] mb-4">“</span>
+          <p class="f-serifjp text-[14px] leading-[2.05] text-ink/75 font-[300] flex-1 jp-keep">水まわりだけのつもりが、相談するうちに動線まで見直すことに。家事が驚くほど楽になりました。</p>
+          <div class="flex items-center gap-3 mt-7 pt-6 border-t border-light/70">
+            <span class="grid place-items-center w-10 h-10 rounded-full bg-mid/20 f-disp text-[12px] text-mid">M.T</span>
+            <div><p class="f-mincho text-[14px]">M・T 様 <span class="text-ink/40 text-[11px] f-sans">（※仮）</span></p><p class="f-sans text-[11px] text-ink/50">水まわり ／ 〇〇市</p></div>
+          </div>
+        </article>
+        <article class="reveal bg-pale p-8 md:p-9 flex flex-col" data-d="2">
+          <span class="f-mincho text-brass text-[40px] leading-[0.5] mb-4">“</span>
+          <p class="f-serifjp text-[14px] leading-[2.05] text-ink/75 font-[300] flex-1 jp-keep">現場監督さんが同じ方で、最初から最後まで安心して任せられました。進捗の写真連絡もありがたかったです。</p>
+          <div class="flex items-center gap-3 mt-7 pt-6 border-t border-light/70">
+            <span class="grid place-items-center w-10 h-10 rounded-full bg-mid/20 f-disp text-[12px] text-mid">Y.N</span>
+            <div><p class="f-mincho text-[14px]">Y・N 様 <span class="text-ink/40 text-[11px] f-sans">（※仮）</span></p><p class="f-sans text-[11px] text-ink/50">耐震・断熱 ／ 〇〇市</p></div>
+          </div>
+        </article>
+        <article class="reveal bg-pale p-8 md:p-9 flex flex-col" data-d="3">
+          <span class="f-mincho text-brass text-[40px] leading-[0.5] mb-4">“</span>
+          <p class="f-serifjp text-[14px] leading-[2.05] text-ink/75 font-[300] flex-1 jp-keep">親世帯と暮らすための二世帯化。それぞれの距離感まで一緒に考えてもらえて、今はとても快適です。</p>
+          <div class="flex items-center gap-3 mt-7 pt-6 border-t border-light/70">
+            <span class="grid place-items-center w-10 h-10 rounded-full bg-mid/20 f-disp text-[12px] text-mid">A.K</span>
+            <div><p class="f-mincho text-[14px]">A・K 様 <span class="text-ink/40 text-[11px] f-sans">（※仮）</span></p><p class="f-sans text-[11px] text-ink/50">二世帯化 ／ 〇〇市</p></div>
+          </div>
+        </article>
+        <article class="reveal bg-pale p-8 md:p-9 flex flex-col" data-d="1">
+          <span class="f-mincho text-brass text-[40px] leading-[0.5] mb-4">“</span>
+          <p class="f-serifjp text-[14px] leading-[2.05] text-ink/75 font-[300] flex-1 jp-keep">住みながらの工事でしたが、養生や音への配慮が行き届いていて、生活への負担が少なく済みました。</p>
+          <div class="flex items-center gap-3 mt-7 pt-6 border-t border-light/70">
+            <span class="grid place-items-center w-10 h-10 rounded-full bg-mid/20 f-disp text-[12px] text-mid">H.I</span>
+            <div><p class="f-mincho text-[14px]">H・I 様 <span class="text-ink/40 text-[11px] f-sans">（※仮）</span></p><p class="f-sans text-[11px] text-ink/50">間取り変更 ／ 〇〇市</p></div>
+          </div>
+        </article>
+        <article class="reveal bg-pale p-8 md:p-9 flex flex-col" data-d="2">
+          <span class="f-mincho text-brass text-[40px] leading-[0.5] mb-4">“</span>
+          <p class="f-serifjp text-[14px] leading-[2.05] text-ink/75 font-[300] flex-1 jp-keep">見積もりの内訳がわかりやすく、追加費用もほぼありませんでした。最初に総額の見通しが立ったのが安心でした。</p>
+          <div class="flex items-center gap-3 mt-7 pt-6 border-t border-light/70">
+            <span class="grid place-items-center w-10 h-10 rounded-full bg-mid/20 f-disp text-[12px] text-mid">T.W</span>
+            <div><p class="f-mincho text-[14px]">T・W 様 <span class="text-ink/40 text-[11px] f-sans">（※仮）</span></p><p class="f-sans text-[11px] text-ink/50">外装 ／ 〇〇市</p></div>
+          </div>
+        </article>
+        <article class="reveal bg-deep text-white p-8 md:p-9 flex flex-col justify-center" data-go="works" data-d="3">
+          <p class="f-mincho text-[19px] tracking-[.08em] leading-[1.6] mb-4">声の背景にある、<br />実際の施工も。</p>
+          <span class="ulink inline-flex items-center gap-2 text-[14px] tracking-[.10em] text-white/85 cursor-pointer">施工事例を見る <span>→</span></span>
+        </article>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================================================================
+     ⑧ よくあるご質問（FAQ）
+     ============================================================================ -->
+<section id="view-faq" class="view">
+  <section class="relative bg-base pt-[120px] md:pt-[160px] pb-16 md:pb-24">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 flex items-start gap-8 md:gap-16">
+      <h1 class="page-hero-vtext vtext f-mincho font-[400] leading-[1.4] tracking-[.18em] text-[clamp(2.2rem,6.5vw,4.6rem)] text-deep" data-text="よくあるご質問"></h1>
+      <div class="pt-3">
+        <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-6">FAQ</p>
+        <p class="f-mincho text-[clamp(1.3rem,3.2vw,2.1rem)] leading-[1.8] tracking-[.08em] font-[300] max-w-xl">
+          はじめての方が、<br />よく気にされること。
+        </p>
+        <p class="f-sans text-[14px] leading-[2] text-ink/60 font-[300] max-w-lg mt-6">ここにない疑問も、無料相談でお気軽にお尋ねください。<span class="text-ink/40">（※仮）</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-base pb-24 md:pb-32">
+    <div class="mx-auto max-w-[920px] px-6 md:px-10 space-y-16 md:space-y-20">
+
+      <!-- カテゴリ：費用 -->
+      <div>
+        <div class="reveal flex items-baseline gap-4 mb-7"><span class="f-disp text-[13px] tracking-[.2em] text-brass">01</span><h2 class="f-mincho text-[clamp(1.3rem,3vw,1.8rem)] tracking-[.08em] font-[400]">費用について</h2></div>
+        <div class="reveal divide-y divide-light/70 border-t border-b border-light/70" data-d="1">
+          <div class="acc"><button class="acc-head w-full flex items-start justify-between gap-6 py-6 text-left"><span class="flex gap-4"><span class="f-mincho text-brass text-[16px] shrink-0">Q</span><span class="f-mincho text-[16px] md:text-[17px] tracking-[.04em] leading-[1.6]">費用の目安はどのくらいですか？</span></span><span class="acc-icon f-mincho text-mid text-[22px] leading-none shrink-0 mt-1">＋</span></button><div class="acc-body"><div><p class="f-sans text-[14px] leading-[2.05] text-ink/65 font-[300] pl-8 pb-7 jp-keep">工事の範囲により幅があります。水まわり単体で50〜350万円、全面リノベーションで800〜2,000万円が一般的な目安です。現地調査のうえ、内訳のわかるお見積りをご提示します。<span class="text-ink/40">（※仮）</span></p></div></div></div>
+          <div class="acc"><button class="acc-head w-full flex items-start justify-between gap-6 py-6 text-left"><span class="flex gap-4"><span class="f-mincho text-brass text-[16px] shrink-0">Q</span><span class="f-mincho text-[16px] md:text-[17px] tracking-[.04em] leading-[1.6]">ローンや補助金は使えますか？</span></span><span class="acc-icon f-mincho text-mid text-[22px] leading-none shrink-0 mt-1">＋</span></button><div class="acc-body"><div><p class="f-sans text-[14px] leading-[2.05] text-ink/65 font-[300] pl-8 pb-7 jp-keep">リフォームローンのほか、耐震・断熱・バリアフリー改修では各種補助制度の対象となる場合があります。条件の確認と申請のサポートも承ります。<span class="text-ink/40">（※仮）</span></p></div></div></div>
+          <div class="acc"><button class="acc-head w-full flex items-start justify-between gap-6 py-6 text-left"><span class="flex gap-4"><span class="f-mincho text-brass text-[16px] shrink-0">Q</span><span class="f-mincho text-[16px] md:text-[17px] tracking-[.04em] leading-[1.6]">あとから追加費用が出ませんか？</span></span><span class="acc-icon f-mincho text-mid text-[22px] leading-none shrink-0 mt-1">＋</span></button><div class="acc-body"><div><p class="f-sans text-[14px] leading-[2.05] text-ink/65 font-[300] pl-8 pb-7 jp-keep">事前の建物診断で見えない部分まで確認し、想定されるリスクを契約前に共有します。やむを得ない追加が生じる場合も、必ず事前にご相談・ご承認をいただいてから進めます。<span class="text-ink/40">（※仮）</span></p></div></div></div>
+        </div>
+      </div>
+
+      <!-- カテゴリ：工期・進め方 -->
+      <div>
+        <div class="reveal flex items-baseline gap-4 mb-7"><span class="f-disp text-[13px] tracking-[.2em] text-brass">02</span><h2 class="f-mincho text-[clamp(1.3rem,3vw,1.8rem)] tracking-[.08em] font-[400]">工期・進め方について</h2></div>
+        <div class="reveal divide-y divide-light/70 border-t border-b border-light/70" data-d="1">
+          <div class="acc"><button class="acc-head w-full flex items-start justify-between gap-6 py-6 text-left"><span class="flex gap-4"><span class="f-mincho text-brass text-[16px] shrink-0">Q</span><span class="f-mincho text-[16px] md:text-[17px] tracking-[.04em] leading-[1.6]">相談から完成までどのくらいかかりますか？</span></span><span class="acc-icon f-mincho text-mid text-[22px] leading-none shrink-0 mt-1">＋</span></button><div class="acc-body"><div><p class="f-sans text-[14px] leading-[2.05] text-ink/65 font-[300] pl-8 pb-7 jp-keep">規模により異なりますが、ご相談からお引渡しまで、水まわりで1〜2ヶ月、全面リノベーションで4〜7ヶ月ほどが目安です。詳しくは「ご依頼の流れ」をご覧ください。<span class="text-ink/40">（※仮）</span></p></div></div></div>
+          <div class="acc"><button class="acc-head w-full flex items-start justify-between gap-6 py-6 text-left"><span class="flex gap-4"><span class="f-mincho text-brass text-[16px] shrink-0">Q</span><span class="f-mincho text-[16px] md:text-[17px] tracking-[.04em] leading-[1.6]">住みながらの工事はできますか？</span></span><span class="acc-icon f-mincho text-mid text-[22px] leading-none shrink-0 mt-1">＋</span></button><div class="acc-body"><div><p class="f-sans text-[14px] leading-[2.05] text-ink/65 font-[300] pl-8 pb-7 jp-keep">部分改修であれば、お住まいになりながらの工事も可能です。全面改修の場合は仮住まいをおすすめすることもあります。生活への影響を抑える工程をご提案します。<span class="text-ink/40">（※仮）</span></p></div></div></div>
+          <div class="acc"><button class="acc-head w-full flex items-start justify-between gap-6 py-6 text-left"><span class="flex gap-4"><span class="f-mincho text-brass text-[16px] shrink-0">Q</span><span class="f-mincho text-[16px] md:text-[17px] tracking-[.04em] leading-[1.6]">対応エリアはどこまでですか？</span></span><span class="acc-icon f-mincho text-mid text-[22px] leading-none shrink-0 mt-1">＋</span></button><div class="acc-body"><div><p class="f-sans text-[14px] leading-[2.05] text-ink/65 font-[300] pl-8 pb-7 jp-keep">〇〇県〇〇市を中心に、近隣エリアへ対応しています。エリア外のご相談も、まずはお問い合わせください。<span class="text-ink/40">（※仮）</span></p></div></div></div>
+        </div>
+      </div>
+
+      <!-- カテゴリ：保証・アフター -->
+      <div>
+        <div class="reveal flex items-baseline gap-4 mb-7"><span class="f-disp text-[13px] tracking-[.2em] text-brass">03</span><h2 class="f-mincho text-[clamp(1.3rem,3vw,1.8rem)] tracking-[.08em] font-[400]">保証・アフターについて</h2></div>
+        <div class="reveal divide-y divide-light/70 border-t border-b border-light/70" data-d="1">
+          <div class="acc"><button class="acc-head w-full flex items-start justify-between gap-6 py-6 text-left"><span class="flex gap-4"><span class="f-mincho text-brass text-[16px] shrink-0">Q</span><span class="f-mincho text-[16px] md:text-[17px] tracking-[.04em] leading-[1.6]">工事後の保証はありますか？</span></span><span class="acc-icon f-mincho text-mid text-[22px] leading-none shrink-0 mt-1">＋</span></button><div class="acc-body"><div><p class="f-sans text-[14px] leading-[2.05] text-ink/65 font-[300] pl-8 pb-7 jp-keep">工事内容に応じた保証をお付けし、定期点検（6ヶ月・2年・5年…）を実施します。構造や防水など、項目により最長20年の長期保証もご用意しています。<span class="text-ink/40">（※仮）</span></p></div></div></div>
+          <div class="acc"><button class="acc-head w-full flex items-start justify-between gap-6 py-6 text-left"><span class="flex gap-4"><span class="f-mincho text-brass text-[16px] shrink-0">Q</span><span class="f-mincho text-[16px] md:text-[17px] tracking-[.04em] leading-[1.6]">点検や小さな不具合にも来てもらえますか？</span></span><span class="acc-icon f-mincho text-mid text-[22px] leading-none shrink-0 mt-1">＋</span></button><div class="acc-body"><div><p class="f-sans text-[14px] leading-[2.05] text-ink/65 font-[300] pl-8 pb-7 jp-keep">はい。定期点検に加え、気になる点があればその都度ご連絡ください。設計・施工を担当した自社スタッフが対応します。<span class="text-ink/40">（※仮）</span></p></div></div></div>
+        </div>
+      </div>
+
+      <div class="reveal text-center pt-4">
+        <p class="f-sans text-[14px] text-ink/60 mb-6 font-[300]">解決しないご質問は、お気軽にどうぞ。</p>
+        <a data-go="contact" href="#contact" class="cta inline-flex items-center gap-3 bg-ink text-white px-9 py-4 text-[14px] tracking-[.10em]">無料で相談する <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================================================================
+     ⑨ 採用情報（Recruit）
+     ============================================================================ -->
+<section id="view-recruit" class="view">
+  <!-- ブランドビジュアル（全画面写真＋暗オーバーレイ） -->
+  <section class="relative overflow-hidden min-h-[78svh] md:min-h-[88svh] flex items-end">
+    <img class="absolute inset-0 w-full h-full object-cover kenburns" src="assets/balcony-skyline-night.jpg" alt="夜景を望むバルコニー。職人の手仕事が生む暮らしの風景（イメージ ※仮）" style="object-position:center 45%" />
+    <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(40,35,29,.82), rgba(40,35,29,.32) 55%, rgba(40,35,29,.5))"></div>
+    <span class="bg-vrun en parallax" style="bottom:8%; right:-1%; font-size:clamp(3.5rem,12vw,9rem); opacity:.14; color:#fff;" data-speed="0.1" aria-hidden="true">craft</span>
+    <div class="relative mx-auto max-w-wrap w-full px-6 md:px-10 pb-16 md:pb-24 text-white">
+      <div class="flex items-start gap-7 md:gap-12">
+        <h1 class="page-hero-vtext vtext f-mincho font-[400] leading-[1.4] tracking-[.18em] text-[clamp(2.2rem,6.5vw,4.6rem)]" data-text="採用情報"></h1>
+        <div class="pt-2 md:pt-6">
+          <p class="f-disp tracking-[.24em] text-[12px] text-white/65 mb-6">RECRUIT</p>
+          <p class="f-mincho is-display text-[clamp(1.6rem,4vw,2.8rem)] leading-[1.6] tracking-[.06em] jp-keep max-w-2xl">
+            家の時間をのばす仕事を、<br />一緒に。
+          </p>
+          <p class="f-serifjp text-[14px] md:text-[15px] leading-[2.1] text-white/80 font-[300] max-w-lg mt-7 jp-keep">
+            設計・施工・アフターを自社で担うわたしたちは、一邸ずつ丁寧に向き合える仲間を探しています。<span class="text-white/50">（※仮）</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 働き方の価値観 -->
+  <section class="bg-base">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 py-20 md:py-28">
+      <div class="reveal mb-12 md:mb-16">
+        <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-4">OUR VALUES</p>
+        <h2 class="f-mincho text-[clamp(1.7rem,4.2vw,2.6rem)] tracking-[.08em] font-[400]">わたしたちが大切にすること</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-px bg-light/60">
+        <div class="reveal bg-base p-9 md:p-10" data-d="1">
+          <p class="f-disp text-[clamp(1.8rem,4vw,2.6rem)] leading-none text-brass mb-5">01</p>
+          <h3 class="f-mincho text-[19px] tracking-[.08em] mb-3 font-[400]">最後まで、同じ顔で</h3>
+          <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300]">分業で流さず、担当した家に最後まで責任を持つ。だからやりがいも、学びも深い。</p>
+        </div>
+        <div class="reveal bg-base p-9 md:p-10" data-d="2">
+          <p class="f-disp text-[clamp(1.8rem,4vw,2.6rem)] leading-none text-brass mb-5">02</p>
+          <h3 class="f-mincho text-[19px] tracking-[.08em] mb-3 font-[400]">急がず、丁寧に</h3>
+          <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300]">数を追わず、一邸ずつ。お客様にも、つくり手にも無理のない仕事の進め方を大切にします。</p>
+        </div>
+        <div class="reveal bg-base p-9 md:p-10" data-d="3">
+          <p class="f-disp text-[clamp(1.8rem,4vw,2.6rem)] leading-none text-brass mb-5">03</p>
+          <h3 class="f-mincho text-[19px] tracking-[.08em] mb-3 font-[400]">技術を、次の世代へ</h3>
+          <p class="f-sans text-[14px] leading-[2] text-ink/65 font-[300]">経験を惜しまず共有し、設計も現場も育て合う。住み継ぐ家を、人でも継いでいく。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 募集職種 -->
+  <section class="bg-pale">
+    <div class="mx-auto max-w-[1000px] px-6 md:px-10 py-20 md:py-28">
+      <div class="reveal mb-10 md:mb-14">
+        <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-4">OPEN POSITIONS</p>
+        <h2 class="f-mincho text-[clamp(1.7rem,4.2vw,2.6rem)] tracking-[.08em] font-[400]">募集職種</h2>
+      </div>
+      <div class="reveal divide-y divide-light/70 border-t border-b border-light/70" data-d="1">
+        <a data-go="contact" href="#contact" class="group flex items-center justify-between gap-6 py-7 cursor-pointer">
+          <div class="flex items-baseline gap-5 md:gap-8"><span class="f-disp text-[13px] tracking-[.18em] text-ink/40 w-8">01</span><div><p class="f-mincho text-[clamp(1.15rem,2.4vw,1.5rem)] tracking-[.06em]">設計・プランナー</p><p class="f-sans text-[12px] text-ink/50 mt-1.5 tracking-[.08em]">正社員 ／ 経験者・第二新卒（※仮）</p></div></div>
+          <span class="f-disp text-[13px] tracking-[.1em] text-brass inline-flex items-center gap-2 shrink-0">詳細 <span class="transition-transform group-hover:translate-x-1">→</span></span>
+        </a>
+        <a data-go="contact" href="#contact" class="group flex items-center justify-between gap-6 py-7 cursor-pointer">
+          <div class="flex items-baseline gap-5 md:gap-8"><span class="f-disp text-[13px] tracking-[.18em] text-ink/40 w-8">02</span><div><p class="f-mincho text-[clamp(1.15rem,2.4vw,1.5rem)] tracking-[.06em]">現場監督・施工管理</p><p class="f-sans text-[12px] text-ink/50 mt-1.5 tracking-[.08em]">正社員 ／ 経験者優遇（※仮）</p></div></div>
+          <span class="f-disp text-[13px] tracking-[.1em] text-brass inline-flex items-center gap-2 shrink-0">詳細 <span class="transition-transform group-hover:translate-x-1">→</span></span>
+        </a>
+        <a data-go="contact" href="#contact" class="group flex items-center justify-between gap-6 py-7 cursor-pointer">
+          <div class="flex items-baseline gap-5 md:gap-8"><span class="f-disp text-[13px] tracking-[.18em] text-ink/40 w-8">03</span><div><p class="f-mincho text-[clamp(1.15rem,2.4vw,1.5rem)] tracking-[.06em]">大工・職人</p><p class="f-sans text-[12px] text-ink/50 mt-1.5 tracking-[.08em]">正社員・委託 ／ 経験不問（研修あり）（※仮）</p></div></div>
+          <span class="f-disp text-[13px] tracking-[.1em] text-brass inline-flex items-center gap-2 shrink-0">詳細 <span class="transition-transform group-hover:translate-x-1">→</span></span>
+        </a>
+        <a data-go="contact" href="#contact" class="group flex items-center justify-between gap-6 py-7 cursor-pointer">
+          <div class="flex items-baseline gap-5 md:gap-8"><span class="f-disp text-[13px] tracking-[.18em] text-ink/40 w-8">04</span><div><p class="f-mincho text-[clamp(1.15rem,2.4vw,1.5rem)] tracking-[.06em]">広報・コーディネーター</p><p class="f-sans text-[12px] text-ink/50 mt-1.5 tracking-[.08em]">正社員 ／ 未経験可（※仮）</p></div></div>
+          <span class="f-disp text-[13px] tracking-[.1em] text-brass inline-flex items-center gap-2 shrink-0">詳細 <span class="transition-transform group-hover:translate-x-1">→</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- エントリーCTA -->
+  <section class="relative bg-deep text-white overflow-hidden">
+    <span class="bg-vrun en parallax" style="top:-4%; left:2%; font-size:clamp(4rem,14vw,11rem); opacity:.1;" data-speed="0.14" aria-hidden="true">join us</span>
+    <div class="relative mx-auto max-w-[900px] px-6 md:px-10 py-24 md:py-32 text-center">
+      <p class="reveal f-disp tracking-[.22em] text-[12px] text-white/60 mb-6">ENTRY</p>
+      <h2 class="reveal f-mincho text-[clamp(1.7rem,4.4vw,2.8rem)] leading-[1.55] tracking-[.08em] mb-8 font-[400]">まずは、話を聞きに来てください。</h2>
+      <p class="reveal f-sans text-[14px] leading-[2] text-white/75 font-[300] max-w-lg mx-auto mb-10" data-d="1">職種や経験のご相談、見学のご希望も歓迎します。カジュアルにお問い合わせください。<span class="text-white/45">（※仮）</span></p>
+      <a data-go="contact" href="#contact" class="reveal cta inline-flex items-center gap-3 bg-white text-ink px-9 py-4 text-[14px] tracking-[.10em]" data-d="2">エントリー・お問い合わせ <span class="arr">→</span></a>
+    </div>
+  </section>
+</section>
+
+<!-- ============================================================================
+     ⑩ お問い合わせ
+     ============================================================================ -->
+<section id="view-contact" class="view">
+  <section class="relative bg-base pt-[120px] md:pt-[160px] pb-14 md:pb-20">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 flex items-start gap-8 md:gap-16">
+      <h1 class="page-hero-vtext vtext f-mincho font-[400] leading-[1.4] tracking-[.18em] text-[clamp(2.2rem,6.5vw,4.6rem)] text-deep" data-text="お問い合わせ"></h1>
+      <div class="pt-3">
+        <p class="f-disp tracking-[.22em] text-[12px] text-brass mb-6">CONTACT</p>
+        <p class="f-mincho text-[clamp(1.3rem,3.2vw,2.1rem)] leading-[1.8] tracking-[.08em] font-[300] max-w-xl">
+          まずは、いまの家のことを<br />聞かせてください。
+        </p>
+        <p class="f-sans text-[14px] leading-[2] text-ink/60 font-[300] max-w-lg mt-6">ご相談は無料です。建て替えと迷っている段階でも、構想だけでも、どうぞお気軽に。<span class="text-ink/40">（※仮）</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-base">
+    <div class="mx-auto max-w-wrap px-6 md:px-10 pb-20">
+      <div class="grid md:grid-cols-3 gap-5 md:gap-6">
+        <a href="#form" class="reveal cta group bg-brass text-white p-8 md:p-9 flex flex-col justify-between min-h-[180px]" data-d="0">
+          <div><p class="f-disp text-[13px] tracking-[.22em] text-white/70 mb-3">01</p><p class="f-mincho text-[22px] tracking-[.08em]">無料相談</p></div>
+          <p class="f-sans text-[13px] text-white/85 mt-6 inline-flex items-center gap-2">フォームから予約 <span class="arr">→</span></p>
+        </a>
+        <a href="#form" class="reveal group bg-pale text-ink p-8 md:p-9 flex flex-col justify-between min-h-[180px] transition-colors hover:bg-deep hover:text-white" data-d="1">
+          <div><p class="f-disp text-[13px] tracking-[.22em] text-ink/40 group-hover:text-white/60 mb-3">02</p><p class="f-mincho text-[22px] tracking-[.08em]">資料請求</p></div>
+          <p class="f-sans text-[13px] mt-6 inline-flex items-center gap-2">施工事例集を送付 <span>→</span></p>
+        </a>
+        <a href="tel:000-0000-0000" class="reveal group bg-pale text-ink p-8 md:p-9 flex flex-col justify-between min-h-[180px] transition-colors hover:bg-deep hover:text-white" data-d="2">
+          <div><p class="f-disp text-[13px] tracking-[.22em] text-ink/40 group-hover:text-white/60 mb-3">03</p><p class="f-mincho text-[22px] tracking-[.08em]">お電話</p></div>
+          <p class="f-sans text-[13px] mt-6 f-disp tabular-nums tracking-[.10em]">000-0000-0000 <span class="text-ink/40 group-hover:text-white/50">（※仮）</span></p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-pale">
+    <div class="mx-auto max-w-[760px] px-6 md:px-10 py-20 md:py-28">
+      <form id="form" class="reveal grid gap-6" onsubmit="return false;">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <label class="block"><span class="block f-sans text-[12px] tracking-[.08em] text-ink/55 mb-2">お名前</span><input type="text" class="fld" placeholder="山田 太郎（※仮）" /></label>
+          <label class="block"><span class="block f-sans text-[12px] tracking-[.08em] text-ink/55 mb-2">メールアドレス</span><input type="email" class="fld" placeholder="example@email.com" /></label>
+        </div>
+        <label class="block"><span class="block f-sans text-[12px] tracking-[.08em] text-ink/55 mb-3">ご相談の種別</span>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-base border border-light/70 text-[13px] tracking-[.08em] f-sans cursor-default">全面リノベ</span>
+            <span class="px-4 py-2 bg-base border border-light/70 text-[13px] tracking-[.08em] f-sans cursor-default">水まわり</span>
+            <span class="px-4 py-2 bg-base border border-light/70 text-[13px] tracking-[.08em] f-sans cursor-default">耐震・断熱</span>
+            <span class="px-4 py-2 bg-base border border-light/70 text-[13px] tracking-[.08em] f-sans cursor-default">その他</span>
+          </div>
+        </label>
+        <label class="block"><span class="block f-sans text-[12px] tracking-[.08em] text-ink/55 mb-2">ご相談内容</span>
+          <textarea rows="5" class="fld" placeholder="お住まいの状況やお考えを、わかる範囲でお書きください。（※仮）"></textarea>
+        </label>
+        <button type="submit" class="cta justify-self-start inline-flex items-center gap-3 bg-ink text-white px-10 py-4 text-[14px] tracking-[.10em] mt-1">送信する <span class="arr">→</span></button>
+        <p class="f-sans text-[12px] text-ink/45 leading-[1.9] font-[300]">※ これはデザインモックです。送信は行われません。実装時に送信先・プライバシーポリシー同意等を追加してください。</p>
+      </form>
+    </div>
+  </section>
+</section>
+
+<!-- VIEWS_INSERT -->
+
+</main>
+
+<!-- ============================ フッター ============================ -->
+<footer class="bg-ink text-white/70">
+  <div class="mx-auto max-w-wrap px-6 md:px-10 py-16 md:py-20">
+    <div class="flex flex-wrap items-start justify-between gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4 text-white">
+          <span class="grid place-items-center w-9 h-9 border border-white/40 text-[15px] f-disp tracking-[.06em]">EW</span>
+          <span class="f-mincho text-[16px] tracking-[.10em]">EWリフォーム</span>
+        </div>
+        <p class="f-sans text-[13px] leading-[2] max-w-xs font-[300]">住み継ぐ家に、あたらしい時間を。<br />一戸建て専門リフォーム ／ 〇〇県〇〇市（※仮）</p>
+      </div>
+      <nav class="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap md:gap-x-8 gap-x-10 gap-y-3 f-disp text-[14px] tracking-[.08em] md:max-w-md md:justify-end">
+        <a class="ulink" data-go="about"   href="#about">About</a>
+        <a class="ulink" data-go="service" href="#service">Service</a>
+        <a class="ulink" data-go="works"   href="#works">Works</a>
+        <a class="ulink" data-go="flow"    href="#flow">Flow</a>
+        <a class="ulink" data-go="reasons" href="#reasons">Reasons</a>
+        <a class="ulink" data-go="voice"   href="#voice">Voice</a>
+        <a class="ulink" data-go="faq"     href="#faq">FAQ</a>
+        <a class="ulink" data-go="recruit" href="#recruit">Recruit</a>
+        <a class="ulink" data-go="contact" href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="mt-14 pt-8 border-t border-white/12 flex flex-wrap justify-between gap-4 text-[11px] tracking-[.10em] text-white/40">
+      <p>© 2026 EW RENOVATION Inc.（※仮 / デザインモック）</p>
+      <p class="f-disp">SINCE 1998（※仮）</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
