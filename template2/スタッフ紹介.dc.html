@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="theme.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="株式会社エンジョイホーム">
+<meta property="og:image" content="assets/ogp.png">
+<meta property="og:image:width" content="320">
+<meta property="og:image:height" content="240">
+<meta name="twitter:card" content="summary">
+<!-- Webフォント：本番サーバーでは下記1行のコメントを外して有効化する（プレビュー環境では CDN 到達不可のため無効） -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"> -->
+<style>
+  *{box-sizing:border-box;}
+  @media(max-width:640px){[data-atmos]{grid-template-columns:1fr 1fr!important;grid-template-rows:auto!important;}[data-atmos]>div{aspect-ratio:1!important;}[data-atmos]>div:first-child{grid-row:auto!important;}}
+  [data-role-grid],[data-method-grid],[data-where-grid],[data-sign-grid],[data-strength-grid],[data-dr-grid],[data-num-grid],[data-charm-grid],[data-career],[data-value-grid],[data-sdgs-grid],[data-cert-grid],[data-flow-grid]{grid-auto-rows:1fr;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fff;color:var(--c-ink);font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  [data-navitem]:hover [data-dropdown],[data-navitem]:focus-within [data-dropdown]{opacity:1!important;visibility:visible!important;}
+  .mnav-toggle,.mnav-btn,.mnav-panel{display:none;}
+  @media(max-width:840px){
+    nav[data-gnav]{display:none!important;}
+    #footer-grid{grid-template-columns:1fr!important;}
+    header{align-items:center!important;}
+    [data-protect]{display:none!important;}
+    .mnav-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--c-ink);border-radius:7px;margin:auto 16px;cursor:pointer;flex:none;position:relative;z-index:75;}
+    .mnav-btn span{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:transform .3s ease,opacity .3s ease,top .3s ease;}
+    .mnav-btn span:nth-child(1){top:15px;}.mnav-btn span:nth-child(2){top:21px;}.mnav-btn span:nth-child(3){top:27px;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(1){top:21px;transform:rotate(45deg);}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(2){opacity:0;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(3){top:21px;transform:rotate(-45deg);}
+    .mnav-panel{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--c-ink);z-index:74;padding:90px 26px 40px;transform:translateX(100%);transition:transform .42s cubic-bezier(.16,1,.3,1);overflow-y:auto;}
+    .mnav-toggle:checked ~ .mnav-panel{transform:none;}
+    .mnav-panel a{color:#fff;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:16px;font-weight:700;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);letter-spacing:.04em;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .mnav-panel a.sub{font-size:13.5px;font-weight:500;padding-left:18px;color:rgba(255,255,255,.66);}
+    .mnav-panel a em{font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-style:normal;font-size:10.5px;letter-spacing:.14em;color:var(--c-brand-2);font-weight:600;}
+  }
+  .rv,.rvl,.rvr,.rv-scale{opacity:0;transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+  .rv{transform:translateY(40px);}.rvl{transform:translateX(-48px);}.rvr{transform:translateX(48px);}.rv-scale{transform:scale(.95) translateY(22px);}
+  .rv.show,.rvl.show,.rvr.show,.rv-scale.show{opacity:1;transform:none;}
+  .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
+  @keyframes subheroZoom{from{transform:scale(1.12);}to{transform:scale(1.2);}}
+  @media (prefers-reduced-motion:reduce){
+    .rv,.rvl,.rvr,.rv-scale{opacity:1!important;transform:none!important;transition:none!important;}
+    [data-subhero-bg]{animation:none!important;transform:scale(1.12)!important;}
+    html{scroll-behavior:auto;}
+  }
+  @media (max-width:840px){
+    [data-gnav]{display:none!important;}
+  }
+  [data-interview]{display:flex;gap:clamp(24px,4vw,56px);align-items:center;}
+  [data-iv-media]{flex:none;width:clamp(210px,30vw,320px);}
+  @media (max-width:760px){
+    [data-interview]{flex-direction:column!important;align-items:stretch!important;gap:22px;}
+    [data-iv-media]{width:min(248px,68vw);align-self:center;}
+  }
+  span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal;}
+  [data-reqcta]:hover [data-reqbtn]{transform:translateY(-3px);background:#46d3e3;box-shadow:0 16px 42px rgba(52,197,214,.5);}
+  [data-reqcta]:hover [data-reqarrow]{transform:translateX(7px);}
+  [data-reqcta]:focus-visible{outline:3px solid var(--c-brand-2);outline-offset:6px;}
+</style>
+</helmet>
+
+<div style="position:relative;overflow-x:clip;background:#fff;">
+
+  <!-- ============ HEADER (共通部品) ============ -->
+  <dc-import name="Header" active="recruit" hint-size="100%,0" style="position:absolute;top:0;left:0;width:100%;z-index:60;"></dc-import>
+
+  <!-- ============ HERO F ============ -->
+  <section id="subhero" data-screen-label="スタッフ紹介Hero" style="position:relative;height:clamp(340px,52vh,520px);overflow:hidden;background:var(--c-ink);">
+    <div data-subhero-bg aria-hidden="true" style="position:absolute;inset:0;background:#e3e1da;transform:scale(1.12);animation:subheroZoom 14s ease-in-out infinite alternate;will-change:transform;"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(20,40,55,.45) 0%,rgba(20,40,55,.78) 100%);"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(168,205,223,.26) 0%,rgba(47,109,146,.34) 100%);mix-blend-mode:multiply;"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;">
+      <p class="rv d1" style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:clamp(11px,1.4vw,13px);letter-spacing:.34em;color:rgba(255,255,255,.78);margin:0 0 20px;">STAFF</p>
+      <h1 class="rv d2" style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:900;font-size:clamp(28px,4.6vw,48px);color:#fff;margin:0 0 22px;letter-spacing:.07em;text-shadow:0 2px 24px rgba(20,40,55,.5);">人を知る</h1>
+      <span class="rv d3" style="width:64px;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));display:inline-block;"></span>
+    </div>
+    <div style="position:absolute;bottom:22px;left:0;right:0;text-align:center;">
+      <span style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.55);">HOME ／ 私たちについて ／ スタッフ紹介</span>
+    </div>
+  </section>
+
+  <!-- ============ INTRO ============ -->
+  <section style="max-width:880px;margin:0 auto;padding:clamp(64px,9vh,110px) clamp(24px,5vw,40px) clamp(40px,6vh,64px);text-align:center;">
+    <p class="rv" style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.2em;color:var(--c-brand);margin:0 0 22px;">OUR MEMBERS</p>
+    <h2 class="rv d1" style="font-size:clamp(21px,3vw,30px);font-weight:700;line-height:1.7;letter-spacing:.04em;color:var(--c-ink);margin:0 0 28px;text-wrap:balance;">工事に伺うのは、<br>この人たちです。</h2>
+    <p class="rv d2" style="font-size:clamp(14px,1.6vw,15px);line-height:2.15;color:#666;margin:0;text-wrap:pretty;">大切な建物をお預けいただくのですから、どんな人間が伺うのかは気になるところだと思います。株式会社エンジョイホームで実際に現場を担当しているスタッフを、仕事のうえで心がけていることとあわせてご紹介します。</p>
+  </section>
+
+  <!-- ============ スタッフ紹介 ============ -->
+  <section style="max-width:1040px;margin:0 auto;padding:0 clamp(24px,5vw,40px) clamp(56px,8vh,96px);display:flex;flex-direction:column;gap:clamp(40px,6vh,72px);">
+
+    <!-- INTERVIEW 01 -->
+    <article data-interview class="rv" style="flex-direction:row;">
+      <div data-iv-media>
+        <div style="position:relative;aspect-ratio:5/6;background:var(--c-cream);border-radius:8px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;">
+          <span style="position:absolute;top:14px;left:14px;background:var(--c-brand);color:#fff;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;padding:5px 12px;border-radius:2px;">現場担当</span>
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="外装工事担当 Nさんのイメージイラスト" style="width:90%;height:auto;display:block;mix-blend-mode:multiply;">
+        </div>
+      </div>
+      <div style="flex:1;min-width:0;">
+        <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 10px;">STAFF 01</p>
+        <h3 style="font-size:clamp(22px,2.8vw,30px);font-weight:900;color:var(--c-ink);margin:0 0 4px;letter-spacing:.04em;line-height:1.3;"><span class="line-chunk">Nさん</span></h3>
+        <p style="font-size:13px;font-weight:700;color:#666;margin:0 0 18px;letter-spacing:.04em;">外装工事 担当</p>
+        <p style="display:inline-block;font-size:13px;font-weight:700;color:var(--c-brand);background:#EAF1F6;padding:7px 14px;border-radius:3px;margin:0 0 18px;letter-spacing:.02em;">担当：外装工事・付帯部</p>
+        <div style="display:flex;flex-direction:column;gap:14px;border-left:3px solid #DDE7EE;padding-left:clamp(16px,2vw,22px);">
+          <p style="font-size:14.5px;line-height:2;color:#444;margin:0;text-wrap:pretty;">心がけているのは、<strong style="color:var(--c-ink);background:linear-gradient(transparent 62%,#d8e6f0 62%);">見えないところを手を抜かないこと。</strong>下地の処理は仕上がってしまえば分かりませんが、数年後に必ず差が出ます。</p>
+          <p style="font-size:14.5px;line-height:2;color:#444;margin:0;text-wrap:pretty;">作業の前に、その日どこまで進めるのかをお伝えするようにしています。工事は生活のすぐ横で進むので、分からないまま音がするのは不安だと思うんです。</p>
+          <p style="font-size:14.5px;line-height:2;color:#444;margin:0;text-wrap:pretty;">気になることは、その場で遠慮なく聞いてください。「こんなこと聞いていいのかな」という質問がいちばんありがたいです。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- INTERVIEW 02 -->
+    <article data-interview class="rv" style="flex-direction:row-reverse;">
+      <div data-iv-media>
+        <div style="position:relative;aspect-ratio:5/6;background:var(--c-cream);border-radius:8px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;">
+          <span style="position:absolute;top:14px;left:14px;background:var(--c-brand);color:#fff;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;padding:5px 12px;border-radius:2px;">現場担当</span>
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="屋根・防水工事担当 Mさんのイメージイラスト" style="width:90%;height:auto;display:block;mix-blend-mode:multiply;">
+        </div>
+      </div>
+      <div style="flex:1;min-width:0;">
+        <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 10px;">STAFF 02</p>
+        <h3 style="font-size:clamp(22px,2.8vw,30px);font-weight:900;color:var(--c-ink);margin:0 0 4px;letter-spacing:.04em;line-height:1.3;"><span class="line-chunk">Mさん</span></h3>
+        <p style="font-size:13px;font-weight:700;color:#666;margin:0 0 18px;letter-spacing:.04em;">屋根・防水工事 担当</p>
+        <p style="display:inline-block;font-size:13px;font-weight:700;color:var(--c-brand);background:#EAF1F6;padding:7px 14px;border-radius:3px;margin:0 0 18px;letter-spacing:.02em;">担当：屋根・防水工事</p>
+        <div style="display:flex;flex-direction:column;gap:14px;border-left:3px solid #DDE7EE;padding-left:clamp(16px,2vw,22px);">
+          <p style="font-size:14.5px;line-height:2;color:#444;margin:0;text-wrap:pretty;">雨漏りのご相談が多いのですが、<strong style="color:var(--c-ink);background:linear-gradient(transparent 62%,#d8e6f0 62%);">まず原因を突きとめることを大事にしています。</strong>塞ぐだけでは、また同じところから水が入ってきます。</p>
+          <p style="font-size:14.5px;line-height:2;color:#444;margin:0;text-wrap:pretty;">屋根の上はご依頼主が確認できないので、作業前と作業後の写真をお見せしています。何をしたのかが分かるほうが、納得していただけると思うので。</p>
+          <p style="font-size:14.5px;line-height:2;color:#444;margin:0;text-wrap:pretty;">今すぐ工事が必要かどうかも、正直にお伝えします。様子を見てよい場合は、そう申し上げます。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- INTERVIEW 03 -->
+    <article data-interview class="rv" style="flex-direction:row;">
+      <div data-iv-media>
+        <div style="position:relative;aspect-ratio:5/6;background:var(--c-cream);border-radius:8px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;">
+          <span style="position:absolute;top:14px;left:14px;background:var(--c-ink);color:#fff;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;padding:5px 12px;border-radius:2px;">調査担当</span>
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="現地調査担当 Iさんのイメージイラスト" style="width:90%;height:auto;display:block;mix-blend-mode:multiply;">
+        </div>
+      </div>
+      <div style="flex:1;min-width:0;">
+        <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 10px;">STAFF 03</p>
+        <h3 style="font-size:clamp(22px,2.8vw,30px);font-weight:900;color:var(--c-ink);margin:0 0 4px;letter-spacing:.04em;line-height:1.3;"><span class="line-chunk">Iさん</span></h3>
+        <p style="font-size:13px;font-weight:700;color:#666;margin:0 0 18px;letter-spacing:.04em;">現地調査・お見積り 担当</p>
+        <p style="display:inline-block;font-size:13px;font-weight:700;color:var(--c-brand);background:#EAF1F6;padding:7px 14px;border-radius:3px;margin:0 0 18px;letter-spacing:.02em;">担当：現地調査・お見積り</p>
+        <div style="display:flex;flex-direction:column;gap:14px;border-left:3px solid #DDE7EE;padding-left:clamp(16px,2vw,22px);">
+          <p style="font-size:14.5px;line-height:2;color:#444;margin:0;text-wrap:pretty;">お見積りは、<strong style="color:var(--c-ink);background:linear-gradient(transparent 62%,#d8e6f0 62%);">何にいくらかかるのかを分けて書く</strong>ようにしています。「一式」でまとめてしまうと、比べることもできませんから。</p>
+          <p style="font-size:14.5px;line-height:2;color:#444;margin:0;text-wrap:pretty;">現地調査では、気になっている箇所だけでなく、建物全体をひととおり見ます。あとから追加が出ると、お互いに困ってしまうので。</p>
+          <p style="font-size:14.5px;line-height:2;color:#444;margin:0;text-wrap:pretty;">その場で契約をお願いすることはありません。お見積りをお渡しして、ゆっくりご検討ください。</p>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ============ 1日の流れ ============ -->
+  <section style="background:var(--c-cream-2);">
+    <div style="max-width:880px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);">
+      <div class="rv" style="display:flex;align-items:stretch;gap:18px;margin-bottom:clamp(20px,3vh,28px);">
+        <div style="width:3px;background:linear-gradient(180deg,var(--c-brand-2),var(--c-brand));flex:none;"></div>
+        <div>
+          <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 6px;">A DAY ON SITE</p>
+          <h3 style="font-size:clamp(20px,2.6vw,28px);font-weight:900;color:var(--c-ink);margin:0;letter-spacing:.04em;">工事当日の流れ</h3>
+        </div>
+      </div>
+
+      <!-- 休憩アピール -->
+      <div class="rv d1" style="display:flex;align-items:center;gap:14px;background:#E8F1F7;border:1px solid #C7DDEA;border-radius:6px;padding:16px 20px;margin-bottom:clamp(28px,4vh,40px);">
+        <span aria-hidden="true" style="font-size:22px;line-height:1;flex:none;">☕</span>
+        <p style="font-size:13.5px;line-height:1.8;color:var(--c-ink);margin:0;text-wrap:pretty;"><strong>作業は原則 8:00〜17:00。</strong>作業音が止まる休憩の時間帯もあらかじめお伝えしますので、ご予定を立てる目安にしてください。</p>
+      </div>
+
+      <!-- timeline -->
+      <ol style="list-style:none;margin:0;padding:0;">
+
+        <!-- 8:00 -->
+        <li class="rv" style="display:flex;gap:clamp(14px,3vw,24px);">
+          <div style="flex:none;width:clamp(58px,9vw,72px);text-align:right;padding-top:2px;">
+            <span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:clamp(22px,3vw,28px);color:var(--c-brand);letter-spacing:.02em;">8:00</span>
+          </div>
+          <div style="flex:none;width:18px;display:flex;justify-content:center;position:relative;">
+            <div aria-hidden="true" style="position:absolute;top:10px;bottom:-10px;width:2px;background:#D9E3EA;"></div>
+            <div aria-hidden="true" style="position:relative;width:15px;height:15px;border-radius:50%;background:var(--c-brand);margin-top:4px;border:3px solid var(--c-cream-2);z-index:1;"></div>
+          </div>
+          <div style="flex:1;min-width:0;background:#fff;border-radius:6px;padding:clamp(16px,2.4vw,22px);margin-bottom:16px;">
+            <h4 style="font-size:15.5px;font-weight:700;color:var(--c-ink);margin:0 0 7px;">現場到着・ご挨拶・作業開始</h4>
+            <p style="font-size:14px;color:#666;line-height:1.9;margin:0;text-wrap:pretty;">到着後にご挨拶し、その日の作業内容と手順を確認します。準備が整い次第、作業を開始します。</p>
+          </div>
+        </li>
+
+        <!-- 10:00 BREAK -->
+        <li class="rv d1" style="display:flex;gap:clamp(14px,3vw,24px);">
+          <div style="flex:none;width:clamp(58px,9vw,72px);text-align:right;padding-top:2px;">
+            <span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:clamp(22px,3vw,28px);color:#2f6d92;letter-spacing:.02em;">10:00</span>
+          </div>
+          <div style="flex:none;width:18px;display:flex;justify-content:center;position:relative;">
+            <div aria-hidden="true" style="position:absolute;top:10px;bottom:-10px;width:2px;background:#D9E3EA;"></div>
+            <div aria-hidden="true" style="position:relative;width:15px;height:15px;border-radius:50%;background:var(--c-brand-2);margin-top:4px;border:3px solid var(--c-cream-2);z-index:1;"></div>
+          </div>
+          <div style="flex:1;min-width:0;background:#E8F1F7;border-left:4px solid var(--c-brand-2);border-radius:6px;padding:clamp(16px,2.4vw,22px);margin-bottom:16px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:7px;flex-wrap:wrap;">
+              <h4 style="font-size:15.5px;font-weight:700;color:var(--c-ink);margin:0;">小休憩</h4>
+              <span style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;color:#fff;background:var(--c-brand-2);padding:3px 10px;border-radius:999px;">☕ 15分</span>
+            </div>
+            <p style="font-size:13px;color:#6b6253;line-height:1.9;margin:0;text-wrap:pretty;">午前の作業の合間に15分ほど作業を止めます。作業音が気になる時間の目安にしてください。</p>
+          </div>
+        </li>
+
+        <!-- 12:00 LUNCH -->
+        <li class="rv d2" style="display:flex;gap:clamp(14px,3vw,24px);">
+          <div style="flex:none;width:clamp(58px,9vw,72px);text-align:right;padding-top:2px;">
+            <span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:clamp(22px,3vw,28px);color:#2f6d92;letter-spacing:.02em;">12:00</span>
+          </div>
+          <div style="flex:none;width:18px;display:flex;justify-content:center;position:relative;">
+            <div aria-hidden="true" style="position:absolute;top:10px;bottom:-10px;width:2px;background:#D9E3EA;"></div>
+            <div aria-hidden="true" style="position:relative;width:15px;height:15px;border-radius:50%;background:var(--c-brand-2);margin-top:4px;border:3px solid var(--c-cream-2);z-index:1;"></div>
+          </div>
+          <div style="flex:1;min-width:0;background:#E8F1F7;border-left:4px solid var(--c-brand-2);border-radius:6px;padding:clamp(16px,2.4vw,22px);margin-bottom:16px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:7px;flex-wrap:wrap;">
+              <h4 style="font-size:15.5px;font-weight:700;color:var(--c-ink);margin:0;">昼休憩</h4>
+              <span style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;color:#fff;background:#2f6d92;padding:3px 10px;border-radius:999px;">🍱 60分</span>
+            </div>
+            <p style="font-size:13px;color:#6b6253;line-height:1.9;margin:0;text-wrap:pretty;">60分ほど作業を止めます。この時間帯は音が出ませんので、在宅でのお用事などにお使いください。</p>
+          </div>
+        </li>
+
+        <!-- 15:00 BREAK -->
+        <li class="rv d3" style="display:flex;gap:clamp(14px,3vw,24px);">
+          <div style="flex:none;width:clamp(58px,9vw,72px);text-align:right;padding-top:2px;">
+            <span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:clamp(22px,3vw,28px);color:#2f6d92;letter-spacing:.02em;">15:00</span>
+          </div>
+          <div style="flex:none;width:18px;display:flex;justify-content:center;position:relative;">
+            <div aria-hidden="true" style="position:absolute;top:10px;bottom:-10px;width:2px;background:#D9E3EA;"></div>
+            <div aria-hidden="true" style="position:relative;width:15px;height:15px;border-radius:50%;background:var(--c-brand-2);margin-top:4px;border:3px solid var(--c-cream-2);z-index:1;"></div>
+          </div>
+          <div style="flex:1;min-width:0;background:#E8F1F7;border-left:4px solid var(--c-brand-2);border-radius:6px;padding:clamp(16px,2.4vw,22px);margin-bottom:16px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:7px;flex-wrap:wrap;">
+              <h4 style="font-size:15.5px;font-weight:700;color:var(--c-ink);margin:0;">小休憩</h4>
+              <span style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;color:#fff;background:var(--c-brand-2);padding:3px 10px;border-radius:999px;">☕ 15分</span>
+            </div>
+            <p style="font-size:13px;color:#6b6253;line-height:1.9;margin:0;text-wrap:pretty;">午後にもう一度15分ほど休憩をとります。安全に作業を続けるための時間です。</p>
+          </div>
+        </li>
+
+        <!-- 17:00 -->
+        <li class="rv d3" style="display:flex;gap:clamp(14px,3vw,24px);">
+          <div style="flex:none;width:clamp(58px,9vw,72px);text-align:right;padding-top:2px;">
+            <span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:clamp(22px,3vw,28px);color:var(--c-brand);letter-spacing:.02em;">17:00</span>
+          </div>
+          <div style="flex:none;width:18px;display:flex;justify-content:center;position:relative;">
+            <div aria-hidden="true" style="position:relative;width:15px;height:15px;border-radius:50%;background:var(--c-brand);margin-top:4px;border:3px solid var(--c-cream-2);z-index:1;"></div>
+          </div>
+          <div style="flex:1;min-width:0;background:#fff;border-radius:6px;padding:clamp(16px,2.4vw,22px);">
+            <h4 style="font-size:15.5px;font-weight:700;color:var(--c-ink);margin:0 0 7px;">作業終了・片付け・ご報告</h4>
+            <p style="font-size:14px;color:#666;line-height:1.9;margin:0;text-wrap:pretty;">その日の作業はここまで。周囲を片付けたうえで、進み具合をご報告して引き上げます。</p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 職場の雰囲気 ============ -->
+  <section style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);">
+    <div class="rv" style="text-align:center;margin-bottom:clamp(32px,4.5vh,48px);">
+      <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.2em;color:var(--c-brand);margin:0 0 12px;">ON SITE</p>
+      <h3 style="font-size:clamp(20px,2.6vw,28px);font-weight:900;color:var(--c-ink);margin:0;letter-spacing:.04em;">現場の様子</h3>
+    </div>
+    <div data-atmos style="display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:repeat(2,clamp(150px,19vw,216px));gap:clamp(12px,2vw,16px);">
+      <div class="rv-scale" style="grid-row:span 2;background:#e3e1da;border-radius:2px;"></div>
+      <div class="rv-scale d1" style="background:#e3e1da;border-radius:2px;"></div>
+      <div class="rv-scale d2" style="background:#e3e1da;border-radius:2px;"></div>
+      <div class="rv-scale d2" style="background:#e3e1da;border-radius:2px;"></div>
+      <div class="rv-scale d3" style="background:#e3e1da;border-radius:2px;"></div>
+    </div>
+  </section>
+
+  <!-- ============ 次の導線 ============ -->
+  <section style="position:relative;overflow:hidden;background:var(--c-ink);">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:#e3e1da;"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(110deg,rgba(20,40,55,.95) 0%,rgba(20,40,55,.86) 46%,rgba(35,56,74,.62) 100%);"></div>
+    <div aria-hidden="true" style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));"></div>
+    <div aria-hidden="true" style="position:absolute;right:-26px;bottom:-46px;font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:clamp(110px,18vw,220px);line-height:.78;color:rgba(255,255,255,.055);pointer-events:none;white-space:nowrap;letter-spacing:.02em;">NEXT STEP</div>
+    <div style="position:relative;max-width:1040px;margin:0 auto;padding:clamp(56px,9vh,100px) clamp(24px,5vw,40px);">
+      <a href="施工の流れ.dc.html" class="rv" data-reqcta style="display:flex;align-items:center;justify-content:space-between;gap:clamp(26px,4vw,52px);flex-wrap:wrap;">
+        <div style="flex:1 1 360px;min-width:0;">
+          <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:12px;letter-spacing:.22em;color:var(--c-brand-2);margin:0 0 14px;">NEXT STEP</p>
+          <h3 style="font-size:clamp(26px,4vw,40px);font-weight:900;color:#fff;margin:0 0 14px;letter-spacing:.04em;line-height:1.35;text-wrap:balance;">施工の流れを見る</h3>
+          <p style="font-size:14.5px;color:rgba(255,255,255,.72);margin:0;line-height:1.95;text-wrap:pretty;">ご相談から工事完了まで、どのように進むのかをご案内しています。</p>
+        </div>
+        <span data-reqbtn style="flex:none;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;color:var(--c-ink);background:var(--c-brand-2);padding:18px 38px;border-radius:999px;display:inline-flex;align-items:center;gap:12px;white-space:nowrap;box-shadow:0 10px 30px rgba(47,109,146,.32);transition:transform .3s ease,background .3s ease,box-shadow .3s ease;">流れを見る <span data-reqarrow style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:20px;display:inline-block;transition:transform .3s ease;">→</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ CTA C ============ -->
+  <section style="background:#fff;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));"></div>
+    <div class="rv" style="max-width:880px;margin:0 auto;padding:clamp(64px,9vh,110px) clamp(24px,5vw,40px);text-align:center;">
+      <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.2em;color:var(--c-brand);margin:0 0 14px;">ENTRY</p>
+      <h2 style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:900;font-size:clamp(22px,3vw,28px);color:var(--c-ink);margin:0 0 14px;letter-spacing:.04em;">話を聞きに来ませんか。</h2>
+      <p style="font-size:14px;color:#888;margin:0 0 36px;line-height:2;">ご相談だけでも歓迎です。気になることがあれば、お気軽にご連絡ください。</p>
+      <div style="display:inline-flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <a href="お問い合わせ.dc.html" style="display:inline-flex;align-items:center;gap:10px;background:var(--c-ink);color:#fff;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em;padding:16px 40px;justify-content:center;min-width:260px;box-sizing:border-box;transition:background .3s ease;" style-hover="background:var(--c-brand);">応募・お問い合わせ →</a>
+        <a href="tel:06-6543-2100" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--c-ink);font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:16px;font-weight:600;letter-spacing:.1em;padding:16px 30px;border:1px solid #ddd;justify-content:center;min-width:260px;box-sizing:border-box;">06-6543-2100</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER (共通部品) ============ -->
+  <dc-import name="Footer" hint-size="100%,420px"></dc-import>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    // (ヘッダーの色切替は Header.dc.html が担当)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); } });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('.rv,.rvl,.rvr,.rv-scale').forEach((el) => io.observe(el));
+  }
+  componentWillUnmount() { if (this._onScroll) window.removeEventListener('scroll', this._onScroll); }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="theme.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="株式会社エンジョイホーム">
+<meta property="og:image" content="assets/ogp.png">
+<meta property="og:image:width" content="320">
+<meta property="og:image:height" content="240">
+<meta name="twitter:card" content="summary">
+<!-- Webフォント：本番サーバーでは下記1行のコメントを外して有効化する（プレビュー環境では CDN 到達不可のため無効） -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"> -->
+<style>
+  *{box-sizing:border-box;}
+  [data-role-grid],[data-method-grid],[data-where-grid],[data-sign-grid],[data-strength-grid],[data-dr-grid],[data-num-grid],[data-charm-grid],[data-career],[data-value-grid],[data-sdgs-grid],[data-cert-grid],[data-flow-grid]{grid-auto-rows:1fr;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fff;color:var(--c-ink);font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  [data-navitem]:hover [data-dropdown],[data-navitem]:focus-within [data-dropdown]{opacity:1!important;visibility:visible!important;}
+  .mnav-toggle,.mnav-btn,.mnav-panel{display:none;}
+  @media(max-width:840px){
+    nav[data-gnav]{display:none!important;}
+    #footer-grid{grid-template-columns:1fr!important;}
+    header{align-items:center!important;}
+    [data-protect]{display:none!important;}
+    .mnav-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--c-ink);border-radius:7px;margin:auto 16px;cursor:pointer;flex:none;position:relative;z-index:75;}
+    .mnav-btn span{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:transform .3s ease,opacity .3s ease,top .3s ease;}
+    .mnav-btn span:nth-child(1){top:15px;}.mnav-btn span:nth-child(2){top:21px;}.mnav-btn span:nth-child(3){top:27px;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(1){top:21px;transform:rotate(45deg);}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(2){opacity:0;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(3){top:21px;transform:rotate(-45deg);}
+    .mnav-panel{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--c-ink);z-index:74;padding:90px 26px 40px;transform:translateX(100%);transition:transform .42s cubic-bezier(.16,1,.3,1);overflow-y:auto;}
+    .mnav-toggle:checked ~ .mnav-panel{transform:none;}
+    .mnav-panel a{color:#fff;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:16px;font-weight:700;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);letter-spacing:.04em;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .mnav-panel a.sub{font-size:13.5px;font-weight:500;padding-left:18px;color:rgba(255,255,255,.66);}
+    .mnav-panel a em{font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-style:normal;font-size:10.5px;letter-spacing:.14em;color:var(--c-brand-2);font-weight:600;}
+  }
+  .rv,.rvl,.rvr,.rv-scale{opacity:0;transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+  .rv{transform:translateY(40px);}.rvl{transform:translateX(-48px);}.rvr{transform:translateX(48px);}.rv-scale{transform:scale(.95) translateY(22px);}
+  .rv.show,.rvl.show,.rvr.show,.rv-scale.show{opacity:1;transform:none;}
+  .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
+  @keyframes subheroZoom{from{transform:scale(1.12);}to{transform:scale(1.2);}}
+  @media (prefers-reduced-motion:reduce){
+    .rv,.rvl,.rvr,.rv-scale{opacity:1!important;transform:none!important;transition:none!important;}
+    [data-subhero-bg]{animation:none!important;transform:scale(1.12)!important;}
+    html{scroll-behavior:auto;}
+  }
+  @media (max-width:840px){
+    [data-gnav]{display:none!important;}
+    [data-spec-row]{flex-direction:column!important;gap:6px!important;}
+    [data-spec-row] [data-spec-label]{width:auto!important;}
+    [data-cert-grid]{grid-template-columns:1fr 1fr!important;}
+  }
+</style>
+</helmet>
+
+<div style="position:relative;overflow-x:clip;background:#fff;">
+
+  <!-- ============ HEADER (共通部品) ============ -->
+  <dc-import name="Header" active="about" hint-size="100%,0" style="position:absolute;top:0;left:0;width:100%;z-index:60;"></dc-import>
+
+  <!-- ============ HERO F ============ -->
+  <section id="subhero" data-screen-label="会社概要Hero" style="position:relative;height:clamp(340px,52vh,520px);overflow:hidden;background:var(--c-ink);">
+    <div data-subhero-bg aria-hidden="true" style="position:absolute;inset:0;background:#e3e1da;transform:scale(1.12);animation:subheroZoom 14s ease-in-out infinite alternate;will-change:transform;"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(20,40,55,.45) 0%,rgba(20,40,55,.78) 100%);"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(168,205,223,.26) 0%,rgba(47,109,146,.34) 100%);mix-blend-mode:multiply;"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;">
+      <p class="rv d1" style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:clamp(11px,1.4vw,13px);letter-spacing:.34em;color:rgba(255,255,255,.78);margin:0 0 20px;">COMPANY PROFILE</p>
+      <h1 class="rv d2" style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:900;font-size:clamp(28px,4.6vw,48px);color:#fff;margin:0 0 22px;letter-spacing:.07em;text-shadow:0 2px 24px rgba(20,40,55,.5);">会社概要</h1>
+      <span class="rv d3" style="width:64px;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));display:inline-block;"></span>
+    </div>
+    <div style="position:absolute;bottom:22px;left:0;right:0;text-align:center;">
+      <span style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.55);">HOME ／ 私たちについて ／ 会社概要</span>
+    </div>
+  </section>
+
+  <!-- ============ 会社概要テーブル ============ -->
+  <section style="max-width:1160px;margin:0 auto;padding:clamp(64px,9vh,110px) clamp(24px,5vw,40px) clamp(40px,6vh,64px);">
+    <div class="rv" style="display:flex;align-items:stretch;gap:18px;margin-bottom:clamp(28px,4vh,40px);">
+      <div style="width:3px;background:linear-gradient(180deg,var(--c-brand-2),var(--c-brand));flex:none;"></div>
+      <div>
+        <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 6px;">OVERVIEW</p>
+        <h3 style="font-size:clamp(20px,2.6vw,26px);font-weight:900;color:var(--c-ink);margin:0;letter-spacing:.04em;">会社概要</h3>
+      </div>
+    </div>
+    <div class="rv d1" style="display:flex;flex-direction:column;">
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">社名</span>
+        <span style="font-size:14.5px;color:var(--c-ink);font-weight:500;">株式会社エンジョイホーム</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">代表者</span>
+        <span style="font-size:14.5px;color:var(--c-ink);font-weight:500;">代表取締役　山田 太郎</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">創業</span>
+        <span style="font-size:14.5px;color:var(--c-ink);font-weight:500;">平成5年1月</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">設立</span>
+        <span style="font-size:14.5px;color:var(--c-ink);font-weight:500;">平成12年1月</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">資本金</span>
+        <span style="font-size:14.5px;color:var(--c-ink);font-weight:500;">2,000万円</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">従業員数</span>
+        <span style="font-size:14.5px;color:var(--c-ink);font-weight:500;">15名</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">電話番号</span>
+        <span style="font-size:14.5px;color:var(--c-ink);font-weight:500;">06-6543-2100　<span style="font-size:12px;color:#C0392B;font-weight:700;">※営業電話お断り※</span></span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">FAX</span>
+        <span style="font-size:14.5px;color:var(--c-ink);font-weight:500;">06-6543-2101</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">所在地</span>
+        <span style="font-size:14.5px;color:var(--c-ink);font-weight:500;line-height:1.8;">〒532-0011<br>大阪府大阪市淀川区西中島5丁目8-12</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">資材置場</span>
+        <span style="font-size:14.5px;color:var(--c-ink);font-weight:500;line-height:1.8;">〒739-0262<br>大阪府東大阪市志和町志和東2927-2</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">営業時間</span>
+        <span style="font-size:14.5px;color:var(--c-ink);font-weight:500;">8:00〜17:00</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">定休日</span>
+        <span style="font-size:14.5px;color:var(--c-ink);font-weight:500;">日曜日</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">メール</span>
+        <a href="mailto:info@enjoyhome-paint.co.jp" style="font-size:14.5px;color:var(--c-brand);font-weight:500;text-decoration:underline;text-underline-offset:3px;">info@enjoyhome-paint.co.jp</a>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">サイトURL</span>
+        <a href="https://enjoyhome-paint.com/" target="_blank" rel="noopener" style="font-size:14.5px;color:var(--c-brand);font-weight:500;text-decoration:underline;text-underline-offset:3px;">https://enjoyhome-paint.com/</a>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">建設業許可</span>
+        <span style="font-size:14.5px;color:var(--c-ink);font-weight:500;">大阪府知事許可（特-6）第40604号</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-cream);">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">対応エリア</span>
+        <span style="font-size:14.5px;color:var(--c-ink);font-weight:500;">大阪府内を中心に大阪府全域</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;">
+        <span data-spec-label style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">主要取引銀行</span>
+        <span style="font-size:14.5px;color:var(--c-ink);font-weight:500;line-height:1.8;">大阪銀行・大阪信用金庫・大阪市信用組合・もみじ銀行</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 保有資格 ============ -->
+  <section style="background:var(--c-cream-2);">
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,90px) clamp(24px,5vw,40px);">
+      <div class="rv" style="display:flex;align-items:stretch;gap:18px;margin-bottom:clamp(28px,4vh,40px);">
+        <div style="width:3px;background:linear-gradient(180deg,var(--c-brand-2),var(--c-brand));flex:none;"></div>
+        <div>
+          <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 6px;">QUALIFICATIONS</p>
+          <h3 style="font-size:clamp(20px,2.6vw,26px);font-weight:900;color:var(--c-ink);margin:0;letter-spacing:.04em;">保有資格</h3>
+        </div>
+      </div>
+      <div data-cert-grid class="rv d1" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
+        <span style="font-size:13.5px;color:#444;padding:16px 20px;background:#fff;border-radius:2px;">1級建築施工管理技士</span>
+        <span style="font-size:13.5px;color:#444;padding:16px 20px;background:#fff;border-radius:2px;">2級建築施工管理技士</span>
+        <span style="font-size:13.5px;color:#444;padding:16px 20px;background:#fff;border-radius:2px;">2級建設機械施工管理技士</span>
+      </div>
+      <p class="rv d2" style="font-size:12px;color:#999;margin:18px 0 0;">※ その他、各種技能講習・特別教育の保有者が在籍しています。</p>
+    </div>
+  </section>
+
+  <!-- ============ 業務内容 ============ -->
+  <section style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,90px) clamp(24px,5vw,40px);">
+    <div class="rv" style="display:flex;align-items:stretch;gap:18px;margin-bottom:clamp(28px,4vh,40px);">
+      <div style="width:3px;background:linear-gradient(180deg,var(--c-brand-2),var(--c-brand));flex:none;"></div>
+      <div>
+        <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 6px;">OUR WORK</p>
+        <h3 style="font-size:clamp(20px,2.6vw,26px);font-weight:900;color:var(--c-ink);margin:0;letter-spacing:.04em;">業務内容</h3>
+      </div>
+    </div>
+    <div class="rv d1" style="display:flex;flex-direction:column;gap:clamp(24px,3.5vh,36px);">
+      <div>
+        <h4 style="font-size:16px;font-weight:700;color:var(--c-ink);margin:0 0 16px;letter-spacing:.03em;display:flex;align-items:center;gap:10px;"><span style="width:8px;height:8px;background:var(--c-brand);border-radius:50%;flex:none;"></span>外装・屋根の工事</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">外装の仕上げ工事</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">下地の補修</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">洗浄・下地処理</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">シーリング工事</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">屋根の点検・補修</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">板金工事</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">防水工事</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">雨どい・樋の補修</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">足場工事</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">内装の仕上げ</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">設備の入れ替え</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">原状回復・部分補修</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">防草工事</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">その他各工法</span>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:16px;font-weight:700;color:var(--c-ink);margin:0 0 16px;letter-spacing:.03em;display:flex;align-items:center;gap:10px;"><span style="width:8px;height:8px;background:var(--c-brand);border-radius:50%;flex:none;"></span>内装・付帯の工事</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">内装リフォーム工事</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">外構・付帯工事</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">補修・メンテナンス</span>
+          <span style="font-size:13px;color:#444;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">板金補修工事</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ アクセス（地図） ============ -->
+  <section style="background:var(--c-cream-2);">
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,90px) clamp(24px,5vw,40px);">
+      <div class="rv" style="display:flex;align-items:stretch;gap:18px;margin-bottom:clamp(28px,4vh,40px);">
+        <div style="width:3px;background:linear-gradient(180deg,var(--c-brand-2),var(--c-brand));flex:none;"></div>
+        <div>
+          <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 6px;">ACCESS</p>
+          <h3 style="font-size:clamp(20px,2.6vw,26px);font-weight:900;color:var(--c-ink);margin:0;letter-spacing:.04em;">アクセス</h3>
+        </div>
+      </div>
+      <div class="rv-scale" style="position:relative;aspect-ratio:21/9;background:#dfe6e0;border-radius:2px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid var(--c-cream);">
+        <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(rgba(138,112,72,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(138,112,72,.06) 1px,transparent 1px);background-size:32px 32px;"></div>
+        <div style="position:relative;width:44px;height:44px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:18px;height:18px;background:var(--c-brand);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 6px 16px rgba(20,40,55,.3);"></div>
+        </div>
+        <p style="position:relative;font-size:13px;color:#6b6253;margin:16px 0 0;letter-spacing:.04em;">〒532-0011 大阪府大阪市淀川区西中島5丁目8-12</p>
+        <p style="position:relative;font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#8a97a3;margin:8px 0 0;">GOOGLE MAP（公開時に埋め込み）</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA C ============ -->
+  <section style="background:#fff;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));"></div>
+    <div class="rv" style="max-width:880px;margin:0 auto;padding:clamp(64px,9vh,110px) clamp(24px,5vw,40px);text-align:center;">
+      <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.2em;color:var(--c-brand);margin:0 0 14px;">CONTACT</p>
+      <h2 style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:900;font-size:clamp(22px,3vw,28px);color:var(--c-ink);margin:0 0 14px;letter-spacing:.04em;">お気軽にご相談ください。</h2>
+      <p style="font-size:14px;color:#888;margin:0 0 36px;line-height:2;">工事のご依頼・お見積りはもちろん、「こんな工事でも頼める？」というご相談もお待ちしています。</p>
+      <div style="display:inline-flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <a href="お問い合わせ.dc.html" style="display:inline-flex;align-items:center;gap:10px;background:var(--c-ink);color:#fff;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em;padding:16px 40px;justify-content:center;min-width:260px;box-sizing:border-box;transition:background .3s ease;" style-hover="background:var(--c-brand);">お問い合わせはこちら →</a>
+        <a href="tel:06-6543-2100" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--c-ink);font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:16px;font-weight:600;letter-spacing:.1em;padding:16px 30px;border:1px solid #ddd;justify-content:center;min-width:260px;box-sizing:border-box;">06-6543-2100</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER (共通部品) ============ -->
+  <dc-import name="Footer" hint-size="100%,420px"></dc-import>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    // (ヘッダーの色切替は Header.dc.html が担当)
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('.rv,.rvl,.rvr,.rv-scale').forEach((el) => io.observe(el));
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+}
+</script>
+</body>
+</html>

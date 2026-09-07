@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<!-- Webフォント：本番サーバーでは下記1行のコメントを外して有効化する（プレビュー環境では CDN 到達不可のため無効） -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"> -->
+<link rel="stylesheet" href="theme.css">
+<style>
+  @media (max-width:760px){ #footer-grid{grid-template-columns:1fr!important;} }
+  @media (max-width:560px){ #footer-contact{flex-direction:column!important;align-items:flex-start!important;} }
+</style>
+</helmet>
+<footer id="contact" data-screen-label="Contact" style="background:var(--c-cream);color:var(--c-ink);">
+
+  <sc-if value="{{ contact }}" hint-placeholder-val="{{ false }}">
+  <div id="footer-contact" style="max-width:1200px;margin:0 auto;padding:clamp(52px,8vh,80px) clamp(24px,5vw,64px) clamp(44px,6vh,64px);display:flex;align-items:flex-end;justify-content:space-between;gap:clamp(20px,4vw,48px);flex-wrap:wrap;border-bottom:1px solid #ddd2bb;">
+    <div>
+      <p style="display:flex;align-items:center;gap:12px;margin:0 0 14px;font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;letter-spacing:.18em;color:#6b6253;font-size:12px;"><span style="width:28px;height:1px;background:var(--c-brand-2);display:block;"></span>お問い合わせ</p>
+      <h2 style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:clamp(40px,7vw,88px);font-weight:700;letter-spacing:.12em;line-height:.95;color:var(--c-ink);margin:0 0 16px;">CONTACT</h2>
+      <p style="font-size:13.5px;color:#5a5346;margin:0;">現地調査・お見積りのご依頼、工事のご相談はお気軽にどうぞ。</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;min-width:260px;">
+      <a href="tel:06-6543-2100" style="display:flex;align-items:center;gap:18px;padding:16px 22px;border:1px solid rgba(35,56,74,.2);">
+        <span style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:.22em;color:var(--c-brand);flex:none;">TEL</span>
+        <span style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:clamp(18px,2.4vw,26px);letter-spacing:.1em;color:var(--c-ink);line-height:1;">06-6543-2100</span>
+      </a>
+      <a href="お問い合わせ.dc.html" style="display:flex;align-items:center;justify-content:center;background:var(--c-brand);color:#fff;padding:16px;font-size:14px;font-weight:700;letter-spacing:.1em;" style-hover="filter:brightness(1.08);">無料お見積り・ご相談 →</a>
+      <p style="font-size:11.5px;color:#837a66;margin:0;text-align:right;">受付 8:00〜17:00（土日祝休）</p>
+    </div>
+  </div>
+  </sc-if>
+
+  <div id="footer-grid" style="max-width:1200px;margin:0 auto;padding:clamp(36px,5vh,52px) clamp(24px,5vw,64px);display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(24px,3vw,40px);align-items:start;">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="display:flex;flex-direction:column;line-height:1.12;">
+          <span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:17px;letter-spacing:.07em;color:var(--c-ink);white-space:nowrap;">ENJOY HOME</span>
+          <span style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:700;font-size:clamp(14px,1.5vw,18px);letter-spacing:.1em;color:var(--c-brand);white-space:nowrap;">株式会社エンジョイホーム</span>
+        </span>
+      </div>
+      <address style="font-style:normal;font-size:12.5px;line-height:1.9;color:#5a5346;">大阪市の住まいの工事・メンテナンスはお任せください｜株式会社エンジョイホーム<br>〒532-0011<br>大阪府大阪市淀川区西中島5丁目8-12<br>TEL 06-6543-2100<br>FAX 06-6543-2101</address>
+    </div>
+    <nav>
+      <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:.16em;color:var(--c-brand);margin:0 0 12px;">業務案内</p>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:#4d463a;line-height:1.5;">
+        <a href="業務案内.dc.html" style-hover="color:var(--c-brand);">業務案内</a>
+        <a href="工事の品質へのこだわり.dc.html" style-hover="color:var(--c-brand);">工事の品質へのこだわり</a>
+        <a href="施工の流れ.dc.html" style-hover="color:var(--c-brand);">施工の流れ</a>
+        <a href="施工実績.dc.html" style-hover="color:var(--c-brand);">施工実績</a>
+      </div>
+    </nav>
+    <nav>
+      <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:.16em;color:var(--c-brand);margin:0 0 12px;">ご検討中の方へ</p>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:#4d463a;line-height:1.5;">
+        <a href="料金のご案内.dc.html" style-hover="color:var(--c-brand);">料金のご案内</a>
+        <a href="対応エリア.dc.html" style-hover="color:var(--c-brand);">対応エリア</a>
+        <a href="私たちについて.dc.html" style-hover="color:var(--c-brand);">私たちについて</a>
+        <a href="会社概要.dc.html" style-hover="color:var(--c-brand);">会社概要</a>
+        <a href="スタッフ紹介.dc.html" style-hover="color:var(--c-brand);">スタッフ紹介</a>
+      </div>
+    </nav>
+    <nav>
+      <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:.16em;color:var(--c-brand);margin:0 0 12px;">その他</p>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:#4d463a;line-height:1.5;">
+        <a href="よくあるご質問.dc.html" style-hover="color:var(--c-brand);">よくあるご質問</a>
+        <a href="ブログ.dc.html" style-hover="color:var(--c-brand);">ブログ</a>
+        <a href="プライバシーポリシー.dc.html" style-hover="color:var(--c-brand);">プライバシーポリシー</a>
+        <a href="お問い合わせ.dc.html" style-hover="color:var(--c-brand);">お問い合わせ</a>
+      </div>
+    </nav>
+  </div>
+
+  <div style="border-top:1px solid #ddd2bb;">
+    <p style="text-align:center;font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.14em;color:#837a66;padding:14px 0;margin:0;">©ENJOY HOME CO., LTD.</p>
+  </div>
+
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:420},&quot;contact&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}"></script>
+</body>
+</html>
