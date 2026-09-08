@@ -114,7 +114,8 @@
     #work-stack{display:flex!important;}
   }
   @media (prefers-reduced-motion: reduce){
-    [data-hero-slide].hs-wipe{-webkit-mask-image:none!important;mask-image:none!important;animation:none!important;}
+    [data-hero-slide]{transition:opacity .4s ease!important;}
+    [data-hero-streak]{display:none!important;}
     [data-ink] span{transition:none!important;color:var(--c-brand)!important;}
     .rv,.rvl,.rvr{opacity:1!important;transform:none!important;transition:none!important;}
     .marq{animation:none!important;}
@@ -127,11 +128,23 @@
   }
   .preboot [data-ha],.preboot [data-ha-sq]{animation-play-state:paused!important;}
 
-  /* ── ヒーロー：刷毛ワイプ切り替え ── */
-  [data-hero-slide]{position:absolute;inset:0;opacity:0;transition:opacity .7s ease;--brush:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 400' preserveAspectRatio='none'%3E%3Cg fill='%23fff'%3E%3Cpath d='M0,400 L200,400 L200,207 C192,203 186,196 176,198 C166,200 163,209 152,206 C142,203 137,191 128,194 C119,197 116,210 106,208 C96,206 91,194 82,197 C73,200 69,211 58,207 C48,203 43,192 34,196 C25,200 17,208 0,205 Z'/%3E%3Cpath d='M18,205 c3,-11 5,-20 9,-29 l6,2 c-3,10 -5,19 -7,28 z'/%3E%3Cpath d='M63,207 c3,-13 5,-23 9,-33 l6,3 c-3,10 -6,21 -8,31 z'/%3E%3Cpath d='M111,208 c3,-14 6,-25 10,-35 l6,3 c-4,11 -7,22 -9,33 z'/%3E%3Cpath d='M157,206 c4,-12 7,-21 12,-30 l6,3 c-5,10 -8,19 -11,28 z'/%3E%3Ccircle cx='44' cy='186' r='3'/%3E%3Ccircle cx='92' cy='179' r='2.6'/%3E%3Ccircle cx='139' cy='183' r='2.2'/%3E%3Ccircle cx='185' cy='190' r='2.6'/%3E%3C/g%3E%3C/svg%3E");}
+  /* ── ヒーロー：2枚が溶け合うクロスフェード＋刷毛目オーバーレイ ── */
+  [data-hero-slide]{position:absolute;inset:0;opacity:0;transition:opacity 1.5s cubic-bezier(.4,0,.3,1);}
   [data-hero-slide].hs-on{opacity:1;}
-  [data-hero-slide].hs-wipe{opacity:1;-webkit-mask-image:var(--brush);mask-image:var(--brush);-webkit-mask-size:100% 200%;mask-size:100% 200%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;animation:brushWipe 1.6s cubic-bezier(.62,.04,.34,1) forwards;}
-  @keyframes brushWipe{from{-webkit-mask-position:0 0;mask-position:0 0;}to{-webkit-mask-position:0 -100%;mask-position:0 -100%;}}
+  [data-hero-streak]{
+    position:absolute;inset:0;z-index:4;pointer-events:none;opacity:0;
+    background:repeating-linear-gradient(93deg,
+      rgba(255,255,255,0) 0px, rgba(255,255,255,.34) 3px, rgba(255,255,255,.05) 9px,
+      rgba(255,255,255,0) 15px, rgba(255,255,255,.22) 21px, rgba(255,255,255,0) 30px);
+    mix-blend-mode:screen;
+  }
+  [data-hero-streak].hs-sweep{animation:brushSweep 1.6s ease-in-out forwards;}
+  @keyframes brushSweep{
+    0%   {opacity:0;   transform:translate3d(-2.5%,0,0);}
+    32%  {opacity:.62; transform:translate3d(0,0,0);}
+    68%  {opacity:.42; transform:translate3d(1.2%,0,0);}
+    100% {opacity:0;   transform:translate3d(2.5%,0,0);}
+  }
   /* ── スクロール連動テキストカラー ── */
   [data-ink] span{color:#b9bcc0;transition:color .55s ease;}
   [data-ink].ink-on span{color:var(--c-brand);}
@@ -171,11 +184,12 @@
     <div style="position:absolute;inset:0;max-width:1440px;left:0;right:0;margin:0 auto;overflow:visible;">
 
     <!-- framed full-bleed photo -->
-    <div id="hero-photo" data-ha style="position:absolute;top:clamp(128px,17vh,208px);left:clamp(52px,6vw,112px);right:clamp(52px,6vw,112px);bottom:clamp(58px,8vh,112px);overflow:hidden;z-index:0;animation:heroReveal 1.4s cubic-bezier(.77,0,.175,1) .1s both;">
+    <div id="hero-photo" data-ha style="position:absolute;top:clamp(128px,17vh,208px);left:clamp(52px,6vw,112px);right:clamp(52px,6vw,112px);bottom:clamp(58px,8vh,112px);overflow:hidden;z-index:0;background:#e3e1da;animation:heroReveal 1.4s cubic-bezier(.77,0,.175,1) .1s both;">
       <div data-hero-stack style="position:absolute;inset:0;z-index:0;">
         <div data-hero-slide class="hs-on" style="z-index:1;"><img src="assets/photo-after.png" alt="外壁・屋根の塗り替えが完了した2階建て住宅" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#e3e1da;object-position:center 45%;"></div>
         <div data-hero-slide style="z-index:1;"><img src="assets/photo-scaffold.jpeg" alt="足場と自社シートを掛けた施工中の現場" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#dcdfd8;object-position:center 55%;"></div>
         <div data-hero-slide style="z-index:1;"><img src="assets/photo-white-house.png" alt="白く塗り替えたレンガ調外壁の住宅" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#d9dde2;object-position:center 50%;"></div>
+        <div data-hero-streak aria-hidden="true"></div>
       </div>
       <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(20,40,55,.10) 0%,rgba(20,40,55,.02) 42%,rgba(20,40,55,.52) 100%);"></div>
 
@@ -867,21 +881,25 @@ class Component extends DCLogic {
         });
         if (hCur) hCur.textContent = '0' + (hi + 1);
       };
+      const streak = q('[data-hero-streak]');
       const showHero = (next) => {
         if (!hSlides.length) return;
         next = (next + hSlides.length) % hSlides.length;
         if (next === hi) return;
-        const el = hSlides[next], prev = hi;
+        const prev = hi;
+        // 次の写真を前面に重ねてフェードインさせる。下の写真は遷移中ずっと不透明のまま
+        // （合成不透明度が常に1のため、地色が透ける明滅が起きない）
         hSlides.forEach((sl, n) => { sl.style.zIndex = n === next ? 3 : (n === prev ? 2 : 1); });
-        if (reduce) {
-          el.classList.add('hs-on');
-          hSlides.forEach((sl, n) => { if (n !== next) sl.classList.remove('hs-on', 'hs-wipe'); });
-        } else {
-          el.classList.remove('hs-on'); void el.offsetWidth; el.classList.add('hs-wipe');
-          setTimeout(() => {
-            el.classList.add('hs-on'); el.classList.remove('hs-wipe');
-            hSlides.forEach((sl, n) => { if (n !== next) sl.classList.remove('hs-on', 'hs-wipe'); });
-          }, 1700);
+        hSlides[next].classList.add('hs-on');
+        clearTimeout(this._heroFade);
+        this._heroFade = setTimeout(() => {
+          if (hi !== next) return;
+          hSlides.forEach((sl, n) => { if (n !== next) sl.classList.remove('hs-on'); });
+        }, 1600);
+        if (!reduce && streak) {
+          streak.classList.remove('hs-sweep');
+          void streak.offsetWidth;
+          streak.classList.add('hs-sweep');
         }
         hi = next; paintDots();
       };
@@ -970,6 +988,7 @@ class Component extends DCLogic {
   }
   componentWillUnmount() {
     clearTimeout(this._t);
+    clearTimeout(this._heroFade);
     if (this._htimer) this._htimer();
     if (this._rafId) cancelAnimationFrame(this._rafId);
     if (this._io) this._io.disconnect();
