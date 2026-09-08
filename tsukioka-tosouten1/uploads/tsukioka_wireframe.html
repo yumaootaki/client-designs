@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>月岡塗装店 リニューアル ワイヤーフレーム(全14P)</title>
+<style>
+  :root{
+    --wf-000:#ffffff; --wf-050:#f5f5f5; --wf-100:#e5e5e5; --wf-200:#d4d4d4;
+    --wf-300:#a3a3a3; --wf-400:#737373; --wf-500:#525252; --wf-900:#171717;
+    --wf-line:#9ca3af;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:var(--wf-900);background:var(--wf-050);}
+  .toc{background:var(--wf-900);color:#fff;padding:24px 32px;position:sticky;top:0;z-index:50;}
+  .toc h1{font-size:16px;margin:0 0 10px;font-weight:700;}
+  .toc-grid{display:flex;flex-wrap:wrap;gap:6px;}
+  .toc a{color:#fff;background:var(--wf-500);border:1px solid var(--wf-400);border-radius:3px;padding:5px 10px;font-size:12px;text-decoration:none;white-space:nowrap;}
+  .toc a.new{background:#3f3f46;border-color:#71717a;}
+  .toc a:hover{background:var(--wf-400);}
+  .legend{font-size:11px;color:var(--wf-300);margin-top:8px;}
+
+  .page{max-width:1180px;margin:40px auto;background:#fff;border:1px solid var(--wf-200);}
+  .page-label{background:var(--wf-900);color:#fff;font-size:12px;padding:6px 16px;letter-spacing:.02em;}
+  .page-label b{font-size:13px;}
+
+  /* --- common header/footer wireframe --- */
+  .wf-header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:2px solid var(--wf-900);}
+  .wf-logo{width:150px;height:36px;background:var(--wf-200);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--wf-500);border:1px dashed var(--wf-400);}
+  .wf-nav{display:flex;gap:14px;flex-wrap:wrap;}
+  .wf-nav span{font-size:11px;background:var(--wf-100);border:1px solid var(--wf-300);padding:4px 8px;border-radius:2px;color:var(--wf-500);}
+  .wf-nav span.cta{background:var(--wf-900);color:#fff;border-color:var(--wf-900);}
+  .wf-tel{font-size:11px;color:var(--wf-500);border:1px dashed var(--wf-400);padding:4px 8px;}
+
+  .wf-footer{border-top:2px solid var(--wf-900);padding:20px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  .wf-footer .col{font-size:11px;color:var(--wf-500);}
+  .wf-footer .map{width:220px;height:90px;background:repeating-linear-gradient(45deg,var(--wf-200),var(--wf-200) 6px,var(--wf-100) 6px,var(--wf-100) 12px);border:1px solid var(--wf-300);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--wf-400);}
+
+  /* --- generic blocks --- */
+  .sec{padding:26px 24px;border-bottom:1px solid var(--wf-200);}
+  .sec:last-of-type{border-bottom:none;}
+  .sec-title{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--wf-400);margin-bottom:10px;}
+  .box{border:1px solid var(--wf-300);background:var(--wf-050);padding:10px;font-size:12px;color:var(--wf-500);border-radius:2px;}
+  .img{background:repeating-linear-gradient(45deg,var(--wf-200),var(--wf-200) 8px,var(--wf-100) 8px,var(--wf-100) 16px);border:1px solid var(--wf-300);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--wf-500);min-height:120px;}
+  .row{display:flex;gap:16px;flex-wrap:wrap;}
+  .row > *{flex:1;min-width:200px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .card{border:1px solid var(--wf-300);padding:12px;font-size:12px;color:var(--wf-500);background:#fff;}
+  .btn{display:inline-block;border:1px solid var(--wf-900);color:var(--wf-900);font-size:11px;padding:6px 14px;border-radius:2px;}
+  .btn.solid{background:var(--wf-900);color:#fff;}
+  .note{font-size:11px;color:#b91c1c;background:#fef2f2;border:1px dashed #fca5a5;padding:6px 10px;margin-top:6px;}
+  h2.h{font-size:15px;margin:0 0 4px;}
+  p.p{font-size:12px;color:var(--wf-500);margin:0 0 10px;line-height:1.6;}
+  .hero{min-height:280px;background:repeating-linear-gradient(45deg,var(--wf-300),var(--wf-300) 10px,var(--wf-200) 10px,var(--wf-200) 20px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;}
+  .hero .htitle{font-size:20px;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.4);}
+  .hero .hsub{font-size:12px;color:#fff;}
+  .breadcrumb{font-size:11px;color:var(--wf-400);padding:8px 24px;background:var(--wf-100);}
+  .pagehead{padding:22px 24px 6px;}
+</style>
+</head>
+<body>
+
+<div class="toc">
+  <h1>月岡塗装店 リニューアル ワイヤーフレーム / 全14ページ サイトマップ</h1>
+  <div class="toc-grid">
+    <a href="#p01">01 ホーム</a>
+    <a href="#p02" class="new">02 ご依頼を検討中の方へ★新</a>
+    <a href="#p03">03 業務案内</a>
+    <a href="#p04" class="new">04 こだわり★新</a>
+    <a href="#p05">05 施工実績</a>
+    <a href="#p06" class="new">06 お客さまの声★新</a>
+    <a href="#p07" class="new">07 料金表★新</a>
+    <a href="#p08" class="new">08 FAQ★新</a>
+    <a href="#p09" class="new">09 月岡塗装店のあゆみ★新</a>
+    <a href="#p10" class="new">10 スタッフ紹介★新</a>
+    <a href="#p11">11 会社概要</a>
+    <a href="#p12">12 採用情報</a>
+    <a href="#p13">13 ブログ</a>
+    <a href="#p14">14 お問い合わせ</a>
+  </div>
+  <div class="legend">グレー斜線 = 画像/写真プレースホルダー ／ ★新 = 新規追加ページ ／ 無印 = 既存ページ(リライト対象)</div>
+</div>
+
+<!-- ============ COMMON HEADER (全ページ共通) ============ -->
+<!-- メインナビ: ホーム/ご依頼を検討中の方へ/業務案内/こだわり/施工実績/お客様の声/料金表/会社概要/お問い合わせ(CTA)
+     サブナビ(フッター/ハンバーガー内): FAQ/あゆみ/スタッフ紹介/採用情報/ブログ -->
+
+<!-- ========================================================= -->
+<!-- 01 ホーム -->
+<!-- ========================================================= -->
+<div class="page" id="p01">
+  <div class="page-label"><b>01 / ホーム(TOP)</b> ー 既存ページ・全面リライト</div>
+  <div class="wf-header">
+    <div class="wf-logo">LOGO 月岡塗装店</div>
+    <div class="wf-nav">
+      <span>ホーム</span><span>ご依頼検討中の方へ</span><span>業務案内</span><span>こだわり</span>
+      <span>施工実績</span><span>お客様の声</span><span>料金表</span><span>会社概要</span>
+      <span class="cta">お問い合わせ</span>
+    </div>
+    <div class="wf-tel">TEL 090-9005-2664</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">HERO(社長本人・現場感を全面に出す)</div>
+    <div class="hero">
+      <div class="htitle">[社長の施工中カット・全面フルスクリーン写真]</div>
+      <div class="hsub">キャッチコピー(職人らしさ+38年の実績) / サブコピー(対応エリア)</div>
+      <div class="box" style="max-width:360px;">CTAボタン: 無料お見積もり／お電話はこちら</div>
+    </div>
+    <div class="note">刷毛ワイプ切替演出をヒーローに適用(色は青基調に差替) — lead-gen-templateの骨格流用</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">お知らせ帯</div>
+    <div class="box">最新のお知らせ1件 + 「もっと見る」リンク(既存踏襲)</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">当店について(信頼訴求)</div>
+    <div class="row">
+      <div class="img">社長 or 現場写真</div>
+      <div>
+        <p class="p">昭和52年創業・38年の実績、成約率90%、下塗り2〜3回のこだわり等を短く紹介</p>
+        <span class="btn">こだわりを見る →</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">業務内容カード(既存流用)</div>
+    <div class="grid3">
+      <div class="card"><div class="img" style="min-height:70px;">外壁</div>建築塗装工事一式</div>
+      <div class="card"><div class="img" style="min-height:70px;">屋根</div>屋根塗装・カバー工法</div>
+      <div class="card"><div class="img" style="min-height:70px;">防水</div>防水工事</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">ご依頼を検討中の方へ(新設ハブページへの導線)</div>
+    <div class="box">「はじめての塗装、何を確認すればいい？」→ 不安解消コンテンツへの大きめバナー導線</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">料金の目安</div>
+    <div class="grid3">
+      <div class="card">外壁塗装 ○○万円〜</div>
+      <div class="card">屋根塗装 ○○万円〜</div>
+      <div class="card">詳しくは料金表へ →</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">施工実績ピックアップ</div>
+    <div class="grid3">
+      <div class="img">施工写真1</div><div class="img">施工写真2</div><div class="img">施工写真3</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">お客さまの声ピックアップ</div>
+    <div class="grid3">
+      <div class="card">★★★★★ 一言コメント+お名前(イニシャル)</div>
+      <div class="card">★★★★★ 一言コメント+お名前(イニシャル)</div>
+      <div class="card">★★★★★ 一言コメント+お名前(イニシャル)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">ブログ最新3件(既存踏襲)</div>
+    <div class="grid3">
+      <div class="card"><div class="img" style="min-height:70px;">写真</div>タイトル/日付</div>
+      <div class="card"><div class="img" style="min-height:70px;">写真</div>タイトル/日付</div>
+      <div class="card"><div class="img" style="min-height:70px;">写真</div>タイトル/日付</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">対応エリア + Googleマップ(既存踏襲)</div>
+    <div class="img" style="min-height:150px;">関東一円 対応エリア + 地図</div>
+  </div>
+
+  <div class="wf-footer">
+    <div class="col">会社情報要約(住所・電話・許可番号)</div>
+    <div class="col">サイト内リンク一覧(2列: メイン7+サブ5)</div>
+    <div class="map">MAP</div>
+  </div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 02 ご依頼を検討中の方へ -->
+<!-- ========================================================= -->
+<div class="page" id="p02">
+  <div class="page-label"><b>02 / ご依頼を検討中の方へ</b> ー 新規ページ(集客ハブ・不安解消)</div>
+  <div class="breadcrumb">HOME > ご依頼を検討中の方へ</div>
+  <div class="pagehead"><h2 class="h">ご依頼を検討中の方へ</h2><p class="p">はじめて塗装工事を依頼される方の不安に、正面から答えるページ</p></div>
+
+  <div class="sec">
+    <div class="sec-title">よくある不安 3つ(比較検討層の離脱防止)</div>
+    <div class="grid3">
+      <div class="card">「悪徳業者では?」→ 許可番号・資格の提示</div>
+      <div class="card">「追加料金が心配」→ 契約後の追加請求なしを明記</div>
+      <div class="card">「近隣トラブルが心配」→ 近隣挨拶の徹底を明記(業務案内FAQより転記)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">ご依頼の流れ(ステップ)</div>
+    <div class="grid4">
+      <div class="card">① お問い合わせ</div><div class="card">② 現地調査・お見積もり</div>
+      <div class="card">③ ご契約・着工</div><div class="card">④ 完工・アフター</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">選ばれる理由(強み訴求)</div>
+    <div class="row">
+      <div class="box">成約率90% / 38年の実績 / 下塗り2〜3回の丁寧な施工へのこだわり</div>
+      <div class="img">代表写真</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">関連ページ導線</div>
+    <div class="row"><span class="btn">料金表を見る</span><span class="btn">お客様の声を見る</span><span class="btn solid">無料お見積もり</span></div>
+  </div>
+
+  <div class="wf-footer"><div class="col">共通フッター(01と同一)</div><div class="col">&nbsp;</div><div class="map">MAP</div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 03 業務案内 -->
+<!-- ========================================================= -->
+<div class="page" id="p03">
+  <div class="page-label"><b>03 / 業務案内</b> ー 既存ページ・リライト</div>
+  <div class="breadcrumb">HOME > 業務案内</div>
+  <div class="pagehead"><h2 class="h">業務案内</h2><p class="p">既存の「建築塗装工事一式」説明+外壁/内装/防水/屋根の4分類を踏襲。FAQ2問は08 FAQページへ移設</p></div>
+  <div class="sec">
+    <div class="row"><div class="img">施工写真</div><div class="box">既存文章(健康・快適性への配慮、高品質な塗料 等)をリライト。専門性の一部は04こだわりへ再配置</div></div>
+  </div>
+  <div class="sec">
+    <div class="sec-title">分類カード(既存踏襲)</div>
+    <div class="grid4"><div class="card">外壁</div><div class="card">内装</div><div class="card">防水</div><div class="card">屋根</div></div>
+  </div>
+  <div class="sec"><div class="box">FAQ2問はここから削除し、08 FAQへ統合(近隣トラブル・追加料金の質問)</div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="map">MAP</div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 04 こだわり -->
+<!-- ========================================================= -->
+<div class="page" id="p04">
+  <div class="page-label"><b>04 / こだわり</b> ー 新規ページ(専門性・差別化)</div>
+  <div class="breadcrumb">HOME > こだわり</div>
+  <div class="pagehead"><h2 class="h">月岡塗装店のこだわり</h2><p class="p">専門的な施工品質を可視化し、比較検討段階の離脱を防ぐページ</p></div>
+  <div class="sec">
+    <div class="grid2">
+      <div class="card"><div class="img" style="min-height:90px;">下塗り写真</div>下塗り2〜3回の徹底(業務案内の専門情報を移設・拡張)</div>
+      <div class="card"><div class="img" style="min-height:90px;">塗料写真</div>健康・環境に配慮した高品質塗料の使用</div>
+      <div class="card"><div class="img" style="min-height:90px;">近隣挨拶写真</div>近隣挨拶の徹底・トラブル防止</div>
+      <div class="card"><div class="img" style="min-height:90px;">職人写真</div>一級塗装技能士・職業訓練指導員による確かな技術</div>
+    </div>
+  </div>
+  <div class="sec"><div class="row"><span class="btn">施工実績を見る</span><span class="btn solid">お問い合わせ</span></div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="map">MAP</div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 05 施工実績 -->
+<!-- ========================================================= -->
+<div class="page" id="p05">
+  <div class="page-label"><b>05 / 施工実績</b> ー 既存ページ・リライト(構成維持+フィルタ追加検討)</div>
+  <div class="breadcrumb">HOME > 施工実績</div>
+  <div class="pagehead"><h2 class="h">施工実績</h2><p class="p">既存のギャラリー形式(日付・エリア・工事内容)を維持。任意でエリア/工事種別フィルタを追加</p></div>
+  <div class="sec">
+    <div class="box">任意: 絞り込みタブ [ 屋根 / 外壁 / 防水 / 木部 ] [ 新座市 / 東京都内 / その他 ]</div>
+    <div class="grid3" style="margin-top:12px;">
+      <div class="card"><div class="img" style="min-height:90px;">施工写真</div>日付/エリア/工事名</div>
+      <div class="card"><div class="img" style="min-height:90px;">施工写真</div>日付/エリア/工事名</div>
+      <div class="card"><div class="img" style="min-height:90px;">施工写真</div>日付/エリア/工事名</div>
+    </div>
+    <div class="box" style="margin-top:10px;">ページネーション(既存踏襲)</div>
+  </div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="map">MAP</div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 06 お客さまの声 -->
+<!-- ========================================================= -->
+<div class="page" id="p06">
+  <div class="page-label"><b>06 / お客さまの声</b> ー 新規ページ(社会的証明・成約率90%の裏付け)</div>
+  <div class="breadcrumb">HOME > お客さまの声</div>
+  <div class="pagehead"><h2 class="h">お客さまの声</h2><p class="p">成約率90%を裏付ける、実際のお客様の声を紹介</p></div>
+  <div class="sec">
+    <div class="grid3">
+      <div class="card">★★★★★<br>コメント本文(工事内容・満足点)<br>お名前(イニシャル)/エリア/工事内容</div>
+      <div class="card">★★★★★<br>コメント本文<br>お名前/エリア/工事内容</div>
+      <div class="card">★★★★★<br>コメント本文<br>お名前/エリア/工事内容</div>
+    </div>
+  </div>
+  <div class="sec"><div class="box">対応した施工実績へのリンク(05との相互連携)</div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="map">MAP</div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 07 料金表 -->
+<!-- ========================================================= -->
+<div class="page" id="p07">
+  <div class="page-label"><b>07 / 料金表</b> ー 新規ページ(価格の透明性)</div>
+  <div class="breadcrumb">HOME > 料金表</div>
+  <div class="pagehead"><h2 class="h">料金表</h2><p class="p">価格の不透明さによる離脱を防ぐ。契約後の追加請求がないことも明記</p></div>
+  <div class="sec">
+    <div class="box">表: 工事内容 | 坪数目安 | 価格帯目安 | 工期目安 (外壁/屋根/防水/木部それぞれ)</div>
+  </div>
+  <div class="sec"><div class="note">「ご契約後の追加料金請求はありません」を明示 — 業務案内FAQより転記・強調</div></div>
+  <div class="sec"><div class="row"><span class="btn solid">無料お見積もりはこちら</span></div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="map">MAP</div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 08 FAQ -->
+<!-- ========================================================= -->
+<div class="page" id="p08">
+  <div class="page-label"><b>08 / FAQ</b> ー 新規ページ(既存業務案内内の2問+新設Q&A集約)</div>
+  <div class="breadcrumb">HOME > FAQ</div>
+  <div class="pagehead"><h2 class="h">よくあるご質問</h2></div>
+  <div class="sec">
+    <div class="box">Q. 塗装工事の際に近隣から苦情はきませんか?(既存・移設)</div>
+    <div class="box" style="margin-top:8px;">Q. 契約後に追加料金として請求することはありますか?(既存・移設)</div>
+    <div class="box" style="margin-top:8px;">Q. 見積もりは無料ですか?(新設)</div>
+    <div class="box" style="margin-top:8px;">Q. 対応エリアはどこまでですか?(新設)</div>
+    <div class="box" style="margin-top:8px;">Q. 支払いのタイミングは?(新設)</div>
+  </div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="map">MAP</div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 09 月岡塗装店のあゆみ -->
+<!-- ========================================================= -->
+<div class="page" id="p09">
+  <div class="page-label"><b>09 / 月岡塗装店のあゆみ</b> ー 新規ページ(38年の歴史・信頼構築)</div>
+  <div class="breadcrumb">HOME > 月岡塗装店のあゆみ</div>
+  <div class="pagehead"><h2 class="h">月岡塗装店のあゆみ</h2><p class="p">昭和52年の創業から現在まで、38年の歩みを紹介</p></div>
+  <div class="sec">
+    <div class="row">
+      <div class="box">年表: 昭和52年創業 → (沿革項目、社長へ追加ヒアリング要) → 現在</div>
+      <div class="img">創業当時 or 現在の外観写真</div>
+    </div>
+  </div>
+  <div class="sec"><div class="box">代表メッセージ(職人としての想い・地域への想い)</div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="map">MAP</div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 10 スタッフ紹介 -->
+<!-- ========================================================= -->
+<div class="page" id="p10">
+  <div class="page-label"><b>10 / スタッフ紹介</b> ー 新規ページ(社長中心の人柄訴求)</div>
+  <div class="breadcrumb">HOME > スタッフ紹介</div>
+  <div class="pagehead"><h2 class="h">スタッフ紹介</h2></div>
+  <div class="sec">
+    <div class="row">
+      <div class="img" style="min-height:200px;">代表 月岡氏 写真(採用情報ページの写真を集客用に転用)</div>
+      <div class="box">代表挨拶・人柄・こだわり(一問一答形式も検討)</div>
+    </div>
+  </div>
+  <div class="sec"><div class="box">現場スタッフ紹介(人数分・写真+一言、採用情報とのトーン統一)</div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="map">MAP</div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 11 会社概要 -->
+<!-- ========================================================= -->
+<div class="page" id="p11">
+  <div class="page-label"><b>11 / 会社概要</b> ー 既存ページ・データ更新のみ</div>
+  <div class="breadcrumb">HOME > 会社概要</div>
+  <div class="pagehead"><h2 class="h">会社概要</h2></div>
+  <div class="sec"><div class="box">会社名/代表者名/設立/資本金/電話番号/所在地/営業時間/定休日/業務内容/保有資格・許可/対応エリア(既存項目を踏襲、住所変更等の最新情報に更新)</div></div>
+  <div class="sec"><div class="img" style="min-height:150px;">Googleマップ(既存踏襲)</div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="map">MAP</div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 12 採用情報 -->
+<!-- ========================================================= -->
+<div class="page" id="p12">
+  <div class="page-label"><b>12 / 採用情報</b> ー 既存ページ・構成維持</div>
+  <div class="breadcrumb">HOME > 採用情報</div>
+  <div class="pagehead"><h2 class="h">採用情報</h2></div>
+  <div class="sec"><div class="row"><div class="img">職人写真</div><div class="box">働きやすいポイント3つ(安心の実績/少数精鋭/未経験可)・募集要項・応募の流れ(既存踏襲)</div></div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="map">MAP</div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 13 ブログ -->
+<!-- ========================================================= -->
+<div class="page" id="p13">
+  <div class="page-label"><b>13 / ブログ</b> ー 既存ページ・構成維持(月2回更新→1年間代行プランで2日に1記事へ強化)</div>
+  <div class="breadcrumb">HOME > ブログ</div>
+  <div class="pagehead"><h2 class="h">ブログ</h2></div>
+  <div class="sec">
+    <div class="row">
+      <div class="grid2" style="flex:3;">
+        <div class="card"><div class="img" style="min-height:80px;">写真</div>タイトル/日付</div>
+        <div class="card"><div class="img" style="min-height:80px;">写真</div>タイトル/日付</div>
+        <div class="card"><div class="img" style="min-height:80px;">写真</div>タイトル/日付</div>
+        <div class="card"><div class="img" style="min-height:80px;">写真</div>タイトル/日付</div>
+      </div>
+      <div class="box" style="flex:1;">サイドバー: 最近の投稿/カテゴリ(既存踏襲)</div>
+    </div>
+  </div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="map">MAP</div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 14 お問い合わせ -->
+<!-- ========================================================= -->
+<div class="page" id="p14">
+  <div class="page-label"><b>14 / お問い合わせ</b> ー 既存ページ・構成維持</div>
+  <div class="breadcrumb">HOME > お問い合わせ</div>
+  <div class="pagehead"><h2 class="h">お問い合わせ</h2></div>
+  <div class="sec">
+    <div class="row"><span class="btn">電話でのお問い合わせ</span><span class="btn solid">メールでのお問い合わせ</span></div>
+  </div>
+  <div class="sec"><div class="box">フォーム項目: お名前/企業名・メールアドレス(確認含む)・お問い合わせ項目(ご相談/お問い合わせ/お見積もり依頼/求人/その他)・お問い合わせ内容(既存踏襲)</div></div>
+  <div class="sec"><div class="box">プライバシーポリシー(既存踏襲)</div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="map">MAP</div></div>
+</div>
+
+</body>
+</html>

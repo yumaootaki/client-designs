@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="theme.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="有限会社月岡塗装店">
+<meta property="og:image" content="assets/ogp.png">
+<meta property="og:image:width" content="320">
+<meta property="og:image:height" content="240">
+<meta name="twitter:card" content="summary">
+<!-- Webフォント：本番サーバーでは下記1行のコメントを外して有効化する（プレビュー環境では CDN 到達不可のため無効） -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"> -->
+<style>
+  *{box-sizing:border-box;}
+  [data-role-grid],[data-method-grid],[data-where-grid],[data-sign-grid],[data-strength-grid],[data-dr-grid],[data-num-grid],[data-charm-grid],[data-career],[data-value-grid],[data-sdgs-grid],[data-cert-grid],[data-flow-grid]{grid-auto-rows:1fr;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fff;color:var(--c-ink);font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  /* 手描き風の注釈用。本番サーバーでは helmet に Yomogi を読み込むと Yomogi が優先されます */
+  .hand{font-family:'Yomogi','Bradley Hand','Segoe Script','Hiragino Maru Gothic ProN','Noto Sans JP',cursive;letter-spacing:.02em;}
+  span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal;}
+  [data-navitem]:hover [data-dropdown],[data-navitem]:focus-within [data-dropdown]{opacity:1!important;visibility:visible!important;}
+  .mnav-toggle,.mnav-btn,.mnav-panel{display:none;}
+  @media(max-width:840px){
+    nav[data-gnav]{display:none!important;}
+    #footer-grid{grid-template-columns:1fr!important;}
+    header{align-items:center!important;}
+    [data-protect]{display:none!important;}
+    .mnav-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--c-ink);border-radius:7px;margin:auto 16px;cursor:pointer;flex:none;position:relative;z-index:75;}
+    .mnav-btn span{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:transform .3s ease,opacity .3s ease,top .3s ease;}
+    .mnav-btn span:nth-child(1){top:15px;}.mnav-btn span:nth-child(2){top:21px;}.mnav-btn span:nth-child(3){top:27px;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(1){top:21px;transform:rotate(45deg);}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(2){opacity:0;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(3){top:21px;transform:rotate(-45deg);}
+    .mnav-panel{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--c-ink);z-index:74;padding:90px 26px 40px;transform:translateX(100%);transition:transform .42s cubic-bezier(.16,1,.3,1);overflow-y:auto;}
+    .mnav-toggle:checked ~ .mnav-panel{transform:none;}
+    .mnav-panel a{color:#fff;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:16px;font-weight:700;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);letter-spacing:.04em;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .mnav-panel a.sub{font-size:13.5px;font-weight:500;padding-left:18px;color:rgba(255,255,255,.66);}
+    .mnav-panel a em{font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-style:normal;font-size:10.5px;letter-spacing:.14em;color:var(--c-brand-2);font-weight:600;}
+  }
+  .rv,.rvl,.rvr,.rv-scale{opacity:0;transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+  .rv{transform:translateY(40px);}.rvl{transform:translateX(-48px);}.rvr{transform:translateX(48px);}.rv-scale{transform:scale(.95) translateY(22px);}
+  .rv.show,.rvl.show,.rvr.show,.rv-scale.show{opacity:1;transform:none;}
+  .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.42s;}
+  @keyframes subheroZoom{from{transform:scale(1.12);}to{transform:scale(1.2);}}
+  @media (prefers-reduced-motion:reduce){
+    .rv,.rvl,.rvr,.rv-scale{opacity:1!important;transform:none!important;transition:none!important;}
+    [data-subhero-bg]{animation:none!important;transform:scale(1.12)!important;}
+    html{scroll-behavior:auto;}
+  }
+  @media (max-width:840px){
+    [data-gnav]{display:none!important;}
+    [data-worklist]{grid-template-columns:1fr 1fr!important;}
+    [data-dr-grid]{grid-template-columns:1fr!important;}
+    [data-strength-grid]{grid-template-columns:1fr 1fr!important;}
+    [data-flow-grid]{grid-template-columns:1fr!important;}
+    [data-rel-grid]{grid-template-columns:1fr!important;}
+    [data-price-row]{grid-template-columns:1fr!important;gap:6px!important;}
+    [data-price-row] p:last-child{text-align:left!important;}
+  }
+  @media (max-width:520px){
+    [data-strength-grid]{grid-template-columns:1fr!important;}
+    [data-worklist]{grid-template-columns:1fr!important;}
+  }
+</style>
+</helmet>
+
+<div style="position:relative;overflow-x:clip;background:#fff;">
+
+  <!-- ============ HEADER (共通部品) ============ -->
+  <dc-import name="Header" hint-size="100%,0" style="position:absolute;top:0;left:0;width:100%;z-index:60;"></dc-import>
+
+  <!-- ============ HERO F (cinematic) ============ -->
+  <section id="subhero" data-screen-label="料金表Hero" style="position:relative;height:clamp(340px,52vh,520px);overflow:hidden;background:var(--c-ink);">
+    <div data-subhero-bg aria-hidden="true" style="position:absolute;inset:0;transform:scale(1.12);animation:subheroZoom 14s ease-in-out infinite alternate;will-change:transform;"><img src="assets/photo-white-house.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(20,40,55,.42) 0%,rgba(20,40,55,.78) 100%);"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(168,205,223,.26) 0%,rgba(47,109,146,.34) 100%);mix-blend-mode:multiply;"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;">
+      <p class="rv d1" style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:clamp(11px,1.4vw,13px);letter-spacing:.34em;color:rgba(255,255,255,.78);margin:0 0 20px;">PRICE</p>
+      <h1 class="rv d2" style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:900;font-size:clamp(30px,5vw,52px);color:#fff;margin:0 0 22px;letter-spacing:.08em;text-shadow:0 2px 24px rgba(20,40,55,.5);">料金表</h1>
+      <span class="rv d3" style="width:64px;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));display:inline-block;"></span>
+    </div>
+    <div style="position:absolute;bottom:22px;left:0;right:0;text-align:center;">
+      <span style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.55);">HOME ／ 料金表</span>
+    </div>
+    <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-1px;line-height:0;"><svg viewBox="0 0 1440 70" preserveAspectRatio="none" style="display:block;width:100%;height:clamp(28px,4vw,56px);"><path d="M0,44 C200,72 420,66 640,46 C860,26 1120,20 1440,40 L1440,70 L0,70 Z" fill="#fff"></path></svg></div>
+  </section>
+
+  <!-- ============ INTRO LEAD ============ -->
+  <section style="max-width:880px;margin:0 auto;padding:clamp(64px,9vh,110px) clamp(24px,5vw,40px) clamp(40px,6vh,72px);text-align:center;">
+    <p class="rv" style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.2em;color:var(--c-brand);margin:0 0 22px;">PRICE</p>
+    <h2 class="rv d1" style="font-size:clamp(22px,3.2vw,32px);font-weight:700;line-height:1.7;letter-spacing:.04em;color:var(--c-ink);margin:0 0 28px;text-wrap:balance;">塗装の費用は、建物の状態で<br>変わります。</h2>
+    <p class="rv d2" style="font-size:clamp(14px,1.6vw,15px);line-height:2.1;color:#666;margin:0;text-wrap:pretty;">同じ「外壁塗装」でも、面積・階数・下地の傷み方によって費用は変わります。このページでは、費用がどう決まるのか、お見積もりのどこを見ていただきたいのかをご説明します。金額は現地を確認したうえでご提示し、<strong style="color:var(--c-ink);">ご契約後に追加料金を請求することはありません。</strong></p>
+  </section>
+
+  <div aria-hidden="true" style="line-height:0;background:#fff;"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display:block;width:100%;height:clamp(30px,4.5vw,64px);"><path d="M0,46 C200,78 420,72 640,50 C860,28 1120,22 1440,44 L1440,80 L0,80 Z" fill="var(--c-cream-2)"></path></svg></div>
+  <!-- ============ 価格帯の目安 ============ -->
+  <section style="background:var(--c-cream-2);">
+    <div style="max-width:1000px;margin:0 auto;padding:clamp(48px,7vh,84px) clamp(24px,5vw,40px) clamp(56px,8vh,96px);">
+      <div class="rv" style="display:flex;align-items:stretch;gap:18px;margin-bottom:clamp(32px,4.5vh,48px);">
+        <div style="width:3px;background:linear-gradient(180deg,var(--c-brand-2),var(--c-brand));flex:none;"></div>
+        <div>
+          <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 6px;">ESTIMATE RANGE</p>
+          <h3 style="font-size:clamp(20px,2.6vw,28px);font-weight:900;color:var(--c-ink);margin:0;letter-spacing:.04em;">費用の目安</h3>
+        </div>
+      </div>
+      <!-- 要取材：各工事の実際の価格帯・㎡単価・工期の目安・最低受注金額・支払い条件（下記の金額はすべてダミー値） -->
+      <div style="background:#fff;border-radius:2px;overflow:hidden;">
+        <div data-price-row class="rv " style="display:grid;grid-template-columns:1.1fr 1.4fr .9fr;gap:clamp(10px,2vw,24px);align-items:center;padding:clamp(18px,2.4vw,26px) clamp(16px,2.6vw,30px);">
+          <p style="margin:0;font-size:clamp(15px,1.8vw,17px);font-weight:700;color:var(--c-ink);letter-spacing:.02em;">外壁塗装</p>
+          <p style="margin:0;font-size:13px;color:#666;line-height:1.9;">費用が変わる主な要素：外壁の面積・階数・下地の傷み方・使用する塗料</p>
+          <p style="margin:0;font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:clamp(15px,1.9vw,19px);color:var(--c-brand);letter-spacing:.02em;text-align:right;">00万円 〜 00万円</p>
+        </div>
+        <div data-price-row class="rv d1" style="display:grid;grid-template-columns:1.1fr 1.4fr .9fr;gap:clamp(10px,2vw,24px);align-items:center;padding:clamp(18px,2.4vw,26px) clamp(16px,2.6vw,30px);border-top:1px solid var(--c-cream);">
+          <p style="margin:0;font-size:clamp(15px,1.8vw,17px);font-weight:700;color:var(--c-ink);letter-spacing:.02em;">屋根塗装</p>
+          <p style="margin:0;font-size:13px;color:#666;line-height:1.9;">費用が変わる主な要素：屋根の形状・勾配・面積・カバー工法の有無</p>
+          <p style="margin:0;font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:clamp(15px,1.9vw,19px);color:var(--c-brand);letter-spacing:.02em;text-align:right;">00万円 〜 00万円</p>
+        </div>
+        <div data-price-row class="rv d1" style="display:grid;grid-template-columns:1.1fr 1.4fr .9fr;gap:clamp(10px,2vw,24px);align-items:center;padding:clamp(18px,2.4vw,26px) clamp(16px,2.6vw,30px);border-top:1px solid var(--c-cream);">
+          <p style="margin:0;font-size:clamp(15px,1.8vw,17px);font-weight:700;color:var(--c-ink);letter-spacing:.02em;">防水工事（ベランダ・屋上）</p>
+          <p style="margin:0;font-size:13px;color:#666;line-height:1.9;">費用が変わる主な要素：面積・工法（ウレタン／FRP／シート）・下地の状態</p>
+          <p style="margin:0;font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:clamp(15px,1.9vw,19px);color:var(--c-brand);letter-spacing:.02em;text-align:right;">00万円 〜 00万円</p>
+        </div>
+        <div data-price-row class="rv d1" style="display:grid;grid-template-columns:1.1fr 1.4fr .9fr;gap:clamp(10px,2vw,24px);align-items:center;padding:clamp(18px,2.4vw,26px) clamp(16px,2.6vw,30px);border-top:1px solid var(--c-cream);">
+          <p style="margin:0;font-size:clamp(15px,1.8vw,17px);font-weight:700;color:var(--c-ink);letter-spacing:.02em;">付帯部・木部の塗装</p>
+          <p style="margin:0;font-size:13px;color:#666;line-height:1.9;">費用が変わる主な要素：軒天・雨どい・破風・木部などの箇所数と面積</p>
+          <p style="margin:0;font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:clamp(15px,1.9vw,19px);color:var(--c-brand);letter-spacing:.02em;text-align:right;">00万円 〜 00万円</p>
+        </div>
+      </div>
+      <p class="rv" style="font-size:13px;color:#666;line-height:2;margin:20px 0 0;text-wrap:pretty;">※ 上記の金額は目安の枠（ダミー値）です。建物の状態・面積・工法・使用する塗料により変わります。正確な金額は、現地を確認したうえでお見積もりにてご提示します。外壁と屋根を同時に施工する場合、足場が一度で済むため別々に頼むより費用を抑えられます。</p>
+    </div>
+  </section>
+
+  <!-- ============ お見積もりの見方 ============ -->
+  <section style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);">
+      <div class="rv" style="display:flex;align-items:stretch;gap:18px;margin-bottom:clamp(32px,4.5vh,48px);">
+        <div style="width:3px;background:linear-gradient(180deg,var(--c-brand-2),var(--c-brand));flex:none;"></div>
+        <div>
+          <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 6px;">CHECK POINTS</p>
+          <h3 style="font-size:clamp(20px,2.6vw,28px);font-weight:900;color:var(--c-ink);margin:0;letter-spacing:.04em;">お見積もりで見ていただきたいところ</h3>
+        </div>
+      </div>
+      <div data-strength-grid style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(14px,2vw,20px);">
+        <div class="rv " style="background:#fff;border-radius:2px;padding:clamp(26px,3vw,34px);border-top:3px solid var(--c-brand);">
+          <span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:42px;color:var(--c-cream);line-height:.8;display:block;margin-bottom:14px;">01</span>
+          <h4 style="font-size:16px;font-weight:700;color:var(--c-ink);margin:0 0 10px;letter-spacing:.03em;">「一式」でまとまっていないか</h4>
+          <p style="font-size:14px;color:#666;line-height:1.95;margin:0;text-wrap:pretty;">工事が項目に分かれていないと、何にいくらかかるのかが分かりません。月岡塗装店は工程ごとに分けて記載します。</p>
+        </div>
+        <div class="rv d1" style="background:#fff;border-radius:2px;padding:clamp(26px,3vw,34px);border-top:3px solid var(--c-brand);">
+          <span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:42px;color:var(--c-cream);line-height:.8;display:block;margin-bottom:14px;">02</span>
+          <h4 style="font-size:16px;font-weight:700;color:var(--c-ink);margin:0 0 10px;letter-spacing:.03em;">使う塗料が書かれているか</h4>
+          <p style="font-size:14px;color:#666;line-height:1.95;margin:0;text-wrap:pretty;">塗料のメーカー名・商品名・使用量が書かれていれば、後から比べられます。メーカーが定める希釈率・塗布回数を守ることが前提です。</p>
+        </div>
+        <div class="rv d2" style="background:#fff;border-radius:2px;padding:clamp(26px,3vw,34px);border-top:3px solid var(--c-brand);">
+          <span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:42px;color:var(--c-cream);line-height:.8;display:block;margin-bottom:14px;">03</span>
+          <h4 style="font-size:16px;font-weight:700;color:var(--c-ink);margin:0 0 10px;letter-spacing:.03em;">付帯部・足場が含まれるか</h4>
+          <p style="font-size:14px;color:#666;line-height:1.95;margin:0;text-wrap:pretty;">後から追加になりやすいのが付帯部と足場です。月岡塗装店はお見積もりに含め、ご契約後の追加請求はありません。</p>
+        </div>
+      </div>
+  </section>
+
+  <!-- ============ 関連導線 ============ -->
+  <section style="background:var(--c-ink);">
+    <div data-rel-grid style="max-width:1160px;margin:0 auto;padding:clamp(48px,7vh,80px) clamp(24px,5vw,40px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.5vw,24px);">
+      <a href="ご依頼を検討中の方へ.dc.html" class="rv " style="display:block;position:relative;overflow:hidden;border-radius:2px;aspect-ratio:16/7;">
+        <img src="assets/photo-chalking.jpeg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,40,55,.25) 30%,rgba(20,40,55,.8) 100%);"></div>
+        <div style="position:absolute;left:clamp(20px,3vw,32px);bottom:clamp(20px,3vw,28px);">
+          <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:10px;letter-spacing:.16em;color:var(--c-brand-2);margin:0 0 8px;">FLOW</p>
+          <p style="font-size:clamp(16px,2vw,20px);font-weight:700;color:#fff;margin:0;letter-spacing:.03em;display:flex;align-items:center;gap:10px;">ご依頼を検討中の方へ <span style="font-size:14px;">→</span></p>
+        </div>
+      </a>
+      <a href="お問い合わせ.dc.html" class="rv d1" style="display:block;position:relative;overflow:hidden;border-radius:2px;aspect-ratio:16/7;">
+        <img src="assets/photo-after.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,40,55,.25) 30%,rgba(20,40,55,.8) 100%);"></div>
+        <div style="position:absolute;left:clamp(20px,3vw,32px);bottom:clamp(20px,3vw,28px);">
+          <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:10px;letter-spacing:.16em;color:var(--c-brand-2);margin:0 0 8px;">CONTACT</p>
+          <p style="font-size:clamp(16px,2vw,20px);font-weight:700;color:#fff;margin:0;letter-spacing:.03em;display:flex;align-items:center;gap:10px;">無料お見積もりを依頼する <span style="font-size:14px;">→</span></p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ CTA C ============ -->
+  <section style="background:#fff;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));"></div>
+    <div class="rv" style="max-width:880px;margin:0 auto;padding:clamp(64px,9vh,110px) clamp(24px,5vw,40px);text-align:center;">
+      <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.2em;color:var(--c-brand);margin:0 0 14px;">CONTACT</p>
+      <h2 style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:900;font-size:clamp(22px,3vw,28px);color:var(--c-ink);margin:0 0 14px;letter-spacing:.04em;">お気軽にご相談ください</h2>
+      <p style="font-size:14px;color:#888;margin:0 0 36px;line-height:2;">お見積もりのご依頼はもちろん、「うちの外壁はどうだろう」というご相談もお待ちしています。</p>
+      <div style="display:inline-flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <a href="お問い合わせ.dc.html" style="display:inline-flex;align-items:center;gap:10px;background:var(--c-ink);color:#fff;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em;padding:16px 40px;justify-content:center;min-width:260px;box-sizing:border-box;transition:background .3s ease;" style-hover="background:var(--c-brand);">無料お見積もり・ご相談 →</a>
+        <a href="tel:042-479-5507" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--c-ink);font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:16px;font-weight:600;letter-spacing:.1em;padding:16px 30px;border:1px solid #ddd;justify-content:center;min-width:260px;box-sizing:border-box;">042-479-5507</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER (共通部品) ============ -->
+  <dc-import name="Footer" hint-size="100%,420px"></dc-import>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    // (ヘッダーの色切替は Header.dc.html が担当)
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('.rv,.rvl,.rvr,.rv-scale').forEach((el) => io.observe(el));
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+}
+</script>
+</body>
+</html>

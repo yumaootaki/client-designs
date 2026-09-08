@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="theme.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="有限会社月岡塗装店">
+<meta property="og:image" content="assets/ogp.png">
+<meta property="og:image:width" content="320">
+<meta property="og:image:height" content="240">
+<meta name="twitter:card" content="summary">
+<!-- Webフォント：本番サーバーでは下記1行のコメントを外して有効化する（プレビュー環境では CDN 到達不可のため無効） -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"> -->
+<style>
+  *{box-sizing:border-box;}
+  [data-role-grid],[data-method-grid],[data-where-grid],[data-sign-grid],[data-strength-grid],[data-dr-grid],[data-num-grid],[data-charm-grid],[data-career],[data-value-grid],[data-sdgs-grid],[data-cert-grid],[data-flow-grid]{grid-auto-rows:1fr;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fff;color:var(--c-ink);font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  [data-navitem]:hover [data-dropdown],[data-navitem]:focus-within [data-dropdown]{opacity:1!important;visibility:visible!important;}
+  .mnav-toggle,.mnav-btn,.mnav-panel{display:none;}
+  @media(max-width:840px){
+    nav[data-gnav]{display:none!important;}
+    #footer-grid{grid-template-columns:1fr!important;}
+    header{align-items:center!important;}
+    [data-protect]{display:none!important;}
+    .mnav-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--c-ink);border-radius:7px;margin:auto 16px;cursor:pointer;flex:none;position:relative;z-index:75;}
+    .mnav-btn span{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:transform .3s ease,opacity .3s ease,top .3s ease;}
+    .mnav-btn span:nth-child(1){top:15px;}.mnav-btn span:nth-child(2){top:21px;}.mnav-btn span:nth-child(3){top:27px;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(1){top:21px;transform:rotate(45deg);}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(2){opacity:0;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(3){top:21px;transform:rotate(-45deg);}
+    .mnav-panel{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--c-ink);z-index:74;padding:90px 26px 40px;transform:translateX(100%);transition:transform .42s cubic-bezier(.16,1,.3,1);overflow-y:auto;}
+    .mnav-toggle:checked ~ .mnav-panel{transform:none;}
+    .mnav-panel a{color:#fff;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:16px;font-weight:700;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);letter-spacing:.04em;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .mnav-panel a.sub{font-size:13.5px;font-weight:500;padding-left:18px;color:rgba(255,255,255,.66);}
+    .mnav-panel a em{font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-style:normal;font-size:10.5px;letter-spacing:.14em;color:var(--c-brand-2);font-weight:600;}
+  }
+  .rv,.rvl,.rvr,.rv-scale{opacity:0;transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+  .rv{transform:translateY(40px);}.rvl{transform:translateX(-48px);}.rvr{transform:translateX(48px);}.rv-scale{transform:scale(.95) translateY(22px);}
+  .rv.show,.rvl.show,.rvr.show,.rv-scale.show{opacity:1;transform:none;}
+  .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
+  @keyframes subheroZoom{from{transform:scale(1.12);}to{transform:scale(1.2);}}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+  .faq-item.open .faq-a{max-height:340px;}
+  .faq-item.open .faq-toggle{transform:rotate(45deg);}
+  @media (prefers-reduced-motion:reduce){
+    .rv,.rvl,.rvr,.rv-scale{opacity:1!important;transform:none!important;transition:none!important;}
+    [data-subhero-bg]{animation:none!important;transform:scale(1.12)!important;}
+    html{scroll-behavior:auto;}
+  }
+  @media (max-width:840px){ [data-gnav]{display:none!important;} }
+</style>
+</helmet>
+
+<div style="position:relative;overflow-x:clip;background:#fff;">
+
+  <!-- ============ HEADER (共通部品) ============ -->
+  <dc-import name="Header" hint-size="100%,0" style="position:absolute;top:0;left:0;width:100%;z-index:60;"></dc-import>
+
+  <!-- ============ HERO F ============ -->
+  <section id="subhero" data-screen-label="FAQHero" style="position:relative;height:clamp(340px,52vh,520px);overflow:hidden;background:var(--c-ink);">
+    <div data-subhero-bg aria-hidden="true" style="position:absolute;inset:0;transform:scale(1.12);animation:subheroZoom 14s ease-in-out infinite alternate;will-change:transform;"><img src="assets/photo-tools.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(20,40,55,.45) 0%,rgba(20,40,55,.78) 100%);"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(168,205,223,.26) 0%,rgba(47,109,146,.34) 100%);mix-blend-mode:multiply;"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;">
+      <p class="rv d1" style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:clamp(11px,1.4vw,13px);letter-spacing:.34em;color:rgba(255,255,255,.78);margin:0 0 20px;">FAQ</p>
+      <h1 class="rv d2" style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:900;font-size:clamp(26px,4.4vw,46px);color:#fff;margin:0 0 22px;letter-spacing:.06em;text-shadow:0 2px 24px rgba(20,40,55,.5);">よくあるご質問</h1>
+      <span class="rv d3" style="width:64px;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));display:inline-block;"></span>
+    </div>
+    <div style="position:absolute;bottom:22px;left:0;right:0;text-align:center;">
+      <span style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.55);">HOME ／ よくあるご質問</span>
+    </div>
+  </section>
+
+  <!-- ============ FAQ（タブ切替・アコーディオン） ============ -->
+  <section style="max-width:880px;margin:0 auto;padding:clamp(64px,9vh,110px) clamp(24px,5vw,40px) clamp(40px,6vh,72px);">
+    <!-- tabs -->
+    <div class="rv" style="display:flex;gap:0;margin-bottom:clamp(28px,4vh,40px);border:1px solid var(--c-cream);border-radius:2px;overflow:hidden;">
+      <button data-tab="recruit" style="flex:1;padding:16px;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:clamp(12px,1.5vw,14px);font-weight:700;letter-spacing:.06em;color:#fff;background:var(--c-ink);border:none;cursor:pointer;transition:background .3s ease,color .3s ease;">お見積もり・ご相談</button>
+      <button data-tab="work" style="flex:1;padding:16px;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:clamp(12px,1.5vw,14px);font-weight:700;letter-spacing:.06em;color:#8a97a3;background:#fff;border:none;cursor:pointer;transition:background .3s ease,color .3s ease;">工事・塗料について</button>
+    </div>
+
+    <!-- 要取材：無料お見積もりの範囲（出張費・調査費の扱い）、対応可能な工期 -->
+    <!-- ご相談・お見積り -->
+    <div data-panel="recruit" class="rv d1" style="display:flex;flex-direction:column;gap:12px;">
+      <div class="faq-item" style="border:1px solid var(--c-cream);border-radius:2px;overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:14.5px;font-weight:700;color:var(--c-ink);line-height:1.6;">お工事中、近隣への配慮はありますか？</span></span>
+          <span class="faq-toggle" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:14px;color:#666;line-height:2.05;">現地調査・お見積もりは無料です。工事の内容が決まっていない段階のご相談だけでも構いません。まずは建物の状態を見せてください。</p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-cream);border-radius:2px;overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:14.5px;font-weight:700;color:var(--c-ink);line-height:1.6;">相談してから工事まで、どのくらいかかりますか？</span></span>
+          <span class="faq-toggle" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:14px;color:#666;line-height:2.05;">現地調査の日程調整から着工までの期間は、工事の内容や時期によって変わります。ご希望の時期があれば、お問い合わせのときにお伝えください。<!-- 要取材：着工までの実際の目安期間、繁忙期 --></p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-cream);border-radius:2px;overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:14.5px;font-weight:700;color:var(--c-ink);line-height:1.6;">見積もりのあと、しつこく営業されませんか？</span></span>
+          <span class="faq-toggle" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:14px;color:#666;line-height:2.05;">お見積もりをお渡ししたあとに、こちらから繰り返し催促のご連絡をすることはありません。その場で契約をお願いすることもありません。ご検討のうえでご連絡ください。</p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-cream);border-radius:2px;overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:14.5px;font-weight:700;color:var(--c-ink);line-height:1.6;">あとから追加料金を請求されませんか？</span></span>
+          <span class="faq-toggle" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:14px;color:#666;line-height:2.05;">ご契約後に追加料金を請求することはありません。お見積もりは工事を項目ごとに分けて記載し、足場や付帯部も含めた金額をご確認いただいたうえで着工します。</p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-cream);border-radius:2px;overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:14.5px;font-weight:700;color:var(--c-ink);line-height:1.6;">工事のあいだ、家にいる必要はありますか？</span></span>
+          <span class="faq-toggle" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:14px;color:#666;line-height:2.05;">現地調査のときはご一緒に確認いただけると安心ですが、工事中は必ずしも在宅の必要はありません。進み具合は担当者からご報告します。</p></div>
+      </div>
+    </div>
+
+    <!-- 工事・依頼 -->
+    <div data-panel="work" class="rv d1" style="display:none;flex-direction:column;gap:12px;">
+      <div class="faq-item" style="border:1px solid var(--c-cream);border-radius:2px;overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:14.5px;font-weight:700;color:var(--c-ink);line-height:1.6;">対応エリアはどこまでですか？</span></span>
+          <span class="faq-toggle" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:14px;color:#666;line-height:2.05;">埼玉県新座市を拠点に、関東一円に対応しています。新座市・志木市・朝霞市・和光市・所沢市・清瀬市・練馬区などが中心です。エリア外でもまずはご相談ください。</p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-cream);border-radius:2px;overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:14.5px;font-weight:700;color:var(--c-ink);line-height:1.6;">どんな工事に対応できますか？</span></span>
+          <span class="faq-toggle" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:14px;color:#666;line-height:2.05;">外壁塗装・屋根塗装を軸に、防水工事・内装工事まで建築塗装工事一式をお引き受けします。「どこに頼めばよいか分からない」というご相談もお受けします。</p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-cream);border-radius:2px;overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:14.5px;font-weight:700;color:var(--c-ink);line-height:1.6;">雨漏りなど、急ぎの症状にも対応できますか？</span></span>
+          <span class="faq-toggle" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:14px;color:#666;line-height:2.05;">雨漏りなど急を要する症状は、状況を伺ったうえでできるだけ早くお伺いします。お急ぎの場合はお電話（042-479-5507）でご連絡ください。</p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-cream);border-radius:2px;overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:14.5px;font-weight:700;color:var(--c-ink);line-height:1.6;">工事中、近隣への配慮はありますか？</span></span>
+          <span class="faq-toggle" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:14px;color:#666;line-height:2.05;">足場を組む前に近隣のお宅へご挨拶にうかがい、作業の時間帯・車両の停め方・高圧洗浄で水を使う日などをご説明します。工事中に気になることがあれば、担当者にお伝えください。</p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-cream);border-radius:2px;overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:14.5px;font-weight:700;color:var(--c-ink);line-height:1.6;">塗り替えの目安はどのくらいですか？</span></span>
+          <span class="faq-toggle" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:14px;color:#666;line-height:2.05;">外壁をなでると白い粉が手につく（チョーキング）、ひび割れ・はがれが出ている、目地のシーリングが切れている——こうしたサインが出ていれば、一度見せていただくタイミングです。使われている塗料や立地によって差があるため、年数だけでは判断できません。</p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-cream);border-radius:2px;overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:14.5px;font-weight:700;color:var(--c-ink);line-height:1.6;">下塗りを2〜3回重ねるのはなぜですか？</span></span>
+          <span class="faq-toggle" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:14px;color:#666;line-height:2.05;">下塗りは、上に塗る塗料を下地に密着させるための工程です。ここを1回で済ませると、数年で塗膜がはがれることがあります。仕上がってしまえば見えない部分ですが、塗膜がどれだけ保つかはここで決まります。<!-- 要取材：塗料メーカー名・商品名・実際の塗り回数の規定 --></p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-cream);border-radius:2px;overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:14.5px;font-weight:700;color:var(--c-ink);line-height:1.6;">どんな塗料を使いますか？</span></span>
+          <span class="faq-toggle" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:14px;color:#666;line-height:2.05;">住まわれる方の健康と快適性に配慮した、高品質な塗料を使います。メーカーが定める希釈率・塗布回数・乾燥時間を守って施工します。ご希望やご予算に応じてご提案しますので、現地調査の際にご相談ください。</p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-cream);border-radius:2px;overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:14.5px;font-weight:700;color:var(--c-ink);line-height:1.6;">外壁と屋根を一緒に頼んだほうが安いですか？</span></span>
+          <span class="faq-toggle" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:14px;color:#666;line-height:2.05;">はい。足場を組む費用が一度で済むため、別々に頼むより費用を抑えられます。屋根は傷みが分かりにくいので、外壁の工事を検討されるタイミングで一緒に見せていただくのがおすすめです。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA C ============ -->
+  <section style="background:#fff;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));"></div>
+    <div class="rv" style="max-width:880px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);text-align:center;">
+      <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.2em;color:var(--c-brand);margin:0 0 14px;">CONTACT</p>
+      <h2 style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:900;font-size:clamp(22px,3vw,28px);color:var(--c-ink);margin:0 0 14px;letter-spacing:.04em;">解決しないことがあれば</h2>
+      <p style="font-size:14px;color:#888;margin:0 0 36px;line-height:2;">こちらに載っていないご質問も、お気軽にお問い合わせください。</p>
+      <div style="display:inline-flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <a href="お問い合わせ.dc.html" style="display:inline-flex;align-items:center;gap:10px;background:var(--c-ink);color:#fff;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em;padding:16px 40px;justify-content:center;min-width:260px;box-sizing:border-box;transition:background .3s ease;" style-hover="background:var(--c-brand);">無料お見積もり・ご相談 →</a>
+        <a href="tel:042-479-5507" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--c-ink);font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:16px;font-weight:600;letter-spacing:.1em;padding:16px 30px;border:1px solid #ddd;justify-content:center;min-width:260px;box-sizing:border-box;">042-479-5507</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER (共通部品) ============ -->
+  <dc-import name="Footer" hint-size="100%,420px"></dc-import>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    // (ヘッダーの色切替は Header.dc.html が担当)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); } });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('.rv,.rvl,.rvr,.rv-scale').forEach((el) => io.observe(el));
+
+    // タブ切替
+    const tabs = Array.from(document.querySelectorAll('[data-tab]'));
+    const panels = { recruit: document.querySelector('[data-panel="recruit"]'), work: document.querySelector('[data-panel="work"]') };
+    tabs.forEach((t) => t.addEventListener('click', () => {
+      const key = t.getAttribute('data-tab');
+      tabs.forEach((o) => {
+        const on = o === t;
+        o.style.background = on ? 'var(--c-ink)' : '#fff';
+        o.style.color = on ? '#fff' : '#8a97a3';
+      });
+      Object.keys(panels).forEach((k) => { if (panels[k]) panels[k].style.display = k === key ? 'flex' : 'none'; });
+    }));
+
+    // アコーディオン
+    document.querySelectorAll('.faq-q').forEach((q) => q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      if (item) item.classList.toggle('open');
+    }));
+  }
+  componentWillUnmount() { if (this._onScroll) window.removeEventListener('scroll', this._onScroll); }
+}
+</script>
+</body>
+</html>

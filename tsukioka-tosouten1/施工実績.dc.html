@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="theme.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="有限会社月岡塗装店">
+<meta property="og:image" content="assets/ogp.png">
+<meta property="og:image:width" content="320">
+<meta property="og:image:height" content="240">
+<meta name="twitter:card" content="summary">
+<!-- Webフォント：本番サーバーでは下記1行のコメントを外して有効化する（プレビュー環境では CDN 到達不可のため無効） -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"> -->
+<style>
+  *{box-sizing:border-box;}
+  [data-role-grid],[data-method-grid],[data-where-grid],[data-sign-grid],[data-strength-grid],[data-dr-grid],[data-num-grid],[data-charm-grid],[data-career],[data-value-grid],[data-sdgs-grid],[data-cert-grid],[data-flow-grid]{grid-auto-rows:1fr;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fff;color:var(--c-ink);font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  .rv{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+  .rv.show{opacity:1;transform:none;}
+  .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}
+  @keyframes subheroZoom{from{transform:scale(1.12);}to{transform:scale(1.2);}}
+  [data-navitem]:hover [data-dropdown],[data-navitem]:focus-within [data-dropdown]{opacity:1!important;visibility:visible!important;}
+  .mnav-toggle,.mnav-btn,.mnav-panel{display:none;}
+  @media(max-width:840px){
+    nav[data-gnav]{display:none!important;}
+    #footer-grid{grid-template-columns:1fr!important;}
+    header{align-items:center!important;}
+    [data-protect]{display:none!important;}
+    .mnav-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--c-ink);border-radius:7px;margin:auto 16px;cursor:pointer;flex:none;position:relative;z-index:75;}
+    .mnav-btn span{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:transform .3s ease,opacity .3s ease,top .3s ease;}
+    .mnav-btn span:nth-child(1){top:15px;}.mnav-btn span:nth-child(2){top:21px;}.mnav-btn span:nth-child(3){top:27px;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(1){top:21px;transform:rotate(45deg);}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(2){opacity:0;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(3){top:21px;transform:rotate(-45deg);}
+    .mnav-panel{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--c-ink);z-index:74;padding:90px 26px 40px;transform:translateX(100%);transition:transform .42s cubic-bezier(.16,1,.3,1);overflow-y:auto;}
+    .mnav-toggle:checked ~ .mnav-panel{transform:none;}
+    .mnav-panel a{color:#fff;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:16px;font-weight:700;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);letter-spacing:.04em;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .mnav-panel a.sub{font-size:13.5px;font-weight:500;padding-left:18px;color:rgba(255,255,255,.66);}
+    .mnav-panel a em{font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-style:normal;font-size:10.5px;letter-spacing:.14em;color:var(--c-brand-2);font-weight:600;}
+  }
+
+  /* ===== add.css : parts228 施工実績一覧（実在クラスを上書き・見た目のみ） ===== */
+  .parts228_section{max-width:1200px;margin:0 auto;padding:clamp(40px,6vh,72px) clamp(24px,5vw,40px) clamp(64px,9vh,110px);}
+  .parts228_wrap,.parts228_main{width:100%;}
+  /* --- カテゴリ絞り込み（タグタブ・CMS生成／余白は nav 側に持たせる） --- */
+  .parts228_filter{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 32px;}
+  .parts228_filter_item{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border:1px solid var(--c-cream);border-radius:999px;background:#fff;color:var(--c-ink);text-decoration:none;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:15px;font-weight:700;line-height:1.4;}
+  .parts228_filter_item:hover{border-color:var(--c-brand);}
+  .parts228_filter_item:focus-visible{outline:2px solid var(--c-brand);outline-offset:2px;}
+  .parts228_filter_item.is-active{background:var(--c-ink);border-color:var(--c-ink);color:#fff;font-weight:900;}
+  .parts228_post_list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(18px,2.5vw,28px);list-style:none;margin:0;padding:0;}
+  .parts228_post_wrap{position:relative;background:#fff;border:1px solid var(--c-cream);border-radius:2px;overflow:hidden;transition:transform .4s ease,box-shadow .4s ease;}
+  .parts228_post_wrap:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(35,56,74,.12);}
+  .parts228_post_img{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:#dfe6e0;margin:0;}
+  .parts228_post_img a{display:block;width:100%;height:100%;}
+  .parts228_post_img img{width:100%;height:100%;object-fit:cover;background:#e3e1da;display:block;transition:transform .6s ease;}
+  .parts228_post_wrap:hover .parts228_post_img img{transform:scale(1.05);}
+  .parts228_post_status{display:flex;align-items:center;gap:12px;padding:18px 20px 0;}
+  .parts228_post_date{font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.1em;color:var(--c-brand);}
+  .parts-blog-ex-tag_wrap{display:flex;flex-wrap:wrap;gap:6px;padding:12px 20px 0;}
+  .parts-blog-ex_tag{font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:10.5px;letter-spacing:.04em;color:#557;background:var(--c-cream-2);border:1px solid #E2EAE3;padding:3px 10px;border-radius:1px;}
+  .parts228_post_title-excerpt{padding:8px 20px 22px;}
+  .parts228_post_title{font-size:15px;font-weight:700;color:var(--c-ink);line-height:1.6;letter-spacing:.02em;margin:0;}
+  .parts228_post_excerpt{font-size:12.5px;color:#888;line-height:1.9;margin:10px 0 0;}
+  .parts228_pagenation{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:clamp(40px,6vh,64px);}
+  .parts228_pagenation a,.parts228_pagenation span{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 12px;font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:13px;color:var(--c-ink);border:1px solid var(--c-cream);background:#fff;transition:background .25s ease,color .25s ease,border-color .25s ease;}
+  .parts228_pagenation a:hover{border-color:var(--c-brand);color:var(--c-brand);}
+  .parts228_pagenation .pagination_num.current{background:var(--c-ink);color:#fff;border-color:var(--c-ink);}
+  .parts228_pagenation .pagination_prev,.parts228_pagenation .pagination_next{letter-spacing:.04em;}
+
+  @media (max-width:920px){ .parts228_post_list{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .parts228_post_list{grid-template-columns:1fr;} }
+  @media (prefers-reduced-motion:reduce){
+    .rv{opacity:1!important;transform:none!important;transition:none!important;}
+    [data-subhero-bg]{animation:none!important;transform:scale(1.12)!important;}
+    html{scroll-behavior:auto;}
+  }
+  @media (max-width:840px){ [data-gnav]{display:none!important;} }
+</style>
+</helmet>
+
+<div style="position:relative;overflow-x:clip;background:#fff;">
+
+  <!-- ============ HEADER (共通部品) ============ -->
+  <dc-import name="Header" active="works" hint-size="100%,0" style="position:absolute;top:0;left:0;width:100%;z-index:60;"></dc-import>
+
+  <!-- ============ HERO F ============ -->
+  <section id="subhero" data-screen-label="施工実績Hero" style="position:relative;height:clamp(340px,52vh,520px);overflow:hidden;background:var(--c-ink);">
+    <div data-subhero-bg aria-hidden="true" style="position:absolute;inset:0;transform:scale(1.12);animation:subheroZoom 14s ease-in-out infinite alternate;will-change:transform;"><img src="assets/photo-before.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(20,40,55,.45) 0%,rgba(20,40,55,.78) 100%);"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(168,205,223,.26) 0%,rgba(47,109,146,.34) 100%);mix-blend-mode:multiply;"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;">
+      <p class="rv" style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:clamp(11px,1.4vw,13px);letter-spacing:.34em;color:rgba(255,255,255,.78);margin:0 0 20px;">OUR WORKS</p>
+      <h1 class="rv d1" style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:900;font-size:clamp(28px,4.6vw,48px);color:#fff;margin:0 0 22px;letter-spacing:.07em;text-shadow:0 2px 24px rgba(20,40,55,.5);">施工実績</h1>
+      <span class="rv d2" style="width:64px;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));display:inline-block;"></span>
+    </div>
+    <div style="position:absolute;bottom:22px;left:0;right:0;text-align:center;">
+      <span style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.55);">HOME ／ 施工実績</span>
+    </div>
+  </section>
+
+  <!-- ============ 導入文（静的・自由デザイン） ============ -->
+  <section style="max-width:880px;margin:0 auto;padding:clamp(56px,8vh,90px) clamp(24px,5vw,40px) clamp(24px,4vh,40px);text-align:center;">
+    <p class="rv" style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.2em;color:var(--c-brand);margin:0 0 20px;">CASE STUDIES</p>
+    <h2 class="rv d1" style="font-size:clamp(20px,2.8vw,28px);font-weight:700;line-height:1.7;letter-spacing:.04em;color:var(--c-ink);margin:0 0 22px;text-wrap:balance;">街の住まいを守ってきた、<br>確かな実績。</h2>
+    <p class="rv d2" style="font-size:14px;line-height:2.1;color:#666;margin:0;text-wrap:pretty;">有限会社月岡塗装店がこれまでに手がけてきた現場の一部をご紹介します。<br>新座市を中心に、外壁塗装や屋根塗装、防水工事に対応してきた実績を掲載中です。</p>
+  </section>
+
+  <!-- ============ 動的：parts228 施工実績一覧（構造維持・作り直さない） ============ -->
+  <!-- 🔒 CMS固定領域（parts228系）：構造/クラス/input name 変更禁止・承認/解除なし。見た目はadd.cssのみ -->
+  <!-- 🔒 LOCK START -->
+  <section class="parts228_section">
+    <div class="parts228_wrap">
+      <div class="parts228_main">
+
+        <!-- カテゴリ絞り込み（CMS生成。タグ0件時は nav ごと出力されない） -->
+        <nav class="parts228_filter">
+          <a class="parts228_filter_item is-active" href="/blog-ex/instance">すべて</a>
+          <!-- 以降はCMS登録タグをループ出力（href は /blog-ex/instance/tag/<タグID>・IDはCMS生成） -->
+          <a class="parts228_filter_item" href="#">外壁塗装</a>
+          <a class="parts228_filter_item" href="#">屋根塗装</a>
+          <a class="parts228_filter_item" href="#">防水</a>
+          <a class="parts228_filter_item" href="#">シーリング</a>
+        </nav>
+
+        <ul class="parts228_post_list">
+
+          <!-- CMS LOOP START -->
+          <li class="parts228_post_wrap">
+            <div class="parts228_post_img"><a href="#"><img src="assets/photo-after.png" alt="施工実績サムネイル"></a></div>
+            <div class="parts228_post_status">
+              <span class="parts228_post_date">2025.04.10</span>
+            </div>
+            <div class="parts-blog-ex-tag_wrap">
+              <span class="parts-blog-ex_tag">外壁塗装</span>
+              <span class="parts-blog-ex_tag">新座市</span>
+            </div>
+            <div class="parts228_post_title-excerpt">
+              <p class="parts228_post_title">新座市 M様邸 外壁・屋根塗装</p>
+              <p class="parts228_post_excerpt">外壁と屋根をまとめて塗り替え。下塗りを2〜3回重ねて仕上げました。</p>
+            </div>
+          </li>
+          <!-- CMS LOOP END -->
+
+          <!-- ↓ 表示イメージ用ダミー（CMSが新着順に自動生成。実データに置換される） -->
+          <li class="parts228_post_wrap">
+            <div class="parts228_post_img"><a href="#"><img src="assets/photo-white-house.png" alt="施工実績サムネイル"></a></div>
+            <div class="parts228_post_status"><span class="parts228_post_date">2024.09.22</span></div>
+            <div class="parts-blog-ex-tag_wrap"><span class="parts-blog-ex_tag">防水</span><span class="parts-blog-ex_tag">屋根塗装</span></div>
+            <div class="parts228_post_title-excerpt">
+              <p class="parts228_post_title">志木市 T様邸 屋根塗装</p>
+              <p class="parts228_post_excerpt">色あせが進んだ屋根を洗浄・下地調整のうえ塗り替えました。</p>
+            </div>
+          </li>
+          <li class="parts228_post_wrap">
+            <div class="parts228_post_img"><a href="#"><img src="assets/photo-before.png" alt="施工実績サムネイル"></a></div>
+            <div class="parts228_post_status"><span class="parts228_post_date">2024.06.15</span></div>
+            <div class="parts-blog-ex-tag_wrap"><span class="parts-blog-ex_tag">屋根塗装</span><span class="parts-blog-ex_tag">屋根塗装</span></div>
+            <div class="parts228_post_title-excerpt">
+              <p class="parts228_post_title">新座市 K様邸 外壁塗装</p>
+              <p class="parts228_post_excerpt">チョーキングが出ていた外壁を塗り替え。付帯部もあわせて施工。</p>
+            </div>
+          </li>
+          <li class="parts228_post_wrap">
+            <div class="parts228_post_img"><a href="#"><img src="assets/photo-chalking.jpeg" alt="施工実績サムネイル"></a></div>
+            <div class="parts228_post_status"><span class="parts228_post_date">2024.03.08</span></div>
+            <div class="parts-blog-ex-tag_wrap"><span class="parts-blog-ex_tag">シーリング</span></div>
+            <div class="parts228_post_title-excerpt">
+              <p class="parts228_post_title">朝霞市 S様邸 外壁塗装・シーリング</p>
+              <p class="parts228_post_excerpt">目地のシーリングを打ち替えたうえで外壁を塗り替えました。</p>
+            </div>
+          </li>
+          <li class="parts228_post_wrap">
+            <div class="parts228_post_img"><a href="#"><img src="assets/photo-tools.webp" alt="施工実績サムネイル"></a></div>
+            <div class="parts228_post_status"><span class="parts228_post_date">2023.11.30</span></div>
+            <div class="parts-blog-ex-tag_wrap"><span class="parts-blog-ex_tag">外壁塗装</span><span class="parts-blog-ex_tag">付帯部</span></div>
+            <div class="parts228_post_title-excerpt">
+              <p class="parts228_post_title">清瀬市 I様邸 屋根塗装・防水</p>
+              <p class="parts228_post_excerpt">屋根塗装とベランダ防水を同じ足場で施工し、費用を抑えました。</p>
+            </div>
+          </li>
+          <li class="parts228_post_wrap">
+            <div class="parts228_post_img"><a href="#"><img src="assets/photo-roller.webp" alt="施工実績サムネイル"></a></div>
+            <div class="parts228_post_status"><span class="parts228_post_date">2023.08.12</span></div>
+            <div class="parts-blog-ex-tag_wrap"><span class="parts-blog-ex_tag">防水</span></div>
+            <div class="parts228_post_title-excerpt">
+              <p class="parts228_post_title">新座市 N様邸 外壁塗装</p>
+              <p class="parts228_post_excerpt">2階建て住宅の外壁塗装。近隣へのご挨拶から丁寧に進めました。</p>
+            </div>
+          </li>
+
+        </ul>
+
+        <!-- ページネーション（CMS生成） -->
+        <div class="parts228_pagenation">
+          <span class="pagination_num current">1</span>
+          <a class="pagination_num" href="#">2</a>
+          <a class="pagination_num" href="#">3</a>
+          <a class="pagination_next" href="#">次へ ›</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 🔒 LOCK END -->
+
+  <!-- ============ FOOTER (共通部品) ============ -->
+  <dc-import name="Footer" hint-size="100%,420px"></dc-import>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    // (ヘッダーの色切替は Header.dc.html が担当)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.rv').forEach((el) => io.observe(el));
+  }
+  componentWillUnmount() { if (this._onScroll) window.removeEventListener('scroll', this._onScroll); }
+}
+</script>
+</body>
+</html>

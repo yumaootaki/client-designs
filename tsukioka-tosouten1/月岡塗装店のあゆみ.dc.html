@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="theme.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="有限会社月岡塗装店">
+<meta property="og:image" content="assets/ogp.png">
+<meta property="og:image:width" content="320">
+<meta property="og:image:height" content="240">
+<meta name="twitter:card" content="summary">
+<!-- Webフォント：本番サーバーでは下記1行のコメントを外して有効化する（プレビュー環境では CDN 到達不可のため無効） -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"> -->
+<style>
+  *{box-sizing:border-box;}
+  [data-role-grid],[data-method-grid],[data-where-grid],[data-sign-grid],[data-strength-grid],[data-dr-grid],[data-num-grid],[data-charm-grid],[data-career],[data-value-grid],[data-sdgs-grid],[data-cert-grid],[data-flow-grid]{grid-auto-rows:1fr;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fff;color:var(--c-ink);font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  [data-navitem]:hover [data-dropdown],[data-navitem]:focus-within [data-dropdown]{opacity:1!important;visibility:visible!important;}
+  .mnav-toggle,.mnav-btn,.mnav-panel{display:none;}
+  @media(max-width:840px){
+    nav[data-gnav]{display:none!important;}
+    #footer-grid{grid-template-columns:1fr!important;}
+    header{align-items:center!important;}
+    [data-protect]{display:none!important;}
+    .mnav-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--c-ink);border-radius:7px;margin:auto 16px;cursor:pointer;flex:none;position:relative;z-index:75;}
+    .mnav-btn span{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:transform .3s ease,opacity .3s ease,top .3s ease;}
+    .mnav-btn span:nth-child(1){top:15px;}.mnav-btn span:nth-child(2){top:21px;}.mnav-btn span:nth-child(3){top:27px;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(1){top:21px;transform:rotate(45deg);}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(2){opacity:0;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(3){top:21px;transform:rotate(-45deg);}
+    .mnav-panel{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--c-ink);z-index:74;padding:90px 26px 40px;transform:translateX(100%);transition:transform .42s cubic-bezier(.16,1,.3,1);overflow-y:auto;}
+    .mnav-toggle:checked ~ .mnav-panel{transform:none;}
+    .mnav-panel a{color:#fff;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:16px;font-weight:700;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);letter-spacing:.04em;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .mnav-panel a.sub{font-size:13.5px;font-weight:500;padding-left:18px;color:rgba(255,255,255,.66);}
+    .mnav-panel a em{font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-style:normal;font-size:10.5px;letter-spacing:.14em;color:var(--c-brand-2);font-weight:600;}
+  }
+  .rv,.rvl,.rvr,.rv-scale{opacity:0;transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+  .rv{transform:translateY(40px);}.rvl{transform:translateX(-48px);}.rvr{transform:translateX(48px);}.rv-scale{transform:scale(.95) translateY(22px);}
+  .rv.show,.rvl.show,.rvr.show,.rv-scale.show{opacity:1;transform:none;}
+  .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.42s;}
+  @keyframes subheroZoom{from{transform:scale(1.12);}to{transform:scale(1.2);}}
+  @media (prefers-reduced-motion:reduce){
+    .rv,.rvl,.rvr,.rv-scale{opacity:1!important;transform:none!important;transition:none!important;}
+    [data-subhero-bg]{animation:none!important;transform:scale(1.12)!important;}
+    html{scroll-behavior:auto;}
+  }
+  @media (max-width:840px){
+    [data-gnav]{display:none!important;}
+    [data-value-grid]{grid-template-columns:1fr 1fr!important;}
+    [data-msg]{flex-direction:column!important;}
+    [data-msg-photo]{width:100%!important;}
+    [data-dragon]{flex-direction:column!important;}
+    [data-sdgs-intro]{flex-direction:column!important;}
+    [data-sdgs-grid]{grid-template-columns:1fr!important;}
+    [data-hist-row]{grid-template-columns:1fr!important;gap:8px!important;}
+  }
+  @media (max-width:560px){
+    [data-value-grid]{grid-template-columns:1fr!important;}
+  }
+  [data-reqcta]:hover [data-reqbtn]{transform:translateY(-3px);background:#46d3e3;box-shadow:0 16px 42px rgba(52,197,214,.5);}
+  [data-reqcta]:hover [data-reqarrow]{transform:translateX(7px);}
+  [data-reqcta]:focus-visible{outline:3px solid var(--c-brand-2);outline-offset:6px;}
+</style>
+</helmet>
+
+<div style="position:relative;overflow-x:clip;background:#fff;">
+
+  <!-- ============ HEADER (共通部品) ============ -->
+  <dc-import name="Header" hint-size="100%,0" style="position:absolute;top:0;left:0;width:100%;z-index:60;"></dc-import>
+
+  <!-- ============ HERO F ============ -->
+  <section id="subhero" data-screen-label="月岡塗装店のあゆみHero" style="position:relative;height:clamp(340px,52vh,520px);overflow:hidden;background:var(--c-ink);">
+    <div data-subhero-bg aria-hidden="true" style="position:absolute;inset:0;transform:scale(1.12);animation:subheroZoom 14s ease-in-out infinite alternate;will-change:transform;"><img src="assets/photo-scaffold.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block;"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(20,40,55,.45) 0%,rgba(20,40,55,.78) 100%);"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(168,205,223,.26) 0%,rgba(47,109,146,.34) 100%);mix-blend-mode:multiply;"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;">
+      <p class="rv d1" style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:clamp(11px,1.4vw,13px);letter-spacing:.34em;color:rgba(255,255,255,.78);margin:0 0 20px;">ABOUT US</p>
+      <h1 class="rv d2" style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:900;font-size:clamp(28px,4.6vw,48px);color:#fff;margin:0 0 22px;letter-spacing:.07em;text-shadow:0 2px 24px rgba(20,40,55,.5);">私たちについて</h1>
+      <span class="rv d3" style="width:64px;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));display:inline-block;"></span>
+    </div>
+    <div style="position:absolute;bottom:22px;left:0;right:0;text-align:center;">
+      <span style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.55);">HOME ／ 私たちについて</span>
+    </div>
+  </section>
+
+  <!-- ============ 代表メッセージ ============ -->
+  <section style="max-width:1160px;margin:0 auto;padding:clamp(64px,9vh,110px) clamp(24px,5vw,40px) clamp(40px,6vh,64px);">
+    <div data-msg style="display:flex;gap:clamp(32px,5vw,72px);align-items:flex-start;">
+      <div data-msg-photo class="rvl" style="flex:none;width:clamp(260px,32vw,380px);">
+        <div style="aspect-ratio:3/4;background:#e3e1da;border-radius:2px;box-shadow:0 18px 44px rgba(35,56,74,.16);"></div>
+        <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;color:#999;margin:16px 0 0;text-align:right;">本社オフィス</p>
+      </div>
+      <div class="rvr d1" style="flex:1;min-width:0;">
+        <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 16px;">MESSAGE</p>
+        <h2 style="font-size:clamp(20px,2.8vw,28px);font-weight:700;color:var(--c-ink);margin:0 0 28px;letter-spacing:.04em;line-height:1.6;text-wrap:balance;">住まいの美観を守る仕事に、<br>誇りを持って。</h2>
+        <div style="font-size:14px;color:#555;line-height:2.15;text-wrap:pretty;">
+          <p style="margin:0 0 20px;">有限会社月岡塗装店のページをご覧いただき、ありがとうございます。当店は昭和52年、埼玉県新座市で塗装店として創業しました。以来この街で、外壁と屋根を塗り続けています。</p>
+          <p style="margin:0 0 20px;">塗装は、仕上がってしまえば工程が見えません。だからこそ下塗りを2〜3回重ねるといった、当日は分からない手間を省かないようにしてきました。派手な広告は出していません。近所のお宅を一軒ずつ塗り、その仕上がりで次のご依頼をいただく——その積み重ねで、創業49年を迎えています。</p>
+          <p style="margin:0;">これからも、品質と近隣への配慮を何より大切に、この街とともに歩んでいきます。<strong style="color:var(--c-ink);font-weight:700;">この街が、末永くかたちを保ちつづけるように。</strong>——その想いを胸に、今日も現場に立ちます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ これまでの歩み / 続けてきた理由 ============ -->
+  <section style="background:var(--c-cream-2);margin-top:clamp(20px,3vh,40px);">
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(24px,4vw,56px);align-items:center;">
+        <div class="rvl">
+          <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 14px;">OUR STORY</p>
+          <h3 style="font-size:clamp(19px,2.4vw,25px);font-weight:700;color:var(--c-ink);margin:0 0 20px;letter-spacing:.03em;line-height:1.55;">受け継いだ刷毛で、<br>ひとつずつ積み上げてきました。</h3>
+          <p style="font-size:14px;color:#666;line-height:2.1;margin:0 0 18px;text-wrap:pretty;">有限会社月岡塗装店は、前の代から事業を受け継ぐかたちで歩みはじめました。派手な広告を出すこともなく、目の前の現場を一つずつ仕上げてきた店です。</p>
+          <p style="font-size:14px;color:#666;line-height:2.1;margin:0;text-wrap:pretty;">雨風や紫外線でいたんだ外壁や屋根を、一つひとつ確実に塗り替えていく。その積み重ねが、いまのご依頼につながっています。「父の代からお願いしています」と言っていただけることが、いちばんの手応えです。</p>
+        </div>
+        <div class="rvr d1">
+          <div style="aspect-ratio:4/3;background:#e3e1da;border-radius:2px;box-shadow:0 18px 44px rgba(35,56,74,.16);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 大切にしていること ============ -->
+  <section style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);">
+    <div class="rv" style="display:flex;align-items:stretch;gap:18px;margin-bottom:clamp(32px,4.5vh,48px);">
+      <div style="width:3px;background:linear-gradient(180deg,var(--c-brand-2),var(--c-brand));flex:none;"></div>
+      <div>
+        <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 6px;">OUR VALUES</p>
+        <h3 style="font-size:clamp(20px,2.6vw,28px);font-weight:900;color:var(--c-ink);margin:0;letter-spacing:.04em;">月岡塗装店が大切にしている4つのこと</h3>
+      </div>
+    </div>
+    <div data-value-grid style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:clamp(14px,2vw,20px);">
+      <div class="rv" style="border:1px solid var(--c-cream);padding:clamp(24px,3vw,32px);">
+        <span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:46px;color:var(--c-cream);line-height:.8;display:block;margin-bottom:12px;">01</span>
+        <h4 style="font-size:16px;font-weight:700;color:var(--c-ink);margin:0 0 10px;letter-spacing:.03em;">安全第一</h4>
+        <p style="font-size:14px;color:#666;line-height:1.95;margin:0;">働く仲間も、地域の人も。すべての安全を最優先に考えます。</p>
+      </div>
+      <div class="rv d1" style="border:1px solid var(--c-cream);padding:clamp(24px,3vw,32px);">
+        <span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:46px;color:var(--c-cream);line-height:.8;display:block;margin-bottom:12px;">02</span>
+        <h4 style="font-size:16px;font-weight:700;color:var(--c-ink);margin:0 0 10px;letter-spacing:.03em;">確かな品質</h4>
+        <p style="font-size:14px;color:#666;line-height:1.95;margin:0;">長く形を保つ工事を。妥協のない施工で信頼に応えます。</p>
+      </div>
+      <div class="rv d2" style="border:1px solid var(--c-cream);padding:clamp(24px,3vw,32px);">
+        <span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:46px;color:var(--c-cream);line-height:.8;display:block;margin-bottom:12px;">03</span>
+        <h4 style="font-size:16px;font-weight:700;color:var(--c-ink);margin:0 0 10px;letter-spacing:.03em;">地域への貢献</h4>
+        <p style="font-size:14px;color:#666;line-height:1.95;margin:0;">地域とともに。地域の安全を支える存在であり続けます。</p>
+      </div>
+      <div class="rv d3" style="border:1px solid var(--c-cream);padding:clamp(24px,3vw,32px);">
+        <span style="font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:46px;color:var(--c-cream);line-height:.8;display:block;margin-bottom:12px;">04</span>
+        <h4 style="font-size:16px;font-weight:700;color:var(--c-ink);margin:0 0 10px;letter-spacing:.03em;">難工事を引き受ける</h4>
+        <p style="font-size:14px;color:#666;line-height:1.95;margin:0;">「うちでは難しい」と言われる現場こそ、私たちの出番です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 沿革 ============ -->
+  <section style="background:var(--c-ink);">
+    <div style="max-width:1000px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);">
+      <div class="rv" style="text-align:center;margin-bottom:clamp(28px,4vw,44px);">
+        <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.2em;color:var(--c-brand-2);margin:0 0 16px;">HISTORY</p>
+        <h3 style="font-size:clamp(20px,2.6vw,30px);font-weight:900;color:#fff;margin:0 0 14px;letter-spacing:.04em;">昭和52年から、いままで</h3>
+        <p style="font-size:clamp(13px,1.5vw,15px);line-height:2;color:rgba(255,255,255,.72);margin:0;text-wrap:pretty;">この街で塗り続けて、創業49年になりました。</p>
+      </div>
+      <div style="background:#fff;padding:clamp(24px,3.4vw,44px);">
+        <div class="rv" style="display:grid;grid-template-columns:132px 1fr;gap:clamp(16px,3vw,32px);align-items:start;padding:clamp(20px,2.6vw,28px) 0;border-bottom:1px solid var(--c-cream);" data-hist-row>
+          <div>
+            <p style="margin:0;font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:clamp(20px,2.4vw,26px);color:var(--c-accent);line-height:1;letter-spacing:.02em;">1977</p>
+            <p style="margin:6px 0 0;font-size:12px;color:#8a8578;letter-spacing:.04em;">昭和52年</p>
+          </div>
+          <div>
+            <h4 style="font-size:clamp(16px,1.9vw,19px);font-weight:700;color:var(--c-ink);margin:0 0 10px;letter-spacing:.03em;">有限会社月岡塗装店 創業</h4>
+            <p style="font-size:14px;color:#666;line-height:2.05;margin:0;text-wrap:pretty;">埼玉県新座市で塗装店として創業しました。以来、地元のお宅の外壁・屋根を塗り続けています。</p>
+          </div>
+        </div>
+        <div class="rv" style="display:grid;grid-template-columns:132px 1fr;gap:clamp(16px,3vw,32px);align-items:start;padding:clamp(20px,2.6vw,28px) 0;border-bottom:1px solid var(--c-cream);" data-hist-row>
+          <div>
+            <p style="margin:0;font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:clamp(20px,2.4vw,26px);color:var(--c-accent);line-height:1;letter-spacing:.02em;">—</p>
+            <p style="margin:6px 0 0;font-size:12px;color:#8a8578;letter-spacing:.04em;">—</p>
+          </div>
+          <div>
+            <h4 style="font-size:clamp(16px,1.9vw,19px);font-weight:700;color:var(--c-ink);margin:0 0 10px;letter-spacing:.03em;">事業を次の代へ</h4>
+            <p style="font-size:14px;color:#666;line-height:2.05;margin:0;text-wrap:pretty;">前の代から事業を受け継ぐかたちで、現在の体制になりました。<!-- 要取材：代替わりの年、現代表の就任年 --></p>
+          </div>
+        </div>
+        <div class="rv" style="display:grid;grid-template-columns:132px 1fr;gap:clamp(16px,3vw,32px);align-items:start;padding:clamp(20px,2.6vw,28px) 0;" data-hist-row>
+          <div>
+            <p style="margin:0;font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:clamp(20px,2.4vw,26px);color:var(--c-accent);line-height:1;letter-spacing:.02em;">現在</p>
+            <p style="margin:6px 0 0;font-size:12px;color:#8a8578;letter-spacing:.04em;">創業49年</p>
+          </div>
+          <div>
+            <h4 style="font-size:clamp(16px,1.9vw,19px);font-weight:700;color:var(--c-ink);margin:0 0 10px;letter-spacing:.03em;">関東一円へ</h4>
+            <p style="font-size:14px;color:#666;line-height:2.05;margin:0;text-wrap:pretty;">新座市を拠点に、埼玉県南部から東京都西部まで、関東一円でお引き受けしています。</p>
+          </div>
+        </div>
+      </div>
+      <p class="rv" style="font-size:12px;color:rgba(255,255,255,.5);margin:18px 0 0;line-height:1.9;">※ 沿革の詳細は現在整理中です。<!-- 要取材：法人化の年、受賞・認定歴、従業員数の推移、事業拡大の経緯 --></p>
+    </div>
+  </section>
+
+  <!-- ============ 会社概要への導線 ============ -->
+  <section style="position:relative;overflow:hidden;background:var(--c-ink);">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:#e3e1da;overflow:hidden;"><img src="assets/photo-tools.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(110deg,rgba(28,22,16,.95) 0%,rgba(20,40,55,.86) 46%,rgba(35,56,74,.62) 100%);"></div>
+    <div aria-hidden="true" style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));"></div>
+    <div aria-hidden="true" style="position:absolute;right:-26px;bottom:-46px;font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:clamp(110px,18vw,220px);line-height:.78;color:rgba(255,255,255,.055);pointer-events:none;white-space:nowrap;letter-spacing:.02em;">PROFILE</div>
+    <div style="position:relative;max-width:1040px;margin:0 auto;padding:clamp(56px,9vh,100px) clamp(24px,5vw,40px);">
+      <a href="/about/company" class="rv" data-reqcta style="display:flex;align-items:center;justify-content:space-between;gap:clamp(26px,4vw,52px);flex-wrap:wrap;">
+        <div style="flex:1 1 360px;min-width:0;">
+          <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:12px;letter-spacing:.22em;color:var(--c-brand-2);margin:0 0 14px;">COMPANY PROFILE</p>
+          <h3 style="font-size:clamp(26px,4vw,40px);font-weight:900;color:#fff;margin:0 0 14px;letter-spacing:.04em;line-height:1.35;text-wrap:balance;">会社概要を見る</h3>
+          <p style="font-size:14.5px;color:rgba(255,255,255,.72);margin:0;line-height:1.95;text-wrap:pretty;">所在地・許可・保有資格・沿革など、会社の基本情報はこちら。</p>
+        </div>
+        <span data-reqbtn style="flex:none;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;color:var(--c-ink);background:var(--c-brand-2);padding:18px 38px;border-radius:999px;display:inline-flex;align-items:center;gap:12px;white-space:nowrap;box-shadow:0 10px 30px rgba(52,197,214,.32);transition:transform .3s ease,background .3s ease,box-shadow .3s ease;">詳しく見る <span data-reqarrow style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:20px;display:inline-block;transition:transform .3s ease;">→</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ CTA C ============ -->
+  <section style="background:#fff;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));"></div>
+    <div class="rv" style="max-width:880px;margin:0 auto;padding:clamp(64px,9vh,110px) clamp(24px,5vw,40px);text-align:center;">
+      <p style="font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.2em;color:var(--c-brand);margin:0 0 14px;">CONTACT</p>
+      <h2 style="font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-weight:900;font-size:clamp(22px,3vw,28px);color:var(--c-ink);margin:0 0 14px;letter-spacing:.04em;">お気軽にご相談ください。</h2>
+      <p style="font-size:14px;color:#888;margin:0 0 36px;line-height:2;">工事のご依頼・お見積りはもちろん、「こんな工事でも頼める？」というご相談もお待ちしています。</p>
+      <div style="display:inline-flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <a href="お問い合わせ.dc.html" style="display:inline-flex;align-items:center;gap:10px;background:var(--c-ink);color:#fff;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','Meiryo',sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em;padding:16px 40px;justify-content:center;min-width:260px;box-sizing:border-box;transition:background .3s ease;" style-hover="background:var(--c-brand);">お問い合わせはこちら →</a>
+        <a href="tel:042-479-5507" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--c-ink);font-family:'Work Sans','Helvetica Neue',Arial,sans-serif;font-size:16px;font-weight:600;letter-spacing:.1em;padding:16px 30px;border:1px solid #ddd;justify-content:center;min-width:260px;box-sizing:border-box;">042-479-5507</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER (共通部品) ============ -->
+  <dc-import name="Footer" hint-size="100%,420px"></dc-import>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    // (ヘッダーの色切替は Header.dc.html が担当)
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('.rv,.rvl,.rvr,.rv-scale').forEach((el) => io.observe(el));
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+}
+</script>
+</body>
+</html>
