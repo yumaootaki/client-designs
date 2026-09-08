@@ -115,6 +115,7 @@
   }
   @media (prefers-reduced-motion: reduce){
     [data-hero-slide]{transition:opacity .4s ease!important;}
+    [data-hero-slide].hs-paint{clip-path:none!important;}
     [data-hero-streak]{display:none!important;}
     [data-ink] span{transition:none!important;color:var(--c-brand)!important;}
     .rv,.rvl,.rvr{opacity:1!important;transform:none!important;transition:none!important;}
@@ -128,22 +129,18 @@
   }
   .preboot [data-ha],.preboot [data-ha-sq]{animation-play-state:paused!important;}
 
-  /* ── ヒーロー：2枚が溶け合うクロスフェード＋刷毛目オーバーレイ ── */
-  [data-hero-slide]{position:absolute;inset:0;opacity:0;transition:opacity 1.5s cubic-bezier(.4,0,.3,1);}
+  /* ── ヒーロー：ギザギザのclip-pathで左から塗り込む刷毛ワイプ ── */
+  /* clip-path は毎フレームJSが書き換えるため、ここでは初期状態だけを決める */
+  [data-hero-slide]{position:absolute;inset:0;opacity:0;}
   [data-hero-slide].hs-on{opacity:1;}
+  [data-hero-slide].hs-paint{opacity:1;will-change:clip-path;}
+  /* 刷毛先の濡れた質感。塗り進む境界の直前だけをJSが切り出して見せる */
   [data-hero-streak]{
-    position:absolute;inset:0;z-index:4;pointer-events:none;opacity:0;
-    background:repeating-linear-gradient(93deg,
-      rgba(255,255,255,0) 0px, rgba(255,255,255,.34) 3px, rgba(255,255,255,.05) 9px,
-      rgba(255,255,255,0) 15px, rgba(255,255,255,.22) 21px, rgba(255,255,255,0) 30px);
-    mix-blend-mode:screen;
-  }
-  [data-hero-streak].hs-sweep{animation:brushSweep 1.6s ease-in-out forwards;}
-  @keyframes brushSweep{
-    0%   {opacity:0;   transform:translate3d(-2.5%,0,0);}
-    32%  {opacity:.62; transform:translate3d(0,0,0);}
-    68%  {opacity:.42; transform:translate3d(1.2%,0,0);}
-    100% {opacity:0;   transform:translate3d(2.5%,0,0);}
+    position:absolute;inset:0;z-index:5;pointer-events:none;opacity:0;
+    background:repeating-linear-gradient(96deg,
+      rgba(255,255,255,0) 0px, rgba(255,255,255,.40) 2px, rgba(255,255,255,.06) 7px,
+      rgba(255,255,255,0) 13px, rgba(255,255,255,.26) 18px, rgba(255,255,255,0) 27px);
+    mix-blend-mode:screen;will-change:clip-path,opacity;
   }
   /* ── スクロール連動テキストカラー ── */
   [data-ink] span{color:#b9bcc0;transition:color .55s ease;}
@@ -882,26 +879,83 @@ class Component extends DCLogic {
         if (hCur) hCur.textContent = '0' + (hi + 1);
       };
       const streak = q('[data-hero-streak]');
+
+      // cubic-bezier(.16,.62,.16,1)：中盤まで進み、終わりでゆっくり止まる
+      const bezier = (t) => {
+        const p1 = 0.16, p2 = 0.16;                       // x1, x2
+        const cx = (u) => 3 * p1 * u * (1 - u) * (1 - u) + 3 * p2 * u * u * (1 - u) + u * u * u;
+        const cy = (u) => 3 * 0.62 * u * (1 - u) * (1 - u) + 3 * 1 * u * u * (1 - u) + u * u * u;
+        let lo = 0, hi2 = 1, u = t;
+        for (let i = 0; i < 18; i++) { u = (lo + hi2) / 2; (cx(u) < t) ? (lo = u) : (hi2 = u); }
+        return cy(u);
+      };
+
+      // 刷毛跡のプロファイルを毎回つくり直す（切り替えるたびに違う形になる）
+      const makeBristle = () => {
+        const rows = 24 + Math.floor(Math.random() * 7);  // 24〜30段のギザギザ
+        const pts = [];
+        let carry = 0;
+        for (let i = 0; i <= rows; i++) {
+          const y = (i / rows) * 100;
+          // 隣の段と少しだけ連続させつつ、毛先の跳ねをランダムに足す
+          carry = carry * 0.42 + (Math.random() - 0.5) * 5.6;
+          const spike = Math.random() < 0.22 ? (Math.random() * 5.5 + 2.2) : 0;
+          pts.push({ y, dx: carry + spike });
+        }
+        const pad = pts.reduce((m, p) => Math.max(m, Math.abs(p.dx)), 0) + 3;
+        return { pts, pad };
+      };
+
+      // 境界を x だけ平行移動して polygon 文字列に組む
+      const edgePoly = (bri, x) => {
+        const seg = bri.pts.map((p) => `${(x + p.dx).toFixed(2)}% ${p.y.toFixed(2)}%`).join(',');
+        return `polygon(0% 0%,${seg},0% 100%)`;
+      };
+      // 境界の直前だけを帯状に切り出す（刷毛先のハイライト用）
+      const bandPoly = (bri, x, w) => {
+        const fwd = bri.pts.map((p) => `${(x + p.dx).toFixed(2)}% ${p.y.toFixed(2)}%`).join(',');
+        const back = bri.pts.slice().reverse().map((p) => `${(x - w + p.dx).toFixed(2)}% ${p.y.toFixed(2)}%`).join(',');
+        return `polygon(${fwd},${back})`;
+      };
+
       const showHero = (next) => {
         if (!hSlides.length) return;
         next = (next + hSlides.length) % hSlides.length;
         if (next === hi) return;
-        const prev = hi;
-        // 次の写真を前面に重ねてフェードインさせる。下の写真は遷移中ずっと不透明のまま
-        // （合成不透明度が常に1のため、地色が透ける明滅が起きない）
-        hSlides.forEach((sl, n) => { sl.style.zIndex = n === next ? 3 : (n === prev ? 2 : 1); });
-        hSlides[next].classList.add('hs-on');
-        clearTimeout(this._heroFade);
-        this._heroFade = setTimeout(() => {
-          if (hi !== next) return;
-          hSlides.forEach((sl, n) => { if (n !== next) sl.classList.remove('hs-on'); });
-        }, 1600);
-        if (!reduce && streak) {
-          streak.classList.remove('hs-sweep');
-          void streak.offsetWidth;
-          streak.classList.add('hs-sweep');
-        }
+        const prev = hi, incoming = hSlides[next];
         hi = next; paintDots();
+
+        // 前の写真は下に敷いたまま。上に重ねた次の写真を塗り広げて隠していく
+        hSlides.forEach((sl, n) => { sl.style.zIndex = n === next ? 3 : (n === prev ? 2 : 1); });
+
+        const finish = () => {
+          incoming.classList.add('hs-on');
+          incoming.classList.remove('hs-paint');
+          incoming.style.clipPath = '';
+          hSlides.forEach((sl, n) => { if (n !== next) { sl.classList.remove('hs-on'); sl.style.clipPath = ''; } });
+          if (streak) { streak.style.opacity = '0'; streak.style.clipPath = ''; }
+        };
+        if (reduce) { finish(); return; }
+
+        const bri = makeBristle();
+        const from = -bri.pad, to = 100 + bri.pad;
+        const dur = 1200 + Math.random() * 300;           // 1.2〜1.5秒
+        cancelAnimationFrame(this._heroRaf);
+        incoming.classList.add('hs-paint');
+        incoming.style.clipPath = edgePoly(bri, from);
+        if (streak) streak.style.opacity = '1';
+        const t0 = performance.now();
+        const step = (now) => {
+          const t = Math.min(1, (now - t0) / dur);
+          const x = from + (to - from) * bezier(t);
+          incoming.style.clipPath = edgePoly(bri, x);
+          if (streak) {
+            streak.style.clipPath = bandPoly(bri, x, 9);
+            streak.style.opacity = String(0.9 * Math.sin(Math.PI * Math.min(1, t * 1.02)));
+          }
+          if (t < 1) { this._heroRaf = requestAnimationFrame(step); } else { finish(); }
+        };
+        this._heroRaf = requestAnimationFrame(step);
       };
       const restartHero = () => { clearInterval(htimer); htimer = setInterval(() => showHero(hi + 1), 6200); };
       hDots.forEach((d, n) => d.addEventListener('click', () => { showHero(n); restartHero(); }));
@@ -988,7 +1042,7 @@ class Component extends DCLogic {
   }
   componentWillUnmount() {
     clearTimeout(this._t);
-    clearTimeout(this._heroFade);
+    cancelAnimationFrame(this._heroRaf);
     if (this._htimer) this._htimer();
     if (this._rafId) cancelAnimationFrame(this._rafId);
     if (this._io) this._io.disconnect();
