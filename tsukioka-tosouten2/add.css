@@ -1,0 +1,137 @@
+/* === add.css 貼り付け ここから ===
+   Cuezilla 動的部分（ロック領域）専用の見た目調整。
+   ロック領域の HTML構造/クラス/input name は変更不可（共通ルール §0-5）。
+   本ファイルは外部CSS非依存の自己完結。色・フォントはこのブロック内で定義する。
+   ─ 対象 ─
+   ・施工実績一覧 /blog-ex/instance … parts228 系（動的部分を含むページ生成ルール §3-1）
+   ・TOP 記事カード（BLOG）        … parts228 系（トップページ内動的セクション生成ルール §3-C）
+*/
+
+:root{
+  --ac-accent:#16406B;      /* ブランド：アクセント（ディープブルー） */
+  --ac-accent-d:#0F2E4E;    /* ブランド：白文字が乗る濃色（AA 9.7:1） */
+  --ac-ink:#241f1a;         /* 主要テキスト */
+  --ac-gray:#5d564d;        /* サブテキスト */
+  --ac-line:#ddd3c4;        /* 罫線 */
+  --ac-bg:#faf7f2;
+  --ac-ph:#e5dcce;          /* 画像プレースホルダ面 */
+  --ac-font-jp:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  --ac-font-en:"Anton","Zen Kaku Gothic New",sans-serif;
+  --ac-ease:cubic-bezier(.7,0,.2,1);
+}
+
+/* ====================================================
+   施工実績 カテゴリ絞り込み（nav.parts228_filter）
+   ・出力位置は .parts228_main の先頭（.parts228_post_list の直前）。位置を変えない。
+   ・タグ0件時は nav ごと出力されないため、余白は nav 自身の margin-bottom に持たせる
+     （.parts228_post_list 側に上余白を足さない）。
+   ・.is-active は CMS 側が付与。JSで付け直さない。
+   ==================================================== */
+[class*="parts228_filter"]{
+  display:flex !important; flex-wrap:wrap !important;
+  gap:10px !important; margin:0 0 clamp(28px,4vw,44px) !important; padding:0 !important;
+}
+.parts228_filter_item{
+  display:inline-flex !important; align-items:center !important; justify-content:center !important;
+  min-height:44px !important; padding:10px 20px !important;
+  border:1px solid var(--ac-line) !important; border-radius:999px !important;
+  background:var(--ac-bg) !important; color:var(--ac-ink) !important; text-decoration:none !important;
+  font-family:var(--ac-font-jp) !important;
+  font-size:15px !important; font-weight:700 !important; line-height:1.4 !important;
+  transition:background .25s var(--ac-ease),color .25s var(--ac-ease),border-color .25s var(--ac-ease);
+}
+.parts228_filter_item:hover{ border-color:var(--ac-accent-d) !important; color:var(--ac-accent-d) !important; }
+.parts228_filter_item:focus-visible{ outline:2px solid var(--ac-accent-d) !important; outline-offset:2px !important; }
+.parts228_filter_item.is-active{
+  background:var(--ac-accent-d) !important; border-color:var(--ac-accent-d) !important;
+  color:#fff !important; font-weight:900 !important;
+}
+
+/* ====================================================
+   記事カード一覧（parts228_post_list）
+   施工実績一覧・TOP のカードで共通。PC3列／タブ2列／SP1列。
+   ==================================================== */
+[class*="parts228_post_list"]{
+  display:grid !important;
+  grid-template-columns:repeat(3,1fr) !important;
+  gap:clamp(20px,3vw,32px) !important;
+  margin:0 !important; padding:0 !important; list-style:none !important;
+}
+@media (max-width:960px){ [class*="parts228_post_list"]{ grid-template-columns:repeat(2,1fr) !important; } }
+@media (max-width:600px){ [class*="parts228_post_list"]{ grid-template-columns:1fr !important; } }
+
+.parts228_post_wrap{ list-style:none !important; }
+.parts228_post_wrap a:not(.parts228_post_img){ display:block; color:inherit; text-decoration:none; }
+a.parts228_post_img{ color:#8d8271; text-decoration:none; }
+.parts228_post_wrap a:focus-visible{ outline:2px solid var(--ac-accent-d); outline-offset:3px; }
+
+/* サムネイル：写真到着まではプレースホルダ表示（img が空でも枠が成立する） */
+.parts228_post_img{
+  position:relative; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:.5em;
+  aspect-ratio:16/11; border-radius:8px; overflow:hidden; margin-bottom:1.2rem;
+  background:var(--ac-ph); border:1.5px dashed #b9ad99; box-sizing:border-box;
+  color:#8d8271; transition:transform .5s var(--ac-ease);
+}
+.parts228_post_img img{ width:100%; height:100%; object-fit:cover; display:block; }
+.parts228_post_img img[src=""], .parts228_post_img img:not([src]){ display:none; }
+.parts228_post_img::before{
+  content:""; position:absolute; width:clamp(28px,4vw,44px); height:clamp(28px,4vw,44px);
+  transform:translateY(-.9em);
+  background:currentColor; pointer-events:none;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H5V5h14v14zM8.5 11a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM6 17l3.5-4.5 2.5 3L15.5 11 18 17H6z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H5V5h14v14zM8.5 11a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM6 17l3.5-4.5 2.5 3L15.5 11 18 17H6z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.parts228_post_img::after{
+  content:"写真が入ります"; position:absolute; transform:translateY(1.6em);
+  font-family:var(--ac-font-jp); font-size:clamp(.72rem,1vw,.85rem);
+  font-weight:700; letter-spacing:.08em; color:currentColor; pointer-events:none;
+}
+.parts228_post_img:has(img[src]:not([src=""]))::before,
+.parts228_post_img:has(img[src]:not([src=""]))::after{ content:none; }
+.parts228_post_wrap:hover .parts228_post_img{ transform:translateY(-6px); }
+
+/* 更新日 → タイトル の相対順は固定（入れ替え不可・§3-C） */
+.parts228_post_status{ margin-bottom:.4em; }
+.parts228_post_date{
+  font-family:var(--ac-font-en); font-size:1rem;
+  color:var(--ac-gray); letter-spacing:.06em;
+}
+.parts228_post_title{
+  font-family:var(--ac-font-jp);
+  font-size:clamp(1.0625rem,1.6vw,1.3rem); font-weight:700; line-height:1.6;
+  margin:.2em 0 .6em;
+}
+.parts228_post_wrap:hover .parts228_post_title{ color:var(--ac-accent-d); }
+
+/* タグ */
+.parts-blog-ex-tag_wrap{ display:flex; flex-wrap:wrap; gap:.4em; }
+.parts-blog-ex_tag{
+  display:inline-block; font-family:var(--ac-font-jp); font-size:1rem;
+  color:var(--ac-gray); border:1px solid var(--ac-line); border-radius:4px; padding:.1em .6em;
+}
+
+/* ====================================================
+   ページネーション（parts228_pagenation）
+   ==================================================== */
+[class*="parts228_pagenation"]{
+  display:flex !important; flex-wrap:wrap; align-items:center; justify-content:center;
+  gap:8px !important; margin:clamp(40px,6vw,72px) 0 0 !important; padding:0 !important;
+  list-style:none !important;
+}
+[class*="parts228_pagenation"] a,
+[class*="parts228_pagenation"] span{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:44px; min-height:44px; padding:0 12px;
+  border:1px solid var(--ac-line); border-radius:6px; background:var(--ac-bg);
+  font-family:var(--ac-font-en); font-size:1rem; font-weight:700;
+  color:var(--ac-ink); text-decoration:none;
+  transition:background .25s var(--ac-ease),color .25s var(--ac-ease),border-color .25s var(--ac-ease);
+}
+[class*="parts228_pagenation"] a:hover{ border-color:var(--ac-accent-d); color:var(--ac-accent-d); }
+[class*="parts228_pagenation"] a:focus-visible{ outline:2px solid var(--ac-accent-d); outline-offset:2px; }
+[class*="parts228_pagenation"] .pagination_num.current{
+  background:var(--ac-accent-d); border-color:var(--ac-accent-d); color:#fff;
+}
+
+/* === add.css 貼り付け ここまで === */

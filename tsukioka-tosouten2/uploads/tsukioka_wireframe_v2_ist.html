@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>月岡塗装店 ワイヤーフレーム パターンB(ISTテンプレート準拠・全14P)</title>
+<style>
+  :root{
+    --wf-000:#fff; --wf-050:#f5f5f5; --wf-100:#e5e5e5; --wf-200:#d4d4d4;
+    --wf-300:#a3a3a3; --wf-400:#737373; --wf-500:#525252; --wf-900:#171717;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:var(--wf-900);background:var(--wf-050);}
+  .toc{background:var(--wf-900);color:#fff;padding:24px 32px;position:sticky;top:0;z-index:50;}
+  .toc h1{font-size:16px;margin:0 0 4px;font-weight:700;}
+  .toc h1 small{display:block;font-weight:400;font-size:12px;color:#a3a3a3;margin-top:2px;}
+  .toc-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+  .toc a{color:#fff;background:var(--wf-500);border:1px solid var(--wf-400);border-radius:3px;padding:5px 10px;font-size:12px;text-decoration:none;white-space:nowrap;}
+  .toc a.new{background:#3f3f46;border-color:#71717a;}
+  .legend{font-size:11px;color:var(--wf-300);margin-top:8px;}
+
+  .page{max-width:1180px;margin:40px auto;background:#fff;border:1px solid var(--wf-200);position:relative;}
+  .page-label{background:var(--wf-900);color:#fff;font-size:12px;padding:6px 16px;}
+  .page-label b{font-size:13px;}
+
+  /* --- rail nav(右サイド固定・PC時) --- */
+  .wf-rail{position:absolute;top:0;right:0;width:70px;height:100%;border-left:2px solid var(--wf-900);background:var(--wf-100);
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:14px;padding:16px 6px;font-size:10px;color:var(--wf-500);}
+  .wf-rail .v{writing-mode:vertical-rl;font-size:10px;color:var(--wf-400);margin-top:6px;}
+  .wf-rail .icon{width:34px;height:34px;border:1px solid var(--wf-400);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;text-align:center;}
+
+  /* --- fab(丸型固定CTA) --- */
+  .wf-fab{position:absolute;right:86px;bottom:20px;width:74px;height:74px;border-radius:50%;background:var(--wf-900);color:#fff;
+    display:flex;align-items:center;justify-content:center;text-align:center;font-size:9px;line-height:1.3;}
+
+  /* --- header(ロゴのみ・シンプル) --- */
+  .wf-header{padding:14px 90px 14px 24px;border-bottom:2px solid var(--wf-900);display:flex;justify-content:space-between;align-items:center;}
+  .wf-logo{width:110px;height:32px;background:var(--wf-200);border:1px dashed var(--wf-400);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--wf-500);}
+  .wf-splash-note{font-size:10px;color:var(--wf-400);}
+
+  /* --- generic sections --- */
+  .sec{padding:26px 90px 26px 24px;border-bottom:1px solid var(--wf-200);position:relative;}
+  .sec:last-of-type{border-bottom:none;}
+  .circle-note{position:absolute;top:10px;right:96px;font-size:9px;color:var(--wf-300);border:1px dashed var(--wf-300);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;text-align:center;}
+  .script{font-size:11px;font-style:italic;color:var(--wf-400);}
+  .sec-title{font-size:16px;font-weight:700;margin:2px 0 12px;}
+  .img{background:repeating-linear-gradient(45deg,var(--wf-200),var(--wf-200) 8px,var(--wf-100) 8px,var(--wf-100) 16px);border:1px solid var(--wf-300);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--wf-500);min-height:120px;}
+  .box{border:1px solid var(--wf-300);background:var(--wf-050);padding:10px;font-size:12px;color:var(--wf-500);}
+  .row{display:flex;gap:16px;flex-wrap:wrap;}
+  .row>*{flex:1;min-width:200px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .card{border:1px solid var(--wf-300);padding:12px;font-size:12px;color:var(--wf-500);background:#fff;}
+  .note{font-size:11px;color:#b91c1c;background:#fef2f2;border:1px dashed #fca5a5;padding:6px 10px;margin-top:6px;}
+  p.p{font-size:12px;color:var(--wf-500);margin:0 0 10px;line-height:1.6;}
+
+  /* --- hero(コラージュ+マーキー) --- */
+  .hero{min-height:340px;background:repeating-linear-gradient(45deg,var(--wf-300),var(--wf-300) 10px,var(--wf-200) 10px,var(--wf-200) 20px);
+    display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:8px;padding:32px;position:relative;overflow:hidden;}
+  .hero .mq{position:absolute;font-size:64px;font-weight:900;color:rgba(255,255,255,.35);white-space:nowrap;}
+  .hero .mq1{top:10%;left:-10%;}
+  .hero .mq2{bottom:8%;left:-20%;}
+  .hero .script-en{font-size:13px;font-style:italic;color:#fff;}
+  .hero h1{font-size:24px;color:#fff;margin:2px 0;text-shadow:0 1px 3px rgba(0,0,0,.4);max-width:520px;}
+  .hero p{font-size:12px;color:#fff;max-width:480px;}
+
+  /* --- entrance(3分岐) --- */
+  .entrance{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .entrance .card{padding:0;overflow:hidden;}
+  .entrance .card .img{min-height:110px;}
+  .entrance .card .body{padding:10px;}
+
+  /* --- alt(交互レイアウト) --- */
+  .alt-row{display:flex;gap:20px;align-items:center;margin-bottom:20px;}
+  .alt-row.rev{flex-direction:row-reverse;}
+  .alt-row .img{flex:1;min-height:140px;}
+  .alt-row .txt{flex:1;font-size:12px;color:var(--wf-500);}
+
+  /* --- photo-divider(全幅・引用差込) --- */
+  .photo-divider{min-height:180px;background:repeating-linear-gradient(45deg,var(--wf-400),var(--wf-400) 10px,var(--wf-300) 10px,var(--wf-300) 20px);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;gap:6px;margin:0 90px 0 0;padding:20px;}
+  .photo-divider .label{font-size:11px;font-style:italic;}
+  .photo-divider .title{font-size:17px;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.4);max-width:500px;}
+  .photo-divider .text{font-size:12px;max-width:460px;}
+
+  /* --- merit(番号付き理由) --- */
+  .merit{display:flex;flex-direction:column;gap:14px;}
+  .merit-item{display:flex;gap:14px;align-items:flex-start;}
+  .merit-no{font-size:22px;font-weight:900;color:var(--wf-300);width:44px;}
+
+  /* --- FAQ tabs+accordion --- */
+  .tabs{display:flex;gap:8px;margin-bottom:12px;}
+  .tab{font-size:11px;border:1px solid var(--wf-400);padding:6px 12px;background:var(--wf-100);}
+  .tab.active{background:var(--wf-900);color:#fff;}
+  .acc-item{border:1px solid var(--wf-300);margin-bottom:6px;}
+  .acc-q{font-size:12px;padding:8px 10px;background:var(--wf-050);font-weight:700;}
+  .acc-a{font-size:11px;padding:8px 10px;color:var(--wf-500);border-top:1px solid var(--wf-200);}
+
+  /* --- page-hdr(下層ページ見出し) --- */
+  .page-hdr{padding:30px 90px 20px 24px;position:relative;}
+  .page-hdr .en{font-size:12px;font-style:italic;color:var(--wf-400);}
+  .page-hdr h1{font-size:22px;margin:2px 0 6px;}
+  .page-hdr p{font-size:12px;color:var(--wf-500);max-width:520px;margin:0;}
+  .breadcrumb{font-size:11px;color:var(--wf-400);padding:6px 90px 6px 24px;background:var(--wf-100);}
+
+  /* --- footer --- */
+  .wf-footer{border-top:2px solid var(--wf-900);padding:20px 90px 20px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  .wf-footer .col{font-size:11px;color:var(--wf-500);}
+  .wf-footer .btns{display:flex;gap:8px;}
+  .wf-footer .btn{border:1px solid var(--wf-900);font-size:11px;padding:5px 10px;}
+</style>
+</head>
+<body>
+
+<div class="toc">
+  <h1>月岡塗装店 リニューアル ワイヤーフレーム パターンB<small>ISTテンプレート(紙の質感×コラージュ×右レールナビ)を月岡塗装店用に組み替え / 全14ページ</small></h1>
+  <div class="toc-grid">
+    <a href="#p01">01 ホーム</a>
+    <a href="#p02" class="new">02 ご依頼を検討中の方へ★新</a>
+    <a href="#p03">03 業務案内</a>
+    <a href="#p04" class="new">04 こだわり★新</a>
+    <a href="#p05">05 施工実績</a>
+    <a href="#p06" class="new">06 お客さまの声★新</a>
+    <a href="#p07" class="new">07 料金表★新</a>
+    <a href="#p08" class="new">08 FAQ★新</a>
+    <a href="#p09" class="new">09 月岡塗装店のあゆみ★新</a>
+    <a href="#p10" class="new">10 スタッフ紹介★新</a>
+    <a href="#p11">11 会社概要</a>
+    <a href="#p12">12 採用情報</a>
+    <a href="#p13">13 ブログ</a>
+    <a href="#p14">14 お問い合わせ</a>
+  </div>
+  <div class="legend">パターンA(lead-gen-templateベース)との違い: ヘッダーは上部ナビではなく右サイドの縦レール+丸型固定CTA(fab)+全画面メニューオーバーレイ構成。配色は青の濃淡のみ(サブアクセントなし)、上品さを活かしつつ写真を大きく荒くトリミングして力強さを付与する方針。</div>
+</div>
+
+<!-- ナビ構成(メイン): 業務案内 / こだわり / 施工実績(sub:お客さまの声) / ご依頼を検討中の方へ(sub:料金表) / 採用情報(sub:スタッフ紹介) / 月岡塗装店について(=あゆみ)
+     ナビ構成(サブ・フッター&メニュー内): ブログ / よくあるご質問 / 会社概要 / お問い合わせ -->
+
+<!-- ========================================================= -->
+<!-- 01 ホーム -->
+<!-- ========================================================= -->
+<div class="page" id="p01">
+  <div class="page-label"><b>01 / ホーム(TOP)</b> ー 既存ページ・全面リライト</div>
+  <div class="wf-rail">
+    <div class="icon">☰</div>
+    <div class="v">職人らしさで、塗り替える。</div>
+    <div class="icon">求人</div>
+    <div class="icon">問合せ</div>
+    <div class="icon">↑</div>
+  </div>
+  <div class="wf-fab">お見積り<br>ご相談</div>
+  <div class="wf-header">
+    <div class="wf-logo">LOGO 月岡塗装店</div>
+    <div class="wf-splash-note">※初回訪問時、ロゴ+マーキー1語(例: "TSUKIOKA PAINT")のスプラッシュ演出あり</div>
+  </div>
+
+  <div class="sec">
+    <div class="hero">
+      <div class="mq mq1">TSUKIOKA</div><div class="mq mq2">PAINT</div>
+      <div class="script-en">Craftsmanship</div>
+      <h1>[社長の施工中カット・粗めトリミングの大判コラージュ]</h1>
+      <p>下塗り2〜3回を惜しまない、38年の塗装専門店。埼玉県新座市・関東一円対応</p>
+    </div>
+    <div class="circle-note">円形装飾</div>
+    <div class="note">写真コラージュ+背景マーキー文字演出。パターンAの刷毛ワイプ演出とは異なり、複数の現場写真を回転・重ねて配置(視差スクロール)</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">ENTRANCE(目的から選ぶ3分岐)</div>
+    <div class="entrance">
+      <div class="card">
+        <div class="img">現場写真1</div>
+        <div class="body"><div class="script">For clients</div>お仕事のご依頼<p class="p">はじめての方もご安心を。まずは無料お見積もりから。</p></div>
+      </div>
+      <div class="card">
+        <div class="img">現場写真2</div>
+        <div class="body"><div class="script">Works</div>施工実績を見る<p class="p">確かな技術で仕上げた現場をご紹介します。</p></div>
+      </div>
+      <div class="card">
+        <div class="img">現場写真3</div>
+        <div class="body"><div class="script">Recruit</div>一緒に働く<p class="p">未経験からでも一人前の職人を目指せます。</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">ABOUT(交互レイアウトで信頼訴求)</div>
+    <div class="alt-row">
+      <div class="img">代表写真</div>
+      <div class="txt"><div class="script">Since 1977</div>昭和52年創業、38年の実績。成約率90%の裏付けとなる丁寧な仕事ぶりを紹介</div>
+    </div>
+    <div class="alt-row rev">
+      <div class="img">下塗り写真</div>
+      <div class="txt"><div class="script">Our Craft</div>下塗り2〜3回を徹底。健康・環境に配慮した高品質な塗料を使用</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="photo-divider">
+      <div class="label">Voice</div>
+      <div class="title">「安心して任せられた」というお声を、力に。</div>
+      <div class="text">お客さまの声・施工実績への導線</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">料金の目安 / ブログ最新3件(既存踏襲)</div>
+    <div class="grid3">
+      <div class="card">料金目安カード1</div><div class="card">料金目安カード2</div><div class="card">料金表を見る →</div>
+    </div>
+  </div>
+
+  <div class="wf-footer">
+    <div class="col">スローガン+ロゴ+電話+住所+対応エリア</div>
+    <div class="col">メイン6項目+サブ4項目のフッターナビ</div>
+    <div class="btns"><span class="btn">採用情報</span><span class="btn">お問い合わせ</span></div>
+  </div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 02 ご依頼を検討中の方へ -->
+<!-- ========================================================= -->
+<div class="page" id="p02">
+  <div class="page-label"><b>02 / ご依頼を検討中の方へ</b> ー 新規(For clients)</div>
+  <div class="wf-rail"><div class="icon">☰</div><div class="v">ご依頼を検討中の方へ</div><div class="icon">求人</div><div class="icon">問合せ</div><div class="icon">↑</div></div>
+  <div class="page-hdr"><div class="circle-note">円形装飾</div><div class="en">For clients</div><h1>ご依頼を検討中の方へ</h1><p>はじめて塗装工事を依頼される方の不安に、正面から答えるページ</p></div>
+  <div class="breadcrumb">ホーム &gt; ご依頼を検討中の方へ</div>
+
+  <div class="sec">
+    <div class="photo-divider" style="margin:0;">
+      <div class="label">Partner</div>
+      <div class="title">任せられる塗装店を、探していませんか。</div>
+      <div class="text">悪徳業者・追加料金・近隣トラブルへの不安に、専門性でお応えします。</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="script">Issue</div><div class="sec-title">こんなお悩みはありませんか</div>
+    <div class="box">・悪徳業者ではないか不安 / ・追加料金が心配 / ・近隣トラブルが心配 / ・どこに頼めばいいかわからない</div>
+  </div>
+
+  <div class="sec">
+    <div class="script">Reason</div><div class="sec-title">月岡塗装店が選ばれる4つの理由</div>
+    <div class="merit">
+      <div class="merit-item"><span class="merit-no">01</span><div class="box">38年の実績と成約率90%</div></div>
+      <div class="merit-item"><span class="merit-no">02</span><div class="box">下塗り2〜3回を惜しまない施工品質</div></div>
+      <div class="merit-item"><span class="merit-no">03</span><div class="box">契約後の追加料金なし・明確な価格提示</div></div>
+      <div class="merit-item"><span class="merit-no">04</span><div class="box">近隣挨拶の徹底でトラブル防止</div></div>
+    </div>
+  </div>
+
+  <div class="wf-footer"><div class="col">共通フッター(01と同一)</div><div class="col">&nbsp;</div><div class="btns"><span class="btn">料金表へ</span><span class="btn">お問い合わせ</span></div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 03 業務案内 -->
+<!-- ========================================================= -->
+<div class="page" id="p03">
+  <div class="page-label"><b>03 / 業務案内</b> ー 既存ページ・リライト(Service)</div>
+  <div class="wf-rail"><div class="icon">☰</div><div class="v">業務案内</div><div class="icon">求人</div><div class="icon">問合せ</div><div class="icon">↑</div></div>
+  <div class="page-hdr"><div class="circle-note">円形装飾</div><div class="en">Service</div><h1>業務案内</h1><p>建築塗装工事一式(外壁・屋根・防水・内装)</p></div>
+  <div class="breadcrumb">ホーム &gt; 業務案内</div>
+  <div class="sec"><div class="alt-row"><div class="img">施工写真</div><div class="txt">既存の業務内容説明文をリライト。専門的な内容は04こだわりへ再配置</div></div></div>
+  <div class="sec"><div class="grid3"><div class="card">外壁</div><div class="card">屋根</div><div class="card">防水</div></div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="btns"><span class="btn">お問い合わせ</span></div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 04 こだわり -->
+<!-- ========================================================= -->
+<div class="page" id="p04">
+  <div class="page-label"><b>04 / こだわり</b> ー 新規(Craft)</div>
+  <div class="wf-rail"><div class="icon">☰</div><div class="v">こだわり</div><div class="icon">求人</div><div class="icon">問合せ</div><div class="icon">↑</div></div>
+  <div class="page-hdr"><div class="circle-note">円形装飾</div><div class="en">Craft</div><h1>月岡塗装店のこだわり</h1><p>専門的な施工品質を可視化するページ</p></div>
+  <div class="breadcrumb">ホーム &gt; こだわり</div>
+  <div class="sec">
+    <div class="alt-row"><div class="img">下塗り写真</div><div class="txt">下塗り2〜3回の徹底</div></div>
+    <div class="alt-row rev"><div class="img">塗料写真</div><div class="txt">健康・環境に配慮した高品質塗料</div></div>
+    <div class="alt-row"><div class="img">近隣挨拶写真</div><div class="txt">近隣挨拶の徹底・トラブル防止</div></div>
+  </div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="btns"><span class="btn">施工実績へ</span></div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 05 施工実績 -->
+<!-- ========================================================= -->
+<div class="page" id="p05">
+  <div class="page-label"><b>05 / 施工実績</b> ー 既存ページ・リライト(Works)</div>
+  <div class="wf-rail"><div class="icon">☰</div><div class="v">施工実績</div><div class="icon">求人</div><div class="icon">問合せ</div><div class="icon">↑</div></div>
+  <div class="page-hdr"><div class="circle-note">円形装飾</div><div class="en">Works</div><h1>施工実績</h1><p>既存のギャラリー形式(日付・エリア・工事内容)を維持</p></div>
+  <div class="breadcrumb">ホーム &gt; 施工実績</div>
+  <div class="sec"><div class="grid3"><div class="card"><div class="img">施工写真</div>日付/エリア/工事名</div><div class="card"><div class="img">施工写真</div>日付/エリア/工事名</div><div class="card"><div class="img">施工写真</div>日付/エリア/工事名</div></div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="btns"><span class="btn">お客さまの声へ</span></div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 06 お客さまの声 -->
+<!-- ========================================================= -->
+<div class="page" id="p06">
+  <div class="page-label"><b>06 / お客さまの声</b> ー 新規(Voice / 施工実績のサブページ扱い)</div>
+  <div class="wf-rail"><div class="icon">☰</div><div class="v">お客さまの声</div><div class="icon">求人</div><div class="icon">問合せ</div><div class="icon">↑</div></div>
+  <div class="page-hdr"><div class="circle-note">円形装飾</div><div class="en">Voice</div><h1>お客さまの声</h1><p>成約率90%を裏付ける実際の声</p></div>
+  <div class="breadcrumb">ホーム &gt; 施工実績 &gt; お客さまの声</div>
+  <div class="sec"><div class="grid3"><div class="card">★★★★★ コメント/エリア/工事内容</div><div class="card">★★★★★ コメント/エリア/工事内容</div><div class="card">★★★★★ コメント/エリア/工事内容</div></div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="btns"><span class="btn">施工実績へ</span></div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 07 料金表 -->
+<!-- ========================================================= -->
+<div class="page" id="p07">
+  <div class="page-label"><b>07 / 料金表</b> ー 新規(Price / ご依頼を検討中の方へのサブページ扱い)</div>
+  <div class="wf-rail"><div class="icon">☰</div><div class="v">料金表</div><div class="icon">求人</div><div class="icon">問合せ</div><div class="icon">↑</div></div>
+  <div class="page-hdr"><div class="circle-note">円形装飾</div><div class="en">Price</div><h1>料金表</h1><p>価格の透明性・追加請求なしを明記</p></div>
+  <div class="breadcrumb">ホーム &gt; ご依頼を検討中の方へ &gt; 料金表</div>
+  <div class="sec"><div class="box">表: 工事内容 | 坪数目安 | 価格帯目安 | 工期目安</div></div>
+  <div class="sec"><div class="note">「ご契約後の追加料金請求はありません」を明示</div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="btns"><span class="btn">お問い合わせ</span></div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 08 FAQ -->
+<!-- ========================================================= -->
+<div class="page" id="p08">
+  <div class="page-label"><b>08 / FAQ</b> ー 新規(タブ切替+アコーディオン)</div>
+  <div class="wf-rail"><div class="icon">☰</div><div class="v">よくあるご質問</div><div class="icon">求人</div><div class="icon">問合せ</div><div class="icon">↑</div></div>
+  <div class="page-hdr"><div class="circle-note">円形装飾</div><div class="en">FAQ</div><h1>よくあるご質問</h1><p>ご依頼について、採用について</p></div>
+  <div class="breadcrumb">ホーム &gt; よくあるご質問</div>
+  <div class="sec">
+    <div class="tabs"><div class="tab active">ご依頼を検討中の方向け</div><div class="tab">採用に関する質問</div></div>
+    <div class="acc-item"><div class="acc-q">Q. 近隣から苦情はきませんか?(既存・移設)</div></div>
+    <div class="acc-item"><div class="acc-q">Q. 契約後に追加料金を請求されますか?(既存・移設)</div></div>
+    <div class="acc-item"><div class="acc-q">Q. 見積もりは無料ですか?(新設)</div></div>
+    <div class="acc-item"><div class="acc-q">Q. 対応エリアはどこまでですか?(新設)</div></div>
+  </div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="btns"><span class="btn">お問い合わせ</span></div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 09 月岡塗装店のあゆみ -->
+<!-- ========================================================= -->
+<div class="page" id="p09">
+  <div class="page-label"><b>09 / 月岡塗装店のあゆみ</b> ー 新規(About / ナビ表記は「月岡塗装店について」)</div>
+  <div class="wf-rail"><div class="icon">☰</div><div class="v">月岡塗装店について</div><div class="icon">求人</div><div class="icon">問合せ</div><div class="icon">↑</div></div>
+  <div class="page-hdr"><div class="circle-note">円形装飾</div><div class="en">About</div><h1>月岡塗装店のあゆみ</h1><p>昭和52年の創業から現在まで</p></div>
+  <div class="breadcrumb">ホーム &gt; 月岡塗装店について</div>
+  <div class="sec">
+    <div class="alt-row"><div class="img">創業当時/現在の外観</div><div class="txt">年表(昭和52年創業→現在、詳細は取材要)</div></div>
+    <div class="alt-row rev"><div class="img">代表写真</div><div class="txt">代表メッセージ(職人としての想い・地域への想い)</div></div>
+  </div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="btns"><span class="btn">スタッフ紹介へ</span></div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 10 スタッフ紹介 -->
+<!-- ========================================================= -->
+<div class="page" id="p10">
+  <div class="page-label"><b>10 / スタッフ紹介</b> ー 新規(Staff / 採用情報のサブページ扱い)</div>
+  <div class="wf-rail"><div class="icon">☰</div><div class="v">スタッフ紹介</div><div class="icon">求人</div><div class="icon">問合せ</div><div class="icon">↑</div></div>
+  <div class="page-hdr"><div class="circle-note">円形装飾</div><div class="en">Staff</div><h1>スタッフ紹介</h1><p>社長中心の人柄訴求</p></div>
+  <div class="breadcrumb">ホーム &gt; 採用情報 &gt; スタッフ紹介</div>
+  <div class="sec"><div class="alt-row"><div class="img">代表写真</div><div class="txt">代表挨拶・人柄(採用情報の写真を集客用に転用)</div></div></div>
+  <div class="sec"><div class="box">現場スタッフ紹介(人数分)</div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="btns"><span class="btn">採用情報へ</span></div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 11 会社概要 -->
+<!-- ========================================================= -->
+<div class="page" id="p11">
+  <div class="page-label"><b>11 / 会社概要</b> ー 既存ページ・データ更新のみ(Information)</div>
+  <div class="wf-rail"><div class="icon">☰</div><div class="v">会社概要</div><div class="icon">求人</div><div class="icon">問合せ</div><div class="icon">↑</div></div>
+  <div class="page-hdr"><div class="circle-note">円形装飾</div><div class="en">Information</div><h1>会社概要</h1></div>
+  <div class="breadcrumb">ホーム &gt; 会社概要</div>
+  <div class="sec"><div class="box">会社名/代表者名/設立/資本金/電話番号/所在地/営業時間/定休日/業務内容/保有資格・許可/対応エリア(既存項目踏襲・データ更新)</div></div>
+  <div class="sec"><div class="img" style="min-height:150px;">Googleマップ</div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="btns"><span class="btn">お問い合わせ</span></div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 12 採用情報 -->
+<!-- ========================================================= -->
+<div class="page" id="p12">
+  <div class="page-label"><b>12 / 採用情報</b> ー 既存ページ・構成維持(Recruit)</div>
+  <div class="wf-rail"><div class="icon">☰</div><div class="v">採用情報</div><div class="icon">求人</div><div class="icon">問合せ</div><div class="icon">↑</div></div>
+  <div class="page-hdr"><div class="circle-note">円形装飾</div><div class="en">Recruit</div><h1>採用情報</h1></div>
+  <div class="breadcrumb">ホーム &gt; 採用情報</div>
+  <div class="sec"><div class="alt-row"><div class="img">職人写真</div><div class="txt">働きやすいポイント3つ・募集要項・応募の流れ(既存踏襲)</div></div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="btns"><span class="btn">スタッフ紹介へ</span></div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 13 ブログ -->
+<!-- ========================================================= -->
+<div class="page" id="p13">
+  <div class="page-label"><b>13 / ブログ</b> ー 既存ページ・構成維持</div>
+  <div class="wf-rail"><div class="icon">☰</div><div class="v">ブログ</div><div class="icon">求人</div><div class="icon">問合せ</div><div class="icon">↑</div></div>
+  <div class="page-hdr"><div class="circle-note">円形装飾</div><div class="en">Blog</div><h1>ブログ</h1></div>
+  <div class="breadcrumb">ホーム &gt; ブログ</div>
+  <div class="sec"><div class="grid2"><div class="card">記事カード1</div><div class="card">記事カード2</div><div class="card">記事カード3</div><div class="card">記事カード4</div></div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="btns"><span class="btn">お問い合わせ</span></div></div>
+</div>
+
+<!-- ========================================================= -->
+<!-- 14 お問い合わせ -->
+<!-- ========================================================= -->
+<div class="page" id="p14">
+  <div class="page-label"><b>14 / お問い合わせ</b> ー 既存ページ・構成維持(固定スラッグ /form/inquiry 相当)</div>
+  <div class="wf-rail"><div class="icon">☰</div><div class="v">お問い合わせ</div><div class="icon">求人</div><div class="icon">問合せ</div><div class="icon">↑</div></div>
+  <div class="page-hdr"><div class="circle-note">円形装飾</div><div class="en">Contact</div><h1>お問い合わせ</h1></div>
+  <div class="breadcrumb">ホーム &gt; お問い合わせ</div>
+  <div class="sec"><div class="row"><span class="card">電話でのお問い合わせ</span><span class="card">メールでのお問い合わせ</span></div></div>
+  <div class="sec"><div class="box">フォーム項目(既存踏襲): お名前/メールアドレス(確認含む)/お問い合わせ項目/お問い合わせ内容</div></div>
+  <div class="wf-footer"><div class="col">共通フッター</div><div class="col">&nbsp;</div><div class="btns">&nbsp;</div></div>
+</div>
+
+</body>
+</html>

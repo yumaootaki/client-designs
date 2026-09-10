@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>株式会社イスト｜サイトリニューアル ワイヤーフレーム</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root{
+    --gray-900:#222; --gray-700:#444; --gray-500:#777; --gray-300:#bbb; --gray-100:#f2f2f2;
+    --wire-border:#999; --wire-bg:#e9e9e9; --accent:#1e5c8a; --note:#c0392b; --new:#0a7d3b;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;color:var(--gray-900);margin:0;background:#fafafa;}
+  .app{display:flex;min-height:100vh;}
+  /* ---- サイドナビ ---- */
+  .side-nav{width:250px;flex-shrink:0;background:#1b1b1b;color:#fff;padding:20px 0;position:sticky;top:0;height:100vh;overflow-y:auto;}
+  .side-nav h1{font-size:14px;padding:0 18px 14px;border-bottom:1px solid #444;margin:0 0 10px;line-height:1.5;}
+  .side-nav .grp-label{font-size:11px;color:#999;padding:14px 18px 4px;letter-spacing:.05em;}
+  .side-nav button{display:block;width:100%;text-align:left;background:none;border:none;color:#ddd;padding:9px 18px;font-size:13px;cursor:pointer;border-left:3px solid transparent;}
+  .side-nav button:hover{background:#2a2a2a;}
+  .side-nav button.active{background:#2f2f2f;border-left:3px solid var(--accent);color:#fff;font-weight:bold;}
+  .side-nav button .tag{display:inline-block;font-size:10px;padding:1px 5px;border-radius:3px;margin-right:6px;vertical-align:1px;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.rw{background:#555;color:#fff;}
+  /* ---- メイン ---- */
+  .main{flex:1;padding:28px 36px 80px;max-width:980px;}
+  .page-header{margin-bottom:22px;}
+  .page-header .kind{font-size:11px;color:#fff;padding:2px 8px;border-radius:3px;}
+  .kind.new{background:var(--new);} .kind.rw{background:#555;}
+  .page-header h2{font-size:22px;margin:6px 0 4px;}
+  .page-header .url{font-size:12px;color:var(--gray-500);font-family:monospace;}
+  .page{display:none;}
+  .page.active{display:block;}
+  /* ---- wireframeパーツ共通 ---- */
+  .wf{border:1px dashed var(--wire-border);background:#fff;margin-bottom:14px;padding:16px 18px;border-radius:4px;}
+  .wf-label{font-size:11px;color:var(--accent);font-weight:bold;letter-spacing:.04em;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+  .wf-label .num{background:var(--accent);color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;}
+  .wf h3{font-size:16px;margin:2px 0 6px;}
+  .wf p{font-size:13px;line-height:1.8;color:var(--gray-700);margin:4px 0;}
+  .wf ul{font-size:13px;line-height:1.8;color:var(--gray-700);margin:6px 0;padding-left:20px;}
+  .img-ph{background:repeating-linear-gradient(45deg,#eee,#eee 8px,#e2e2e2 8px,#e2e2e2 16px);border:1px solid var(--wire-border);border-radius:3px;color:var(--gray-500);font-size:11px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;min-height:70px;}
+  .img-ph span{background:#fff;padding:2px 6px;border-radius:2px;}
+  .grid{display:grid;gap:12px;}
+  .grid-2{grid-template-columns:1fr 1fr;}
+  .grid-3{grid-template-columns:1fr 1fr 1fr;}
+  .grid-4{grid-template-columns:repeat(4,1fr);}
+  .card{border:1px solid var(--wire-border);border-radius:4px;padding:10px;background:#fdfdfd;}
+  .card h4{font-size:13px;margin:6px 0 4px;}
+  .card p{font-size:12px;margin:0;color:var(--gray-500);}
+  .cta{background:var(--gray-900);color:#fff;text-align:center;padding:14px;border-radius:4px;font-size:13px;font-weight:bold;letter-spacing:.05em;}
+  .note{font-size:11.5px;color:var(--note);background:#fdf1ef;border-left:3px solid var(--note);padding:6px 10px;margin-top:8px;line-height:1.6;}
+  .note b{color:var(--note);}
+  .kw{display:inline-block;font-size:11px;background:#eef4fa;color:var(--accent);border:1px solid #cfe1ef;border-radius:12px;padding:2px 9px;margin:2px 4px 2px 0;}
+  .faq-item{border-bottom:1px solid #eee;padding:10px 0;}
+  .faq-item .q{font-size:13px;font-weight:bold;}
+  .faq-item .a{font-size:12.5px;color:var(--gray-700);margin-top:4px;}
+  .table{width:100%;border-collapse:collapse;font-size:12.5px;}
+  .table th,.table td{border:1px solid #ddd;padding:7px 10px;text-align:left;}
+  .table th{background:#f5f5f5;width:130px;}
+  .legend{display:flex;gap:16px;font-size:11px;color:var(--gray-500);margin-bottom:18px;flex-wrap:wrap;}
+  .legend span{display:flex;align-items:center;gap:5px;}
+  .legend i{width:14px;height:14px;display:inline-block;border-radius:2px;}
+  @media(max-width:900px){.app{flex-direction:column;}.side-nav{width:100%;height:auto;position:relative;}.grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <nav class="side-nav" id="sideNav">
+    <h1>株式会社イスト<br>サイトリニューアル<br>ワイヤーフレーム</h1>
+    <div class="grp-label">既存ページ（リライト） 全7P</div>
+    <button data-page="home"><span class="tag rw">RW</span>ホーム</button>
+    <button data-page="work"><span class="tag rw">RW</span>業務案内</button>
+    <button data-page="jisseki"><span class="tag rw">RW</span>施工実績</button>
+    <button data-page="recruit"><span class="tag rw">RW</span>採用情報</button>
+    <button data-page="blog"><span class="tag rw">RW</span>ブログ</button>
+    <button data-page="company"><span class="tag rw">RW</span>会社概要</button>
+    <button data-page="contact"><span class="tag rw">RW</span>お問い合わせ</button>
+    <div class="grp-label">新規ページ 全7P</div>
+    <button data-page="request"><span class="tag new">NEW</span>①ご依頼を検討中の方へ</button>
+    <button data-page="career"><span class="tag new">NEW</span>②転職を検討中の方へ</button>
+    <button data-page="faq"><span class="tag new">NEW</span>③FAQ</button>
+    <button data-page="apartment"><span class="tag new">NEW</span>④新築アパート工事</button>
+    <button data-page="tenant"><span class="tag new">NEW</span>⑤テナント工事</button>
+    <button data-page="shop"><span class="tag new">NEW</span>⑥店舗工事</button>
+    <button data-page="about"><span class="tag new">NEW</span>⑦イストについて</button>
+  </nav>
+
+  <div class="main">
+    <div class="legend">
+      <span><i style="background:var(--new)"></i>新規ページ</span>
+      <span><i style="background:#555"></i>既存ページ（リライト）</span>
+      <span><i style="background:#eee;border:1px dashed #999"></i>画像プレースホルダー</span>
+      <span style="color:var(--note);">■ 赤字：Claude Design / 制作への申し送り事項</span>
+    </div>
+
+<!-- ============ 1. ホーム ============ -->
+<section class="page active" id="page-home">
+  <div class="page-header"><span class="kind rw">RW / 既存</span><h2>ホーム（TOP）</h2><div class="url">/</div></div>
+
+  <div class="wf"><div class="wf-label"><span class="num">1</span>ファーストビュー（MV）</div>
+    <div class="img-ph" style="min-height:220px;"><span>MV写真：大型木造アパートの建方 or クレーン作業風景（迫力・職人感）</span></div>
+    <h3>大型木造アパートも、テナント・店舗の内装も。<br>埼玉から、確かな大工技術で応える。</h3>
+    <p>コピー案：新築からリフォームまで、住まいと店舗の「かたち」をつくる大工工事のプロフェッショナル。防火規定など法人物件特有のルールを熟知し、年間仕掛かり約100世帯規模の実績を持つ体制で対応します。</p>
+    <div class="grid grid-3">
+      <div class="card"><p>実績</p><h4>創業から積み重ねた施工実績</h4></div>
+      <div class="card"><p>専門性</p><h4>大型木造・防火規定対応の知見</h4></div>
+      <div class="card"><p>体制</p><h4>二級施工管理技士在籍</h4></div>
+    </div>
+    <div class="note">MVは「お仕事のご依頼」「採用エントリー」の2CTAボタンを重ねて主軸ニーズ（両面）を初速で分岐させる。</div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">2</span>グローバルナビ構成案</div>
+    <p>ホーム／業務案内／施工実績／<b>ご依頼を検討中の方へ</b>／採用情報＋<b>転職を検討中の方へ</b>／<b>イストについて</b>／ブログ／<b>FAQ</b>／会社概要／お問い合わせ</p>
+    <p>メガメニュー「業務案内」内に、<b>新築アパート工事・テナント工事・店舗工事</b>の3業種別ページへの導線を格納。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">3</span>選ばれる理由（4つ）</div>
+    <div class="grid grid-4">
+      <div class="card"><div class="img-ph">アイコン</div><h4>大型木造の専門性</h4><p>年間仕掛かり約100世帯規模。木造大型物件を得意とする施工体制。</p></div>
+      <div class="card"><div class="img-ph">アイコン</div><h4>防火規定への対応力</h4><p>アパート・法人物件特有の厳しいルールを熟知し、確実に対応。</p></div>
+      <div class="card"><div class="img-ph">アイコン</div><h4>無理をさせない安全管理</h4><p>ケガをさせない現場運営で、長く安定した施工品質を実現。</p></div>
+      <div class="card"><div class="img-ph">アイコン</div><h4>多様な人材体制</h4><p>技能実習生・特定技能人材の育成実績を持つ、拡張性のある体制。</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">4</span>対応工事の紹介（3業種カード）</div>
+    <div class="grid grid-3">
+      <div class="card"><div class="img-ph">写真：アパート</div><h4>新築アパート工事</h4><p>主力事業。木造大型物件の専門性を訴求。</p></div>
+      <div class="card"><div class="img-ph">写真：テナント</div><h4>テナント工事</h4><p>元請け会社様向け。SEO主要ターゲット。</p></div>
+      <div class="card"><div class="img-ph">写真：店舗</div><h4>店舗工事</h4><p>高級感・おしゃれ感のある施工写真を厚めに。</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">5</span>施工実績ピックアップ</div>
+    <div class="grid grid-4">
+      <div class="card"><div class="img-ph">実績写真1</div><p>吉川市／アパート新築</p></div>
+      <div class="card"><div class="img-ph">実績写真2</div><p>越谷市／テナント内装</p></div>
+      <div class="card"><div class="img-ph">実績写真3</div><p>草加市／店舗内装</p></div>
+      <div class="card"><div class="img-ph">実績写真4</div><p>三郷市／大工工事</p></div>
+    </div>
+    <div class="note">現状「施工実績」ページの記事は1本のみ。公開時点で最低4〜6件は確保できるよう、既存現場写真の棚卸しを先に依頼する。</div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">6</span>お客様の声</div>
+    <div class="grid grid-2">
+      <div class="card"><div class="img-ph">似顔絵/写真</div><h4>元請け会社様</h4><p>コメント（取材予定・仮テキスト）</p></div>
+      <div class="card"><div class="img-ph">似顔絵/写真</div><h4>店舗オーナー様</h4><p>コメント（取材予定・仮テキスト）</p></div>
+    </div>
+    <div class="note">お客様の声は初回公開時は準備が難しければ、代表メッセージ形式の暫定コンテンツで代替可。</div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">7</span>採用強化バナー</div>
+    <div class="img-ph" style="min-height:100px;"><span>写真：現場で笑顔のスタッフ／外国人材スタッフ</span></div>
+    <p>コピー案：「無理をしない」を大切に。未経験からでも長く働ける現場を、イストはつくっています。</p>
+    <div class="cta">転職を検討中の方へ　→</div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">8</span>イストについて／会社概要ダイジェスト</div>
+    <p>平成25年創業、代表20年以上のキャリア。「地域のベストパートナー」を目指す姿勢を1〜2文で紹介し、詳細は「イストについて」へ誘導。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">9</span>ブログ最新記事（3件フィード）</div>
+    <div class="grid grid-3">
+      <div class="card"><div class="img-ph">サムネ</div><p>テナント工事施工業者の選び方</p></div>
+      <div class="card"><div class="img-ph">サムネ</div><p>店舗内装工事の費用相場</p></div>
+      <div class="card"><div class="img-ph">サムネ</div><p>吉川市 大工求人 未経験でも安心</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">10</span>ご依頼検討者・FAQ導線／フッター前CTA</div>
+    <div class="grid grid-2">
+      <div class="card"><h4>ご依頼を検討中の方へ</h4><p>発注検討者向け情報を集約</p></div>
+      <div class="card"><h4>よくある質問</h4><p>不安解消のFAQへ</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. 業務案内 ============ -->
+<section class="page" id="page-work">
+  <div class="page-header"><span class="kind rw">RW / 既存</span><h2>業務案内</h2><div class="url">/work</div></div>
+
+  <div class="wf"><div class="wf-label"><span class="num">1</span>リードコピー</div>
+    <p>現行は戸建て・エンド向けの記述が残ったまま。現在の主力（大型アパート・テナント・店舗・大工工事・造作大工）に合わせて全面リライトする旨を明記。</p>
+    <p>コピー案：新築アパートの建方から、テナント・店舗の内装造作まで。木造建築のプロフェッショナル集団として、幅広い工事にワンストップで対応します。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">2</span>対応可能な工事一覧（5種）</div>
+    <div class="grid grid-3">
+      <div class="card"><div class="img-ph">写真</div><h4>新築アパート工事</h4><p>木造大型物件が主軸。→ 独立ページへ</p></div>
+      <div class="card"><div class="img-ph">写真</div><h4>テナント工事</h4><p>元請け会社様との取引拡大を目指す。→ 独立ページへ</p></div>
+      <div class="card"><div class="img-ph">写真</div><h4>店舗工事</h4><p>飲食・物販など内装造作。→ 独立ページへ</p></div>
+      <div class="card"><div class="img-ph">写真</div><h4>大工工事</h4><p>躯体工事・造作全般の基盤技術。</p></div>
+      <div class="card"><div class="img-ph">写真</div><h4>造作大工</h4><p>オリジナル什器・木工造作の対応力。</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">3</span>対応エリア</div>
+    <p>吉川市を拠点に、埼玉県東部／東京都23区／千葉県で活動。エリアマップ（簡易）を掲載。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">4</span>取引形態</div>
+    <ul>
+      <li>元請け会社様からのご発注（テナント・店舗案件で強化中）</li>
+      <li>デベロッパー・工務店様の協力会社としての参画</li>
+      <li>個人施主様からの大工工事・リフォームのご相談</li>
+    </ul>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">5</span>施工フロー（簡易）</div>
+    <p>お問い合わせ → 現地調査・お打ち合わせ → お見積り提示 → ご契約 → 着工 → 完成・引き渡し</p>
+    <div class="note">詳細フローは「ご依頼を検討中の方へ」で厚く展開。ここではダイジェストのみ。</div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">6</span>CTA</div>
+    <div class="grid grid-2"><div class="cta">ご依頼を検討中の方へ</div><div class="cta">お問い合わせ</div></div>
+  </div>
+</section>
+
+<!-- ============ 3. 施工実績 ============ -->
+<section class="page" id="page-jisseki">
+  <div class="page-header"><span class="kind rw">RW / 既存</span><h2>施工実績</h2><div class="url">/jisseki</div></div>
+
+  <div class="wf"><div class="wf-label"><span class="num">1</span>リードコピー</div>
+    <p>コピー案：新築アパートからテナント・店舗の内装まで。イストが手がけた施工実績をご紹介します。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">2</span>カテゴリフィルター</div>
+    <p>タブ：すべて／新築アパート工事／テナント工事／店舗工事／大工工事・造作</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">3</span>実績一覧（グリッド）</div>
+    <div class="grid grid-3">
+      <div class="card"><div class="img-ph">写真</div><h4>吉川市／木造アパート新築</h4><p>規模：〇世帯／工期：〇ヶ月</p></div>
+      <div class="card"><div class="img-ph">写真</div><h4>越谷市／テナント内装工事</h4><p>業態：飲食店／工期：〇週間</p></div>
+      <div class="card"><div class="img-ph">写真</div><h4>草加市／店舗内装工事</h4><p>業態：物販店／工期：〇週間</p></div>
+      <div class="card"><div class="img-ph">写真</div><h4>三郷市／大工工事一式</h4><p>戸建てリフォーム</p></div>
+      <div class="card"><div class="img-ph">写真</div><h4>吉川市／造作大工</h4><p>オリジナル什器製作</p></div>
+      <div class="card"><div class="img-ph">写真</div><h4>八潮市／木造アパート新築</h4><p>規模：〇世帯</p></div>
+    </div>
+    <div class="note"><b>要写真素材</b>：現行サイトは在来工法記事1本のみ。制作開始前に過去現場写真を最低6〜8件分棚卸し・整理する必要あり（社長への依頼事項）。</div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">4</span>数字で見る実績</div>
+    <div class="grid grid-4">
+      <div class="card"><h4>約100世帯</h4><p>年間仕掛かり規模</p></div>
+      <div class="card"><h4>創業12年+</h4><p>平成25年創業</p></div>
+      <div class="card"><h4>3エリア</h4><p>埼玉／東京／千葉</p></div>
+      <div class="card"><h4>1名で17世帯</h4><p>効率的な施工体制</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">5</span>CTA</div><div class="cta">ご依頼を検討中の方へ</div></div>
+</section>
+
+<!-- ============ 4. 採用情報 ============ -->
+<section class="page" id="page-recruit">
+  <div class="page-header"><span class="kind rw">RW / 既存</span><h2>採用情報</h2><div class="url">/recruit</div></div>
+
+  <div class="wf"><div class="wf-label"><span class="num">1</span>MV・リードコピー</div>
+    <div class="img-ph" style="min-height:160px;"><span>写真：現場スタッフの集合 or 作業風景</span></div>
+    <p>コピー案：「無理をしない」を大切に、長く働ける現場をつくっています。未経験からでも一人前の大工を目指せる環境です。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">2</span>働く環境（3ポイント）</div>
+    <div class="grid grid-3">
+      <div class="card"><h4>安全第一</h4><p>怪我をさせない現場管理を徹底。無理な働き方はさせません。</p></div>
+      <div class="card"><h4>アットホームな社風</h4><p>困ったことはすぐ相談できる距離感。</p></div>
+      <div class="card"><h4>未経験からでも安心</h4><p>経験の有無を問わず、丁寧な指導体制。</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">3</span>募集職種</div>
+    <div class="grid grid-2">
+      <div class="card"><h4>大工（正社員）</h4><p>未経験・経験者ともに歓迎</p></div>
+      <div class="card"><h4>協力会社・外注</h4><p>専属外注としての参画も相談可</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">4</span>多様な人材が活躍</div>
+    <p>技能実習生・特定技能人材の受け入れ実績あり。国籍を問わず活躍できる体制を整えています。</p>
+    <div class="note">詳細な訴求（受け入れ人数・体制拡大の計画感）は「転職を検討中の方へ」で厚く展開。ここでは概要のみ。</div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">5</span>先輩の声</div>
+    <div class="grid grid-2">
+      <div class="card"><div class="img-ph">写真</div><p>スタッフコメント（取材予定・仮）</p></div>
+      <div class="card"><div class="img-ph">写真</div><p>スタッフコメント（取材予定・仮）</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">6</span>応募の流れ・CTA</div>
+    <p>エントリー → 面談 → 現場見学 → 入社</p>
+    <div class="grid grid-2"><div class="cta">転職を検討中の方へ（詳細）</div><div class="cta">エントリーフォーム</div></div>
+  </div>
+</section>
+
+<!-- ============ 5. ブログ ============ -->
+<section class="page" id="page-blog">
+  <div class="page-header"><span class="kind rw">RW / 既存</span><h2>ブログ</h2><div class="url">/blog</div></div>
+  <div class="wf"><div class="wf-label"><span class="num">1</span>カテゴリ構成の見直し</div>
+    <p>現行はお知らせ（日常系）中心。SEO用キーワードに合わせたカテゴリを新設：<span class="kw">テナント工事</span><span class="kw">店舗内装</span><span class="kw">大工求人</span><span class="kw">お知らせ</span></p>
+  </div>
+  <div class="wf"><div class="wf-label"><span class="num">2</span>記事一覧</div>
+    <div class="grid grid-3">
+      <div class="card"><div class="img-ph">サムネ</div><p>【テナント工事】埼玉県で施工業者を選ぶポイント</p></div>
+      <div class="card"><div class="img-ph">サムネ</div><p>【店舗内装】開業までのスケジュール目安</p></div>
+      <div class="card"><div class="img-ph">サムネ</div><p>【大工求人】吉川市で未経験から大工を目指す</p></div>
+    </div>
+    <div class="note">議事録の合意通り、週1回・5000文字以上を目安に更新運用。1記事＝1キーワードで内部リンクを業種別ページに集約する設計。</div>
+  </div>
+</section>
+
+<!-- ============ 6. 会社概要 ============ -->
+<section class="page" id="page-company">
+  <div class="page-header"><span class="kind rw">RW / 既存</span><h2>会社概要</h2><div class="url">/information</div></div>
+  <div class="wf"><div class="wf-label"><span class="num">1</span>会社情報テーブル</div>
+    <table class="table">
+      <tr><th>会社名</th><td>株式会社イスト</td></tr>
+      <tr><th>所在地</th><td>〒342-0058 埼玉県吉川市きよみ野3丁目14-9</td></tr>
+      <tr><th>電話番号</th><td>048-981-1367（営業電話お断り）</td></tr>
+      <tr><th>創業</th><td>平成25年</td></tr>
+      <tr><th>代表者</th><td>代表取締役社長（20年以上の業界キャリア／二級施工管理技士）</td></tr>
+      <tr><th>事業内容</th><td>新築アパート工事、テナント工事、店舗工事、大工工事、造作大工</td></tr>
+      <tr><th>対応エリア</th><td>埼玉県東部・東京都23区・千葉県</td></tr>
+    </table>
+    <div class="note">二級施工管理技士の資格表記は社長ご本人から今回追加の指示あり（現行未掲載）。</div>
+  </div>
+  <div class="wf"><div class="wf-label"><span class="num">2</span>アクセスマップ</div><div class="img-ph" style="min-height:180px;"><span>Googleマップ埋め込み</span></div></div>
+  <div class="wf"><div class="wf-label"><span class="num">3</span>イストについてへの導線</div>
+    <p>企業ストーリー・代表メッセージ・数字で見る実績は「イストについて」ページへ集約し誘導。</p>
+  </div>
+</section>
+
+<!-- ============ 7. お問い合わせ ============ -->
+<section class="page" id="page-contact">
+  <div class="page-header"><span class="kind rw">RW / 既存</span><h2>お問い合わせ</h2><div class="url">/contact</div></div>
+  <div class="wf"><div class="wf-label"><span class="num">1</span>リード・電話案内</div>
+    <p>お電話：048-981-1367（受付8:00〜18:00／営業電話お断り）</p>
+  </div>
+  <div class="wf"><div class="wf-label"><span class="num">2</span>お問い合わせフォーム項目</div>
+    <ul><li>お名前／会社名</li><li>電話番号・メールアドレス</li><li>お問い合わせ種別（工事のご依頼／お見積り／採用について／その他）</li><li>ご希望の工事種別（新築アパート／テナント／店舗／その他）</li><li>お問い合わせ内容</li></ul>
+  </div>
+  <div class="wf"><div class="wf-label"><span class="num">3</span>FAQへの誘導</div>
+    <p>「よくある質問もご確認ください」→ FAQページへのリンクカード</p>
+  </div>
+  <div class="wf"><div class="wf-label"><span class="num">4</span>対応エリア地図</div><div class="img-ph" style="min-height:140px;"><span>対応エリアマップ</span></div></div>
+</section>
+
+<!-- ============ 8. ご依頼を検討中の方へ ============ -->
+<section class="page" id="page-request">
+  <div class="page-header"><span class="kind new">NEW</span><h2>①ご依頼を検討中の方へ</h2><div class="url">/for-clients</div></div>
+
+  <div class="wf"><div class="wf-label"><span class="num">1</span>MV・リードコピー</div>
+    <div class="img-ph" style="min-height:180px;"><span>写真：現場での打ち合わせ or クレーン作業</span></div>
+    <p>コピー案：元請け会社様、店舗オーナー様へ。大型木造物件から店舗の内装まで、確かな技術と体制でお応えします。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">2</span>こんなお悩みありませんか</div>
+    <div class="grid grid-4">
+      <div class="card"><p>施工業者の品質にばらつきがある</p></div>
+      <div class="card"><p>大型物件に対応できる業者が少ない</p></div>
+      <div class="card"><p>防火規定など法人物件特有のルールに不安</p></div>
+      <div class="card"><p>安定して発注できる協力会社を探している</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">3</span>イストが選ばれる4つの理由</div>
+    <div class="grid grid-4">
+      <div class="card"><h4>01｜大型木造の専門性</h4><p>年間仕掛かり約100世帯規模。大型物件ならではのノウハウを蓄積。</p></div>
+      <div class="card"><h4>02｜防火法規への対応力</h4><p>アパート・法人物件特有の厳しい規定を熟知し、確実に施工。</p></div>
+      <div class="card"><h4>03｜安全第一の現場管理</h4><p>「無理をさせない」方針で、事故のない安定した工程を実現。</p></div>
+      <div class="card"><h4>04｜効率的な人員配置</h4><p>1名あたり平均17世帯を担当できる体制で、コストと品質を両立。</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">4</span>対応可能な工事・エリア</div>
+    <p>新築アパート工事／テナント工事／店舗工事／大工工事・造作大工　※埼玉県東部・東京都23区・千葉県対応</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">5</span>ご依頼の流れ（6ステップ）</div>
+    <div class="grid grid-3">
+      <div class="card"><h4>STEP1</h4><p>お問い合わせ・ヒアリング</p></div>
+      <div class="card"><h4>STEP2</h4><p>現地調査・お打ち合わせ</p></div>
+      <div class="card"><h4>STEP3</h4><p>お見積りのご提示</p></div>
+      <div class="card"><h4>STEP4</h4><p>ご契約</p></div>
+      <div class="card"><h4>STEP5</h4><p>着工・工事</p></div>
+      <div class="card"><h4>STEP6</h4><p>完成・引き渡し・アフターフォロー</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">6</span>料金の目安</div>
+    <p>工事規模・内容により変動するため、概算レンジ表＋「まずは無料お見積りをご利用ください」の案内を掲載。</p>
+    <div class="note">具体的な金額提示は営業判断が必要なため、初回公開時は「規模別の目安レンジ」程度に留める方針で社長側と要すり合わせ。</div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">7</span>お客様の声（元請け・オーナー様）</div>
+    <div class="grid grid-2">
+      <div class="card"><div class="img-ph">写真</div><p>コメント（取材予定・仮）</p></div>
+      <div class="card"><div class="img-ph">写真</div><p>コメント（取材予定・仮）</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">8</span>FAQ抜粋（3問）＋CTA</div>
+    <div class="faq-item"><div class="q">Q. 対応可能なエリアはどこまでですか？</div><div class="a">A. 埼玉県東部を中心に、東京都23区・千葉県まで対応しています。</div></div>
+    <div class="faq-item"><div class="q">Q. 大型物件の実績はありますか？</div><div class="a">A. 年間仕掛かり約100世帯規模の実績があり、大型木造物件を得意としています。</div></div>
+    <div class="faq-item"><div class="q">Q. 見積りだけの依頼は可能ですか？</div><div class="a">A. 可能です。まずはお気軽にお問い合わせください。</div></div>
+    <div class="cta" style="margin-top:10px;">お問い合わせ・お見積り依頼</div>
+  </div>
+</section>
+
+<!-- ============ 9. 転職を検討中の方へ ============ -->
+<section class="page" id="page-career">
+  <div class="page-header"><span class="kind new">NEW</span><h2>②転職を検討中の方へ</h2><div class="url">/for-recruit</div></div>
+
+  <div class="wf"><div class="wf-label"><span class="num">1</span>MV・代表メッセージ</div>
+    <div class="img-ph" style="min-height:180px;"><span>写真：現場での代表 or スタッフ全員</span></div>
+    <p>コピー案：「無理をしない」が、長く続けられる一番の理由。未経験からでも、確かな技術を身につけられる環境をつくっています。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">2</span>イストで働く魅力（4ポイント）</div>
+    <div class="grid grid-4">
+      <div class="card"><h4>安全第一</h4><p>ケガをさせない現場運営。無理な工程は組みません。</p></div>
+      <div class="card"><h4>未経験歓迎</h4><p>丁寧な指導で、一人前の大工を目指せます。</p></div>
+      <div class="card"><h4>多国籍が活躍</h4><p>技能実習生・特定技能人材も活躍中。</p></div>
+      <div class="card"><h4>アットホーム</h4><p>困ったことをすぐ相談できる距離感。</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">3</span>募集職種一覧</div>
+    <div class="grid grid-2">
+      <div class="card"><h4>大工（正社員）</h4><p>経験不問。アパート・テナント・店舗工事に従事。</p></div>
+      <div class="card"><h4>協力会社・専属外注</h4><p>継続的なお付き合いができる体制を歓迎。</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">4</span>スタッフの1日（タイムライン）</div>
+    <div class="grid grid-4">
+      <div class="card"><h4>8:00</h4><p>朝礼・現場移動</p></div>
+      <div class="card"><h4>9:00</h4><p>施工開始</p></div>
+      <div class="card"><h4>12:00</h4><p>休憩</p></div>
+      <div class="card"><h4>17:00</h4><p>片付け・終業</p></div>
+    </div>
+    <div class="note">実際の勤務時間・休憩は要確認。仮のタイムラインとして掲載、後日ヒアリングで確定。</div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">5</span>先輩インタビュー</div>
+    <div class="grid grid-2">
+      <div class="card"><div class="img-ph">写真</div><p>入社〇年目スタッフの声（取材予定・仮）</p></div>
+      <div class="card"><div class="img-ph">写真</div><p>技能実習生スタッフの声（取材予定・仮）</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">6</span>多様な人材とともに歩む</div>
+    <p>技能実習生・特定技能人材の受け入れ実績があり、来年以降さらに体制を拡大予定。国籍に関わらず、技術を身につけたい方を歓迎します。</p>
+    <div class="note">将来的なベトナム展開の話は現時点では社外秘寄りのため、採用ページでは「多国籍で活躍できる環境」という控えめな表現に留める（イストについてページでも同様の配慮）。</div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">7</span>待遇・福利厚生</div>
+    <ul><li>給与：経験・能力に応じて優遇</li><li>資格取得支援（要すり合わせ）</li><li>各種社会保険完備（要確認）</li></ul>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">8</span>応募の流れ・FAQ抜粋・CTA</div>
+    <p>エントリー → 面談 → 現場見学 → 入社</p>
+    <div class="faq-item"><div class="q">Q. 未経験でも応募できますか？</div><div class="a">A. はい、経験不問です。丁寧に指導します。</div></div>
+    <div class="faq-item"><div class="q">Q. 外国籍でも応募できますか？</div><div class="a">A. はい、技能実習生・特定技能人材も活躍しています。</div></div>
+    <div class="cta" style="margin-top:10px;">エントリーフォームへ</div>
+  </div>
+</section>
+
+<!-- ============ 10. FAQ ============ -->
+<section class="page" id="page-faq">
+  <div class="page-header"><span class="kind new">NEW</span><h2>③FAQページ</h2><div class="url">/faq</div></div>
+
+  <div class="wf"><div class="wf-label"><span class="num">1</span>タブ構成</div>
+    <p>タブ①：ご依頼を検討中の方向け　／　タブ②：採用に関する質問</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">2</span>タブ①：発注検討者向けFAQ（7問）</div>
+    <div class="faq-item"><div class="q">Q. 対応可能なエリアを教えてください。</div><div class="a">A. 吉川市を拠点に、埼玉県東部・東京都23区・千葉県まで対応しています。</div></div>
+    <div class="faq-item"><div class="q">Q. 個人宅のリフォームも対応していますか？</div><div class="a">A. 対応可能です。まずはお気軽にご相談ください。</div></div>
+    <div class="faq-item"><div class="q">Q. テナント・店舗工事の工期はどれくらいですか？</div><div class="a">A. 規模により異なりますが、目安の工期は現地調査後にご提示します。</div></div>
+    <div class="faq-item"><div class="q">Q. 大型アパートなど大規模な物件にも対応できますか？</div><div class="a">A. 年間仕掛かり約100世帯規模の実績があり、大型木造物件を得意としています。</div></div>
+    <div class="faq-item"><div class="q">Q. 防火規定など法人物件特有のルールに対応できますか？</div><div class="a">A. アパート・法人物件特有の規定を熟知したスタッフが対応します。</div></div>
+    <div class="faq-item"><div class="q">Q. 見積りは無料ですか？</div><div class="a">A. お見積りは無料です。まずはお問い合わせください。</div></div>
+    <div class="faq-item"><div class="q">Q. 元請けとして継続的な発注は可能ですか？</div><div class="a">A. 可能です。安定した協力体制を歓迎しています。</div></div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">3</span>タブ②：採用に関するFAQ（7問）</div>
+    <div class="faq-item"><div class="q">Q. 未経験でも応募できますか？</div><div class="a">A. はい、経験不問です。丁寧に指導します。</div></div>
+    <div class="faq-item"><div class="q">Q. 外国籍でも応募できますか？</div><div class="a">A. はい、技能実習生・特定技能人材も活躍しています。</div></div>
+    <div class="faq-item"><div class="q">Q. 女性でも働けますか？</div><div class="a">A. 意欲があれば性別を問わず歓迎します（要確認）。</div></div>
+    <div class="faq-item"><div class="q">Q. 資格取得の支援はありますか？</div><div class="a">A. 支援制度については面談時にご案内します（要すり合わせ）。</div></div>
+    <div class="faq-item"><div class="q">Q. 給与・待遇はどのくらいですか？</div><div class="a">A. 経験・能力に応じて優遇します。詳細は面談でご案内します。</div></div>
+    <div class="faq-item"><div class="q">Q. 休日はどのくらいありますか？</div><div class="a">A. 業界の繁忙状況により変動します（要確認）。</div></div>
+    <div class="faq-item"><div class="q">Q. 専属外注としての契約もできますか？</div><div class="a">A. はい、ご相談に応じます。</div></div>
+  </div>
+  <div class="note">給与・休日・資格支援の具体的条件は現時点で議事録に情報がないため仮回答。8/26訪問時に社長へ確認要。</div>
+
+  <div class="wf"><div class="wf-label"><span class="num">4</span>CTA</div>
+    <div class="grid grid-2"><div class="cta">お問い合わせ</div><div class="cta">エントリーフォーム</div></div>
+  </div>
+</section>
+
+<!-- ============ 11. 新築アパート工事 ============ -->
+<section class="page" id="page-apartment">
+  <div class="page-header"><span class="kind new">NEW</span><h2>④新築アパート工事</h2><div class="url">/apartment</div></div>
+
+  <div class="wf"><div class="wf-label"><span class="num">1</span>MV・リードコピー</div>
+    <div class="img-ph" style="min-height:190px;"><span>写真：木造アパート建方 or クレーン作業</span></div>
+    <p>SEO：<span class="kw">埼玉県 アパート建築</span></p>
+    <p>コピー案：木造大型アパートの建築を、確かな技術と体制で。ここ数年増え続ける需要に、専門性で応えます。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">2</span>強み（3点）</div>
+    <div class="grid grid-3">
+      <div class="card"><h4>防火規定への対応</h4><p>一戸建てとは異なる法人物件特有の厳しい規定を熟知。</p></div>
+      <div class="card"><h4>大型物件の施工効率</h4><p>年間仕掛かり約100世帯規模。1名あたり平均17世帯を担当できる体制。</p></div>
+      <div class="card"><h4>木造大型物件が得意</h4><p>木造の大型物件施工に特化したノウハウを蓄積。</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">3</span>対応可能な規模・構造</div>
+    <p>木造アパート（在来工法・2×4工法）を中心に、規模に応じた施工体制で対応。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">4</span>施工の流れ</div>
+    <p>お問い合わせ → 現地調査 → お見積り → ご契約 → 着工（基礎〜建方〜内装） → 完成検査 → 引き渡し</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">5</span>実績紹介</div>
+    <div class="grid grid-3">
+      <div class="card"><div class="img-ph">写真</div><p>吉川市／〇世帯アパート</p></div>
+      <div class="card"><div class="img-ph">写真</div><p>八潮市／〇世帯アパート</p></div>
+      <div class="card"><div class="img-ph">写真</div><p>越谷市／〇世帯アパート</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">6</span>元請け会社様へのメッセージ</div>
+    <p>安定した品質管理と、無理をさせない安全な現場運営で、継続的なお取引をお約束します。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">7</span>FAQ抜粋・CTA</div>
+    <div class="faq-item"><div class="q">Q. どのくらいの規模まで対応できますか？</div><div class="a">A. 年間仕掛かり約100世帯規模の実績があります。まずはご相談ください。</div></div>
+    <div class="cta" style="margin-top:10px;">アパート建築のご相談・お見積り</div>
+  </div>
+</section>
+
+<!-- ============ 12. テナント工事 ============ -->
+<section class="page" id="page-tenant">
+  <div class="page-header"><span class="kind new">NEW</span><h2>⑤テナント工事</h2><div class="url">/tenant</div></div>
+
+  <div class="wf"><div class="wf-label"><span class="num">1</span>MV・リードコピー</div>
+    <div class="img-ph" style="min-height:190px;"><span>写真：テナント内装工事中の現場</span></div>
+    <p>SEO：<span class="kw">埼玉県テナント工事施工業者</span><span class="kw">テナント工事</span></p>
+    <p>コピー案：テナントの内装・造作工事を、スピードと確かな品質で。元請け会社様との継続的なお取引を大切にしています。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">2</span>対応可能な内容</div>
+    <div class="grid grid-3">
+      <div class="card"><h4>内装造作工事</h4><p>間仕切り・造作壁・什器設置など。</p></div>
+      <div class="card"><h4>原状回復工事</h4><p>退去時の原状回復にも対応。</p></div>
+      <div class="card"><h4>店舗前の躯体・下地工事</h4><p>スケルトンからの下地づくりに対応。</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">3</span>選ばれる理由</div>
+    <div class="grid grid-3">
+      <div class="card"><h4>スピード対応</h4><p>限られた工期にも柔軟に対応。</p></div>
+      <div class="card"><h4>法人対応の実績</h4><p>元請け会社様との取引実績。</p></div>
+      <div class="card"><h4>安全第一の現場管理</h4><p>無理のない工程で品質を担保。</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">4</span>施工事例</div>
+    <div class="grid grid-3">
+      <div class="card"><div class="img-ph">写真</div><p>越谷市／オフィステナント</p></div>
+      <div class="card"><div class="img-ph">写真</div><p>草加市／飲食テナント</p></div>
+      <div class="card"><div class="img-ph">写真</div><p>三郷市／物販テナント</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">5</span>対応エリア・発注形態</div>
+    <p>埼玉県東部・東京都23区・千葉県対応。元請けとしての直接発注、協力会社としての参画いずれも歓迎。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">6</span>お見積り依頼の流れ・FAQ・CTA</div>
+    <p>お問い合わせ → 現地調査 → お見積り → ご契約 → 着工 → 引き渡し</p>
+    <div class="faq-item"><div class="q">Q. 短納期の案件にも対応できますか？</div><div class="a">A. 内容により対応可能です。まずはご相談ください。</div></div>
+    <div class="cta" style="margin-top:10px;">テナント工事のご相談・お見積り</div>
+  </div>
+</section>
+
+<!-- ============ 13. 店舗工事 ============ -->
+<section class="page" id="page-shop">
+  <div class="page-header"><span class="kind new">NEW</span><h2>⑥店舗工事</h2><div class="url">/shop</div></div>
+
+  <div class="wf"><div class="wf-label"><span class="num">1</span>MV・リードコピー</div>
+    <div class="img-ph" style="min-height:200px;"><span>写真：完成した店舗内装（高級感・おしゃれ感重視のカット）</span></div>
+    <p>SEO：<span class="kw">店舗内装工事</span><span class="kw">店舗工事</span></p>
+    <p>コピー案：「こんな内装をやってみたい」と思わせる空間づくりを。造作大工の技術で、こだわりの店舗を実現します。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">2</span>対応業態</div>
+    <div class="grid grid-4">
+      <div class="card"><p>飲食店</p></div>
+      <div class="card"><p>物販店</p></div>
+      <div class="card"><p>美容・サロン系</p></div>
+      <div class="card"><p>オフィス</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">3</span>こだわりの造作技術</div>
+    <p>造作大工ならではの、オリジナル什器・木工造作の対応力。既製品にはない、店舗の世界観に合わせた空間づくりが可能です。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">4</span>施工事例（写真リッチ）</div>
+    <div class="grid grid-3">
+      <div class="card"><div class="img-ph" style="min-height:110px;">写真</div><p>吉川市／カフェ内装</p></div>
+      <div class="card"><div class="img-ph" style="min-height:110px;">写真</div><p>越谷市／アパレル店舗</p></div>
+      <div class="card"><div class="img-ph" style="min-height:110px;">写真</div><p>草加市／美容サロン</p></div>
+    </div>
+    <div class="note">店舗ページは「高級感・清潔感・おしゃれ感」を最も強く出すページ。仕上がりのビフォーアフターや質感の分かる寄りカットを優先的に手配。</div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">5</span>開業までのスケジュール例</div>
+    <p>ご相談 → 現地調査・プラン作成 → お見積り → ご契約 → 施工（〇週間目安） → 完成・お引き渡し → 開業</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">6</span>対応エリア・FAQ・CTA</div>
+    <p>埼玉県東部・東京都23区・千葉県対応。</p>
+    <div class="faq-item"><div class="q">Q. デザインの相談から依頼できますか？</div><div class="a">A. ご要望をヒアリングしながらご提案します。</div></div>
+    <div class="cta" style="margin-top:10px;">店舗工事のご相談・お見積り</div>
+  </div>
+</section>
+
+<!-- ============ 14. イストについて ============ -->
+<section class="page" id="page-about">
+  <div class="page-header"><span class="kind new">NEW</span><h2>⑦イストについて</h2><div class="url">/about</div></div>
+
+  <div class="wf"><div class="wf-label"><span class="num">1</span>MV・代表メッセージ</div>
+    <div class="img-ph" style="min-height:200px;"><span>写真：代表の現場写真（自然体、格好つけすぎない）</span></div>
+    <p>コピー案：「無理をしない」が、私たちの一番の誇りです。20年以上、現場に立ち続けてきたからこそ分かる、長く続けられる仕事のかたち。それを、一緒に働く仲間にも、お客様にもお届けしています。</p>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">2</span>沿革（簡易年表）</div>
+    <div class="grid grid-2">
+      <div class="card"><h4>平成25年</h4><p>株式会社イスト創業</p></div>
+      <div class="card"><h4>直近数年</h4><p>木造大型アパート建築の需要拡大に伴い主力事業を転換</p></div>
+      <div class="card"><h4>近年</h4><p>技能実習生・特定技能人材の受け入れを開始</p></div>
+      <div class="card"><h4>これから</h4><p>テナント・店舗工事の元請け取引拡大へ</p></div>
+    </div>
+    <div class="note">正確な年表（各出来事の年）は8/26訪問時に社長へヒアリングして確定させる。</div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">3</span>数字で見るイスト</div>
+    <div class="grid grid-4">
+      <div class="card"><h4>創業12年+</h4><p>平成25年〜</p></div>
+      <div class="card"><h4>約100世帯</h4><p>年間仕掛かり規模</p></div>
+      <div class="card"><h4>1名で17世帯</h4><p>施工効率</p></div>
+      <div class="card"><h4>3エリア</h4><p>埼玉・東京・千葉</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">4</span>私たちが大切にしていること</div>
+    <div class="grid grid-3">
+      <div class="card"><h4>無理をさせない</h4><p>ケガをしたら終わり。だからこそ、安全第一で細く長く。</p></div>
+      <div class="card"><h4>専門性を磨く</h4><p>防火規定など、法人物件特有のルールを熟知。</p></div>
+      <div class="card"><h4>地域に根ざす</h4><p>「地域のベストパートナー」を目指し続ける。</p></div>
+    </div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">5</span>多様な人材とともに</div>
+    <p>技能実習生・特定技能人材の受け入れを進め、国籍を問わず活躍できる体制づくりに取り組んでいます。将来的な事業展開も見据え、長期的な人材育成に力を入れています。</p>
+    <div class="note">ベトナム展開の具体的な言及は現段階では社外秘扱いとし、「多様な人材の育成に取り組んでいる」という抽象度で表現。公開可否は8/26訪問時に社長へ確認。</div>
+  </div>
+
+  <div class="wf"><div class="wf-label"><span class="num">6</span>会社概要（簡易）＋CTA</div>
+    <p>詳細な会社情報は会社概要ページへ。</p>
+    <div class="grid grid-2"><div class="cta">採用情報を見る</div><div class="cta">お問い合わせ</div></div>
+  </div>
+</section>
+
+  </div><!-- /main -->
+</div><!-- /app -->
+
+<script>
+  const buttons = document.querySelectorAll('.side-nav button');
+  const pages = document.querySelectorAll('.page');
+  buttons.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      buttons.forEach(b=>b.classList.remove('active'));
+      pages.forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('page-'+btn.dataset.page).classList.add('active');
+      document.querySelector('.main').scrollTo(0,0);
+      window.scrollTo(0,0);
+    });
+  });
+  buttons[0].classList.add('active');
+</script>
+</body>
+</html>
