@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B3A5B"/><text x="50" y="58" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="#F2C200" text-anchor="middle">TANAKA</text></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;color:#1A1A1A;background:#fff;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal}
+:focus-visible{outline:3px solid #F2C200;outline-offset:3px}
+section a,section button,footer a,footer button{transition:opacity .2s ease}
+section a:hover,section button:hover,footer a:hover,footer button:hover{opacity:.78}
+/* ===== 応募フォーム parts219（フラット・add.css基礎）===== */
+section.contact_section{background:#fff;padding:clamp(56px,8vw,100px) clamp(20px,5vw,64px)}
+.parts219_section_form{max-width:760px;margin:0 auto}
+.parts219_form_wrap dl{display:flex;flex-direction:column;gap:8px;margin:0 0 24px}
+.parts219_form_wrap dt{font-weight:700;font-size:15px;color:#1A1A1A;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.parts219_form_wrap dd{margin:0}
+.parts219_form_wrap .required{background:#F2C200;color:#1A1A1A;font-size:11px;font-weight:900;padding:3px 9px;letter-spacing:.04em}
+.parts219_form_wrap input[type=text],.parts219_form_wrap input[type=email],.parts219_form_wrap input[type=tel],.parts219_form_wrap textarea{width:100%;font:inherit;font-size:16px;padding:13px 14px;border:1px solid #c7ccd2;background:#fff;color:#1A1A1A;border-radius:0}
+.parts219_form_wrap input:focus,.parts219_form_wrap textarea:focus{outline:2px solid #1B3A5B;outline-offset:0;border-color:#1B3A5B}
+.parts219_form_wrap textarea{min-height:160px;resize:vertical}
+.parts219_form_wrap .form_address .zip-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.parts219_form_wrap .form_address input.zip{max-width:160px}
+.parts219_form_wrap input[type=file]{font:inherit;font-size:14px}
+.parts219_form_wrap .attention{display:block;font-size:12px;color:#c0392b;font-weight:500;margin-top:4px}
+.parts219_form_wrap .error{color:#c0392b;font-size:13px;margin:6px 0 0}
+.parts219_form_wrap .contact_submit{margin-top:8px}
+.parts219_form_wrap .contact_submit input{font:inherit;font-weight:900;font-size:17px;color:#1A1A1A;background:#F2C200;border:0;padding:18px 48px;cursor:pointer;letter-spacing:.04em}
+.parts219_form_wrap .contact_submit input:hover{background:#ffd633}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+</style>
+</helmet>
+
+<div data-screen-label="採用情報" style="position:relative">
+
+<dc-import name="SiteHeader" active="/recruit/job" hint-size="100%,0"></dc-import>
+
+<!-- ===== HERO（ブラック×イエロー）===== -->
+<section style="position:relative;background:#0B1D30;color:#fff;overflow:hidden;padding:calc(clamp(64px,8vw,86px) + clamp(56px,9vw,110px)) clamp(20px,5vw,64px) clamp(56px,9vw,110px)">
+  <img src="assets/subhero.jpg" alt="内装工事の作業風景（丸ノコと下地材）" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(110deg,rgba(11,29,48,.92),rgba(11,29,48,.62) 60%,rgba(11,29,48,.38))"></div>
+  <div aria-hidden="true" style="position:absolute;right:-6%;top:0;bottom:0;width:42%;background:#F2C200;transform:skewX(-12deg);opacity:.12"></div>
+  <div style="position:relative;max-width:1240px;margin:0 auto">
+    <nav aria-label="パンくず" style="font-size:13px;color:rgba(255,255,255,.7);margin-bottom:18px"><a href="/" style="color:rgba(255,255,255,.7)">トップ</a> ／ <a href="/recruit" style="color:rgba(255,255,255,.7)">求職者のみなさまへ</a> ／ <span style="color:#fff">採用情報</span></nav>
+    <span style="font-family:'Anton',sans-serif;color:#F2C200;font-size:clamp(13px,2.4vw,17px);letter-spacing:.2em">RECRUIT</span>
+    <h1 style="margin:8px 0 0;font-weight:900;font-size:clamp(2.1rem,6.4vw,4.6rem);line-height:1.18">未経験から、<br><span style="color:#F2C200">内装のプロ</span>へ。</h1>
+  </div>
+</section>
+
+
+<!-- ===== リード（イエロー帯）===== -->
+<section style="background:#F2C200;color:#1A1A1A;padding:clamp(48px,7vw,90px) clamp(20px,5vw,64px);text-align:center">
+  <p style="margin:0 auto;max-width:820px;font-weight:900;font-size:clamp(1.5rem,4.2vw,2.7rem);line-height:1.5"><span class="line-chunk">やる気と体力があれば大丈夫。</span><br><span class="line-chunk">未経験から、現場で育ちます。</span></p>
+</section>
+
+<!-- ===== 求める人物像 ===== -->
+<section style="background:#0B1D30;color:#fff;padding:clamp(64px,10vw,120px) clamp(20px,5vw,64px)">
+  <div style="max-width:1120px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:clamp(36px,5vw,60px)">
+      <span style="font-family:'Anton',sans-serif;color:#F2C200;font-size:13px;letter-spacing:.18em">WE WANT YOU</span>
+      <h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.7rem,4.4vw,2.8rem)">求める人物像</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(18px,2.5vw,28px)">
+      <sc-for list="{{ persona }}" as="p" hint-placeholder-count="3">
+        <div style="background:#fff;color:#1A1A1A;position:relative">
+          <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#F4F6F8">
+            {{ p.media }}
+          </div>
+          <span style="position:absolute;top:0;left:0;background:#1B3A5B;color:#fff;font-family:'Anton',sans-serif;font-size:clamp(13px,2vw,15px);letter-spacing:.1em;padding:8px 16px">POINT {{ p.no }}</span>
+          <p style="margin:0;padding:clamp(22px,3vw,30px) clamp(28px,4vw,40px) clamp(28px,4vw,40px);font-weight:900;font-size:clamp(17px,2.6vw,22px);line-height:1.5;color:#1A1A1A">{{ p.text }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 給与・待遇（出典：現行サイト 採用情報） ===== -->
+<section style="background:#1B3A5B;color:#fff;padding:clamp(64px,10vw,120px) clamp(20px,5vw,64px)">
+  <div style="max-width:1120px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:clamp(36px,5vw,60px)">
+      <span style="font-family:'Anton',sans-serif;color:#F2C200;font-size:13px;letter-spacing:.18em">SALARY &amp; BENEFITS</span>
+      <h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.7rem,4.4vw,2.8rem)">給与・待遇</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(18px,2.5vw,28px)">
+      <div style="background:#0B1D30;border:1px solid rgba(255,255,255,.14);padding:clamp(28px,4vw,40px);text-align:center">
+        <span style="display:inline-block;background:#1B3A5B;color:#fff;font-weight:900;font-size:14px;padding:6px 16px;margin-bottom:18px">保険なし</span>
+        <div style="display:flex;align-items:flex-end;justify-content:center;gap:6px">
+          <span style="font-family:'Anton',sans-serif;color:#F2C200;font-size:clamp(48px,9vw,84px);line-height:.78">10,000</span>
+          <span style="font-weight:900;font-size:clamp(16px,2.4vw,20px);padding-bottom:10px">円〜</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:14px;color:rgba(255,255,255,.82)">日給</p>
+      </div>
+      <div style="background:#0B1D30;border:1px solid rgba(255,255,255,.14);padding:clamp(28px,4vw,40px);text-align:center">
+        <span style="display:inline-block;background:#1B3A5B;color:#fff;font-weight:900;font-size:14px;padding:6px 16px;margin-bottom:18px">保険あり</span>
+        <div style="display:flex;align-items:flex-end;justify-content:center;gap:6px">
+          <span style="font-family:'Anton',sans-serif;color:#F2C200;font-size:clamp(48px,9vw,84px);line-height:.78">200,000</span>
+          <span style="font-weight:900;font-size:clamp(16px,2.4vw,20px);padding-bottom:10px">円〜</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:14px;color:rgba(255,255,255,.82)">月給／試用期間2ヵ月は日給10,000円</p>
+      </div>
+      <div style="background:#0B1D30;border:1px solid rgba(255,255,255,.14);padding:clamp(28px,4vw,40px);text-align:center">
+        <span style="display:inline-block;background:#1B3A5B;color:#fff;font-weight:900;font-size:14px;padding:6px 16px;margin-bottom:18px">1年勤続</span>
+        <div style="display:flex;align-items:flex-end;justify-content:center;gap:6px">
+          <span style="font-family:'Anton',sans-serif;color:#F2C200;font-size:clamp(48px,9vw,84px);line-height:.78">10</span>
+          <span style="font-weight:900;font-size:clamp(16px,2.4vw,20px);padding-bottom:10px">万円</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:14px;color:rgba(255,255,255,.82)">プチボーナス</p>
+      </div>
+    </div>
+    <p style="margin:clamp(24px,3vw,34px) 0 0;font-size:clamp(13px,2vw,15px);color:rgba(255,255,255,.78);line-height:1.9;text-align:center">※経験・能力・やる気に応じて最大限に考慮いたします。保険の有無は面接時にご相談ください。</p>
+  </div>
+</section>
+
+<!-- ===== 募集要項 ===== -->
+<section style="background:#fff;padding:clamp(64px,10vw,120px) clamp(20px,5vw,64px)">
+  <div style="max-width:920px;margin:0 auto">
+    <div style="margin-bottom:clamp(28px,4vw,44px)">
+      <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.16em">REQUIREMENTS</span>
+      <h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.7rem,4.4vw,2.6rem);color:#1A1A1A">募集要項</h2>
+    </div>
+    <dl style="margin:0;display:flex;flex-direction:column">
+      <sc-for list="{{ req }}" as="row" hint-placeholder-count="10">
+        <div style="display:flex;flex-wrap:wrap;gap:6px 24px;padding:16px 0;border-bottom:1px solid rgba(27,58,91,.12)">
+          <dt style="flex:0 0 clamp(120px,22vw,200px);font-weight:900;color:#1B3A5B;font-size:clamp(16px,2vw,16px)">{{ row.k }}</dt>
+          <dd style="flex:1;min-width:200px;margin:0;font-size:clamp(16px,2.1vw,16px);color:#1A1A1A;white-space:pre-line">{{ row.v }}</dd>
+        </div>
+      </sc-for>
+    </dl>
+    <div style="margin-top:clamp(24px,3.5vw,36px);background:#F4F6F8;padding:clamp(20px,3vw,30px);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+      <p style="margin:0;font-weight:900;font-size:clamp(15px,2.2vw,17px);color:#1A1A1A">お電話・LINEでのご応募も歓迎です。</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a href="tel:080-1030-1886" style="background:#1B3A5B;color:#fff;font-weight:900;font-size:15px;padding:14px 24px;display:inline-flex;align-items:center;gap:10px" style-hover="background:#0B1D30">080-1030-1886<span aria-hidden="true">→</span></a>
+        <a href="https://line.me/R/ti/p/@940wpfjj" style="border:2px solid #1B3A5B;color:#1B3A5B;font-weight:900;font-size:15px;padding:12px 24px;display:inline-flex;align-items:center;gap:10px" style-hover="background:#1B3A5B;color:#fff">LINEで応募<span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== とある1日の流れ ===== -->
+<section style="background:#fff;color:#1A1A1A;padding:clamp(64px,10vw,120px) clamp(20px,5vw,64px)">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:clamp(36px,5vw,56px)">
+      <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.18em">A DAY</span>
+      <h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.7rem,4.4vw,2.8rem)">とある1日の流れ</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(32px,5vw,64px);align-items:start">
+    <ol style="list-style:none;margin:0;padding:0;position:relative">
+      <sc-for list="{{ schedule }}" as="t" hint-placeholder-count="7">
+        <li style="display:flex;gap:clamp(16px,3vw,28px);padding-bottom:clamp(20px,3vw,30px);position:relative">
+          <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:clamp(18px,2.8vw,24px);flex:none;width:clamp(58px,9vw,84px);padding-top:2px">{{ t.time }}</span>
+          <span aria-hidden="true" style="flex:none;width:14px;height:14px;border-radius:50%;background:#F2C200;border:3px solid #1B3A5B;margin-top:6px"></span>
+          <div style="flex:1;border-left:2px solid rgba(27,58,91,.18);margin-left:-7px;padding-left:clamp(16px,3vw,26px);padding-bottom:4px">
+            <h3 style="margin:0;font-weight:900;font-size:clamp(15px,2.3vw,18px);color:#1A1A1A">{{ t.title }}</h3>
+            <sc-if value="{{ t.hasNote }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:6px 0 0;font-size:clamp(13px,2vw,14px);color:#666;line-height:1.7">{{ t.note }}</p>
+            </sc-if>
+          </div>
+        </li>
+      </sc-for>
+    </ol>
+      <div style="position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;background:#F4F6F8">
+        <img src="assets/day-photo.jpg" alt="休憩時にスタッフで食事に行く様子" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 応募フォーム（parts219系・添付あり）===== -->
+<section style="background:#0B1D30;color:#fff;padding:clamp(56px,8vw,100px) clamp(20px,5vw,64px) clamp(20px,3vw,30px);text-align:center">
+  <span style="font-family:'Anton',sans-serif;color:#F2C200;font-size:13px;letter-spacing:.18em">ENTRY</span>
+  <h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.8rem,5vw,3rem)">応募する</h2>
+  <p style="margin:14px auto 0;max-width:560px;font-size:clamp(16px,2.2vw,16px);color:rgba(255,255,255,.82)"><span class="line-chunk">下記フォームよりご応募ください。経験・学歴不問。</span><br><span class="line-chunk">軽天工事・ボード工事への興味とやる気・体力があれば大歓迎です。</span></p>
+</section>
+<section class="contact_section">
+  <div class="parts219_section_form">
+    <div class="parts219_form_wrap">
+      <form method="POST" action="/form/confirm/recruit" enctype="multipart/form-data">
+        <dl>
+          <dt>お名前 <span class="required">必須</span></dt>
+          <dd><input type="text" name="name" placeholder="例：田中 智幸"><p class="error"></p></dd>
+        </dl>
+        <dl>
+          <dt>フリガナ <span class="required">必須</span></dt>
+          <dd><input type="text" name="name_kana" placeholder="例：タナカ トモユキ"><p class="error"></p></dd>
+        </dl>
+        <dl>
+          <dt>メールアドレス <span class="required">必須</span></dt>
+          <dd><input type="email" name="email" placeholder="例：sample@example.com"><p class="error"></p></dd>
+        </dl>
+        <dl>
+          <dt>メールアドレス（確認用） <span class="required">必須</span></dt>
+          <dd><input type="email" name="email_confirmation" placeholder="確認のためもう一度ご入力ください"><p class="error"></p></dd>
+        </dl>
+        <dl>
+          <dt>電話番号 <span class="required">必須</span></dt>
+          <dd><input type="tel" name="tel" placeholder="例：09012345678"><p class="error"></p></dd>
+        </dl>
+        <dl class="form_address">
+          <dt>住所</dt>
+          <dd>
+            <div class="zip-row"><span>〒</span><input class="zip" type="text" name="zip" placeholder="6680073"></div>
+            <input type="text" name="address" placeholder="例：埼玉県川越市扇河岸107-31"><p class="error"></p>
+          </dd>
+        </dl>
+        <dl class="attach">
+          <dt class="form_text_dt">履歴書<span class="attention">ファイル名は半角英数字でご指定ください。</span></dt>
+          <dd><input type="file" name="attach"><p class="error"></p></dd>
+        </dl>
+        <dl class="attach2">
+          <dt class="form_text_dt">職務経歴書<span class="attention">ファイル名は半角英数字でご指定ください。</span></dt>
+          <dd><input type="file" name="attach2"><p class="error"></p></dd>
+        </dl>
+        <dl class="form_textarea">
+          <dt class="form_text_dt">ご質問・自由記述</dt>
+          <dd><textarea name="memo" placeholder="ご質問やご希望があればご記入ください"></textarea><p class="error"></p></dd>
+        </dl>
+        <div class="contact_submit"><input type="submit" value="確認画面へ"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      persona: [
+        { no: '1', img: 'assets/persona-1.jpg', text: 'やる気がある人' },
+        { no: '2', img: 'assets/persona-2.jpg', text: '体力に自信がある人' },
+        { no: '3', img: 'assets/persona-3.jpg', text: '未経験・学歴不問' },
+      ].map((x) => ({ ...x, media: React.createElement('img', { src: x.img, alt: x.text, style: { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' } }) })),
+      req: [
+        { k: '職種', v: '現場スタッフ' },
+        { k: '業務内容', v: '内装工事（軽天工事・ボード工事・化粧ケイカル板工事・キッチンパネル工事 ほか）' },
+        { k: '雇用形態', v: '正社員' },
+        { k: '募集資格', v: '経験・学歴・年齢・資格いっさい不問' },
+        { k: '就業時間', v: '8:00〜17:00（休憩2時間）\n※現場による' },
+        { k: '諸手当', v: '残業手当／夜勤手当／作業服支給／工具支給／交通費支給（全額）' },
+        { k: '昇給・賞与', v: 'あり ※業歴・能力による' },
+        { k: '休日・休暇', v: '日曜日／年末年始休暇／夏季休暇' },
+        { k: '保険・福利厚生', v: '雇用保険／労働災害保険／各資格の取得支援制度' },
+        { k: '選考プロセス', v: '応募 → 面接日決定 → 面接 → 内定' },
+        { k: '勤務地', v: '一都三県の各現場（埼玉県川越市の事務所に集合し出発）' },
+      ],
+      schedule: [
+        { time: '8:00', title: '現場到着', hasNote: true, note: 'みんなで事務所に集まって、8時に現場に到着するよう出発します。' },
+        { time: '8:30', title: '朝礼・体調チェック・作業開始', hasNote: false },
+        { time: '10:00', title: '休憩（20分）', hasNote: false },
+        { time: '12:00', title: '昼休憩（60分）', hasNote: true, note: 'みんなで食事に行くこともあります。' },
+        { time: '13:00', title: '作業再開', hasNote: false },
+        { time: '15:00', title: '休憩（20分）', hasNote: false },
+        { time: '17:00', title: '片付け・退勤', hasNote: true, note: '現場の状況により多少前後することもあります。' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

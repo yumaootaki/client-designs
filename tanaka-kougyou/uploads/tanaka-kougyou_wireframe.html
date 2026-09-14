@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>田中工業様 サイトリニューアル ワイヤーフレーム</title>
+<style>
+  :root{
+    --navy:#1B3A5B;
+    --navy-deep:#0B1D30;
+    --yellow:#F2C200;
+    --gray-bg:#F4F5F7;
+    --gray-line:#B9BEC6;
+    --gray-box:#E4E6EA;
+    --text:#26303B;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:"Hiragino Sans","Yu Gothic",sans-serif;
+    background:var(--gray-bg); color:var(--text);
+  }
+  .topbar{
+    background:var(--navy-deep); color:#fff; padding:14px 20px;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+  .topbar h1{font-size:15px; margin:0; font-weight:600;}
+  .tabs{
+    display:flex; flex-wrap:wrap; gap:6px; padding:10px 16px; background:#fff;
+    border-bottom:1px solid var(--gray-line); position:sticky; top:0; z-index:10;
+  }
+  .tab{
+    padding:7px 12px; font-size:12px; border-radius:5px; border:1px solid var(--gray-line);
+    background:#fff; cursor:pointer; white-space:nowrap;
+  }
+  .tab.new{border-color:var(--yellow); background:#FFFBEA;}
+  .tab.active{background:var(--navy); color:#fff; border-color:var(--navy);}
+  .page{display:none; max-width:960px; margin:0 auto; padding:24px 16px 60px;}
+  .page.active{display:block;}
+  .page-label{
+    font-size:12px; color:#fff; background:var(--navy); display:inline-block;
+    padding:3px 10px; border-radius:4px; margin-bottom:10px;
+  }
+  .page-label.new-flag{background:#B8860B;}
+  h2.page-title{margin:4px 0 18px; font-size:20px;}
+  .note{
+    font-size:12px; color:#6b5a00; background:#FFF7D6; border:1px dashed var(--yellow);
+    padding:8px 10px; border-radius:4px; margin-bottom:14px; line-height:1.6;
+  }
+  .block{
+    border:1px dashed var(--gray-line); background:var(--gray-box);
+    padding:14px; margin-bottom:10px; border-radius:4px;
+  }
+  .block h3{margin:0 0 6px; font-size:13px; color:var(--navy);}
+  .block p{margin:0; font-size:12px; color:#556; line-height:1.6;}
+  .block.hero{
+    background:linear-gradient(135deg,var(--navy-deep),var(--navy));
+    color:#fff; border:none;
+  }
+  .block.hero h3{color:var(--yellow);}
+  .block.hero p{color:#dfe6ee;}
+  .block.cta{
+    background:var(--yellow); border:none; text-align:center;
+  }
+  .block.cta h3{color:var(--navy-deep);}
+  .block.cta p{color:#3a3000;}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:10px;}
+  @media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr;}}
+  .tag{
+    display:inline-block; font-size:10px; background:var(--navy); color:#fff;
+    padding:2px 6px; border-radius:3px; margin-right:6px;
+  }
+  footer.wf{
+    background:var(--navy-deep); color:#cdd6e0; font-size:11px; text-align:center; padding:14px;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>田中工業様 ホームページリニューアル ワイヤーフレーム(全14ページ構成)</h1>
+  <span style="font-size:11px;">配色方針: ネイビー #1B3A5B / 濃紺 #0B1D30 + イエロー #F2C200</span>
+</div>
+
+<div class="tabs" id="tabs"></div>
+<div id="pages"></div>
+
+<footer class="wf">田中工業様 サイトリニューアル案 / エンジョイワークス作成 / 本ファイルは構成確認用の低〜中precisionワイヤーフレームです</footer>
+
+<script>
+const pages = [
+{ id:"top", label:"HOME", isNew:false, title:"HOME(TOP)", note:"社長要望「ファーストビューのインパクト」「立体感のあるデザイン」「メッセージの明確化」を反映。fukuyosi.jp風の演出(下部の巨大マーキー+ブラシ状シェイプが伸縮しながら出入りするループアニメーション)をTOPヒーローに採用。", blocks:[
+  {cls:"hero", h:"①ヒーロー(ファーストビュー)", p:"背景:濃紺グラデーション。中央にメインコピー(仮:「正確な施工が、次の仕事につながる。」)。手前にイエローのブラシ状シェイプがループで伸縮・出入り。最下部に横断マーキー帯(施工実績数・対応エリア・創業年数などのキーワードが流れる)。CTAボタン(見積もり相談/お電話)を右下に固定風配置。"},
+  {cls:"", h:"②数字で見る田中工業", p:"創業年数/施工実績件数/対応エリア(一都三県)を大きな数字で立体的にカード表示。"},
+  {cls:"", h:"③選ばれる理由(抜粋・3〜4項目)", p:"丁寧な施工/現場の整理整頓/軽鉄ボード専門/迅速対応 のうち上位3〜4件をアイコン付きで抜粋。詳細は「②選ばれる理由」ページへリンク。"},
+  {cls:"", h:"④施工事例ピックアップ", p:"手元にある数枚の写真を使用し2〜3件を横並びカードで紹介。各カードに工事種別タグ+施工エリア。詳細は「施工実績」ページへ。"},
+  {cls:"", h:"⑤お客様の声(元請け・ビル管理会社優先)", p:"二次受け先企業からの声をメインで1〜2件抜粋掲載。詳細は「⑥お客様の声」ページへ。"},
+  {cls:"", h:"⑥ご依頼を検討中の方へ(誘導バナー)", p:"元請け企業向けの導線バナー。「①ご依頼を検討中の方へ」ページへ遷移。"},
+  {cls:"", h:"⑦料金の目安(抜粋)", p:"工事種別ごとの価格レンジを簡易表示、詳細は「③料金表」ページへ。"},
+  {cls:"", h:"⑧NEWS/ブログ最新記事", p:"最新5件のブログ記事一覧(既存踏襲)。"},
+  {cls:"", h:"⑨求職者向けバナー(規模縮小)", p:"既存の求人訴求は下部に配置転換。「⑤求職者のみなさまへ」ページへ誘導。"},
+  {cls:"", h:"⑩田中工業のあゆみ(抜粋タイムライン)", p:"創業〜現在の主要年表を2〜3項目抜粋。詳細は「⑦田中工業のあゆみ」ページへ。"},
+  {cls:"cta", h:"⑪お問い合わせCTA帯 + Googleマップ", p:"電話番号・フォームボタンを大きく設置。地図(既存埋め込みを踏襲)。"}
+]},
+
+{ id:"iraikento", label:"①ご依頼を検討中の方へ", isNew:true, title:"①ご依頼を検討中の方へ", note:"新規ページ。主目的=元請け・ビル管理会社の発注担当者が抱く不安を先回りして解消し、問い合わせへ誘導するBtoB向けランディング的ページ。", blocks:[
+  {cls:"hero", h:"リード", p:"「二次受け先を探している元請けご担当者さまへ」といった名指しの書き出しで、対象読者を明確化。"},
+  {cls:"", h:"よくある不安への回答(先回り訴求)", p:"品質は大丈夫か/納期は守れるか/現場マナーは/急な追加対応は可能か、等をQ&A的に先出し。"},
+  {cls:"", h:"田中工業が選ばれる理由(抜粋)", p:"「②選ばれる理由」ページの要約版。"},
+  {cls:"", h:"対応可能な工事内容", p:"軽天工事/ボード工事/化粧ケイカル板工事/キッチンパネル工事 等を一覧化(既存「業務案内」と連携)。"},
+  {cls:"", h:"ご依頼の流れ(ステップ形式)", p:"問い合わせ→現地調査→お見積り→着工→引き渡し、の5ステップ。"},
+  {cls:"grid2", h:"料金目安/FAQへの導線", p:"「③料金表」「④FAQ」への内部リンクカード2枚。", isGrid:true},
+  {cls:"", h:"お客様の声(元請け抜粋)", p:"1〜2件。"},
+  {cls:"cta", h:"CTA", p:"「まずはお気軽にご相談ください」+電話・フォームボタン。"}
+]},
+
+{ id:"erabareru", label:"②選ばれる理由", isNew:true, title:"②選ばれる理由", note:"業界動向(社員化による職人気質の低下)との差別化を軸に構成。", blocks:[
+  {cls:"hero", h:"リード", p:"「丁寧な施工」と「整った現場」を核メッセージに。"},
+  {cls:"grid2", h:"理由1: 丁寧な施工品質", p:"具体的なこだわりポイントを記述。", isGrid:true},
+  {cls:"grid2", h:"理由2: 現場の整理整頓・美化", p:"元請け側が最も評価するポイントとして強調。", isGrid:true},
+  {cls:"grid2", h:"理由3: 創業15年の安定経営", p:"急な離脱・倒産リスクが低いことを訴求。", isGrid:true},
+  {cls:"grid2", h:"理由4: 軽鉄ボード工事の専門性", p:"得意分野への特化を明示。", isGrid:true},
+  {cls:"", h:"代表メッセージ", p:"品質へのこだわりを一人称で語る短いメッセージ。"},
+  {cls:"cta", h:"CTA", p:"「①ご依頼を検討中の方へ」「③料金表」への導線。"}
+]},
+
+{ id:"ryoukin", label:"③料金表", isNew:true, title:"③料金表", note:"あくまで目安である旨を明記し、実際は現地調査後に正式見積り、という前提を崩さない設計。", blocks:[
+  {cls:"hero", h:"リード", p:"「概算の目安としてご覧ください」の断り書き。"},
+  {cls:"", h:"工事種別ごとの価格レンジ表", p:"軽天工事/ボード工事/化粧ケイカル板工事/キッチンパネル工事 の㎡単価または目安レンジを表形式で掲載。"},
+  {cls:"", h:"見積り無料の訴求", p:"現地調査・お見積りは無料である旨を強調。"},
+  {cls:"", h:"FAQ抜粋(料金関連)", p:"追加費用の発生条件など、料金に関するQ&Aを2〜3件。"},
+  {cls:"cta", h:"CTA", p:"「まずは無料お見積りから」+電話・フォームボタン。"}
+]},
+
+{ id:"faq", label:"④FAQ", isNew:true, title:"④FAQ", note:"元請け向け(発注検討時の疑問)と求職者向けを分けて構成し、AIO(生成AI検索)対策も意識。", blocks:[
+  {cls:"", h:"元請け・発注担当者向けFAQ", p:"対応エリア/繁忙期の受注可否/保険加入状況/職人体制/支払い条件/急な追加工事対応 等。"},
+  {cls:"", h:"求職者向けFAQ(簡易)", p:"未経験可否/待遇の概要のみ掲載し、詳細は「⑤求職者のみなさまへ」へ誘導。"},
+  {cls:"cta", h:"CTA", p:"解決しない場合の問い合わせ導線。"}
+]},
+
+{ id:"kyushokusha", label:"⑤求職者のみなさまへ", isNew:true, title:"⑤求職者のみなさまへ", note:"主軸ニーズは受注拡大のため、本ページは既存「採用情報」ページ(詳細求人票)への入口となるハブ的位置づけ。TOPでの露出は縮小。", blocks:[
+  {cls:"hero", h:"リード", p:"働く魅力を端的に訴求。"},
+  {cls:"", h:"働く環境・待遇(概要)", p:"福利厚生・勤続ボーナス等、既存採用情報ページの要点を要約。"},
+  {cls:"", h:"先輩の声", p:"スタッフインタビュー抜粋(あれば)。"},
+  {cls:"", h:"応募の流れ", p:"応募→面談→内定までのステップ。"},
+  {cls:"cta", h:"CTA", p:"LINE応募ボタン+既存「採用情報」ページへの導線。"}
+]},
+
+{ id:"okyakusama", label:"⑥お客様の声", isNew:true, title:"⑥お客様の声", note:"確認事項の回答どおり、元請け・ビル管理会社(二次受け先)からの声を優先掲載。施主の声は含めない方針。", blocks:[
+  {cls:"grid3", h:"元請け企業A社さまの声", p:"工事内容タグ+コメント+担当者名(会社名)。写真は手元素材を使用。", isGrid:true},
+  {cls:"grid3", h:"元請け企業B社さまの声", p:"同上。", isGrid:true},
+  {cls:"grid3", h:"元請け企業C社さまの声", p:"同上。件数は写真素材に応じて調整。", isGrid:true},
+  {cls:"cta", h:"CTA", p:"「私たちも同じように任せてみたい」という導線で問い合わせへ。"}
+]},
+
+{ id:"ayumi", label:"⑦田中工業のあゆみ", isNew:true, title:"⑦田中工業のあゆみ", note:"創業15年の安定感を可視化。社長個人の将来構想(法人化・飲食業展開等)は会社の対外メッセージとして書ける範囲に留める。", blocks:[
+  {cls:"hero", h:"リード", p:"創業からの歩みを一言で。"},
+  {cls:"", h:"沿革タイムライン", p:"創業年→主要な転機(有名商業施設の実績等)→現在、を年表形式で表示。"},
+  {cls:"", h:"代表メッセージ", p:"既存TOPページの「田中工業からのごあいさつ」を移設・拡充。"},
+  {cls:"", h:"今後の展望", p:"二次受け拡大・法人化など、会社としての今後の方針を簡潔に(個人的な事業構想には踏み込まない)。"},
+  {cls:"cta", h:"CTA", p:"「これからも安心してお任せください」+問い合わせ導線。"}
+]},
+
+{ id:"gyoumu", label:"業務案内(既存)", isNew:false, title:"業務案内(既存ページ/デザイン刷新)", note:"現行の工事内容一覧を踏襲。デザインのみ新配色・新レイアウトに刷新。", blocks:[
+  {cls:"", h:"取扱工事一覧", p:"軽天工事/ボード工事/化粧ケイカル板工事/キッチンパネル工事 等、既存内容を新デザインで再構成。"},
+  {cls:"cta", h:"CTA", p:"「③料金表」「①ご依頼を検討中の方へ」への導線を新規追加。"}
+]},
+
+{ id:"jisseki", label:"施工実績(既存)", isNew:false, title:"施工実績(既存ページ/デザイン刷新)", note:"手元にある数枚の施工写真を使用。件数が揃うまでは少数構成でスタートし、今後の現場写真撮影分を順次追加。", blocks:[
+  {cls:"grid2", h:"施工事例カード(写真+概要+料金目安)", p:"現状の手持ち写真数枚を使用。各カードに工事種別・エリア・簡単な概要を掲載。", isGrid:true},
+  {cls:"note", h:"備考", p:"今後モザイク加工済み写真+金額情報が揃い次第、事例を拡充予定(議事録アクション項目より)。"}
+]},
+
+{ id:"saiyou", label:"採用情報(既存)", isNew:false, title:"採用情報(既存ページ/デザイン刷新)", note:"詳細な求人票はこちらに残し、「⑤求職者のみなさまへ」から誘導するハブ・詳細の二層構造に。", blocks:[
+  {cls:"", h:"求人詳細(勤務条件・待遇等)", p:"既存内容を新デザインで再構成。"},
+  {cls:"cta", h:"CTA", p:"LINE応募・電話ボタン。"}
+]},
+
+{ id:"kaisha", label:"会社概要(既存)", isNew:false, title:"会社概要(既存ページ/デザイン刷新)", note:"会社情報・地図は踏襲。沿革部分は「⑦田中工業のあゆみ」へ移設し、本ページはシンプルな会社概要表に整理。", blocks:[
+  {cls:"", h:"会社概要表", p:"社名/所在地/代表者/設立/事業内容/電話番号 等。"},
+  {cls:"", h:"地図", p:"既存Googleマップ埋め込みを踏襲。"}
+]},
+
+{ id:"contact", label:"お問い合わせ(既存)", isNew:false, title:"お問い合わせ(既存ページ/デザイン刷新)", note:"フォーム項目は既存踏襲、デザインのみ刷新。", blocks:[
+  {cls:"", h:"問い合わせフォーム", p:"お名前/会社名/連絡先/工事種別/内容 等の入力項目。"},
+  {cls:"", h:"電話・LINEでの問い合わせ導線", p:"既存の電話・LINEボタンを踏襲。"}
+]},
+
+{ id:"blog", label:"ブログ(既存)", isNew:false, title:"ブログ(既存ページ/デザイン刷新)", note:"週1回5,000文字以上の更新体制(1年間無料提供の提案内容)を前提に、記事一覧デザインを刷新。キーワードは「軽鉄ボード」等へ再設定予定。", blocks:[
+  {cls:"", h:"記事一覧", p:"サムネイル+タイトル+抜粋+日付のカード形式。"},
+  {cls:"", h:"カテゴリ導線", p:"施工事例/採用/お知らせ 等でフィルタ可能に。"}
+]},
+];
+
+const tabsEl = document.getElementById("tabs");
+const pagesEl = document.getElementById("pages");
+
+pages.forEach((pg, i) => {
+  const tab = document.createElement("div");
+  tab.className = "tab" + (pg.isNew ? " new" : "") + (i===0 ? " active" : "");
+  tab.textContent = pg.label;
+  tab.onclick = () => showPage(pg.id);
+  tab.dataset.id = pg.id;
+  tabsEl.appendChild(tab);
+
+  const pageDiv = document.createElement("div");
+  pageDiv.className = "page" + (i===0 ? " active" : "");
+  pageDiv.id = "page-" + pg.id;
+
+  let html = `<span class="page-label${pg.isNew ? " new-flag" : ""}">${pg.isNew ? "新規ページ" : "既存ページ(刷新)"}</span>`;
+  html += `<h2 class="page-title">${pg.title}</h2>`;
+  if (pg.note) html += `<div class="note">${pg.note}</div>`;
+  pg.blocks.forEach(b => {
+    html += `<div class="block ${b.cls}"><h3>${b.h}</h3><p>${b.p}</p></div>`;
+  });
+  pageDiv.innerHTML = html;
+  pagesEl.appendChild(pageDiv);
+});
+
+function showPage(id){
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  document.getElementById("page-" + id).classList.add("active");
+  document.querySelector(`.tab[data-id="${id}"]`).classList.add("active");
+  window.scrollTo({top:0, behavior:"instant"});
+}
+</script>
+</body>
+</html>

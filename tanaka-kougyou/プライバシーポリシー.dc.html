@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B3A5B"/><text x="50" y="58" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="#F2C200" text-anchor="middle">TANAKA</text></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;color:#1A1A1A;background:#fff;line-height:1.9;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal}
+:focus-visible{outline:3px solid #F2C200;outline-offset:3px}
+section a,section button,footer a,footer button{transition:opacity .2s ease}
+section a:hover,section button:hover,footer a:hover,footer button:hover{opacity:.78}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+</style>
+</helmet>
+
+<div data-screen-label="プライバシーポリシー" style="position:relative">
+
+<dc-import name="SiteHeader" active="/privacypolicy" hint-size="100%,0"></dc-import>
+
+<!-- ===== 下層ヘッダー（ソリッド・文書ページ）===== -->
+<section style="position:relative;background:#0B1D30;color:#fff;overflow:hidden;padding:calc(clamp(64px,8vw,86px) + clamp(48px,7vw,84px)) clamp(20px,5vw,64px) clamp(48px,7vw,84px)">
+  <span aria-hidden="true" style="position:absolute;right:clamp(-10px,2vw,40px);top:50%;transform:translateY(-50%);font-family:'Anton',sans-serif;font-size:clamp(48px,12vw,150px);color:rgba(255,255,255,.05);line-height:.8;white-space:nowrap">PRIVACY</span>
+  <div style="position:relative;max-width:1240px;margin:0 auto">
+    <nav aria-label="パンくず" style="font-size:13px;color:rgba(255,255,255,.7);margin-bottom:18px"><a href="/" style="color:rgba(255,255,255,.7)">トップ</a> ／ <span style="color:#fff">プライバシーポリシー</span></nav>
+    <span style="font-family:'Anton',sans-serif;color:rgba(255,255,255,.55);font-size:clamp(12px,2vw,15px);letter-spacing:.18em">PRIVACY POLICY</span>
+    <h1 style="margin:6px 0 0;font-weight:900;font-size:clamp(1.9rem,5.4vw,3.6rem);line-height:1.25">プライバシーポリシー</h1>
+  </div>
+</section>
+
+<!-- ===== 本文 ===== -->
+<section style="background:#fff;padding:clamp(56px,8vw,100px) clamp(20px,5vw,64px) clamp(72px,11vw,130px)">
+  <div style="max-width:820px;margin:0 auto">
+    <p style="margin:0 0 clamp(36px,5vw,56px);font-size:clamp(15px,2.3vw,16px);color:#333">田中工業（以下「当社」といいます）は、お客様の個人情報の重要性を認識し、その保護の徹底を図るため、以下のとおりプライバシーポリシーを定め、個人情報の適切な取り扱いに努めます。</p>
+
+    <sc-for list="{{ sections }}" as="s" hint-placeholder-count="6">
+      <div style="margin-bottom:clamp(32px,4.5vw,48px)">
+        <h2 style="margin:0 0 14px;font-weight:900;font-size:clamp(17px,2.6vw,22px);color:#1A1A1A;border-left:5px solid #1B3A5B;padding-left:14px">{{ s.h }}</h2>
+        <p style="margin:0;font-size:clamp(16px,2.2vw,16px);line-height:1.95;color:#333">{{ s.b }}</p>
+        <sc-if value="{{ s.hasList }}" hint-placeholder-val="{{ false }}">
+          <ul style="margin:14px 0 0;padding-left:1.2em;font-size:clamp(16px,2.2vw,16px);line-height:1.9;color:#333">
+            <sc-for list="{{ s.list }}" as="li" hint-placeholder-count="3">
+              <li style="margin-bottom:6px">{{ li }}</li>
+            </sc-for>
+          </ul>
+        </sc-if>
+      </div>
+    </sc-for>
+
+    <!-- 事業者情報・お問い合わせ窓口 -->
+    <div style="margin-top:clamp(20px,3vw,32px);background:#F4F6F8;padding:clamp(24px,3.5vw,40px);border-top:4px solid #1B3A5B">
+      <h2 style="margin:0 0 16px;font-weight:900;font-size:clamp(17px,2.6vw,22px);color:#1A1A1A">お問い合わせ窓口</h2>
+      <p style="margin:0 0 16px;font-size:clamp(16px,2.2vw,16px);line-height:1.9;color:#333">個人情報の取り扱いに関するお問い合わせ、開示・訂正・削除のご請求は、下記までご連絡ください。</p>
+      <dl style="margin:0;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;flex-wrap:wrap;gap:4px 18px"><dt style="flex:0 0 130px;font-weight:900;color:#1B3A5B;font-size:14px">事業者名</dt><dd style="margin:0;font-size:15px">田中工業</dd></div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 18px"><dt style="flex:0 0 130px;font-weight:900;color:#1B3A5B;font-size:14px">代表者</dt><dd style="margin:0;font-size:15px">田中 智幸</dd></div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 18px"><dt style="flex:0 0 130px;font-weight:900;color:#1B3A5B;font-size:14px">所在地</dt><dd style="margin:0;font-size:15px">〒350-1134 埼玉県川越市扇河岸107-31</dd></div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 18px"><dt style="flex:0 0 130px;font-weight:900;color:#1B3A5B;font-size:14px">電話番号</dt><dd style="margin:0;font-size:15px">080-1087-3921（※営業電話お断り）</dd></div>
+      </dl>
+      <a href="/form/inquiry" style="margin-top:22px;background:#F2C200;color:#0B1D30;font-weight:900;font-size:15px;padding:15px 28px;display:inline-flex;align-items:center;gap:10px" style-hover="background:#ffd633">お問い合わせはこちら<span aria-hidden="true">→</span></a>
+    </div>
+    <p style="margin:clamp(28px,4vw,40px) 0 0;font-size:13px;color:#777">本ポリシーは、法令の変更や事業内容の変更に伴い、改定することがあります。</p>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      sections: [
+        { h: '1. 個人情報の取得', b: '当社は、お問い合わせフォーム・お電話・採用応募などを通じて、お名前・ご住所・電話番号・メールアドレスなど、サービスの提供に必要な範囲で個人情報を取得します。取得にあたっては、適法かつ公正な手段によります。', hasList: false },
+        { h: '2. 個人情報の利用目的', b: '取得した個人情報は、次の目的の範囲内で利用します。', hasList: true, list: ['お問い合わせ・ご相談への対応、お見積り・工事のご案内のため', '採用応募の選考・ご連絡のため', 'サービス向上のための分析、ご連絡・お知らせのため'] },
+        { h: '3. 第三者への提供', b: '当社は、法令に基づく場合や、ご本人の同意がある場合を除き、取得した個人情報を第三者に提供しません。業務委託先に取り扱いを委託する場合は、適切な監督を行います。', hasList: false },
+        { h: '4. 個人情報の安全管理', b: '当社は、個人情報の漏えい・滅失・毀損の防止その他の安全管理のために、必要かつ適切な措置を講じ、従業者に対して適切な監督を行います。', hasList: false },
+        { h: '5. 開示・訂正・削除のご請求', b: 'ご本人から個人情報の開示・訂正・利用停止・削除等のお申し出があった場合は、ご本人であることを確認のうえ、法令に従い速やかに対応します。', hasList: false },
+        { h: '6. 法令・規範の遵守と見直し', b: '当社は、個人情報の保護に関する法令その他の規範を遵守するとともに、本ポリシーの内容を適宜見直し、継続的に改善します。', hasList: false },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

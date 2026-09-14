@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B3A5B"/><text x="50" y="58" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="#F2C200" text-anchor="middle">TANAKA</text></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;color:#1A1A1A;background:#fff;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal}
+:focus-visible{outline:3px solid #F2C200;outline-offset:3px}
+section a,section button,footer a,footer button{transition:opacity .2s ease}
+section a:hover,section button:hover,footer a:hover,footer button:hover{opacity:.78}
+/* ===== ブログ 一覧＋サイドバー parts222系（add.css基礎）===== */
+.parts222_section{background:#fff;padding:clamp(48px,7vw,90px) clamp(20px,5vw,64px) clamp(72px,11vw,140px)}
+.parts222_section>h2{max-width:1240px;margin:0 auto clamp(28px,4vw,44px);font-family:"Anton",sans-serif;font-weight:400;letter-spacing:.06em;font-size:clamp(36px,7vw,64px);color:#1B3A5B}
+.parts222_wrap{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:clamp(36px,5vw,56px)}
+.parts222_main{min-width:0}
+.parts222_post_list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:clamp(20px,3vw,32px)}
+.parts222_post_wrap{display:block;background:#fff;box-shadow:0 14px 34px rgba(11,29,48,.10);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.parts222_post_wrap:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(11,29,48,.18)}
+.parts222_post_img{overflow:hidden}
+.parts222_post_img img,.parts222_post_img image-slot{width:100%;height:200px;object-fit:cover;display:block}
+.parts222_post_status{display:flex;align-items:center;gap:12px;padding:16px 18px 0}
+.parts222_post_date{font-family:"Anton",sans-serif;letter-spacing:.04em;color:#1B3A5B;font-size:14px}
+.parts222_post_category{background:#1B3A5B;color:#fff;font-size:11px;font-weight:700;padding:4px 10px}
+.parts222_post_title-excerpt{padding:8px 18px 20px}
+.parts222_post_title{margin:0;font-weight:700;font-size:clamp(15px,2.2vw,17px);line-height:1.6;color:#1A1A1A}
+.parts222_pagenation{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin-top:clamp(36px,5vw,56px);list-style:none;padding:0}
+.parts222_pagenation a,.parts222_pagenation span{display:flex;align-items:center;justify-content:center;min-width:44px;height:44px;padding:0 12px;font-weight:700;border:1px solid rgba(27,58,91,.3);color:#1B3A5B}
+.parts222_pagenation .pagination_num.current{background:#1B3A5B;color:#fff;border-color:#1B3A5B}
+.parts222_sidebar{min-width:0}
+.parts222_sidebar_wrap{margin-bottom:clamp(28px,4vw,40px)}
+.parts222_sidebar_wrap>h3{margin:0 0 14px;background:#1B3A5B;color:#fff;font-size:15px;font-weight:900;padding:12px 16px;letter-spacing:.04em}
+.parts222_sidebar_wrap ul{list-style:none;margin:0;padding:0}
+.parts222_sidebar_wrap li{border-bottom:1px solid rgba(27,58,91,.14)}
+.parts222_sidebar_wrap li a{display:block;padding:13px 6px;min-height:44px}
+.parts222_sidebar_date{display:block;font-family:"Anton",sans-serif;color:#1B3A5B;font-size:12px;letter-spacing:.04em}
+.parts222_sidebar_post_title{margin:2px 0 0;font-size:14px;font-weight:700;line-height:1.5;color:#1A1A1A}
+.category_post_count li a{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.parts222_sidebar_post_category{margin:0;font-size:14px;font-weight:700;color:#1A1A1A}
+.parts222_sidebar_post_category_count{flex:none;min-width:30px;height:24px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(27,58,91,.3);color:#1B3A5B;font-size:12px;font-weight:700}
+@media (min-width:992px){.parts222_wrap{grid-template-columns:1fr 300px}.parts222_post_list{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+</style>
+</helmet>
+
+<div data-screen-label="ブログ" style="position:relative">
+
+<dc-import name="SiteHeader" active="/blog" hint-size="100%,0"></dc-import>
+
+<!-- ===== 下層ヘッダー（静的・自由）===== -->
+<section style="position:relative;background:#0B1D30;color:#fff;overflow:hidden;padding:calc(clamp(64px,8vw,86px) + clamp(52px,8vw,96px)) clamp(20px,5vw,64px) clamp(52px,8vw,96px)">
+  <img src="assets/subhero.jpg" alt="内装工事の作業風景（丸ノコと下地材）" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(11,29,48,.92),rgba(11,29,48,.62) 60%,rgba(11,29,48,.34))"></div>
+  <div style="position:relative;max-width:1240px;margin:0 auto">
+    <nav aria-label="パンくず" style="font-size:13px;color:rgba(255,255,255,.7);margin-bottom:18px"><a href="/" style="color:rgba(255,255,255,.7)">トップ</a> ／ <span style="color:#fff">ブログ</span></nav>
+    <span style="font-family:'Anton',sans-serif;color:rgba(255,255,255,.55);font-size:clamp(12px,2vw,15px);letter-spacing:.18em">BLOG</span>
+    <h1 style="margin:6px 0 0;font-weight:900;font-size:clamp(2.1rem,6vw,4rem);line-height:1.2">ブログ</h1>
+    <p style="margin:18px 0 0;font-size:clamp(15px,2.4vw,19px);font-weight:700;color:rgba(255,255,255,.92);line-height:1.7">川越市拠点・一都三県の内装工事（軽天・ボード工事）に関する情報を発信します。</p>
+  </div>
+</section>
+
+<!-- ===== 動的：ブログ一覧＋サイドバー（parts222系・CMS出力／作り直さない）===== -->
+<section class="parts222_section">
+  <h2>BLOG</h2>
+  <div class="parts222_wrap">
+    <main class="parts222_main">
+      <ul class="parts222_post_list">
+        <!-- CMS LOOP START -->
+        <sc-for list="{{ posts }}" as="p" hint-placeholder-count="4">
+          <a class="parts222_post_wrap" href="#">
+            <div class="parts222_post_img"><image-slot id="{{ p.slot }}" style="width:100%;height:200px" shape="rect" fit="cover" placeholder="{{ p.slotLabel }}"></image-slot></div>
+            <div class="parts222_post_status">
+              <span class="parts222_post_date">{{ p.date }}</span>
+              <span class="parts222_post_category">{{ p.category }}</span>
+            </div>
+            <div class="parts222_post_title-excerpt">
+              <h3 class="parts222_post_title">{{ p.title }}</h3>
+            </div>
+          </a>
+        </sc-for>
+        <!-- CMS LOOP END -->
+      </ul>
+      <ul class="parts222_pagenation">
+        <li><span class="pagination_prev">&lt;&lt;最初</span></li>
+        <li><span class="pagination_num current">1</span></li>
+        <li><a class="pagination_num" href="#">2</a></li>
+        <li><a class="pagination_num" href="#">3</a></li>
+        <li><a class="pagination_next" href="#">次へ&gt;&gt;</a></li>
+      </ul>
+    </main>
+    <aside class="parts222_sidebar">
+      <div class="parts222_sidebar_wrap">
+        <h3>最近の投稿</h3>
+        <ul>
+          <sc-for list="{{ recent }}" as="r" hint-placeholder-count="3">
+            <li><a href="#"><span class="parts222_sidebar_date">{{ r.date }}</span><p class="parts222_sidebar_post_title">{{ r.title }}</p></a></li>
+          </sc-for>
+        </ul>
+      </div>
+      <div class="parts222_sidebar_wrap category_post_count">
+        <h3>カテゴリ</h3>
+        <ul>
+          <sc-for list="{{ cats }}" as="c" hint-placeholder-count="4">
+            <li><a href="#"><p class="parts222_sidebar_post_category">{{ c.name }}</p><span class="parts222_sidebar_post_category_count">{{ c.count }}</span></a></li>
+          </sc-for>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      // CMS（ブログ）出力のダミー。実データはCMSで置換される
+      posts: [
+        { slot: 'blogp-1', slotLabel: 'ブログサムネイル①', date: '2026.07.28', category: 'お知らせ', title: '一都三県で内装工事を手がける田中工業のご紹介' },
+        { slot: 'blogp-2', slotLabel: 'ブログサムネイル②', date: '2026.07.10', category: '採用', title: '【未経験から一生モノの技術を】建設業で"手に職"をつけるという選択' },
+        { slot: 'blogp-3', slotLabel: 'ブログサムネイル③', date: '2026.01.23', category: 'お知らせ', title: '田中工業が内装工事に込める二つの想い' },
+        { slot: 'blogp-4', slotLabel: 'ブログサムネイル④', date: '2025.10.14', category: '採用', title: '安全重視で働ける！田中工業の求人情報' },
+      ],
+      recent: [
+        { date: '2026.07.28', title: '一都三県で内装工事を手がける田中工業のご紹介' },
+        { date: '2026.07.10', title: '【未経験から一生モノの技術を】建設業で"手に職"をつけるという選択' },
+        { date: '2026.01.23', title: '田中工業が内装工事に込める二つの想い' },
+      ],
+      cats: [
+        { name: 'お知らせ', count: '' },
+        { name: '施工実績', count: '' },
+        { name: '採用', count: '' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

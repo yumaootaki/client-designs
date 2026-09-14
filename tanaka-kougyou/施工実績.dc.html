@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B3A5B"/><text x="50" y="58" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="#F2C200" text-anchor="middle">TANAKA</text></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;color:#1A1A1A;background:#fff;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal}
+:focus-visible{outline:3px solid #F2C200;outline-offset:3px}
+section a,section button,footer a,footer button{transition:opacity .2s ease}
+section a:hover,section button:hover,footer a:hover,footer button:hover{opacity:.78}
+/* ===== 施工実績 一覧 parts228系（add.css基礎）===== */
+.parts228_section{background:#fff;padding:clamp(48px,7vw,90px) clamp(20px,5vw,64px) clamp(72px,11vw,140px)}
+.parts228_wrap{max-width:1240px;margin:0 auto}
+.parts228_filter{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 32px;padding:0}
+.parts228_filter_item{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border:1px solid rgba(27,58,91,.3);border-radius:999px;background:#fff;color:#1B3A5B;text-decoration:none;font-size:15px;font-weight:700;line-height:1.4}
+.parts228_filter_item:hover{border-color:#F2C200}
+.parts228_filter_item:focus-visible{outline:2px solid #F2C200;outline-offset:2px}
+.parts228_filter_item.is-active{background:#1B3A5B;border-color:#1B3A5B;color:#fff;font-weight:900}
+.parts228_post_list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:clamp(20px,3vw,36px)}
+.parts228_post_wrap{background:#fff;box-shadow:0 14px 34px rgba(11,29,48,.10);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.parts228_post_wrap:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(11,29,48,.18)}
+.parts228_post_img{position:relative;overflow:hidden}
+.parts228_post_img a{display:block}
+.parts228_post_img img,.parts228_post_img image-slot{width:100%;height:240px;object-fit:cover;display:block}
+.parts228_post_status{padding:16px 18px 0}
+.parts228_post_date{font-family:"Anton",sans-serif;letter-spacing:.04em;color:#1B3A5B;font-size:14px}
+.parts228_post_title-excerpt{padding:8px 18px 20px}
+.parts228_post_title{margin:0;font-weight:700;font-size:clamp(15px,2.2vw,17px);line-height:1.6;color:#1A1A1A}
+.parts-blog-ex-tag_wrap{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 18px;margin:0;list-style:none}
+.parts-blog-ex_tag{background:#F4F6F8;color:#1B3A5B;font-size:12px;font-weight:700;padding:5px 12px}
+.parts228_pagenation{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin-top:clamp(40px,6vw,64px);list-style:none;padding:0}
+.parts228_pagenation a,.parts228_pagenation span{display:flex;align-items:center;justify-content:center;min-width:44px;height:44px;padding:0 12px;font-weight:700;border:1px solid rgba(27,58,91,.3);color:#1B3A5B}
+.parts228_pagenation .pagination_num.current{background:#1B3A5B;color:#fff;border-color:#1B3A5B}
+.parts228_pagenation a:hover{background:#F4F6F8}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+</style>
+</helmet>
+
+<div data-screen-label="施工実績" style="position:relative">
+
+<dc-import name="SiteHeader" active="/blog-ex/instance" hint-size="100%,0"></dc-import>
+
+<!-- ===== 下層ヘッダー（静的・自由）===== -->
+<section style="position:relative;background:#0B1D30;color:#fff;overflow:hidden;padding:calc(clamp(64px,8vw,86px) + clamp(52px,8vw,96px)) clamp(20px,5vw,64px) clamp(52px,8vw,96px)">
+  <img src="assets/subhero.jpg" alt="内装工事の作業風景（丸ノコと下地材）" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(11,29,48,.92),rgba(11,29,48,.62) 60%,rgba(11,29,48,.34))"></div>
+  <div style="position:relative;max-width:1240px;margin:0 auto">
+    <nav aria-label="パンくず" style="font-size:13px;color:rgba(255,255,255,.7);margin-bottom:18px"><a href="/" style="color:rgba(255,255,255,.7)">トップ</a> ／ <span style="color:#fff">施工実績</span></nav>
+    <span style="font-family:'Anton',sans-serif;color:rgba(255,255,255,.55);font-size:clamp(12px,2vw,15px);letter-spacing:.18em">WORKS</span>
+    <h1 style="margin:6px 0 0;font-weight:900;font-size:clamp(2.1rem,6vw,4rem);line-height:1.2">施工実績</h1>
+    <p style="margin:18px 0 0;font-size:clamp(15px,2.4vw,19px);font-weight:700;color:rgba(255,255,255,.92);line-height:1.7"><span class="line-chunk">田中工業が手がけた内装工事・軽天工事・ボード工事の仕上がりは、写真で。</span><br><span class="line-chunk">川越市拠点・一都三県での実際の現場写真をご紹介します。</span></p>
+  </div>
+</section>
+
+<!-- ===== 動的：施工実績一覧（parts228系・CMS出力／作り直さない）===== -->
+<!-- 🔒 CMS固定領域（parts228系）：構造/クラス/input name 変更禁止・承認/解除なし。見た目はadd.cssのみ -->
+<!-- 🔒 LOCK START -->
+<section class="parts228_section">
+  <div class="parts228_wrap">
+    <main class="parts228_main">
+      <nav class="parts228_filter">
+        <a class="parts228_filter_item is-active" href="/blog-ex/instance">すべて</a>
+        <sc-for list="{{ tags }}" as="t" hint-placeholder-count="5">
+          <a class="parts228_filter_item" href="/blog-ex/instance/tag/">{{ t }}</a>
+        </sc-for>
+      </nav>
+      <ul class="parts228_post_list">
+        <!-- CMS LOOP START -->
+        <sc-for list="{{ posts }}" as="p" hint-placeholder-count="6">
+          <li class="parts228_post_wrap">
+            <div class="parts228_post_img">
+              <a href="#"><image-slot id="{{ p.slot }}" style="width:100%;height:240px" shape="rect" fit="cover" placeholder="{{ p.slotLabel }}"></image-slot></a>
+            </div>
+            <div class="parts228_post_status">
+              <span class="parts228_post_date">{{ p.date }}</span>
+            </div>
+            <div class="parts228_post_title-excerpt">
+              <h3 class="parts228_post_title">{{ p.title }}</h3>
+            </div>
+            <ul class="parts-blog-ex-tag_wrap">
+              <li class="parts-blog-ex_tag">{{ p.tag1 }}</li>
+              <li class="parts-blog-ex_tag">{{ p.tag2 }}</li>
+            </ul>
+          </li>
+        </sc-for>
+        <!-- CMS LOOP END -->
+      </ul>
+      <ul class="parts228_pagenation">
+        <li><span class="pagination_prev">&lt;&lt;</span></li>
+        <li><span class="pagination_num current">1</span></li>
+        <li><a class="pagination_num" href="#">2</a></li>
+        <li><a class="pagination_num" href="#">3</a></li>
+        <li><a class="pagination_next" href="#">&gt;&gt;</a></li>
+      </ul>
+    </main>
+  </div>
+</section>
+<!-- 🔒 LOCK END -->
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      tags: ['軽天工事', 'ボード工事', '化粧ケイカル板', 'キッチンパネル', '床工事', '造作・修繕'],
+      // CMS（施工実績）出力のダミー。実データはCMSで置換される
+      posts: [
+        { slot: 'work-post-1', slotLabel: '施工写真：軽天工事', date: '2025.05.15', title: 'ジプトーン張り', tag1: '天井仕上げ', tag2: '一都三県' },
+        { slot: 'work-post-2', slotLabel: '施工写真：軽天工事', date: '2024.04.23', title: '軽天工事', tag1: '軽天工事', tag2: '一都三県' },
+        { slot: 'work-post-3', slotLabel: '施工写真：内装工事', date: '2024.04.23', title: '内装工事', tag1: '内装工事', tag2: '一都三県' },
+        { slot: 'work-post-4', slotLabel: '施工写真：造作工事', date: '2021.12.23', title: '内装工事 Rの下り壁の造作', tag1: '造作工事', tag2: '一都三県' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

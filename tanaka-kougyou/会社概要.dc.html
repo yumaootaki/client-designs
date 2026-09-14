@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B3A5B"/><text x="50" y="58" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="#F2C200" text-anchor="middle">TANAKA</text></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;color:#1A1A1A;background:#fff;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal}
+:focus-visible{outline:3px solid #F2C200;outline-offset:3px}
+section a,section button,footer a,footer button{transition:opacity .2s ease}
+section a:hover,section button:hover,footer a:hover,footer button:hover{opacity:.78}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+</style>
+</helmet>
+
+<div data-screen-label="会社概要" style="position:relative">
+
+<dc-import name="SiteHeader" active="/company" hint-size="100%,0"></dc-import>
+
+<!-- ===== 下層ヘッダー ===== -->
+<section style="position:relative;background:#0B1D30;color:#fff;overflow:hidden;padding:calc(clamp(64px,8vw,86px) + clamp(52px,8vw,96px)) clamp(20px,5vw,64px) clamp(52px,8vw,96px)">
+  <img src="assets/subhero.jpg" alt="内装工事の作業風景（丸ノコと下地材）" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(11,29,48,.92),rgba(11,29,48,.62) 60%,rgba(11,29,48,.34))"></div>
+  <div style="position:relative;max-width:1240px;margin:0 auto">
+    <nav aria-label="パンくず" style="font-size:13px;color:rgba(255,255,255,.7);margin-bottom:18px"><a href="/" style="color:rgba(255,255,255,.7)">トップ</a> ／ <span style="color:#fff">会社概要</span></nav>
+    <span style="font-family:'Anton',sans-serif;color:rgba(255,255,255,.55);font-size:clamp(12px,2vw,15px);letter-spacing:.18em">COMPANY</span>
+    <h1 style="margin:6px 0 0;font-weight:900;font-size:clamp(2.1rem,6vw,4rem);line-height:1.2">会社概要</h1>
+  </div>
+</section>
+
+<!-- ===== 信用ブロック（許認可・資格・対応範囲）===== -->
+<section style="position:relative;background:#1B3A5B;color:#fff;overflow:hidden;padding:clamp(56px,8vw,100px) clamp(20px,5vw,64px)">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(24px,3.5vw,44px)">
+    <div style="border-top:3px solid #F2C200;padding-top:22px">
+      <span style="font-family:'Anton',sans-serif;color:rgba(255,255,255,.6);font-size:12px;letter-spacing:.16em">LICENSE</span>
+      <h3 style="margin:8px 0 12px;font-weight:900;font-size:clamp(15px,2.2vw,18px)">許認可</h3>
+      <p style="margin:0;font-weight:900;font-size:clamp(18px,2.8vw,24px);color:#fff">登録内装仕上工事<br><span style="color:#F2C200">基幹技能者 在籍</span></p>
+      <p style="margin:10px 0 0;font-size:14px;color:rgba(255,255,255,.8)">内装仕上工事業</p>
+    </div>
+    <div style="border-top:3px solid #F2C200;padding-top:22px">
+      <span style="font-family:'Anton',sans-serif;color:rgba(255,255,255,.6);font-size:12px;letter-spacing:.16em">LICENSED STAFF</span>
+      <h3 style="margin:8px 0 12px;font-weight:900;font-size:clamp(15px,2.2vw,18px)">保有資格</h3>
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
+        <sc-for list="{{ quals }}" as="q" hint-placeholder-count="5">
+          <li style="font-size:clamp(13px,2vw,15px);font-weight:700;display:flex;gap:8px"><span style="color:#F2C200">●</span><span>{{ q }}</span></li>
+        </sc-for>
+      </ul>
+    </div>
+    <div style="border-top:3px solid #F2C200;padding-top:22px">
+      <span style="font-family:'Anton',sans-serif;color:rgba(255,255,255,.6);font-size:12px;letter-spacing:.16em">COVERAGE</span>
+      <h3 style="margin:8px 0 12px;font-weight:900;font-size:clamp(15px,2.2vw,18px)">対応エリア・実績</h3>
+      <div style="display:flex;gap:20px;align-items:flex-end">
+        <div style="display:flex;align-items:flex-end;gap:6px"><span style="font-family:'Anton',sans-serif;color:#F2C200;font-size:clamp(40px,7vw,64px);line-height:.8">15</span><span style="font-weight:900;padding-bottom:6px;font-size:14px">年<span style="display:block;opacity:.7;font-size:11px;font-weight:700">創業から</span></span></div>
+        <div style="display:flex;align-items:flex-end;gap:6px"><span style="font-family:'Anton',sans-serif;color:#F2C200;font-size:clamp(40px,7vw,64px);line-height:.8">0</span><span style="font-weight:900;padding-bottom:6px;font-size:14px">件<span style="display:block;opacity:.7;font-size:11px;font-weight:700">創業以来の事故</span></span></div>
+      </div>
+      <p style="margin:10px 0 0;font-size:13px;color:rgba(255,255,255,.8)">一都三県／店舗・商業施設・ビル・公共施設・マンション</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 会社情報 ===== -->
+<section style="position:relative;background:#fff;padding:clamp(64px,10vw,120px) clamp(20px,5vw,64px)">
+  <div style="max-width:920px;margin:0 auto">
+    <div style="margin-bottom:clamp(28px,4vw,44px)">
+      <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.16em">PROFILE</span>
+      <h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.7rem,4.4vw,2.6rem);color:#1A1A1A">会社情報</h2>
+    </div>
+    <dl style="margin:0;display:flex;flex-direction:column">
+      <sc-for list="{{ info }}" as="row" hint-placeholder-count="14">
+        <div style="display:flex;flex-wrap:wrap;gap:6px 24px;padding:16px 0;border-bottom:1px solid rgba(27,58,91,.12)">
+          <dt style="flex:0 0 clamp(120px,22vw,200px);font-weight:900;color:#1B3A5B;font-size:clamp(16px,2vw,16px)">{{ row.k }}</dt>
+          <dd style="flex:1;min-width:200px;margin:0;font-size:clamp(16px,2.1vw,16px);color:#1A1A1A">{{ row.v }}</dd>
+        </div>
+      </sc-for>
+    </dl>
+  </div>
+</section>
+
+<!-- ===== あゆみへの導線（沿革は /company/history へ移設） ===== -->
+<section style="position:relative;background:#0B1D30;color:#fff;padding:clamp(48px,7vw,88px) clamp(20px,5vw,64px)">
+  <div style="max-width:920px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(18px,3vw,32px);align-items:center;justify-content:space-between">
+    <div>
+      <span style="font-family:'Anton',sans-serif;color:rgba(255,255,255,.6);font-size:13px;letter-spacing:.16em">HISTORY</span>
+      <h2 style="margin:8px 0 6px;font-weight:900;font-size:clamp(1.4rem,3.4vw,2.1rem);line-height:1.4">創業からの歩みと、代表メッセージ</h2>
+      <p style="margin:0;font-size:clamp(15px,2.2vw,16px);color:rgba(255,255,255,.85);line-height:1.8">沿革・代表メッセージ・今後の展望は、別ページにまとめています。</p>
+    </div>
+    <a href="/company/history" style="background:#F2C200;color:#0B1D30;font-weight:900;font-size:clamp(15px,2.2vw,17px);padding:16px 28px;display:inline-flex;align-items:center;gap:10px;flex:none" style-hover="background:#ffd633">田中工業のあゆみ<span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<!-- ===== 安全への取り組み ===== -->
+<section style="position:relative;background:#F4F6F8;padding:clamp(60px,9vw,110px) clamp(20px,5vw,64px)">
+  <div style="max-width:920px;margin:0 auto;border-left:6px solid #F2C200;padding-left:clamp(18px,3vw,28px)">
+    <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.16em">SAFETY</span>
+    <h2 style="margin:8px 0 16px;font-weight:900;font-size:clamp(1.5rem,3.6vw,2.3rem);line-height:1.4;color:#1A1A1A">安全への取り組み</h2>
+    <p style="margin:0;font-size:clamp(16px,2.2vw,16px);line-height:1.95;color:#333">創業以来、無事故で工事を続けています。毎日の朝礼を欠かさず行ない、あわせてスタッフの体調をチェック。資材の置き場や切粉の処理、他業者との動線にも配慮し、片付いた状態で現場を引き継ぎます。</p>
+  </div>
+</section>
+
+<!-- ===== アクセス（地図）===== -->
+<section style="position:relative;background:#fff;padding:clamp(60px,9vw,110px) clamp(20px,5vw,64px)">
+  <div style="max-width:1180px;margin:0 auto">
+    <div style="margin-bottom:clamp(24px,3vw,36px)">
+      <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.16em">ACCESS</span>
+      <h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.7rem,4.4vw,2.6rem);color:#1A1A1A">アクセス</h2>
+      <p style="margin:10px 0 0;font-size:clamp(16px,2.1vw,16px);color:#444">〒350-1134 埼玉県川越市扇河岸107-31</p>
+    </div>
+    <div style="position:relative;width:100%;aspect-ratio:16/7;min-height:280px;overflow:hidden;background:#F4F6F8;border:1px solid rgba(27,58,91,.12)">
+      <image-slot id="company-map" style="position:absolute;inset:0;width:100%;height:100%" shape="rect" fit="cover" placeholder="Googleマップ（埼玉県川越市扇河岸107-31）"></image-slot>
+    </div>
+  </div>
+</section>
+
+<dc-import name="CtaBand" heading="ご相談・お問い合わせはこちら。" sub="軽天・ボード工事のご相談、二次受けのご依頼。
+まずは、お気軽にご相談ください。" hint-size="100%,420px"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      quals: [
+        '登録内装仕上工事基幹技能者',
+        '鋼製下地一級技能士',
+        '一級内装仕上げ施工技能士（ボード仕上げ）',
+      ],
+      info: [
+        { k: '会社名', v: '田中工業（タナカコウギョウ）' },
+        { k: '代表者名', v: '田中 智幸' },
+        { k: '創業', v: '平成22年11月' },
+        { k: '電話番号', v: '080-1087-3921（※営業電話お断り）' },
+        { k: 'TEL／FAX', v: '049-241-2435（※営業電話お断り）' },
+        { k: '所在地', v: '〒350-1134 埼玉県川越市扇河岸107-31' },
+        { k: '営業時間', v: '9:00〜21:00' },
+        { k: '定休日', v: '日曜日' },
+        { k: 'サイトURL', v: 'https://tanakakougyou.work/' },
+        { k: '業務内容', v: '内装工事業' },
+        { k: '対応エリア', v: '一都三県（埼玉・東京・神奈川・千葉）' },
+        { k: '保有資格', v: '登録内装仕上工事基幹技能者／鋼製下地一級技能士／一級内装仕上げ施工技能士（ボード仕上げ）' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>田中工業</title>
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon.png">
+<meta property="og:site_name" content="田中工業">
+<meta property="og:title" content="田中工業">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/ogp.png">
+<style>
+  html,body{margin:0;height:100%;background:#fff}
+  iframe{width:100vw;height:100vh;border:0;display:block;background:#fff}
+</style>
+</head>
+<body>
+  <iframe id="frame" title="田中工業"></iframe>
+
+<script>
+(function(){
+  // スラッグ → 実ファイル
+  var PAGES = [
+    ["/",                 "トップページ.dc.html"],
+    ["/service",          "業務案内.dc.html"],
+    ["/blog-ex/instance", "施工実績.dc.html"],
+    ["/request",          "ご依頼を検討中の方へ.dc.html"],
+    ["/request/reasons",  "選ばれる理由.dc.html"],
+    ["/request/price",    "料金表.dc.html"],
+    ["/request/voice",    "お客様の声.dc.html"],
+    ["/request/faq",      "FAQ.dc.html"],
+    ["/company",          "会社概要.dc.html"],
+    ["/company/history",  "田中工業のあゆみ.dc.html"],
+    ["/recruit",          "求職者のみなさまへ.dc.html"],
+    ["/recruit/job",      "採用情報.dc.html"],
+    ["/blog",             "ブログ.dc.html"],
+    ["/form/inquiry",     "お問い合わせ.dc.html"],
+    ["/privacypolicy",    "プライバシーポリシー.dc.html"]
+  ];
+  var MAP = {};
+  PAGES.forEach(function(p){ MAP[p[0]] = p[1]; });
+
+  var frame = document.getElementById('frame');
+
+  function load(slug){
+    var file = MAP[slug] || MAP["/"];
+    frame.src = encodeURI(file);
+  }
+
+  // iframe ロード時：内部リンク（/始まり）を横取りして回遊
+  frame.addEventListener('load', function(){
+    var doc;
+    try { doc = frame.contentDocument; } catch(e){ return; }
+    if(!doc) return;
+    doc.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a');
+      if(!a) return;
+      var href = a.getAttribute('href');
+      if(!href) return;
+      if(href.charAt(0) === '/'){
+        e.preventDefault();
+        if(MAP[href]) load(href);
+      }
+      // tel: / # / http(s) はそのまま
+    }, true);
+  });
+
+  // 初期表示：トップ
+  load("/");
+})();
+</script>
+</body>
+</html>

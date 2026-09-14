@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B3A5B"></rect><text x="50" y="58" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="#F2C200" text-anchor="middle">TANAKA</text></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;color:#1A1A1A;background:#fff;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal}
+:focus-visible{outline:3px solid #F2C200;outline-offset:3px}
+section a,section button,footer a,footer button{transition:opacity .2s ease}
+section a:hover,section button:hover,footer a:hover,footer button:hover{opacity:.78}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+</style>
+</helmet>
+
+<div data-screen-label="田中工業のあゆみ" style="position:relative">
+
+<dc-import name="SiteHeader" active="/company/history" hint-size="100%,0"></dc-import>
+
+<!-- ===== 下層ヘッダー ===== -->
+<section style="position:relative;background:#0B1D30;color:#fff;overflow:hidden;padding:calc(clamp(64px,8vw,86px) + clamp(52px,8vw,96px)) clamp(20px,5vw,64px) clamp(52px,8vw,96px)">
+  <img src="assets/subhero.jpg" alt="内装工事の作業風景（丸ノコと下地材）" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(11,29,48,.92),rgba(11,29,48,.62) 60%,rgba(11,29,48,.34))"></div>
+  <div style="position:relative;max-width:1240px;margin:0 auto">
+    <nav aria-label="パンくず" style="font-size:13px;color:rgba(255,255,255,.7);margin-bottom:18px"><a href="/" style="color:rgba(255,255,255,.7)">トップ</a> ／ <a href="/company" style="color:rgba(255,255,255,.7)">会社概要</a> ／ <span style="color:#fff">田中工業のあゆみ</span></nav>
+    <span style="font-family:'Anton',sans-serif;color:rgba(255,255,255,.55);font-size:clamp(12px,2vw,15px);letter-spacing:.18em">HISTORY</span>
+    <h1 style="margin:6px 0 0;font-weight:900;font-size:clamp(2.1rem,6vw,4rem);line-height:1.2">田中工業のあゆみ</h1>
+    <p style="margin:18px 0 0;font-size:clamp(15px,2.4vw,19px);font-weight:700;color:rgba(255,255,255,.92);line-height:1.7"><span class="line-chunk">平成22年、川越市で創業。</span>　<span class="line-chunk">15年かけて積み重ねてきた歩みをご紹介します。</span></p>
+  </div>
+</section>
+
+<!-- ===== 沿革タイムライン ===== -->
+<section style="position:relative;background:#fff;padding:clamp(64px,10vw,120px) clamp(20px,5vw,64px)">
+  <div style="max-width:920px;margin:0 auto">
+    <div style="margin-bottom:clamp(28px,4vw,48px)">
+      <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.16em">TIMELINE</span>
+      <h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.7rem,4.4vw,2.6rem);color:#1A1A1A">沿革</h2>
+    </div>
+    <!-- 要取材：中間年の出来事（拠点・体制・主要現場）を追記すること -->
+    <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+      <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="4">
+        <li style="display:flex;flex-wrap:wrap;gap:8px 32px;align-items:baseline;padding:clamp(20px,2.8vw,28px) 0;border-bottom:1px solid rgba(27,58,91,.14)">
+          <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:clamp(26px,4vw,38px);line-height:1;flex:0 0 auto;min-width:130px">{{ t.year }}</span>
+          <div style="flex:1 1 260px;min-width:0">
+            <h3 style="margin:0;font-weight:900;font-size:clamp(16px,2.4vw,20px);line-height:1.6;color:#1A1A1A">{{ t.title }}</h3>
+            <p style="margin:8px 0 0;font-size:clamp(16px,2.1vw,16px);line-height:1.85;color:#333">{{ t.desc }}</p>
+          </div>
+        </li>
+      </sc-for>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== 代表メッセージ ===== -->
+<section style="position:relative;background:#F4F6F8;padding:clamp(64px,10vw,120px) clamp(20px,5vw,64px)">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+    <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#fff">
+      <img src="assets/work-6.jpg" alt="ボード張りを終えた室内" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+    </div>
+    <div>
+      <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.16em">MESSAGE</span>
+      <h2 style="margin:8px 0 16px;font-weight:900;font-size:clamp(1.6rem,4vw,2.5rem);line-height:1.4;color:#1A1A1A">代表メッセージ</h2>
+      <p style="margin:0;font-size:clamp(16px,2.2vw,16px);line-height:1.95;color:#333">田中工業のホームページをご覧いただき、誠にありがとうございます。弊社は埼玉県川越市を拠点に活動している内装工事業者です。一都三県の店舗・商業施設・ビル・公共施設・マンションなどを対象とするご依頼を承っております。<br><br>平成22年に創業した若い会社ですが、すでに豊富な実績を積み重ねております。誰もが知っている有名商業施設の工事に携わった経験もございます。<br><br>代表はものづくりが好きなことから、内装工事の世界に飛び込むことを決意しました。自分たちが手がけた建物で暮らしている人や働いている人の姿を見ると、嬉しく温かい気持ちになります。このやりがいを成長の糧とし、みなさまに安心してご利用いただける建物をご提供してまいります。</p>
+      <p style="margin:22px 0 0;font-weight:900;font-size:clamp(16px,2.3vw,18px);color:#1B3A5B">田中工業　代表　田中 智幸</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 今後の展望 ===== -->
+<section style="position:relative;background:#1B3A5B;color:#fff;padding:clamp(60px,9vw,110px) clamp(20px,5vw,64px);overflow:hidden">
+  <span aria-hidden="true" style="position:absolute;bottom:clamp(8px,2vw,20px);right:clamp(8px,2vw,24px);font-family:'Anton',sans-serif;font-size:clamp(54px,12vw,150px);color:rgba(255,255,255,.06);line-height:.8;max-width:100%;overflow:hidden">FUTURE</span>
+  <div style="position:relative;max-width:920px;margin:0 auto;border-left:6px solid #F2C200;padding-left:clamp(18px,3vw,28px)">
+    <span style="font-family:'Anton',sans-serif;color:rgba(255,255,255,.7);font-size:13px;letter-spacing:.16em">FUTURE</span>
+    <h2 style="margin:8px 0 16px;font-weight:900;font-size:clamp(1.5rem,3.6vw,2.3rem);line-height:1.4">これからのこと</h2>
+    <p style="margin:0;font-size:clamp(16px,2.2vw,17px);line-height:1.95;color:rgba(255,255,255,.9)">これからもご依頼主さまに心からご満足いただける施工を実現していくため、品質向上に取り組むと同時に、安全管理を徹底してまいります。二次受けとしてのお取引を広げながら、腰を据えて長く働ける体制づくりを進めていきます。安心して内装工事をお任せいただけるよう、努力を続けてまいります。</p>
+  </div>
+</section>
+
+<dc-import name="CtaBand" heading="これからも、
+安心してお任せください。" sub="軽天・ボード工事のご相談、二次受けのご依頼。
+まずは、お気軽にお問い合わせください。" hint-size="100%,420px"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  renderVals() {
+    // 要取材：中間年（体制拡充・主要現場・拠点）の出来事を追記すること
+    return {
+      timeline: [
+        { year: '2010', title: '埼玉県川越市で創業', desc: '平成22年11月、内装工事業として創業。軽天工事・ボード工事を軸に、地域の現場からお取引を重ねてきました。' },
+        { year: '—', title: '有名商業施設の内装工事に参画', desc: '誰もが知る有名商業施設の工事に携わりました。大規模現場での工程管理・他業者との取り合いの経験を積んでいます。' },
+        { year: '—', title: '有資格者による施工体制を整備', desc: '登録内装仕上工事基幹技能者、鋼製下地一級技能士、一級内装仕上げ施工技能士（ボード仕上げ）。資格を持つ職人が現場に立つ体制を整えました。' },
+        { year: '2026', title: '一都三県で内装工事に対応', desc: '埼玉・東京・神奈川・千葉の店舗・商業施設・ビル・公共施設・マンションに対応。創業以来、無事故を継続しています。' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

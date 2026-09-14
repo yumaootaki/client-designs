@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B3A5B"/><text x="50" y="58" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="#F2C200" text-anchor="middle">TANAKA</text></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;color:#1A1A1A;background:#fff;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none}
+span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal}
+:focus-visible{outline:3px solid #F2C200;outline-offset:3px}
+section a,section button,footer a,footer button{transition:opacity .2s ease}
+section a:hover,section button:hover,footer a:hover,footer button:hover{opacity:.78}
+#hero3{--xt:100%;--xb:97%;--yb:57%;--y0:75%;--badge:clamp(92px,22vw,116px);--tick:clamp(20px,5vw,28px)}
+@media (min-width:600px){#hero3{--xt:92%;--xb:74%;--yb:78%;--y0:96%}}
+@media (min-width:900px){#hero3{--xt:70%;--xb:56%;--yb:100%;--y0:100%;--badge:clamp(116px,11vw,152px);--tick:28px}}
+@keyframes hero3Zoom{from{transform:scale(1.05)}to{transform:scale(1.14)}}
+@keyframes hero3MarqL{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@keyframes hero3MarqR{from{transform:translate3d(-50%,0,0)}to{transform:translate3d(0,0,0)}}
+@keyframes hero3Spin{to{transform:rotate(360deg)}}
+@keyframes hero3Up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes hero3Paint{0%{stroke-dashoffset:var(--len)}1%{stroke-dashoffset:var(--len)}8%{stroke-dashoffset:0}36%{stroke-dashoffset:0}45%{stroke-dashoffset:calc(var(--len) * -1)}100%{stroke-dashoffset:calc(var(--len) * -1)}}
+@keyframes hero3Sweep{0%{transform:translate3d(-7%,-3%,0) rotate(-1.6deg) scale(1.05)}8%{transform:translate3d(0,0,0) rotate(0deg) scale(1)}36%{transform:translate3d(0,0,0) rotate(0deg) scale(1)}45%{transform:translate3d(5%,2%,0) rotate(1.2deg) scale(1.02)}100%{transform:translate3d(5%,2%,0) rotate(1.2deg) scale(1.02)}}
+@keyframes hero3SweepUp{0%{transform:translate3d(-5%,7%,0) rotate(1.8deg) scale(1.05)}8%{transform:translate3d(0,0,0) rotate(0deg) scale(1)}36%{transform:translate3d(0,0,0) rotate(0deg) scale(1)}45%{transform:translate3d(4%,-4%,0) rotate(-1.2deg) scale(1.02)}100%{transform:translate3d(4%,-4%,0) rotate(-1.2deg) scale(1.02)}}
+@keyframes heroUp{from{opacity:0;transform:translateY(46px)}to{opacity:1;transform:none}}
+@keyframes scrollcue{0%{transform:translateY(0);opacity:.9}70%{opacity:.1}100%{transform:translateY(15px);opacity:0}}
+@keyframes heroCharIn{from{opacity:0}to{opacity:1}}
+@media (max-width:1024px){.reason-row{flex-direction:column}.reason-row>div{flex:1 1 auto !important;width:100%}.reason-photo{order:-1;aspect-ratio:3/2 !important}.issue-photo{aspect-ratio:4/3 !important}}
+/* ===== CMS dynamic sections (Cuezilla) — add.css basis ===== */
+[class*="design-parts-52"]{background:#fff !important;border-bottom:1px solid rgba(27,58,91,.12);padding:0 !important}
+[class*="design-parts-52"] .container{max-width:1320px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+[class*="design-parts-52"] .content{display:flex;align-items:center;gap:clamp(14px,3vw,36px);flex-wrap:wrap;padding:14px 0}
+[class*="design-parts-52"] h4.banner-area{margin:0;font-family:"Anton",sans-serif;font-weight:400;letter-spacing:.14em;font-size:14px;color:#1A1A1A;background:#F2C200 !important;padding:9px 18px;line-height:1;flex:none}
+[class*="design-parts-52"] ul.mb-0{list-style:none;margin:0;padding:0;flex:1 1 auto;min-width:0}
+[class*="design-parts-52"] li a{display:flex;align-items:center;gap:clamp(12px,2.5vw,26px);min-height:48px;color:#1A1A1A;flex-wrap:wrap}
+[class*="design-parts-52"] .parts-52-textarea{display:flex;align-items:center;gap:clamp(12px,2.5vw,26px);flex-wrap:wrap}
+[class*="design-parts-52"] span.date{font-family:"Anton",sans-serif;letter-spacing:.06em;color:#1B3A5B;font-size:15px;flex:none}
+[class*="design-parts-52"] span.d-inline-block{font-size:clamp(16px,2.4vw,16px);font-weight:500;color:#1A1A1A;overflow:hidden;text-overflow:ellipsis}
+[class*="design-parts-52"] li a:hover span.d-inline-block{color:#1B3A5B;text-decoration:underline;text-underline-offset:4px}
+/* blog cards（parts228系・写真上／更新日あり） */
+[class*="parts228"].parts228_section{background:#F4F6F8;padding:clamp(72px,10vw,120px) clamp(20px,5vw,64px)}
+[class*="parts228"] .parts228_wrap{max-width:1240px;margin:0 auto}
+.top-blog-head{margin:0 0 clamp(28px,4vw,48px)}
+.top-blog-head h2{font-family:"Anton",sans-serif;font-weight:400;letter-spacing:.06em;font-size:clamp(40px,7.5vw,80px);color:#1B3A5B;line-height:1;margin:-0.18em 0 0}
+.top-blog-head p{margin:8px 0 0;font-weight:700;color:#1B3A5B;letter-spacing:.04em;font-size:14px}
+[class*="parts228"] .parts228_post_list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2.5vw,32px)}
+[class*="parts228"] .parts228_post_wrap{min-width:0;background:#fff;box-shadow:0 16px 40px rgba(11,29,48,.10);transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
+[class*="parts228"] .parts228_post_wrap:hover{transform:translateY(-8px);box-shadow:0 26px 54px rgba(11,29,48,.20)}
+[class*="parts228"] .parts228_post_img{display:block;overflow:hidden}
+[class*="parts228"] .parts228_post_img img,[class*="parts228"] .parts228_post_img image-slot{width:100%;height:240px;object-fit:cover;display:block}
+[class*="parts228"] .parts228_post_status{padding:16px 22px 0}
+[class*="parts228"] .parts228_post_date{font-family:"Anton",sans-serif;letter-spacing:.04em;color:#1B3A5B;font-size:14px}
+[class*="parts228"] .parts228_post_title-excerpt{padding:6px 22px 24px}
+[class*="parts228"] .parts228_post_title{margin:0;font-weight:700;font-size:16px;line-height:1.6;color:#1A1A1A}
+.top-blog-more{margin-top:clamp(28px,4vw,44px)}
+.top-blog-more a{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:15px 30px;background:#1B3A5B;color:#fff;font-weight:900;font-size:15px}
+.top-blog-more a:hover{background:#0B1D30}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+</style>
+</helmet>
+
+<div data-screen-label="トップ" style="position:relative">
+
+<!-- ============ HEADER ============ -->
+<header style="position:fixed;top:0;left:0;right:0;z-index:120;background:#0B1D30;transition:box-shadow .4s ease">
+  <sc-if value="{{ headerSolid }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;box-shadow:0 6px 28px rgba(0,0,0,.28);pointer-events:none"></div>
+  </sc-if>
+  <div style="position:relative;max-width:1440px;margin:0 auto;padding:0 clamp(16px,4vw,48px);height:clamp(64px,8vw,86px);display:flex;align-items:center;justify-content:space-between;gap:20px">
+    <a href="/" aria-label="田中工業 トップへ" style="display:flex;align-items:center;flex:none">
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;color:#fff;font-weight:900;font-size:clamp(16px,2.4vw,21px);letter-spacing:.04em;white-space:nowrap">田中工業</span>
+    </a>
+
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="メインナビゲーション" style="display:flex;align-items:center;gap:clamp(8px,1.4vw,22px)">
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+          <div style="position:relative" onMouseEnter="{{ item.onEnter }}" onMouseLeave="{{ item.onLeave }}">
+            <a href="{{ item.href }}" style="display:flex;align-items:center;gap:5px;color:#fff;font-weight:700;font-size:14px;letter-spacing:.02em;padding:10px 4px;white-space:nowrap">
+              <span>{{ item.label }}</span>
+              <sc-if value="{{ item.hasChildren }}" hint-placeholder-val="{{ false }}">
+                <span aria-hidden="true" style="font-size:9px;opacity:.8">▼</span>
+              </sc-if>
+            </a>
+            <sc-if value="{{ item.open }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:10px">
+                <div style="background:#0B1D30;border-top:3px solid #F2C200;min-width:180px;box-shadow:0 18px 40px rgba(0,0,0,.3);padding:8px 0">
+                  <sc-for list="{{ item.children }}" as="c" hint-placeholder-count="2">
+                    <a href="{{ c.href }}" style="display:block;color:#fff;font-weight:500;font-size:14px;padding:11px 22px;white-space:nowrap" style-hover="color:#F2C200;text-decoration:underline;text-underline-offset:4px">{{ c.label }}</a>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+        <a href="tel:080-1087-3921" style="display:flex;flex-direction:column;align-items:flex-end;color:#fff;margin-left:6px;line-height:1.1">
+          <span style="font-family:'Anton',sans-serif;font-size:clamp(16px,2vw,21px);letter-spacing:.02em">080-1087-3921</span>
+          <span style="font-size:10px;opacity:.8;font-weight:500">受付 9:00〜21:00</span>
+        </a>
+        <a href="/form/inquiry" style="background:#F2C200;color:#0B1D30;font-weight:900;font-size:14px;letter-spacing:.04em;padding:13px 22px;display:flex;align-items:center;gap:8px;transition:background .3s ease,gap .25s ease" style-hover="background:#ffd633;gap:14px">お問い合わせ<span aria-hidden="true" style="display:inline-block;transition:transform .25s ease">→</span></a>
+      </nav>
+    </sc-if>
+
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ toggleMenu }}" aria-label="メニューを開く" aria-expanded="{{ menuOpen }}" style="width:48px;height:48px;background:#F2C200;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px">
+        <span style="width:26px;height:2px;background:#0B1D30;display:block"></span>
+        <span style="width:26px;height:2px;background:#0B1D30;display:block"></span>
+        <span style="width:26px;height:2px;background:#0B1D30;display:block"></span>
+      </button>
+    </sc-if>
+  </div>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:130;background:#0B1D30;overflow-y:auto;padding:18px clamp(18px,6vw,40px) 60px">
+    <div style="display:flex;align-items:center;justify-content:space-between;height:48px;margin-bottom:18px">
+      <span style="font-family:'Anton',sans-serif;color:#fff;font-size:30px;letter-spacing:.06em">TANAKA</span>
+      <button onClick="{{ closeMenu }}" aria-label="メニューを閉じる" style="width:48px;height:48px;background:#F2C200;color:#0B1D30;font-size:30px;display:flex;align-items:center;justify-content:center">✕</button>
+    </div>
+    <nav aria-label="メインナビゲーション">
+      <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+        <div style="border-bottom:1px solid rgba(255,255,255,.12)">
+          <div style="display:flex;align-items:stretch">
+            <a href="{{ item.href }}" style="flex:1;color:#fff;font-weight:700;font-size:17px;padding:18px 4px;min-height:44px">{{ item.label }}</a>
+            <sc-if value="{{ item.hasChildren }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ item.onToggleAcc }}" aria-label="{{ item.label }}のサブメニュー" aria-expanded="{{ item.accOpen }}" style="width:56px;color:#F2C200;font-size:18px;display:flex;align-items:center;justify-content:center">
+                <sc-if value="{{ item.accOpen }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true">−</span></sc-if>
+                <sc-if value="{{ item.accClosed }}" hint-placeholder-val="{{ true }}"><span aria-hidden="true">＋</span></sc-if>
+              </button>
+            </sc-if>
+          </div>
+          <sc-if value="{{ item.accOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:0 0 14px 16px">
+              <sc-for list="{{ item.children }}" as="c" hint-placeholder-count="2">
+                <a href="{{ c.href }}" style="display:block;color:rgba(255,255,255,.82);font-size:15px;font-weight:500;padding:12px 8px;min-height:44px">— {{ c.label }}</a>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </nav>
+    <a href="/form/inquiry" style="margin-top:26px;background:#F2C200;color:#0B1D30;font-weight:900;font-size:17px;padding:18px;display:flex;align-items:center;justify-content:center;gap:8px">お問い合わせ<span aria-hidden="true">→</span></a>
+    <a href="tel:080-1087-3921" style="margin-top:14px;border:1px solid rgba(255,255,255,.3);color:#fff;padding:16px;display:flex;flex-direction:column;align-items:center;line-height:1.3">
+      <span style="font-family:'Anton',sans-serif;font-size:26px;letter-spacing:.02em">080-1087-3921</span>
+      <span style="font-size:12px;opacity:.8">受付 9:00〜21:00 ／ 営業電話お断り</span>
+    </a>
+  </div>
+</sc-if>
+
+<!-- ============ HERO（斜め分割＋筆致＋マーキー） ============ -->
+<section id="hero3" data-screen-label="ヒーロー" aria-label="メインビジュアル" style="position:relative;isolation:isolate;overflow:hidden;min-height:max(660px,100svh);background:#0B1D30">
+
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:0">
+    <img src="assets/issue-nankoji.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center;animation:hero3Zoom 20s ease-in-out infinite alternate">
+    <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(11,29,48,.38),rgba(11,29,48,.62))"></div>
+  </div>
+
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;background:#fff;clip-path:polygon(0 0,var(--xt) 0,var(--xb) var(--yb),0 var(--y0))"></div>
+
+  <svg aria-hidden="true" viewBox="0 0 1440 560" preserveAspectRatio="none" style="position:absolute;z-index:2;top:0;left:0;width:100%;height:clamp(300px,46vw,620px);overflow:visible;pointer-events:none">
+    <defs>
+      <filter id="hero3Ink" x="-10%" y="-40%" width="125%" height="190%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.006 0.028" numOctaves="4" seed="11" result="n"></feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="26" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+      </filter>
+      <filter id="hero3InkFine" x="-10%" y="-40%" width="125%" height="190%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="3" seed="4" result="n2"></feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="n2" scale="14" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+      </filter>
+      <mask id="hero3Sweep1" maskUnits="userSpaceOnUse" x="-400" y="-300" width="2400" height="1200">
+        <path data-brush="1" d="M-280,-172 C180,-128 520,-92 900,126 C1150,240 1360,300 1690,344" fill="none" stroke="#fff" stroke-width="420" stroke-linecap="butt" visibility="hidden" style="animation:hero3Paint 16s cubic-bezier(.16,.9,.2,1) infinite"></path>
+      </mask>
+      <mask id="hero3Sweep2" maskUnits="userSpaceOnUse" x="-400" y="-300" width="2400" height="1200">
+        <path data-brush="1" d="M-300,690 C120,650 470,556 830,384 C1130,240 1400,96 1700,-140" fill="none" stroke="#fff" stroke-width="400" stroke-linecap="butt" visibility="hidden" style="animation:hero3Paint 16s cubic-bezier(.16,.9,.2,1) infinite;animation-delay:8s"></path>
+      </mask>
+    </defs>
+    <g style="transform-origin:55% 30%;animation:hero3Sweep 16s cubic-bezier(.16,.9,.2,1) infinite">
+      <g mask="url(#hero3Sweep1)">
+        <path filter="url(#hero3Ink)" fill="#F2C200" d="M-300,-230 C180,-150 520,-104 900,70 C1150,190 1360,278 1700,286 L1700,400 C1360,392 1150,304 900,184 C520,10 180,-46 -300,-116 Z"></path>
+        <path filter="url(#hero3InkFine)" fill="#E5B800" opacity=".92" d="M-290,-206 C182,-134 522,-86 902,92 C1152,212 1358,292 1692,300 L1692,362 C1358,356 1152,278 902,158 C522,-12 182,-64 -290,-142 Z"></path>
+        <path filter="url(#hero3InkFine)" fill="#FFDE4D" opacity=".55" d="M-270,-190 C186,-124 524,-74 904,108 C1152,226 1356,304 1676,314 L1676,338 C1356,330 1152,250 904,132 C524,-40 186,-88 -270,-158 Z"></path>
+        <path filter="url(#hero3InkFine)" fill="#F2C200" opacity=".75" d="M1300,300 C1420,318 1540,332 1690,332 L1690,372 C1536,372 1412,356 1296,336 Z"></path>
+      </g>
+    </g>
+    <g style="transform-origin:50% 60%;animation:hero3SweepUp 16s cubic-bezier(.16,.9,.2,1) infinite;animation-delay:8s">
+      <g mask="url(#hero3Sweep2)">
+        <path filter="url(#hero3Ink)" fill="#F2C200" d="M-320,760 C120,716 480,616 840,440 C1140,296 1410,150 1700,-92 L1700,16 C1410,254 1140,400 840,548 C480,712 120,800 -320,850 Z"></path>
+        <path filter="url(#hero3InkFine)" fill="#E5B800" opacity=".92" d="M-310,738 C124,694 482,594 842,420 C1142,276 1408,132 1696,-104 L1696,-44 C1408,192 1142,336 842,486 C482,652 124,742 -310,792 Z"></path>
+        <path filter="url(#hero3InkFine)" fill="#FFDE4D" opacity=".55" d="M-300,716 C128,672 486,574 846,400 C1144,258 1404,116 1684,-116 L1684,-92 C1404,140 1144,282 846,432 C486,600 128,690 -300,740 Z"></path>
+        <path filter="url(#hero3InkFine)" fill="#F2C200" opacity=".75" d="M1330,80 C1432,20 1546,-52 1690,-150 L1690,-104 C1552,-8 1440,60 1346,120 Z"></path>
+      </g>
+    </g>
+  </svg>
+
+  <div style="position:relative;z-index:4;padding:clamp(104px,15vw,150px) clamp(20px,5vw,64px) clamp(250px,42vw,300px);max-width:min(760px, calc((var(--xt) + var(--xb))/2 - clamp(16px,3vw,40px)));container-type:inline-size">
+    <p style="margin:0 0 clamp(14px,2.5vw,22px);font-family:'Anton',sans-serif;font-weight:400;letter-spacing:.22em;font-size:clamp(11px,2.4cqw,14px);color:#1B3A5B;animation:hero3Up .8s .05s cubic-bezier(.2,.7,.2,1) both">INTERIOR FINISHING WORKS ／ KAWAGOE, SAITAMA</p>
+    <h1 style="margin:0;font-weight:900;color:#0B1D30;font-size:clamp(30px,11.5cqw,70px);line-height:1.24;letter-spacing:.01em;text-wrap:pretty;animation:hero3Up .9s .12s cubic-bezier(.2,.7,.2,1) both"><span class="line-chunk"><span class="line-chunk">正確な施工が、</span></span><br><span class="line-chunk"><span class="line-chunk">次の</span><span class="line-chunk" style="color:#1B3A5B">仕事</span><span class="line-chunk">につながる。</span></span></h1>
+    <p style="margin:clamp(16px,3vw,26px) 0 0;max-width:30em;font-size:clamp(14px,3.2cqw,17px);font-weight:500;color:#1F2A3C;line-height:1.95;animation:hero3Up .9s .2s cubic-bezier(.2,.7,.2,1) both">埼玉県川越市を拠点に、一都三県で軽天工事・ボード工事を。<br>店舗・商業施設・ビル・公共施設・マンションの内装下地をお任せいただけます。</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(24px,4vw,36px);animation:hero3Up .9s .28s cubic-bezier(.2,.7,.2,1) both">
+      <a href="/service" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:14px 30px;background:#1B3A5B;color:#fff;font-weight:900;font-size:15px;letter-spacing:.04em;transition:background .3s ease,gap .25s ease" style-hover="background:#0B1D30;gap:16px;color:#fff">業務案内を見る<span aria-hidden="true">→</span></a>
+      <a href="/form/inquiry" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:14px 30px;border:2px solid #1B3A5B;color:#1B3A5B;font-weight:900;font-size:15px;letter-spacing:.04em;transition:background .3s ease,color .3s ease" style-hover="background:#1B3A5B;color:#fff">お問い合わせ<span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:5;pointer-events:none;clip-path:polygon(0 0,var(--xt) 0,var(--xb) var(--yb),0 var(--y0))">
+    <div style="position:absolute;left:0;right:0;bottom:calc(var(--tick) + clamp(8px,2vw,18px));display:flex;flex-direction:column;gap:0">
+      <div style="overflow:hidden">
+        <div style="display:flex;width:max-content;animation:hero3MarqL 30s linear infinite;will-change:transform">
+          <span style="font-family:'Anton',sans-serif;font-size:clamp(56px,14vw,150px);line-height:1.02;letter-spacing:.02em;color:#1B3A5B;white-space:nowrap;padding-right:.3em">KEITEN ✦ BOARD ✦ KEITEN ✦ BOARD ✦ </span>
+          <span style="font-family:'Anton',sans-serif;font-size:clamp(56px,14vw,150px);line-height:1.02;letter-spacing:.02em;color:#1B3A5B;white-space:nowrap;padding-right:.3em">KEITEN ✦ BOARD ✦ KEITEN ✦ BOARD ✦ </span>
+        </div>
+      </div>
+      <div style="overflow:hidden">
+        <div style="display:flex;width:max-content;animation:hero3MarqR 44s linear infinite;will-change:transform">
+          <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,5.2vw,48px);line-height:1.25;letter-spacing:.14em;color:#1B3A5B;white-space:nowrap;padding-right:.6em">SINCE 2010 ／ KAWAGOE SAITAMA ／ 1都3県 対応 ／ 創業以来 無事故 ／ </span>
+          <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,5.2vw,48px);line-height:1.25;letter-spacing:.14em;color:#1B3A5B;white-space:nowrap;padding-right:.6em">SINCE 2010 ／ KAWAGOE SAITAMA ／ 1都3県 対応 ／ 創業以来 無事故 ／ </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:5;pointer-events:none;clip-path:polygon(var(--xt) 0,100% 0,100% 100%,0 100%,0 var(--y0),var(--xb) var(--yb))">
+    <div style="position:absolute;left:0;right:0;bottom:calc(var(--tick) + clamp(8px,2vw,18px));display:flex;flex-direction:column;gap:0">
+      <div style="overflow:hidden">
+        <div style="display:flex;width:max-content;animation:hero3MarqL 30s linear infinite;will-change:transform">
+          <span style="font-family:'Anton',sans-serif;font-size:clamp(56px,14vw,150px);line-height:1.02;letter-spacing:.02em;color:#fff;white-space:nowrap;padding-right:.3em">KEITEN ✦ BOARD ✦ KEITEN ✦ BOARD ✦ </span>
+          <span style="font-family:'Anton',sans-serif;font-size:clamp(56px,14vw,150px);line-height:1.02;letter-spacing:.02em;color:#fff;white-space:nowrap;padding-right:.3em">KEITEN ✦ BOARD ✦ KEITEN ✦ BOARD ✦ </span>
+        </div>
+      </div>
+      <div style="overflow:hidden">
+        <div style="display:flex;width:max-content;animation:hero3MarqR 44s linear infinite;will-change:transform">
+          <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,5.2vw,48px);line-height:1.25;letter-spacing:.14em;color:#fff;white-space:nowrap;padding-right:.6em">SINCE 2010 ／ KAWAGOE SAITAMA ／ 1都3県 対応 ／ 創業以来 無事故 ／ </span>
+          <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,5.2vw,48px);line-height:1.25;letter-spacing:.14em;color:#fff;white-space:nowrap;padding-right:.6em">SINCE 2010 ／ KAWAGOE SAITAMA ／ 1都3県 対応 ／ 創業以来 無事故 ／ </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#works" aria-label="施工実績セクションへ移動" style="position:absolute;z-index:7;right:clamp(14px,3vw,44px);bottom:calc(var(--tick) + clamp(76px,18vw,120px));width:var(--badge);height:var(--badge);border-radius:50%;background:#0B1D30;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(11,29,48,.34);transition:background .3s ease" style-hover="background:#1B3A5B;color:#fff">
+    <svg aria-hidden="true" viewBox="0 0 120 120" style="position:absolute;inset:0;width:100%;height:100%;animation:hero3Spin 24s linear infinite">
+      <defs><path id="hero3BadgeArc" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" fill="none"></path></defs>
+      <text fill="#F2C200" font-family="Anton, sans-serif" font-size="12" letter-spacing="2.9"><textPath href="#hero3BadgeArc" startOffset="0">WORKS ✦ SCROLL ✦ WORKS ✦ SCROLL ✦ </textPath></text>
+    </svg>
+    <span aria-hidden="true" style="position:relative;font-family:'Anton',sans-serif;font-size:clamp(13px,3vw,16px);letter-spacing:.1em">↓</span>
+  </a>
+
+  <!-- 新着情報はヒーロー直下の CMS帯（design-parts-52）が正。ヒーロー内には重複させない。 -->
+</section>
+
+<!-- ============ NEWS帯 (design-parts-52) ============ -->
+<section class="design-parts-52_xxx design-parts-52 bg-color">
+  <div class="container">
+    <div class="content mx-auto">
+      <h4 class="banner-area">NEWS</h4>
+      <ul class="mb-0">
+        <!-- CMS LOOP START -->
+        <li>
+          <a href="#">
+            <span class="parts-52-textarea">
+              <span class="date">2025.06.18</span>
+              <span class="d-inline-block">ホームページをリニューアルしました。</span>
+            </span>
+          </a>
+        </li>
+        <!-- CMS LOOP END -->
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 問題提起（お困りごと）============ -->
+<section style="position:relative;background:#fff;padding:clamp(76px,12vw,150px) clamp(20px,5vw,64px) clamp(60px,9vw,120px);overflow:hidden">
+  <div style="position:relative;max-width:1240px;margin:0 auto">
+    <div data-reveal style="max-width:780px;margin-bottom:clamp(32px,5vw,56px)">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+        <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.16em">ISSUES</span>
+        <span style="width:46px;height:2px;background:#1B3A5B;display:block"></span>
+      </div>
+      <h2 style="margin:0;font-weight:900;font-size:clamp(1.7rem,4.6vw,3rem);line-height:1.4;color:#1A1A1A">
+        <span class="line-chunk">こんな現場・お困りごと、</span><br><span class="line-chunk">ありませんか？</span>
+      </h2>
+      <p style="margin:clamp(20px,3vw,28px) 0 0;font-size:clamp(16px,2.4vw,19px);font-weight:700;color:#1B3A5B;line-height:1.7">軽天・ボードの下地から仕上げまで、川越の田中工業にまるごとご相談ください。</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,44px)">
+      <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:clamp(28px,4vw,56px)">
+        <figure data-reveal style="margin:0">
+          <div class="issue-photo" style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#F4F6F8">
+            <img src="assets/issue-carport.jpg" alt="軽量鉄骨で組んだ間仕切り壁の下地" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+          <figcaption style="display:flex;gap:14px;align-items:flex-start;margin-top:16px">
+            <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:clamp(28px,4vw,46px);line-height:.8;flex:none">01</span>
+            <span style="font-size:clamp(15px,2.2vw,19px);font-weight:700;line-height:1.55;padding-top:4px">仕上がりの精度が安定する内装業者を探している</span>
+          </figcaption>
+        </figure>
+        <figure data-reveal data-reveal-delay="120" style="margin:0">
+          <div class="issue-photo" style="position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;background:#F4F6F8">
+            <img src="assets/issue-nankoji.jpg" alt="軽天スタッドを建て込んだ内装下地の現場" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+          <figcaption style="display:flex;gap:14px;align-items:flex-start;margin-top:16px">
+            <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:clamp(28px,4vw,46px);line-height:.8;flex:none">03</span>
+            <span style="font-size:clamp(15px,2.2vw,19px);font-weight:700;line-height:1.55;padding-top:4px">現場の片付け・養生まで任せられる職人がほしい</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div style="flex:1 1 340px;min-width:0;margin-top:clamp(0px,6vw,72px);display:flex;flex-direction:column;gap:clamp(28px,4vw,56px)">
+        <figure data-reveal data-reveal-delay="80" style="margin:0">
+          <div class="issue-photo" style="position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;background:#F4F6F8">
+            <img src="assets/issue-zosei.jpg" alt="床下地の合板張り" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+          <figcaption style="display:flex;gap:14px;align-items:flex-start;margin-top:16px">
+            <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:clamp(28px,4vw,46px);line-height:.8;flex:none">02</span>
+            <span style="font-size:clamp(15px,2.2vw,19px);font-weight:700;line-height:1.55;padding-top:4px">工期がタイトで、下地から仕上げまで通して頼みたい</span>
+          </figcaption>
+        </figure>
+        <figure data-reveal data-reveal-delay="180" style="margin:0">
+          <div class="issue-photo" style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#F4F6F8">
+            <img src="assets/issue-kokyo.jpg" alt="床のパーティクルボード張り" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+          <figcaption style="display:flex;gap:14px;align-items:flex-start;margin-top:16px">
+            <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:clamp(28px,4vw,46px);line-height:.8;flex:none">04</span>
+            <span style="font-size:clamp(15px,2.2vw,19px);font-weight:700;line-height:1.55;padding-top:4px">二次受けとして継続的に任せられる先を確保したい</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 任せられる3つの理由（3者三様・数字主役）============ -->
+<section data-countup-section style="position:relative;background:#F4F6F8;padding:clamp(72px,11vw,150px) 0;overflow:hidden">
+  <div data-reveal style="text-align:center;margin-bottom:clamp(44px,7vw,84px);padding:0 clamp(20px,5vw,64px)">
+    <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:14px">
+      <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.16em">WHY TANAKA</span>
+    </div>
+    <h2 style="margin:0;font-weight:900;font-size:clamp(1.9rem,5.2vw,3.4rem);line-height:1.3">選ばれる<span style="color:#1B3A5B">3つ</span>の理由</h2>
+    <p style="margin:14px 0 0;font-size:clamp(15px,2.3vw,18px);color:#444;font-weight:500">丁寧な施工と、整った現場。元請けご担当者に評価いただいているポイントです。</p>
+  </div>
+
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,64px);display:flex;flex-direction:column">
+
+    <!-- 01 安全＝人物（縦写真・人で守る安全） -->
+    <article data-reveal class="reason-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4.5vw,64px);align-items:center">
+      <div style="flex:1 1 44%;min-width:0">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:4px">
+          <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.14em">01 QUALITY</span>
+          <span style="font-weight:900;font-size:clamp(18px,2.8vw,24px);color:#1B3A5B">丁寧な施工</span>
+        </div>
+        <div style="display:flex;align-items:flex-end;gap:10px;margin:0 0 14px">
+          <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:clamp(72px,14vw,150px);line-height:.74;letter-spacing:.01em">{{ stat1 }}</span>
+          <span style="font-weight:900;color:#1B3A5B;font-size:clamp(22px,3.4vw,34px);padding-bottom:clamp(8px,1.4vw,18px)">年</span>
+          <span style="font-weight:700;color:#1A1A1A;opacity:.6;font-size:clamp(13px,2vw,16px);padding-bottom:clamp(12px,1.8vw,22px)">代表の業歴</span>
+        </div>
+        <h3 style="margin:0 0 12px;font-weight:900;font-size:clamp(17px,2.6vw,23px);line-height:1.5;color:#1A1A1A">下地の精度が、仕上がりを決める。</h3>
+        <p style="margin:0;font-size:clamp(16px,2.1vw,16px);line-height:1.9;color:#333;max-width:540px">代表は業歴16年以上の内装工事職人。登録内装仕上工事基幹技能者・鋼製下地一級技能士・一級内装仕上げ施工技能士が施工にあたり、下地の通り・不陸を丁寧に追い込みます。</p>
+      </div>
+      <div class="reason-photo" style="flex:1 1 40%;min-width:0;position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;background:#fff">
+        <img src="assets/reason-safety.jpg" alt="天井下地の造作（曲面のR下がり壁）" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+    </article>
+
+    <!-- 02 整った現場（大判ワイド写真主役） -->
+    <article data-reveal class="reason-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4.5vw,64px);align-items:center;border-top:1px solid rgba(27,58,91,.14);padding-top:clamp(40px,7vw,84px);margin-top:clamp(40px,7vw,84px)">
+      <div class="reason-photo" style="flex:1 1 56%;min-width:0;position:relative;width:100%;aspect-ratio:3/2;overflow:hidden;background:#0B1D30">
+        <img src="assets/reason-machine.jpg" alt="整えられた天井下地の施工現場" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <div style="flex:1 1 36%;min-width:0">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:4px">
+          <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.14em">02 TIDINESS</span>
+          <span style="font-weight:900;font-size:clamp(18px,2.8vw,24px);color:#1B3A5B">整った現場</span>
+        </div>
+        <div style="display:flex;align-items:flex-end;gap:10px;margin:0 0 4px">
+          <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:clamp(72px,14vw,150px);line-height:.74;letter-spacing:.01em">{{ stat2 }}</span>
+          <span style="font-weight:900;color:#1B3A5B;font-size:clamp(26px,4vw,40px);padding-bottom:clamp(10px,2vw,24px)">件</span>
+        </div>
+        <p style="margin:0 0 14px;font-weight:900;color:#1B3A5B;font-size:clamp(16px,2.2vw,18px);letter-spacing:.02em">創業以来の事故件数</p>
+        <h3 style="margin:0 0 12px;font-weight:900;font-size:clamp(17px,2.6vw,23px);line-height:1.5;color:#1A1A1A">整理整頓された現場は、事故も手直しも生まない。</h3>
+        <p style="margin:0;font-size:clamp(16px,2.1vw,16px);line-height:1.9;color:#333;max-width:540px">資材の置き場、切粉の処理、他業者の動線。毎日の朝礼と体調チェックを欠かさず、片付いた状態で現場を引き継ぎます。創業以来、無事故を継続しています。</p>
+        <a href="/request/reasons" style="margin-top:18px;background:#F2C200;color:#0B1D30;font-weight:900;font-size:clamp(16px,2.2vw,16px);padding:14px 24px;display:inline-flex;align-items:center;gap:10px" style-hover="background:#ffd633">選ばれる理由を見る<span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+
+    <!-- 03 安定＝経営基盤（数値をネイビーの信用パネルで） -->
+    <article data-reveal class="reason-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4.5vw,64px);align-items:center;border-top:1px solid rgba(27,58,91,.14);padding-top:clamp(40px,7vw,84px);margin-top:clamp(40px,7vw,84px)">
+      <div style="flex:1 1 46%;min-width:0">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px">
+          <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.14em">03 EXPERIENCE</span>
+          <span style="font-weight:900;font-size:clamp(18px,2.8vw,24px);color:#1B3A5B">創業15年</span>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:12px;background:#0B1D30;padding:clamp(14px,2.4vw,24px) clamp(18px,3vw,30px);margin:0 0 16px">
+          <span style="font-family:'Anton',sans-serif;color:#F2C200;font-size:clamp(60px,11vw,128px);line-height:.9;letter-spacing:.01em">{{ stat3 }}</span>
+          <span style="display:flex;flex-direction:column;justify-content:center">
+            <span style="color:#fff;font-weight:900;font-size:clamp(16px,2.4vw,22px);line-height:1.1">年</span>
+            <span style="color:rgba(255,255,255,.7);font-weight:700;font-size:clamp(11px,1.7vw,13px);letter-spacing:.06em;margin-top:4px;white-space:nowrap">平成22年11月 創業</span>
+          </span>
+        </div>
+        <h3 style="margin:0 0 12px;font-weight:900;font-size:clamp(17px,2.6vw,23px);line-height:1.5;color:#1A1A1A">15年続けてきたから、急な離脱がない。</h3>
+        <p style="margin:0;font-size:clamp(16px,2.1vw,16px);line-height:1.9;color:#333;max-width:540px">平成22年11月の創業から15年。誰もが知る有名商業施設の内装工事に携わった経験もあります。腰を据えた体制で、継続的なお取引に応えます。</p>
+      </div>
+      <div class="reason-photo" style="flex:1 1 40%;min-width:0;position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#fff">
+        <img src="assets/reason-stability.jpg" alt="ボード張りを終えた室内" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 建設業の許可票 ============ -->
+<section style="position:relative;background:#fff;padding:clamp(76px,11vw,150px) clamp(20px,5vw,64px);overflow:hidden">
+  <div style="position:relative;z-index:1;max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:0;align-items:center">
+    <div data-reveal style="{{ permitPanelStyle }}">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+        <span style="font-family:'Anton',sans-serif;color:#fff;font-size:13px;letter-spacing:.16em">LICENSE</span>
+        <span style="width:46px;height:2px;background:rgba(255,255,255,.5);display:block"></span>
+      </div>
+      <h2 style="margin:0;font-weight:900;font-size:clamp(1.35rem,3.4vw,2.2rem);line-height:1.5">
+        <span class="line-chunk" style="overflow-wrap:normal;word-break:keep-all">資格を持つ職人が、</span><span class="line-chunk" style="overflow-wrap:normal;word-break:keep-all">現場に立ちます。</span>
+      </h2>
+      <dl style="margin:clamp(26px,4vw,38px) 0 0;display:flex;flex-direction:column;gap:18px">
+        <div style="border-left:4px solid rgba(255,255,255,.5);padding-left:18px">
+          <dt style="font-size:13px;color:rgba(255,255,255,.7);font-weight:700;letter-spacing:.06em">保有資格</dt>
+          <dd style="margin:4px 0 0;font-size:clamp(17px,2.6vw,22px);font-weight:900">登録内装仕上工事基幹技能者<br>鋼製下地一級技能士<br>一級内装仕上げ施工技能士（ボード仕上げ）</dd>
+        </div>
+        <div style="border-left:4px solid rgba(255,255,255,.5);padding-left:18px">
+          <dt style="font-size:13px;color:rgba(255,255,255,.7);font-weight:700;letter-spacing:.06em">業務内容</dt>
+          <dd style="margin:4px 0 0;font-size:clamp(16px,2.4vw,20px);font-weight:900">内装工事業（軽天・ボード・化粧ケイカル板・キッチンパネル）</dd>
+        </div>
+      </dl>
+    </div>
+    <div data-reveal data-reveal-delay="120" style="{{ permitMediaStyle }}">
+      <div style="background:#fff;padding:clamp(10px,1.5vw,16px);box-shadow:0 36px 80px rgba(11,29,48,.4);transform:rotate(-1.4deg)">
+        <img src="assets/work-4.jpg" alt="資格を持つ職人による天井下地の造作" style="width:100%;height:auto;display:block">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 施工実績（フルブリード・モザイク）============ -->
+<section id="works" style="position:relative;background:#F4F6F8;padding:clamp(72px,11vw,150px) 0 clamp(80px,11vw,160px)">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,64px)">
+    <div style="{{ worksGridStyle }}">
+      <div style="{{ worksStickyStyle }}">
+        <div data-reveal>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+            <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.16em">WORKS</span>
+            <span style="width:46px;height:2px;background:#1B3A5B;display:block"></span>
+          </div>
+          <h2 style="margin:0;font-weight:900;font-size:clamp(1.9rem,5vw,3.4rem);line-height:1.25;color:#1A1A1A">仕上がりは、写真で。</h2>
+          <p style="margin:14px 0 0;font-size:clamp(15px,2.3vw,18px);color:#444;font-weight:500;line-height:1.8">軽天・ボード・床・天井。実際の現場写真で仕事ぶりをご覧ください。</p>
+          <a href="/blog-ex/instance" style="margin-top:24px;background:#F2C200;color:#0B1D30;font-weight:900;font-size:clamp(16px,2.2vw,16px);padding:16px 28px;display:inline-flex;align-items:center;gap:10px" style-hover="background:#ffd633">施工実績をすべて見る<span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div data-reveal style="display:flex;flex-direction:column;gap:clamp(10px,1.4vw,16px)">
+        <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#fff">
+          <img src="assets/work-1.jpg" alt="軽天工事で組んだ天井下地" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.4vw,16px)">
+          <div style="position:relative;width:100%;aspect-ratio:1/1;overflow:hidden;background:#fff">
+            <img src="assets/work-2.jpg" alt="軽量鉄骨スタッドの建て込み" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+          <div style="position:relative;width:100%;aspect-ratio:1/1;overflow:hidden;background:#fff">
+            <img src="assets/work-3.jpg" alt="間仕切り壁の下地施工" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+          <div style="position:relative;width:100%;aspect-ratio:1/1;overflow:hidden;background:#fff">
+            <img src="assets/work-4.jpg" alt="曲面のR下がり壁の造作" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+          <div style="position:relative;width:100%;aspect-ratio:1/1;overflow:hidden;background:#fff">
+            <img src="assets/work-5.jpg" alt="天井のジプトーン張りと断熱材" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+        </div>
+        <div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#fff">
+          <img src="assets/work-6.jpg" alt="ボード張りを終えた室内" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2つの入口（写真主役・白カード重なり）============ -->
+<section style="position:relative;background:#fff;padding:clamp(72px,11vw,140px) clamp(20px,5vw,64px);overflow:hidden">
+  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:clamp(40px,6vw,72px)">
+    <div data-reveal style="position:relative;padding-bottom:clamp(40px,6vw,64px)">
+      <div style="position:relative;width:100%;aspect-ratio:3/2;overflow:hidden">
+        <img src="assets/entry-business.jpg" alt="天井ボードを施工する職人" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <a href="/request" style="position:relative;z-index:2;display:block;background:#fff;box-shadow:0 30px 70px rgba(11,29,48,.16);margin:clamp(-44px,-5vw,-24px) clamp(0px,3vw,28px) 0;padding:clamp(24px,3vw,36px)" style-hover="">
+        <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:clamp(11px,2vw,14px);letter-spacing:.14em">FOR CLIENTS</span>
+        <h3 style="margin:6px 0 12px;font-weight:900;font-size:clamp(1.5rem,3.6vw,2.3rem);line-height:1.25;color:#1A1A1A">ご依頼を検討中の方へ</h3>
+        <p style="margin:0;font-size:clamp(16px,2.2vw,16px);line-height:1.8;color:#444">元請け・ビル管理会社のご担当者さまへ。品質・納期・現場マナー・追加対応のご不安に、先回りしてお答えします。</p>
+        <span style="margin-top:16px;display:inline-flex;align-items:center;gap:10px;font-weight:900;font-size:clamp(16px,2.2vw,16px);color:#1B3A5B">詳しく見る<span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+    <div data-reveal style="position:relative;padding-bottom:clamp(40px,6vw,64px)">
+      <div style="position:relative;width:100%;aspect-ratio:3/2;overflow:hidden">
+        <img src="assets/entry-personal.jpg" alt="スタッフの集合写真" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <a href="/recruit" style="position:relative;z-index:2;display:block;background:#fff;box-shadow:0 30px 70px rgba(11,29,48,.16);margin:clamp(-44px,-5vw,-24px) clamp(0px,3vw,28px) 0;padding:clamp(24px,3vw,36px)" style-hover="">
+        <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:clamp(11px,2vw,14px);letter-spacing:.14em">FOR APPLICANTS</span>
+        <h3 style="margin:6px 0 12px;font-weight:900;font-size:clamp(1.5rem,3.6vw,2.3rem);line-height:1.25;color:#1A1A1A">求職者のみなさまへ</h3>
+        <p style="margin:0;font-size:clamp(16px,2.2vw,16px);line-height:1.8;color:#444">内装工事の現場スタッフを募集中。経験・学歴・年齢・資格は不問。作業服・工具は支給します。</p>
+        <span style="margin-top:16px;display:inline-flex;align-items:center;gap:10px;font-weight:900;font-size:clamp(16px,2.2vw,16px);color:#1B3A5B">詳しく見る<span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 対応エリア・対象建物バナー（フルワイド写真）============ -->
+<section data-countup-machine style="position:relative;overflow:hidden;background:#0B1D30">
+  <img src="assets/entries-bg.jpg" alt="建て込まれた軽量鉄骨の内装下地" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+  <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(11,29,48,.94),rgba(11,29,48,.58) 58%,rgba(11,29,48,.28))"></div>
+  <div data-reveal style="position:relative;max-width:1240px;margin:0 auto;padding:clamp(72px,10vw,130px) clamp(20px,5vw,64px);color:#fff">
+    <span style="font-family:'Anton',sans-serif;color:rgba(255,255,255,.7);font-size:clamp(12px,2vw,15px);letter-spacing:.16em">AREA &amp; SCALE</span>
+    <h2 style="margin:10px 0 0;font-weight:900;font-size:clamp(2rem,6vw,4.2rem);line-height:1.15">
+      <span class="line-chunk">一都三県、</span><span class="line-chunk">あらゆる建物へ。</span>
+    </h2>
+    <p style="margin:clamp(18px,3vw,28px) 0 0;font-size:clamp(15px,2.4vw,19px);font-weight:700;max-width:560px;color:rgba(255,255,255,.92)">店舗・商業施設・ビル・公共施設・マンション。規模を問わずご相談いただけます。</p>
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(20px,4vw,60px);margin:clamp(28px,4vw,44px) 0 0">
+      <div style="display:flex;flex-direction:column;align-items:flex-start"><div style="display:flex;align-items:flex-end;gap:6px"><span style="font-family:'Anton',sans-serif;font-size:clamp(56px,12vw,116px);color:#F2C200;line-height:.8">{{ stat4 }}</span><span style="font-weight:900;font-size:clamp(18px,2.6vw,26px);padding-bottom:clamp(6px,1.4vw,12px)">都県</span></div><span style="opacity:.75;font-weight:700;font-size:13px;margin-top:2px">対応エリア（都県）</span></div>
+      <div style="display:flex;flex-direction:column;align-items:flex-start"><div style="display:flex;align-items:flex-end;gap:6px"><span style="font-family:'Anton',sans-serif;font-size:clamp(56px,12vw,116px);color:#F2C200;line-height:.8">{{ stat5 }}</span><span style="font-weight:900;font-size:clamp(18px,2.6vw,26px);padding-bottom:clamp(6px,1.4vw,12px)">種別</span></div><span style="opacity:.75;font-weight:700;font-size:13px;margin-top:2px">対象建物（種別）</span></div>
+    </div>
+    <a href="/service" style="margin-top:clamp(28px,4vw,40px);background:#F2C200;color:#0B1D30;font-weight:900;font-size:clamp(15px,2.2vw,17px);padding:17px 30px;display:inline-flex;align-items:center;gap:10px" style-hover="background:#ffd633">業務案内を見る<span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+
+<!-- ============ 料金の目安（抜粋）============ -->
+<section style="position:relative;background:#F4F6F8;padding:clamp(72px,11vw,140px) clamp(20px,5vw,64px)">
+  <div style="max-width:1040px;margin:0 auto">
+    <div data-reveal style="margin-bottom:clamp(28px,4vw,48px)">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+        <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.16em">PRICE</span>
+        <span style="width:46px;height:2px;background:#1B3A5B;display:block"></span>
+      </div>
+      <h2 style="margin:0;font-weight:900;font-size:clamp(1.8rem,4.8vw,3rem);line-height:1.3;color:#1A1A1A">料金の目安</h2>
+      <p style="margin:14px 0 0;font-size:clamp(15px,2.3vw,18px);color:#444;font-weight:500;line-height:1.8">下地の状態・階数・搬入条件・工期によって変動します。概算の目安としてご覧ください。</p>
+    </div>
+    <!-- 要取材：下記の単価レンジは仮値。実際の見積実績にもとづく数値に差し替えること -->
+    <div data-reveal style="background:#fff;box-shadow:0 20px 50px rgba(11,29,48,.10)">
+      <dl style="margin:0;display:flex;flex-direction:column">
+        <div style="display:flex;flex-wrap:wrap;gap:6px 20px;align-items:baseline;padding:clamp(18px,2.6vw,26px) clamp(20px,3vw,34px);border-bottom:1px solid rgba(27,58,91,.12)">
+          <dt style="flex:1 1 200px;font-weight:900;font-size:clamp(16px,2.3vw,18px);color:#1A1A1A">軽天工事（天井・壁下地）</dt>
+          <dd style="margin:0;font-family:'Anton',sans-serif;color:#1B3A5B;font-size:clamp(20px,3.2vw,28px)">1,200〜2,200<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(13px,1.8vw,15px);margin-left:6px">円／㎡</span></dd>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px 20px;align-items:baseline;padding:clamp(18px,2.6vw,26px) clamp(20px,3vw,34px);border-bottom:1px solid rgba(27,58,91,.12)">
+          <dt style="flex:1 1 200px;font-weight:900;font-size:clamp(16px,2.3vw,18px);color:#1A1A1A">ボード工事（石膏ボード張り）</dt>
+          <dd style="margin:0;font-family:'Anton',sans-serif;color:#1B3A5B;font-size:clamp(20px,3.2vw,28px)">1,000〜1,900<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(13px,1.8vw,15px);margin-left:6px">円／㎡</span></dd>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px 20px;align-items:baseline;padding:clamp(18px,2.6vw,26px) clamp(20px,3vw,34px);border-bottom:1px solid rgba(27,58,91,.12)">
+          <dt style="flex:1 1 200px;font-weight:900;font-size:clamp(16px,2.3vw,18px);color:#1A1A1A">化粧ケイカル板工事</dt>
+          <dd style="margin:0;font-family:'Anton',sans-serif;color:#1B3A5B;font-size:clamp(20px,3.2vw,28px)">2,000〜3,500<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(13px,1.8vw,15px);margin-left:6px">円／㎡</span></dd>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px 20px;align-items:baseline;padding:clamp(18px,2.6vw,26px) clamp(20px,3vw,34px)">
+          <dt style="flex:1 1 200px;font-weight:900;font-size:clamp(16px,2.3vw,18px);color:#1A1A1A">キッチンパネル工事</dt>
+          <dd style="margin:0;font-family:'Anton',sans-serif;color:#1B3A5B;font-size:clamp(20px,3.2vw,28px)">お見積り<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(13px,1.8vw,15px);margin-left:6px">（現場確認後）</span></dd>
+        </div>
+      </dl>
+    </div>
+    <div data-reveal style="margin-top:clamp(24px,3.5vw,36px)">
+      <a href="/request/price" style="background:#F2C200;color:#0B1D30;font-weight:900;font-size:clamp(16px,2.2vw,16px);padding:16px 28px;display:inline-flex;align-items:center;gap:10px" style-hover="background:#ffd633">料金表（目安）を見る<span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ お客様の声（元請け・ビル管理会社）============ -->
+<section style="position:relative;background:#fff;padding:clamp(72px,11vw,140px) clamp(20px,5vw,64px)">
+  <div style="max-width:1240px;margin:0 auto">
+    <div data-reveal style="margin-bottom:clamp(28px,4vw,48px)">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+        <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.16em">VOICE</span>
+        <span style="width:46px;height:2px;background:#1B3A5B;display:block"></span>
+      </div>
+      <h2 style="margin:0;font-weight:900;font-size:clamp(1.8rem,4.8vw,3rem);line-height:1.3;color:#1A1A1A">お客様の声</h2>
+      <p style="margin:14px 0 0;font-size:clamp(15px,2.3vw,18px);color:#444;font-weight:500;line-height:1.8">元請け・ビル管理会社のご担当者さまからいただいたご感想です。</p>
+    </div>
+    <!-- 要取材：以下2件はダミー。実際にいただいた声・会社種別に差し替えること -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(20px,3vw,32px)">
+      <figure data-reveal style="margin:0;background:#F4F6F8;padding:clamp(26px,3.6vw,40px);border-top:4px solid #F2C200">
+        <span style="display:inline-block;background:#1B3A5B;color:#fff;font-weight:900;font-size:13px;padding:7px 14px;line-height:1;margin-bottom:18px">軽天・ボード工事</span>
+        <blockquote style="margin:0;font-size:clamp(16px,2.2vw,18px);font-weight:700;line-height:1.9;color:#1A1A1A">お客様からいただいたご感想がここに入ります。仕上がりや現場対応について、ご担当者さまのお言葉を掲載します。</blockquote>
+        <figcaption style="margin-top:20px;font-size:14px;color:#555;font-weight:500">元請け企業 ご担当者さま</figcaption>
+      </figure>
+      <figure data-reveal data-reveal-delay="120" style="margin:0;background:#F4F6F8;padding:clamp(26px,3.6vw,40px);border-top:4px solid #F2C200">
+        <span style="display:inline-block;background:#1B3A5B;color:#fff;font-weight:900;font-size:13px;padding:7px 14px;line-height:1;margin-bottom:18px">改修・原状回復</span>
+        <blockquote style="margin:0;font-size:clamp(16px,2.2vw,18px);font-weight:700;line-height:1.9;color:#1A1A1A">お客様からいただいたご感想がここに入ります。工期や現場の整理整頓について、ご担当者さまのお言葉を掲載します。</blockquote>
+        <figcaption style="margin-top:20px;font-size:14px;color:#555;font-weight:500">ビル管理会社 ご担当者さま</figcaption>
+      </figure>
+    </div>
+    <div data-reveal style="margin-top:clamp(24px,3.5vw,36px)">
+      <a href="/request/voice" style="border:2px solid #1B3A5B;color:#1B3A5B;font-weight:900;font-size:clamp(16px,2.2vw,16px);padding:15px 28px;display:inline-flex;align-items:center;gap:10px" style-hover="background:#1B3A5B;color:#fff">お客様の声をもっと見る<span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 田中工業のあゆみ（抜粋）============ -->
+<section style="position:relative;background:#0B1D30;color:#fff;padding:clamp(72px,11vw,140px) clamp(20px,5vw,64px);overflow:hidden">
+  <span aria-hidden="true" style="position:absolute;bottom:clamp(8px,2vw,20px);right:clamp(8px,2vw,24px);font-family:'Anton',sans-serif;font-size:clamp(54px,12vw,150px);color:rgba(255,255,255,.05);line-height:.8;max-width:100%;overflow:hidden">HISTORY</span>
+  <div style="position:relative;max-width:1040px;margin:0 auto">
+    <div data-reveal style="margin-bottom:clamp(28px,4vw,48px)">
+      <span style="font-family:'Anton',sans-serif;color:rgba(255,255,255,.7);font-size:13px;letter-spacing:.16em">HISTORY</span>
+      <h2 style="margin:10px 0 0;font-weight:900;font-size:clamp(1.8rem,4.8vw,3rem);line-height:1.3">田中工業のあゆみ</h2>
+      <p style="margin:14px 0 0;font-size:clamp(15px,2.3vw,18px);color:rgba(255,255,255,.85);font-weight:500;line-height:1.8">平成22年の創業から15年。積み重ねてきた歩みの一部をご紹介します。</p>
+    </div>
+    <ol data-reveal style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0">
+      <li style="display:flex;flex-wrap:wrap;gap:6px 28px;align-items:baseline;padding:clamp(18px,2.6vw,26px) 0;border-bottom:1px solid rgba(255,255,255,.16)">
+        <span style="font-family:'Anton',sans-serif;color:#F2C200;font-size:clamp(22px,3.4vw,30px);flex:0 0 auto;min-width:120px">2010</span>
+        <span style="flex:1 1 260px;font-weight:700;font-size:clamp(16px,2.2vw,18px);line-height:1.7">平成22年11月、埼玉県川越市で内装工事業として創業</span>
+      </li>
+      <li style="display:flex;flex-wrap:wrap;gap:6px 28px;align-items:baseline;padding:clamp(18px,2.6vw,26px) 0;border-bottom:1px solid rgba(255,255,255,.16)">
+        <span style="font-family:'Anton',sans-serif;color:#F2C200;font-size:clamp(22px,3.4vw,30px);flex:0 0 auto;min-width:120px">—</span>
+        <span style="flex:1 1 260px;font-weight:700;font-size:clamp(16px,2.2vw,18px);line-height:1.7">誰もが知る有名商業施設の内装工事に参画</span>
+      </li>
+      <li style="display:flex;flex-wrap:wrap;gap:6px 28px;align-items:baseline;padding:clamp(18px,2.6vw,26px) 0">
+        <span style="font-family:'Anton',sans-serif;color:#F2C200;font-size:clamp(22px,3.4vw,30px);flex:0 0 auto;min-width:120px">2026</span>
+        <span style="flex:1 1 260px;font-weight:700;font-size:clamp(16px,2.2vw,18px);line-height:1.7">一都三県で店舗・商業施設・ビル・公共施設・マンションの内装工事に対応</span>
+      </li>
+    </ol>
+    <div data-reveal style="margin-top:clamp(24px,3.5vw,36px)">
+      <a href="/company/history" style="background:#F2C200;color:#0B1D30;font-weight:900;font-size:clamp(16px,2.2vw,16px);padding:16px 28px;display:inline-flex;align-items:center;gap:10px" style-hover="background:#ffd633">あゆみを詳しく見る<span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG (parts228系・写真上／更新日あり) ============ -->
+<!-- 🔒 CMS固定領域（parts228系）：構造/クラス 変更禁止・承認/解除なし。見た目はadd.cssのみ -->
+<!-- 🔒 LOCK START -->
+<section class="parts228_section">
+  <div class="parts228_wrap">
+    <div class="top-blog-head">
+      <h2>WORKS</h2>
+      <p>軽天・ボード工事の施工実績をご紹介します</p>
+    </div>
+    <div class="parts228_main">
+      <ul class="parts228_post_list">
+        <!-- CMS LOOP START -->
+        <sc-for list="{{ blogs }}" as="b" hint-placeholder-count="3">
+          <li class="parts228_post_wrap">
+            <a class="parts228_post_img" href="#">
+              <image-slot id="{{ b.slot }}" style="width:100%;height:240px" shape="rect" fit="cover" placeholder="{{ b.slotLabel }}"></image-slot>
+            </a>
+            <div class="parts228_post_status">
+              <span class="parts228_post_date">{{ b.date }}</span>
+            </div>
+            <div class="parts228_post_title-excerpt">
+              <h3 class="parts228_post_title"><a href="#">{{ b.title }}</a></h3>
+            </div>
+          </li>
+        </sc-for>
+        <!-- CMS LOOP END -->
+      </ul>
+    </div>
+    <div class="top-blog-more"><a href="/blog-ex/instance">施工実績をすべて見る<span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+<!-- 🔒 LOCK END -->
+
+<!-- ============ CTA ============ -->
+<section style="position:relative;background:#1B3A5B;color:#fff;padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);overflow:hidden;text-align:center">
+  <span aria-hidden="true" style="position:absolute;bottom:clamp(8px,2vw,20px);right:clamp(8px,2vw,24px);font-family:'Anton',sans-serif;font-size:clamp(54px,12vw,150px);color:rgba(255,255,255,.06);line-height:.8;max-width:100%;overflow:hidden">CONTACT</span>
+  <div data-reveal style="position:relative;max-width:760px;margin:0 auto">
+    <span style="font-family:'Anton',sans-serif;color:#fff;font-size:clamp(12px,2vw,15px);letter-spacing:.16em">GET IN TOUCH</span>
+    <h2 style="margin:12px 0 0;font-weight:900;font-size:clamp(1.8rem,5vw,3.2rem);line-height:1.35">
+      <span class="line-chunk">まずは、</span><span class="line-chunk">お気軽にご相談ください。</span>
+    </h2>
+    <p style="margin:18px 0 0;font-size:clamp(15px,2.4vw,18px);color:rgba(255,255,255,.85)"><span class="line-chunk">軽天・ボード工事のご相談、二次受けのご依頼。</span><br><span class="line-chunk">小規模な現場でも、まずはご相談ください。</span></p>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:clamp(28px,4vw,42px)">
+      <a data-cta-btn href="/form/inquiry" style="background:#F2C200;color:#0B1D30;font-weight:900;font-size:clamp(16px,2.4vw,18px);padding:18px 36px;display:flex;justify-content:center;align-items:center;gap:10px;width:{{ ctaBtnW }};max-width:100%" style-hover="background:#ffd633">お問い合わせはこちら<span aria-hidden="true">→</span></a>
+      <a data-cta-btn href="tel:080-1087-3921" style="border:2px solid rgba(255,255,255,.5);color:#fff;font-weight:700;padding:14px 30px;display:flex;flex-direction:column;justify-content:center;align-items:center;line-height:1.2;width:{{ ctaBtnW }};max-width:100%" style-hover="border-color:#F2C200">
+        <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,4vw,30px);letter-spacing:.02em">080-1087-3921</span>
+        <span style="font-size:12px;opacity:.85">受付 9:00〜21:00 ／ 営業電話お断り</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER（共通部品） ============ -->
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    vw: (typeof window !== 'undefined' ? window.innerWidth : 1280),
+    scrolled: false,
+    menuOpen: false,
+    openNav: null,
+    acc: null,
+    stat1: 16,
+    stat2: 0,
+    stat3: 15,
+    counted: false,
+    ctaBtnW: '300px',
+    stat4: 4,
+    stat5: 5,
+  };
+
+  // （旧ヒーローの文字送りアニメ用データ。現ヒーローでは未使用）
+  HERO_GROUPS = [
+    { type: 'chunk', text: '正確な施工が、' },
+    { type: 'br' },
+    { type: 'chunk', text: '次の仕事に' },
+    { type: 'space' },
+    { type: 'chunk', text: 'つながる。' },
+  ];
+
+  _calibrateBrush() {
+    document.querySelectorAll('#hero3 path[data-brush]').forEach((el) => {
+      if (el.dataset.calibrated) return;
+      const len = Math.ceil(el.getTotalLength()) + 40;
+      el.style.setProperty('--len', len);
+      el.style.strokeDasharray = len;
+      el.style.strokeDashoffset = len;
+      el.setAttribute('visibility', 'visible');
+      el.dataset.calibrated = '1';
+    });
+  }
+
+  componentDidMount() {
+    setTimeout(() => this._calibrateBrush(), 30);
+    setTimeout(() => this._calibrateBrush(), 600);
+    this._onScroll = () => {
+      const s = window.scrollY > 40;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    this._onResize = () => { this.setState({ vw: window.innerWidth }); this._measureCta(); };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onResize);
+
+    // CTAボタン：両ボタンの自然幅を測り、長い方に合わせる
+    setTimeout(() => this._measureCta(), 90);
+    setTimeout(() => this._measureCta(), 700);
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(() => this._measureCta()); }
+
+    // 数字カウントアップ（画面内に入ったら0→確定値）。reduced-motion時は確定値のまま
+    const reduceN = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceN) {
+      this.setState({ stat1: 0, stat2: 0, stat3: 0, stat4: 0, stat5: 0 });
+      setTimeout(() => {
+        const el = document.querySelector('[data-countup-section]');
+        if (!el) { this.setState({ stat1: 16, stat2: 0, stat3: 900 }); }
+        else {
+        const io = new IntersectionObserver((ents) => {
+          ents.forEach((e) => {
+            if (e.isIntersecting && !this._counting) {
+              this._counting = true;
+              this._runCount();
+              io.disconnect();
+            }
+          });
+        }, { threshold: 0.01, rootMargin: '0px 0px -25% 0px' });
+        io.observe(el);
+        this._io2 = io;
+        // フォールバック：万一オブザーバが発火しない場合のみ、確定値を表示（アニメは画面内トリガーに任せる）
+        this._countSafety = setTimeout(() => { if (!this._counting) { this.setState({ stat1: 16, stat2: 0, stat3: 900 }); } }, 12000);
+        }
+        // エリア・建物種別の数字
+        const mel = document.querySelector('[data-countup-machine]');
+        if (!mel) { this.setState({ stat4: 4, stat5: 3 }); }
+        else {
+          const mio = new IntersectionObserver((ents) => {
+            ents.forEach((e) => {
+              if (e.isIntersecting && !this._countingM) {
+                this._countingM = true;
+                this._runCountM();
+                mio.disconnect();
+              }
+            });
+          }, { threshold: 0.01, rootMargin: '0px 0px -10% 0px' });
+          mio.observe(mel);
+          this._io3 = mio;
+          this._countSafetyM = setTimeout(() => { if (!this._countingM) { this.setState({ stat4: 4, stat5: 3 }); } }, 12000);
+        }
+      }, 80);
+    }
+
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) {
+      setTimeout(() => {
+        const els = [].slice.call(document.querySelectorAll('[data-reveal]'));
+        els.forEach((el) => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(38px)';
+          el.style.transition = 'opacity .85s cubic-bezier(.2,.7,.2,1), transform .85s cubic-bezier(.2,.7,.2,1)';
+          const d = el.getAttribute('data-reveal-delay');
+          if (d) el.style.transitionDelay = d + 'ms';
+        });
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.style.opacity = '1';
+              e.target.style.transform = 'none';
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+        els.forEach((el) => io.observe(el));
+        this._io = io;
+        this._safety = setTimeout(() => {
+          els.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none'; });
+        }, 3000);
+      }, 60);
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onResize);
+    if (this._io) this._io.disconnect();
+    if (this._io2) this._io2.disconnect();
+    if (this._io3) this._io3.disconnect();
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._rafM) cancelAnimationFrame(this._rafM);
+    if (this._countSafety) clearTimeout(this._countSafety);
+    if (this._countSafetyM) clearTimeout(this._countSafetyM);
+    if (this._safety) clearTimeout(this._safety);
+  }
+
+  _measureCta() {
+    if (this.state.ctaBtnW !== '300px') this.setState({ ctaBtnW: '300px' });
+  }
+
+  _runCount() {
+    const targets = [16, 0, 15];
+    const dur = 2000;
+    const start = (typeof performance !== 'undefined' ? performance.now() : Date.now());
+    const ease = (t) => 1 - Math.pow(1 - t, 3);
+    const step = (now) => {
+      const p = Math.min(1, (now - start) / dur);
+      const k = ease(p);
+      this.setState({ stat1: Math.round(targets[0] * k), stat2: Math.round(targets[1] * k), stat3: Math.round(targets[2] * k) });
+      if (p < 1) { this._raf = requestAnimationFrame(step); }
+      else { this.setState({ counted: true }); }
+    };
+    this._raf = requestAnimationFrame(step);
+  }
+
+  _runCountM() {
+    const t = [4, 5];
+    const dur = 1100;
+    const start = (typeof performance !== 'undefined' ? performance.now() : Date.now());
+    const ease = (x) => 1 - Math.pow(1 - x, 3);
+    const step = (now) => {
+      const p = Math.min(1, (now - start) / dur);
+      const k = ease(p);
+      this.setState({ stat4: Math.round(t[0] * k), stat5: Math.round(t[1] * k) });
+      if (p < 1) { this._rafM = requestAnimationFrame(step); }
+    };
+    this._rafM = requestAnimationFrame(step);
+  }
+
+  renderVals() {
+    const vw = this.state.vw;
+    const isMobile = vw < 1200;
+    const isDesktop = !isMobile;
+    const openNav = this.state.openNav;
+    const acc = this.state.acc;
+
+    // ヒーローCTA：狭幅では縦積み、それ以外は長いボタンに合わせた等幅2カラム
+    const stackButtons = vw < 600;
+    const heroBtnWrapStyle = stackButtons
+      ? { opacity: 0, animation: 'heroUp .9s cubic-bezier(.2,.7,.2,1) .65s forwards', display: 'grid', gridTemplateColumns: '1fr', gap: '14px', width: '100%', marginTop: 'clamp(30px,4.5vw,44px)' }
+      : { opacity: 0, animation: 'heroUp .9s cubic-bezier(.2,.7,.2,1) .65s forwards', display: 'inline-grid', gridAutoFlow: 'column', gridAutoColumns: '1fr', gap: '14px', marginTop: 'clamp(30px,4.5vw,44px)' };
+
+    // ヒーロー見出し：CSSスタガーで1文字ずつ横に出現
+    const reduceMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let charIdx = 0;
+    const heroKids = [];
+    this.HERO_GROUPS.forEach((g, gi) => {
+      if (g.type === 'br') { heroKids.push(React.createElement('br', { key: 'br' + gi })); return; }
+      if (g.type === 'space') { heroKids.push('\u3000'); return; }
+      const chars = g.text.split('').map((ch, j) => {
+        const delay = 0.45 + charIdx * 0.06;
+        charIdx++;
+        const style = { color: '#fff' };
+        if (!reduceMotion) { style.opacity = 0; style.animation = 'heroCharIn .5s ease ' + delay.toFixed(2) + 's forwards'; }
+        return React.createElement('span', { key: 'c' + gi + '_' + j, style: style }, ch);
+      });
+      heroKids.push(React.createElement('span', { key: 'g' + gi, className: 'line-chunk' }, chars));
+    });
+    const heroTitle = React.createElement(React.Fragment, null, heroKids);
+
+    const NAV = [
+      { label: 'トップ', href: '/' },
+      { label: '業務案内', href: '/service' },
+      { label: '施工実績', href: '/blog-ex/instance' },
+      { label: 'ご依頼を検討中の方へ', href: '/request', children: [
+        { label: '選ばれる理由', href: '/request/reasons' },
+        { label: '料金表（目安）', href: '/request/price' },
+        { label: 'お客様の声', href: '/request/voice' },
+        { label: 'FAQ（よくあるご質問）', href: '/request/faq' },
+      ] },
+      { label: '会社概要', href: '/company', children: [
+        { label: '田中工業のあゆみ', href: '/company/history' },
+      ] },
+      { label: '求職者の方へ', href: '/recruit', children: [
+        { label: '採用情報（募集要項・応募）', href: '/recruit/job' },
+      ] },
+      { label: 'ブログ', href: '/blog' },
+    ];
+
+    const navItems = NAV.map((n, i) => ({
+      label: n.label,
+      href: n.href,
+      children: n.children || [],
+      hasChildren: !!(n.children && n.children.length),
+      open: openNav === i && !!(n.children && n.children.length),
+      accOpen: acc === i,
+      accClosed: acc !== i,
+      onEnter: () => this.setState({ openNav: i }),
+      onLeave: () => this.setState({ openNav: null }),
+      onToggleAcc: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ acc: acc === i ? null : i }); },
+    }));
+
+    const footerLinks = [
+      { label: 'トップ', href: '/' },
+      { label: '業務案内', href: '/service' },
+      { label: '施工実績', href: '/blog-ex/instance' },
+      { label: 'ご依頼を検討中の方へ', href: '/request' },
+      { label: '選ばれる理由', href: '/request/reasons' },
+      { label: '料金表（目安）', href: '/request/price' },
+      { label: 'お客様の声', href: '/request/voice' },
+      { label: 'よくあるご質問', href: '/request/faq' },
+      { label: '会社概要', href: '/company' },
+      { label: '田中工業のあゆみ', href: '/company/history' },
+      { label: '求職者の方へ', href: '/recruit' },
+      { label: '採用情報', href: '/recruit/job' },
+      { label: 'ブログ', href: '/blog' },
+    ];
+
+    const worksGridStyle = isDesktop
+      ? { display: 'grid', gridTemplateColumns: 'minmax(260px,330px) 1fr', gap: 'clamp(32px,5vw,72px)', alignItems: 'start' }
+      : { display: 'grid', gridTemplateColumns: '1fr', gap: 'clamp(28px,5vw,40px)' };
+    const worksStickyStyle = isDesktop ? { position: 'sticky', top: '104px' } : { position: 'static' };
+
+    const permitPanelStyle = { position: 'relative', zIndex: 1, background: '#1B3A5B', color: '#fff', padding: 'clamp(30px,4vw,56px)' };
+    const permitMediaStyle = isDesktop
+      ? { position: 'relative', zIndex: 2, margin: '0 0 0 -64px' }
+      : { position: 'relative', zIndex: 2, margin: '-28px auto 0', width: 'min(96%,560px)' };
+
+    const entries = [
+      { tag: 'FOR CLIENTS', title: 'ご依頼を検討中の方へ', desc: '元請け・ビル管理会社のご担当者さまへ。品質・納期・現場マナー・追加対応のご不安に、先回りしてお答えします。', href: '/request', img: 'assets/entry-business.jpg', slotLabel: '天井ボードを施工する職人' },
+      { tag: 'FOR APPLICANTS', title: '求職者のみなさまへ', desc: '内装工事の現場スタッフを募集中。経験・学歴・年齢・資格は不問。作業服・工具は支給します。', href: '/recruit', img: 'assets/entry-personal.jpg', slotLabel: 'スタッフの集合写真' },
+    ];
+
+    // CMS（施工実績）出力のダミー。実データはCMSで置換される
+    const blogs = [
+      { date: '0000.00.00', title: '施工実績のタイトルがここに入ります', slot: 'works-1', slotLabel: '施工実績サムネイル①' },
+      { date: '0000.00.00', title: '施工実績のタイトルがここに入ります', slot: 'works-2', slotLabel: '施工実績サムネイル②' },
+      { date: '0000.00.00', title: '施工実績のタイトルがここに入ります', slot: 'works-3', slotLabel: '施工実績サムネイル③' },
+    ];
+
+    return {
+      isMobile,
+      isDesktop,
+      heroTitle,
+      heroBtnWrapStyle,
+      ctaBtnW: this.state.ctaBtnW,
+      stat1: this.state.stat1,
+      stat2: this.state.stat2,
+      stat3: this.state.stat3,
+      stat4: this.state.stat4,
+      stat5: this.state.stat5,
+      headerSolid: this.state.scrolled || this.state.menuOpen,
+      headerGradient: !(this.state.scrolled || this.state.menuOpen),
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false, acc: null }),
+      navItems,
+      footerLinks,
+      worksGridStyle,
+      worksStickyStyle,
+      permitPanelStyle,
+      permitMediaStyle,
+      entries,
+      blogs,
+    };
+  }
+}
+</script>
+</body>
+</html>

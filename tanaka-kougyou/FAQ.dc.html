@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B3A5B"/><text x="50" y="58" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="#F2C200" text-anchor="middle">TANAKA</text></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;color:#1A1A1A;background:#fff;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal}
+:focus-visible{outline:3px solid #F2C200;outline-offset:3px}
+section a,section button,footer a,footer button{transition:opacity .2s ease}
+section a:hover,section button:hover,footer a:hover,footer button:hover{opacity:.78}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+</style>
+</helmet>
+
+<div data-screen-label="FAQ" style="position:relative">
+
+<dc-import name="SiteHeader" active="/request/faq" hint-size="100%,0"></dc-import>
+
+<!-- ===== 下層ヘッダー ===== -->
+<section style="position:relative;background:#0B1D30;color:#fff;overflow:hidden;padding:calc(clamp(64px,8vw,86px) + clamp(52px,8vw,96px)) clamp(20px,5vw,64px) clamp(52px,8vw,96px)">
+  <img src="assets/subhero.jpg" alt="内装工事の作業風景（丸ノコと下地材）" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(11,29,48,.92),rgba(11,29,48,.62) 60%,rgba(11,29,48,.34))"></div>
+  <div style="position:relative;max-width:1240px;margin:0 auto">
+    <nav aria-label="パンくず" style="font-size:13px;color:rgba(255,255,255,.7);margin-bottom:18px"><a href="/" style="color:rgba(255,255,255,.7)">トップ</a> ／ <a href="/request" style="color:rgba(255,255,255,.7)">ご依頼を検討中の方へ</a> ／ <span style="color:#fff">よくあるご質問</span></nav>
+    <span style="font-family:'Anton',sans-serif;color:rgba(255,255,255,.55);font-size:clamp(12px,2vw,15px);letter-spacing:.18em">FAQ</span>
+    <h1 style="margin:6px 0 0;font-weight:900;font-size:clamp(2rem,5.6vw,3.8rem);line-height:1.2">よくあるご質問</h1>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section style="position:relative;background:#fff;padding:clamp(64px,10vw,120px) clamp(20px,5vw,64px)">
+  <div style="max-width:900px;margin:0 auto">
+    <sc-for list="{{ groups }}" as="g" hint-placeholder-count="2">
+      <div style="margin-bottom:clamp(40px,6vw,72px)">
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:clamp(20px,3vw,32px)">
+          <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:13px;letter-spacing:.16em">{{ g.en }}</span>
+          <h2 style="margin:0;font-weight:900;font-size:clamp(1.4rem,3.4vw,2.1rem);color:#1A1A1A">{{ g.title }}</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+            <div style="border:1px solid rgba(27,58,91,.16);background:#fff">
+              <button onClick="{{ it.onToggle }}" aria-expanded="{{ it.open }}" style="width:100%;text-align:left;display:flex;align-items:center;gap:14px;padding:clamp(16px,2.4vw,22px) clamp(16px,2.5vw,26px);min-height:56px">
+                <span style="font-family:'Anton',sans-serif;color:#1B3A5B;font-size:clamp(18px,2.6vw,24px);flex:none">Q</span>
+                <span style="flex:1;font-weight:900;font-size:clamp(15px,2.2vw,18px);line-height:1.5;color:#1A1A1A">{{ it.q }}</span>
+                <span aria-hidden="true" style="{{ it.iconStyle }}">＋</span>
+              </button>
+              <sc-if value="{{ it.open }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;gap:14px;padding:0 clamp(16px,2.5vw,26px) clamp(18px,2.6vw,24px);background:#F4F6F8">
+                  <span style="font-family:'Anton',sans-serif;color:#F2C200;font-size:clamp(18px,2.6vw,24px);flex:none">A</span>
+                  <div style="flex:1;font-size:clamp(16px,2.1vw,16px);line-height:1.85;color:#333;padding-top:clamp(14px,2vw,20px)">
+                    <span>{{ it.a }}</span>
+                    <sc-if value="{{ it.hasLink }}" hint-placeholder-val="{{ false }}">
+                      <a href="{{ it.linkHref }}" style="display:inline-flex;align-items:center;gap:6px;color:#1B3A5B;font-weight:900;border-bottom:2px solid #F2C200;margin-left:6px" style-hover="">{{ it.linkLabel }}<span aria-hidden="true">→</span></a>
+                    </sc-if>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<dc-import name="CtaBand" heading="解決しないご質問は、
+お問い合わせください。" sub="軽天・ボード工事のご相談、二次受けのご依頼はお気軽に。
+現地調査・お見積りは無料です。" hint-size="100%,420px"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { open: {} };
+  toggle(id) { this.setState((s) => ({ open: Object.assign({}, s.open, { [id]: !s.open[id] }) })); }
+  renderVals() {
+    const open = this.state.open;
+    const RAW = [
+      { en: 'FOR CLIENTS', title: '元請け・発注ご担当者さま向け', items: [
+        { id: 'b1', q: '対応エリアはどこまでですか？', a: '埼玉県川越市を拠点に、一都三県（埼玉・東京・神奈川・千葉）に対応しています。エリア外の現場もまずはご相談ください。' },
+        { id: 'b2', q: 'どんな工事に対応していますか？', a: '軽天工事・ボード工事を軸に、化粧ケイカル板工事・キッチンパネル工事・床工事・造作工事に対応します。内装に付随するクロス・塗装・電気設備・修繕もご相談いただけます。', hasLink: true, linkLabel: '業務案内を見る', linkHref: '/service' },
+        { id: 'b3', q: '二次受け（下請け）として依頼できますか？', a: 'はい。元請け企業さま・ビル管理会社さまからのご依頼を承っています。継続的なお取引のご相談も歓迎です。' },
+        { id: 'b4', q: '繁忙期でも受注できますか？', a: '現場の状況と工程によります。できる／できないを早めに、明確にお答えします。まずは工期と数量をお聞かせください。' },
+        { id: 'b5', q: '急な追加工事にも対応してもらえますか？', a: '現場の状況をうかがったうえで判断します。無理な約束はせず、対応可否を先にお伝えします。' },
+        { id: 'b6', q: '小規模な工事でも受けてもらえますか？', a: 'はい。部分的な壁・天井の補修、原状回復など、小規模な工事にも対応します。' },
+        { id: 'b7', q: '費用の目安を知りたいのですが。', a: '工事種別ごとの概算レンジを掲載しています。正式なお見積りは現場を確認したうえでご提示します。現地調査・お見積りは無料です。', hasLink: true, linkLabel: '料金表（目安）を見る', linkHref: '/request/price' },
+        { id: 'b8', q: '施工の品質はどう担保していますか？', a: '登録内装仕上工事基幹技能者・鋼製下地一級技能士・一級内装仕上げ施工技能士の有資格者が施工にあたります。毎日の朝礼と体調チェックを欠かさず、創業以来、無事故を継続しています。' },
+        { id: 'b9', q: '現場の整理整頓はしてもらえますか？', a: '資材の置き場、切粉の処理、他業者との動線に配慮し、片付いた状態で現場を引き継ぎます。' },
+      ] },
+      { en: 'FOR APPLICANTS', title: '求職者の方向け', items: [
+        { id: 'p1', q: '未経験でも応募できますか？', a: '経験・学歴・年齢・資格はいっさい不問です。作業服・工具は支給しますので、ご自身で準備いただく必要はありません。' },
+        { id: 'p2', q: '待遇について教えてください。', a: '保険なし＝日給10,000円〜、保険あり＝月給200,000円〜。残業手当・夜勤手当・交通費（全額）を支給します。詳細は採用情報ページをご覧ください。', hasLink: true, linkLabel: '採用情報を見る', linkHref: '/recruit/job' },
+        { id: 'p3', q: 'どんな雰囲気の職場ですか？', a: 'スタッフ同士の仲が良く、アットホームな雰囲気です。休憩時間はみんなで食事に行くこともあります。', hasLink: true, linkLabel: '求職者の方へ', linkHref: '/recruit' },
+      ] },
+    ];
+    const groups = RAW.map((g) => ({
+      en: g.en, title: g.title,
+      items: g.items.map((it) => ({
+        q: it.q, a: it.a, hasLink: !!it.hasLink, linkLabel: it.linkLabel, linkHref: it.linkHref,
+        open: !!open[it.id],
+        iconStyle: { color: '#1B3A5B', fontWeight: 900, fontSize: '22px', flex: 'none', transition: 'transform .25s ease', transform: open[it.id] ? 'rotate(45deg)' : 'none' },
+        onToggle: () => this.toggle(it.id),
+      })),
+    }));
+    return { groups };
+  }
+}
+</script>
+</body>
+</html>

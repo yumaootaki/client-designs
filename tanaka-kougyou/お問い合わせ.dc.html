@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B3A5B"/><text x="50" y="58" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="#F2C200" text-anchor="middle">TANAKA</text></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;color:#1A1A1A;background:#fff;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal}
+:focus-visible{outline:3px solid #F2C200;outline-offset:3px}
+section a,section button,footer a,footer button{transition:opacity .2s ease}
+section a:hover,section button:hover,footer a:hover,footer button:hover{opacity:.78}
+/* ===== 導入文 parts210系 ===== */
+.parts210_section_content{background:#fff;padding:clamp(48px,7vw,80px) clamp(20px,5vw,64px) 0}
+.parts210_content_wrap{max-width:760px;margin:0 auto}
+.parts210_content{font-size:clamp(15px,2.3vw,17px);line-height:1.9;color:#333}
+/* ===== お問い合わせフォーム parts213系（フラット・add.css基礎）===== */
+section.contact_section{background:#fff;padding:clamp(40px,6vw,72px) clamp(20px,5vw,64px) clamp(72px,11vw,130px)}
+.parts213_section_form{max-width:760px;margin:0 auto}
+.parts213_form_wrap dl{display:flex;flex-direction:column;gap:8px;margin:0 0 24px}
+.parts213_form_wrap dt{font-weight:700;font-size:15px;color:#1A1A1A;display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.parts213_form_wrap dd{margin:0}
+.parts213_form_wrap .required{background:#F2C200;color:#1A1A1A;font-size:11px;font-weight:900;padding:3px 9px;letter-spacing:.04em;flex:none}
+.parts213_form_wrap input[type=text],.parts213_form_wrap input[type=email],.parts213_form_wrap textarea{width:100%;font:inherit;font-size:16px;padding:13px 14px;border:1px solid #c7ccd2;background:#fff;color:#1A1A1A;border-radius:0}
+.parts213_form_wrap input:focus,.parts213_form_wrap textarea:focus{outline:2px solid #1B3A5B;outline-offset:0;border-color:#1B3A5B}
+.parts213_form_wrap textarea{min-height:180px;resize:vertical}
+.parts213_form_wrap .checkbox-group{display:flex;flex-wrap:wrap;gap:10px 22px}
+.parts213_form_wrap .checkbox-group label{display:flex;align-items:center;gap:8px;font-weight:500;font-size:15px;min-height:44px;cursor:pointer}
+.parts213_form_wrap .checkbox-group input{width:20px;height:20px;accent-color:#1B3A5B}
+.parts213_form_wrap .form_text_dt .attention{display:block;flex-basis:100%;font-size:12px;color:#c0392b;font-weight:500;margin-top:4px}
+.parts213_form_wrap .error{color:#c0392b;font-size:13px;margin:6px 0 0}
+.parts213_form_wrap .contact_submit{margin-top:8px;text-align:center}
+.parts213_form_wrap .contact_submit input{font:inherit;font-weight:900;font-size:17px;color:#1A1A1A;background:#F2C200;border:0;padding:18px 56px;cursor:pointer;letter-spacing:.04em}
+.parts213_form_wrap .contact_submit input:hover{background:#ffd633}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+</style>
+</helmet>
+
+<div data-screen-label="お問い合わせ" style="position:relative">
+
+<dc-import name="SiteHeader" active="/form/inquiry" hint-size="100%,0"></dc-import>
+
+<!-- ===== 下層ヘッダー（静的・自由）===== -->
+<section style="position:relative;background:#0B1D30;color:#fff;overflow:hidden;padding:calc(clamp(64px,8vw,86px) + clamp(52px,8vw,96px)) clamp(20px,5vw,64px) clamp(52px,8vw,96px)">
+  <img src="assets/subhero.jpg" alt="内装工事の作業風景（丸ノコと下地材）" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(11,29,48,.92),rgba(11,29,48,.62) 60%,rgba(11,29,48,.34))"></div>
+  <div style="position:relative;max-width:1240px;margin:0 auto">
+    <nav aria-label="パンくず" style="font-size:13px;color:rgba(255,255,255,.7);margin-bottom:18px"><a href="/" style="color:rgba(255,255,255,.7)">トップ</a> ／ <span style="color:#fff">お問い合わせ</span></nav>
+    <span style="font-family:'Anton',sans-serif;color:rgba(255,255,255,.55);font-size:clamp(12px,2vw,15px);letter-spacing:.18em">CONTACT</span>
+    <h1 style="margin:6px 0 0;font-weight:900;font-size:clamp(2.1rem,6vw,4rem);line-height:1.2">お問い合わせ</h1>
+    <p style="margin:18px 0 0;font-size:clamp(15px,2.4vw,19px);font-weight:700;color:rgba(255,255,255,.92);line-height:1.7"><span class="line-chunk">内装工事・軽天工事・ボード工事のご相談、下請けのご依頼。</span><br><span class="line-chunk">お気軽にご連絡ください。</span></p>
+  </div>
+</section>
+
+<!-- ===== 導入文（parts210系）＋ 電話 ===== -->
+<section class="parts210_section_content">
+  <div class="parts210_content_wrap">
+    <p class="parts210_content">軽天工事・ボード工事・化粧ケイカル板工事・キッチンパネル工事のご相談、元請け様からの二次受けのご依頼を承ります。川越市拠点・一都三県対応。お電話・フォームからお気軽にどうぞ。</p>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:clamp(24px,3vw,32px);background:#F4F6F8;padding:clamp(20px,3vw,28px)">
+      <a href="tel:080-1087-3921" style="display:flex;flex-direction:column;line-height:1.2"><span style="font-family:'Anton',sans-serif;font-size:clamp(28px,5vw,40px);color:#1B3A5B;letter-spacing:.02em">080-1087-3921</span><span style="font-size:13px;color:#555;font-weight:700">受付 9:00〜21:00 ／ ※営業電話お断り</span></a>
+      <span style="margin-left:auto;font-size:13px;color:#555">〒350-1134 埼玉県川越市扇河岸107-31</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 動的：お問い合わせフォーム（parts213系・CMS出力／作り直さない）===== -->
+<section class="contact_section">
+  <div class="parts213_section_form">
+    <div class="parts213_form_wrap">
+      <form method="POST" action="/form/confirm/inquiry">
+        <dl>
+          <dt>お名前 / 企業名 <span class="required">必須</span></dt>
+          <dd><input type="text" name="name" placeholder="例：田中 智幸 ／ 株式会社○○"><p class="error"></p></dd>
+        </dl>
+        <dl>
+          <dt>メールアドレス <span class="required">必須</span></dt>
+          <dd><input type="email" name="email" placeholder="例：sample@example.com"><p class="error"></p></dd>
+        </dl>
+        <dl>
+          <dt>メールアドレス（確認用） <span class="required">必須</span></dt>
+          <dd><input type="email" name="email_confirmation" placeholder="確認のためもう一度ご入力ください"><p class="error"></p></dd>
+        </dl>
+        <dl>
+          <dt>お問い合わせ項目 <span class="required">必須</span></dt>
+          <dd>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="checkbox[]" value="ご相談">ご相談</label>
+              <label><input type="checkbox" name="checkbox[]" value="お問い合わせ">お問い合わせ</label>
+              <label><input type="checkbox" name="checkbox[]" value="求人について">求人について</label>
+              <label><input type="checkbox" name="checkbox[]" value="その他">その他</label>
+            </div>
+            <p class="error"></p>
+          </dd>
+        </dl>
+        <dl class="form_textarea">
+          <dt class="form_text_dt"><span>お問い合わせ内容<span class="attention">入力は2000文字以内で日本語を含んだ文章でお願いいたします。</span></span> <span class="required">必須</span></dt>
+          <dd><textarea name="qualification" id="qualification" placeholder="お問い合わせ内容をご記入ください"></textarea><p class="error"></p></dd>
+        </dl>
+        <div class="contact_submit"><input type="submit" value="確認画面へ"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}"></script>
+</body>
+</html>

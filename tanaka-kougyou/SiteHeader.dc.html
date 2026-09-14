@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>button{margin:0;border:0;background:none;font:inherit;cursor:pointer;color:inherit}</style>
+</helmet>
+<div>
+<header style="position:fixed;top:0;left:0;right:0;z-index:120;background:#0B1D30;transition:box-shadow .4s ease">
+  <sc-if value="{{ scrolled }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;box-shadow:0 6px 28px rgba(0,0,0,.28);pointer-events:none"></div>
+  </sc-if>
+  <div style="position:relative;max-width:1440px;margin:0 auto;padding:0 clamp(16px,4vw,48px);height:clamp(64px,8vw,86px);display:flex;align-items:center;justify-content:space-between;gap:20px">
+    <a href="/" aria-label="田中工業 トップへ" style="display:flex;align-items:center;flex:none">
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;color:#fff;font-weight:900;font-size:clamp(16px,2.4vw,21px);letter-spacing:.04em;white-space:nowrap">田中工業</span>
+    </a>
+
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="メインナビゲーション" style="display:flex;align-items:center;gap:clamp(8px,1.4vw,22px)">
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+          <div style="position:relative" onMouseEnter="{{ item.onEnter }}" onMouseLeave="{{ item.onLeave }}">
+            <a href="{{ item.href }}" style="{{ item.linkStyle }}">
+              <span>{{ item.label }}</span>
+              <sc-if value="{{ item.hasChildren }}" hint-placeholder-val="{{ false }}">
+                <span aria-hidden="true" style="font-size:9px;opacity:.8">▼</span>
+              </sc-if>
+            </a>
+            <sc-if value="{{ item.open }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:10px">
+                <div style="background:#0B1D30;border-top:3px solid #F2C200;min-width:180px;box-shadow:0 18px 40px rgba(0,0,0,.3);padding:8px 0">
+                  <sc-for list="{{ item.children }}" as="c" hint-placeholder-count="2">
+                    <a href="{{ c.href }}" style="display:block;color:#fff;font-weight:500;font-size:14px;padding:11px 22px;white-space:nowrap" style-hover="color:#F2C200;text-decoration:underline;text-underline-offset:4px">{{ c.label }}</a>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+        <a href="tel:080-1087-3921" style="display:flex;flex-direction:column;align-items:flex-end;color:#fff;margin-left:6px;line-height:1.1">
+          <span style="font-family:'Anton',sans-serif;font-size:clamp(16px,2vw,21px);letter-spacing:.02em">080-1087-3921</span>
+          <span style="font-size:10px;opacity:.8;font-weight:500">受付 9:00〜21:00</span>
+        </a>
+        <a href="/form/inquiry" style="background:#F2C200;color:#0B1D30;font-weight:900;font-size:14px;letter-spacing:.04em;padding:13px 22px;display:flex;align-items:center;gap:8px;transition:background .3s ease,gap .25s ease" style-hover="background:#ffd633;gap:14px">お問い合わせ<span aria-hidden="true" style="display:inline-block;transition:transform .25s ease">→</span></a>
+      </nav>
+    </sc-if>
+
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ toggleMenu }}" aria-label="メニューを開く" aria-expanded="{{ menuOpen }}" style="width:48px;height:48px;background:#F2C200;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px">
+        <span style="width:26px;height:2px;background:#0B1D30;display:block"></span>
+        <span style="width:26px;height:2px;background:#0B1D30;display:block"></span>
+        <span style="width:26px;height:2px;background:#0B1D30;display:block"></span>
+      </button>
+    </sc-if>
+  </div>
+</header>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:130;background:#0B1D30;overflow-y:auto;padding:18px clamp(18px,6vw,40px) 60px">
+    <div style="display:flex;align-items:center;justify-content:space-between;height:48px;margin-bottom:18px">
+      <span style="font-family:'Anton',sans-serif;color:#fff;font-size:30px;letter-spacing:.06em">TANAKA</span>
+      <button onClick="{{ closeMenu }}" aria-label="メニューを閉じる" style="width:48px;height:48px;background:#F2C200;color:#0B1D30;font-size:30px;display:flex;align-items:center;justify-content:center">✕</button>
+    </div>
+    <nav aria-label="メインナビゲーション">
+      <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+        <div style="border-bottom:1px solid rgba(255,255,255,.12)">
+          <div style="display:flex;align-items:stretch">
+            <a href="{{ item.href }}" style="flex:1;color:#fff;font-weight:700;font-size:17px;padding:18px 4px;min-height:44px">{{ item.label }}</a>
+            <sc-if value="{{ item.hasChildren }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ item.onToggleAcc }}" aria-label="{{ item.label }}のサブメニュー" aria-expanded="{{ item.accOpen }}" style="width:56px;color:#F2C200;font-size:18px;display:flex;align-items:center;justify-content:center">
+                <sc-if value="{{ item.accOpen }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true">−</span></sc-if>
+                <sc-if value="{{ item.accClosed }}" hint-placeholder-val="{{ true }}"><span aria-hidden="true">＋</span></sc-if>
+              </button>
+            </sc-if>
+          </div>
+          <sc-if value="{{ item.accOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:0 0 14px 16px">
+              <sc-for list="{{ item.children }}" as="c" hint-placeholder-count="2">
+                <a href="{{ c.href }}" style="display:block;color:rgba(255,255,255,.82);font-size:15px;font-weight:500;padding:12px 8px;min-height:44px">— {{ c.label }}</a>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </nav>
+    <a href="/form/inquiry" style="margin-top:26px;background:#F2C200;color:#0B1D30;font-weight:900;font-size:17px;padding:18px;display:flex;align-items:center;justify-content:center;gap:8px">お問い合わせ<span aria-hidden="true">→</span></a>
+    <a href="tel:080-1087-3921" style="margin-top:14px;border:1px solid rgba(255,255,255,.3);color:#fff;padding:16px;display:flex;flex-direction:column;align-items:center;line-height:1.3">
+      <span style="font-family:'Anton',sans-serif;font-size:26px;letter-spacing:.02em">080-1087-3921</span>
+      <span style="font-size:12px;opacity:.8">受付 9:00〜21:00 ／ 営業電話お断り</span>
+    </a>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;86px&quot;},&quot;active&quot;:{&quot;editor&quot;:null,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = {
+    vw: (typeof window !== 'undefined' ? window.innerWidth : 1280),
+    scrolled: false,
+    menuOpen: false,
+    openNav: null,
+    acc: null,
+  };
+  componentDidMount() {
+    this._onScroll = () => { const s = window.scrollY > 20; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    this._onResize = () => this.setState({ vw: window.innerWidth });
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onResize);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onResize);
+  }
+  renderVals() {
+    const vw = this.state.vw;
+    const isMobile = vw < 1200;
+    const active = this.props.active || '';
+    const openNav = this.state.openNav;
+    const acc = this.state.acc;
+    const NAV = [
+      { label: 'トップ', href: '/' },
+      { label: '業務案内', href: '/service' },
+      { label: '施工実績', href: '/blog-ex/instance' },
+      { label: 'ご依頼を検討中の方へ', href: '/request', children: [
+        { label: '選ばれる理由', href: '/request/reasons' },
+        { label: '料金表（目安）', href: '/request/price' },
+        { label: 'お客様の声', href: '/request/voice' },
+        { label: 'FAQ（よくあるご質問）', href: '/request/faq' },
+      ] },
+      { label: '会社概要', href: '/company', children: [
+        { label: '田中工業のあゆみ', href: '/company/history' },
+      ] },
+      { label: '求職者の方へ', href: '/recruit', children: [
+        { label: '採用情報（募集要項・応募）', href: '/recruit/job' },
+      ] },
+      { label: 'ブログ', href: '/blog' },
+    ];
+    const navItems = NAV.map((n, i) => {
+      const isActive = active === n.href || (n.children && n.children.some((c) => c.href === active));
+      return {
+        label: n.label, href: n.href, children: n.children || [], hasChildren: !!(n.children && n.children.length),
+        open: openNav === i && !!(n.children && n.children.length), accOpen: acc === i, accClosed: acc !== i,
+        linkStyle: { display: 'flex', alignItems: 'center', gap: '5px', color: isActive ? '#F2C200' : '#fff', fontWeight: 700, fontSize: '14px', letterSpacing: '.02em', padding: '10px 4px', whiteSpace: 'nowrap', borderBottom: (isActive && n.children && n.children.length) ? '2px solid #F2C200' : '2px solid transparent' },
+        onEnter: () => this.setState({ openNav: i }),
+        onLeave: () => this.setState({ openNav: null }),
+        onToggleAcc: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ acc: acc === i ? null : i }); },
+      };
+    });
+    return {
+      isMobile, isDesktop: !isMobile, scrolled: this.state.scrolled, menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false, acc: null }),
+      navItems,
+    };
+  }
+}
+</script>
+</body>
+</html>
