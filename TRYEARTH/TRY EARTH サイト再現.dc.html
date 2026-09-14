@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+:root{
+  --main-color:#66CC33;
+  --accent-color:#6EDBFF;
+  --pale-color:#E3FDFF;
+  --navy-color:#1F3864;
+  --cream-color:#FFFDF5;
+  --text-color:#020202;
+  --white-color:#FCFCFC;
+  --orange-color:#FFB013;
+  --gray-color:#999999;
+  --gray-light:#DDDDDD;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{font-family:Meiryo,"Hiragino Kaku Gothic ProN","Yu Gothic",-apple-system,sans-serif;color:#020202;background:#FFFDF5;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4,h5,p,dl,dd,dt,figure{margin:0;}
+ul{margin:0;padding:0;list-style:none;}
+a{color:#66CC33;text-decoration:none;}
+a:hover{opacity:.75;}
+table{border-collapse:collapse;}
+input,textarea,button{font-family:inherit;font-size:inherit;}
+@keyframes fadeup{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes heroFade{from{opacity:0;transform:translate(-50%,calc(-50% + 60px))}to{opacity:1;transform:translate(-50%,-50%)}}
+@keyframes fadeleft{from{opacity:0;transform:translateX(50px)}to{opacity:1;transform:none}}
+@keyframes faderight{from{opacity:0;transform:translateX(-50px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<div style="width:100%;overflow-x:hidden;background:var(--cream-color);">
+
+  <header style="position:sticky;top:0;z-index:60;background:#fff;display:flex;align-items:stretch;justify-content:space-between;min-height:98px;box-shadow:0 1px 4px rgba(0,0,0,.08);">
+    <a href="#" onClick="{{ goHome }}" style="display:flex;align-items:center;padding:0 24px;">
+      <img src="images/vwnyQze6NY.webp" alt="除草やクロス張り替えのことなら埼玉県日高市の便利屋TRY EARTH" style="height:58px;width:auto;display:block;">
+    </a>
+    <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;align-items:stretch;gap:0;min-width:0;">
+      <nav style="display:flex;align-items:center;flex-wrap:wrap;gap:10px 20px;padding:0 20px;">
+        <a href="#" onClick="{{ goHome }}" style="color:#020202;font-size:15px;font-weight:bold;letter-spacing:.04em;white-space:nowrap;">ホーム</a>
+        <a href="#" onClick="{{ goWork }}" style="color:#020202;font-size:15px;font-weight:bold;letter-spacing:.04em;white-space:nowrap;">業務案内</a>
+        <a href="#" onClick="{{ goInfo }}" style="color:#020202;font-size:15px;font-weight:bold;letter-spacing:.04em;white-space:nowrap;">会社概要</a>
+        <a href="#" onClick="{{ goBlog }}" style="color:#020202;font-size:15px;font-weight:bold;letter-spacing:.04em;white-space:nowrap;">ブログ</a>
+        <a href="#" onClick="{{ goContact }}" style="color:#020202;font-size:15px;font-weight:bold;letter-spacing:.04em;white-space:nowrap;">お問い合わせ</a>
+        <a href="#" onClick="{{ goLp }}" style="color:#CC0000;font-size:15px;font-weight:bold;letter-spacing:.04em;white-space:nowrap;">伐採・伐根・剪定</a>
+        <a href="#" onClick="{{ goPrice }}" style="color:#CC0000;font-size:15px;font-weight:bold;letter-spacing:.04em;white-space:nowrap;">料金表</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;justify-content:center;padding:8px 20px 8px 0;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">
+        <p style="display:flex;align-items:center;gap:8px;color:#66CC33;font-size:26px;font-weight:bold;line-height:1.2;letter-spacing:.02em;white-space:nowrap;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 42 42"><path d="M330.428,444.172l-6.442-6.428a2.42,2.42,0,0,0-3.332,0l-2.888,2.882a2.383,2.383,0,0,1-3.11.222,42.2,42.2,0,0,1-7.331-6.428,60.288,60.288,0,0,1-6.443-7.315,2.37,2.37,0,0,1,.222-3.1l2.888-2.882a2.407,2.407,0,0,0,0-3.325l-6.443-6.428a2.42,2.42,0,0,0-3.332,0l-3.777,3.769c-4,3.99,1.333,16.625,10.441,25.714s21.771,14.63,25.77,10.419l3.777-3.769A2.4,2.4,0,0,0,330.428,444.172Z" transform="translate(-289.094 -410.7)" fill="#66CC33"></path></svg>
+          090-9326-4459
+        </p>
+        <p style="font-size:12px;line-height:1.5;color:#020202;"><span style="color:#cc0000;font-weight:bold;">【営業電話お断り】</span><br>〒350-1257 埼玉県日高市<br>横手2-25-8</p>
+      </div>
+      <a class="mailbutton" href="#" onClick="{{ goContact }}" style="display:flex;align-items:center;gap:12px;background:#66CC33;color:#FFFFFF;padding:0 24px;font-size:16px;font-weight:bold;letter-spacing:.04em;white-space:nowrap;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="25" viewBox="0 0 42 30.648"><path d="M307.3,433.349a4.319,4.319,0,0,0,3.1-1.255l4.383-4.3L328.3,414.351a2.546,2.546,0,0,0-2.556-2.151H288.856a2.693,2.693,0,0,0-2.557,2.151l17.9,17.744A4.811,4.811,0,0,0,307.3,433.349Zm21-14.7-15.7,15.593a7.595,7.595,0,0,1-10.591,0l-15.7-15.593v21.687a2.557,2.557,0,0,0,2.374,2.509h37.07a2.435,2.435,0,0,0,2.374-2.509Z" transform="translate(-286.3 -412.2)" fill="#fff"></path></svg>
+        メールフォーム
+      </a>
+    </div>
+    </sc-if>
+    <sc-if value="{{ isNarrow }}">
+    <div style="display:flex;align-items:stretch;">
+      <button type="button" onClick="{{ goContact }}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:80px;background:#fff;border:none;border-left:1px solid #DDDDDD;color:#020202;cursor:pointer;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="25"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+        <span style="font-size:11px;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">MAIL</span>
+      </button>
+      <button type="button" onClick="{{ toggleMenu }}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:80px;background:#fff;border:none;border-left:1px solid #DDDDDD;color:#020202;cursor:pointer;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="25"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+        <span style="font-size:11px;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">MENU</span>
+      </button>
+    </div>
+    </sc-if>
+  </header>
+  <sc-if value="{{ menuOpen }}">
+    <div style="position:fixed;top:98px;left:0;width:100%;height:calc(100vh - 98px);z-index:55;display:flex;justify-content:flex-end;">
+      <div onClick="{{ toggleMenu }}" style="width:20%;height:100%;background:rgba(0,0,0,.25);"></div>
+      <nav style="width:80%;height:100%;background:#66CC33;overflow-y:auto;padding:20px 0;">
+        <a href="#" onClick="{{ goHome }}" style="display:block;color:#fff;font-size:16px;font-weight:bold;padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.35);">ホーム</a>
+        <a href="#" onClick="{{ goWork }}" style="display:block;color:#fff;font-size:16px;font-weight:bold;padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.35);">業務案内</a>
+        <a href="#" onClick="{{ goInfo }}" style="display:block;color:#fff;font-size:16px;font-weight:bold;padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.35);">会社概要</a>
+        <a href="#" onClick="{{ goBlog }}" style="display:block;color:#fff;font-size:16px;font-weight:bold;padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.35);">ブログ</a>
+        <a href="#" onClick="{{ goContact }}" style="display:block;color:#fff;font-size:16px;font-weight:bold;padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.35);">お問い合わせ</a>
+        <a href="#" onClick="{{ goLp }}" style="display:block;color:#CC0000;background:#fff;font-size:16px;font-weight:bold;padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.35);">伐採・伐根・剪定</a>
+        <a href="#" onClick="{{ goPrice }}" style="display:block;color:#CC0000;background:#fff;font-size:16px;font-weight:bold;padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.35);">料金表</a>
+        <div style="padding:24px;color:#fff;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">
+          <p style="font-size:24px;font-weight:bold;white-space:nowrap;">090-9326-4459</p>
+          <p style="font-size:13px;line-height:1.7;margin-top:6px;">【営業電話お断り】<br>〒350-1257 埼玉県日高市横手2-25-8</p>
+        </div>
+      </nav>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main>
+    <section style="position:relative;background:var(--cream-color);height:calc(100vh - 98px);min-height:520px;overflow:hidden;">
+      <img src="images/xMkpFlQL4l.png" alt="image" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;animation:heroFade 2.5s both;">
+        <img src="images/NIMenAWt1t.webp" alt="" style="display:block;width:min(760px,80vw);height:auto;">
+      </div>
+    </section>
+
+    <section style="background:#E3FDFF;padding:75px 0;font-size:14px;letter-spacing:.28px;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+        <div style="background:#FCFCFC;border:1px solid #DDDDDD;border-radius:3px;padding:25px;">
+          <h2 style="color:#66CC33;font-size:22px;letter-spacing:1.1px;border-left:3px solid #66CC33;padding-left:10px;margin-bottom:15px;">最新情報</h2>
+          <ul style="display:flex;flex-direction:column;gap:16px;">
+            <sc-for list="{{ news }}" as="item" hint-placeholder-count="3">
+              <li style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+                <div style="display:flex;align-items:center;gap:10px;min-width:190px;">
+                  <span>{{ item.date }}</span>
+                  <span style="background:#6EDBFF;color:#FCFCFC;border-radius:4px;padding:2px 10px;text-align:center;">{{ item.tag }}</span>
+                </div>
+                <p style="flex:1;min-width:200px;"><a href="#" onClick="{{ goBlog }}" style="color:#020202;">{{ item.title }}</a></p>
+                <a href="#" onClick="{{ goBlog }}" style="color:#FFB013;border-left:1px solid #999999;text-align:center;padding:0 18px;min-width:120px;">もっと見る</a>
+              </li>
+            </sc-for>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section style="display:flex;flex-direction:row-reverse;justify-content:space-between;align-items:center;column-gap:25px;background:var(--cream-color);padding:75px 0 0;flex-wrap:wrap;">
+      <div style="width:50%;min-width:320px;flex:1 1 420px;padding:0 10% 0 0;">
+        <h2 style="color:#66CC33;font-size:clamp(24px,2.4vw,35px);font-weight:bold;letter-spacing:.03em;line-height:1.5;margin-bottom:25px;">伸びすぎた庭木も、雨漏りも。<br>埼玉県日高市の便利屋トライアースが即対応。</h2>
+        <p style="color:#020202;font-size:16px;letter-spacing:.03em;line-height:1.8;">「庭木が隣家に張り出している」「切り株が抜けない」「雨漏りしているけどどこに頼めば…」。そんなお困りごとを、<strong>1本・1箇所からまるごと解決</strong>します。伐採・伐根・剪定・草刈りから、屋根・外壁の修繕、クロス張替え、不用品回収、エアコンクリーニングまで幅広く対応。積水ハウス・大和ハウス等の下請けで培った技術で、住宅まわりの養生・安全管理も徹底します。<br><br><strong>現地見積もりは無料。</strong>お見積もり後にお断りいただいても費用はかかりません。費用と作業範囲をご説明し、ご納得いただいてから着手しますので、はじめての方も安心してご相談ください。</p>
+        <div style="margin:30px 0 0;max-width:420px;">
+          <a href="#" onClick="{{ goWork }}" style="display:block;width:100%;text-align:center;color:#FCFCFC;letter-spacing:.03em;font-size:18px;font-weight:bold;padding:18px 20px;line-height:1.3337;border-radius:10px;background:#66CC33;box-shadow:0 5px rgba(0,0,0,.2);">業務案内</a>
+        </div>
+      </div>
+      <div style="width:50%;min-width:300px;flex:1 1 420px;">
+        <img src="images/geqRu8oilR.webp" alt="" style="width:100%;aspect-ratio:2/1;max-height:650px;object-fit:cover;border-top-right-radius:20px;border-bottom-right-radius:20px;display:block;">
+      </div>
+    </section>
+
+    <section style="background:var(--cream-color);padding:50px 0 75px;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;">
+        <a href="#" onClick="{{ goLp }}" style="display:block;">
+          <img src="images/banner-service.png" alt="伐採・伐根・剪定サービス" style="width:100%;height:auto;display:block;">
+        </a>
+        <a href="#" onClick="{{ goPrice }}" style="display:block;">
+          <img src="images/banner-price.png" alt="料金表" style="width:100%;height:auto;display:block;">
+        </a>
+      </div>
+    </section>
+
+    <section style="background:#E3FDFF;padding:75px 0;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+        <div style="margin-bottom:50px;">
+          <h2 style="color:#66CC33;font-size:clamp(22px,2.4vw,35px);font-weight:bold;text-align:center;line-height:1.5;letter-spacing:.03em;margin-bottom:20px;">お困りごとはなんでもご相談ください！</h2>
+          <p style="font-size:16px;line-height:1.8;letter-spacing:.03em;color:#020202;">トライアースでは、一つひとつの作業に精魂を込め、仕上げはしっかりと行います。お客さまのご要望や相談内容に耳を傾け、それに沿った形でベストなご提案を行ないます。金額面でも、お客さまの立場に立って最適なプランを考えます。お困りごとがあれば、なんでもお気軽にご相談ください！お客さま第一で、真心を込めた施工をお約束いたします。<br><br>業務詳細やお問い合わせは、業務案内ページやお問い合わせページをご覧ください。私たちトライアースは、みなさまのお力になるため、いつも準備ができております。お問い合わせお待ちしております！</p>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+          <a href="#" onClick="{{ goWork }}" style="flex:1 1 380px;max-width:575px;display:block;">
+            <img src="images/vISOiCru3L.webp" alt="業務案内" style="width:100%;height:auto;display:block;">
+          </a>
+          <a href="#" onClick="{{ goContact }}" style="flex:1 1 380px;max-width:575px;display:block;">
+            <img src="images/TR2esqVcji.webp" alt="お問い合わせ" style="width:100%;height:auto;display:block;">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section style="display:flex;justify-content:space-between;align-items:center;column-gap:25px;background:var(--cream-color);padding:75px 0;flex-wrap:wrap;">
+      <div style="width:50%;min-width:320px;flex:1 1 420px;padding:0 0 0 10%;">
+        <h2 style="color:#66CC33;font-size:clamp(24px,2.4vw,35px);font-weight:bold;letter-spacing:.03em;line-height:1.5;margin-bottom:25px;">トライアースについて</h2>
+        <p style="color:#020202;font-size:16px;letter-spacing:.03em;line-height:1.8;">トライアースは、埼玉県日高市を拠点に、あらゆる便利屋業務を承ります。現在、除草や伐採のご依頼が特に多いですが、仮設足場からクロス張り替え、エアコンクリーニングまで、幅広く対応いたします。埼玉県と東京都内での対応が主ですが、距離によっては難しい場合もございますのでお問い合わせください。<br>私たちの施工方針は、常にお客さま第一。お客さまの立場とニーズを最優先に、高品質なサービスを提供します。なんでも、どんなことでも気軽にご相談ください。トライアースは、あなたの生活を便利に、快適にするお手伝いをいたします！</p>
+        <div style="margin:30px auto 0;max-width:420px;">
+          <a href="#" onClick="{{ goInfo }}" style="display:block;width:100%;text-align:center;color:#FCFCFC;letter-spacing:.03em;font-size:18px;font-weight:bold;padding:18px 100px;line-height:1.3337;border-radius:10px;background:#66CC33;box-shadow:0 5px rgba(0,0,0,.2);">会社概要</a>
+        </div>
+      </div>
+      <div style="width:50%;min-width:300px;flex:1 1 420px;">
+        <img src="images/1GsoSLkLYP.webp" alt="" style="width:100%;aspect-ratio:2/1;max-height:650px;object-fit:cover;border-top-left-radius:20px;border-bottom-left-radius:20px;display:block;">
+      </div>
+    </section>
+
+    <section style="background:#3B4A3F url('images/FM3fjCHrHG.webp') no-repeat center/cover;padding:150px 0;position:relative;">
+      <div style="position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 20px;">
+        <div style="margin-bottom:30px;text-align:center;">
+          <h2 style="color:#FFFFFF;font-size:35px;font-weight:bold;letter-spacing:1.75px;line-height:1.5716;">BLOG</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+          <sc-for list="{{ news }}" as="item" hint-placeholder-count="3">
+            <div style="background:#FFFFFF;padding:45px 30px 40px 30px;">
+              <h5 style="color:#66CC33;font-size:16px;letter-spacing:.03em;font-weight:bold;text-align:center;margin-bottom:30px;">{{ item.tag }}</h5>
+              <a href="#" onClick="{{ goBlog }}">
+                <p style="color:#020202;font-size:16px;letter-spacing:.03em;font-weight:bold;line-height:1.8;height:55px;overflow:hidden;margin-bottom:20px;">{{ item.title }}</p>
+                <div style="height:240px;background-image:url({{ item.img }});background-size:cover;background-position:center;"></div>
+              </a>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <iframe title="map" src="https://www.google.com/maps?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%E6%97%A5%E9%AB%98%E5%B8%82%E6%A8%AA%E6%89%8B2-25-8&amp;output=embed" width="100%" height="450" style="border:0;display:block;vertical-align:bottom;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isWork }}">
+  <main>
+    <section style="min-height:340px;display:flex;align-items:center;justify-content:center;background:#4A5A4E url('images/LIMiyrx20R.webp') no-repeat center/cover;background-size:cover;background-position:center;padding:3rem 0;position:relative;">
+      <div style="position:relative;text-align:center;">
+        <h2 style="color:#FFFFFF;font-size:44px;font-weight:bold;letter-spacing:8.8px;">業務案内</h2>
+        <p style="color:#FFFFFF;font-size:20px;font-weight:bold;letter-spacing:4px;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">WORK</p>
+      </div>
+    </section>
+
+    <div style="background:#f5f5f5;padding:20px 0;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">
+      <ul style="width:89.84375%;max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:10px;font-size:13px;color:#666;">
+        <li><a href="#" onClick="{{ goHome }}" style="color:#666;font-size:13px;letter-spacing:-.26px;">TRY EARTH</a></li>
+        <li style="color:#666;">&gt;</li>
+        <li style="color:#666;font-size:13px;letter-spacing:-.26px;">業務案内</li>
+      </ul>
+    </div>
+
+    <section style="background:var(--cream-color);padding:60px 0;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+        <p style="font-size:16px;line-height:1.8;letter-spacing:.03em;">埼玉県日高市に拠点を構え、便利屋として除草やクロス張り替えなどの多岐にわたる業務を承っているTRY EARTH（トライアース）です。こちらのページでは弊社の主な業務内容をご紹介いたします。ご依頼主さまの参考になれば幸いです。</p>
+      </div>
+    </section>
+
+    <section style="background:var(--cream-color);padding:90px 0;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+        <h2 style="color:#66CC33;font-size:clamp(24px,2.4vw,35px);font-weight:bold;text-align:center;line-height:1.5;letter-spacing:.03em;margin-bottom:25px;">便利屋</h2>
+        <p style="color:#020202;font-size:16px;line-height:1.8;letter-spacing:.03em;">便利屋業として、トライアースは数々のご依頼に迅速且つ確実に対応しています。お掃除、除草作業、伐採、そしてそれ以外の多岐にわたる業務も請け負います。人手が足りない、どこに相談すればいいか分からないとお困りの方、どうかお気軽にトライアースまでご連絡ください。私たちはあなたの困りごとを解決する手助けをいたします。お客さまの満足が我々の喜びです。トライアースで、安心と信頼のサービスをご体験ください！</p>
+      </div>
+    </section>
+
+    <sc-for list="{{ services }}" as="svc" hint-placeholder-count="0">
+      <section style="background:var(--cream-color);padding:60px 0;">
+        <div style="max-width:1180px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;">
+          <div style="flex:0 1 410px;min-width:260px;">
+            <sc-if value="{{ svc.img }}" hint-placeholder-val="{{ false }}">
+              <div style="width:100%;aspect-ratio:410/300;border-radius:10px;background-image:url({{ svc.img }});background-size:cover;background-position:center;"></div>
+            </sc-if>
+            <sc-if value="{{ svc.missing }}">
+              <div style="width:100%;aspect-ratio:410/300;border-radius:10px;overflow:hidden;background:#DDE3DE;border:1px dashed #9AA79E;display:flex;align-items:center;justify-content:center;color:#5C6B60;font-size:13px;text-align:center;padding:8px;">{{ svc.image }}</div>
+            </sc-if>
+          </div>
+          <div style="flex:1 1 480px;max-width:730px;">
+            <h3 style="color:#FFFFFF;background:#6EDBFF;border-radius:10px;padding:10px;font-size:25px;font-weight:bold;letter-spacing:.25px;line-height:1.5;margin-bottom:19px;">{{ svc.title }}</h3>
+            <p style="font-size:16px;color:#020202;letter-spacing:.03em;line-height:1.8;">{{ svc.body }}</p>
+          </div>
+        </div>
+      </section>
+    </sc-for>
+
+    <div style="background:#FFF;height:90px;"></div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isInfo }}">
+  <main>
+    <section style="min-height:340px;display:flex;align-items:center;justify-content:center;background:#4A5A4E url('images/LIMiyrx20R.webp') no-repeat center/cover;padding:3rem 0;position:relative;">
+      <div style="position:relative;text-align:center;">
+        <h2 style="color:#FFFFFF;font-size:44px;font-weight:bold;letter-spacing:8.8px;">会社概要</h2>
+        <p style="color:#FFFFFF;font-size:20px;font-weight:bold;letter-spacing:4px;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">INFORMATION</p>
+      </div>
+    </section>
+
+    <div style="background:#f5f5f5;padding:20px 0;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">
+      <ul style="width:89.84375%;max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:10px;font-size:13px;color:#666;">
+        <li><a href="#" onClick="{{ goHome }}" style="color:#666;font-size:13px;letter-spacing:-.26px;">TRY EARTH</a></li>
+        <li style="color:#666;">&gt;</li>
+        <li style="color:#666;font-size:13px;letter-spacing:-.26px;">会社概要</li>
+      </ul>
+    </div>
+
+    <div style="background:var(--cream-color);padding:30px 0 20px;text-align:center;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+        <h2 style="color:#66CC33;font-size:35px;font-weight:bold;letter-spacing:1.75px;line-height:1.5;">会社概要</h2>
+      </div>
+    </div>
+
+    <section style="background:var(--cream-color);padding:40px 0 90px;font-size:14px;letter-spacing:.28px;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+        <table style="width:100%;font-size:16px;letter-spacing:.08px;">
+          <tbody>
+            <sc-for list="{{ company }}" as="row" hint-placeholder-count="12">
+              <tr style="border-bottom:1px solid #66CC33;">
+                <th scope="row" style="color:#66CC33;width:25%;text-align:left;vertical-align:top;padding:24px 0;letter-spacing:.03em;line-height:1.8;font-weight:bold;">{{ row.k }}</th>
+                <td style="color:#020202;padding:24px 0;letter-spacing:.03em;line-height:1.8;">{{ row.v }}</td>
+              </tr>
+            </sc-for>
+            <tr style="border-bottom:1px solid #66CC33;">
+              <th scope="row" style="color:#66CC33;width:25%;text-align:left;vertical-align:top;padding:24px 0;letter-spacing:.03em;line-height:1.8;font-weight:bold;">所在地</th>
+              <td style="color:#020202;padding:24px 0;letter-spacing:.03em;line-height:1.8;">〒350-1257 埼玉県日高市横手2-25-8<br><br>
+                <iframe title="map" src="https://www.google.com/maps?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%E6%97%A5%E9%AB%98%E5%B8%82%E6%A8%AA%E6%89%8B2-25-8&amp;output=embed" width="100%" height="450" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </td>
+            </tr>
+            <sc-for list="{{ company2 }}" as="row" hint-placeholder-count="6">
+              <tr style="border-bottom:1px solid #66CC33;">
+                <th scope="row" style="color:#66CC33;width:25%;text-align:left;vertical-align:top;padding:24px 0;letter-spacing:.03em;line-height:1.8;font-weight:bold;">{{ row.k }}</th>
+                <td style="color:#020202;padding:24px 0;letter-spacing:.03em;line-height:1.8;">{{ row.v }}</td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div style="background:#FFF;height:90px;"></div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isBlog }}">
+  <main>
+    <section style="min-height:340px;display:flex;align-items:center;justify-content:center;background:#4A5A4E url('images/LIMiyrx20R.webp') no-repeat center/cover;padding:3rem 0;position:relative;">
+      <div style="position:relative;text-align:center;">
+        <h2 style="color:#FFFFFF;font-size:44px;font-weight:bold;letter-spacing:8.8px;">ブログ</h2>
+        <p style="color:#FFFFFF;font-size:20px;font-weight:bold;letter-spacing:4px;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">BLOG</p>
+      </div>
+    </section>
+
+    <div style="background:#f5f5f5;padding:20px 0;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">
+      <ul style="width:89.84375%;max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:10px;font-size:13px;color:#666;">
+        <li><a href="#" onClick="{{ goHome }}" style="color:#666;font-size:13px;letter-spacing:-.26px;">TRY EARTH</a></li>
+        <li style="color:#666;">&gt;</li>
+        <li style="color:#666;font-size:13px;letter-spacing:-.26px;">ブログ</li>
+      </ul>
+    </div>
+
+    <section style="background:var(--cream-color);padding:70px 0 90px;">
+      <h2 style="color:#66CC33;font-size:35px;font-weight:bold;text-align:center;letter-spacing:1.75px;margin-bottom:50px;">ブログ</h2>
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;">
+        <main style="flex:1 1 640px;min-width:280px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:30px;">
+          <sc-for list="{{ posts }}" as="post" hint-placeholder-count="0">
+            <div>
+              <a href="#" onClick="{{ noop }}" style="display:block;color:#020202;">
+                <sc-if value="{{ post.img }}" hint-placeholder-val="{{ false }}">
+                  <div style="width:100%;aspect-ratio:4/3;background-image:url({{ post.img }});background-size:cover;background-position:center;"></div>
+                </sc-if>
+                <sc-if value="{{ post.missing }}">
+                  <div style="width:100%;aspect-ratio:4/3;background:#DDE3DE;border:1px dashed #9AA79E;display:flex;align-items:center;justify-content:center;color:#5C6B60;font-size:12px;text-align:center;padding:8px;">{{ post.image }}</div>
+                </sc-if>
+                <div style="display:flex;align-items:center;gap:10px;margin:14px 0 8px;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;font-size:13px;">
+                  <span style="color:#666;">{{ post.date }}</span>
+                  <span style="background:#6EDBFF;color:#FCFCFC;border-radius:4px;padding:2px 10px;">{{ post.category }}</span>
+                </div>
+                <h3 style="font-size:16px;font-weight:bold;line-height:1.6;color:#020202;">{{ post.title }}</h3>
+              </a>
+            </div>
+          </sc-for>
+        </main>
+        <aside style="flex:0 0 300px;min-width:260px;display:flex;flex-direction:column;gap:40px;">
+          <div>
+            <h3 style="font-size:18px;font-weight:bold;color:#66CC33;border-left:3px solid #66CC33;padding-left:10px;margin-bottom:16px;">最近の投稿</h3>
+            <ul style="display:flex;flex-direction:column;">
+              <sc-for list="{{ recent }}" as="r" hint-placeholder-count="5">
+                <li style="border-bottom:1px solid #DDDDDD;padding:12px 0;">
+                  <a href="#" onClick="{{ noop }}" style="color:#020202;display:block;">
+                    <span style="display:block;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;font-size:13px;color:#666;">{{ r.date }}</span>
+                    <p style="font-size:15px;font-weight:bold;line-height:1.6;">{{ r.title }}</p>
+                  </a>
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+          <div>
+            <h3 style="font-size:18px;font-weight:bold;color:#66CC33;border-left:3px solid #66CC33;padding-left:10px;margin-bottom:16px;">カテゴリ</h3>
+            <ul style="display:flex;flex-direction:column;">
+              <sc-for list="{{ categories }}" as="c" hint-placeholder-count="3">
+                <li style="border-bottom:1px solid #DDDDDD;">
+                  <a href="#" onClick="{{ noop }}" style="display:flex;justify-content:space-between;align-items:center;color:#020202;padding:12px 0;font-size:15px;">
+                    <p>{{ c.name }}</p>
+                    <span style="font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;color:#666;">{{ c.count }}</span>
+                  </a>
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isContact }}">
+  <main>
+    <section style="min-height:340px;display:flex;align-items:center;justify-content:center;background:#4A5A4E url('images/LIMiyrx20R.webp') no-repeat center/cover;padding:3rem 0;position:relative;">
+      <div style="position:relative;text-align:center;">
+        <h2 style="color:#FFFFFF;font-size:44px;font-weight:bold;letter-spacing:8.8px;">お問い合わせ</h2>
+        <p style="color:#FFFFFF;font-size:20px;font-weight:bold;letter-spacing:4px;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">CONTACT</p>
+      </div>
+    </section>
+
+    <div style="background:#f5f5f5;padding:20px 0;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">
+      <ul style="width:89.84375%;max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:10px;font-size:13px;color:#666;">
+        <li><a href="#" onClick="{{ goHome }}" style="color:#666;font-size:13px;letter-spacing:-.26px;">TRY EARTH</a></li>
+        <li style="color:#666;">&gt;</li>
+        <li style="color:#666;font-size:13px;letter-spacing:-.26px;">お問い合わせ</li>
+      </ul>
+    </div>
+
+    <section style="background:var(--cream-color);padding:60px 0 0;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;font-size:16px;line-height:1.8;letter-spacing:.03em;">
+        <div>弊社へのお問い合わせは、お電話もしくは下記のフォームから送信してください。</div>
+        <h3 style="color:#66CC33;font-size:22px;font-weight:bold;margin:30px 0 12px;">電話でのお問い合わせ</h3>
+        <div>事務所：090-9326-4459 <span style="color:#cc0000;font-weight:bold;">【営業電話お断り】</span></div>
+        <h3 style="color:#66CC33;font-size:22px;font-weight:bold;margin:30px 0 12px;">メールでのお問い合わせ</h3>
+        <div>下記メールフォームに必要事項を入力し、送信してください。<br>メールフォームの「お問い合わせ内容」の項目に、ご要望などをご入力ください。<br>お問い合わせ内容を確認後、担当者より折り返しご連絡いたします。<br>数日経っても折り返しがない場合、システムの不具合によりお問い合わせメールが正常に届いていない可能性がございます。<br>お手数ですが、再度お電話にてご連絡をお願いいたします。</div>
+      </div>
+    </section>
+
+    <section style="background:var(--cream-color);padding:60px 0;">
+      <div style="max-width:900px;margin:0 auto;padding:0 20px;">
+        <dl style="display:flex;flex-wrap:wrap;align-items:flex-start;border-top:1px solid #DDDDDD;padding:24px 0;">
+          <dt style="width:32%;min-width:220px;font-weight:bold;display:flex;align-items:center;gap:10px;padding-top:6px;">お名前 / 企業名<span style="background:#cc0000;color:#fff;font-size:12px;border-radius:3px;padding:2px 8px;">必須</span></dt>
+          <dd style="flex:1;min-width:240px;margin:0;"><input name="name" type="text" style="width:100%;padding:10px 12px;border:1px solid #CCCCCC;border-radius:4px;"></dd>
+        </dl>
+        <dl style="display:flex;flex-wrap:wrap;align-items:flex-start;border-top:1px solid #DDDDDD;padding:24px 0;">
+          <dt style="width:32%;min-width:220px;font-weight:bold;display:flex;align-items:center;gap:10px;padding-top:6px;">メールアドレス<span style="background:#cc0000;color:#fff;font-size:12px;border-radius:3px;padding:2px 8px;">必須</span></dt>
+          <dd style="flex:1;min-width:240px;margin:0;"><input name="email" type="email" style="width:100%;padding:10px 12px;border:1px solid #CCCCCC;border-radius:4px;"></dd>
+        </dl>
+        <dl style="display:flex;flex-wrap:wrap;align-items:flex-start;border-top:1px solid #DDDDDD;padding:24px 0;">
+          <dt style="width:32%;min-width:220px;font-weight:bold;display:flex;align-items:center;gap:10px;padding-top:6px;">メールアドレス（確認用）<span style="background:#cc0000;color:#fff;font-size:12px;border-radius:3px;padding:2px 8px;">必須</span></dt>
+          <dd style="flex:1;min-width:240px;margin:0;"><input name="email_confirmation" type="email" style="width:100%;padding:10px 12px;border:1px solid #CCCCCC;border-radius:4px;"></dd>
+        </dl>
+        <dl style="display:flex;flex-wrap:wrap;align-items:flex-start;border-top:1px solid #DDDDDD;padding:24px 0;">
+          <dt style="width:32%;min-width:220px;font-weight:bold;display:flex;align-items:center;gap:10px;padding-top:6px;">お問い合わせ項目<span style="background:#cc0000;color:#fff;font-size:12px;border-radius:3px;padding:2px 8px;">必須</span></dt>
+          <dd style="flex:1;min-width:240px;margin:0;display:flex;flex-wrap:wrap;gap:14px 24px;">
+            <label for="checkbox1" style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="checkbox1" name="checkbox[]" value="ご相談">ご相談</label>
+            <label for="checkbox2" style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="checkbox2" name="checkbox[]" value="お問い合わせ">お問い合わせ</label>
+            <label for="checkbox3" style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="checkbox3" name="checkbox[]" value="お見積もり依頼">お見積もり依頼</label>
+            <label for="checkbox4" style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="checkbox4" name="checkbox[]" value="求人">求人</label>
+            <label for="checkbox5" style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="checkbox5" name="checkbox[]" value="その他">その他</label>
+          </dd>
+        </dl>
+        <dl style="display:flex;flex-wrap:wrap;align-items:flex-start;border-top:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;padding:24px 0;">
+          <dt style="width:32%;min-width:220px;font-weight:bold;display:flex;align-items:flex-start;gap:10px;">
+            <span>お問い合わせ内容<span style="display:block;font-weight:normal;font-size:12px;line-height:1.6;color:#666;margin-top:4px;">入力は2000文字以内で日本語を含んだ文章 でお願いいたします。</span></span>
+            <span style="background:#cc0000;color:#fff;font-size:12px;border-radius:3px;padding:2px 8px;flex:none;">必須</span>
+          </dt>
+          <dd style="flex:1;min-width:240px;margin:0;"><textarea name="qualification" id="qualification" rows="8" style="width:100%;padding:10px 12px;border:1px solid #CCCCCC;border-radius:4px;"></textarea></dd>
+        </dl>
+        <div style="display:flex;justify-content:center;margin-top:40px;">
+          <input type="submit" value="確認画面へ" style="color:#FCFCFC;background:#66CC33;border:none;border-radius:10px;box-shadow:0 5px rgba(0,0,0,.2);font-size:18px;font-weight:bold;letter-spacing:.03em;padding:18px 100px;cursor:pointer;">
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--cream-color);padding:0 0 90px;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;font-size:16px;line-height:1.8;letter-spacing:.03em;">
+        <h2 style="color:#66CC33;font-size:clamp(22px,2.4vw,35px);font-weight:bold;margin-bottom:20px;">プライバシーポリシー</h2>
+        <div>TRY EARTH（※以下、弊社と呼ぶ）では、個人情報の取り扱いにつき、業務実態に応じた個人情報保護のための管理体制を確立するとともに、適切かつ慎重に取り扱いいたします。</div>
+        <h3 style="color:#66CC33;font-size:22px;font-weight:bold;margin:30px 0 12px;">個人情報の取り扱いについて</h3>
+        <div>個人情報を収集する際は、適切な範囲で適法かつ公正な手段で個人情報を収集いたします。<br>弊社では次のような場合に必要な範囲で個人情報を収集する場合がございます。<br>・ 弊社の求人内容についてのお問い合わせ<br>・ その他お問い合わせ</div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isPrice }}">
+  <main>
+    <section style="min-height:340px;display:flex;align-items:center;justify-content:center;background:#4A5A4E url('images/LIMiyrx20R.webp') no-repeat center/cover;padding:3rem 0;position:relative;">
+      <div style="position:relative;text-align:center;">
+        <h2 style="color:#FFFFFF;font-size:44px;font-weight:bold;letter-spacing:8.8px;">料金表</h2>
+        <p style="color:#FFFFFF;font-size:20px;font-weight:bold;letter-spacing:4px;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">PRICE</p>
+      </div>
+    </section>
+
+    <div style="background:#f5f5f5;padding:20px 0;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">
+      <ul style="width:89.84375%;max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:10px;font-size:13px;color:#666;">
+        <li><a href="#" onClick="{{ goHome }}" style="color:#666;font-size:13px;letter-spacing:-.26px;">TRY EARTH</a></li>
+        <li style="color:#666;">&gt;</li>
+        <li style="color:#666;font-size:13px;letter-spacing:-.26px;">料金表</li>
+      </ul>
+    </div>
+
+    <section style="background:var(--cream-color);padding:60px 0 40px;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+        <p style="font-size:16px;line-height:1.8;letter-spacing:.03em;">埼玉県日高市の便利屋TRY EARTH（トライアース）の料金目安です。屋根・外装工事から草刈り・伐採、クロス張替えや片付けまで、承っている業務をカテゴリ別にまとめました。現場の状況によって費用は変わりますので、下記は目安としてご覧ください。</p>
+        <div style="background:#E3FDFF;border-radius:10px;padding:22px 24px;margin-top:26px;">
+          <p style="font-size:16px;font-weight:bold;line-height:1.8;letter-spacing:.03em;color:#020202;">正確な金額は、現地見積もり後に確定いたします。お見積もりは無料です。作業範囲・費用にご納得いただいてから着手し、事前のご説明なく追加請求することはございません。</p>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;">
+          <a href="#roof-price" style="display:block;color:#66CC33;border:2px solid #66CC33;background:#FFFFFF;border-radius:10px;font-size:16px;font-weight:bold;letter-spacing:.03em;padding:12px 26px;">屋根・外装工事</a>
+          <a href="#garden-price" style="display:block;color:#66CC33;border:2px solid #66CC33;background:#FFFFFF;border-radius:10px;font-size:16px;font-weight:bold;letter-spacing:.03em;padding:12px 26px;">庭木・外構関連</a>
+          <a href="#other-price" style="display:block;color:#66CC33;border:2px solid #66CC33;background:#FFFFFF;border-radius:10px;font-size:16px;font-weight:bold;letter-spacing:.03em;padding:12px 26px;">その他便利屋サービス</a>
+        </div>
+      </div>
+    </section>
+
+    <sc-for list="{{ priceTables }}" as="cat" hint-placeholder-count="0">
+      <section id="{{ cat.id }}" style="background:var(--cream-color);padding:40px 0 60px;">
+        <div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+          <h2 style="color:#FFFFFF;background:#66CC33;border-radius:10px;padding:12px 18px;font-size:clamp(20px,2vw,26px);font-weight:bold;letter-spacing:.05em;line-height:1.5;margin-bottom:14px;">{{ cat.title }}</h2>
+          <p style="font-size:16px;line-height:1.8;letter-spacing:.03em;margin-bottom:24px;">{{ cat.lead }}</p>
+          <div style="overflow-x:auto;">
+            <table style="width:100%;min-width:760px;font-size:16px;letter-spacing:.08px;">
+              <thead>
+                <tr style="background:#E3FDFF;">
+                  <th scope="col" style="text-align:left;color:#020202;font-weight:bold;padding:14px 16px;border-bottom:2px solid #66CC33;width:28%;letter-spacing:.03em;">作業内容</th>
+                  <th scope="col" style="text-align:left;color:#020202;font-weight:bold;padding:14px 16px;border-bottom:2px solid #66CC33;width:26%;letter-spacing:.03em;">料金目安</th>
+                  <th scope="col" style="text-align:left;color:#020202;font-weight:bold;padding:14px 16px;border-bottom:2px solid #66CC33;letter-spacing:.03em;">備考</th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ cat.rows }}" as="row" hint-placeholder-count="0">
+                  <tr style="border-bottom:1px solid #66CC33;">
+                    <th scope="row" style="color:#66CC33;text-align:left;vertical-align:top;padding:20px 16px;font-weight:bold;letter-spacing:.03em;line-height:1.8;">{{ row.work }}</th>
+                    <td style="color:#020202;vertical-align:top;padding:20px 16px;letter-spacing:.03em;line-height:1.8;font-weight:bold;white-space:nowrap;">{{ row.price }}</td>
+                    <td style="color:#020202;vertical-align:top;padding:20px 16px;letter-spacing:.03em;line-height:1.8;">{{ row.note }}</td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </sc-for>
+
+    <section style="background:var(--cream-color);padding:0 0 80px;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+        <h3 style="color:#66CC33;font-size:22px;font-weight:bold;letter-spacing:.03em;margin-bottom:14px;">料金についてのご注意</h3>
+        <ul style="display:flex;flex-direction:column;gap:10px;">
+          <sc-for list="{{ priceNotes }}" as="n" hint-placeholder-count="0">
+            <li style="display:flex;gap:10px;font-size:15px;line-height:1.8;letter-spacing:.03em;color:#020202;">
+              <span style="flex:none;color:#66CC33;font-weight:bold;">※</span>
+              <span>{{ n }}</span>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+    </section>
+
+    <section style="background:#66CC33;padding:70px 20px;">
+      <div style="max-width:900px;margin:0 auto;text-align:center;">
+        <h2 style="color:#FFFFFF;font-size:clamp(24px,2.8vw,38px);font-weight:bold;line-height:1.5;letter-spacing:.03em;margin-bottom:16px;">まずは無料見積もりを</h2>
+        <p style="color:#FFFFFF;font-size:17px;line-height:1.9;letter-spacing:.03em;margin-bottom:34px;">「この作業はいくら？」というご質問だけでも構いません。現地を確認し、正式なお見積もりを無料でご提示します。</p>
+        <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;align-items:center;">
+          <a href="#" onClick="{{ goContact }}" style="display:block;text-align:center;color:#66CC33;background:#FFFFFF;letter-spacing:.03em;font-size:20px;font-weight:bold;padding:20px 64px;line-height:1.3337;border-radius:10px;box-shadow:0 5px rgba(0,0,0,.2);">お問い合わせはこちら</a>
+          <div style="background:#FFFFFF;border-radius:10px;padding:12px 26px;">
+            <p style="font-size:13px;color:#020202;font-weight:bold;letter-spacing:.04em;">お電話でのご相談（9:00〜18:00）</p>
+            <p style="color:#66CC33;font-size:28px;font-weight:bold;line-height:1.2;white-space:nowrap;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">090-9326-4459</p>
+            <p style="font-size:12px;color:#cc0000;font-weight:bold;">【営業電話お断り】</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isLp }}">
+  <main>
+    <section style="position:relative;background:#2F3E34;min-height:560px;display:flex;align-items:center;overflow:hidden;">
+      <div style="position:absolute;inset:0;background:#4A5A4E url('images/EwoigQ8r9l.png') no-repeat center/cover;"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,35,22,.72) 0%,rgba(20,35,22,.45) 60%,rgba(20,35,22,.2) 100%);"></div>
+      <div style="position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:70px 20px;width:100%;">
+        <p style="display:inline-block;background:#6EDBFF;color:#FFFFFF;font-size:15px;font-weight:bold;border-radius:10px;padding:6px 16px;letter-spacing:.05em;margin-bottom:20px;">埼玉県日高市・東京都対応／無料見積もり</p>
+        <h2 style="color:#FFFFFF;font-size:clamp(28px,3.4vw,46px);font-weight:bold;line-height:1.5;letter-spacing:.03em;margin-bottom:20px;text-wrap:pretty;">庭木の伐採・伐根・剪定なら<br>埼玉県日高市のTRY EARTHへ</h2>
+        <p style="color:#FFFFFF;font-size:17px;line-height:1.9;letter-spacing:.03em;margin-bottom:34px;max-width:620px;">伸びすぎた庭木、抜けない切り株、危険な高所の枝。1本からでもご相談ください。積水ハウス・大和ハウスの下請けで培った技術で、安全・丁寧に仕上げます。</p>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;">
+          <a href="#" onClick="{{ goContact }}" style="display:block;text-align:center;color:#FCFCFC;background:#66CC33;letter-spacing:.03em;font-size:18px;font-weight:bold;padding:18px 60px;line-height:1.3337;border-radius:10px;box-shadow:0 5px rgba(0,0,0,.2);">無料お見積もりはこちら</a>
+          <div style="background:#FFFFFF;border-radius:10px;padding:12px 26px;">
+            <p style="font-size:13px;color:#020202;font-weight:bold;letter-spacing:.04em;">お電話でのご相談（9:00〜18:00）</p>
+            <p style="display:flex;align-items:center;gap:8px;color:#66CC33;font-size:28px;font-weight:bold;line-height:1.2;white-space:nowrap;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 42 42"><path d="M330.428,444.172l-6.442-6.428a2.42,2.42,0,0,0-3.332,0l-2.888,2.882a2.383,2.383,0,0,1-3.11.222,42.2,42.2,0,0,1-7.331-6.428,60.288,60.288,0,0,1-6.443-7.315,2.37,2.37,0,0,1,.222-3.1l2.888-2.882a2.407,2.407,0,0,0,0-3.325l-6.443-6.428a2.42,2.42,0,0,0-3.332,0l-3.777,3.769c-4,3.99,1.333,16.625,10.441,25.714s21.771,14.63,25.77,10.419l3.777-3.769A2.4,2.4,0,0,0,330.428,444.172Z" transform="translate(-289.094 -410.7)" fill="#66CC33"></path></svg>
+              090-9326-4459
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="background:#f5f5f5;padding:20px 0;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">
+      <ul style="width:89.84375%;max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:10px;font-size:13px;color:#666;">
+        <li><a href="#" onClick="{{ goHome }}" style="color:#666;font-size:13px;letter-spacing:-.26px;">TRY EARTH</a></li>
+        <li style="color:#666;">&gt;</li>
+        <li style="color:#666;font-size:13px;letter-spacing:-.26px;">伐採・伐根・剪定</li>
+      </ul>
+    </div>
+
+    <section style="position:relative;background:linear-gradient(160deg,#5FC12E 0%,#7BD44A 55%,#8FDC5E 100%);padding:90px 0 80px;overflow:hidden;">
+      <div style="position:absolute;top:-120px;left:-100px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.08);"></div>
+      <div style="position:absolute;bottom:-160px;right:-120px;width:520px;height:520px;border-radius:50%;background:rgba(255,255,255,.08);"></div>
+      <div style="position:relative;max-width:1180px;margin:0 auto;padding:0 20px;">
+        <h2 style="color:#FFFFFF;font-size:clamp(26px,3vw,42px);font-weight:bold;text-align:center;line-height:1.5;letter-spacing:.06em;margin-bottom:50px;">こんなお困りごと、ありませんか？</h2>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px 34px;margin-bottom:60px;">
+          <sc-for list="{{ worries }}" as="w" hint-placeholder-count="6">
+            <div style="position:relative;flex:0 1 340px;padding-top:16px;">
+              <span style="position:absolute;top:0;left:14px;background:#173A1C;color:#FFFFFF;font-size:13px;font-weight:bold;letter-spacing:.04em;border-radius:999px;padding:5px 14px;z-index:1;">{{ w.chip }}</span>
+              <div style="background:#FFFFFF;border-radius:120px/70px;padding:34px 34px;text-align:center;box-shadow:0 6px 16px rgba(0,0,0,.12);">
+                <p style="color:#020202;font-size:17px;font-weight:bold;line-height:1.7;letter-spacing:.02em;text-wrap:pretty;">{{ w.text }}</p>
+              </div>
+              <span style="position:absolute;left:34px;bottom:-10px;width:20px;height:20px;border-radius:50%;background:#FFFFFF;"></span>
+              <span style="position:absolute;left:16px;bottom:-26px;width:11px;height:11px;border-radius:50%;background:#FFFFFF;"></span>
+            </div>
+          </sc-for>
+        </div>
+        <p style="color:#FFFFFF;font-size:clamp(22px,2.6vw,36px);font-weight:bold;text-align:center;letter-spacing:.06em;line-height:1.5;margin-bottom:44px;">そのお悩み、TRY EARTHにお任せください。</p>
+        <div style="display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;">
+          <p style="color:#FFFFFF;font-size:16px;font-weight:bold;letter-spacing:.03em;">まずはお気軽にご相談ください（相談・見積もり無料）</p>
+          <div style="background:#FFFFFF;border-radius:10px;padding:12px 24px;color:#66CC33;font-size:22px;font-weight:bold;white-space:nowrap;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">090-9326-4459</div>
+          <a href="#" onClick="{{ goContact }}" style="display:block;background:#FFB013;color:#FFFFFF;border-radius:10px;box-shadow:0 5px rgba(0,0,0,.2);font-size:17px;font-weight:bold;letter-spacing:.03em;padding:14px 30px;white-space:nowrap;">問い合わせフォーム ▶</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--cream-color);padding:90px 0 60px;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+        <h2 style="color:#66CC33;font-size:clamp(22px,2.4vw,35px);font-weight:bold;text-align:center;line-height:1.5;letter-spacing:.03em;margin-bottom:16px;">サービス内容</h2>
+        <p style="text-align:center;font-size:16px;line-height:1.8;letter-spacing:.03em;">伐採・伐根・剪定のいずれも、1本から現場ごとに最適な方法をご提案します。</p>
+      </div>
+    </section>
+
+    <sc-for list="{{ lpServices }}" as="s" hint-placeholder-count="3">
+      <section style="background:var(--cream-color);padding:0 0 60px;">
+        <div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+          <h3 style="color:#FFFFFF;background:#6EDBFF;border-radius:10px;padding:10px;font-size:25px;font-weight:bold;letter-spacing:.25px;line-height:1.5;margin-bottom:19px;">{{ s.title }}</h3>
+          <div style="display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;">
+            <div style="flex:1 1 420px;min-width:280px;display:flex;gap:16px;">
+              <div style="flex:1;">
+                <p style="font-size:13px;font-weight:bold;color:#020202;background:#DDDDDD;border-radius:6px;text-align:center;padding:4px 0;margin-bottom:8px;letter-spacing:.08em;">BEFORE</p>
+                <div style="width:100%;aspect-ratio:4/3;border-radius:10px;background-image:url({{ s.beforeImg }});background-size:cover;background-position:center;"></div>
+              </div>
+              <div style="flex:1;">
+                <p style="font-size:13px;font-weight:bold;color:#FFFFFF;background:#66CC33;border-radius:6px;text-align:center;padding:4px 0;margin-bottom:8px;letter-spacing:.08em;">AFTER</p>
+                <div style="width:100%;aspect-ratio:4/3;border-radius:10px;background-image:url({{ s.afterImg }});background-size:cover;background-position:center;"></div>
+              </div>
+            </div>
+            <div style="flex:1 1 420px;min-width:280px;">
+              <p style="font-size:16px;color:#020202;letter-spacing:.03em;line-height:1.8;">{{ s.body }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </sc-for>
+
+    <section style="background:#E3FDFF;padding:75px 0;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+        <h2 style="color:#66CC33;font-size:clamp(22px,2.4vw,35px);font-weight:bold;text-align:center;line-height:1.5;letter-spacing:.03em;margin-bottom:30px;">TRY EARTHが選ばれる理由</h2>
+        <img src="images/eM3z8jiMTN.jpg" alt="" style="width:100%;height:280px;object-fit:cover;border-radius:10px;display:block;margin-bottom:30px;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
+          <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="4">
+            <div style="background:#FCFCFC;border:1px solid #DDDDDD;border-radius:10px;padding:30px 24px;">
+              <p style="color:#66CC33;font-size:30px;font-weight:bold;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;line-height:1;margin-bottom:14px;">{{ r.no }}</p>
+              <h3 style="color:#020202;font-size:19px;font-weight:bold;line-height:1.6;letter-spacing:.03em;margin-bottom:12px;">{{ r.title }}</h3>
+              <p style="font-size:15px;line-height:1.8;letter-spacing:.03em;color:#020202;">{{ r.body }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--cream-color);padding:90px 0;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+        <h2 style="color:#66CC33;font-size:clamp(22px,2.4vw,35px);font-weight:bold;text-align:center;line-height:1.5;letter-spacing:.03em;margin-bottom:16px;">料金目安</h2>
+        <p style="text-align:center;font-size:16px;line-height:1.8;letter-spacing:.03em;margin-bottom:40px;">樹種・高さ・搬出経路によって費用は変わります。まずは無料見積もりからご相談ください。</p>
+        <table style="width:100%;font-size:16px;letter-spacing:.08px;margin-bottom:24px;">
+          <tbody>
+            <sc-for list="{{ prices }}" as="p" hint-placeholder-count="4">
+              <tr style="border-bottom:1px solid #66CC33;">
+                <th scope="row" style="color:#66CC33;width:30%;text-align:left;vertical-align:top;padding:24px 0;letter-spacing:.03em;line-height:1.8;font-weight:bold;">{{ p.k }}</th>
+                <td style="color:#020202;padding:24px 0;letter-spacing:.03em;line-height:1.8;">{{ p.v }}</td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+        <p style="font-size:14px;line-height:1.8;color:#666;">※上記は目安です。現地確認のうえ、正式なお見積もりをご提示します。追加費用が発生する場合は必ず事前にご説明いたします。</p>
+        <div style="display:flex;justify-content:center;margin-top:34px;">
+          <a href="#" onClick="{{ goPrice }}" style="display:inline-block;text-align:center;color:#66CC33;border:2px solid #66CC33;background:#FFFFFF;border-radius:10px;font-size:17px;font-weight:bold;letter-spacing:.03em;padding:16px 50px;">料金表ページを見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#E3FDFF;padding:75px 0;">
+      <div style="max-width:1180px;margin:0 auto;padding:0 20px;">
+        <h2 style="color:#66CC33;font-size:clamp(22px,2.4vw,35px);font-weight:bold;text-align:center;line-height:1.5;letter-spacing:.03em;margin-bottom:50px;">作業の流れ</h2>
+        <div style="max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:28px;">
+          <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+            <div ref="{{ st.ref }}" style="opacity:{{ st.op }};transform:{{ st.tf }};transition:opacity .7s ease,transform .7s ease;display:flex;gap:22px;align-items:stretch;">
+              <div style="flex:none;width:64px;display:flex;flex-direction:column;align-items:center;">
+                <div style="width:64px;height:64px;border-radius:50%;background:#66CC33;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">{{ st.num }}</div>
+                <div style="flex:1;width:3px;background:#BFE7AC;margin-top:8px;"></div>
+              </div>
+              <div style="flex:1;background:#FCFCFC;border:1px solid #DDDDDD;border-radius:10px;padding:26px 28px;">
+                <p style="display:inline-block;background:#E3FDFF;color:#0E7BA0;font-size:13px;font-weight:bold;letter-spacing:.08em;border-radius:6px;padding:4px 12px;margin-bottom:12px;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">{{ st.no }}</p>
+                <h3 style="color:#020202;font-size:20px;font-weight:bold;line-height:1.6;letter-spacing:.03em;margin-bottom:10px;">{{ st.title }}</h3>
+                <p style="font-size:16px;line-height:1.8;letter-spacing:.03em;color:#020202;">{{ st.body }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#66CC33;padding:70px 20px;">
+      <div style="max-width:900px;margin:0 auto;text-align:center;">
+        <h2 style="color:#FFFFFF;font-size:clamp(24px,2.8vw,38px);font-weight:bold;line-height:1.5;letter-spacing:.03em;margin-bottom:16px;">まずは無料お見積もりから</h2>
+        <p style="color:#FFFFFF;font-size:17px;line-height:1.9;letter-spacing:.03em;margin-bottom:34px;">1本の伐採から、庭まるごとの整理まで。埼玉県・東京都を中心に、お客さま第一で対応いたします。</p>
+        <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;align-items:center;">
+          <a href="#" onClick="{{ goContact }}" style="display:block;text-align:center;color:#66CC33;background:#FFFFFF;letter-spacing:.03em;font-size:20px;font-weight:bold;padding:20px 64px;line-height:1.3337;border-radius:10px;box-shadow:0 5px rgba(0,0,0,.2);">無料お見積もりはこちら</a>
+          <div style="background:#FFFFFF;border-radius:10px;padding:12px 26px;">
+            <p style="font-size:13px;color:#020202;font-weight:bold;letter-spacing:.04em;">お電話でのご相談（9:00〜18:00）</p>
+            <p style="color:#66CC33;font-size:28px;font-weight:bold;line-height:1.2;white-space:nowrap;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">090-9326-4459</p>
+            <p style="font-size:12px;color:#cc0000;font-weight:bold;">【営業電話お断り】</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--cream-color);padding:90px 0;">
+      <div style="max-width:900px;margin:0 auto;padding:0 20px;">
+        <h2 style="color:#66CC33;font-size:clamp(22px,2.4vw,35px);font-weight:bold;text-align:center;line-height:1.5;letter-spacing:.03em;margin-bottom:16px;">よくあるご質問</h2>
+        <p style="text-align:center;font-size:16px;line-height:1.8;letter-spacing:.03em;margin-bottom:40px;">ご不明な点は、お電話でもお気軽にお尋ねください。</p>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+            <div style="background:#FCFCFC;border:1px solid #DDDDDD;border-radius:10px;overflow:hidden;">
+              <button type="button" onClick="{{ f.toggle }}" style="width:100%;display:flex;align-items:center;gap:14px;text-align:left;background:#FCFCFC;border:none;padding:20px 22px;cursor:pointer;">
+                <span style="flex:none;width:32px;height:32px;border-radius:50%;background:#66CC33;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:bold;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">Q</span>
+                <span style="flex:1;font-size:17px;font-weight:bold;line-height:1.6;letter-spacing:.03em;color:#020202;">{{ f.q }}</span>
+                <span style="flex:none;color:#66CC33;font-size:20px;font-weight:bold;">{{ f.mark }}</span>
+              </button>
+              <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;gap:14px;padding:0 22px 22px 22px;border-top:1px solid #EEEEEE;padding-top:20px;">
+                  <span style="flex:none;width:32px;height:32px;border-radius:50%;background:#6EDBFF;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:bold;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">A</span>
+                  <p style="flex:1;font-size:16px;line-height:1.8;letter-spacing:.03em;color:#020202;">{{ f.a }}</p>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <footer style="background:#66CC33;color:#FFFFFF;padding:48px 16px;">
+    <div style="max-width:1180px;margin:0 auto;">
+      <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;">
+        <div style="flex:1 1 380px;max-width:520px;">
+          <div style="border:1px solid #FFFFFF;text-align:center;display:flex;flex-direction:column;justify-content:center;padding:22px 16px;height:100%;">
+            <p style="font-size:15px;">お電話でのお問い合わせ</p>
+            <p style="display:flex;align-items:center;justify-content:center;gap:10px;margin:6px 0;font-size:30px;font-weight:bold;font-family:'Yu Gothic',YuGothic,Meiryo,sans-serif;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 29 29" fill="#FFFFFF"><path d="M317.634,433.812l-4.448-4.439a1.671,1.671,0,0,0-2.3,0l-1.994,1.99a1.645,1.645,0,0,1-2.148.153,29.141,29.141,0,0,1-5.062-4.439,41.627,41.627,0,0,1-4.448-5.051,1.637,1.637,0,0,1,.153-2.143l1.994-1.99a1.662,1.662,0,0,0,0-2.3l-4.448-4.439a1.671,1.671,0,0,0-2.3,0l-2.608,2.6c-2.761,2.755.92,11.48,7.209,17.755s15.033,10.1,17.794,7.194l2.608-2.6A1.66,1.66,0,0,0,317.634,433.812Z" transform="translate(-289.094 -410.7)"></path></svg>
+              090-9326-4459
+            </p>
+            <p style="font-size:14px;">9:00〜18:00 <span style="font-weight:bold;">【営業電話お断り】</span></p>
+          </div>
+        </div>
+        <a href="#" onClick="{{ goContact }}" style="flex:1 1 380px;max-width:520px;display:flex;text-align:center;color:#66CC33;">
+          <span style="background:#FFFFFF;border:1px solid #FFFFFF;width:100%;display:flex;align-items:center;justify-content:center;gap:12px;font-size:20px;font-weight:bold;padding:22px 16px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="21" viewBox="0 0 28.778 21" fill="#66CC33"><path d="M300.689,426.691a2.959,2.959,0,0,0,2.127-.86l3-2.947,9.259-9.211a1.745,1.745,0,0,0-1.752-1.474H288.052a1.845,1.845,0,0,0-1.752,1.474l12.262,12.158A3.3,3.3,0,0,0,300.689,426.691Zm14.389-10.07-10.76,10.684a5.2,5.2,0,0,1-7.257,0L286.3,416.621v14.86a1.752,1.752,0,0,0,1.627,1.719h25.4a1.668,1.668,0,0,0,1.627-1.719Z" transform="translate(-286.3 -412.2)"></path></svg>
+            メールでのお問い合わせ
+          </span>
+        </a>
+      </div>
+
+      <div style="display:flex;gap:40px;margin-top:48px;padding-top:48px;border-top:2px solid rgba(255,255,255,.5);flex-wrap:wrap;">
+        <div style="flex:1 1 320px;">
+          <h3 style="font-size:20px;font-weight:bold;margin-bottom:10px;">TRY EARTH（トライアース）</h3>
+          <p style="font-size:15px;line-height:1.8;">〒350-1257<br>埼玉県日高市横手2-25-8</p>
+          <a href="https://maps.app.goo.gl/a6Y4C41wPZKHFRT89" target="_blank" style="display:inline-block;color:#FFFFFF;border:1px solid #FFFFFF;padding:6px 16px;margin:10px 0;font-size:15px;">Googleマップで確認する</a>
+          <p style="font-size:15px;">TEL <span>090-9326-4459</span></p>
+        </div>
+        <div style="flex:1 1 420px;">
+          <ul style="display:flex;justify-content:center;flex-wrap:wrap;gap:4px 8px;">
+            <li><a href="#" onClick="{{ goHome }}" style="color:#fff;padding:8px 16px;display:block;font-size:15px;">ホーム</a></li>
+            <li><a href="#" onClick="{{ goWork }}" style="color:#fff;padding:8px 16px;display:block;font-size:15px;">業務案内</a></li>
+            <li><a href="#" onClick="{{ goInfo }}" style="color:#fff;padding:8px 16px;display:block;font-size:15px;">会社概要</a></li>
+            <li><a href="#" onClick="{{ goBlog }}" style="color:#fff;padding:8px 16px;display:block;font-size:15px;">ブログ</a></li>
+            <li><a href="#" onClick="{{ goContact }}" style="color:#fff;padding:8px 16px;display:block;font-size:15px;">お問い合わせ</a></li>
+            <li><a href="#" onClick="{{ goLp }}" style="color:#CC0000;background:#fff;padding:8px 16px;display:block;font-size:15px;font-weight:bold;">伐採・伐根・剪定</a></li>
+            <li><a href="#" onClick="{{ goPrice }}" style="color:#CC0000;background:#fff;padding:8px 16px;display:block;font-size:15px;font-weight:bold;">料金表</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:32px;flex-wrap:wrap;gap:8px;">
+        <p style="font-size:14px;">除草やクロス張り替えなどは埼玉県日高市の便利屋TRY EARTH</p>
+        <small style="font-size:12px;">Copyright © TRY EARTH（トライアース） All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { page: 'home', wide: true, menuOpen: false, revealed: {}, faqOpen: {} };
+  componentDidMount() {
+    this._io = new IntersectionObserver((entries) => {
+      let changed = null;
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        const i = en.target.__obsIdx;
+        if (i === undefined || this.state.revealed[i]) return;
+        changed = changed || Object.assign({}, this.state.revealed);
+        changed[i] = true;
+        this._io.unobserve(en.target);
+      });
+      if (changed) this.setState({ revealed: changed });
+    }, { threshold: 0.25 });
+    (this._pending || []).forEach(el => this._io.observe(el));
+    this._pending = [];
+    this._onResize = () => {
+      const wide = window.innerWidth >= 1367;
+      if (wide !== this.state.wide) this.setState({ wide, menuOpen: false });
+    };
+    this._onResize();
+    window.addEventListener('resize', this._onResize);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+    if (this._io) this._io.disconnect();
+  }
+  stepList() {
+    const data = [
+      { num: '1', no: 'STEP 01', title: 'お問い合わせ', body: 'お電話またはメールフォームからご連絡ください。作業内容・ご住所・ご希望日をお伺いします。' },
+      { num: '2', no: 'STEP 02', title: '現地見積もり（無料）', body: '現地で樹木の状態と搬出経路を確認し、費用と作業範囲をご説明します。相見積もりも歓迎です。' },
+      { num: '3', no: 'STEP 03', title: '作業', body: 'ご納得いただいたうえで日程を調整し、着手します。近隣への配慮と養生を徹底して作業します。' },
+      { num: '4', no: 'STEP 04', title: '完了・お引き渡し', body: '枝葉や幹を搬出し、清掃までを行って完了です。作業後の整地や追加のご相談も承ります。' }
+    ];
+    const seen = this.state.revealed || {};
+    return data.map((d, i) => Object.assign({}, d, {
+      op: seen[i] ? 1 : 0,
+      tf: seen[i] ? 'translateY(0)' : 'translateY(40px)',
+      ref: (el) => {
+        if (!el || el.__obsIdx === i) return;
+        el.__obsIdx = i;
+        if (this._io) this._io.observe(el);
+        else (this._pending = this._pending || []).push(el);
+      }
+    }));
+  }
+  faqList() {
+    const data = [
+      { q: '見積もりは本当に無料ですか？', a: 'はい、現地でのお見積もりまで無料です。お見積もり後にお断りいただいても費用は一切かかりません。' },
+      { q: '庭木1本だけでも来てもらえますか？', a: 'もちろん可能です。「1本だけ」「切り株ひとつだけ」といったご依頼も多くいただいています。お気軽にご相談ください。' },
+      { q: '切った木や枝の処分もお願いできますか？', a: '承ります。伐採した幹・枝葉の搬出から処分までまとめて対応できますので、後片付けの手間はかかりません。' },
+      { q: '対応エリアはどこまでですか？', a: '埼玉県日高市を拠点に、埼玉県・東京都を中心に対応しております。距離によっては要相談となりますので、まずはお問い合わせください。' },
+      { q: '立ち会いは必要ですか？', a: 'お見積もり時にご同席いただけると確実ですが、難しい場合はご相談ください。空き家や遠方にお住まいの方の対応実績もございます。' },
+      { q: '作業日はどのくらいで決まりますか？', a: '現地確認後、ご希望をお伺いして日程を調整します。お急ぎの場合はその旨をお伝えください。可能な限り迅速に対応いたします。' }
+    ];
+    const open = this.state.faqOpen || {};
+    return data.map((d, i) => Object.assign({}, d, {
+      open: !!open[i],
+      mark: open[i] ? '−' : '＋',
+      toggle: (e) => {
+        if (e) e.preventDefault();
+        this.setState(s => {
+          const next = Object.assign({}, s.faqOpen);
+          next[i] = !next[i];
+          return { faqOpen: next };
+        });
+      }
+    }));
+  }
+  go(page) {
+    return (e) => {
+      if (e) e.preventDefault();
+      this.setState({ page, menuOpen: false });
+      if (typeof window !== 'undefined') window.scrollTo(0, 0);
+    };
+  }
+  renderVals() {
+    const p = this.state.page;
+    return {
+      isWide: this.state.wide, isNarrow: !this.state.wide,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: (e) => { if (e) e.preventDefault(); this.setState(s => ({ menuOpen: !s.menuOpen })); },
+      isHome: p === 'home', isWork: p === 'work', isInfo: p === 'info',
+      isBlog: p === 'blog', isContact: p === 'contact', isLp: p === 'lp', isPrice: p === 'price',
+      goHome: this.go('home'), goWork: this.go('work'), goInfo: this.go('info'),
+      goBlog: this.go('blog'), goContact: this.go('contact'), goLp: this.go('lp'), goPrice: this.go('price'),
+      priceTables: [
+        { id: 'roof-price', title: '屋根・外装工事', lead: '積水ハウス・大和ハウス等の下請けとして培った施工品質で、戸建てからアパート等の集合住宅まで対応いたします。仮設足場の設置も自社で承ります。', rows: [
+          { work: '屋根塗装', price: '2,000〜4,000円／㎡', note: '屋根面積・勾配・下地の状態により変動します。高圧洗浄・下地補修を含むかどうかで金額が変わります。一般的な戸建て（80㎡程度）で20〜40万円が目安です。' },
+          { work: '外壁塗装', price: '1,800〜3,500円／㎡', note: '施工面積（㎡）と塗料のグレードで算出します。シリコン系で2,000円台、フッ素・無機系で3,000円台が目安。ひび割れ補修・シーリング打ち替えは別途お見積もりです。' },
+          { work: '雨漏り修理・修繕', price: '30,000円〜', note: '原因の特定に調査が必要です。部分補修で3〜10万円、屋根や外壁の広範囲の改修が必要な場合は別途お見積もり。散水調査や部分解体を伴う場合は調査費をご相談いたします。' },
+          { work: '屋根・霧除け庇・軒天の交換', price: '50,000円〜', note: '交換範囲と使用部材により変動します。霧除け庇1箇所で5〜15万円、軒天の張り替えは6,000円／㎡程度が目安。下地の劣化が進んでいる場合は補修費が加算されます。' },
+          { work: 'シーリング（コーキング）工事', price: '900〜1,500円／m', note: '打ち替え（既存撤去あり）は1,100円／m前後、打ち増しは900円／m前後が目安。施工延長により算出します。' },
+          { work: '仮設足場の設置・解体', price: '700〜1,200円／㎡', note: '建物形状・設置日数・道路使用の有無により変動します。一般的な戸建て2階で15〜25万円が目安。工事一式でのお見積もりも可能です。' }
+        ] },
+        { id: 'garden-price', title: '庭木・外構関連', lead: '草刈り・伐採・伐根・剪定は1本、1㎡からご相談いただけます。刈った草や切った枝の搬出・処分までまとめて対応できます。', rows: [
+          { work: '草刈り・除草作業', price: '300〜800円／㎡', note: '面積と草丈により変動します（膝丈まで300円台、腰丈以上で500円以上が目安）。最低料金15,000円〜。防草シートの施工（1,000〜1,500円／㎡）や砂利敷きは別途お見積もりです。' },
+          { work: '伐採（低木・3m未満）', price: '5,000〜15,000円／1本', note: '樹種・幹周りにより変動します。幹が細く周囲に障害物がない場合は最安値帯で対応可能です。' },
+          { work: '伐採（中高木・3m以上）', price: '20,000〜60,000円／1本', note: '3〜5mで2〜4万円、5m超は4万円以上が目安。隣家や電線が近く分割伐採が必要な場合、高所作業車を使用する場合は別途加算されます。' },
+          { work: '伐根（抜根）', price: '10,000〜40,000円／1株', note: '根の張り方・重機搬入の可否により変動します（人力のみの場合は割高になります）。撤去後の簡易な整地を含みます。' },
+          { work: '剪定・生垣の刈り込み', price: '5,000〜25,000円／1本', note: '樹高3m未満で5,000〜10,000円、3〜5mで10,000〜20,000円が目安。生垣は1,000〜2,000円／mでお見積もりします。樹種ごとの適期をご提案いたします。' },
+          { work: '庭木の消毒・害虫防除', price: '3,000〜8,000円／1本', note: '本数と薬剤の種類により変動します。庭全体の散布は面積でのお見積もり。近隣への配慮が必要な場合は日程を調整いたします。' },
+          { work: '枝葉・幹の搬出・処分', price: '5,000〜30,000円', note: '軽トラ1台分で1〜2万円程度が目安。搬出量に応じて算出します。作業と同時のご依頼で効率よく対応できます。' }
+        ] },
+        { id: 'other-price', title: 'その他便利屋サービス', lead: '内装クロスの張替えから不用品の回収、エアコンクリーニングまで。「どこに頼めばいいか分からない」お困りごともご相談ください。', rows: [
+          { work: '内装クロス張替え', price: '1,000〜1,800円／㎡', note: '量産品クロスで1,000〜1,300円、機能性・デザインクロスで1,500円前後が目安。6畳一間（天井・壁）で5〜8万円程度。下地の状態・家具移動の有無により変動します。' },
+          { work: 'クッションフロア・フロアタイル張替え', price: '3,000〜5,000円／㎡', note: '既存床材の撤去費を含むかにより変動します。6畳で5〜9万円程度が目安。フローリングは対象外です。' },
+          { work: '軽微な電気工事', price: '8,000円〜', note: 'スイッチ・コンセント交換は1箇所8,000〜15,000円、ネット回線の配線は15,000円〜が目安。大規模な改修は別途ご相談ください。' },
+          { work: '不用品回収', price: '10,000〜50,000円', note: '軽トラ1台分（1.5㎥）で1.5〜3万円、2tトラック1台分で4〜7万円が目安。家庭ごみは処分いたしかねます（市の許可業者へご依頼ください）。' },
+          { work: 'お片付け・簡易な修繕', price: '4,000〜6,000円／時間（1名）', note: '最低料金2時間〜。作業時間と人員数で算出します。空き家の片付け、家具移動などにも対応します。' },
+          { work: 'エアコンクリーニング', price: '10,000〜18,000円／1台', note: '壁掛けタイプ1万円前後、お掃除機能付きは1.5〜2万円、天井埋込・業務用は2.5万円〜が目安。複数台のご依頼は割安になります。' },
+          { work: 'ハウスクリーニング（水回り・油汚れ等）', price: '8,000〜20,000円／1箇所', note: 'レンジフード・浴室・トイレなど1箇所単位で承ります。箇所数と汚れの程度によりお見積もりします。' }
+        ] }
+      ],
+      priceNotes: [
+        '表示価格はすべて一般的な相場をもとにしたサンプルの目安です。正確な金額は現地見積もり後に確定いたします。',
+        '金額はすべて税抜表記です。',
+        'お見積もりは無料です。ご提示後にお断りいただいても費用はかかりません。',
+        '作業範囲・費用にご納得いただいてから着手します。事前のご説明なく追加請求することはございません。',
+        '対応エリアは埼玉県・東京都が中心です。距離によっては要相談となりますのでお問い合わせください。',
+        '廃材・不用品の処分費、駐車場代、道路使用許可などが必要な場合は別途ご相談いたします。'
+      ],
+      worries: [
+        { chip: 'ヤバッ!?', text: '庭木が伸びすぎて、隣家や道路に枝が張り出している' },
+        { chip: '抜けない…', text: '切り株（木の根）が邪魔で、駐車場や花壇に使えない' },
+        { chip: '危ない…', text: '高所の枝が危険で、自分では手が出せない' },
+        { chip: '放置ぎみ…', text: '空き家・実家の庭が荒れたまま放置されている' },
+        { chip: 'どうしよう…', text: '伐採した木や枝の処分先が分からない' },
+        { chip: '不安…', text: 'どこに頼めばいいのか、いくらかかるのか分からない' }
+      ],
+      faqs: this.faqList(),
+      lpServices: [
+        { title: '伐採', beforeImg: 'images/EwoigQ8r9l.png', afterImg: 'images/lawn.webp', body: '住宅や施設まわりの庭木を、1本から伐採いたします。隣家や電線が近い現場では、上部から順に切り下ろす分割伐採で安全を確保。伐採後の幹・枝は、当日中に搬出・処分までまとめて対応できます。森林などの大規模な伐採は承っておりません。' },
+        { title: '伐根（抜根）', beforeImg: 'images/0kX65gmdSG.png', afterImg: 'images/4FMIWrOf1y.png', body: '伐採後に残った切り株を、根ごと掘り起こして撤去します。根を残すとシロアリやキノコの発生、再生（ひこばえ）の原因になります。撤去後の簡易な整地までお任せください。駐車場・物置・花壇への造り替えもご相談いただけます。' },
+        { title: '剪定', beforeImg: 'images/EwoigQ8r9l.png', afterImg: 'images/lawn.webp', body: '樹形を整え、風通しと日当たりを回復させる剪定を行います。樹種ごとの適期に合わせた作業をご提案し、庭木の健康を保ちます。生垣の刈り込み、庭全体の草刈りとあわせてのご依頼も承ります。' }
+      ],
+      reasons: [
+        { no: '01', title: '大手ハウスメーカーの下請けで培った技術力', body: '積水ハウス・大和ハウスの下請けとして現場を重ねてきました。住宅まわりの養生・安全管理を徹底し、仕上げまできっちり行います。' },
+        { no: '02', title: '地域密着だから、小さな作業も1本から', body: '埼玉県日高市を拠点に、埼玉県・東京都を中心に対応。「庭木1本だけ」「切り株ひとつだけ」といったご依頼も歓迎します。' },
+        { no: '03', title: '現地見積もり無料・追加費用は事前にご説明', body: 'お見積もりは無料。作業前に費用と作業範囲をご説明し、ご納得いただいてから着手します。不明瞭な追加請求はいたしません。' },
+        { no: '04', title: '伐採から搬出・処分、その後の整地まで', body: '便利屋として幅広い業務を手がけているからこそ、伐採後の不用品回収や整地、駐車場づくりまで一括でご相談いただけます。' }
+      ],
+      prices: [
+        { k: '伐採（低木・3m未満）', v: '5,000円〜／1本　※樹種・幹周りにより変動します' },
+        { k: '伐採（中高木・3m以上）', v: '20,000円〜／1本　※高所作業車・分割伐採が必要な場合は別途' },
+        { k: '伐根（抜根）', v: '10,000円〜／1株　※根の張り・重機の可否により変動します' },
+        { k: '剪定・生垣の刈り込み', v: '5,000円〜／1本　※本数・面積によりお見積もり' },
+        { k: '枝葉・幹の処分費', v: '5,000円〜　※搬出量に応じて算出します' }
+      ],
+      steps: this.stepList(),
+      noop: (e) => { if (e) e.preventDefault(); },
+      news: [
+        { date: '2026.05.25', tag: 'お知らせ', title: '外壁・金属屋根の修繕工事', img: 'images/9dqd5yWLsc.png' },
+        { date: '2025.06.17', tag: 'お知らせ', title: '駐車場作り', img: 'images/4FMIWrOf1y.png' },
+        { date: '2025.03.24', tag: 'お知らせ', title: '日高市 空き家 霧除け庇 軒天交換', img: 'images/0kX65gmdSG.png' }
+      ],
+      services: [
+        { title: '仮設足場・屋根外壁の修繕', img: 'images/9dqd5yWLsc.png', body: 'トライアースでは、(戸建て、アパート等の集合住宅のリフォーム工事に伴う)仮設足場工事を行なっております。足場工事は「縁の下の力もち」とも形容される安全確保の要。また、建物の顔である屋根や外壁のリフォームも手掛けております。屋根・外壁は家のイメージを大きく左右し、耐候性の維持にも必須。塗装やシーリング工事は、お客さまのご希望やご予算に合わせて、最高のクオリティで実施します。どんな建築物でも対応いたします。トライアースへのご連絡、心よりお待ちしております。' },
+        { title: '内装クロス・床・電気工事', img: 'images/evikjmolxc.png', body: 'トライアースでは、リフォームや修繕時の内装クロス張り替えから、クッションフロア・フロアタイルの張り替えも承っております（フローリング除く）。対象建築物に制限はありません。小さな住宅から大きな施設まで、お客さまのニーズに幅広く対応いたします。また、スイッチやネット回線などの簡単な電気工事にも取り組んでいます。お困りの際は、どうぞトライアースまでお気軽にご相談ください。あなたの快適な生活のサポートを、私たちは全力でバックアップします！' },
+        { title: '不用品回収', img: 'images/H1wJN6xup1.png', body: 'トライアースでは、家電から家具まで、あらゆる不用品の迅速な回収を保証します。自治体の法令やリサイクル法を厳守し、お客さまに安心のサービスを提供いたします。一般家庭から単身の方まで、どなたでもお問い合わせください。大きくて重たいベッドやタンス、食器類、台所用品の処分も、トライアースにおまかせください。※家庭ごみは処分致しかねます。※家庭ごみを回収依頼する場合は、市の一般廃棄物収集運搬許可業者に依頼するようにしてください。' },
+        { title: '除草作業・木の伐採', img: 'images/EwoigQ8r9l.png', body: '忙しい日々で庭の手入れができず、雑草が手に負えない方、トライアースが解決のお手伝いをいたします。一般住宅や施設の周囲が対象で、森などの大規模な伐採は行なっていません。雑草の問題を根っこから解決します。草刈り機を駆使し、根元から丁寧に雑草を除去。これにより、雑草の再生を遅らせ、あなたの生活空間を快適に保ちます。また、道路に張り出したり、電線に絡むような問題の木も、根本から切り取り、安全と快適を取り戻します。どうぞ、お気軽にトライアースまでお問い合わせください！' },
+        { title: 'お掃除・エアコンクリーニング', img: 'images/1GsoSLkLYP.webp', body: 'エアコンの掃除、お困りではありませんか？トライアースでは、住宅用から業務用エアコンまで、プロの技で徹底的にクリーニングします。油汚れや水回りのカビ、壁や床の汚れもきれいに落とします。忙しいあなたに代わり、お家をピカピカに仕上げるお手伝いをさせてください。さらに、不用品の処分や、雑草の除去、伐採作業も行っております。あらゆる困り事に対応するトライアースへ、ぜひご相談ください。安心のプロ技で、あなたの快適な生活をサポートします！' }
+      ],
+      company: [
+        { k: '会社名', v: 'TRY EARTH（トライアース）' },
+        { k: '代表者名', v: '澁木　亮' },
+        { k: '創業', v: '令和5年3月20日' },
+        { k: '電話番号', v: '042-981-7388 【営業電話お断り】' },
+        { k: '携帯番号', v: '090-9326-4459 【営業電話お断り】' }
+      ],
+      company2: [
+        { k: '営業時間', v: '9時～18時' },
+        { k: 'メールアドレス', v: 'tryearth_shibuki@yahoo.co.jp' },
+        { k: 'サイトURL', v: 'https://benriya-try-earth.com/' },
+        { k: '古物商許可', v: '埼玉県公安委員会 第431120061624号' },
+        { k: '業務内容', v: '便利屋／■仮設足場・屋根外壁の修繕／■内装クロス・床・電気／■不用品回収・除草作業・木の伐採／■お掃除・エアコンクリーニング' },
+        { k: '対応エリア', v: '埼玉県・東京都 ※距離によっては要相談' }
+      ],
+      posts: [
+        { date: '2026.05.25', category: 'お知らせ', title: '外壁・金属屋根の修繕工事', img: 'images/9dqd5yWLsc.png' },
+        { date: '2025.06.17', category: 'お知らせ', title: '駐車場作り', img: 'images/4FMIWrOf1y.png' },
+        { date: '2025.03.24', category: 'お知らせ', title: '日高市 空き家 霧除け庇 軒天交換', img: 'images/0kX65gmdSG.png' },
+        { date: '2024.04.16', category: 'お知らせ', title: '内装クロスはTRY EARTHにお任せ！', img: 'images/evikjmolxc.png' },
+        { date: '2024.02.11', category: '', title: '会社のご近所さんにてクロス貼り替え', img: 'images/eM3z8jiMTN.jpg' },
+        { date: '2024.02.11', category: '', title: 'お寺の落ち葉掃除に参りました🫡', img: 'images/EwoigQ8r9l.png' },
+        { date: '2023.10.05', category: 'お知らせ', title: 'ホームページを開設しました。', img: 'images/NKRLJn4Sft.webp' }
+      ],
+      recent: [
+        { date: '2026.05.25', title: '外壁・金属屋根の修繕工事' },
+        { date: '2025.06.17', title: '駐車場作り' },
+        { date: '2025.03.24', title: '日高市 空き家 霧除け庇 軒天交...' },
+        { date: '2024.04.16', title: '内装クロスはTRY EARTHにお任せ...' },
+        { date: '2024.02.11', title: '会社のご近所さんにてクロス貼り...' }
+      ],
+      categories: [
+        { name: 'お知らせ', count: '5' },
+        { name: '新着情報', count: '0' },
+        { name: 'コラム', count: '0' }
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>
