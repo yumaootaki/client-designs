@@ -1,0 +1,412 @@
+
+<div id="site_loader_overlay" style="display: none;">
+	<div id="site_loader_animation" class="c-load--type1" style="display: none;">
+		 	</div>
+</div>
+<div id="site_wrap" style="display: block;">
+<header id="js-header" class="l-header l-header_option l-header--fixed">
+	<div class="l-header__inner">
+				<div class="l-header__logo c-logo">
+								<a href="https://kennzo.ltd/">
+				<img src="./求人・協力会社募集_files/logo.png" alt="草加市の塗装専門店 株式会社KENNZO｜高品質塗装で住まいを美しく長持ち">
+			</a>
+					</div>		
+		<div class="spcontact">
+					<a href="https://kennzo.ltd/contact"><span class="sp_btn_icon"></span></a>
+				</div>
+	
+
+	
+		<a href="https://kennzo.ltd/recruit#" id="js-menu-button" class="p-menu-button c-menu-button c-option_menu-button"> </a>
+		<span class="nav-ipadpro"><nav class="menu-sample%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc-container"><ul id="js-global-nav" class="p-global-nav p-option_global-nav u-clearfix"><li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-26"><a href="https://kennzo.ltd/">ホーム<span></span></a></li>
+<li id="menu-item-482" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-482"><a href="https://kennzo.ltd/work">業務案内<span></span></a></li>
+<li id="menu-item-879" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-879"><a href="https://kennzo.ltd/fees-and-paint">料金・塗料について<span></span></a></li>
+<li id="menu-item-505" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-30 current_page_item menu-item-505"><a href="https://kennzo.ltd/recruit" aria-current="page">求人・協力会社募集<span></span></a></li>
+<li id="menu-item-484" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-484"><a href="https://kennzo.ltd/information">会社概要<span></span></a></li>
+<li id="menu-item-486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-486"><a href="https://kennzo.ltd/blog">ブログ<span></span></a></li>
+<li id="menu-item-639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-639"><a href="https://kennzo.ltd/contact">お問い合わせ<span></span></a></li>
+</ul></nav></span>
+		
+				
+	
+		<div class="tel-mail ">
+			<div class="tel-mail__child_1" style="color:#333333;">
+				お客様専用ダイヤル			</div>
+			<div class="tel-mail__child_0" style="font-weight:900;">
+						<span class="tel_num1">0120-933-131</span> 
+												
+			</div>
+			<div class="tel-mail__child_1" style="color:#000000;">
+							</div>
+		</div>
+	
+
+		<div class="tel-mail__child_2">
+			<a href="https://kennzo.ltd/contact">
+							<span class="btn_icon"></span>
+						<br>メール・LINEでのお問い合わせ</a>
+		</div>
+
+		
+		
+		
+		</div>
+
+</header>
+<main class="l-main">
+	
+
+	<header class="p-page-header">
+		<div class="p-page-header__inner" style="color: #ffffff;">
+							<div class="p-page-header__title">
+					<img class="pcotherpageheadimg" src="./求人・協力会社募集_files/head.png">
+					<h1 style="font-size: 44px;margin-top: 30px;margin-bottom:0px;font-weight:900;">求人・協力会社募集</h1>
+					<p style="font-size: 20px;">RECRUIT</p>
+				</div>
+					</div>
+	</header>
+	<div class="content" style="margin-top: 416px;">
+		<div class="p-breadcrumb c-breadcrumb">
+		<ul class="p-breadcrumb__inner l-inner" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+			<li class="p-breadcrumb__item c-breadcrumb__item c-breadcrumb__item--home" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				<a href="https://kennzo.ltd/" itemprop="item"><span itemprop="name">HOME</span></a>
+				<meta itemprop="position" content="1">
+			</li>
+						<li class="p-breadcrumb__item c-breadcrumb__item">求人・協力会社募集</li>
+
+					</ul>	
+	</div>	
+	
+	<div class="l-inner">
+		<div class="maeoki">
+			<div class="work-center">
+<div class="wk-center">
+埼玉県草加市の株式会社KENNZOでは、協力会社（委託業者）様を募集中です！<br>
+外壁塗装や屋根塗装、防水工事のお仕事を私たちと一緒にしませんか？<br>
+「丁寧に作業できる」「気配りを大切にできる」「お客様の声に耳を傾けることができる」という方なら、企業様も一人親方様も大歓迎！<br>
+お仕事を通じて刺激を受けながら、技術とセンスを磨きましょう！<br>
+応募フォームまたはお電話にてお気軽にご連絡ください！
+</div>
+</div>
+<p style="text-align: center;"><strong><span style="color: #00b900;">＼ LINEからお気軽にお問い合わせください ／</span></strong></p>
+<p>　</p>
+<p style="text-align: center;"><a href="https://lin.ee/1eVjyGD" target="_blank" rel="noopener"><img decoding="async" class="aligncenter" src="./求人・協力会社募集_files/ja.png" alt="友だち追加" height:auto="" border="0"></a></p>
+		</div>
+		
+	
+<article id="gaiyocont">
+<div class="gaiyocontbox">
+<div class="gaiyocont">
+<div class="gaiyowrap">
+<div class="">
+		<div class="gaiyoright gaiyocontent">
+	<h3>協力会社（委託業者）様を募集中です。</h3>
+	<p>株式会社KENNZOは埼玉県草加市を中心に地域密着で活動しています。<br>
+みな様にご紹介できる現場がたくさんあります！安心してご連絡ください。ご質問などもお待ちしております！<br>
+　<br>
+また、業務拡大に向けてスタッフも求人募集中です！<br>
+外壁塗装工事・屋根塗装工事・防水工事などのお仕事です。私たちと一緒に楽しく働きませんか？<br>
+たくさんのご応募をお待ちしています！</p>
+	</div>
+		<div class="gaiyoleft gaiyoimg">
+	<img src="./求人・協力会社募集_files/163480953.png">
+	</div>
+<div style="clear:both;"></div>
+</div>
+</div>
+<div style="clear:both;"></div>
+</div>
+</div>
+</article>
+
+	<article class="acwrap">
+			
+		<div id="acbox">
+	  <div id="acMenu">
+		  </div>
+	</div>
+	</article>
+	
+		
+				
+				<h2 class="recruit_cont_title">募集要項</h2>										<div class="tabs recruittabs2">
+		
+									<input id="recruit_sub_title1" type="radio" name="tab_item" checked="">
+			<label class="tab_item tab_item1 tab recruit_tab_select1" for="recruit_sub_title1">塗装工スタッフ</label>
+									<input id="recruit_sub_title2" type="radio" name="tab_item">
+			<label class="tab_item tab_item2 tab recruit_tab_select1" for="recruit_sub_title2">協力会社様</label>
+				
+				<div class="recruit_cont_wrap tab_content" id="recruit_content1">
+
+							<div class="recruit_koumoku_wrap">
+				<div class="recruit_koumoku_title"><p>業務内容</p></div>
+				<div class="recruit_koumoku_cont"><p>◆塗装工事・防水工事<br>
+戸建て、アパートなどの現場で必要となる塗装工事・防水工事を行います。</p></div>
+				</div>
+							<div class="recruit_koumoku_wrap">
+				<div class="recruit_koumoku_title"><p>雇用形態</p></div>
+				<div class="recruit_koumoku_cont"><p>正社員</p></div>
+				</div>
+							<div class="recruit_koumoku_wrap">
+				<div class="recruit_koumoku_title"><p>募集資格</p></div>
+				<div class="recruit_koumoku_cont"><p>18歳～</p></div>
+				</div>
+							<div class="recruit_koumoku_wrap">
+				<div class="recruit_koumoku_title"><p>就業時間</p></div>
+				<div class="recruit_koumoku_cont"><p>8：00～17：00<br>
+※現場によって異なる</p></div>
+				</div>
+			
+		
+		</div>
+				<div class="recruit_cont_wrap tab_content" id="recruit_content2">
+
+							<div class="recruit_koumoku_wrap">
+				<div class="recruit_koumoku_title"><p>業務内容</p></div>
+				<div class="recruit_koumoku_cont"><p>塗装工事・防水工事</p></div>
+				</div>
+							<div class="recruit_koumoku_wrap">
+				<div class="recruit_koumoku_title"><p>対応エリア</p></div>
+				<div class="recruit_koumoku_cont"><p>埼玉県草加市近郊</p></div>
+				</div>
+							<div class="recruit_koumoku_wrap">
+				<div class="recruit_koumoku_title"><p>詳細</p></div>
+				<div class="recruit_koumoku_cont"><p>現在、外壁塗装のみの協力業者様は募集を停止しております。<br>
+内装・調色作業のご対応頂ける業者様は引き続き募集受け付けておりますので、お問い合わせフォームから以下質問事項を明記の上、ご連絡ください。<br>
+<br>
+対応可能エリア、対応可能人数、経験年数、<br>
+連絡先、常用単価（可能な限り詳細をお願いします）<br>
+<br>
+その他詳細はお問い合わせください。<br>
+※組織の規模は問いません。<br>
+　法人様も一人親方様も歓迎いたします。</p></div>
+				</div>
+			
+		
+		</div>
+		
+				</div>
+				
+		
+				
+				<section class="post_box clearfix informationtable tab_content_table tab_content_table_first" id="recruit_content1" style="display: block;">
+				<h3 id="infotabletitle">給与・福利厚生(待遇)</h3>
+				
+					<div class="tablewrap tablewrap1">
+					<div class="infosubtitle"><p>給与</p></div>
+							<div class="infosubcont"><p>日給：10,000円～25,000円<br>
+◎経験・能力・保有資格によって決定します。</p>
+</div>
+					</div>
+					<div class="tablewrap tablewrap2">
+					<div class="infosubtitle"><p>休日・休暇等</p></div>
+							<div class="infosubcont"><p>日曜日・他<br>
+※天候や状況によって異なる<br>
+◎事前の申請があれば休暇取得可能</p>
+</div>
+					</div>
+					<div class="tablewrap tablewrap3">
+					<div class="infosubtitle"><p>保険・福利厚生等</p></div>
+							<div class="infosubcont"><p>社会保険完備</p>
+</div>
+					</div>
+						</section>
+				
+				
+		
+				
+				
+						
+		
+		
+				
+				
+						
+				
+		
+				
+				
+						
+				
+
+		
+		
+		
+		
+						
+
+				
+				
+		
+					<section class="post_box clearfix informationtable">
+			<h3 id="infotabletitle">応募事項</h3>
+				
+				<div class="tablewrap tablewrap1">
+					<div class="infosubtitle"><p>選考プロセス</p></div>
+							<div class="infosubcont"><p>[応募]→[面接日決定]→[面接]→[内定]</p>
+</div>
+				</div>
+				<div class="tablewrap tablewrap2">
+					<div class="infosubtitle"><p>応募方法</p></div>
+							<div class="infosubcont"><p>お問い合わせページからご応募いただくか、<br>
+下記の電話番号までお気軽にお問い合わせください。</p>
+<p>電話番号：<a href="tel:0120-933-131">0120-933-131</a></p>
+<p>数日経っても折り返しがない場合、システムの不具合によりお問い合わせメールが正常に届いていない可能性がございます。<br>
+お手数ですが、再度お電話にてご連絡をお願いいたします。</p>
+</div>
+				</div>
+							</section>
+				
+		<article class="p-entry l-inner">
+				<div class="p-entry__body">
+			<div id="mw_wp_form_mw-wp-form-220" class="mw_wp_form mw_wp_form_input  ">
+					<form method="post" action="https://kennzo.ltd/recruit" enctype="multipart/form-data" class="h-adr"><p><span class="p-country-name" style="display: none;">Japan</span></p>
+<table class="mailform-tbl">
+<tbody>
+<tr>
+<th>お名前 / 企業 <span class="attention">必須</span></th>
+<td class="w60">
+<input type="text" name="your-name" size="" value="">
+</td>
+</tr>
+<tr>
+<th>ふりがな <span class="attention">必須</span></th>
+<td class="w60">
+<input type="text" name="kana" size="" value="">
+</td>
+</tr>
+<tr>
+<th>メールアドレス <span class="attention">必須</span></th>
+<td class="w60">
+<input type="text" name="your-email" size="" value="">
+</td>
+</tr>
+<tr>
+<th>メールアドレス（確認用） <span class="attention">必須</span></th>
+<td class="w60">
+<input type="text" name="your-email2" size="" value="">
+</td>
+</tr>
+<tr>
+<th>お電話番号 <span class="attention">必須</span></th>
+<td class="w60">
+<input type="text" name="tel" size="" value="">
+</td>
+</tr>
+<tr>
+<th>ご住所</th>
+<td>〒
+<input type="text" name="zip21" class="w40 p-postal-code" size="" value="">
+<p></p>
+<p><span class="">
+<input type="text" name="addr21" class="w90 p-region p-locality p-street-address p-extended-address" size="" value="">
+</span></p></td>
+</tr>
+<tr>
+<th>応募動機・自己PRなど<br>
+<span style="color: #ff0000;">入力は2000文字以内で日本語を含んだ文章でお願いいたします。</span></th>
+<td class="w90">
+<textarea name="your-message" cols="" rows="5"></textarea>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="submit-button">
+<input type="submit" name="submitConfirm" value="確認画面へ">
+</p>
+<p id="submit-button-back"></p>
+<input type="hidden" name="mw-wp-form-form-id" value="220"><input type="hidden" name="mw_wp_form_token" value="e9ec9fa3680366262998f5bc91f0c3784759a08fcc916646e514f6d3791d8b60"></form>
+				</div>
+		</div>
+	</article>
+			<div id="privacy">
+					<h2>プライバシーポリシー</h2>
+					<p>株式会社KENNZO（※以下、弊社と呼ぶ）では、個人情報の取り扱いにつき、業務実態に応じた個人情報保護のための管理体制を確立するとともに、適切かつ慎重に取り扱いいたします。<br>
+　</p>
+<h4 class="privacy">● 個人情報の取り扱いについて</h4>
+<p>個人情報を収集する際は、適切な範囲で適法かつ公正な手段で個人情報を収集いたします。<br>
+弊社では次のような場合に必要な範囲で個人情報を収集する場合がございます。<br>
+　<br>
+・ 弊社の求人内容についてのお問い合わせ<br>
+・ その他お問い合わせ</p>
+		</div>
+		
+
+	</div>
+	</div>
+</main>
+
+<div id="js-pagetop" class="p-pagetop"><a href="https://kennzo.ltd/recruit#"></a></div>
+
+	
+<footer id="footer" class="footerbgfixed">
+	<div class="l-footer">
+	
+	
+	<div class="l-footer_inner">
+		
+		<div class="l-footer__title">
+			<h2 class="l-footer__catch" style="color:#ffffff;font-weight:900;">お問い合わせ</h2>
+		</div>
+		<div class="l-footer__contact">
+			<div class="l-footer__contact_child_telnum">
+			<div class="footer_tel-upper">
+				お客様専用ダイヤル			</div>
+			<div class="footer_tel" style="font-weight:900;">
+			 <span class="footer_tel_num1">0120-933-131</span> 
+			 									</div>
+			<div class="footer_tel-lower">
+							</div>
+			</div>
+			<div class="l-footer__contact_btn_option">
+			<div class="eff-4"></div>
+				<a href="https://kennzo.ltd/contact">
+								<span class="footer_btn_icon"></span>
+								 メール・LINEでのお問い合わせ</a> 
+			</div>
+		</div>
+		<hr class="l-footer__border">
+		
+		<div class="l-footer__company">
+			<div class="l-footer__company_left spnone">
+						<a href="https://kennzo.ltd/" style="font-size: 18px;">株式会社KENNZO</a>
+							
+			</div>
+			<div class="l-footer__company_right l-footer_nav">
+				<span class="p-fotter-nav"><div class="menu-sample%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc-container"><ul id="menu-sample%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-26"><a href="https://kennzo.ltd/">ホーム</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-482"><a href="https://kennzo.ltd/work">業務案内</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-879"><a href="https://kennzo.ltd/fees-and-paint">料金・塗料について</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-30 current_page_item menu-item-505"><a href="https://kennzo.ltd/recruit" aria-current="page">求人・協力会社募集</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-484"><a href="https://kennzo.ltd/information">会社概要</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-486"><a href="https://kennzo.ltd/blog">ブログ</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-639"><a href="https://kennzo.ltd/contact">お問い合わせ</a></li>
+</ul></div></span>
+			</div>
+			<div class="l-footer__company_left pcnone">
+						<a href="https://kennzo.ltd/" style="font-size: 18px;">株式会社KENNZO</a>
+							
+			</div>
+		</div>
+
+		<div class="p-address">
+			<p>〒340-0043<br>
+埼玉県草加市草加2-20-20-203			</p><p style="margin:10px 0 15px;"><span class="googlemap_btn"><a href="https://maps.app.goo.gl/t3XNpXQDGB36Ytxf8" target="_blank">Googleマップで確認する</a></span></p>
+			<p>TEL：0120-933-131 / FAX：048-999-5639</p>
+		</div>
+
+		<div>
+		<ul class="p-social-nav">
+																		<li class=""> </li>
+		</ul>
+		</div>
+		<div class="l-footer__company font-size_13px">
+			<div class="l-footer__company_left footer_text" style="white-space: nowrap"><a href="https://kennzo.ltd/">外壁塗装は埼玉県草加市の株式会社KENNZOにお任せください｜協力会社募集中</a></div>
+			<div class="l-footer__company_right footer_text"><p class="p-copyright"><small>Copyright © 株式会社KENNZO. All rights reserved.</small></p></div>
+		</div>
+
+	</div>
+	</div>
+</footer>
+</div>
+
+<div id="trend_notification_app" class="trend_notification_app_outer"><div id="trend_notification"><div id="trend_notification_con"></div></div></div><div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSDataElement" style="display: none;"></umsdataelement><div id="tmtoolbar_manual_rating_injected" style="display: none;">init</div><div id="UMSSendDataEventElement" style="display: none;">init</div></html>

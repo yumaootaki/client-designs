@@ -1,0 +1,154 @@
+<main class="l-main">	
+	
+
+	<header class="p-page-header">
+		<div class="p-page-header__inner" style="color: #ffffff;">
+							<div class="p-page-header__title">
+					<img class="pcotherpageheadimg" src="./会社概要_files/head.png">
+					<h1 style="font-size: 44px;margin-top: 30px;margin-bottom:0px;font-weight:900;">会社概要</h1>
+					<p style="font-size: 20px;">INFORMATION</p>
+				</div>
+					</div>
+	</header>
+	<div class="content" style="margin-top: 416px;">
+		<div class="p-breadcrumb c-breadcrumb">
+		<ul class="p-breadcrumb__inner l-inner" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+			<li class="p-breadcrumb__item c-breadcrumb__item c-breadcrumb__item--home" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				<a href="https://kennzo.ltd/" itemprop="item"><span itemprop="name">HOME</span></a>
+				<meta itemprop="position" content="1">
+			</li>
+						<li class="p-breadcrumb__item c-breadcrumb__item">会社概要</li>
+
+					</ul>	
+	</div>	
+		<article class="p-entry l-inner">
+				<div class="p-entry__body">
+					</div>
+	</article>
+		
+	<article class="information">
+		<div id="infocustomcontent">
+					<a id="post-"></a>
+			<section class="post_box clearfix">
+
+															<div class="image_box_l">
+							<img src="./会社概要_files/info-imeage_1.png" alt="">
+						</div>
+
+						<div class="content_box_r">
+																<div class="infocontent"><div class="info-title-midashi">企業理念</div>
+<p style="text-align:center;">三つのK</p>
+<p style="text-align:center;">◆改革・革新 ◆価格・価値 ◆還元・貢献</p>
+<p>　</p>
+<p style="text-align:center;">二つのN</p>
+<p style="text-align:center;">◆人情 ◆仲間</p>
+</div>
+				</div>
+							</section>
+
+					<a id="post-1"></a>
+			<section class="post_box clearfix">
+
+															<div class="content_box_none">
+																<div class="infocontent"><div class="info-title-midashi-greeting">代表挨拶</div>
+<div class="clearfix pg_company_greeting"><img decoding="async" alt="代表挨拶" src="./会社概要_files/info_img_2-2-1.png"><p></p>
+<p>「ケンゾーだからできること・・」</p>
+<p>株式会社KENNZOでは、三つのKと二つのNを企業理念としております。</p>
+<p>業務の<span style="color:#bc1422;">改革・革新</span>を常に意識し、ひいては塗装業界の改革・革新を目指そう！</p>
+<p>わかりやすい<span style="color:#bc1422;">価格</span>設定、他社にない技術力で<span style="color:#bc1422;">価値</span>の向上を目指そう！</p>
+<p>感動的な施工品質をお客様へ<span style="color:#bc1422;">還元</span>し、さらに社会への<span style="color:#bc1422;">貢献</span>を目指そう！</p>
+<p><span style="color:#1853db;">人情</span>味のある<span style="color:#1853db;">仲間</span>と念願を果たそう！</p>
+<p>「費用を抑えて高品質な施工を受けたい！」</p>
+<p>そんなお客様の立場になって考えることを大切に、弊社では他社にない「技術力」という点にこだわっています。</p>
+<p>塗装は同じ塗料、同じ道具、同じ工程で行ったとしても、職人の技術力によって品質が大きく変わってくるからです。</p>
+<p>私自身、1級塗装技能士として「確かな知識」と「施工の丁寧さ、スピード」には自信を持っています。</p>
+<p>沢山の知識を持っていても、それを最大限に使いこなせる人は多くはありません。</p>
+<p>私は持ち前のフットワークの軽さと塗装に対する知識と技術を最大限に引き出し、弊社だからこそ、お客様に還元できるものを創造してまいります！</p>
+<p>ぜひ「KENNZOだからできること」を体感してみませんか？</p>
+</div>
+</div>
+				</div>
+							</section>
+
+		
+		
+						
+	<section class="post_box clearfix informationtable">
+		<h3>会社概要</h3>
+
+	
+			<div class="tablewrap tablewrap1">
+					<div class="infosubtitle"><p>会社名</p></div>
+							<div class="infosubcont">
+				<p>株式会社KENNZO<br>
+（ケンゾー）</p>
+					
+			</div>
+		
+		</div>
+			<div class="tablewrap tablewrap2">
+					<div class="infosubtitle"><p>代表者名</p></div>
+							<div class="infosubcont">
+				<p>内村　賢吾</p>
+					
+			</div>
+		
+		</div>
+			<div class="tablewrap tablewrap3">
+					<div class="infosubtitle"><p>創業</p></div>
+							<div class="infosubcont">
+				<p>平成23年4月</p>
+					
+			</div>
+		
+		</div>
+			<div class="tablewrap tablewrap4">
+					<div class="infosubtitle"><p>フリーダイヤル</p></div>
+							<div class="infosubcont">
+				<p>0120-933-131</p>
+					
+			</div>
+		
+		</div>
+			<div class="tablewrap tablewrap5">
+					<div class="infosubtitle"><p>所在地</p></div>
+							<div class="infosubcont">
+				<p>〒340-0043<br>
+埼玉県草加市草加2-20-20-203</p>
+																		<iframe src="./会社概要_files/embed.html" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>											
+			</div>
+		
+		</div>
+			<div class="tablewrap tablewrap6">
+					<div class="infosubtitle"><p>サイトURL</p></div>
+							<div class="infosubcont">
+				<p><a href="https://kennzo.ltd/">https://kennzo.ltd/</a></p>
+					
+			</div>
+		
+		</div>
+			<div class="tablewrap tablewrap7">
+					<div class="infosubtitle"><p>業務内容</p></div>
+							<div class="infosubcont">
+				<p>■塗装工事業<br>
+■防水工事業</p>
+					
+			</div>
+		
+		</div>
+			<div class="tablewrap tablewrap8">
+					<div class="infosubtitle"><p>対応エリア</p></div>
+							<div class="infosubcont">
+				<p>草加市、越谷市、八潮市、三郷市近郊</p>
+					
+			</div>
+		
+		</div>
+		</section>
+
+		
+						
+		</div>
+					</article>
+	</div>
+</main>

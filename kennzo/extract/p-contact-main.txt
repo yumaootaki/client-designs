@@ -1,0 +1,124 @@
+<main class="l-main">	
+	
+
+	<header class="p-page-header">
+		<div class="p-page-header__inner" style="color: #ffffff;">
+							<div class="p-page-header__title">
+					<img class="pcotherpageheadimg" src="./お問い合わせ_files/head.png">
+					<h1 style="font-size: 44px;margin-top: 30px;margin-bottom:0px;font-weight:900;">お問い合わせ</h1>
+					<p style="font-size: 20px;">CONTACT</p>
+				</div>
+					</div>
+	</header>
+	<div class="content" style="margin-top: 416px;">
+		<div class="p-breadcrumb c-breadcrumb">
+		<ul class="p-breadcrumb__inner l-inner" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+			<li class="p-breadcrumb__item c-breadcrumb__item c-breadcrumb__item--home" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				<a href="https://kennzo.ltd/" itemprop="item"><span itemprop="name">HOME</span></a>
+				<meta itemprop="position" content="1">
+			</li>
+						<li class="p-breadcrumb__item c-breadcrumb__item">お問い合わせ</li>
+
+					</ul>	
+	</div>	
+	
+		<div class="formcontent">
+			<p>弊社へのお問い合わせは、お電話・LINEもしくは下記のフォームから送信してください。</p>
+<h4 class="tel_title">電話でのお問い合わせ</h4>
+<p>代表直通：<a href="tel:0120-933-131">0120-933-131</a></p>
+<div>　</div>
+<h4 class="tel_title">LINEでのお問い合わせ</h4>
+<p><a href="https://lin.ee/1eVjyGD" target="_blank"><img decoding="async" src="./お問い合わせ_files/ja.png" alt="友だち追加" height="36" border="0"></a></p>
+<div>　</div>
+<h4 class="tel_title">メールでのお問い合わせ</h4>
+<p>下記メールフォームに必要事項を入力し、送信してください。<br>
+メールフォームの「お問い合わせ内容」の項目に、ご要望などをご入力ください。<br>
+お問い合わせ内容を確認後、担当者より折り返しご連絡いたします。<br>
+数日経っても折り返しがない場合、システムの不具合によりお問い合わせメールが正常に届いていない可能性がございます。<br>
+お手数ですが、再度お電話にてご連絡をお願いいたします。</p>
+		</div>
+		<article class="p-entry l-inner">
+				<div class="p-entry__body">
+			<div id="mw_wp_form_mw-wp-form-180" class="mw_wp_form mw_wp_form_input  ">
+					<form method="post" action="https://kennzo.ltd/contact" enctype="multipart/form-data" class="h-adr"><table class="mailform-tbl">
+<tbody>
+<tr>
+<th>お名前 / 企業名 <span class="attention">必須</span></th>
+<td class="w60">
+<input type="text" name="your-name" size="" value="">
+</td>
+</tr>
+<tr>
+<th>メールアドレス <span class="attention">必須</span></th>
+<td class="w60">
+<input type="text" name="your-email" size="" value="">
+</td>
+</tr>
+<tr>
+<th>メールアドレス（確認用） <span class="attention">必須</span></th>
+<td class="w60">
+<input type="text" name="your-email2" size="" value="">
+</td>
+</tr>
+<tr>
+<th>お問い合わせ項目 <span class="attention">必須</span></th>
+<td>
+	<span class="mwform-checkbox-field horizontal-item">
+		<label>
+			<input type="checkbox" name="type[data][]" value="ご相談">
+			<span class="mwform-checkbox-field-text">ご相談</span>
+		</label>
+	</span>
+	<span class="mwform-checkbox-field horizontal-item">
+		<label>
+			<input type="checkbox" name="type[data][]" value="お問い合わせ">
+			<span class="mwform-checkbox-field-text">お問い合わせ</span>
+		</label>
+	</span>
+	<span class="mwform-checkbox-field horizontal-item">
+		<label>
+			<input type="checkbox" name="type[data][]" value="お見積もり依頼">
+			<span class="mwform-checkbox-field-text">お見積もり依頼</span>
+		</label>
+	</span>
+	<span class="mwform-checkbox-field horizontal-item">
+		<label>
+			<input type="checkbox" name="type[data][]" value="求人">
+			<span class="mwform-checkbox-field-text">求人</span>
+		</label>
+	</span>
+
+<input type="hidden" name="type[separator]" value=",">
+
+<input type="hidden" name="__children[type][]" value="{&quot;\u3054\u76f8\u8ac7&quot;:&quot;\u3054\u76f8\u8ac7&quot;,&quot;\u304a\u554f\u3044\u5408\u308f\u305b&quot;:&quot;\u304a\u554f\u3044\u5408\u308f\u305b&quot;,&quot;\u304a\u898b\u7a4d\u3082\u308a\u4f9d\u983c&quot;:&quot;\u304a\u898b\u7a4d\u3082\u308a\u4f9d\u983c&quot;,&quot;\u6c42\u4eba&quot;:&quot;\u6c42\u4eba&quot;}">
+</td>
+</tr>
+<tr>
+<th>お問い合わせ内容 <span class="attention">必須</span><br><span style="color:#ff0000;">入力は2000文字以内で日本語を含んだ文章でお願いいたします。</span></th>
+<td class="w90">
+<textarea name="your-message" cols="" rows="5"></textarea>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="submit-button">
+<input type="submit" name="submitConfirm" value="確認画面へ">
+</p>
+<p id="submit-button-back"></p>
+<input type="hidden" name="mw-wp-form-form-id" value="180"><input type="hidden" name="mw_wp_form_token" value="e9ec9fa3680366262998f5bc91f0c3784759a08fcc916646e514f6d3791d8b60"></form>
+				</div>
+		</div>
+	</article>
+			<div id="privacy">
+					<h2>プライバシーポリシー</h2>
+					<p>株式会社KENNZO（※以下、弊社と呼ぶ）では、個人情報の取り扱いにつき、業務実態に応じた個人情報保護のための管理体制を確立するとともに、適切かつ慎重に取り扱いいたします。<br>
+　</p>
+<h4 class="privacy">● 個人情報の取り扱いについて</h4>
+<p>個人情報を収集する際は、適切な範囲で適法かつ公正な手段で個人情報を収集いたします。<br>
+弊社では次のような場合に必要な範囲で個人情報を収集する場合がございます。<br>
+　<br>
+・ 弊社の求人内容についてのお問い合わせ<br>
+・ その他お問い合わせ</p>
+		</div>
+	</div>
+</main>

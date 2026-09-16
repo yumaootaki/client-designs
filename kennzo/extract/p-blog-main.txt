@@ -1,0 +1,218 @@
+<main class="l-main">	
+	
+
+
+	<header class="p-page-header">
+		<div class="p-page-header__inner" style="color: #ffffff;">
+							<div class="p-page-header__title">
+					<img class="pcotherpageheadimg" src="./BLOG_files/head.png">
+					<h1 style="font-size: 44px;margin-top: 30px;margin-bottom:0px;font-weight:900;">ブログ</h1>
+					<p style="font-size: 20px;">BLOG</p>
+				</div>
+					</div>
+	</header>
+	<div class="content" style="margin-top: 416px;">
+		<div class="p-breadcrumb c-breadcrumb">
+		<ul class="p-breadcrumb__inner l-inner" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+			<li class="p-breadcrumb__item c-breadcrumb__item c-breadcrumb__item--home" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				<a href="https://kennzo.ltd/" itemprop="item"><span itemprop="name">HOME</span></a>
+				<meta itemprop="position" content="1">
+			</li>
+						<li class="p-breadcrumb__item c-breadcrumb__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				<a href="https://kennzo.ltd/blog/" itemprop="item">
+					<span itemprop="name">BLOG</span>
+				</a>
+				<meta itemprop="position" content="2">
+			</li>
+			
+					</ul>	
+	</div>	
+		<article class="p-entry l-inner">
+				<div class="p-entry__body">
+					</div>
+	</article>
+		<div class="l-contents">
+		<div class="l-inner">
+			<div class="l-container">
+						<article class="p-blog-list__item">
+				<a class="p-article01__thumbnail p-hover-effect--type1" href="https://kennzo.ltd/archives/2411">
+					<img src="./BLOG_files/IMG_3591-e1785985569487.png">				</a>
+								<p class="p-article01__meta"><time class="p-article01__date" datetime="2026-08-06">2026.08.06</time><span class="p-article01__category"><a href="https://kennzo.ltd/archives/category/news" rel="category tag">お知らせ</a></span></p>
+								<h3 class="p-article01__title"><a href="https://kennzo.ltd/archives/2411">夏季休業のお知らせ</a></h3>
+				<p class="p-article01__excerpt">平素は格別のご高配を賜り、厚く御礼申し上げます。 誠に勝手ながら、弊社では以下の期間を夏季休業とさせていただきます。 夏季休業期間...</p>
+
+			</article>
+						<article class="p-blog-list__item">
+				<a class="p-article01__thumbnail p-hover-effect--type1" href="https://kennzo.ltd/archives/2394">
+					<img src="./BLOG_files/IMG_2922.png">				</a>
+								<p class="p-article01__meta"><time class="p-article01__date" datetime="2026-07-29">2026.07.29</time><span class="p-article01__category"><a href="https://kennzo.ltd/archives/category/news" rel="category tag">お知らせ</a></span></p>
+								<h3 class="p-article01__title"><a href="https://kennzo.ltd/archives/2394">【法人向け】テナント退去前に知っておきたい！内装塗装で原状回...</a></h3>
+				<p class="p-article01__excerpt">オフィスや店舗のテナント退去時に必要となる「原状回復工事」。 そのなかでも意外と見落とされがちなのが、“内装塗装”の活用です。 「...</p>
+
+			</article>
+						<article class="p-blog-list__item">
+				<a class="p-article01__thumbnail p-hover-effect--type1" href="https://kennzo.ltd/archives/2351">
+					<img src="./BLOG_files/6B506186-255C-4560-874B-0A4A21653EBB-1024x718.jpeg">				</a>
+								<p class="p-article01__meta"><time class="p-article01__date" datetime="2026-06-23">2026.06.23</time><span class="p-article01__category"><a href="https://kennzo.ltd/archives/category/news" rel="category tag">お知らせ</a></span></p>
+								<h3 class="p-article01__title"><a href="https://kennzo.ltd/archives/2351">草加市役所ホームページにバナー広告を掲載中！</a></h3>
+				<p class="p-article01__excerpt">埼玉県草加市を拠点に塗装工事全般を行っている株式会社KENNZOです。 日頃より地域の皆様には温かいご支援をいただき、心より感謝申...</p>
+
+			</article>
+						<article class="p-blog-list__item">
+				<a class="p-article01__thumbnail p-hover-effect--type1" href="https://kennzo.ltd/archives/2304">
+					<img src="./BLOG_files/41627BE9-BF31-44CE-81D8-8AF523D30B06-1-1024x681.jpeg">				</a>
+								<p class="p-article01__meta"><time class="p-article01__date" datetime="2026-05-25">2026.05.25</time><span class="p-article01__category"><a href="https://kennzo.ltd/archives/category/news" rel="category tag">お知らせ</a></span></p>
+								<h3 class="p-article01__title"><a href="https://kennzo.ltd/archives/2304">不動産賃貸の原状回復にも対応！株式会社KENNZOのBtoB...</a></h3>
+				<p class="p-article01__excerpt">埼玉県草加市に拠点を構える、株式会社KENNZOです。 弊社は、法人様や企業様が抱えるあらゆる空間の課題を解決するため、BtoB向...</p>
+
+			</article>
+						<article class="p-blog-list__item">
+				<a class="p-article01__thumbnail p-hover-effect--type1" href="https://kennzo.ltd/archives/2265">
+					<img src="./BLOG_files/AF43926B-D262-47E4-AD7B-FAB31ED67774-576x1024.jpeg">				</a>
+								<p class="p-article01__meta"><time class="p-article01__date" datetime="2026-04-30">2026.04.30</time><span class="p-article01__category"><a href="https://kennzo.ltd/archives/category/news" rel="category tag">お知らせ</a></span></p>
+								<h3 class="p-article01__title"><a href="https://kennzo.ltd/archives/2265">ゴールデンウィーク休業のお知らせ</a></h3>
+				<p class="p-article01__excerpt">株式会社KENNZOのホームページをご覧いただき、誠にありがとうございます。 日頃は格別のご愛顧を賜り、厚く御礼申し上げます。 弊...</p>
+
+			</article>
+						<article class="p-blog-list__item">
+				<a class="p-article01__thumbnail p-hover-effect--type1" href="https://kennzo.ltd/archives/2231">
+					<img width="480" height="450" src="./BLOG_files/IMG_2465-e1775188461306-480x450.jpeg" class="attachment-size2 size-size2 wp-post-image" alt="" decoding="async" loading="lazy">				</a>
+								<p class="p-article01__meta"><time class="p-article01__date" datetime="2026-04-03">2026.04.03</time><span class="p-article01__category"><a href="https://kennzo.ltd/archives/category/news" rel="category tag">お知らせ</a></span></p>
+								<h3 class="p-article01__title"><a href="https://kennzo.ltd/archives/2231">けんぞうくんLINEスタンプの新作が発売予定です！</a></h3>
+				<p class="p-article01__excerpt">弊社のオリジナルキャラクター、けんぞうくんのLINEスタンプ新作が発売予定です！ 今回も、愛らしい個性と独自の世界観を保ちつつ、新...</p>
+
+			</article>
+						<article class="p-blog-list__item">
+				<a class="p-article01__thumbnail p-hover-effect--type1" href="https://kennzo.ltd/archives/2210">
+					<img src="./BLOG_files/img_2357-1024x1024.png">				</a>
+								<p class="p-article01__meta"><time class="p-article01__date" datetime="2026-03-12">2026.03.12</time><span class="p-article01__category"><a href="https://kennzo.ltd/archives/category/news" rel="category tag">お知らせ</a></span></p>
+								<h3 class="p-article01__title"><a href="https://kennzo.ltd/archives/2210">花粉の季節に考える「外壁塗装」と住まいの花粉対策🌸</a></h3>
+				<p class="p-article01__excerpt">春になると暖かく過ごしやすい季節になりますが、同時に多くの方を悩ませるのが「花粉」です。毎年、くしゃみや目のかゆみ、鼻づまりなどに...</p>
+
+			</article>
+						<article class="p-blog-list__item">
+				<a class="p-article01__thumbnail p-hover-effect--type1" href="https://kennzo.ltd/archives/2189">
+					<img width="680" height="450" src="./BLOG_files/053402e1-1ae1-4f24-969b-7ac4e4f1894f-1-680x450.jpg" class="attachment-size2 size-size2 wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://kennzo.ltd/wp-content/uploads/053402e1-1ae1-4f24-969b-7ac4e4f1894f-1-680x450.jpg 680w, https://kennzo.ltd/wp-content/uploads/053402e1-1ae1-4f24-969b-7ac4e4f1894f-1-440x290.jpg 440w" sizes="(max-width: 680px) 100vw, 680px">				</a>
+								<p class="p-article01__meta"><time class="p-article01__date" datetime="2026-02-25">2026.02.25</time><span class="p-article01__category"><a href="https://kennzo.ltd/archives/category/news" rel="category tag">お知らせ</a></span></p>
+								<h3 class="p-article01__title"><a href="https://kennzo.ltd/archives/2189">事務所移転のお知らせ🔔 ́-</a></h3>
+				<p class="p-article01__excerpt">平素は格別のご高配を賜り厚く御礼申し上げます。さて、このたび事務所拠点を移転させていただく事となりました。これを機に社員一同、気持...</p>
+
+			</article>
+						<article class="p-blog-list__item">
+				<a class="p-article01__thumbnail p-hover-effect--type1" href="https://kennzo.ltd/archives/2131">
+					<img src="./BLOG_files/BDD66C29-BB5B-4B74-8520-4CC9F8253666.jpeg">				</a>
+								<p class="p-article01__meta"><time class="p-article01__date" datetime="2026-01-26">2026.01.26</time><span class="p-article01__category"><a href="https://kennzo.ltd/archives/category/news" rel="category tag">お知らせ</a></span></p>
+								<h3 class="p-article01__title"><a href="https://kennzo.ltd/archives/2131">DIYで室内の壁をきれいに塗るための5つのポイント</a></h3>
+				<p class="p-article01__excerpt">お部屋の雰囲気を手軽に変えられる内装塗装ですが、DIYで美しく仕上げるには事前の準備とコツが必要です。 今回は、初心者の方でもプロ...</p>
+
+			</article>
+						<article class="p-blog-list__item">
+				<a class="p-article01__thumbnail p-hover-effect--type1" href="https://kennzo.ltd/archives/2115">
+					<img src="./BLOG_files/image-14-285x300.jpg">				</a>
+								<p class="p-article01__meta"><time class="p-article01__date" datetime="2026-01-12">2026.01.12</time><span class="p-article01__category"><a href="https://kennzo.ltd/archives/category/news" rel="category tag">お知らせ</a></span></p>
+								<h3 class="p-article01__title"><a href="https://kennzo.ltd/archives/2115">遅ればせながら…🐴</a></h3>
+				<p class="p-article01__excerpt">新年あけましておめでとうございます。旧年中は格別のご厚情を賜り、心より御礼申し上げます。本年も株式会社KENNZOは、皆様のご期待...</p>
+
+			</article>
+			 
+			<div class="pagenavi">
+			<span aria-current="page" class="page-numbers current">1</span>
+<a class="page-numbers" href="https://kennzo.ltd/blog/page/2/">2</a>
+<a class="page-numbers" href="https://kennzo.ltd/blog/page/3/">3</a>
+<span class="page-numbers dots">…</span>
+<a class="page-numbers" href="https://kennzo.ltd/blog/page/9/">9</a>
+<a class="next page-numbers" href="https://kennzo.ltd/blog/page/2/">次へ »</a>			</div>
+			</div>
+			
+			<div class="r-container">
+				<section class="l-secondary">
+	<div class="p-widget widget_recent_entries">
+<h2 class="p-widget__title">最近の投稿</h2>
+	<ul class="clearfix">
+							<li><span class="post-date">2026.08.06</span><a href="https://kennzo.ltd/archives/2411">夏季休業のお知らせ</a></li>
+						<li><span class="post-date">2026.07.29</span><a href="https://kennzo.ltd/archives/2394">【法人向け】テナント退去前に知っておきたい！内装塗装で原状回復費用を抑えるポイント</a></li>
+						<li><span class="post-date">2026.06.23</span><a href="https://kennzo.ltd/archives/2351">草加市役所ホームページにバナー広告を掲載中！</a></li>
+						<li><span class="post-date">2026.05.25</span><a href="https://kennzo.ltd/archives/2304">不動産賃貸の原状回復にも対応！株式会社KENNZOのBtoB向け事業</a></li>
+						<li><span class="post-date">2026.04.30</span><a href="https://kennzo.ltd/archives/2265">ゴールデンウィーク休業のお知らせ</a></li>
+			</ul>
+		</div>
+
+<div class="p-widget tcdw_archive_list_widget">
+<h2 class="p-widget__title">月別アーカイブ</h2>
+	<div class="p-widget-dropdown">
+		<div class="p-widget-dropdown__title">月を選択</div>
+			<ul class="p-widget-dropdown__list p-widget-list" style="display: none;">
+					<li><a href="https://kennzo.ltd/archives/date/2026/08">2026年8月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2026/07">2026年7月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2026/06">2026年6月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2026/05">2026年5月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2026/04">2026年4月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2026/03">2026年3月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2026/02">2026年2月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2026/01">2026年1月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2025/12">2025年12月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2025/11">2025年11月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2025/10">2025年10月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2025/09">2025年9月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2025/08">2025年8月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2025/07">2025年7月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2025/06">2025年6月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2025/05">2025年5月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2025/04">2025年4月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2025/03">2025年3月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2025/02">2025年2月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2025/01">2025年1月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2024/12">2024年12月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2024/11">2024年11月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2024/10">2024年10月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2024/09">2024年9月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2024/08">2024年8月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2024/07">2024年7月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2024/06">2024年6月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2024/05">2024年5月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2024/04">2024年4月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2024/03">2024年3月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2024/02">2024年2月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2024/01">2024年1月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2023/12">2023年12月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2023/11">2023年11月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2023/10">2023年10月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2023/09">2023年9月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2023/08">2023年8月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2023/07">2023年7月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2023/06">2023年6月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2023/05">2023年5月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2023/04">2023年4月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2023/03">2023年3月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2023/02">2023年2月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2023/01">2023年1月</a></li>
+	<li><a href="https://kennzo.ltd/archives/date/2022/10">2022年10月</a></li>
+			</ul>
+    </div>
+</div>
+
+<div class="p-widget tcdw_category_list_widget">
+<h2 class="p-widget__title">カテゴリー</h2>
+<ul class="collapse_category_list">
+ 	<li class="cat-item cat-item-1"><a href="https://kennzo.ltd/archives/category/news">お知らせ <span class="count">77</span></a>
+</li>
+	<li class="cat-item cat-item-3"><a href="https://kennzo.ltd/archives/category/case">施工実績 <span class="count">13</span></a>
+</li>
+</ul>
+</div>
+
+<div class="p-widget widget_search">
+<form role="search" method="get" class="searchform" action="https://kennzo.ltd/">
+	<div>
+	<label class="screen-reader-text" for="s"></label>
+	<input type="text" name="s" id="s" value="">
+	<input type="hidden" value="post" name="post_type" id="post_type">
+	<input type="submit" id="searchsubmit" value="検索">
+	</div>
+</form>
+</div></section>
+			</div>
+		</div>
+	</div>
+	</div>
+</main>

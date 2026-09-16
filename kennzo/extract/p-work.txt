@@ -1,0 +1,247 @@
+
+<div id="site_loader_overlay" style="display: none;">
+	<div id="site_loader_animation" class="c-load--type1" style="display: none;">
+		 	</div>
+</div>
+<div id="site_wrap" style="display: block;">
+<header id="js-header" class="l-header l-header_option l-header--fixed">
+	<div class="l-header__inner">
+				<div class="l-header__logo c-logo">
+								<a href="https://kennzo.ltd/">
+				<img src="./業務案内_files/logo.png" alt="草加市の塗装専門店 株式会社KENNZO｜高品質塗装で住まいを美しく長持ち">
+			</a>
+					</div>		
+		<div class="spcontact">
+					<a href="https://kennzo.ltd/contact"><span class="sp_btn_icon"></span></a>
+				</div>
+	
+
+	
+		<a href="https://kennzo.ltd/work#" id="js-menu-button" class="p-menu-button c-menu-button c-option_menu-button"> </a>
+		<span class="nav-ipadpro"><nav class="menu-sample%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc-container"><ul id="js-global-nav" class="p-global-nav p-option_global-nav u-clearfix"><li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-26"><a href="https://kennzo.ltd/">ホーム<span></span></a></li>
+<li id="menu-item-482" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-482"><a href="https://kennzo.ltd/work" aria-current="page">業務案内<span></span></a></li>
+<li id="menu-item-879" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-879"><a href="https://kennzo.ltd/fees-and-paint">料金・塗料について<span></span></a></li>
+<li id="menu-item-505" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-505"><a href="https://kennzo.ltd/recruit">求人・協力会社募集<span></span></a></li>
+<li id="menu-item-484" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-484"><a href="https://kennzo.ltd/information">会社概要<span></span></a></li>
+<li id="menu-item-486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-486"><a href="https://kennzo.ltd/blog">ブログ<span></span></a></li>
+<li id="menu-item-639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-639"><a href="https://kennzo.ltd/contact">お問い合わせ<span></span></a></li>
+</ul></nav></span>
+		
+				
+	
+		<div class="tel-mail ">
+			<div class="tel-mail__child_1" style="color:#333333;">
+				お客様専用ダイヤル			</div>
+			<div class="tel-mail__child_0" style="font-weight:900;">
+						<span class="tel_num1">0120-933-131</span> 
+												
+			</div>
+			<div class="tel-mail__child_1" style="color:#000000;">
+							</div>
+		</div>
+	
+
+		<div class="tel-mail__child_2">
+			<a href="https://kennzo.ltd/contact">
+							<span class="btn_icon"></span>
+						<br>メール・LINEでのお問い合わせ</a>
+		</div>
+
+		
+		
+		
+		</div>
+
+</header>
+<main class="l-main">	
+	
+
+	<header class="p-page-header">
+		<div class="p-page-header__inner" style="color: #ffffff;">
+							<div class="p-page-header__title">
+					<img class="pcotherpageheadimg" src="./業務案内_files/head.png">
+					<h1 style="font-size: 44px;margin-top: 30px;margin-bottom:0px;font-weight:900;">業務案内</h1>
+					<p style="font-size: 20px;">WORK</p>
+				</div>
+					</div>
+	</header>
+	<div class="content" style="margin-top: 416px;">
+		<div class="p-breadcrumb c-breadcrumb">
+		<ul class="p-breadcrumb__inner l-inner" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+			<li class="p-breadcrumb__item c-breadcrumb__item c-breadcrumb__item--home" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				<a href="https://kennzo.ltd/" itemprop="item"><span itemprop="name">HOME</span></a>
+				<meta itemprop="position" content="1">
+			</li>
+						<li class="p-breadcrumb__item c-breadcrumb__item">業務案内</li>
+
+					</ul>	
+	</div>	
+		<article class="p-entry l-inner">
+				<div class="p-entry__body">
+					</div>
+	</article>
+		<div class="acfwrap">
+			<div class="maeoki l-inner">
+			<div class="work-center">
+<div class="wk-center">
+株式会社KENNZOは埼玉県草加市に事務所を構え、外壁塗装・屋根塗装といった塗装工事全般と防水工事を手がけております。紫外線や風雨によるダメージを負った住まいを、プロによる丁寧な施工でよみがえらせます。中間手数料を省いた適正価格で、お客様の期待にお応えします。ご相談・お見積もりは無料です。<br>
+こちらのページでは弊社の主な業務内容をご紹介します。
+</div>
+</div>
+		</div>
+				
+	<article id="allcontent">
+	<div id="defocont" class="p4cont1" style="opacity: 0.3;">
+			<h2>外壁塗装工事</h2>
+				<div class="post_box clearfix">
+
+	<div class="allcontentbox">
+			<div class="image_box_l">
+		<img src="./業務案内_files/255891444.png" alt="">
+	</div>
+
+	<div class="content_box_r">
+			<p>外壁塗装では風雨や紫外線による影響から住まいの寿命を守るために、高い耐久性を発揮する塗料を選ぶことが大切です。<br>
+もちろん景観も考慮して美しく仕上げます。<br>
+弊社では、戸建て・アパート・マンション・工場と幅広い建物の外壁塗装及び室内塗装に対応しております。ご依頼主様やご家族のみな様に「任せてよかった！」と喜んでいただくことを目標に、安全・確実に外壁塗装を行ってまいります。</p>
+	</div>
+		</div>
+	</div>
+
+	
+	</div>
+	</article>
+
+				
+	<article id="allcontent">
+	<div id="defocont" class="p4cont2" style="opacity: 0.3;">
+			<h2>屋根塗装工事</h2>
+				<div class="post_box clearfix">
+
+	<div class="allcontentbox">
+			<div class="image_box_l">
+		<img src="./業務案内_files/377313892.png" alt="">
+	</div>
+
+	<div class="content_box_r">
+			<p>日常的に状態を確認しづらい屋根は、いつの間にかダメージが深刻化しているケースも珍しくありません。突然の大雨で雨漏りが発生する可能性も十分ありえます。取り返しがつかなくなる前に、定期的な診断と修繕を行いましょう。<br>
+株式会社KENNZOではまず屋根の状態チェックから始め、「塗装工事が必要かどうか」という診断を行います。小さな隙間から内部に浸水している可能性もあるため、細部まで徹底的に調査を実施いたします。<br>
+そのうえで必要に応じた最適なプランをご提案させていただきます。まずはお気軽にご連絡ください。</p>
+	</div>
+		</div>
+	</div>
+
+	
+	</div>
+	</article>
+
+				
+	<article id="allcontent">
+	<div id="defocont" class="p4cont3" style="opacity: 0.3;">
+			<h2>防水工事</h2>
+				<div class="post_box clearfix">
+
+	<div class="allcontentbox">
+			<div class="image_box_l">
+		<img src="./業務案内_files/390031216.png" alt="">
+	</div>
+
+	<div class="content_box_r">
+			<p>どんなに完璧な防水工事を施したとしても、時間の経過によってその効果は徐々に損なわれていきます。防水層の機能が失われたまま放置していると、壁のヒビ割れや雨漏りといったトラブルにもつながります。<br>
+再び防水処理を行うことで、屋根・外壁・ベランダなどの寿命を延ばし、建物を風雨や雪から守りましょう。<br>
+防水工事には様ざまな工法がありますが、株式会社KENNZOなら住宅の構造・形状・防水層の種類などに応じた最適な施工をご提案できます。日々の暮らしのなかで安心を感じられるよう、丁寧に施工いたします。</p>
+	</div>
+		</div>
+	</div>
+
+	
+	</div>
+	</article>
+
+				
+	<article class="freecont_article">
+				<div class="freecont">
+			<p></p><div class="work-img"><a href="https://kennzo.ltd/fees-and-paint"><img decoding="async" src="./業務案内_files/bnr_sec2_01.png" alt="料金・塗料について"></a></div>
+<p></p>
+		</div>
+	<span style="clear:both;"></span>
+			</article>
+
+				</div>
+	</div>
+</main>
+
+<div id="js-pagetop" class="p-pagetop"><a href="https://kennzo.ltd/work#"></a></div>
+
+	
+<footer id="footer" class="footerbgfixed">
+	<div class="l-footer">
+	
+	
+	<div class="l-footer_inner">
+		
+		<div class="l-footer__title">
+			<h2 class="l-footer__catch" style="color:#ffffff;font-weight:900;">お問い合わせ</h2>
+		</div>
+		<div class="l-footer__contact">
+			<div class="l-footer__contact_child_telnum">
+			<div class="footer_tel-upper">
+				お客様専用ダイヤル			</div>
+			<div class="footer_tel" style="font-weight:900;">
+			 <span class="footer_tel_num1">0120-933-131</span> 
+			 									</div>
+			<div class="footer_tel-lower">
+							</div>
+			</div>
+			<div class="l-footer__contact_btn_option">
+			<div class="eff-4"></div>
+				<a href="https://kennzo.ltd/contact">
+								<span class="footer_btn_icon"></span>
+								 メール・LINEでのお問い合わせ</a> 
+			</div>
+		</div>
+		<hr class="l-footer__border">
+		
+		<div class="l-footer__company">
+			<div class="l-footer__company_left spnone">
+						<a href="https://kennzo.ltd/" style="font-size: 18px;">株式会社KENNZO</a>
+							
+			</div>
+			<div class="l-footer__company_right l-footer_nav">
+				<span class="p-fotter-nav"><div class="menu-sample%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc-container"><ul id="menu-sample%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-26"><a href="https://kennzo.ltd/">ホーム</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-482"><a href="https://kennzo.ltd/work" aria-current="page">業務案内</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-879"><a href="https://kennzo.ltd/fees-and-paint">料金・塗料について</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-505"><a href="https://kennzo.ltd/recruit">求人・協力会社募集</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-484"><a href="https://kennzo.ltd/information">会社概要</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-486"><a href="https://kennzo.ltd/blog">ブログ</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-639"><a href="https://kennzo.ltd/contact">お問い合わせ</a></li>
+</ul></div></span>
+			</div>
+			<div class="l-footer__company_left pcnone">
+						<a href="https://kennzo.ltd/" style="font-size: 18px;">株式会社KENNZO</a>
+							
+			</div>
+		</div>
+
+		<div class="p-address">
+			<p>〒340-0043<br>
+埼玉県草加市草加2-20-20-203			</p><p style="margin:10px 0 15px;"><span class="googlemap_btn"><a href="https://maps.app.goo.gl/t3XNpXQDGB36Ytxf8" target="_blank">Googleマップで確認する</a></span></p>
+			<p>TEL：0120-933-131 / FAX：048-999-5639</p>
+		</div>
+
+		<div>
+		<ul class="p-social-nav">
+																		<li class=""> </li>
+		</ul>
+		</div>
+		<div class="l-footer__company font-size_13px">
+			<div class="l-footer__company_left footer_text" style="white-space: nowrap"><a href="https://kennzo.ltd/">外壁塗装は埼玉県草加市の株式会社KENNZOにお任せください｜協力会社募集中</a></div>
+			<div class="l-footer__company_right footer_text"><p class="p-copyright"><small>Copyright © 株式会社KENNZO. All rights reserved.</small></p></div>
+		</div>
+
+	</div>
+	</div>
+</footer>
+</div>
+
+<div id="trend_notification_app" class="trend_notification_app_outer"><div id="trend_notification"><div id="trend_notification_con"></div></div></div><div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSDataElement" style="display: none;"></umsdataelement><div id="tmtoolbar_manual_rating_injected" style="display: none;">init</div><div id="UMSSendDataEventElement" style="display: none;">init</div></html>

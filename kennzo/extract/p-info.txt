@@ -1,0 +1,288 @@
+
+<div id="site_loader_overlay" style="display: none;">
+	<div id="site_loader_animation" class="c-load--type1" style="display: none;">
+		 	</div>
+</div>
+<div id="site_wrap" style="display: block;">
+<header id="js-header" class="l-header l-header_option l-header--fixed">
+	<div class="l-header__inner">
+				<div class="l-header__logo c-logo">
+								<a href="https://kennzo.ltd/">
+				<img src="./会社概要_files/logo.png" alt="草加市の塗装専門店 株式会社KENNZO｜高品質塗装で住まいを美しく長持ち">
+			</a>
+					</div>		
+		<div class="spcontact">
+					<a href="https://kennzo.ltd/contact"><span class="sp_btn_icon"></span></a>
+				</div>
+	
+
+	
+		<a href="https://kennzo.ltd/information#" id="js-menu-button" class="p-menu-button c-menu-button c-option_menu-button"> </a>
+		<span class="nav-ipadpro"><nav class="menu-sample%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc-container"><ul id="js-global-nav" class="p-global-nav p-option_global-nav u-clearfix"><li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-26"><a href="https://kennzo.ltd/">ホーム<span></span></a></li>
+<li id="menu-item-482" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-482"><a href="https://kennzo.ltd/work">業務案内<span></span></a></li>
+<li id="menu-item-879" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-879"><a href="https://kennzo.ltd/fees-and-paint">料金・塗料について<span></span></a></li>
+<li id="menu-item-505" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-505"><a href="https://kennzo.ltd/recruit">求人・協力会社募集<span></span></a></li>
+<li id="menu-item-484" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-51 current_page_item menu-item-484"><a href="https://kennzo.ltd/information" aria-current="page">会社概要<span></span></a></li>
+<li id="menu-item-486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-486"><a href="https://kennzo.ltd/blog">ブログ<span></span></a></li>
+<li id="menu-item-639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-639"><a href="https://kennzo.ltd/contact">お問い合わせ<span></span></a></li>
+</ul></nav></span>
+		
+				
+	
+		<div class="tel-mail ">
+			<div class="tel-mail__child_1" style="color:#333333;">
+				お客様専用ダイヤル			</div>
+			<div class="tel-mail__child_0" style="font-weight:900;">
+						<span class="tel_num1">0120-933-131</span> 
+												
+			</div>
+			<div class="tel-mail__child_1" style="color:#000000;">
+							</div>
+		</div>
+	
+
+		<div class="tel-mail__child_2">
+			<a href="https://kennzo.ltd/contact">
+							<span class="btn_icon"></span>
+						<br>メール・LINEでのお問い合わせ</a>
+		</div>
+
+		
+		
+		
+		</div>
+
+</header>
+		<link rel="stylesheet" href="./会社概要_files/slick.min.css">
+		<link rel="stylesheet" href="./会社概要_files/slick-theme.min.css">
+		
+		
+<main class="l-main">	
+	
+
+	<header class="p-page-header">
+		<div class="p-page-header__inner" style="color: #ffffff;">
+							<div class="p-page-header__title">
+					<img class="pcotherpageheadimg" src="./会社概要_files/head.png">
+					<h1 style="font-size: 44px;margin-top: 30px;margin-bottom:0px;font-weight:900;">会社概要</h1>
+					<p style="font-size: 20px;">INFORMATION</p>
+				</div>
+					</div>
+	</header>
+	<div class="content" style="margin-top: 416px;">
+		<div class="p-breadcrumb c-breadcrumb">
+		<ul class="p-breadcrumb__inner l-inner" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+			<li class="p-breadcrumb__item c-breadcrumb__item c-breadcrumb__item--home" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				<a href="https://kennzo.ltd/" itemprop="item"><span itemprop="name">HOME</span></a>
+				<meta itemprop="position" content="1">
+			</li>
+						<li class="p-breadcrumb__item c-breadcrumb__item">会社概要</li>
+
+					</ul>	
+	</div>	
+		<article class="p-entry l-inner">
+				<div class="p-entry__body">
+					</div>
+	</article>
+		
+	<article class="information">
+		<div id="infocustomcontent">
+					<a id="post-"></a>
+			<section class="post_box clearfix">
+
+															<div class="image_box_l">
+							<img src="./会社概要_files/info-imeage_1.png" alt="">
+						</div>
+
+						<div class="content_box_r">
+																<div class="infocontent"><div class="info-title-midashi">企業理念</div>
+<p style="text-align:center;">三つのK</p>
+<p style="text-align:center;">◆改革・革新 ◆価格・価値 ◆還元・貢献</p>
+<p>　</p>
+<p style="text-align:center;">二つのN</p>
+<p style="text-align:center;">◆人情 ◆仲間</p>
+</div>
+				</div>
+							</section>
+
+					<a id="post-1"></a>
+			<section class="post_box clearfix">
+
+															<div class="content_box_none">
+																<div class="infocontent"><div class="info-title-midashi-greeting">代表挨拶</div>
+<div class="clearfix pg_company_greeting"><img decoding="async" alt="代表挨拶" src="./会社概要_files/info_img_2-2-1.png"><p></p>
+<p>「ケンゾーだからできること・・」</p>
+<p>株式会社KENNZOでは、三つのKと二つのNを企業理念としております。</p>
+<p>業務の<span style="color:#bc1422;">改革・革新</span>を常に意識し、ひいては塗装業界の改革・革新を目指そう！</p>
+<p>わかりやすい<span style="color:#bc1422;">価格</span>設定、他社にない技術力で<span style="color:#bc1422;">価値</span>の向上を目指そう！</p>
+<p>感動的な施工品質をお客様へ<span style="color:#bc1422;">還元</span>し、さらに社会への<span style="color:#bc1422;">貢献</span>を目指そう！</p>
+<p><span style="color:#1853db;">人情</span>味のある<span style="color:#1853db;">仲間</span>と念願を果たそう！</p>
+<p>「費用を抑えて高品質な施工を受けたい！」</p>
+<p>そんなお客様の立場になって考えることを大切に、弊社では他社にない「技術力」という点にこだわっています。</p>
+<p>塗装は同じ塗料、同じ道具、同じ工程で行ったとしても、職人の技術力によって品質が大きく変わってくるからです。</p>
+<p>私自身、1級塗装技能士として「確かな知識」と「施工の丁寧さ、スピード」には自信を持っています。</p>
+<p>沢山の知識を持っていても、それを最大限に使いこなせる人は多くはありません。</p>
+<p>私は持ち前のフットワークの軽さと塗装に対する知識と技術を最大限に引き出し、弊社だからこそ、お客様に還元できるものを創造してまいります！</p>
+<p>ぜひ「KENNZOだからできること」を体感してみませんか？</p>
+</div>
+</div>
+				</div>
+							</section>
+
+		
+		
+						
+	<section class="post_box clearfix informationtable">
+		<h3>会社概要</h3>
+
+	
+			<div class="tablewrap tablewrap1">
+					<div class="infosubtitle"><p>会社名</p></div>
+							<div class="infosubcont">
+				<p>株式会社KENNZO<br>
+（ケンゾー）</p>
+					
+			</div>
+		
+		</div>
+			<div class="tablewrap tablewrap2">
+					<div class="infosubtitle"><p>代表者名</p></div>
+							<div class="infosubcont">
+				<p>内村　賢吾</p>
+					
+			</div>
+		
+		</div>
+			<div class="tablewrap tablewrap3">
+					<div class="infosubtitle"><p>創業</p></div>
+							<div class="infosubcont">
+				<p>平成23年4月</p>
+					
+			</div>
+		
+		</div>
+			<div class="tablewrap tablewrap4">
+					<div class="infosubtitle"><p>フリーダイヤル</p></div>
+							<div class="infosubcont">
+				<p>0120-933-131</p>
+					
+			</div>
+		
+		</div>
+			<div class="tablewrap tablewrap5">
+					<div class="infosubtitle"><p>所在地</p></div>
+							<div class="infosubcont">
+				<p>〒340-0043<br>
+埼玉県草加市草加2-20-20-203</p>
+																		<iframe src="./会社概要_files/embed.html" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>											
+			</div>
+		
+		</div>
+			<div class="tablewrap tablewrap6">
+					<div class="infosubtitle"><p>サイトURL</p></div>
+							<div class="infosubcont">
+				<p><a href="https://kennzo.ltd/">https://kennzo.ltd/</a></p>
+					
+			</div>
+		
+		</div>
+			<div class="tablewrap tablewrap7">
+					<div class="infosubtitle"><p>業務内容</p></div>
+							<div class="infosubcont">
+				<p>■塗装工事業<br>
+■防水工事業</p>
+					
+			</div>
+		
+		</div>
+			<div class="tablewrap tablewrap8">
+					<div class="infosubtitle"><p>対応エリア</p></div>
+							<div class="infosubcont">
+				<p>草加市、越谷市、八潮市、三郷市近郊</p>
+					
+			</div>
+		
+		</div>
+		</section>
+
+		
+						
+		</div>
+					</article>
+	</div>
+</main>
+
+<div id="js-pagetop" class="p-pagetop"><a href="https://kennzo.ltd/information#"></a></div>
+
+	
+<footer id="footer" class="footerbgfixed">
+	<div class="l-footer">
+	
+	
+	<div class="l-footer_inner">
+		
+		<div class="l-footer__title">
+			<h2 class="l-footer__catch" style="color:#ffffff;font-weight:900;">お問い合わせ</h2>
+		</div>
+		<div class="l-footer__contact">
+			<div class="l-footer__contact_child_telnum">
+			<div class="footer_tel-upper">
+				お客様専用ダイヤル			</div>
+			<div class="footer_tel" style="font-weight:900;">
+			 <span class="footer_tel_num1">0120-933-131</span> 
+			 									</div>
+			<div class="footer_tel-lower">
+							</div>
+			</div>
+			<div class="l-footer__contact_btn_option">
+			<div class="eff-4"></div>
+				<a href="https://kennzo.ltd/contact">
+								<span class="footer_btn_icon"></span>
+								 メール・LINEでのお問い合わせ</a> 
+			</div>
+		</div>
+		<hr class="l-footer__border">
+		
+		<div class="l-footer__company">
+			<div class="l-footer__company_left spnone">
+						<a href="https://kennzo.ltd/" style="font-size: 18px;">株式会社KENNZO</a>
+							
+			</div>
+			<div class="l-footer__company_right l-footer_nav">
+				<span class="p-fotter-nav"><div class="menu-sample%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc-container"><ul id="menu-sample%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-26"><a href="https://kennzo.ltd/">ホーム</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-482"><a href="https://kennzo.ltd/work">業務案内</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-879"><a href="https://kennzo.ltd/fees-and-paint">料金・塗料について</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-505"><a href="https://kennzo.ltd/recruit">求人・協力会社募集</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-51 current_page_item menu-item-484"><a href="https://kennzo.ltd/information" aria-current="page">会社概要</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-486"><a href="https://kennzo.ltd/blog">ブログ</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-639"><a href="https://kennzo.ltd/contact">お問い合わせ</a></li>
+</ul></div></span>
+			</div>
+			<div class="l-footer__company_left pcnone">
+						<a href="https://kennzo.ltd/" style="font-size: 18px;">株式会社KENNZO</a>
+							
+			</div>
+		</div>
+
+		<div class="p-address">
+			<p>〒340-0043<br>
+埼玉県草加市草加2-20-20-203			</p><p style="margin:10px 0 15px;"><span class="googlemap_btn"><a href="https://maps.app.goo.gl/t3XNpXQDGB36Ytxf8" target="_blank">Googleマップで確認する</a></span></p>
+			<p>TEL：0120-933-131 / FAX：048-999-5639</p>
+		</div>
+
+		<div>
+		<ul class="p-social-nav">
+																		<li class=""> </li>
+		</ul>
+		</div>
+		<div class="l-footer__company font-size_13px">
+			<div class="l-footer__company_left footer_text" style="white-space: nowrap"><a href="https://kennzo.ltd/">外壁塗装は埼玉県草加市の株式会社KENNZOにお任せください｜協力会社募集中</a></div>
+			<div class="l-footer__company_right footer_text"><p class="p-copyright"><small>Copyright © 株式会社KENNZO. All rights reserved.</small></p></div>
+		</div>
+
+	</div>
+	</div>
+</footer>
+</div>
+
+<div id="trend_notification_app" class="trend_notification_app_outer"><div id="trend_notification"><div id="trend_notification_con"></div></div></div><div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSDataElement" style="display: none;"></umsdataelement><div id="tmtoolbar_manual_rating_injected" style="display: none;">init</div><div id="UMSSendDataEventElement" style="display: none;">init</div></html>

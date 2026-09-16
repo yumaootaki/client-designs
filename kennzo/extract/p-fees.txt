@@ -1,0 +1,229 @@
+
+<div id="site_loader_overlay" style="display: none;">
+	<div id="site_loader_animation" class="c-load--type1" style="display: none;">
+		 	</div>
+</div>
+<div id="site_wrap" style="display: block;">
+<header id="js-header" class="l-header l-header_option l-header--fixed">
+	<div class="l-header__inner">
+				<div class="l-header__logo c-logo">
+								<a href="https://kennzo.ltd/">
+				<img src="./料金・塗料について_files/logo.png" alt="草加市の塗装専門店 株式会社KENNZO｜高品質塗装で住まいを美しく長持ち">
+			</a>
+					</div>		
+		<div class="spcontact">
+					<a href="https://kennzo.ltd/contact"><span class="sp_btn_icon"></span></a>
+				</div>
+	
+
+	
+		<a href="https://kennzo.ltd/fees-and-paint#" id="js-menu-button" class="p-menu-button c-menu-button c-option_menu-button"> </a>
+		<span class="nav-ipadpro"><nav class="menu-sample%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc-container"><ul id="js-global-nav" class="p-global-nav p-option_global-nav u-clearfix"><li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-26"><a href="https://kennzo.ltd/">ホーム<span></span></a></li>
+<li id="menu-item-482" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-482"><a href="https://kennzo.ltd/work">業務案内<span></span></a></li>
+<li id="menu-item-879" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-871 current_page_item menu-item-879"><a href="https://kennzo.ltd/fees-and-paint" aria-current="page">料金・塗料について<span></span></a></li>
+<li id="menu-item-505" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-505"><a href="https://kennzo.ltd/recruit">求人・協力会社募集<span></span></a></li>
+<li id="menu-item-484" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-484"><a href="https://kennzo.ltd/information">会社概要<span></span></a></li>
+<li id="menu-item-486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-486"><a href="https://kennzo.ltd/blog">ブログ<span></span></a></li>
+<li id="menu-item-639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-639"><a href="https://kennzo.ltd/contact">お問い合わせ<span></span></a></li>
+</ul></nav></span>
+		
+				
+	
+		<div class="tel-mail ">
+			<div class="tel-mail__child_1" style="color:#333333;">
+				お客様専用ダイヤル			</div>
+			<div class="tel-mail__child_0" style="font-weight:900;">
+						<span class="tel_num1">0120-933-131</span> 
+												
+			</div>
+			<div class="tel-mail__child_1" style="color:#000000;">
+							</div>
+		</div>
+	
+
+		<div class="tel-mail__child_2">
+			<a href="https://kennzo.ltd/contact">
+							<span class="btn_icon"></span>
+						<br>メール・LINEでのお問い合わせ</a>
+		</div>
+
+		
+		
+		
+		</div>
+
+</header>
+<main class="l-main">	
+	
+
+	<header class="p-page-header">
+		<div class="p-page-header__inner" style="color: #ffffff;">
+							<div class="p-page-header__title">
+					<img class="pcotherpageheadimg" src="./料金・塗料について_files/head.png">
+					<h1 style="font-size: 44px;margin-top: 30px;margin-bottom:0px;font-weight:900;">料金・塗料について</h1>
+					<p style="font-size: 20px;">PRICE AND PAINT</p>
+				</div>
+					</div>
+	</header>
+	<div class="content" style="margin-top: 416px;">
+		<div class="p-breadcrumb c-breadcrumb">
+		<ul class="p-breadcrumb__inner l-inner" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+			<li class="p-breadcrumb__item c-breadcrumb__item c-breadcrumb__item--home" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				<a href="https://kennzo.ltd/" itemprop="item"><span itemprop="name">HOME</span></a>
+				<meta itemprop="position" content="1">
+			</li>
+						<li class="p-breadcrumb__item c-breadcrumb__item">料金・塗料について</li>
+
+					</ul>	
+	</div>	
+		<article class="p-entry l-inner">
+				<div class="p-entry__body">
+					</div>
+	</article>
+		<div class="acfwrap">
+			<div class="maeoki l-inner">
+			<div class="fees">
+<h2>足場や各部塗装など、すべてを含んだ価格を提示いたします！</h2>
+</div>
+<p>こちらのページでは株式会社KENNZOに塗装工事を依頼した場合の価格表を掲載しています。<br>
+他社では「表示価格の中に付帯工事代が含まれていない」「壁のみの価格で、屋根が含まれていない」といったケースが多く、現地調査の追加費用によって差額が発生してしまうことも。<br>
+弊社では、足場工事などの付帯工事から屋根・壁の塗装など、すべてコミコミ＆他社とは違う変わらない価格でご提供しています。</p>
+		</div>
+				
+	<article id="allcontent">
+	<div id="defocont" class="p4cont1" style="opacity: 0.3;">
+					<div class="post_box clearfix">
+
+	<div class="allcontentbox">
+			<div class="content_box_none">
+			<div class="post_box clearfix">
+<div class="allcontentbox">
+<div class="image_box_l">
+<a href="https://kennzo.ltd/fees-and-paint#sample01"><img decoding="async" src="./料金・塗料について_files/fees-and-paint_img.jpg" alt="料金・塗料について"></a><br>
+<a id="sample01" href="https://kennzo.ltd/fees-and-paint#close" class="lb"><img decoding="async" src="./料金・塗料について_files/fees-and-paint_img.jpg"></a>※クリックで画像拡大</div>
+<div class="content_box_r">
+<p>パック価格の内容<br>
+・足場工事/仮設シート<br>
+・高圧洗浄<br>
+・養生<br>
+・ヒビの補修<br>
+・下地調整<br>
+・下塗り（1回）<br>
+・本塗装（2回）・計3回<br>
+・各部塗装<br>
+屋根、雨樋、軒天、破風板、水切り、霧除け、鏡板、換気フード、カサギなど</p>
+</div>
+</div>
+</div>
+<div class="fees-and-paint-wrap">
+<div class="fees-and-paint-box">足場</div>
+<div class="fees-and-paint-box">屋根</div>
+<div class="fees-and-paint-box">高圧洗浄</div>
+<div class="fees-and-paint-box">養生</div>
+<div class="fees-and-paint-box">ヒビの補修</div>
+<div class="fees-and-paint-box">外壁塗装3回</div>
+<div class="fees-and-paint-box">各部塗装</div>
+<div class="fees-and-paint-box">デザイン対応</div>
+</div>
+<p><span style="font-weight:bold;font-size:20px;color:#000;display:block;text-align:center;">必要なものすべて<span style="font-weight:bold;font-size:20px;color:#bc1422;text-align:center;">コミ</span>（全パックで標準）</span></p>
+	</div>
+		</div>
+	</div>
+
+	
+	</div>
+	</article>
+
+				
+	<article class="freecont_article">
+				<div class="freecont">
+			<p></p><h2 class="works_single_Title_03">塗料の特徴と耐用年数</h2>
+<div class="fees-and-paint-img"><img decoding="async" src="./料金・塗料について_files/img_fees_01-scaled.jpg" alt="塗料の特徴と耐用年数"></div>
+<h2 class="works_single_Title_04">外壁・屋根塗装・価格表</h2>
+<div class="fees-and-paint-img"><img decoding="async" src="./料金・塗料について_files/img_fees_02-scaled.jpg" alt="外壁・屋根塗装・価格表"></div>
+<div class="fees-and-paint-box-box"><span style="font-weight:bold;color:#bc1422;">※シーリング工事の有無及び屋根の使用材料によって金額の変動があります。詳しい内容については、弊社スタッフまでお気軽にお聞きください。<br>
+表示価格は税別です。</span></div>
+<div class="fees-and-paint-img"><img decoding="async" src="./料金・塗料について_files/img_fees_03-scaled.jpg" alt="シリコン塗料の価格例"></div>
+<p></p>
+		</div>
+	<span style="clear:both;"></span>
+			</article>
+
+				</div>
+	</div>
+</main>
+
+<div id="js-pagetop" class="p-pagetop"><a href="https://kennzo.ltd/fees-and-paint#"></a></div>
+
+	
+<footer id="footer" class="footerbgfixed">
+	<div class="l-footer">
+	
+	
+	<div class="l-footer_inner">
+		
+		<div class="l-footer__title">
+			<h2 class="l-footer__catch" style="color:#ffffff;font-weight:900;">お問い合わせ</h2>
+		</div>
+		<div class="l-footer__contact">
+			<div class="l-footer__contact_child_telnum">
+			<div class="footer_tel-upper">
+				お客様専用ダイヤル			</div>
+			<div class="footer_tel" style="font-weight:900;">
+			 <span class="footer_tel_num1">0120-933-131</span> 
+			 									</div>
+			<div class="footer_tel-lower">
+							</div>
+			</div>
+			<div class="l-footer__contact_btn_option">
+			<div class="eff-4"></div>
+				<a href="https://kennzo.ltd/contact">
+								<span class="footer_btn_icon"></span>
+								 メール・LINEでのお問い合わせ</a> 
+			</div>
+		</div>
+		<hr class="l-footer__border">
+		
+		<div class="l-footer__company">
+			<div class="l-footer__company_left spnone">
+						<a href="https://kennzo.ltd/" style="font-size: 18px;">株式会社KENNZO</a>
+							
+			</div>
+			<div class="l-footer__company_right l-footer_nav">
+				<span class="p-fotter-nav"><div class="menu-sample%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc-container"><ul id="menu-sample%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-26"><a href="https://kennzo.ltd/">ホーム</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-482"><a href="https://kennzo.ltd/work">業務案内</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-871 current_page_item menu-item-879"><a href="https://kennzo.ltd/fees-and-paint" aria-current="page">料金・塗料について</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-505"><a href="https://kennzo.ltd/recruit">求人・協力会社募集</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-484"><a href="https://kennzo.ltd/information">会社概要</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-486"><a href="https://kennzo.ltd/blog">ブログ</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-639"><a href="https://kennzo.ltd/contact">お問い合わせ</a></li>
+</ul></div></span>
+			</div>
+			<div class="l-footer__company_left pcnone">
+						<a href="https://kennzo.ltd/" style="font-size: 18px;">株式会社KENNZO</a>
+							
+			</div>
+		</div>
+
+		<div class="p-address">
+			<p>〒340-0043<br>
+埼玉県草加市草加2-20-20-203			</p><p style="margin:10px 0 15px;"><span class="googlemap_btn"><a href="https://maps.app.goo.gl/t3XNpXQDGB36Ytxf8" target="_blank">Googleマップで確認する</a></span></p>
+			<p>TEL：0120-933-131 / FAX：048-999-5639</p>
+		</div>
+
+		<div>
+		<ul class="p-social-nav">
+																		<li class=""> </li>
+		</ul>
+		</div>
+		<div class="l-footer__company font-size_13px">
+			<div class="l-footer__company_left footer_text" style="white-space: nowrap"><a href="https://kennzo.ltd/">外壁塗装は埼玉県草加市の株式会社KENNZOにお任せください｜協力会社募集中</a></div>
+			<div class="l-footer__company_right footer_text"><p class="p-copyright"><small>Copyright © 株式会社KENNZO. All rights reserved.</small></p></div>
+		</div>
+
+	</div>
+	</div>
+</footer>
+</div>
+
+<div id="trend_notification_app" class="trend_notification_app_outer"><div id="trend_notification"><div id="trend_notification_con"></div></div></div><div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSDataElement" style="display: none;"></umsdataelement><div id="tmtoolbar_manual_rating_injected" style="display: none;">init</div><div id="UMSSendDataEventElement" style="display: none;">init</div></html>
