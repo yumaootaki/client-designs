@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body { margin: 0; background: #ffffff; color: #333333; }
+  a { color: #006600; text-decoration: none; }
+  a:hover { color: #004d00; }
+</style>
+</helmet>
+<div style="font-family: Meiryo, 'メイリオ', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif; color: #333333; line-height: 1.8;">
+  <dc-import name="SiteHeader" hint-size="100%,124px"></dc-import>
+  <dc-import name="PageHeader" ja="お問い合わせ" en="CONTACT" crumb="お問い合わせ" hint-size="100%,400px"></dc-import>
+
+  <section style="background: #f7f7f7; padding: 60px 0;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 20px;">
+      <p style="margin: 0; font-size: 16px; line-height: 1.8;">弊社へのお問い合わせは、お電話もしくは下記のフォームから送信してください。</p>
+      <h3 style="margin: 30px 0 10px; font-size: clamp(18px, 2vw, 25px); font-weight: bold; color: #006600; line-height: 1.5;">電話でのお問い合わせ</h3>
+      <p style="margin: 0; font-size: 16px; line-height: 1.8;">事務所：0475-23-1964［営業電話お断り］</p>
+      <h3 style="margin: 30px 0 10px; font-size: clamp(18px, 2vw, 25px); font-weight: bold; color: #006600; line-height: 1.5;">メールでのお問い合わせ</h3>
+      <p style="margin: 0; font-size: 16px; line-height: 1.8;">下記メールフォームに必要事項を入力し、送信してください。<br>メールフォームの「お問い合わせ内容」の項目に、ご要望などをご入力ください。<br>お問い合わせ内容を確認後、担当者より折り返しご連絡いたします。<br>数日経っても折り返しがない場合、システムの不具合によりお問い合わせメールが正常に届いていない可能性がございます。<br>お手数ですが、再度お電話にてご連絡をお願いいたします。</p>
+    </div>
+  </section>
+
+  <section style="background: #ffffff; padding: 20px 0 60px;">
+    <div style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <dl style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px 24px; margin: 0; padding: 20px 0; border-bottom: 1px solid #e5e5e5; align-items: start;">
+          <dt style="font-size: 16px; font-weight: bold; display: flex; align-items: center; gap: 10px;">お名前 / 企業名<span style="background: #c0392b; color: #ffffff; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 3px;">必須</span></dt>
+          <dd style="margin: 0;"><input name="name" type="text" style="width: 100%; box-sizing: border-box; border: 1px solid #cccccc; background: #ffffff; padding: 12px 14px; font-size: 16px; font-family: inherit;"></dd>
+        </dl>
+        <dl style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px 24px; margin: 0; padding: 20px 0; border-bottom: 1px solid #e5e5e5; align-items: start;">
+          <dt style="font-size: 16px; font-weight: bold; display: flex; align-items: center; gap: 10px;">メールアドレス<span style="background: #c0392b; color: #ffffff; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 3px;">必須</span></dt>
+          <dd style="margin: 0;"><input name="email" type="email" style="width: 100%; box-sizing: border-box; border: 1px solid #cccccc; background: #ffffff; padding: 12px 14px; font-size: 16px; font-family: inherit;"></dd>
+        </dl>
+        <dl style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px 24px; margin: 0; padding: 20px 0; border-bottom: 1px solid #e5e5e5; align-items: start;">
+          <dt style="font-size: 16px; font-weight: bold; display: flex; align-items: center; gap: 10px;">メールアドレス（確認用）<span style="background: #c0392b; color: #ffffff; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 3px;">必須</span></dt>
+          <dd style="margin: 0;"><input name="email_confirmation" type="email" style="width: 100%; box-sizing: border-box; border: 1px solid #cccccc; background: #ffffff; padding: 12px 14px; font-size: 16px; font-family: inherit;"></dd>
+        </dl>
+        <dl style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px 24px; margin: 0; padding: 20px 0; border-bottom: 1px solid #e5e5e5; align-items: start;">
+          <dt style="font-size: 16px; font-weight: bold; display: flex; align-items: center; gap: 10px;">お問い合わせ項目<span style="background: #c0392b; color: #ffffff; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 3px;">必須</span></dt>
+          <dd style="margin: 0; display: flex; flex-wrap: wrap; gap: 10px 22px;">
+            <label for="checkbox1" style="display: flex; align-items: center; gap: 6px; font-size: 16px;"><input type="checkbox" id="checkbox1" name="checkbox[]" value="ご相談" style="width: 18px; height: 18px; accent-color: #006600;">ご相談</label>
+            <label for="checkbox2" style="display: flex; align-items: center; gap: 6px; font-size: 16px;"><input type="checkbox" id="checkbox2" name="checkbox[]" value="お問い合わせ" style="width: 18px; height: 18px; accent-color: #006600;">お問い合わせ</label>
+            <label for="checkbox3" style="display: flex; align-items: center; gap: 6px; font-size: 16px;"><input type="checkbox" id="checkbox3" name="checkbox[]" value="お見積もり依頼" style="width: 18px; height: 18px; accent-color: #006600;">お見積もり依頼</label>
+            <label for="checkbox4" style="display: flex; align-items: center; gap: 6px; font-size: 16px;"><input type="checkbox" id="checkbox4" name="checkbox[]" value="求人" style="width: 18px; height: 18px; accent-color: #006600;">求人</label>
+            <label for="checkbox5" style="display: flex; align-items: center; gap: 6px; font-size: 16px;"><input type="checkbox" id="checkbox5" name="checkbox[]" value="その他" style="width: 18px; height: 18px; accent-color: #006600;">その他</label>
+          </dd>
+        </dl>
+        <dl style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px 24px; margin: 0; padding: 20px 0; border-bottom: 1px solid #e5e5e5; align-items: start;">
+          <dt style="font-size: 16px; font-weight: bold; display: flex; flex-direction: column; gap: 6px;">
+            <span style="display: flex; align-items: center; gap: 10px;">お問い合わせ内容<span style="background: #c0392b; color: #ffffff; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 3px;">必須</span></span>
+            <span style="font-size: 12px; font-weight: normal; color: #666666; line-height: 1.6;">入力は2000文字以内で日本語を含んだ文章でお願いいたします。</span>
+          </dt>
+          <dd style="margin: 0;"><textarea name="qualification" id="qualification" rows="8" style="width: 100%; box-sizing: border-box; border: 1px solid #cccccc; background: #ffffff; padding: 12px 14px; font-size: 16px; font-family: inherit; resize: vertical;"></textarea></dd>
+        </dl>
+        <div style="display: flex; justify-content: center; margin-top: 30px;">
+          <input type="submit" value="確認画面へ" style="border: 0; background: #006600; color: #ffffff; font-size: 18px; font-weight: bold; letter-spacing: .05em; padding: 18px 80px; box-shadow: 0 5px rgba(0,0,0,.2); cursor: pointer; font-family: inherit;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #f7f7f7; padding: 60px 0;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 20px;">
+      <h2 style="margin: 0 0 20px; font-size: clamp(22px, 2.6vw, 35px); font-weight: bold; color: #006600; line-height: 1.5;">プライバシーポリシー</h2>
+      <p style="margin: 0; font-size: 16px; line-height: 1.8;">東葉工業株式会社（※以下、弊社と呼ぶ）では、個人情報の取り扱いにつき、業務実態に応じた個人情報保護のための管理体制を確立するとともに、適切かつ慎重に取り扱いいたします。</p>
+      <h3 style="margin: 30px 0 10px; font-size: clamp(18px, 2vw, 25px); font-weight: bold; color: #006600; line-height: 1.5;">個人情報の取り扱いについて</h3>
+      <p style="margin: 0; font-size: 16px; line-height: 1.8;">個人情報を収集する際は、適切な範囲で適法かつ公正な手段で個人情報を収集いたします。<br>弊社では次のような場合に必要な範囲で個人情報を収集する場合がございます。<br>・ 弊社の求人内容についてのお問い合わせ<br>・ その他お問い合わせ</p>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,520px"></dc-import>
+</div>
+
+</x-dc>
+</body>
+</html>

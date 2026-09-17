@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #f4f1e9; color: #1c1c1c; }
+  a { color: #16281f; text-decoration: none; }
+  a:hover { color: #a9873f; }
+  @keyframes toyoRevealUp { from { opacity: 0; transform: translateY(36px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</helmet>
+<div style="font-family: 'Noto Sans JP', Meiryo, sans-serif; color: #1c1c1c; line-height: 1.9; background: #f4f1e9;">
+  <dc-import name="SiteHeader" hint-size="100%,124px"></dc-import>
+  <dc-import name="PageHeader" ja="未経験からはじめる方へ" en="FOR BEGINNERS" crumb="未経験からはじめる方へ" hint-size="100%,400px"></dc-import>
+
+  <section style="background: #f4f1e9; padding: 90px 0 70px;">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 0 24px;">
+      <div data-rev="1" style="opacity: 0; max-width: 760px;">
+        <span style="display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; letter-spacing: .4em; color: #7a5c20; margin-bottom: 18px;">Anxiety &amp; Answer</span>
+        <h2 style="margin: 0 0 22px; font-family: 'Shippori Mincho B1', serif; font-size: clamp(24px, 3.4vw, 40px); font-weight: 800; line-height: 1.5;">こんな不安、ありませんか？</h2>
+        <div style="width: 40px; height: 2px; background: #a9873f; margin-bottom: 24px;"></div>
+        <p style="margin: 0; font-size: 15px; line-height: 2.2; color: #5a5a5a;">はじめての業界に飛び込むとき、不安がないほうがおかしいと思います。ここでは、これまで面接でよくいただいた不安に、できるだけ正直にお答えします。</p>
+      </div>
+
+      <ul style="list-style: none; margin: 48px 0 0; padding: 0; display: flex; flex-direction: column; gap: 24px;">
+        <li data-rev="1" style="opacity: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; background: rgba(28,28,28,.1); border: 1px solid rgba(28,28,28,.1);">
+          <div style="background: #e9e4d5; padding: 36px 32px;">
+            <span style="display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12px; letter-spacing: .3em; color: #5a5a5a; margin-bottom: 14px;">Anxiety 01</span>
+            <p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: clamp(19px, 2.2vw, 25px); font-weight: 700; line-height: 1.7;">体力に自信がありません。</p>
+          </div>
+          <div style="background: #16281f; padding: 36px 32px; color: #ffffff;">
+            <span style="display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12px; letter-spacing: .3em; color: #c2a057; margin-bottom: 14px;">Our Answer</span>
+            <p style="margin: 0 0 14px; font-family: 'Shippori Mincho B1', serif; font-size: clamp(17px, 1.9vw, 21px); font-weight: 700; line-height: 1.7; color: #ffffff;">力で解決する仕事ではありません。</p>
+            <p style="margin: 0; font-size: 14px; line-height: 2.1; color: #ffffff;">重いものは工具や機材、そしてチームで動かします。ひとりで無理をする場面はありません。必要なのは、手順を守ることと、声をかけ合うこと。実際に、体力自慢ではない社員がきちんと現場を任されています。</p>
+          </div>
+        </li>
+        <li data-rev="1" style="opacity: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; background: rgba(28,28,28,.1); border: 1px solid rgba(28,28,28,.1);">
+          <div style="background: #e9e4d5; padding: 36px 32px;">
+            <span style="display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12px; letter-spacing: .3em; color: #5a5a5a; margin-bottom: 14px;">Anxiety 02</span>
+            <p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: clamp(19px, 2.2vw, 25px); font-weight: 700; line-height: 1.7;">機械のことなんて、何も分かりません。</p>
+          </div>
+          <div style="background: #16281f; padding: 36px 32px; color: #ffffff;">
+            <span style="display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12px; letter-spacing: .3em; color: #c2a057; margin-bottom: 14px;">Our Answer</span>
+            <p style="margin: 0 0 14px; font-family: 'Shippori Mincho B1', serif; font-size: clamp(17px, 1.9vw, 21px); font-weight: 700; line-height: 1.7; color: #ffffff;">分からない状態から始めるのが前提です。</p>
+            <p style="margin: 0; font-size: 14px; line-height: 2.1; color: #ffffff;">入社後しばらくは、先輩が必ず同行します。ひとりで現場に放り出されることはありません。工具の名前を覚えることから始めて、少しずつ任される範囲を広げていきます。仕事に必要な資格も、取得費用は会社が負担します。</p>
+          </div>
+        </li>
+        <li data-rev="1" style="opacity: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; background: rgba(28,28,28,.1); border: 1px solid rgba(28,28,28,.1);">
+          <div style="background: #e9e4d5; padding: 36px 32px;">
+            <span style="display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12px; letter-spacing: .3em; color: #5a5a5a; margin-bottom: 14px;">Anxiety 03</span>
+            <p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: clamp(19px, 2.2vw, 25px); font-weight: 700; line-height: 1.7;">職人の世界は、厳しそうで怖い。</p>
+          </div>
+          <div style="background: #16281f; padding: 36px 32px; color: #ffffff;">
+            <span style="display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12px; letter-spacing: .3em; color: #c2a057; margin-bottom: 14px;">Our Answer</span>
+            <p style="margin: 0 0 14px; font-family: 'Shippori Mincho B1', serif; font-size: clamp(17px, 1.9vw, 21px); font-weight: 700; line-height: 1.7; color: #ffffff;">少人数だからこそ、お互いをフォローします。</p>
+            <p style="margin: 0; font-size: 14px; line-height: 2.1; color: #ffffff;">社員は23名。全員の顔と名前が分かる規模です。年代の幅は広いのに、年齢の垣根を越えて仲が良い——これは私たち自身が一番誇っているところです。困っていれば、誰かが必ず気づきます。</p>
+          </div>
+        </li>
+        <li data-rev="1" style="opacity: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; background: rgba(28,28,28,.1); border: 1px solid rgba(28,28,28,.1);">
+          <div style="background: #e9e4d5; padding: 36px 32px;">
+            <span style="display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12px; letter-spacing: .3em; color: #5a5a5a; margin-bottom: 14px;">Anxiety 04</span>
+            <p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: clamp(19px, 2.2vw, 25px); font-weight: 700; line-height: 1.7;">続けられるか、自信がありません。</p>
+          </div>
+          <div style="background: #16281f; padding: 36px 32px; color: #ffffff;">
+            <span style="display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12px; letter-spacing: .3em; color: #c2a057; margin-bottom: 14px;">Our Answer</span>
+            <p style="margin: 0 0 14px; font-family: 'Shippori Mincho B1', serif; font-size: clamp(17px, 1.9vw, 21px); font-weight: 700; line-height: 1.7; color: #ffffff;">土日祝は休み、有給も遠慮なく。</p>
+            <p style="margin: 0; font-size: 14px; line-height: 2.1; color: #ffffff;">休みの予定が立つ仕事です。土日祝はしっかり休み、有給も自由に使っていただけます。食事会や社員旅行、ゴルフコンペもあり。おかげさまで離職率はとても低く、長く働いている社員が多い会社です。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="background: #e9e4d5; padding: 90px 0;">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 0 24px;">
+      <div data-rev="1" style="opacity: 0; max-width: 780px; margin-bottom: 48px;">
+        <span style="display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; letter-spacing: .4em; color: #7a5c20; margin-bottom: 18px;">What We Do</span>
+        <h2 style="margin: 0 0 22px; font-family: 'Shippori Mincho B1', serif; font-size: clamp(24px, 3.4vw, 40px); font-weight: 800; line-height: 1.5;">どんな仕事か、<br>ひとことで言うと。</h2>
+        <div style="width: 40px; height: 2px; background: #a9873f; margin-bottom: 24px;"></div>
+        <p style="margin: 0; font-size: 15px; line-height: 2.3; color: #5a5a5a;">工場には、何十年も動き続けている大きな機械があります。私たちの仕事は、その機械の「かかりつけ医」のようなもの。<br>普段の健康診断（点検）をして、不調があれば分解して治し、新しい機械が入るときは体に合わせて据え付ける。そういう仕事です。<br>クルマの整備をイメージしていただくと近いのですが、相手が工場の心臓部にあたる大きな機械——というだけの違いです。</p>
+      </div>
+
+      <div data-rev="1" style="opacity: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; margin-bottom: 56px;">
+        <div style="background: #6f7861; min-height: 320px; display: flex; align-items: center; justify-content: center; padding: 24px; text-align: center;">
+          <span style="font-size: 12px; font-weight: 300; color: #ffffff; letter-spacing: .1em; line-height: 2;">【写真①】プラント内で機械を点検する手元のアップ<br>（配管・バルブが並ぶ現場／真剣な表情）</span>
+        </div>
+        <div>
+          <p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: clamp(18px, 2vw, 24px); font-weight: 700; line-height: 1.8; color: #16281f;">「音が、いつもと少し違う」<br>——それが分かるようになります。</p>
+          <p style="margin: 18px 0 0; font-size: 14px; line-height: 2.2; color: #5a5a5a;">異音、振動、わずかな温度差。機械は調子が悪いとき、必ず何かのサインを出しています。それを読み取る力は、教科書ではなく現場で身につくもの。最初は分からなくて当然です。先輩と一緒に何度も現場に立つうちに、ある日ふと「気づける」ようになります。</p>
+        </div>
+      </div>
+
+      <div data-rev="1" style="opacity: 0;">
+        <h3 style="margin: 0 0 8px; font-family: 'Shippori Mincho B1', serif; font-size: clamp(20px, 2.4vw, 28px); font-weight: 700; line-height: 1.5;">ある一日の流れ</h3>
+        <p style="margin: 0 0 28px; font-size: 14px; color: #5a5a5a;">現場によって変わりますが、だいたいこんな一日です。</p>
+        <ul style="list-style: none; margin: 0; padding: 0;">
+          <li style="display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 28px; padding: 26px 0; border-top: 1px solid rgba(28,28,28,.15);">
+            <p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: #7a5c20; line-height: 1.2;">8:00</p>
+            <div>
+              <p style="margin: 0 0 6px; font-family: 'Shippori Mincho B1', serif; font-size: 18px; font-weight: 700; line-height: 1.6;">朝礼・打ち合わせ</p>
+              <p style="margin: 0; font-size: 14px; line-height: 2.1; color: #5a5a5a;">今日どの機械を触るのか、どこに気をつけるのかをチームで共有します。分からないことはこの時間に聞いておけば大丈夫。</p>
+            </div>
+          </li>
+          <li style="display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 28px; padding: 26px 0; border-top: 1px solid rgba(28,28,28,.15);">
+            <p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: #7a5c20; line-height: 1.2;">8:30</p>
+            <div>
+              <p style="margin: 0 0 6px; font-family: 'Shippori Mincho B1', serif; font-size: 18px; font-weight: 700; line-height: 1.6;">現場へ入り、点検・整備</p>
+              <p style="margin: 0; font-size: 14px; line-height: 2.1; color: #5a5a5a;">先輩と一緒に機械の前へ。最初は工具を渡したり、部品を運んだり。「今なにをしているのか」を見て覚える時間が、いちばんの勉強になります。</p>
+            </div>
+          </li>
+          <li style="display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 28px; padding: 26px 0; border-top: 1px solid rgba(28,28,28,.15);">
+            <p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: #7a5c20; line-height: 1.2;">12:00</p>
+            <div>
+              <p style="margin: 0 0 6px; font-family: 'Shippori Mincho B1', serif; font-size: 18px; font-weight: 700; line-height: 1.6;">昼休憩</p>
+              <p style="margin: 0; font-size: 14px; line-height: 2.1; color: #5a5a5a;">みんなでしっかり休みます。この時間の雑談で現場のコツを教わることも多いです。</p>
+            </div>
+          </li>
+          <li style="display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 28px; padding: 26px 0; border-top: 1px solid rgba(28,28,28,.15);">
+            <p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: #7a5c20; line-height: 1.2;">13:00</p>
+            <div>
+              <p style="margin: 0 0 6px; font-family: 'Shippori Mincho B1', serif; font-size: 18px; font-weight: 700; line-height: 1.6;">午後の作業・組み立て</p>
+              <p style="margin: 0; font-size: 14px; line-height: 2.1; color: #5a5a5a;">分解した部品を元に戻し、きちんと動くかを確認します。「直った」瞬間が、いちばん気持ちのいい時間です。</p>
+            </div>
+          </li>
+          <li style="display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 28px; padding: 26px 0; border-top: 1px solid rgba(28,28,28,.15); border-bottom: 1px solid rgba(28,28,28,.15);">
+            <p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: #7a5c20; line-height: 1.2;">17:00</p>
+            <div>
+              <p style="margin: 0 0 6px; font-family: 'Shippori Mincho B1', serif; font-size: 18px; font-weight: 700; line-height: 1.6;">片付け・終業</p>
+              <p style="margin: 0; font-size: 14px; line-height: 2.1; color: #5a5a5a;">工具を片付け、明日の段取りを確認して終わり。残業手当はきちんと支給しますが、だらだら残る文化はありません。</p>
+            </div>
+          </li>
+        </ul>
+        <div style="display: flex; justify-content: center; margin-top: 44px;">
+          <a href="Charm.dc.html" style="display: inline-flex; align-items: center; justify-content: center; background: #16281f; color: #ffffff; font-size: 14px; font-weight: 500; letter-spacing: .2em; padding: 20px 52px; transition: background .3s;" style-hover="background: #223f2f; color: #ffffff;">先輩たちのリアルな声はこちら</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #f4f1e9; padding: 90px 0;">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 0 24px;">
+      <div data-rev="1" style="opacity: 0; max-width: 760px; margin-bottom: 48px;">
+        <span style="display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; letter-spacing: .4em; color: #7a5c20; margin-bottom: 18px;">Career Path</span>
+        <h2 style="margin: 0 0 22px; font-family: 'Shippori Mincho B1', serif; font-size: clamp(24px, 3.4vw, 40px); font-weight: 800; line-height: 1.5;">ゼロから、<br>現場を任される人へ。</h2>
+        <div style="width: 40px; height: 2px; background: #a9873f; margin-bottom: 24px;"></div>
+        <p style="margin: 0; font-size: 15px; line-height: 2.2; color: #5a5a5a;">焦らせるつもりはありません。ただ、続けた人がどうなっていくかだけは、正直にお見せしておきます。</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; background: rgba(28,28,28,.1); border: 1px solid rgba(28,28,28,.1);">
+        <div data-rev="1" style="opacity: 0; background: #f4f1e9; border-top: 2px solid #a9873f; padding: 40px 32px;">
+          <p style="margin: 0 0 12px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 34px; color: rgba(28,28,28,.18); line-height: 1;">01</p>
+          <span style="display: inline-block; background: #16281f; color: #ffffff; font-size: 11px; font-weight: 500; letter-spacing: .2em; padding: 4px 10px; margin-bottom: 16px;">入社〜1年</span>
+          <h3 style="margin: 0 0 12px; font-family: 'Shippori Mincho B1', serif; font-size: 19px; font-weight: 700; line-height: 1.6;">先輩と一緒に、現場を覚える。</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 2.1; color: #5a5a5a;">先輩が必ず同行します。工具の名前、機械の構造、現場での動き方を、見て・聞いて・手を動かしながら覚えていく時期です。</p>
+        </div>
+        <div data-rev="1" style="opacity: 0; background: #f4f1e9; border-top: 2px solid #a9873f; padding: 40px 32px;">
+          <p style="margin: 0 0 12px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 34px; color: rgba(28,28,28,.18); line-height: 1;">02</p>
+          <span style="display: inline-block; background: #16281f; color: #ffffff; font-size: 11px; font-weight: 500; letter-spacing: .2em; padding: 4px 10px; margin-bottom: 16px;">1〜3年</span>
+          <h3 style="margin: 0 0 12px; font-family: 'Shippori Mincho B1', serif; font-size: 19px; font-weight: 700; line-height: 1.6;">任される仕事が、増えていく。</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 2.1; color: #5a5a5a;">分解・点検・据付の基本が身につき、ひとりで担当できる作業が増えます。関連資格の取得も、会社が費用を負担して後押しします。</p>
+        </div>
+        <div data-rev="1" style="opacity: 0; background: #16281f; border-top: 2px solid #c2a057; padding: 40px 32px;">
+          <p style="margin: 0 0 12px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 34px; color: rgba(255,255,255,.22); line-height: 1;">03</p>
+          <span style="display: inline-block; background: #c2a057; color: #16281f; font-size: 11px; font-weight: 700; letter-spacing: .2em; padding: 4px 10px; margin-bottom: 16px;">3年以降</span>
+          <h3 style="margin: 0 0 12px; font-family: 'Shippori Mincho B1', serif; font-size: 19px; font-weight: 700; line-height: 1.6; color: #ffffff;">職長・リーダー候補へ。</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 2.1; color: #ffffff;">後輩を育て、現場全体を見る立場へ。お客さまから直接「ありがとう」と言われる場面も増えます。さらに先には、施工管理という道もあります。</p>
+        </div>
+      </div>
+      <div data-rev="1" style="opacity: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; margin-top: 56px;">
+        <div>
+          <p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: clamp(18px, 2vw, 24px); font-weight: 700; line-height: 1.8; color: #16281f;">頑張った分だけ、<br>任される現場が広がります。</p>
+          <p style="margin: 18px 0 0; font-size: 14px; line-height: 2.2; color: #5a5a5a;">何年で何ができるようになるか、それは人それぞれです。大事なのは、できることが一つずつ増えていく実感を持てること。東葉工業には、その積み重ねをきちんと見ている先輩がいます。</p>
+        </div>
+        <div style="background: #5f6a5b; min-height: 300px; display: flex; align-items: center; justify-content: center; padding: 24px; text-align: center;">
+          <span style="font-size: 12px; font-weight: 300; color: #ffffff; letter-spacing: .1em; line-height: 2;">【写真②】先輩が新人に工具を手渡しながら説明している場面<br>（OJTの雰囲気／2人の関係性が伝わる横位置）</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #e9e4d5; padding: 90px 0;">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 0 24px;">
+      <div data-rev="1" style="opacity: 0; margin-bottom: 40px;">
+        <span style="display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; letter-spacing: .4em; color: #7a5c20; margin-bottom: 18px;">Requirements</span>
+        <h2 style="margin: 0 0 22px; font-family: 'Shippori Mincho B1', serif; font-size: clamp(24px, 3.4vw, 40px); font-weight: 800; line-height: 1.5;">求人概要</h2>
+        <div style="width: 40px; height: 2px; background: #a9873f;"></div>
+      </div>
+      <table data-rev="1" style="opacity: 0; width: 100%; border-collapse: collapse; font-size: 15px;">
+        <tbody>
+          <tr style="border-top: 1px solid rgba(28,28,28,.25); border-bottom: 1px solid rgba(28,28,28,.25);">
+            <th scope="row" style="width: 26%; min-width: 150px; text-align: left; vertical-align: top; padding: 22px 28px 22px 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; color: #16281f;">職種</th>
+            <td style="padding: 22px 0; vertical-align: top; line-height: 2;">プラント機械メンテナンス／機械器具設置（機械据付）</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(28,28,28,.25);">
+            <th scope="row" style="width: 26%; min-width: 150px; text-align: left; vertical-align: top; padding: 22px 28px 22px 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; color: #16281f;">雇用形態</th>
+            <td style="padding: 22px 0; vertical-align: top; line-height: 2;">正社員</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(28,28,28,.25);">
+            <th scope="row" style="width: 26%; min-width: 150px; text-align: left; vertical-align: top; padding: 22px 28px 22px 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; color: #16281f;">応募資格</th>
+            <td style="padding: 22px 0; vertical-align: top; line-height: 2;">経験不問・学歴不問／18歳以上で健康な方<br>※未経験者歓迎。研修を通して基礎から丁寧にお教えします。</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(28,28,28,.25);">
+            <th scope="row" style="width: 26%; min-width: 150px; text-align: left; vertical-align: top; padding: 22px 28px 22px 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; color: #16281f;">勤務地</th>
+            <td style="padding: 22px 0; vertical-align: top; line-height: 2;">お客さまの工場・プラント（現場によって異なります）<br>本社：千葉県茂原市八千代1-17-14／対応エリア：関東一円</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(28,28,28,.25);">
+            <th scope="row" style="width: 26%; min-width: 150px; text-align: left; vertical-align: top; padding: 22px 28px 22px 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; color: #16281f;">勤務時間</th>
+            <td style="padding: 22px 0; vertical-align: top; line-height: 2;">8時〜17時（休憩あり）</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(28,28,28,.25);">
+            <th scope="row" style="width: 26%; min-width: 150px; text-align: left; vertical-align: top; padding: 22px 28px 22px 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; color: #16281f;">給与</th>
+            <td style="padding: 22px 0; vertical-align: top; line-height: 2;">経験・能力を考慮のうえ、当社規定により決定いたします。<br>※詳細は面接時にご説明します。</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(28,28,28,.25);">
+            <th scope="row" style="width: 26%; min-width: 150px; text-align: left; vertical-align: top; padding: 22px 28px 22px 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; color: #16281f;">諸手当</th>
+            <td style="padding: 22px 0; vertical-align: top; line-height: 2;">残業手当・通勤手当・家族手当・資格手当</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(28,28,28,.25);">
+            <th scope="row" style="width: 26%; min-width: 150px; text-align: left; vertical-align: top; padding: 22px 28px 22px 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; color: #16281f;">昇給・賞与</th>
+            <td style="padding: 22px 0; vertical-align: top; line-height: 2;">昇給あり／賞与あり</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(28,28,28,.25);">
+            <th scope="row" style="width: 26%; min-width: 150px; text-align: left; vertical-align: top; padding: 22px 28px 22px 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; color: #16281f;">休日・休暇</th>
+            <td style="padding: 22px 0; vertical-align: top; line-height: 2;">土曜日・日曜日・祝日・年末年始／有給休暇</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(28,28,28,.25);">
+            <th scope="row" style="width: 26%; min-width: 150px; text-align: left; vertical-align: top; padding: 22px 28px 22px 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; color: #16281f;">待遇・福利厚生</th>
+            <td style="padding: 22px 0; vertical-align: top; line-height: 2;">社会保険完備・退職金制度・資格取得支援制度（費用会社負担）<br>作業着・道具は会社より支給／食事会・社員旅行・ゴルフコンペあり</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(28,28,28,.25);">
+            <th scope="row" style="width: 26%; min-width: 150px; text-align: left; vertical-align: top; padding: 22px 28px 22px 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; color: #16281f;">選考プロセス</th>
+            <td style="padding: 22px 0; vertical-align: top; line-height: 2;">［応募］→［面接日決定］→［面接］→［内定］</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section style="background: #16281f; padding: 100px 0;">
+    <div data-rev="1" style="opacity: 0; max-width: 820px; margin: 0 auto; padding: 0 24px; text-align: center;">
+      <span style="display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; letter-spacing: .4em; color: #c2a057; margin-bottom: 20px;">Entry</span>
+      <h2 style="margin: 0 0 16px; font-family: 'Shippori Mincho B1', serif; font-size: clamp(22px, 3vw, 34px); font-weight: 800; color: #ffffff; line-height: 1.6;">まず、話を聞きに来てください。</h2>
+      <p style="margin: 0 0 44px; font-size: 14px; color: #ffffff; line-height: 2.2;">「向いているかどうか分からない」その状態のままで大丈夫です。<br>ご相談だけでも歓迎します。</p>
+      <div style="display: flex; flex-wrap: wrap; align-items: stretch; justify-content: center; gap: 16px; margin-bottom: 48px;">
+        <a href="Contact.dc.html" style="display: flex; align-items: center; justify-content: center; flex: 1 1 260px; max-width: 340px; background: #c2a057; color: #16281f; font-size: 14px; font-weight: 700; letter-spacing: .2em; padding: 20px 44px; transition: opacity .3s;" style-hover="opacity: .82; color: #16281f;">エントリーフォームへ</a>
+        <a href="Work.dc.html" style="display: flex; align-items: center; justify-content: center; flex: 1 1 260px; max-width: 340px; border: 1px solid rgba(255,255,255,.55); color: #ffffff; font-size: 14px; font-weight: 500; letter-spacing: .2em; padding: 20px 44px; transition: border-color .3s;" style-hover="border-color: #ffffff; color: #ffffff;">業務案内を見る</a>
+      </div>
+      <p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 34px; color: #ffffff; letter-spacing: .1em;">0475-23-1964</p>
+      <p style="margin: 8px 0 0; font-size: 13px; color: #ffffff; letter-spacing: .05em;">受付時間 8時30分〜17時（土日祝を除く）</p>
+      <p style="margin: 24px 0 0; font-size: 13px; color: #ffffff; line-height: 2;">東葉工業株式会社／千葉県茂原市八千代1-17-14／創業 昭和44年7月25日</p>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,520px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { this._reveal(); }
+  componentDidUpdate() { this._reveal(); }
+  _reveal() {
+    const els = Array.from(document.querySelectorAll('[data-rev]'));
+    if (!els.length) return;
+    els.forEach(el => { el.style.opacity = '1'; });
+    if (typeof IntersectionObserver === 'undefined') return;
+    if (!this._seen) this._seen = new WeakSet();
+    if (!this._obs) {
+      this._obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.animation = 'toyoRevealUp .9s cubic-bezier(.22,.8,.22,1) both';
+            this._obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+    }
+    els.forEach(el => {
+      if (!this._seen.has(el)) { this._seen.add(el); this._obs.observe(el); }
+    });
+  }
+  componentWillUnmount() { if (this._obs) this._obs.disconnect(); }
+}
+
+</script>
+</body>
+</html>

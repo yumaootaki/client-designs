@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>求職者のみなさまへ | 東葉工業株式会社</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;700;800&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+/* ===================== RESET ===================== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  background:#f4f1e9;
+  color:#1c1c1c;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+
+:root{
+  --cream:   #f4f1e9;
+  --cream-d: #e9e4d5;
+  --cream-dd:#dcd5c1;
+  --green:   #16281f;
+  --green-m: #223f2f;
+  --ink:     #1c1c1c;
+  --ink-l:   #5a5a5a;
+  --ink-f:   #9a978c;
+  --gold:    #a9873f;
+  --gold-l:  #c2a057;
+  --serif:'Shippori Mincho B1','Georgia',serif;
+  --sans:'Noto Sans JP',sans-serif;
+  --roman:'Cormorant Garamond',serif;
+}
+
+/* ===================== PHOTO PLACEHOLDERS ===================== */
+.photo{
+  background:#a7ab9c;
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.photo span{
+  font-size:11px;color:rgba(255,255,255,0.5);
+  letter-spacing:1px;text-align:center;
+  padding:0 20px;line-height:1.8;
+  pointer-events:none;
+  font-family:var(--sans);font-weight:300;
+}
+.photo.dark{background:#25332a;}
+.photo.darker{background:#141d17;}
+.photo.mid{background:#5f6a5b;}
+
+/* ===================== SCROLL REVEAL ===================== */
+.rev{opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.22,.8,.22,1),transform .85s cubic-bezier(.22,.8,.22,1);}
+.rev.on{opacity:1;transform:none;}
+.revL{opacity:0;transform:translateX(-36px);transition:opacity .85s .1s cubic-bezier(.22,.8,.22,1),transform .85s .1s cubic-bezier(.22,.8,.22,1);}
+.revL.on{opacity:1;transform:none;}
+.revR{opacity:0;transform:translateX(36px);transition:opacity .85s .15s cubic-bezier(.22,.8,.22,1),transform .85s .15s cubic-bezier(.22,.8,.22,1);}
+.revR.on{opacity:1;transform:none;}
+.d1{transition-delay:.12s!important;}
+.d2{transition-delay:.24s!important;}
+.d3{transition-delay:.38s!important;}
+
+/* ===================== HEADER ===================== */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  height:56px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;
+  background:rgba(244,241,233,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(28,28,28,.07);
+}
+.hd-logo{
+  font-family:var(--roman);font-size:17px;
+  color:var(--green);font-style:italic;letter-spacing:2px;
+  display:flex;flex-direction:column;gap:2px;
+}
+.hd-logo span{font-family:var(--sans);font-size:9px;font-style:normal;font-weight:300;color:var(--ink-l);letter-spacing:1.5px;}
+.hd-nav{display:flex;align-items:center;gap:28px;}
+.hd-nav a{font-size:11px;color:var(--ink-l);letter-spacing:1px;transition:color .2s;}
+.hd-nav a:hover{color:var(--ink);}
+.hd-entry{background:var(--green);color:#fff !important;padding:9px 20px;font-size:10px;letter-spacing:2.5px;font-weight:500;transition:background .2s !important;}
+.hd-entry:hover{background:var(--green-m) !important;}
+
+/* ===================== 01 PAGE HEAD（下層ページ用・コンパクト） ===================== */
+.page-head{
+  height:46vh;min-height:340px;max-height:460px;
+  position:relative;display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.page-head-bg{position:absolute;inset:0;background:#131e17;}
+.page-head-bg::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(10,20,15,.25) 0%,rgba(10,20,15,.15) 35%,rgba(10,18,14,.82) 100%);
+  z-index:1;
+}
+.page-head-bg-label{
+  position:absolute;inset:0;z-index:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;color:rgba(255,255,255,.18);letter-spacing:2px;
+  font-family:var(--sans);font-weight:300;text-align:center;
+  padding:0 40px;
+}
+.page-head-content{
+  position:relative;z-index:2;
+  padding:0 72px 40px;width:100%;
+}
+.page-head-label{
+  font-family:var(--roman);font-size:11px;
+  letter-spacing:4px;color:rgba(255,255,255,.45);
+  font-style:italic;display:block;margin-bottom:14px;
+}
+.page-head-title{
+  font-family:var(--serif);
+  font-size:clamp(26px,3.6vw,40px);
+  font-weight:700;color:#fff;
+  line-height:1.4;letter-spacing:-.5px;
+}
+.breadcrumb{
+  position:absolute;top:24px;left:72px;z-index:2;
+  font-size:10px;color:rgba(255,255,255,.4);
+  display:flex;align-items:center;gap:8px;letter-spacing:1px;
+}
+.breadcrumb a{color:rgba(255,255,255,.4);transition:color .2s;}
+.breadcrumb a:hover{color:rgba(255,255,255,.7);}
+
+/* ===================== 02 FACT1 ===================== */
+.fact1{
+  background:var(--cream);
+  padding:160px 0 0;
+  overflow:hidden;
+}
+.fact1-inner{
+  max-width:1160px;margin:0 auto;padding:0 72px;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;align-items:stretch;
+}
+.fact1-text{
+  padding:0 80px 120px 0;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.fact1-no{
+  font-family:var(--roman);font-size:11px;
+  letter-spacing:5px;color:var(--ink-f);
+  font-style:italic;margin-bottom:32px;display:block;
+}
+.fact1-copy{
+  font-family:var(--serif);
+  font-size:clamp(32px,4.3vw,52px);
+  font-weight:800;line-height:1.5;
+  letter-spacing:.5px;margin-bottom:40px;
+}
+.fact1-copy em{font-style:normal;color:var(--green);}
+.fact1-body{
+  font-size:14px;font-weight:300;
+  color:var(--ink-l);line-height:2.5;
+}
+.fact1-body p+p{margin-top:20px;}
+.fact1-div{width:32px;height:1.5px;background:var(--gold);margin:32px 0;}
+.fact1-photo{width:100%;height:100%;min-height:560px;}
+
+/* ===================== 03 PULL 1 ===================== */
+.pull1{
+  background:var(--green);
+  padding:120px 72px;
+  text-align:center;position:relative;overflow:hidden;
+}
+.pull1::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(-45deg,transparent,transparent 80px,rgba(255,255,255,.018) 80px,rgba(255,255,255,.018) 81px);
+}
+.pull1-copy{
+  font-family:var(--serif);
+  font-size:clamp(30px,5vw,62px);
+  font-weight:800;color:#fff;
+  line-height:1.5;letter-spacing:.5px;
+  position:relative;
+}
+.pull1-copy em{font-style:normal;color:var(--gold-l);}
+
+/* ===================== 04 FACT2 ===================== */
+.fact2{background:var(--cream-d);overflow:hidden;}
+.fact2-fullphoto{
+  width:100%;height:60vw;max-height:680px;min-height:420px;
+  position:relative;
+}
+.fact2-caption{
+  position:absolute;
+  bottom:0;right:0;
+  background:var(--green);
+  padding:48px 72px 48px 64px;
+  max-width:540px;
+}
+.fact2-kicker{
+  font-family:var(--roman);font-size:11px;
+  letter-spacing:4px;color:rgba(255,255,255,.5);
+  font-style:italic;display:block;margin-bottom:16px;
+}
+.fact2-caption-copy{
+  font-family:var(--serif);
+  font-size:clamp(22px,3vw,34px);
+  font-weight:700;color:#fff;
+  line-height:1.7;margin-bottom:20px;
+}
+.fact2.opening .fact2-caption-copy{font-size:clamp(26px,3.6vw,44px);}
+.fact2-caption-copy em{font-style:normal;color:var(--gold-l);}
+.fact2-caption-body{
+  font-size:13px;font-weight:300;
+  color:rgba(255,255,255,.6);line-height:2.3;
+}
+
+/* ===================== 05 FACT3 ===================== */
+.fact3{
+  background:var(--cream);
+  padding:160px 0;overflow:hidden;
+}
+.fact3-inner{
+  max-width:1160px;margin:0 auto;padding:0 72px;
+  display:grid;grid-template-columns:520px 1fr;
+  gap:100px;align-items:center;
+}
+.fact3-visual{position:relative;}
+.fact3-main{width:100%;aspect-ratio:3/4;}
+.fact3-sub{
+  position:absolute;
+  bottom:-40px;right:-40px;
+  width:58%;aspect-ratio:1;
+  border:8px solid var(--cream);
+}
+.fact3-no{
+  font-family:var(--roman);font-size:11px;
+  letter-spacing:5px;color:var(--ink-f);
+  font-style:italic;margin-bottom:28px;display:block;
+}
+.fact3-copy{
+  font-family:var(--serif);
+  font-size:clamp(26px,3.3vw,42px);
+  font-weight:800;line-height:1.6;
+  margin-bottom:36px;letter-spacing:.5px;
+}
+.fact3-copy em{font-style:normal;color:var(--green);}
+.fact3-div{width:32px;height:1.5px;background:var(--gold);margin:0 0 32px;}
+.fact3-body{
+  font-size:14px;font-weight:300;
+  color:var(--ink-l);line-height:2.5;
+}
+.fact3-body p+p{margin-top:18px;}
+.fact3-nums{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1px;background:rgba(28,28,28,.1);
+  margin-top:48px;
+}
+.fact3-num{background:var(--cream);padding:24px 20px;}
+.fact3-num .n{
+  font-family:var(--roman);font-size:38px;
+  color:var(--green);line-height:1;font-style:italic;
+  margin-bottom:6px;
+}
+.fact3-num .n b{font-size:17px;}
+.fact3-num .l{font-size:11px;color:var(--ink-l);letter-spacing:.5px;line-height:1.6;}
+
+/* ===================== 06 PULL 2 ===================== */
+.pull2{
+  background:var(--cream-dd);
+  padding:140px 72px;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+  max-width:none;
+}
+.pull2-left{
+  font-family:var(--serif);
+  font-size:clamp(26px,3.8vw,48px);
+  font-weight:800;line-height:1.6;
+  letter-spacing:.5px;
+}
+.pull2-left em{font-style:normal;color:var(--green);}
+.pull2-right{font-size:14px;font-weight:300;color:var(--ink-l);line-height:2.6;}
+.pull2-right p+p{margin-top:20px;}
+.pull2-div{width:32px;height:1.5px;background:var(--gold);margin:28px 0;}
+
+/* ===================== 07 FACT4 ===================== */
+.fact4{background:var(--cream);padding:0;overflow:hidden;}
+.fact4-grid{display:grid;grid-template-columns:1fr 1fr;min-height:620px;}
+.fact4-photo{min-height:500px;}
+.fact4-text{
+  background:var(--green);
+  padding:96px 80px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.fact4-no{
+  font-family:var(--roman);font-size:11px;
+  letter-spacing:5px;color:rgba(255,255,255,.3);
+  font-style:italic;margin-bottom:28px;display:block;
+}
+.fact4-copy{
+  font-family:var(--serif);
+  font-size:clamp(24px,2.8vw,36px);
+  font-weight:700;color:#fff;
+  line-height:1.65;margin-bottom:36px;
+  letter-spacing:.5px;
+}
+.fact4-copy em{font-style:normal;color:var(--gold-l);}
+.fact4-div{width:32px;height:1.5px;background:rgba(255,255,255,.2);margin:0 0 32px;}
+.fact4-body{font-size:13px;font-weight:300;color:rgba(255,255,255,.6);line-height:2.4;}
+.fact4-body p+p{margin-top:16px;}
+
+/* ===================== 08 STEPS ===================== */
+.steps{background:var(--cream-d);padding:140px 0;}
+.steps-inner{max-width:1000px;margin:0 auto;padding:0 72px;}
+.steps-head{margin-bottom:72px;}
+.steps-en{
+  font-family:var(--roman);font-size:11px;
+  letter-spacing:5px;color:var(--ink-f);
+  font-style:italic;margin-bottom:16px;display:block;
+}
+.steps-title{
+  font-family:var(--serif);
+  font-size:clamp(23px,2.9vw,34px);
+  font-weight:700;line-height:1.5;
+}
+.steps-div{width:32px;height:1.5px;background:var(--gold);margin:20px 0 0;}
+.step-item{
+  display:grid;grid-template-columns:120px 1fr;
+  gap:48px;align-items:start;
+  padding:48px 0;
+  border-top:1px solid rgba(28,28,28,.1);
+}
+.step-item:last-child{border-bottom:1px solid rgba(28,28,28,.1);}
+.step-left{text-align:center;}
+.step-yr{
+  font-family:var(--roman);font-size:44px;
+  color:rgba(28,28,28,.1);font-style:italic;
+  line-height:1;margin-bottom:8px;
+}
+.step-tag{
+  display:inline-block;
+  background:var(--green);color:#fff;
+  font-size:9px;font-weight:500;
+  letter-spacing:2px;padding:4px 10px;
+}
+.step-title{
+  font-family:var(--serif);font-size:19px;font-weight:700;
+  margin-bottom:12px;line-height:1.5;
+}
+.step-body{font-size:13px;font-weight:300;color:var(--ink-l);line-height:2.3;}
+
+/* ===================== 09 PULL 3 ===================== */
+.pull3{position:relative;min-height:80vh;display:flex;align-items:center;overflow:hidden;}
+.pull3-photo{position:absolute;inset:0;}
+.pull3-photo::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(20,35,25,.9) 0%,rgba(20,35,25,.7) 50%,rgba(20,35,25,.25) 100%);
+  z-index:1;
+}
+.pull3-content{position:relative;z-index:2;padding:0 72px;max-width:680px;}
+.pull3-badge{
+  display:inline-block;background:var(--gold);
+  color:#fff;font-size:9px;font-weight:500;
+  letter-spacing:2px;padding:5px 12px;margin-bottom:28px;
+}
+.pull3-copy{
+  font-family:var(--serif);
+  font-size:clamp(30px,5vw,58px);
+  font-weight:800;color:#fff;
+  line-height:1.45;margin-bottom:28px;letter-spacing:-.5px;
+}
+.pull3-copy em{font-style:normal;color:var(--gold-l);}
+.pull3-body{font-size:14px;font-weight:300;color:rgba(255,255,255,.65);line-height:2.3;max-width:460px;}
+
+/* ===================== 10 PATHS ===================== */
+.paths{background:var(--cream);padding:140px 0;}
+.paths-inner{max-width:1100px;margin:0 auto;padding:0 72px;}
+.paths-head{margin-bottom:64px;}
+.paths-en{
+  font-family:var(--roman);font-size:11px;
+  letter-spacing:5px;color:var(--ink-f);
+  font-style:italic;margin-bottom:16px;display:block;
+}
+.paths-title{
+  font-family:var(--serif);
+  font-size:clamp(23px,2.9vw,34px);
+  font-weight:700;line-height:1.5;margin-bottom:12px;
+}
+.paths-sub{font-size:13px;font-weight:300;color:var(--ink-l);line-height:2;}
+.paths-div{width:32px;height:1.5px;background:var(--gold);margin:20px 0 28px;}
+.paths-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:2px;background:rgba(28,28,28,.08);
+  border:1px solid rgba(28,28,28,.08);
+}
+.pc{
+  background:var(--cream);padding:48px 40px;
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+  transition:background .3s;cursor:pointer;
+}
+.pc:hover{background:#fff;}
+.pc.dark{background:var(--green);}
+.pc.dark:hover{background:var(--green-m);}
+.pc-top-line{position:absolute;top:0;left:0;right:0;height:2px;background:rgba(28,28,28,.08);transition:background .3s;}
+.pc:hover .pc-top-line{background:var(--green);}
+.pc.dark .pc-top-line{background:var(--gold);}
+.pc-route{
+  font-family:var(--roman);font-size:10px;
+  letter-spacing:4px;color:var(--ink-f);
+  font-style:italic;margin-bottom:10px;
+}
+.pc.dark .pc-route{color:rgba(255,255,255,.4);}
+.pc-new{
+  display:inline-block;background:var(--gold);
+  color:#fff;font-size:8px;font-weight:700;
+  letter-spacing:2px;padding:2px 7px;
+  margin-left:8px;vertical-align:middle;
+}
+.pc-title{font-family:var(--serif);font-size:19px;font-weight:700;line-height:1.5;margin-bottom:16px;}
+.pc.dark .pc-title{color:#fff;}
+.pc-desc{font-size:13px;font-weight:300;color:var(--ink-l);line-height:2.2;margin-bottom:24px;flex-grow:1;}
+.pc.dark .pc-desc{color:rgba(255,255,255,.6);}
+.pc-link{font-size:11px;letter-spacing:1.5px;color:var(--green);border-bottom:1px solid var(--green);padding-bottom:2px;align-self:flex-start;}
+.pc.dark .pc-link{color:#fff;border-color:rgba(255,255,255,.4);}
+
+/* ===================== 11 VOICES ===================== */
+.voices{background:var(--cream-d);padding:140px 0;}
+.voices-inner{max-width:1000px;margin:0 auto;padding:0 72px;}
+.voices-head{margin-bottom:72px;}
+.voices-en{
+  font-family:var(--roman);font-size:11px;
+  letter-spacing:5px;color:var(--ink-f);
+  font-style:italic;margin-bottom:16px;display:block;
+}
+.voices-title{font-family:var(--serif);font-size:clamp(23px,2.9vw,34px);font-weight:700;line-height:1.5;}
+.voices-div{width:32px;height:1.5px;background:var(--gold);margin:20px 0 0;}
+.vi{display:grid;grid-template-columns:280px 1fr;gap:56px;padding:56px 0;border-top:1px solid rgba(28,28,28,.1);}
+.vi:last-child{border-bottom:1px solid rgba(28,28,28,.1);}
+.vi-photo{width:100%;height:340px;}
+.vi-tag{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:500;margin-bottom:14px;display:block;}
+.vi-name{font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:4px;}
+.vi-meta{font-size:12px;color:var(--ink-f);margin-bottom:24px;letter-spacing:.5px;}
+.vi-quote{
+  font-family:var(--serif);font-size:18px;font-weight:700;
+  line-height:1.75;color:var(--green);margin-bottom:20px;
+}
+.vi-body{font-size:13px;font-weight:300;color:var(--ink-l);line-height:2.3;}
+
+/* ===================== 12 FINAL ===================== */
+.final{background:var(--green);padding:180px 0;position:relative;overflow:hidden;text-align:center;}
+.final-bg{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:var(--roman);font-size:min(28vw,320px);
+  color:rgba(255,255,255,.025);font-style:italic;white-space:nowrap;
+  letter-spacing:10px;pointer-events:none;
+}
+.final-inner{max-width:720px;margin:0 auto;padding:0 40px;position:relative;}
+.final-en{
+  font-family:var(--roman);font-size:12px;letter-spacing:4px;
+  color:rgba(255,255,255,.4);font-style:italic;display:block;margin-bottom:28px;
+}
+.final-copy{
+  font-family:var(--serif);font-size:clamp(26px,3.6vw,42px);
+  font-weight:800;color:#fff;line-height:1.65;margin-bottom:40px;
+}
+.final-copy em{font-style:normal;color:var(--gold-l);}
+.final-div{width:32px;height:1.5px;background:var(--gold);margin:0 auto 36px;}
+.final-body{font-size:14px;font-weight:300;color:rgba(255,255,255,.55);line-height:2.6;margin-bottom:48px;}
+.final-sig{font-family:var(--serif);font-size:14px;color:rgba(255,255,255,.45);letter-spacing:2px;}
+
+/* ===================== 13 CTA ===================== */
+.cta{background:var(--cream-d);padding:100px 0;text-align:center;}
+.cta-title{font-family:var(--serif);font-size:clamp(21px,2.9vw,32px);font-weight:700;margin-bottom:12px;}
+.cta-sub{font-size:13px;font-weight:300;color:var(--ink-l);margin-bottom:48px;line-height:2;}
+.cta-btns{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:48px;}
+.btn-a{background:var(--green);color:#fff;font-size:12px;font-weight:500;letter-spacing:2.5px;padding:18px 52px;transition:background .2s,transform .2s;display:inline-block;}
+.btn-a:hover{background:var(--green-m);transform:translateY(-2px);}
+.btn-b{border:1px solid rgba(28,28,28,.25);color:var(--ink);font-size:12px;font-weight:400;letter-spacing:2px;padding:18px 52px;transition:border-color .2s,transform .2s;display:inline-block;}
+.btn-b:hover{border-color:var(--ink);transform:translateY(-2px);}
+.cta-tel{font-family:var(--roman);font-size:28px;color:var(--green);letter-spacing:3px;font-style:italic;margin-bottom:6px;}
+.cta-tel-note{font-size:11px;color:var(--ink-f);letter-spacing:1px;}
+
+/* ===================== FOOTER ===================== */
+footer{background:#0c130f;padding:56px 72px 32px;}
+.ft-top{display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.ft-logo{font-family:var(--roman);font-size:20px;font-style:italic;color:#fff;letter-spacing:2px;margin-bottom:14px;}
+.ft-info{font-size:12px;color:rgba(255,255,255,.3);line-height:2.3;font-weight:300;}
+.ft-label{font-size:9px;letter-spacing:2.5px;color:var(--gold-l);text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+.ft-nav a{display:block;font-size:12px;color:rgba(255,255,255,.32);padding:4px 0;font-weight:300;transition:color .2s;}
+.ft-nav a:hover{color:rgba(255,255,255,.65);}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.05);padding-top:24px;text-align:center;font-size:10px;color:rgba(255,255,255,.2);letter-spacing:1px;}
+
+/* ===================== RESPONSIVE ===================== */
+@media(max-width:900px){
+  header{padding:0 24px;}
+  .hd-nav a:not(.hd-entry){display:none;}
+  .page-head-content{padding:0 28px 32px;}
+  .breadcrumb{left:28px;}
+  .fact1-inner,.fact3-inner,.pull2,.paths-grid,.vi,.ft-top{grid-template-columns:1fr;}
+  .fact1-text{padding:72px 0;}
+  .fact1-photo,.fact3-main{min-height:360px;height:60vw;}
+  .fact3-sub{display:none;}
+  .fact2-caption{position:static;max-width:100%;padding:40px 28px;}
+  .fact4-grid,.paths-grid{grid-template-columns:1fr;}
+  .fact4-text{padding:64px 28px;}
+  .fact3-inner{padding:0 28px;}
+  .paths-inner,.steps-inner,.voices-inner,.final-inner{padding:0 28px;}
+  .pull1,.pull2{padding:80px 28px;}
+  .pull3-content{padding:0 28px;}
+  .pull2{grid-template-columns:1fr;gap:40px;}
+  .vi{grid-template-columns:1fr;gap:24px;}
+  .vi-photo{width:100%;height:280px;}
+  footer{padding:48px 24px 24px;}
+  .ft-top{gap:32px;}
+  .cta-btns{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="hd-logo">Toyo Kogyo<span>東葉工業株式会社</span></div>
+  <nav class="hd-nav">
+    <a href="#">会社について</a>
+    <a href="#">業務案内</a>
+    <a href="#">施工実績</a>
+    <a href="#paths">採用情報</a>
+    <a href="/contact" class="hd-entry">ENTRY</a>
+  </nav>
+</header>
+
+
+<!-- ==================== 01 PAGE HEAD（下層ページ用） ==================== -->
+<section class="page-head">
+  <div class="page-head-bg">
+    <div class="page-head-bg-label">プラント全体を写したワイド写真<br>（配管・機械が並ぶ現場の雰囲気が伝わる1枚）</div>
+  </div>
+  <div class="breadcrumb">
+    <a href="#">TOP</a><span style="color:rgba(255,255,255,.25);">/</span>
+    <a href="#">採用情報</a><span style="color:rgba(255,255,255,.25);">/</span>
+    求職者のみなさまへ
+  </div>
+  <div class="page-head-content">
+    <span class="page-head-label">To all job seekers</span>
+    <h1 class="page-head-title">求職者のみなさまへ</h1>
+  </div>
+</section>
+
+
+<!-- ==================== 02 メインストーリー — 決定的な瞬間 ==================== -->
+<section class="fact2 opening">
+  <div class="fact2-fullphoto photo mid">
+    <span>トラブル対応中の現場写真<br>（複数人が協力して機械を直している様子。緊迫感の中にも和やかな空気が伝わる1枚）</span>
+  </div>
+  <div class="fact2-caption revR">
+    <span class="fact2-kicker">The Moment — ある20代の転職者の話</span>
+    <p class="fact2-caption-copy">
+      トラブル続きの現場で、<br>それでも<em>笑い声</em>が聞こえた。
+    </p>
+    <p class="fact2-caption-body">
+      1年前、隣の現場で別会社の仕事をしていた20代の彼は、ふと目に入った東葉工業のチームの姿に驚いた。次々とトラブルが起きる大変な現場なのに、誰も苛立たず、声をかけ合いながら、時には笑いながら対応していく。「この人たちと働きたい」——それが転職を決めた、たった一つの理由だった。
+    </p>
+  </div>
+</section>
+
+
+<!-- ==================== 03 FACT1 — 仕事の本質・意義 ==================== -->
+<section class="fact1">
+  <div class="fact1-inner">
+    <div class="fact1-text revL">
+      <span class="fact1-no">01 — The Foundation</span>
+      <h2 class="fact1-copy">
+        工場が動き続ける理由は、<br>
+        <em>普段は見えない場所</em>にある。
+      </h2>
+      <div class="fact1-div"></div>
+      <div class="fact1-body">
+        <p>紙も、化学製品も、金属も、燃料も。私たちの暮らしを支えるあらゆるものは、どこかの工場でつくられている。</p>
+        <p>その工場を止めないために、機械を整備し、据え付け、支え続ける仕事がある。派手さはない。けれど、止まってしまえば困る人が何万人もいる仕事だ。</p>
+        <p>東葉工業が担っているのは、そういう仕事だ。</p>
+      </div>
+    </div>
+    <div class="revR">
+      <div class="photo dark fact1-photo">
+        <span>プラント内で機械を点検する作業員の手元の写真<br>（配管・バルブが並ぶ現場、真剣な表情のアップ）</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== 03 PULL 1 ==================== -->
+<section class="pull1">
+  <p class="pull1-copy rev">
+    誰かの暮らしを、<br>
+    根っこから<em>支えている。</em>
+  </p>
+</section>
+
+
+<!-- ==================== 04 FACT3 — スケール感のドラマ ==================== -->
+<section class="fact3">
+  <div class="fact3-inner">
+    <div class="fact3-visual revL">
+      <div class="photo mid fact3-main">
+        <span>プラント全体を見上げるアングルの写真<br>（配管・タンクが連なる工場の全景）</span>
+      </div>
+      <div class="photo fact3-sub" style="background:#7d876f;">
+        <span style="font-size:10px;">図面と工具を広げる<br>手元の写真</span>
+      </div>
+    </div>
+    <div class="fact3-text revR">
+      <span class="fact3-no">02 — The Scale</span>
+      <h2 class="fact3-copy">
+        止まっていい機械は、<br>
+        <em>ひとつもない。</em>
+      </h2>
+      <div class="fact3-div"></div>
+      <div class="fact3-body">
+        <p>担当するのは、化学製品や素材をつくる工場の心臓部にあたる機械たち。ひとつが止まれば、ライン全体が止まる。だからこそ、日々の点検にも据付にも妥協はない。</p>
+        <p>対応エリアは関東一円。現場ごとに扱う機械も工程も違うから、経験を積むほどに「読める」現場が増えていく。</p>
+      </div>
+      <div class="fact3-nums rev">
+        <div class="fact3-num">
+          <p class="n">昭和44<b>年</b></p>
+          <p class="l">創業<br>半世紀を超える実績</p>
+        </div>
+        <div class="fact3-num">
+          <p class="n">関東一<b>円</b></p>
+          <p class="l">対応エリア<br>幅広い現場で経験を積める</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== 06 PULL 2 — ありがとうが届く瞬間 ==================== -->
+<section class="pull2">
+  <div class="pull2-left revL">
+    現場のリーダーになると、<br>
+    <em>「ありがとう」</em>が<br>
+    直接届く。
+  </div>
+  <div class="pull2-right revR">
+    <p>機械を直しても、感謝の言葉は目に見える成果にはならない。でも、東葉工業の現場では違う。工事が終わったあと、お客様の担当者から直接「助かったよ、ありがとう」と声をかけられる瞬間がある。</p>
+    <div class="pull2-div"></div>
+    <p>それは、リーダー格になった人だけが受け取れる、ここでしか味わえないやりがいだ。</p>
+  </div>
+</section>
+
+
+<!-- ==================== 07 FACT4 — 技術習得・成長プロセス ==================== -->
+<section class="fact4">
+  <div class="fact4-grid">
+    <div class="photo dark fact4-photo">
+      <span>先輩から機械の扱い方を学ぶ場面の写真<br>（OJT・工具を手に説明している様子）</span>
+    </div>
+    <div class="fact4-text">
+      <span class="fact4-no revL d1">03 — The Craft</span>
+      <h2 class="fact4-copy revL d2">
+        機械と対話する力は、<br>
+        <em>現場でしか</em><br>
+        身につかない。
+      </h2>
+      <div class="fact4-div revL d2"></div>
+      <div class="fact4-body revL d3">
+        <p>プラント機械のメンテナンスは、図面通りにいかないことの連続だ。異音、振動、わずかな温度差——そこから原因を読み取る力は、教科書ではなく現場でしか鍛えられない。</p>
+        <p>最初は先輩の後ろについて、工具の名前を覚えることから始まる。少しずつ任される範囲が広がり、気づけば一人で機械と向き合えるようになっている。</p>
+        <p>未経験でも心配はいらない。ここでは、誰もが最初は素人だった。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== 08 STEPS — 成長の道のり ==================== -->
+<section class="steps">
+  <div class="steps-inner">
+    <div class="steps-head rev">
+      <span class="steps-en">The Path of Growth</span>
+      <h2 class="steps-title">ゼロから、現場を任される<br>職人へ。</h2>
+      <div class="steps-div"></div>
+    </div>
+
+    <div class="step-item rev">
+      <div class="step-left">
+        <p class="step-yr">01</p>
+        <span class="step-tag">〜3ヶ月</span>
+      </div>
+      <div class="step-right">
+        <h3 class="step-title">現場のリズムを、体で覚える。</h3>
+        <p class="step-body">工具の名前、機械の構造、現場での動き方。先輩の横について、見て、聞いて、手を動かす。「雑用」に見える仕事が、実はすべての基礎になる。</p>
+      </div>
+    </div>
+
+    <div class="step-item rev">
+      <div class="step-left">
+        <p class="step-yr">02</p>
+        <span class="step-tag">〜1年</span>
+      </div>
+      <div class="step-right">
+        <h3 class="step-title">機械の「声」を聞き分ける。</h3>
+        <p class="step-body">分解・点検・据付——基本的な整備技術が身につき始める。異音や振動の違いから不調に気づけるようになるのも、この時期からだ。関連資格の取得にも会社がしっかり伴走する。</p>
+      </div>
+    </div>
+
+    <div class="step-item rev">
+      <div class="step-left">
+        <p class="step-yr">03</p>
+        <span class="step-tag">〜3年</span>
+      </div>
+      <div class="step-right">
+        <h3 class="step-title">一人で、任される現場が増える。</h3>
+        <p class="step-body">複数の機種・工程を経験し、一人で現場をこなす力がついてくる時期。「はじめて一人でやり切った」という感覚が、職人としての自覚を変える。</p>
+      </div>
+    </div>
+
+    <div class="step-item rev">
+      <div class="step-left">
+        <p class="step-yr">04</p>
+        <span class="step-tag">3年以降</span>
+      </div>
+      <div class="step-right">
+        <h3 class="step-title">職長・リーダーとして、チームを引っ張る。</h3>
+        <p class="step-body">後輩を育て、現場全体を采配する立場へ。さらに先を目指す人には、施工管理という道もある。機械を知り尽くしているからこそ、強い管理者になれる。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== 09 PULL 3 — 新ステージへ ==================== -->
+<section class="pull3">
+  <div class="pull3-photo photo darker" style="min-height:80vh;">
+    <span>俯瞰で見た工場・プラント全体の大型写真<br>（夕景・広角・スケール感が伝わる1枚）</span>
+  </div>
+  <div class="pull3-content">
+    <span class="pull3-badge rev">NEW — 施工管理を目指す人へ</span>
+    <h2 class="pull3-copy rev d1">
+      次は、現場を<br>
+      <em>動かす側へ。</em>
+    </h2>
+    <p class="pull3-body rev d2">
+      東葉工業は今、施工管理を目指す人材の育成にも力を入れています。機械のことを知り尽くしているからこそ、強い施工管理者になれる。未経験からでも、経験者でも——「管理する側になりたい」という思いに、本気で応えます。
+    </p>
+  </div>
+</section>
+
+
+<!-- ==================== 10 PATHS ==================== -->
+<section class="paths" id="paths">
+  <div class="paths-inner">
+    <div class="paths-head rev">
+      <span class="paths-en">Your Career Path</span>
+      <h2 class="paths-title">あなたの、スタート地点はどこですか？</h2>
+      <div class="paths-div"></div>
+      <p class="paths-sub">4つのルートから、今の自分に近いものを選んでください。</p>
+    </div>
+    <div class="paths-grid">
+      <a href="/contact" class="pc rev">
+        <div class="pc-top-line"></div>
+        <p class="pc-route">Route 01</p>
+        <h3 class="pc-title">プラントメンテナンス<br>（未経験スタート）</h3>
+        <p class="pc-desc">業界未経験でも大丈夫。先輩と一緒にゼロから始め、工具の使い方や現場の動き方から身につけていきます。異業種からの転職者も多数活躍中。</p>
+        <span class="pc-link">詳しく見る</span>
+      </a>
+      <a href="/contact" class="pc rev d1">
+        <div class="pc-top-line"></div>
+        <p class="pc-route">Route 02</p>
+        <h3 class="pc-title">プラントメンテナンス<br>（経験者・職長候補）</h3>
+        <p class="pc-desc">技術と経験を正当に評価。現場のリーダーとして後輩を育てながら、より大きな案件・より難しい現場を任されていく環境があります。</p>
+        <span class="pc-link">詳しく見る</span>
+      </a>
+      <a href="/contact" class="pc dark rev d2">
+        <div class="pc-top-line"></div>
+        <p class="pc-route">Route 03<span class="pc-new">NEW</span></p>
+        <h3 class="pc-title">施工管理<br>（未経験・目指したい）</h3>
+        <p class="pc-desc">「いつか現場を管理する側に」——その思いを全力で後押しします。現場経験を積みながら、資格取得までしっかりサポートします。</p>
+        <span class="pc-link">詳しく見る</span>
+      </a>
+      <a href="/contact" class="pc dark rev d3">
+        <div class="pc-top-line"></div>
+        <p class="pc-route">Route 04<span class="pc-new">NEW</span></p>
+        <h3 class="pc-title">施工管理<br>（経験者・即戦力）</h3>
+        <p class="pc-desc">東葉工業の対応エリア拡大とともに、施工管理の経験者を求めています。現場を知る職人集団の中で、あなたの管理力を発揮してください。</p>
+        <span class="pc-link">詳しく見る</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== 11 VOICE ==================== -->
+<section class="voices">
+  <div class="voices-inner">
+    <div class="voices-head rev">
+      <span class="voices-en">Staff Voice</span>
+      <h2 class="voices-title">この仕事を選んだ理由を、聞いた。</h2>
+      <div class="voices-div"></div>
+    </div>
+
+    <div class="vi rev">
+      <div class="vi-photo photo mid">
+        <span style="font-size:10px;">Aさん 写真</span>
+      </div>
+      <div class="vi-content">
+        <span class="vi-tag">Voice 01 — 同業からの転職 / 入社1年目</span>
+        <p class="vi-name">Aさん（20代）</p>
+        <p class="vi-meta">プラントメンテナンス / 未経験に近い形での転職</p>
+        <p class="vi-quote">「隣の現場で見た光景が、<br>今も自分の働き方の指針になっている。」</p>
+        <p class="vi-body">前の会社で担当していた現場の、すぐ隣で東葉工業のチームが工事をしていた。次々とトラブルが起きる大変な状況なのに、誰も苛立たず、和気あいあいと協力し合っている。その姿を見て「この人たちと働きたい」と思い、転職を決めた。業界が狭いから、入社前から顔見知りも多く、馴染むのも早かった。</p>
+      </div>
+    </div>
+
+    <div class="vi rev">
+      <div class="vi-photo photo dark">
+        <span style="font-size:10px;">Bさん 写真</span>
+      </div>
+      <div class="vi-content">
+        <span class="vi-tag">Voice 02 — 経験者入社 / 職長</span>
+        <p class="vi-name">Bさん（38歳）</p>
+        <p class="vi-meta">プラントメンテナンス職長 / 経験者転職</p>
+        <p class="vi-quote">「工事が終わったあとに『ありがとう』と<br>直接言ってもらえる。それが一番の手応え。」</p>
+        <p class="vi-body">前の会社では、お客様と直接顔を合わせる機会が少なかった。今は現場のリーダーとして、工事の最後にお客様の担当者と話す場面がある。「助かったよ」と言われるたびに、この仕事を続けてきてよかったと思う。後輩にも、その感覚をいつか味わってほしい。</p>
+      </div>
+    </div>
+
+    <div class="vi rev">
+      <div class="vi-photo photo" style="background:#6f7861;">
+        <span style="font-size:10px;">Cさん 写真</span>
+      </div>
+      <div class="vi-content">
+        <span class="vi-tag">Voice 03 — 施工管理挑戦中</span>
+        <p class="vi-name">Cさん（41歳）</p>
+        <p class="vi-meta">施工管理 挑戦中 / メンテナンス職から転向</p>
+        <p class="vi-quote">「機械の中身を知っている自分だからこそ、<br>現場全体を見る目が持てると思ってる。」</p>
+        <p class="vi-body">長年、機械の整備を担当してきたからこそ、施工管理という仕事にも自分なりの視点を持てると感じている。図面だけを見て管理する人間と、実際に機械を分解した経験がある人間では、判断の精度が違う。会社がこの道を開いてくれたことで、自分のキャリアの幅が広がった。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== 12 FINAL ==================== -->
+<section class="final">
+  <div class="final-bg">HONEST</div>
+  <div class="final-inner">
+    <span class="final-en rev">A final word from the president</span>
+    <h2 class="final-copy rev">
+      多くは語らない。<br>
+      けれど、困っている人を<br>
+      <em>放っておけない。</em>
+    </h2>
+    <div class="final-div rev"></div>
+    <p class="final-body rev">
+      自分は口数が多い方じゃない。現場でも、あまり喋らない。<br>
+      でも、困っている人がいたら放っておけない性分でね。<br>
+      誰かがつまずいていたら、気づけば体が動いている。<br>
+      うちに来てくれる人にも、同じようにいてほしい。<br>
+      難しいことは言わない。ただ、一緒にやっていこう。
+    </p>
+    <p class="final-sig">— 代表取締役　【代表者名】</p>
+  </div>
+</section>
+
+
+<!-- ==================== 13 CTA ==================== -->
+<section class="cta" id="cta">
+  <h2 class="cta-title rev">まず、話を聞きに来てください。</h2>
+  <p class="cta-sub rev">選考なし・相談だけでも大歓迎。</p>
+  <div class="cta-btns rev">
+    <a href="/contact" class="btn-a">採用エントリーフォーム</a>
+    <a href="#" class="btn-b">事業内容を見る</a>
+  </div>
+  <div class="rev">
+    <p class="cta-tel">【電話番号】</p>
+    <p class="cta-tel-note">受付時間 平日 9:00〜18:00</p>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <p class="ft-logo">Toyo Kogyo</p>
+      <p class="ft-info">東葉工業株式会社<br>本社：千葉県茂原市八千代1-17-14<br>TEL：【電話番号】<br>対応エリア：関東一円<br>創業：昭和44年7月25日</p>
+    </div>
+    <div>
+      <p class="ft-label">採用情報</p>
+      <nav class="ft-nav">
+        <a href="#">求職者のみなさまへ</a>
+        <a href="#">プラントメンテナンス（未経験）</a>
+        <a href="#">プラントメンテナンス（経験者）</a>
+        <a href="#">施工管理（未経験）</a>
+        <a href="#">施工管理（経験者）</a>
+        <a href="#">働く環境</a>
+      </nav>
+    </div>
+    <div>
+      <p class="ft-label">会社情報</p>
+      <nav class="ft-nav">
+        <a href="#">東葉工業の歩み</a>
+        <a href="#">業務案内</a>
+        <a href="#">施工実績</a>
+        <a href="/contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </div>
+  <p class="ft-bottom">© 2026 東葉工業株式会社 All Rights Reserved.</p>
+</footer>
+
+<script>
+(function(){
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}
+    });
+  },{threshold:.07,rootMargin:'0px 0px -28px 0px'});
+  document.querySelectorAll('.rev,.revL,.revR').forEach(el=>obs.observe(el));
+})();
+</script>
+</body>
+</html>

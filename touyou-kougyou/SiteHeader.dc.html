@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body { margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: #006600; text-decoration: none; }
+  a:hover { color: #004d00; }
+</style>
+</helmet>
+<div style="position: sticky; top: 0; z-index: 1000; background: #ffffff; box-shadow: 0 1px 4px rgba(0,0,0,.08); font-family: Meiryo, 'メイリオ', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;">
+  <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+    <div style="display: flex; align-items: stretch; justify-content: space-between; gap: 16px; min-height: 124px;">
+      <a href="Home.dc.html" style="display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 10px 0 10px 20px; text-decoration: none; flex: 0 0 auto;">
+        <img src="https://cdn.cuezilla-cms.com/toyo-industry.co.jp/images/386/rUD1lyVPWv.webp" alt="千葉県茂原市・市原市の機械据付や機械メンテナンスなら東葉工業|求人中" style="display: block; height: 68px; width: auto;">
+        <span style="font-size: 12px; color: #444444; letter-spacing: .02em;">千葉県知事許可　第32560号</span>
+      </a>
+      <div style="display: flex; align-items: stretch; gap: 0; flex: 1 1 auto; justify-content: flex-end;">
+        <nav style="display: flex; align-items: center; flex-wrap: wrap; gap: 4px 18px; padding: 0 18px;">
+          <a href="Home.dc.html" style="font-size: 15px; color: #222222; white-space: nowrap;">ホーム</a>
+          <a href="Work.dc.html" style="font-size: 15px; color: #222222; white-space: nowrap;">業務案内</a>
+          <a href="Charm.dc.html" style="font-size: 15px; color: #222222; white-space: nowrap;">東葉工業の魅力</a>
+          <div onMouseEnter="{{ openRecruit }}" onMouseLeave="{{ closeRecruit }}" style="position: relative; display: flex; align-items: center;">
+            <a href="Recruit.dc.html" style="display: flex; align-items: center; gap: 5px; font-size: 15px; color: #222222; white-space: nowrap;">採用情報
+              <svg xmlns="http://www.w3.org/2000/svg" width="9" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0h10L5 6z" fill="#006600"></path></svg>
+            </a>
+            <sc-if value="{{ recruitOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="position: absolute; top: 100%; left: -14px; min-width: 210px; background: #ffffff; border-top: 2px solid #006600; box-shadow: 0 6px 18px rgba(0,0,0,.14); display: flex; flex-direction: column; z-index: 10;">
+                <a href="Beginner.dc.html" style="padding: 14px 18px; font-size: 14px; color: #222222; border-bottom: 1px solid #ececec; white-space: nowrap;" style-hover="background: #f2f7f2; color: #006600;">未経験者の方へ</a>
+                <a href="About.dc.html" style="padding: 14px 18px; font-size: 14px; color: #222222; white-space: nowrap;" style-hover="background: #f2f7f2; color: #006600;">求職者のみなさまへ</a>
+              </div>
+            </sc-if>
+          </div>
+          <a href="Information.dc.html" style="font-size: 15px; color: #222222; white-space: nowrap;">会社概要</a>
+          <a href="Blog.dc.html" style="font-size: 15px; color: #222222; white-space: nowrap;">ブログ</a>
+        </nav>
+        <div style="display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 0 18px; border-left: 1px solid #e5e5e5; font-family: 'Yu Gothic', '游ゴシック', Meiryo, sans-serif;">
+          <p style="margin: 0; display: flex; align-items: center; gap: 8px; font-size: 21px; font-weight: bold; color: #006600; line-height: 1.2; white-space: nowrap;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 42 42" aria-hidden="true"><path d="M330.428,444.172l-6.442-6.428a2.42,2.42,0,0,0-3.332,0l-2.888,2.882a2.383,2.383,0,0,1-3.11.222,42.2,42.2,0,0,1-7.331-6.428,60.288,60.288,0,0,1-6.443-7.315,2.37,2.37,0,0,1,.222-3.1l2.888-2.882a2.407,2.407,0,0,0,0-3.325l-6.443-6.428a2.42,2.42,0,0,0-3.332,0l-3.777,3.769c-4,3.99,1.333,16.625,10.441,25.714s21.771,14.63,25.77,10.419l3.777-3.769A2.4,2.4,0,0,0,330.428,444.172Z" transform="translate(-289.094 -410.7)" fill="#006600"></path></svg>
+            0475-23-1964
+          </p>
+          <p style="margin: 0; display: flex; align-items: center; gap: 8px; font-size: 21px; font-weight: bold; color: #006600; line-height: 1.2; white-space: nowrap;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 14.4 13.3" aria-hidden="true"><path fill="#006600" d="M13.8,4.5h-0.2V3.2l-2.1-2.1l-0.8-0.8C10.5,0,10.5,0,10.4,0H5.1C4.9,0,4.8,0.1,4.8,0.3v4.2H4.6c-0.4,0-0.6,0.3-0.6,0.6v6.5H3.1V5.1c0-0.4-0.3-0.6-0.6-0.6H0.6C0.3,4.5,0,4.7,0,5.1v7.5c0,0.4,0.3,0.6,0.6,0.6h1.7v0h2.2h0.1h9.2c0.4,0,0.6-0.3,0.6-0.7V5.1C14.4,4.8,14.1,4.5,13.8,4.5z M10.7,1l0.2,0.2l1.7,1.7h-1.9V1z M7.8,11.5H6.5v-1.3h1.3V11.5z M7.8,9.5H6.5V8.2h1.3V9.5z M7.8,7.5H6.5V6.3h1.3V7.5z M9.8,11.5H8.5v-1.3h1.3V11.5z M9.8,9.5H8.5V8.2h1.3V9.5z M9.8,7.5H8.5V6.3h1.3V7.5z M11.8,11.5h-1.3v-1.3h1.3V11.5z M11.8,9.5h-1.3V8.2h1.3V9.5z M11.8,7.5h-1.3V6.3h1.3V7.5z M13,4.5H5.3V0.6h4.8v2.6c0,0.2,0.1,0.3,0.3,0.3H13V4.5z"></path></svg>
+            0475-24-9208
+          </p>
+          <p style="margin: 2px 0 0; font-size: 12px; color: #444444; line-height: 1.5;">〒297-0024 千葉県茂原市<br>八千代1-17-14</p>
+        </div>
+        <a href="Contact.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: #006600; color: #ffffff; padding: 0 26px; font-size: 14px; font-weight: bold; text-align: center; white-space: nowrap;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="25" viewBox="0 0 42 30.648" aria-hidden="true"><path d="M307.3,433.349a4.319,4.319,0,0,0,3.1-1.255l4.383-4.3L328.3,414.351a2.546,2.546,0,0,0-2.556-2.151H288.856a2.693,2.693,0,0,0-2.557,2.151l17.9,17.744A4.811,4.811,0,0,0,307.3,433.349Zm21-14.7-15.7,15.593a7.595,7.595,0,0,1-10.591,0l-15.7-15.593v21.687a2.557,2.557,0,0,0,2.374,2.509h37.07a2.435,2.435,0,0,0,2.374-2.509Z" transform="translate(-286.3 -412.2)" fill="#fff"></path></svg>
+          メールフォーム
+        </a>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ isNarrow }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <div style="display: flex; align-items: stretch; justify-content: space-between; gap: 10px;">
+        <a href="Home.dc.html" style="display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 8px 0 8px 12px; min-width: 0;">
+          <img src="https://cdn.cuezilla-cms.com/toyo-industry.co.jp/images/386/rUD1lyVPWv.webp" alt="東葉工業株式会社" style="display: block; width: 100%; max-width: 220px; height: auto;">
+          <span style="font-size: 10px; color: #444444;">千葉県知事許可　第32560号</span>
+        </a>
+        <div style="display: flex; flex: 0 0 auto;">
+          <a href="Contact.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; width: 62px; border-left: 1px solid #e5e5e5; color: #006600; font-size: 11px; font-weight: bold;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="24" aria-hidden="true"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+            MAIL
+          </a>
+          <button type="button" onClick="{{ toggleMenu }}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; width: 62px; border: 0; border-left: 1px solid #e5e5e5; background: #ffffff; color: #006600; font-size: 11px; font-weight: bold; cursor: pointer; font-family: inherit;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+            MENU
+          </button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ showMobileMenu }}" hint-placeholder-val="{{ false }}">
+    <div>
+        <nav style="display: flex; flex-direction: column; background: #006600;">
+          <a href="Home.dc.html" style="padding: 15px 20px; color: #ffffff; font-size: 15px; border-bottom: 1px solid rgba(255,255,255,.25);">ホーム</a>
+          <a href="Work.dc.html" style="padding: 15px 20px; color: #ffffff; font-size: 15px; border-bottom: 1px solid rgba(255,255,255,.25);">業務案内</a>
+          <a href="Charm.dc.html" style="padding: 15px 20px; color: #ffffff; font-size: 15px; border-bottom: 1px solid rgba(255,255,255,.25);">東葉工業の魅力</a>
+          <a href="Recruit.dc.html" style="padding: 15px 20px; color: #ffffff; font-size: 15px; border-bottom: 1px solid rgba(255,255,255,.25);">採用情報</a>
+          <a href="Beginner.dc.html" style="padding: 13px 20px 13px 36px; color: #ffffff; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,.25); background: rgba(0,0,0,.12);">└ 未経験者の方へ</a>
+          <a href="About.dc.html" style="padding: 13px 20px 13px 36px; color: #ffffff; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,.25); background: rgba(0,0,0,.12);">└ 求職者のみなさまへ</a>
+          <a href="Information.dc.html" style="padding: 15px 20px; color: #ffffff; font-size: 15px; border-bottom: 1px solid rgba(255,255,255,.25);">会社概要</a>
+          <a href="Blog.dc.html" style="padding: 15px 20px; color: #ffffff; font-size: 15px;">ブログ</a>
+        </nav>
+    </div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1366,&quot;height&quot;:140}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1400, menuOpen: false, recruitOpen: false };
+  componentDidMount() {
+    this._on = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this._on);
+    this._on();
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this._on); }
+  renderVals() {
+    const wide = this.state.w >= 1100;
+    return {
+      isWide: wide,
+      isNarrow: !wide,
+      showMobileMenu: !wide && this.state.menuOpen,
+      recruitOpen: this.state.recruitOpen,
+      openRecruit: () => this.setState({ recruitOpen: true }),
+      closeRecruit: () => this.setState({ recruitOpen: false }),
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

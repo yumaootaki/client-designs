@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body { margin: 0; background: #ffffff; color: #333333; }
+  a { color: #006600; text-decoration: none; }
+  a:hover { color: #004d00; }
+</style>
+</helmet>
+<div style="font-family: Meiryo, 'メイリオ', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif; color: #333333; line-height: 1.8;">
+  <dc-import name="SiteHeader" hint-size="100%,124px"></dc-import>
+  <dc-import name="PageHeader" ja="ブログ" en="BLOG" crumb="ブログ" hint-size="100%,400px"></dc-import>
+
+  <section style="background: #f7f7f7; padding: 60px 0 90px;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 20px;">
+      <h2 style="margin: 0 0 30px; font-size: clamp(22px, 2.6vw, 35px); font-weight: bold; color: #006600; line-height: 1.5;">ブログ</h2>
+      <div style="display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); gap: 40px; align-items: start;">
+        <main>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 24px;">
+            <sc-for list="{{ posts }}" as="post" hint-placeholder-count="6">
+              <div style="background: #ffffff; border: 1px solid #e5e5e5;">
+                <a href="Blog.dc.html" style="display: block; color: #333333;" style-hover="color: #006600;">
+                  <div style="aspect-ratio: 4 / 3; overflow: hidden;">
+                    <img src="https://cdn.cuezilla-cms.com/toyo-industry.co.jp/images/386/3PNgPTXH3E.webp" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 10px; padding: 12px 14px 0; font-family: 'Yu Gothic', '游ゴシック', Meiryo, sans-serif;">
+                    <span style="font-size: 13px; color: #666666;">{{ post.date }}</span>
+                    <span style="background: #006600; color: #ffffff; border-radius: 5px; padding: 1px 9px; font-size: 12px;">{{ post.cat }}</span>
+                  </div>
+                  <div style="padding: 8px 14px 16px;">
+                    <h3 style="margin: 0; font-size: 15px; font-weight: bold; line-height: 1.6;">{{ post.title }}</h3>
+                  </div>
+                </a>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin-top: 40px; font-family: 'Yu Gothic', '游ゴシック', Meiryo, sans-serif; font-size: 14px;">
+            <span style="opacity: .65; padding: 6px 10px; color: #666666;">&lt;&lt;最初</span>
+            <span style="opacity: .65; padding: 6px 10px; color: #666666;">&lt;&lt;</span>
+            <span style="padding: 6px 12px; background: #006600; color: #ffffff;">1</span>
+            <a href="Blog.dc.html" style="padding: 6px 12px; border: 1px solid #cccccc;">2</a>
+            <a href="Blog.dc.html" style="padding: 6px 12px; border: 1px solid #cccccc;">3</a>
+            <a href="Blog.dc.html" style="padding: 6px 12px; border: 1px solid #cccccc;">4</a>
+            <a href="Blog.dc.html" style="padding: 6px 12px; border: 1px solid #cccccc;">5</a>
+            <a href="Blog.dc.html" style="padding: 6px 10px;">次へ&gt;&gt;</a>
+            <a href="Blog.dc.html" style="padding: 6px 10px;">最後&gt;&gt;</a>
+          </div>
+        </main>
+        <aside style="display: flex; flex-direction: column; gap: 30px;">
+          <div style="background: #ffffff; border: 1px solid #e5e5e5; padding: 18px;">
+            <h3 style="margin: 0 0 12px; font-size: 17px; font-weight: bold; color: #006600; border-bottom: 1px solid #e5e5e5; padding-bottom: 10px;">最近の投稿</h3>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px;">
+              <sc-for list="{{ recent }}" as="post" hint-placeholder-count="5">
+                <li>
+                  <a href="Blog.dc.html" style="display: block; color: #333333;" style-hover="color: #006600;">
+                    <span style="display: block; font-size: 12px; color: #666666; font-family: 'Yu Gothic', '游ゴシック', Meiryo, sans-serif;">{{ post.date }}</span>
+                    <p style="margin: 2px 0 0; font-size: 14px; font-weight: bold; line-height: 1.6;">{{ post.title }}</p>
+                  </a>
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e5e5e5; padding: 18px;">
+            <h3 style="margin: 0 0 12px; font-size: 17px; font-weight: bold; color: #006600; border-bottom: 1px solid #e5e5e5; padding-bottom: 10px;">カテゴリ</h3>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px;">
+              <li><a href="Blog.dc.html" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; color: #333333; font-size: 14px;" style-hover="color: #006600;"><span>お知らせ</span><span style="color: #666666; font-family: 'Yu Gothic', '游ゴシック', Meiryo, sans-serif;">64</span></a></li>
+              <li><a href="Blog.dc.html" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; color: #333333; font-size: 14px;" style-hover="color: #006600;"><span>コラム</span><span style="color: #666666; font-family: 'Yu Gothic', '游ゴシック', Meiryo, sans-serif;">110</span></a></li>
+              <li><a href="Blog.dc.html" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; color: #333333; font-size: 14px;" style-hover="color: #006600;"><span>新着情報</span><span style="color: #666666; font-family: 'Yu Gothic', '游ゴシック', Meiryo, sans-serif;">89</span></a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,520px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const posts = [
+      { date: '2026.09.17', cat: 'コラム', title: '千葉県で機械据付実績多数｜業者選びと工期...' },
+      { date: '2026.09.16', cat: 'コラム', title: '市原市の機械据付求人｜年間休日120日で手...' },
+      { date: '2026.09.15', cat: 'コラム', title: '千葉県で機械据付資格を取得｜支援制度と年...' },
+      { date: '2026.09.14', cat: 'コラム', title: '機械メンテナンス協力会社募集｜茂原市で年...' },
+      { date: '2026.09.13', cat: 'コラム', title: '千葉の機械据付施工実績｜プラント信頼を築...' },
+      { date: '2026.09.12', cat: 'コラム', title: '茂原市の機械求人｜夜勤ありで月収32万円を...' },
+      { date: '2026.09.11', cat: 'コラム', title: '茂原市の機械メンテナンス求人｜月収30万円...' },
+      { date: '2026.09.10', cat: 'コラム', title: '機械メンテナンス募集条件｜茂原の現場と選...' },
+      { date: '2026.09.09', cat: 'コラム', title: '千葉県の機械据付業務委託｜一人親方で月収...' },
+      { date: '2026.09.08', cat: 'コラム', title: '千葉県機械教育制度で未経験から技能者へ｜...' },
+    ];
+    const recent = [
+      { date: '2026.09.17', title: '千葉県で機械据付実績多数｜業者...' },
+      { date: '2026.09.16', title: '市原市の機械据付求人｜年間休日...' },
+      { date: '2026.09.15', title: '千葉県で機械据付資格を取得｜支...' },
+      { date: '2026.09.14', title: '機械メンテナンス協力会社募集｜...' },
+      { date: '2026.09.13', title: '千葉の機械据付施工実績｜プラン...' },
+    ];
+    return { posts, recent };
+  }
+}
+
+</script>
+</body>
+</html>
