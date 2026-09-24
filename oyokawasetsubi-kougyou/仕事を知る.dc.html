@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Barlow+Semi+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{margin:0;}
+.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal;}
+::selection{background:#1F5FAF;color:#fff;}
+@media (max-width:1024px){ section[data-screen-label$="ヒーロー"]{min-height:38svh !important;} }
+.work-tile{display:block;position:relative;overflow:hidden;text-decoration:none;background:#082347;}
+.work-tile .work-media{position:absolute;inset:0;transition:transform 1.15s cubic-bezier(.2,.7,.2,1);}
+.work-tile:hover .work-media{transform:scale(1.07);}
+.area-row{transition:background .4s ease;}
+.area-row:hover{background:rgba(255,255,255,.65);}
+.area-row .area-arrow{transition:transform .5s cubic-bezier(.2,.7,.2,1);}
+.area-row:hover .area-arrow{transform:translateX(8px);}
+.area-thumb{flex:none;width:clamp(82px,11vw,150px);aspect-ratio:4/3;border-radius:2px;overflow:hidden;background:#DDE3EB;}
+.area-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1);display:block;}
+.area-row:hover .area-thumb img{transform:scale(1.06);}
+@media (max-width:600px){.area-thumb{display:none;}}
+@media (min-width:900px){.svc-row.rev > :first-child{order:2;}}
+section[id]{scroll-margin-top:90px;}
+@media (max-width:480px){.svc-dl{grid-template-columns:1fr !important;gap:4px !important;}}
+.mcard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.4vw,20px);}
+.mcard{transition:transform .6s cubic-bezier(.2,.7,.2,1);}
+.mcard:hover{transform:none;}
+@media (max-width:900px){.mcard-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:460px){.mcard-grid{grid-template-columns:1fr;}}
+@keyframes ni-pan{0%{transform:scale(1.08) translate3d(0,0,0);}100%{transform:scale(1.16) translate3d(-2%,-1.5%,0);}}
+@keyframes ni-cue{0%,100%{transform:translateY(0);opacity:.35;}50%{transform:translateY(11px);opacity:1;}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;}.work-tile:hover .work-media{transform:none;}}
+</style>
+</helmet>
+
+<div style="font-family:'Zen Kaku Gothic New',sans-serif; color:#1A2230; background:#F4F6F9; -webkit-font-smoothing:antialiased; line-height:1.85; overflow-x:hidden;">
+
+  <dc-import name="SiteHeader" accent="{{ accent }}" active="service" page-title="事業内容｜給排水衛生設備・電気・浄化槽・空調工事｜株式会社オヨカワ設備工業" description="千葉県匝瑳市の株式会社オヨカワ設備工業の事業内容。給排水衛生設備工事・電気工事・浄化槽工事・空調設備工事を、住宅から店舗・畜産施設・公共施設まで対応します。水回りリフォームなど個人のお客様のご相談も承ります。" hint-size="100%,84px"></dc-import>
+
+  <section data-screen-label="業務案内ヒーロー" style="position:relative; min-height:50svh; display:flex; align-items:flex-end; overflow:hidden; background:#4d4d4d; color:#F4F6F9;"><div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to right, rgba(11,46,89,.9) 0%, rgba(11,46,89,.8) 55%, rgba(8,36,72,.4) 100%), url('assets/p-pipe-work.jpg') center/cover no-repeat;"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; background:radial-gradient(120% 95% at 50% 12%, rgba(31,95,175,.42), rgba(6,26,54,0) 56%), linear-gradient(270deg,#0B2E59 0%,#061a36 60%,#030d1f 100%); animation:ni-pan 24s ease-in-out infinite alternate; transform-origin:50% 24%;"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; opacity:.14; background-image:repeating-linear-gradient(125deg, rgba(190,210,235,.5) 0 1px, transparent 1px 16px); mix-blend-mode:screen;"></div>
+    <div aria-hidden="true" style="position:absolute; right:clamp(-14px,-1vw,0px); bottom:clamp(8px,3vh,30px); font-family:'Barlow Semi Condensed',sans-serif; font-weight:400; font-size:clamp(96px,22vw,300px); line-height:.8; color:rgba(190,210,235,.07); white-space:nowrap; pointer-events:none;">Service</div>
+    <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(to right, rgba(3,14,32,.9) 0%, rgba(3,14,32,.35) 55%, transparent 100%);"></div>
+    <div style="position:relative; z-index:2; width:100%; max-width:1340px; margin:0 auto; padding:clamp(88px,12vh,116px) clamp(18px,4vw,46px) clamp(40px,5vh,60px);">
+      <nav aria-label="パンくず" style="display:flex; flex-wrap:wrap; align-items:center; gap:9px; font-size:12.5px; letter-spacing:.04em; color:rgba(244,246,249,.66); margin-bottom:clamp(20px,3vw,32px);">
+        <a href="/" style="color:rgba(244,246,249,.66); text-decoration:none;">ホーム</a>
+        <span aria-hidden="true" style="opacity:.5;">/</span>
+        <span style="color:#A9C4E8;">事業内容</span>
+      </nav>
+      <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(15px,2vw,20px); letter-spacing:.08em; color:#ffffff; display:flex; align-items:center; gap:14px;"><span style="display:inline-block; width:clamp(28px,4vw,52px); height:1px; background:#ffffff;"></span>Service</p>
+      <h1 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:clamp(34px,5vw,56px); line-height:1.2; letter-spacing:.02em; text-shadow:0 12px 46px rgba(0,0,0,.42);">事業内容</h1>
+      <p style="margin:clamp(18px,2.4vw,26px) 0 0; max-width:560px; font-size:clamp(15px,1.7vw,18px); line-height:2; color:rgba(244,246,249,1);">給排水衛生設備を中心に、電気・浄化槽・空調まで、建物の設備工事をまとめてお受けしています。住宅から商業施設、畜産施設、公共施設まで対応します。</p>
+    </div>
+  </section>
+
+  <section data-screen-label="事業一覧" style="position:relative; background:#F4F6F9; padding:clamp(78px,12vh,148px) 0; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; top:clamp(40px,6vw,90px); right:clamp(-20px,-1vw,0px); font-family:'Barlow Semi Condensed',sans-serif; font-weight:400; font-size:clamp(90px,18vw,240px); line-height:.8; color:rgba(26,34,48,.045); white-space:nowrap; pointer-events:none;">SERVICE</div>
+    <div style="position:relative; max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="max-width:680px; margin-bottom:clamp(36px,5vw,56px);">
+        <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,20px); letter-spacing:.06em; color:{{ accent }};">5 Services</p>
+        <h2 style="margin:0 0 16px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(28px,4.6vw,50px); line-height:1.24;">5つの事業</h2>
+        <p style="margin:0; font-size:clamp(15px,1.6vw,17px); line-height:2; color:#4A5566;">主軸の給排水衛生・電気・浄化槽に、空調設備と水回りリフォームを加えた5つの事業で、建物の設備をまとめてお引き受けします。</p>
+      </div>
+      <div data-reveal style="border-top:1px solid #D5DCE5;">
+        <sc-for list="{{ areas }}" as="a" hint-placeholder-count="5">
+          <a href="{{ a.href }}" class="area-row" style="text-decoration:none; color:#1A2230; display:flex; align-items:center; gap:clamp(16px,3vw,40px); padding:clamp(22px,3vw,38px) clamp(8px,1.5vw,20px); border-bottom:1px solid #D5DCE5;">
+            <span style="flex:none; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(28px,3.6vw,52px); color:{{ accent }}; line-height:1; width:clamp(48px,5vw,80px);">{{ a.num }}</span>
+            <span class="area-thumb"><img src="{{ a.image }}" alt="{{ a.jp }}" loading="lazy"></span>
+            <span style="flex:1; min-width:0;">
+              <span style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;">
+                <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(21px,3vw,38px); line-height:1.2;">{{ a.jp }}</span>
+              </span>
+              <span style="display:block; margin-top:8px; font-size:clamp(13.5px,1.5vw,15.5px); line-height:1.8; color:#4A5566; max-width:680px;">{{ a.desc }}</span>
+            </span>
+            <span style="flex:none; display:flex; flex-direction:column; align-items:flex-end; gap:10px;">
+              <span style="font-size:11px; letter-spacing:.06em; color:#fff; background:{{ accent }}; padding:4px 10px; border-radius:2px; white-space:nowrap; min-width:10.6em; text-align:center;">{{ a.tag }}</span>
+              <span class="area-arrow" style="font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(20px,2.4vw,30px); color:{{ accent }};">&rarr;</span>
+            </span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="plumbing" data-screen-label="給排水衛生設備工事" style="background:#FFFFFF; padding:clamp(72px,10vh,120px) 0;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal class="svc-row" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:clamp(32px,5vw,72px); align-items:start;">
+        <div style="position:relative; aspect-ratio:4/3; border-radius:4px; overflow:hidden; background:#0B2E59;"><img src="assets/p-pipe-work.jpg" alt="給水管を施工する職人の手元" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(.8);"><span aria-hidden="true" style="position:absolute; left:0; bottom:clamp(20px,3vw,32px); width:clamp(40px,6vw,72px); height:2px; background:#F7C21B;"></span></div>
+        <div>
+          <p style="margin:0 0 12px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,1.8vw,19px); font-weight:500; letter-spacing:.12em; color:#1F5FAF;">Plumbing</p>
+          <h2 style="margin:0 0 18px; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35; color:#0B2E59;">給排水衛生設備工事</h2>
+          <p style="margin:0 0 clamp(22px,3vw,30px); font-size:clamp(15px,1.6vw,16.5px); line-height:1.95; color:#4A5566; max-width:40em;">水をいつも清潔な状態で当たり前に使えるよう、給排水管・衛生器具・給湯設備などの各種設備を設置・修理します。給水・排水の配管やポンプ、キッチンのシンクや浴槽まで幅広く対応し、見えない部分も見落とすことなく施工します。水道本管からの引き込みも対応します。</p>
+          <dl style="margin:0; border-top:2px solid #0B2E59;">
+            <div class="svc-dl" style="display:grid; grid-template-columns:8.5em 1fr; gap:16px; padding:14px 0; border-bottom:1px solid #D5DCE5;"><dt style="font-weight:700; font-size:14.5px; color:#0B2E59;">主な工事</dt><dd style="margin:0; font-size:15px; line-height:1.8; color:#1A2230;">給排水配管／水道引き込み／給湯設備／衛生器具設置／下水道接続</dd></div>
+            <div class="svc-dl" style="display:grid; grid-template-columns:8.5em 1fr; gap:16px; padding:14px 0; border-bottom:1px solid #D5DCE5;"><dt style="font-weight:700; font-size:14.5px; color:#0B2E59;">対象建物</dt><dd style="margin:0; font-size:15px; line-height:1.8; color:#1A2230;">戸建住宅・集合住宅・店舗・事務所・畜産施設・公共施設</dd></div>
+            <div class="svc-dl" style="display:grid; grid-template-columns:8.5em 1fr; gap:16px; padding:14px 0; border-bottom:1px solid #D5DCE5;"><dt style="font-weight:700; font-size:14.5px; color:#0B2E59;">関連資格・指定</dt><dd style="margin:0; font-size:15px; line-height:1.8; color:#1A2230;">給水装置工事主任技術者／下水道排水設備工事責任技術者／指定給水装置事業者（八匝水道企業団・多古町・旭市・香取市）／下水道排水設備指定工事店（旭市・香取市）</dd></div>
+          </dl>
+          <a href="/blog-ex/instance" style="margin-top:22px; text-decoration:none; color:#1F5FAF; font-weight:700; font-size:15px; display:inline-flex; align-items:center; gap:10px; border-bottom:1px solid currentColor; padding-bottom:4px; min-height:44px;">関連する施工実績 <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="electric" data-screen-label="電気工事" style="background:#F4F6F9; padding:clamp(72px,10vh,120px) 0;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal class="svc-row rev" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:clamp(32px,5vw,72px); align-items:start;">
+        <div style="position:relative; aspect-ratio:4/3; border-radius:4px; overflow:hidden; background:#0B2E59;"><img src="assets/p-shop-booth.jpg" alt="照明と電源を施工した店舗の個室" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(.8);"><span aria-hidden="true" style="position:absolute; left:0; bottom:clamp(20px,3vw,32px); width:clamp(40px,6vw,72px); height:2px; background:#F7C21B;"></span></div>
+        <div>
+          <p style="margin:0 0 12px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,1.8vw,19px); font-weight:500; letter-spacing:.12em; color:#1F5FAF;">Electrical</p>
+          <h2 style="margin:0 0 18px; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35; color:#0B2E59;">電気工事</h2>
+          <p style="margin:0 0 clamp(22px,3vw,30px); font-size:clamp(15px,1.6vw,16.5px); line-height:1.95; color:#4A5566; max-width:40em;">前身である「及川電気設備」より、電気工事の業務も受け継いでいます。照明のLED化や電源の引き込み、電気配線の整備、盤の設置など、電気まわりの幅広いニーズに対応。建物全体の省エネ化に向けたご相談も承ります。</p>
+          <dl style="margin:0; border-top:2px solid #0B2E59;">
+            <div class="svc-dl" style="display:grid; grid-template-columns:8.5em 1fr; gap:16px; padding:14px 0; border-bottom:1px solid #D5DCE5;"><dt style="font-weight:700; font-size:14.5px; color:#0B2E59;">主な工事</dt><dd style="margin:0; font-size:15px; line-height:1.8; color:#1A2230;">照明のLED化／電源の引き込み／電気配線の整備／盤の設置</dd></div>
+            <div class="svc-dl" style="display:grid; grid-template-columns:8.5em 1fr; gap:16px; padding:14px 0; border-bottom:1px solid #D5DCE5;"><dt style="font-weight:700; font-size:14.5px; color:#0B2E59;">対象建物</dt><dd style="margin:0; font-size:15px; line-height:1.8; color:#1A2230;">住宅・店舗・事務所・畜産施設</dd></div>
+            <div class="svc-dl" style="display:grid; grid-template-columns:8.5em 1fr; gap:16px; padding:14px 0; border-bottom:1px solid #D5DCE5;"><dt style="font-weight:700; font-size:14.5px; color:#0B2E59;">関連資格・届出</dt><dd style="margin:0; font-size:15px; line-height:1.8; color:#1A2230;">第二種電気工事士／電気工事業届出（千葉県知事届出 第20220081号）</dd></div>
+          </dl>
+          <a href="/blog-ex/instance" style="margin-top:22px; text-decoration:none; color:#1F5FAF; font-weight:700; font-size:15px; display:inline-flex; align-items:center; gap:10px; border-bottom:1px solid currentColor; padding-bottom:4px; min-height:44px;">関連する施工実績 <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="septic" data-screen-label="浄化槽工事" style="background:#FFFFFF; padding:clamp(72px,10vh,120px) 0;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal class="svc-row" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:clamp(32px,5vw,72px); align-items:start;">
+        <div style="position:relative; aspect-ratio:4/3; border-radius:4px; overflow:hidden; background:#0B2E59;"><img src="assets/p-drain-1.jpg" alt="排水管の施工状況" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(.8);"><span aria-hidden="true" style="position:absolute; left:0; bottom:clamp(20px,3vw,32px); width:clamp(40px,6vw,72px); height:2px; background:#F7C21B;"></span></div>
+        <div>
+          <p style="margin:0 0 12px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,1.8vw,19px); font-weight:500; letter-spacing:.12em; color:#1F5FAF;">Septic Tank</p>
+          <h2 style="margin:0 0 18px; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35; color:#0B2E59;">浄化槽工事</h2>
+          <p style="margin:0 0 clamp(22px,3vw,30px); font-size:clamp(15px,1.6vw,16.5px); line-height:1.95; color:#4A5566; max-width:40em;">汚れた水を微生物の力で分解し、河川へと放流するための浄化槽。新設・移設の工事を請け負い、地域の住環境の向上に貢献します。軽微な不具合や故障にも対応し、交換工事では自治体の補助金が利用できる場合はご案内します。</p>
+          <dl style="margin:0; border-top:2px solid #0B2E59;">
+            <div class="svc-dl" style="display:grid; grid-template-columns:8.5em 1fr; gap:16px; padding:14px 0; border-bottom:1px solid #D5DCE5;"><dt style="font-weight:700; font-size:14.5px; color:#0B2E59;">主な工事</dt><dd style="margin:0; font-size:15px; line-height:1.8; color:#1A2230;">浄化槽の新設・移設・交換／不具合・故障への対応</dd></div>
+            <div class="svc-dl" style="display:grid; grid-template-columns:8.5em 1fr; gap:16px; padding:14px 0; border-bottom:1px solid #D5DCE5;"><dt style="font-weight:700; font-size:14.5px; color:#0B2E59;">対象建物</dt><dd style="margin:0; font-size:15px; line-height:1.8; color:#1A2230;">戸建住宅・店舗・事務所・公共施設</dd></div>
+            <div class="svc-dl" style="display:grid; grid-template-columns:8.5em 1fr; gap:16px; padding:14px 0; border-bottom:1px solid #D5DCE5;"><dt style="font-weight:700; font-size:14.5px; color:#0B2E59;">関連資格・届出</dt><dd style="margin:0; font-size:15px; line-height:1.8; color:#1A2230;">浄化槽設備士／浄化槽工事業届出（千葉県知事（届-4）第1770号）</dd></div>
+          </dl>
+          <a href="/blog-ex/instance" style="margin-top:22px; text-decoration:none; color:#1F5FAF; font-weight:700; font-size:15px; display:inline-flex; align-items:center; gap:10px; border-bottom:1px solid currentColor; padding-bottom:4px; min-height:44px;">関連する施工実績 <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hvac" data-screen-label="空調設備工事" style="background:#F4F6F9; padding:clamp(72px,10vh,120px) 0;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal class="svc-row rev" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:clamp(32px,5vw,72px); align-items:start;">
+        <div style="position:relative; aspect-ratio:4/3; border-radius:4px; overflow:hidden; background:#0B2E59;"><img src="assets/p-shop-duct.jpg" alt="天井のダクトと排気設備" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(.8);"><span aria-hidden="true" style="position:absolute; left:0; bottom:clamp(20px,3vw,32px); width:clamp(40px,6vw,72px); height:2px; background:#F7C21B;"></span></div>
+        <div>
+          <p style="margin:0 0 12px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,1.8vw,19px); font-weight:500; letter-spacing:.12em; color:#1F5FAF;">Air Conditioning</p>
+          <h2 style="margin:0 0 18px; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35; color:#0B2E59;">空調設備工事</h2>
+          <p style="margin:0 0 clamp(22px,3vw,30px); font-size:clamp(15px,1.6vw,16.5px); line-height:1.95; color:#4A5566; max-width:40em;">温度だけでなく、湿度や気流、においまで快適にコントロールできるよう、建物の規模や用途に応じた空調設備をご提案します。設備の見直しによるエネルギー効率の向上も、あわせてご相談ください。</p>
+          <dl style="margin:0; border-top:2px solid #0B2E59;">
+            <div class="svc-dl" style="display:grid; grid-template-columns:8.5em 1fr; gap:16px; padding:14px 0; border-bottom:1px solid #D5DCE5;"><dt style="font-weight:700; font-size:14.5px; color:#0B2E59;">主な工事</dt><dd style="margin:0; font-size:15px; line-height:1.8; color:#1A2230;">空調設備の設置・更新／換気設備</dd></div>
+            <div class="svc-dl" style="display:grid; grid-template-columns:8.5em 1fr; gap:16px; padding:14px 0; border-bottom:1px solid #D5DCE5;"><dt style="font-weight:700; font-size:14.5px; color:#0B2E59;">対象建物</dt><dd style="margin:0; font-size:15px; line-height:1.8; color:#1A2230;">住宅・店舗・事務所</dd></div>
+            <div class="svc-dl" style="display:grid; grid-template-columns:8.5em 1fr; gap:16px; padding:14px 0; border-bottom:1px solid #D5DCE5;"><dt style="font-weight:700; font-size:14.5px; color:#0B2E59;">関連資格</dt><dd style="margin:0; font-size:15px; line-height:1.8; color:#1A2230;">2級管工事施工管理技士</dd></div>
+          </dl>
+          <a href="/blog-ex/instance" style="margin-top:22px; text-decoration:none; color:#1F5FAF; font-weight:700; font-size:15px; display:inline-flex; align-items:center; gap:10px; border-bottom:1px solid currentColor; padding-bottom:4px; min-height:44px;">関連する施工実績 <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="工事×建物 対応一覧" style="background:#FFFFFF; padding:clamp(72px,10vh,120px) 0;">
+    <div style="max-width:1100px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="margin-bottom:clamp(28px,4vw,40px);">
+        <p style="margin:0 0 12px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,1.8vw,19px); font-weight:500; letter-spacing:.12em; color:#1F5FAF;">Matrix</p>
+        <h2 style="margin:0; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35; color:#0B2E59;">工事×建物 対応一覧</h2>
+      </div>
+      <!-- 要取材：工事×建物の対応可否（クライアント確認） -->
+      <div data-reveal style="overflow-x:auto;">
+        <table style="width:100%; min-width:560px; border-collapse:collapse; position:relative;">
+          <thead><tr><td style="border:1px solid #D5DCE5;"></td><th scope="col" style="padding:14px 12px; border:1px solid #D5DCE5; background:#0B2E59; color:#ffffff; font-weight:700; font-size:14.5px; white-space:nowrap;">住宅</th><th scope="col" style="padding:14px 12px; border:1px solid #D5DCE5; background:#0B2E59; color:#ffffff; font-weight:700; font-size:14.5px; white-space:nowrap;">店舗・事務所</th><th scope="col" style="padding:14px 12px; border:1px solid #D5DCE5; background:#0B2E59; color:#ffffff; font-weight:700; font-size:14.5px; white-space:nowrap;">畜産施設</th><th scope="col" style="padding:14px 12px; border:1px solid #D5DCE5; background:#0B2E59; color:#ffffff; font-weight:700; font-size:14.5px; white-space:nowrap;">公共施設</th></tr></thead>
+          <tbody>
+            <tr><th scope="row" style="padding:14px 16px; border:1px solid #D5DCE5; background:#F4F6F9; text-align:left; font-weight:700; font-size:15px; color:#0B2E59; white-space:nowrap;">給排水衛生</th><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#0B2E59;"><span aria-hidden="true">●</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">対応</span></td><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#0B2E59;"><span aria-hidden="true">●</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">対応</span></td><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#0B2E59;"><span aria-hidden="true">●</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">対応</span></td><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#0B2E59;"><span aria-hidden="true">●</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">対応</span></td></tr>
+            <tr><th scope="row" style="padding:14px 16px; border:1px solid #D5DCE5; background:#F4F6F9; text-align:left; font-weight:700; font-size:15px; color:#0B2E59; white-space:nowrap;">電気</th><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#0B2E59;"><span aria-hidden="true">●</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">対応</span></td><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#0B2E59;"><span aria-hidden="true">●</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">対応</span></td><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#0B2E59;"><span aria-hidden="true">●</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">対応</span></td><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#0B2E59;"><span aria-hidden="true">●</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">対応</span></td></tr>
+            <tr><th scope="row" style="padding:14px 16px; border:1px solid #D5DCE5; background:#F4F6F9; text-align:left; font-weight:700; font-size:15px; color:#0B2E59; white-space:nowrap;">浄化槽</th><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#0B2E59;"><span aria-hidden="true">●</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">対応</span></td><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#0B2E59;"><span aria-hidden="true">●</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">対応</span></td><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#0B2E59;"><span aria-hidden="true">●</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">対応</span></td><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#0B2E59;"><span aria-hidden="true">●</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">対応</span></td></tr>
+            <tr><th scope="row" style="padding:14px 16px; border:1px solid #D5DCE5; background:#F4F6F9; text-align:left; font-weight:700; font-size:15px; color:#0B2E59; white-space:nowrap;">空調</th><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#0B2E59;"><span aria-hidden="true">●</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">対応</span></td><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#0B2E59;"><span aria-hidden="true">●</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">対応</span></td><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#1F5FAF;"><span aria-hidden="true">○</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">ご相談ください</span></td><td style="padding:14px 12px; border:1px solid #D5DCE5; text-align:center; font-size:18px; color:#1F5FAF;"><span aria-hidden="true">○</span><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">ご相談ください</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin:14px 0 0; font-size:14px; color:#4A5566;">● 対応　○ 内容によりご相談ください</p>
+    </div>
+  </section>
+
+  <section id="personal" data-screen-label="個人のお客様へ" style="position:relative; background:radial-gradient(140% 78% at 82% 0%, #15457f 0%, #0d3566 56%, #082347 100%); color:#F4F6F9; padding:clamp(80px,12vh,150px) 0; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; left:clamp(-12px,-1vw,0px); top:clamp(40px,7vw,110px); font-family:'Barlow Semi Condensed',sans-serif; font-weight:400; font-size:clamp(96px,20vw,300px); line-height:.78; color:rgba(190,210,235,.07); white-space:nowrap; pointer-events:none;">HOME</div>
+    <div style="position:relative; max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="max-width:720px; margin-bottom:clamp(36px,5vw,56px);">
+        <p style="margin:0 0 16px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,20px); letter-spacing:.06em; color:#F7C21B;">For Home</p>
+        <h2 style="margin:0 0 20px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35;">個人のお客様へ</h2>
+        <p style="margin:0; font-size:clamp(15px,1.6vw,17px); line-height:2; color:rgba(244,246,249,.82);">浴室・キッチン・トイレ・洗面台などの水回りリフォームや、水漏れのご相談、浄化槽の交換も承ります。事前のご相談・お見積りは無料です。</p>
+      </div>
+      <div data-reveal class="mcard-grid">
+        <sc-for list="{{ civilMethods }}" as="m" hint-placeholder-count="3">
+          <figure class="mcard" style="margin:0; background:#FFFFFF; border-radius:3px; overflow:hidden; box-shadow:0 26px 54px -42px rgba(4,16,34,.7);">
+            <div style="position:relative; aspect-ratio:4/3; overflow:hidden; background:{{ m.grad }};">
+              <img src="{{ m.image }}" alt="{{ m.name }}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+            </div>
+            <figcaption style="padding:clamp(13px,1.5vw,17px) clamp(14px,1.6vw,18px);">
+              <span style="display:block; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(14.5px,1.6vw,18px); line-height:1.4; color:#1A2230;">{{ m.name }}</span>
+              <span style="display:block; margin-top:5px; font-size:12px; color:#667085; line-height:1.65;">{{ m.note }}</span>
+            </figcaption>
+          </figure>
+        </sc-for>
+      </div>
+      <div data-reveal style="margin-top:clamp(28px,4vw,40px);"><a href="/form/inquiry" style="text-decoration:none; background:#F4F6F9; color:#0B2E59; font-weight:700; font-size:15px; padding:15px 28px; border-radius:4px; display:inline-flex; align-items:center; gap:10px; min-height:52px;">個人のご相談フォーム <span aria-hidden="true">&rarr;</span></a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="対応エリア" style="background:#E8EDF3; padding:clamp(78px,12vh,148px) 0; overflow:hidden;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:clamp(36px,5vw,72px); align-items:center;">
+        <div data-reveal>
+          <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,20px); letter-spacing:.06em; color:{{ accent }};">Area</p>
+          <h2 style="margin:0 0 20px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(28px,4.6vw,50px); line-height:1.24;">対応エリア</h2>
+          <p style="margin:0 0 18px; font-size:clamp(15px,1.6vw,17px); line-height:2.05; color:#4A5566; max-width:480px;">千葉県匝瑳市を拠点に、旭市・香取市・成田市・山武市など千葉県内で対応しています。内容によっては県外でのご対応も可能です。</p>
+          <p style="margin:0; font-size:14px; color:#667085; line-height:1.9;">エリア外でも、まずはお気軽にご相談ください。</p>
+        </div>
+        <div data-reveal style="position:relative; aspect-ratio:16/10; border-radius:3px; overflow:hidden; background:linear-gradient(155deg,#74777a,#54585a); box-shadow:0 40px 80px -50px rgba(5,24,50,.5);">
+          <div aria-hidden="true" style="position:absolute; inset:0; opacity:.4; background-image:repeating-linear-gradient(125deg, rgba(255,255,255,.05) 0 2px, transparent 2px 16px);"></div>
+          <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(to top, rgba(4,16,34,.5), transparent 56%);"></div>
+          <span aria-hidden="true" style="position:absolute; top:16px; right:18px; font-size:11px; letter-spacing:.16em; color:rgba(255,255,255,.45);">MAP</span>
+          <div style="position:absolute; left:0; bottom:0; padding:clamp(20px,2.4vw,30px); color:#EEF3F9;">
+            <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(18px,2.2vw,24px);">千葉県内（周辺地域も応相談）</span>
+            <span style="display:block; margin-top:6px; font-size:12px; color:rgba(244,246,249,.6);">対応エリアの地図が入ります</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="ContactCTA" accent="{{ accent }}" caption="Contact" heading="設備工事のご相談" intro="どの工事に当たるか分からなくても大丈夫です。現場の状況をお聞かせください。" hint-size="100%,640px"></dc-import>
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#1F5FAF&quot;, &quot;options&quot;: [&quot;#1F5FAF&quot;, &quot;#0B2E59&quot;, &quot;#2A6FC4&quot;, &quot;#174C8F&quot;], &quot;tsType&quot;: &quot;string&quot; }
+}">
+class Component extends DCLogic {
+  state = { mobile:false, menuOpen:false, scrolled:false };
+  areas = [
+    { jp:'給排水衛生設備工事', en:'Plumbing', desc:'給排水管・衛生器具・給湯設備の設置と修理。水道の引き込みにも対応します。', href:'#plumbing', tag:'主力事業', image:'assets/p-pipe-work.jpg' },
+    { jp:'電気工事', en:'Electrical', desc:'照明のLED化・電源の引き込み・配線整備。前身「及川電気設備」から続く技術です。', href:'#electric', tag:'主力事業', image:'assets/p-shop-booth.jpg' },
+    { jp:'浄化槽工事', en:'Septic Tank', desc:'浄化槽の新設・移設・交換。補助金が利用できる場合はご案内します。', href:'#septic', tag:'主力事業', image:'assets/p-drain-1.jpg' },
+    { jp:'空調設備工事', en:'Air Conditioning', desc:'建物の規模や用途に合わせた空調設備をご提案します。', href:'#hvac', tag:'設備工事', image:'assets/p-shop-duct.jpg' },
+    { jp:'水回りリフォーム', en:'Renovation', desc:'浴室・キッチン・トイレ・洗面台のリフォーム。主要メーカーの製品に対応します。', href:'#personal', tag:'個人のお客様', image:'assets/p-kitchen.jpg' }
+  ];
+  civilMethods = [
+    { name:'水回りリフォーム', note:'浴室・キッチン・トイレ・洗面台。主要メーカーの製品に対応。', grad:'#0B2E59', image:'assets/p-washbasin.jpg' },
+    { name:'水漏れ・つまり', note:'水まわりのトラブルもご相談ください。', grad:'#0B2E59', image:'assets/p-toilet-after.jpg' },
+    { name:'浄化槽の交換', note:'自治体の補助金が使える場合はご案内します。', grad:'#0B2E59', image:'assets/p-drain-2.jpg' }
+  ];
+  componentDidMount(){
+    this.mq = window.matchMedia('(max-width: 960px)');
+    this._onMq = (e)=> this.setState({ mobile: e.matches });
+    this._onMq(this.mq); this.mq.addEventListener('change', this._onMq);
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this._onScroll = ()=>{ const v = window.scrollY > 40; if(v !== this.state.scrolled) this.setState({ scrolled:v }); };
+    window.addEventListener('scroll', this._onScroll, { passive:true });
+    if(!this.reduced){
+      this.io = new IntersectionObserver((ents)=>{ ents.forEach(en=>{ if(en.isIntersecting){ en.target.style.opacity='1'; en.target.style.transform='none'; this.io.unobserve(en.target); } }); }, { threshold:0.08, rootMargin:'0px 0px -7% 0px' });
+      requestAnimationFrame(()=>{ document.querySelectorAll('[data-reveal]').forEach((el)=>{ el.style.opacity='0'; el.style.transform='translateY(26px)'; el.style.transitionProperty='opacity, transform'; el.style.transitionDuration='1s'; el.style.transitionTimingFunction='cubic-bezier(.2,.7,.2,1)'; this.io.observe(el); }); });
+    }
+  }
+  componentWillUnmount(){ if(this.mq) this.mq.removeEventListener('change', this._onMq); window.removeEventListener('scroll', this._onScroll); if(this.io) this.io.disconnect(); }
+  renderVals(){
+    const accent = this.props.accentColor || '#1F5FAF';
+    const sc = this.state.scrolled || this.state.menuOpen;
+    const areas = this.areas.map((a,i)=>({ jp:a.jp, en:a.en, desc:a.desc, href:a.href, tag:a.tag, image:a.image, num:'0'+(i+1) }));
+    const civilMethods = this.civilMethods.map((m,i)=>({ name:m.name, note:m.note, grad:m.grad, image:m.image, num:'0'+(i+1) }));
+    return {
+      accent, areas, civilMethods,
+      isMobile: this.state.mobile, isDesktop: !this.state.mobile,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: ()=> this.setState(s=>({ menuOpen: !s.menuOpen })),
+      closeMenu: ()=> this.setState({ menuOpen:false }),
+      headerBg: sc ? 'rgba(244,246,249,0.92)' : 'transparent',
+      headerColor: sc ? '#1A2230' : '#F4F6F9',
+      headerBorder: sc ? '1px solid rgba(26,34,48,0.1)' : '1px solid rgba(255,255,255,0)',
+      headerShadow: sc ? '0 14px 36px -26px rgba(0,0,0,0.55)' : 'none',
+      headerBlur: sc ? 'saturate(1.1) blur(14px)' : 'none',
+      ctaBtnColor: sc ? '#ffffff' : '#0B2E59',
+      ctaBtnBg: sc ? accent : '#F4F6F9',
+      year: new Date().getFullYear()
+    };
+  }
+}
+</script>
+</body>
+</html>

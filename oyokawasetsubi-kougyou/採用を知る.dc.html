@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Barlow+Semi+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{margin:0;}
+.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal;}
+::selection{background:#1F5FAF;color:#fff;}
+@media (max-width:1024px){ section[data-screen-label$="ヒーロー"]{min-height:38svh !important;} }
+.entry-card{transition:transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s ease;}
+.entry-card:hover{transform:translateY(-5px);}
+.entry-card .entry-arrow{transition:transform .5s cubic-bezier(.2,.7,.2,1);}
+.entry-card:hover .entry-arrow{transform:translateX(7px);}
+@keyframes ni-pan{0%{transform:scale(1.08) translate3d(0,0,0);}100%{transform:scale(1.16) translate3d(-2%,-1.5%,0);}}
+@keyframes ni-cue{0%,100%{transform:translateY(0);opacity:.35;}50%{transform:translateY(11px);opacity:1;}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;}}
+</style>
+</helmet>
+
+<div style="font-family:'Zen Kaku Gothic New',sans-serif; color:#1A2230; background:#F4F6F9; -webkit-font-smoothing:antialiased; line-height:1.85; overflow-x:hidden;">
+
+  <dc-import name="SiteHeader" accent="{{ accent }}" active="recruit" page-title="求職者の方へ｜管工事・電気工事の経験者募集｜株式会社オヨカワ設備工業" description="千葉県匝瑳市の株式会社オヨカワ設備工業では、管工事・電気工事の経験者を募集しています。給排水・浄化槽・電気・空調と工事の幅を広げられ、将来の幹部候補としてお迎えします。" hint-size="100%,84px"></dc-import>
+
+  <section data-screen-label="採用ヒーロー" style="position:relative; min-height:50svh; display:flex; align-items:flex-end; overflow:hidden; background:#4d4d4d; color:#F4F6F9;"><div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to right, rgba(11,46,89,.9) 0%, rgba(11,46,89,.8) 55%, rgba(8,36,72,.4) 100%), url('assets/p-demolition.jpg') center/cover no-repeat; filter:grayscale(1) contrast(1.1);"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; background:radial-gradient(120% 95% at 30% 16%, rgba(31,95,175,.46), rgba(6,26,54,0) 56%), linear-gradient(270deg,#0B2E59 0%,#061a36 60%,#030d1f 100%); animation:ni-pan 24s ease-in-out infinite alternate; transform-origin:30% 28%;"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; opacity:.14; background-image:repeating-linear-gradient(125deg, rgba(190,210,235,.5) 0 1px, transparent 1px 16px); mix-blend-mode:screen;"></div>
+    <div aria-hidden="true" style="position:absolute; right:clamp(-14px,-1vw,0px); bottom:clamp(8px,3vh,30px); font-family:'Barlow Semi Condensed',sans-serif; font-weight:400; font-size:clamp(96px,22vw,300px); line-height:.8; color:rgba(190,210,235,.07); white-space:nowrap; pointer-events:none;">Recruit</div>
+    <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(to right, rgba(3,14,32,.9) 0%, rgba(3,14,32,.35) 55%, transparent 100%);"></div>
+    <div style="position:relative; z-index:2; width:100%; max-width:1340px; margin:0 auto; padding:clamp(88px,12vh,116px) clamp(18px,4vw,46px) clamp(40px,5vh,60px);">
+      <nav aria-label="パンくず" style="display:flex; flex-wrap:wrap; align-items:center; gap:9px; font-size:12.5px; letter-spacing:.04em; color:rgba(244,246,249,.66); margin-bottom:clamp(20px,3vw,32px);">
+        <a href="/" style="color:rgba(244,246,249,.66); text-decoration:none;">ホーム</a>
+        <span aria-hidden="true" style="opacity:.5;">/</span>
+        <span style="color:#A9C4E8;">求職者の方へ</span>
+      </nav>
+      <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(15px,2vw,20px); letter-spacing:.08em; color:#ffffff; display:flex; align-items:center; gap:14px;"><span style="display:inline-block; width:clamp(28px,4vw,52px); height:1px; background:#ffffff;"></span>Recruit</p>
+      <h1 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:clamp(32px,5vw,56px); line-height:1.25; letter-spacing:.02em; text-shadow:0 12px 46px rgba(0,0,0,.42);"><span class="line-chunk">その腕を、</span><span class="line-chunk">正当に評価する</span><span class="line-chunk">会社へ。</span></h1>
+      <p style="margin:clamp(18px,2.4vw,26px) 0 0; max-width:560px; font-size:clamp(15px,1.7vw,18px); line-height:2; color:rgba(244,246,249,1);">管工事・電気工事の経験者を募集しています。積み上げてきた技術と資格が、そのまま任される仕事と待遇に反映される環境です。</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:clamp(22px,3vw,32px);"><a href="/recruit/requirements" style="text-decoration:none; background:#F4F6F9; color:#0B2E59; font-weight:700; font-size:16px; padding:15px 28px; border-radius:4px; display:inline-flex; align-items:center; gap:10px; min-height:52px;">エントリーする <span aria-hidden="true">&rarr;</span></a><a href="/recruit/requirements" style="text-decoration:none; border:1.5px solid rgba(244,246,249,.8); color:#F4F6F9; font-weight:700; font-size:16px; padding:15px 28px; border-radius:4px; display:inline-flex; align-items:center; gap:10px; min-height:52px;">まずは話を聞く</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="経験者へのメッセージ" style="position:relative; background:#F4F6F9; padding:clamp(78px,12vh,148px) 0; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; top:clamp(40px,6vw,90px); right:clamp(-20px,-1vw,0px); font-family:'Barlow Semi Condensed',sans-serif; font-weight:400; font-size:clamp(90px,18vw,240px); line-height:.8; color:rgba(26,34,48,.045); white-space:nowrap; pointer-events:none;">WORK</div>
+    <div style="position:relative; max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:clamp(36px,5vw,80px); align-items:center;">
+        <div data-reveal>
+          <p style="margin:0 0 16px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,20px); letter-spacing:.06em; color:{{ accent }};">Message</p>
+          <h2 style="margin:0 0 24px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35;"><span class="line-chunk">こんな思いは</span><span class="line-chunk">ありませんか？</span></h2>
+          <ul style="list-style:none; margin:0 0 22px; padding:0; border-top:1px solid #D5DCE5; max-width:560px;">
+            <li style="display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-bottom:1px solid #D5DCE5; font-size:clamp(15px,1.6vw,16.5px); line-height:1.7;"><span aria-hidden="true" style="flex:none; width:20px; height:20px; margin-top:3px; border:2px solid #0B2E59; border-radius:2px;"></span><span>技術があっても、年数だけで給料が決まる</span></li>
+            <li style="display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-bottom:1px solid #D5DCE5; font-size:clamp(15px,1.6vw,16.5px); line-height:1.7;"><span aria-hidden="true" style="flex:none; width:20px; height:20px; margin-top:3px; border:2px solid #0B2E59; border-radius:2px;"></span><span>同じ種類の工事ばかりで、腕を広げられない</span></li>
+            <li style="display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-bottom:1px solid #D5DCE5; font-size:clamp(15px,1.6vw,16.5px); line-height:1.7;"><span aria-hidden="true" style="flex:none; width:20px; height:20px; margin-top:3px; border:2px solid #0B2E59; border-radius:2px;"></span><span>資格を取っても、手当や評価に反映されない</span></li>
+          </ul>
+          <p style="margin:0; font-size:clamp(15px,1.6vw,17px); line-height:2; color:#1A2230; font-weight:700; max-width:520px;">オヨカワ設備工業は、その技術に正面から向き合います。</p>
+        </div>
+        <div data-reveal style="position:relative; aspect-ratio:4/5; border-radius:3px; overflow:hidden; background:linear-gradient(155deg,#74777a,#54585a); box-shadow:0 50px 100px -54px rgba(5,24,50,.6);">
+          <img src="assets/p-pipe-work.jpg" alt="配管を施工する職人の手元" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.08);">
+          <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(to top, rgba(4,16,34,.66), transparent 54%);"></div>
+          <span style="position:absolute; left:0; bottom:0; padding:clamp(20px,2.4vw,30px); font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(16px,1.8vw,20px); color:#EEF3F9;">配管施工の現場</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="給与モデル" style="position:relative; background:#0a1628; color:#F4F6F9; padding:clamp(72px,10vh,120px) 0; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; right:-6%; top:-20%; font-family:'Barlow Semi Condensed',sans-serif; font-weight:400; font-size:clamp(140px,28vw,400px); color:rgba(190,210,235,.07); line-height:1; pointer-events:none;">Salary</div>
+    <div style="position:relative; max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="margin-bottom:clamp(30px,4vw,46px);"><p style="margin:0 0 10px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,20px); letter-spacing:.06em; color:#F7C21B;">Salary Model</p><h2 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35;">給与モデル</h2></div>
+      <!-- 要取材：給与・年収モデル（条件未確定のため伏せ字） -->
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:clamp(14px,2vw,24px); border-top:1px solid rgba(255,255,255,.14); padding-top:clamp(30px,4vw,44px);">
+        <div style="text-align:center; border:1px solid rgba(255,255,255,.18); border-radius:4px; padding:clamp(22px,3vw,32px) 16px;"><p style="margin:0 0 12px; font-weight:700; font-size:17px;">経験5年・有資格</p><span style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:clamp(40px,5vw,58px); line-height:1; color:#ffffff;">○○○</span><span style="font-size:16px; margin-left:5px;">万円</span><p style="margin:9px 0 0; font-size:15px; color:rgba(244,246,249,.72);">年収例</p></div>
+        <div style="text-align:center; border:1px solid rgba(255,255,255,.18); border-radius:4px; padding:clamp(22px,3vw,32px) 16px;"><p style="margin:0 0 12px; font-weight:700; font-size:17px;">経験10年・現場責任者</p><span style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:clamp(40px,5vw,58px); line-height:1; color:#ffffff;">○○○</span><span style="font-size:16px; margin-left:5px;">万円</span><p style="margin:9px 0 0; font-size:15px; color:rgba(244,246,249,.72);">年収例</p></div>
+        <div style="text-align:center; border:1px solid rgba(255,255,255,.18); border-radius:4px; padding:clamp(22px,3vw,32px) 16px;"><p style="margin:0 0 12px; font-weight:700; font-size:17px;">施工管理技士・職長</p><span style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:clamp(40px,5vw,58px); line-height:1; color:#ffffff;">○○○</span><span style="font-size:16px; margin-left:5px;">万円</span><p style="margin:9px 0 0; font-size:15px; color:rgba(244,246,249,.72);">年収例</p></div>
+      </div>
+      <p style="margin:18px 0 0; font-size:14px; color:rgba(244,246,249,.72);">※給与は経験・能力・資格に応じて決定します。</p>
+    </div>
+  </section>
+
+  <section data-screen-label="求める人" style="background:#E8EDF3; padding:clamp(78px,12vh,148px) 0; overflow:hidden;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="max-width:680px; margin-bottom:clamp(36px,5vw,56px);">
+        <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,20px); letter-spacing:.06em; color:{{ accent }};">Who we want</p>
+        <h2 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35;">求める人</h2>
+      </div>
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:clamp(20px,3vw,32px);">
+        <div style="background:#FFFFFF; border:1px solid #D5DCE5; border-radius:3px; padding:clamp(28px,3.4vw,44px);">
+          <span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:15px; color:{{ accent }};">Experienced</span>
+          <h3 style="margin:10px 0 14px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(21px,2.6vw,30px); line-height:1.34;">管工事の経験者</h3>
+          <p style="margin:0; font-size:clamp(14.5px,1.5vw,16px); line-height:1.95; color:#4A5566;">給排水衛生設備・浄化槽・水道引き込みなどの施工経験がある方。管工事施工管理技士・給水装置工事主任技術者・浄化槽設備士の資格をお持ちの方は歓迎します。</p>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #D5DCE5; border-radius:3px; padding:clamp(28px,3.4vw,44px);">
+          <span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:15px; color:{{ accent }};">Electrical</span>
+          <h3 style="margin:10px 0 14px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(21px,2.6vw,30px); line-height:1.34;">電気工事の経験者</h3>
+          <p style="margin:0; font-size:clamp(14.5px,1.5vw,16px); line-height:1.95; color:#4A5566;">照明・電源引き込み・配線などの電気工事の経験がある方。第二種電気工事士の資格をお持ちの方は歓迎します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="働く魅力" style="position:relative; background:#0B2E59; color:#F4F6F9; padding:clamp(80px,12vh,150px) 0; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; left:clamp(-12px,-1vw,0px); top:clamp(40px,7vw,110px); font-family:'Barlow Semi Condensed',sans-serif; font-weight:300; font-size:clamp(96px,20vw,300px); line-height:.78; color:rgba(190,210,235,.07); white-space:nowrap; pointer-events:none;">WHY</div>
+    <div style="position:relative; max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="max-width:680px; margin-bottom:clamp(36px,5vw,56px);">
+        <p style="margin:0 0 16px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,20px); letter-spacing:.06em; color:#F7C21B;">Why work here</p>
+        <h2 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35;"><span class="line-chunk">オヨカワで</span><span class="line-chunk">働く理由。</span></h2>
+      </div>
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:clamp(20px,3vw,40px); border-top:1px solid rgba(255,255,255,.16); padding-top:clamp(30px,4vw,44px);">
+        <div><span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(30px,3.4vw,46px); color:#F7C21B; line-height:1;">01</span><h3 style="margin:12px 0 10px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(19px,2.2vw,23px);">技術と資格で決まる評価</h3><p style="margin:0; font-size:15px; line-height:1.9; color:rgba(244,246,249,.82);">給与は経験・能力に応じて決定。資格取得支援制度もあります。<!-- 要取材：評価制度・資格手当の具体内容 --></p></div>
+        <div><span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(30px,3.4vw,46px); color:#F7C21B; line-height:1;">02</span><h3 style="margin:12px 0 10px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(19px,2.2vw,23px);">工事の幅が広がる</h3><p style="margin:0; font-size:15px; line-height:1.9; color:rgba(244,246,249,.82);">給排水・浄化槽・電気・空調。住宅から公共施設まで経験できます。</p></div>
+        <div><span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(30px,3.4vw,46px); color:#F7C21B; line-height:1;">03</span><h3 style="margin:12px 0 10px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(19px,2.2vw,23px);">現場を任される</h3><p style="margin:0; font-size:15px; line-height:1.9; color:rgba(244,246,249,.82);">将来の幹部候補としてお迎えします。独立をご希望の際もサポートします。</p></div>
+        <div><span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(30px,3.4vw,46px); color:#F7C21B; line-height:1;">04</span><h3 style="margin:12px 0 10px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(19px,2.2vw,23px);">休みはしっかり</h3><p style="margin:0; font-size:15px; line-height:1.9; color:rgba(244,246,249,.82);">日曜休み。年末年始・お盆・GWもまとまった休みがあります。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="一日の流れ" style="position:relative; background:#FFFFFF; padding:clamp(78px,12vh,148px) 0; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; top:clamp(40px,6vw,90px); right:clamp(-20px,-1vw,0px); font-family:'Barlow Semi Condensed',sans-serif; font-weight:400; font-size:clamp(90px,18vw,240px); line-height:.8; color:rgba(26,34,48,.045); white-space:nowrap; pointer-events:none;">A DAY</div>
+    <div style="position:relative; max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="max-width:680px; margin-bottom:clamp(36px,5vw,56px);">
+        <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,20px); letter-spacing:.06em; color:{{ accent }};">A Day</p>
+        <h2 style="margin:0 0 16px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35;">1日の流れ</h2>
+        <p style="margin:0; font-size:clamp(15px,1.6vw,17px); line-height:2; color:#4A5566;">就業は8:00〜17:00（休憩あり・現場により異なる）。ある日の流れの一例です。</p>
+      </div>
+      <div data-reveal style="position:relative; max-width:760px;">
+        <div style="position:relative; display:grid; grid-template-columns:clamp(52px,8vw,84px) 26px 1fr; gap:clamp(12px,2vw,26px); padding-bottom:clamp(14px,2vw,22px);">
+          <span style="text-align:right; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,1.9vw,22px); color:#1A2230; padding-top:1px;">08:00</span>
+          <div style="position:relative;"><div style="position:absolute; left:50%; transform:translateX(-50%); top:8px; bottom:-22px; width:2px; background:#F7C21B;"></div><div style="position:absolute; left:50%; top:4px; transform:translateX(-50%); width:14px; height:14px; border-radius:50%; background:{{ accent }}; border:3px solid #FFFFFF; z-index:1;"></div></div>
+          <div><h3 style="margin:0 0 4px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(16px,1.8vw,20px);">現場へ・作業開始</h3><p style="margin:0; font-size:13.5px; color:#4A5566; line-height:1.8;">資材と工具を確認し、その日の現場へ。作業内容と安全を確認して始めます。</p></div>
+        </div>
+        <div style="position:relative; display:grid; grid-template-columns:clamp(52px,8vw,84px) 26px 1fr; gap:clamp(12px,2vw,26px); padding-bottom:clamp(14px,2vw,22px);">
+          <span style="text-align:right; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,1.9vw,22px); color:#6B7686; padding-top:1px;">10:00</span>
+          <div style="position:relative;"><div style="position:absolute; left:50%; transform:translateX(-50%); top:-22px; bottom:-22px; width:2px; background:#F7C21B;"></div><div style="position:absolute; left:50%; top:4px; transform:translateX(-50%); width:14px; height:14px; border-radius:50%; background:#F7C21B; border:3px solid #FFFFFF; z-index:1;"></div></div>
+          <div style="background:#EEF2F7; border:1px solid #E3E8EF; border-radius:3px; padding:clamp(11px,1.4vw,15px) clamp(14px,1.6vw,18px); display:flex; align-items:center; gap:12px; flex-wrap:wrap;"><span style="font-size:11px; font-weight:700; letter-spacing:.08em; color:#fff; background:#F7C21B; padding:3px 9px; border-radius:2px;">休憩</span><span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(15px,1.6vw,17px); color:#3A4658;">小休憩</span></div>
+        </div>
+        <div style="position:relative; display:grid; grid-template-columns:clamp(52px,8vw,84px) 26px 1fr; gap:clamp(12px,2vw,26px); padding-bottom:clamp(14px,2vw,22px);">
+          <span style="text-align:right; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,1.9vw,22px); color:#1A2230; padding-top:1px;">10:15</span>
+          <div style="position:relative;"><div style="position:absolute; left:50%; transform:translateX(-50%); top:-22px; bottom:-22px; width:2px; background:#F7C21B;"></div><div style="position:absolute; left:50%; top:4px; transform:translateX(-50%); width:14px; height:14px; border-radius:50%; background:{{ accent }}; border:3px solid #FFFFFF; z-index:1;"></div></div>
+          <div><h3 style="margin:0 0 4px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(16px,1.8vw,20px);">午前の作業</h3><p style="margin:0; font-size:13.5px; color:#4A5566; line-height:1.8;">配管・電気・浄化槽など、現場の工程に合わせて施工を進めます。</p></div>
+        </div>
+        <div style="position:relative; display:grid; grid-template-columns:clamp(52px,8vw,84px) 26px 1fr; gap:clamp(12px,2vw,26px); padding-bottom:clamp(14px,2vw,22px);">
+          <span style="text-align:right; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,1.9vw,22px); color:#6B7686; padding-top:1px;">12:00</span>
+          <div style="position:relative;"><div style="position:absolute; left:50%; transform:translateX(-50%); top:-22px; bottom:-22px; width:2px; background:#F7C21B;"></div><div style="position:absolute; left:50%; top:4px; transform:translateX(-50%); width:14px; height:14px; border-radius:50%; background:#F7C21B; border:3px solid #FFFFFF; z-index:1;"></div></div>
+          <div style="background:#EEF2F7; border:1px solid #E3E8EF; border-radius:3px; padding:clamp(11px,1.4vw,15px) clamp(14px,1.6vw,18px); display:flex; align-items:center; gap:12px; flex-wrap:wrap;"><span style="font-size:11px; font-weight:700; letter-spacing:.08em; color:#fff; background:#F7C21B; padding:3px 9px; border-radius:2px;">休憩</span><span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(15px,1.6vw,17px); color:#3A4658;">昼休憩</span></div>
+        </div>
+        <div style="position:relative; display:grid; grid-template-columns:clamp(52px,8vw,84px) 26px 1fr; gap:clamp(12px,2vw,26px); padding-bottom:clamp(14px,2vw,22px);">
+          <span style="text-align:right; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,1.9vw,22px); color:#1A2230; padding-top:1px;">13:00</span>
+          <div style="position:relative;"><div style="position:absolute; left:50%; transform:translateX(-50%); top:-22px; bottom:-22px; width:2px; background:#F7C21B;"></div><div style="position:absolute; left:50%; top:4px; transform:translateX(-50%); width:14px; height:14px; border-radius:50%; background:{{ accent }}; border:3px solid #FFFFFF; z-index:1;"></div></div>
+          <div><h3 style="margin:0 0 4px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(16px,1.8vw,20px);">午後の作業</h3><p style="margin:0; font-size:13.5px; color:#4A5566; line-height:1.8;">引き続き施工。工務店さまや他業種との調整も行います。</p></div>
+        </div>
+        <div style="position:relative; display:grid; grid-template-columns:clamp(52px,8vw,84px) 26px 1fr; gap:clamp(12px,2vw,26px); padding-bottom:clamp(14px,2vw,22px);">
+          <span style="text-align:right; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,1.9vw,22px); color:#6B7686; padding-top:1px;">15:00</span>
+          <div style="position:relative;"><div style="position:absolute; left:50%; transform:translateX(-50%); top:-22px; bottom:-22px; width:2px; background:#F7C21B;"></div><div style="position:absolute; left:50%; top:4px; transform:translateX(-50%); width:14px; height:14px; border-radius:50%; background:#F7C21B; border:3px solid #FFFFFF; z-index:1;"></div></div>
+          <div style="background:#EEF2F7; border:1px solid #E3E8EF; border-radius:3px; padding:clamp(11px,1.4vw,15px) clamp(14px,1.6vw,18px); display:flex; align-items:center; gap:12px; flex-wrap:wrap;"><span style="font-size:11px; font-weight:700; letter-spacing:.08em; color:#fff; background:#F7C21B; padding:3px 9px; border-radius:2px;">休憩</span><span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(15px,1.6vw,17px); color:#3A4658;">小休憩</span></div>
+        </div>
+        <div style="position:relative; display:grid; grid-template-columns:clamp(52px,8vw,84px) 26px 1fr; gap:clamp(12px,2vw,26px); padding-bottom:clamp(14px,2vw,22px);">
+          <span style="text-align:right; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,1.9vw,22px); color:#1A2230; padding-top:1px;">15:15</span>
+          <div style="position:relative;"><div style="position:absolute; left:50%; transform:translateX(-50%); top:-22px; bottom:-22px; width:2px; background:#F7C21B;"></div><div style="position:absolute; left:50%; top:4px; transform:translateX(-50%); width:14px; height:14px; border-radius:50%; background:{{ accent }}; border:3px solid #FFFFFF; z-index:1;"></div></div>
+          <div><h3 style="margin:0 0 4px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(16px,1.8vw,20px);">作業の仕上げ</h3><p style="margin:0; font-size:13.5px; color:#4A5566; line-height:1.8;">その日の作業を確認し、片付けに向かいます。</p></div>
+        </div>
+        <div style="position:relative; display:grid; grid-template-columns:clamp(52px,8vw,84px) 26px 1fr; gap:clamp(12px,2vw,26px);">
+          <span style="text-align:right; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,1.9vw,22px); color:#1A2230; padding-top:1px;">17:00</span>
+          <div style="position:relative;"><div style="position:absolute; left:50%; transform:translateX(-50%); top:-22px; height:30px; width:2px; background:#F7C21B;"></div><div style="position:absolute; left:50%; top:4px; transform:translateX(-50%); width:14px; height:14px; border-radius:50%; background:{{ accent }}; border:3px solid #FFFFFF; z-index:1;"></div></div>
+          <div><h3 style="margin:0 0 4px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(16px,1.8vw,20px);">終業・片付け</h3><p style="margin:0; font-size:13.5px; color:#4A5566; line-height:1.8;">お疲れさまでした。</p></div>
+        </div>
+      </div>
+      <!-- 要取材：実際の1日の流れ（出社時刻・休憩時間） -->
+    </div>
+  </section>
+
+  <section data-screen-label="代表メッセージ・先輩の声" style="background:#E8EDF3; padding:clamp(78px,12vh,148px) 0;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="max-width:680px; margin-bottom:clamp(36px,5vw,56px);">
+        <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,20px); letter-spacing:.1em; color:#1F5FAF;">People</p>
+        <h2 style="margin:0; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35;">代表メッセージ・先輩の声</h2>
+      </div>
+      <!-- 要取材：代表メッセージ（評価の考え方）・社員インタビュー。下記はサンプル -->
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); gap:clamp(20px,3vw,32px);">
+        <div style="background:#FFFFFF; border:1px solid #D5DCE5; border-radius:4px; padding:clamp(28px,3.4vw,44px); display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,2vw,24px); align-items:start;">
+          <div aria-hidden="true" style="width:clamp(72px,8vw,100px); aspect-ratio:3/4; border-radius:4px; background:#DDE3EB; display:flex; align-items:center; justify-content:center; font-family:'Barlow Semi Condensed',sans-serif; font-size:12px; letter-spacing:.1em; color:#6B7686;">PHOTO</div>
+          <div><span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:15px; color:#1F5FAF;">Message</span><h3 style="margin:8px 0 12px; font-weight:700; font-size:clamp(19px,2.2vw,24px); line-height:1.4;">代表 及川 健蔵より</h3><p style="margin:0 0 10px; font-size:15px; line-height:1.9; color:#4A5566;">腕のある職人が、きちんと報われる会社にしたい。まずは一度、直接お会いしてお話ができれば幸いです。</p><p style="margin:0; font-size:13.5px; color:#6B7686;">代表取締役　及川 健蔵</p></div>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #D5DCE5; border-radius:4px; padding:clamp(28px,3.4vw,44px); display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,2vw,24px); align-items:start;">
+          <div aria-hidden="true" style="width:clamp(72px,8vw,100px); aspect-ratio:3/4; border-radius:4px; background:#DDE3EB; display:flex; align-items:center; justify-content:center; font-family:'Barlow Semi Condensed',sans-serif; font-size:12px; letter-spacing:.1em; color:#6B7686;">PHOTO</div>
+          <div><span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:15px; color:#1F5FAF;">Voice</span><h3 style="margin:8px 0 12px; font-weight:700; font-size:clamp(19px,2.2vw,24px); line-height:1.4;">入社の決め手（サンプル）</h3><p style="margin:0 0 10px; font-size:15px; line-height:1.9; color:#4A5566;">前職との違いや入社の決め手を、社員インタビューとして掲載します。</p><p style="margin:0; font-size:13.5px; color:#6B7686;">設備施工スタッフ（サンプル）</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section data-screen-label="知ってほしい3つ" style="background:#F4F6F9; padding:clamp(78px,12vh,148px) 0;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="max-width:680px; margin-bottom:clamp(36px,5vw,56px);">
+        <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,20px); letter-spacing:.06em; color:{{ accent }};">Next</p>
+        <h2 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35;">次に読んでほしいページ</h2>
+      </div>
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit, minmax(270px,1fr)); gap:clamp(16px,2vw,24px);">
+        <a href="/recruit/requirements" class="entry-card" style="text-decoration:none; color:#1A2230; background:#FFFFFF; border:1px solid #D5DCE5; border-radius:3px; padding:clamp(26px,3vw,38px); display:flex; flex-direction:column; min-height:clamp(220px,24vw,280px);">
+          <span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(30px,3.4vw,46px); color:{{ accent }}; line-height:1;">01</span>
+          <span style="margin-top:auto; font-family:'Barlow Semi Condensed',sans-serif; font-size:14px; color:#6B7686;">Requirements</span>
+          <span style="display:block; margin-top:8px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(20px,2.2vw,26px); line-height:1.34;">募集要項・エントリー</span>
+          <span style="display:block; margin-top:10px; font-size:13.5px; color:#4A5566; line-height:1.8;">仕事内容・応募資格・待遇と、応募フォーム。</span>
+          <span class="entry-arrow" style="margin-top:18px; font-family:'Barlow Semi Condensed',sans-serif; font-size:22px; color:{{ accent }};">&rarr;</span>
+        </a>
+        <a href="/company" class="entry-card" style="text-decoration:none; color:#1A2230; background:#FFFFFF; border:1px solid #D5DCE5; border-radius:3px; padding:clamp(26px,3vw,38px); display:flex; flex-direction:column; min-height:clamp(220px,24vw,280px);">
+          <span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(30px,3.4vw,46px); color:{{ accent }}; line-height:1;">02</span>
+          <span style="margin-top:auto; font-family:'Barlow Semi Condensed',sans-serif; font-size:14px; color:#6B7686;">About</span>
+          <span style="display:block; margin-top:8px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(20px,2.2vw,26px); line-height:1.34;">オヨカワ設備工業について</span>
+          <span style="display:block; margin-top:10px; font-size:13.5px; color:#4A5566; line-height:1.8;">代表挨拶・理念・沿革。</span>
+          <span class="entry-arrow" style="margin-top:18px; font-family:'Barlow Semi Condensed',sans-serif; font-size:22px; color:{{ accent }};">&rarr;</span>
+        </a>
+        <a href="/service" class="entry-card" style="text-decoration:none; color:#1A2230; background:#FFFFFF; border:1px solid #D5DCE5; border-radius:3px; padding:clamp(26px,3vw,38px); display:flex; flex-direction:column; min-height:clamp(220px,24vw,280px);">
+          <span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(30px,3.4vw,46px); color:{{ accent }}; line-height:1;">03</span>
+          <span style="margin-top:auto; font-family:'Barlow Semi Condensed',sans-serif; font-size:14px; color:#6B7686;">Service</span>
+          <span style="display:block; margin-top:8px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(20px,2.2vw,26px); line-height:1.34;">事業内容</span>
+          <span style="display:block; margin-top:10px; font-size:13.5px; color:#4A5566; line-height:1.8;">給排水衛生・電気・浄化槽・空調。携わる工事の内容。</span>
+          <span class="entry-arrow" style="margin-top:18px; font-family:'Barlow Semi Condensed',sans-serif; font-size:22px; color:{{ accent }};">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="ContactCTA" accent="{{ accent }}" caption="Apply" heading="まずは、話を聞くだけでも。" intro="現場見学・カジュアル面談のご相談も歓迎します。お気軽にお問い合わせ・お電話ください。" hint-size="100%,640px"></dc-import>
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#1F5FAF&quot;, &quot;options&quot;: [&quot;#1F5FAF&quot;, &quot;#0B2E59&quot;, &quot;#2A6FC4&quot;, &quot;#174C8F&quot;], &quot;tsType&quot;: &quot;string&quot; }
+}">
+class Component extends DCLogic {
+  state = { mobile:false, menuOpen:false, scrolled:false };
+  componentDidMount(){
+    this.mq = window.matchMedia('(max-width: 960px)');
+    this._onMq = (e)=> this.setState({ mobile: e.matches });
+    this._onMq(this.mq); this.mq.addEventListener('change', this._onMq);
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this._onScroll = ()=>{ const v = window.scrollY > 40; if(v !== this.state.scrolled) this.setState({ scrolled:v }); };
+    window.addEventListener('scroll', this._onScroll, { passive:true });
+    if(!this.reduced){
+      this.io = new IntersectionObserver((ents)=>{ ents.forEach(en=>{ if(en.isIntersecting){ en.target.style.opacity='1'; en.target.style.transform='none'; this.io.unobserve(en.target); } }); }, { threshold:0.08, rootMargin:'0px 0px -7% 0px' });
+      requestAnimationFrame(()=>{ document.querySelectorAll('[data-reveal]').forEach((el)=>{ el.style.opacity='0'; el.style.transform='translateY(26px)'; el.style.transitionProperty='opacity, transform'; el.style.transitionDuration='1s'; el.style.transitionTimingFunction='cubic-bezier(.2,.7,.2,1)'; this.io.observe(el); }); });
+    }
+    this.setupCountUp();
+  }
+  setupCountUp(){
+    const els = Array.from(document.querySelectorAll('[data-countup]'));
+    if(!els.length) return;
+    els.forEach(el=>{ el.dataset.target = el.textContent; });
+    if(this.reduced) return;
+    els.forEach(el=>{ el.textContent = el.dataset.target.replace(/\d/g,'0'); });
+    const animate = (el)=>{
+      const target = el.dataset.target;
+      const parts = target.split(/(\d+)/);
+      const nums = parts.map(p=> /^\d+$/.test(p) ? parseInt(p,10) : null);
+      const dur = 1400, t0 = performance.now();
+      const ease = t => 1 - Math.pow(1 - t, 3);
+      const tick = (now)=>{
+        const t = Math.min(1, (now - t0)/dur);
+        const e = ease(t);
+        let out = '';
+        parts.forEach((p,i)=>{ out += nums[i]===null ? p : String(Math.round(nums[i]*e)).padStart(p.length,'0'); });
+        el.textContent = out;
+        if(t < 1) requestAnimationFrame(tick); else { el.textContent = target; el.dataset.countDone = '1'; }
+      };
+      requestAnimationFrame(tick);
+    };
+    const begin = (el)=>{ if(el.dataset.countStarted==='1') return; el.dataset.countStarted='1'; animate(el); };
+    this._maybeStartCounts = ()=>{
+      els.forEach(el=>{ const r = el.getBoundingClientRect(); if(r.top < window.innerHeight*0.32 && r.bottom > 0) begin(el); });
+    };
+    this.ioCount = new IntersectionObserver((ents)=>{ ents.forEach(en=>{ if(en.isIntersecting){ begin(en.target); this.ioCount.unobserve(en.target); } }); }, { threshold:0, rootMargin:'0px 0px -68% 0px' });
+    els.forEach(el=> this.ioCount.observe(el));
+    window.addEventListener('scroll', this._maybeStartCounts, { passive:true });
+    this._maybeStartCounts();
+  }
+  componentDidUpdate(){
+    document.querySelectorAll('[data-countup]').forEach(el=>{
+      const target = el.dataset.target;
+      if(target === undefined) return;
+      if(el.dataset.countDone === '1' || this.reduced){ if(el.textContent !== target) el.textContent = target; }
+      else if(el.dataset.countStarted !== '1'){ const z = target.replace(/\d/g,'0'); if(el.textContent !== z) el.textContent = z; }
+    });
+  }
+  componentWillUnmount(){ if(this.mq) this.mq.removeEventListener('change', this._onMq); window.removeEventListener('scroll', this._onScroll); if(this._maybeStartCounts) window.removeEventListener('scroll', this._maybeStartCounts); if(this.io) this.io.disconnect(); if(this.ioCount) this.ioCount.disconnect(); }
+  renderVals(){
+    const accent = this.props.accentColor || '#1F5FAF';
+    const sc = this.state.scrolled || this.state.menuOpen;
+    return {
+      accent,
+      isMobile: this.state.mobile, isDesktop: !this.state.mobile,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: ()=> this.setState(s=>({ menuOpen: !s.menuOpen })),
+      closeMenu: ()=> this.setState({ menuOpen:false }),
+      headerBg: sc ? 'rgba(244,246,249,0.92)' : 'transparent',
+      headerColor: sc ? '#1A2230' : '#F4F6F9',
+      headerBorder: sc ? '1px solid rgba(26,34,48,0.1)' : '1px solid rgba(255,255,255,0)',
+      headerShadow: sc ? '0 14px 36px -26px rgba(0,0,0,0.55)' : 'none',
+      headerBlur: sc ? 'saturate(1.1) blur(14px)' : 'none',
+      ctaBtnColor: sc ? '#ffffff' : '#0B2E59',
+      ctaBtnBg: sc ? accent : '#F4F6F9',
+      year: new Date().getFullYear()
+    };
+  }
+}
+</script>
+</body>
+</html>

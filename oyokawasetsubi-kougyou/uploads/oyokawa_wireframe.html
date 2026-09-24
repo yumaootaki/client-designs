@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>株式会社オヨカワ設備工業｜リニューアル ワイヤーフレーム（全14ページ）</title>
+<style>
+:root{
+  --ink:#222; --sub:#666; --line:#bbb; --bg:#f2f2f2; --box:#e3e3e3; --dark:#555; --acc:#999;
+  --note:#fff8d6; --noteb:#e0c65a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;color:var(--ink);background:#d9d9d9;font-size:14px;line-height:1.7}
+a{color:inherit}
+/* layout */
+.app{display:flex;min-height:100vh}
+.side{width:250px;flex-shrink:0;background:#2b2b2b;color:#eee;padding:18px 12px;position:sticky;top:0;height:100vh;overflow:auto}
+.side h1{font-size:14px;line-height:1.5;margin-bottom:4px}
+.side p{font-size:11px;color:#aaa;margin-bottom:14px}
+.side button{display:flex;gap:8px;align-items:center;width:100%;text-align:left;background:none;border:0;color:#ddd;padding:7px 8px;border-radius:4px;cursor:pointer;font-size:13px;font-family:inherit}
+.side button:hover,.side button.on{background:#444;color:#fff}
+.side button:focus-visible{outline:2px solid #fff}
+.bd{font-size:10px;padding:1px 6px;border-radius:3px;flex-shrink:0}
+.bd.old{background:#666}.bd.new{background:#c9a300;color:#222}
+.legend{margin-top:16px;font-size:11px;color:#bbb;border-top:1px solid #444;padding-top:10px}
+.legend span{display:inline-block;margin:2px 4px 2px 0}
+main{flex:1;padding:24px;min-width:0}
+.page{display:none;max-width:1120px;margin:0 auto;background:#fff;box-shadow:0 0 0 1px #bbb}
+.page.on{display:block}
+.pmeta{background:#333;color:#fff;padding:12px 20px;font-size:13px}
+.pmeta b{font-size:16px;margin-right:10px}
+.pmeta .purpose{display:block;color:#ccc;font-size:12px;margin-top:2px}
+/* header / footer */
+.hdr{display:flex;align-items:center;gap:16px;padding:14px 24px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.logo{width:170px;height:38px;background:var(--box);display:grid;place-items:center;font-size:11px;color:var(--sub)}
+.gnav{display:flex;gap:16px;flex:1;font-size:13px;flex-wrap:wrap}
+.hcta{display:flex;gap:8px;align-items:center;font-size:12px}
+.tel{font-weight:bold}
+.btn{display:inline-block;border:1.5px solid var(--dark);padding:8px 16px;font-size:13px;font-weight:bold;background:#fff;text-decoration:none}
+.btn.fill{background:var(--dark);color:#fff}
+.btn.acc{background:#bdbdbd;border-color:#888}
+.btn.lg{padding:14px 28px;font-size:15px}
+.ftr{background:#e8e8e8;padding:32px 24px 16px;margin-top:0;font-size:12px}
+.ftr .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:20px}
+.ftr ul{list-style:none}
+.ftr li{margin:3px 0}
+.ftr .copy{text-align:center;color:var(--sub);margin-top:20px;font-size:11px}
+/* blocks */
+.blk{padding:40px 32px;border-bottom:1px dashed var(--line);position:relative}
+.blk.gray{background:var(--bg)}
+.blk.dark{background:#5a5a5a;color:#fff}
+.bl{position:absolute;top:8px;left:10px;font-size:10px;background:#333;color:#fff;padding:1px 7px;border-radius:2px}
+.st{position:absolute;top:8px;right:10px;display:flex;gap:4px}
+.tag{font-size:10px;padding:1px 7px;border-radius:2px;border:1px solid}
+.tag.ok{border-color:#3a7;color:#285}
+.tag.hear{border-color:#c80;color:#a60}
+.tag.dummy{border-color:#999;color:#777}
+.tag.kari{border-color:#c33;color:#b22}
+h2.sh{font-size:24px;text-align:left;margin-bottom:6px}
+.en{font-size:12px;color:var(--sub);letter-spacing:.05em;margin-bottom:18px;display:block}
+h3{font-size:16px;margin-bottom:6px}
+.lead{max-width:720px;color:#444;margin-bottom:20px}
+.ph{background:var(--box);border:1px solid #ccc;display:grid;place-items:center;color:var(--sub);font-size:12px;text-align:center;padding:8px;min-height:120px}
+.ph.hero{min-height:420px}
+.ph.sq{aspect-ratio:4/3;min-height:0}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g5{grid-template-columns:repeat(5,1fr)}.g6{grid-template-columns:repeat(6,1fr)}
+.card{border:1px solid var(--line);padding:16px;background:#fff}
+.card .ph{margin-bottom:10px}
+.card p{font-size:13px;color:#444}
+.num{font-size:34px;font-weight:bold;line-height:1.2}
+.small{font-size:12px;color:var(--sub)}
+.note{background:var(--note);border-left:4px solid var(--noteb);padding:10px 14px;font-size:12px;margin-top:18px;color:#5a4a00}
+.note b{color:#3d3200}
+.center{text-align:center}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.mt{margin-top:18px}
+table.tbl{width:100%;border-collapse:collapse;font-size:13px;background:#fff}
+.tbl th,.tbl td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+.tbl th{background:#eee;width:24%}
+.tbl.cmp th{width:auto}
+.tbl .yes{font-weight:bold}
+.flow{display:flex;gap:0;align-items:stretch}
+.flow .step{flex:1;border:1px solid var(--line);padding:14px;background:#fff;position:relative}
+.flow .step+.step{margin-left:18px}
+.flow .step+.step::before{content:"▶";position:absolute;left:-15px;top:40%;font-size:11px;color:#888}
+.hero-over{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:48px;gap:14px}
+.hero-over h1{font-size:40px;line-height:1.35;max-width:640px}
+.hero-over p{max-width:560px}
+.rel{position:relative}
+.tabs{display:flex;gap:0;border-bottom:2px solid var(--dark);margin-bottom:16px}
+.tabs span{padding:8px 18px;border:1px solid var(--line);border-bottom:0;font-size:13px;background:#f6f6f6}
+.tabs span.on{background:var(--dark);color:#fff;border-color:var(--dark)}
+.qa{border:1px solid var(--line);margin-bottom:8px;background:#fff}
+.qa .q{padding:10px 14px;font-weight:bold;display:flex;justify-content:space-between}
+.qa .a{padding:0 14px 12px;font-size:13px;color:#444}
+.chk{list-style:none}
+.chk li{padding:6px 0 6px 22px;position:relative;border-bottom:1px dotted #ccc}
+.chk li::before{content:"□";position:absolute;left:0}
+.form .f{display:grid;grid-template-columns:200px 1fr;gap:10px;padding:8px 0;border-bottom:1px dotted #ccc;font-size:13px}
+.form .in{background:#f4f4f4;border:1px solid #ccc;height:30px}
+.form .in.ta{height:90px}
+.req{font-size:10px;background:#888;color:#fff;padding:0 5px;margin-left:6px}
+.tl{border-left:3px solid var(--dark);padding-left:20px}
+.tl .it{margin-bottom:16px;position:relative}
+.tl .it::before{content:"";position:absolute;left:-27px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--dark)}
+.pill{display:inline-block;border:1px solid var(--line);padding:3px 12px;border-radius:20px;font-size:12px;margin:3px;background:#fff}
+.pill.on{background:var(--dark);color:#fff}
+.bread{font-size:11px;color:var(--sub);padding:8px 32px;border-bottom:1px solid #eee}
+.phead{background:#cfcfcf;padding:56px 32px;}
+.phead h1{font-size:30px}
+.voice{display:grid;grid-template-columns:90px 1fr;gap:14px}
+@media (max-width:900px){
+  .app{flex-direction:column}.side{width:100%;height:auto;position:relative}
+  .g3,.g4,.g5,.g6{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}
+  .ftr .cols{grid-template-columns:1fr 1fr}.flow{flex-direction:column}.flow .step+.step{margin:10px 0 0}
+  .flow .step+.step::before{content:"▼";left:45%;top:-16px}
+  .hero-over h1{font-size:28px}.form .f{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<nav class="side" aria-label="ページ一覧">
+  <h1>株式会社オヨカワ設備工業<br>リニューアル WF</h1>
+  <p>既存7P＋新規7P＝全14P／グレースケール</p>
+  <div id="menu"></div>
+  <div class="legend">
+    素材ステータス<br>
+    <span class="tag ok">素材あり</span><span class="tag hear">要ヒアリング</span><span class="tag dummy">ダミー</span><span class="tag kari">仮（要確認）</span>
+    <br><br>黄色ボックス＝制作・Claude Design向け注記
+  </div>
+</nav>
+<main id="pages">
+
+<!-- ============ P01 TOP ============ -->
+<section class="page" data-no="01" data-name="TOP" data-type="old" data-purpose="法人（工務店）からの取引相談を主導線に、経験者採用・個人客をサブ導線として振り分ける">
+  <div class="hdr-slot"></div>
+
+  <div class="blk rel" style="padding:0">
+    <span class="bl">HERO</span>
+    <div class="st"><span class="tag ok">動画素材あり（Gemini生成・10秒）</span></div>
+    <div class="ph hero">▶ 背景動画（hero.mp4／10秒ループ・自動再生・無音）<br>ネイビーのオーバーレイ＋彩度を落としたトーンで統一<br>再生速度0.8倍・ループのつなぎ目はフェードで処理</div>
+    <div class="hero-over">
+      <h1>水・電気・浄化槽。<br>設備工事を、一社で。</h1>
+      <p>千葉県匝瑳市を拠点に、東総・北総エリアの工務店さまの設備パートナーとして、水道の申請から施工・引き渡し後の対応まで引き受けます。</p>
+      <div class="row"><a class="btn acc lg">企業の方へ｜取引のご相談</a><a class="btn lg">経験者採用はこちら</a></div>
+    </div>
+  </div>
+  <div class="blk" style="padding:16px 32px">
+    <div class="note" style="margin-top:0"><b>注記（ヒーロー動画）：</b>AI生成動画の粗さを目立たせないため、①ネイビー半透明オーバーレイ（不透明度50〜60%）②彩度を落とす ③再生速度を0.8倍にして落ち着かせる ④ループのつなぎ目は黒ではなくネイビーでフェード、の4点で処理。1枚目のフレームをポスター画像にして読み込み中も表示。SPと省データ設定時はポスター画像の静止表示に切り替え、動きを減らす設定（reduced motion）でも静止。一時停止ボタンを右下に設置。</div>
+  </div>
+
+  <div class="blk">
+    <span class="bl">数字で見るオヨカワ</span>
+    <div class="st"><span class="tag kari">数値要確認</span></div>
+    <div class="grid g4 center">
+      <div><div class="num">1989</div><div class="small">前身「及川電気設備」創業</div></div>
+      <div><div class="num">5</div><div class="small">許可・指定・届出の種類</div></div>
+      <div><div class="num">6</div><div class="small">保有する国家資格等の種類</div></div>
+      <div><div class="num">○○社</div><div class="small">お取引のある工務店・建設会社</div></div>
+    </div>
+    <div class="note"><b>注記：</b>数字はカウントアップ演出。取引社数・年間施工件数など、法人が判断しやすい数字をヒアリングで回収する。</div>
+  </div>
+
+  <div class="blk gray">
+    <span class="bl">工務店さまのお悩み → 解決</span>
+    <h2 class="sh">設備業者の手配で、こんなお困りごとはありませんか？</h2>
+    <div class="grid g2 mt">
+      <ul class="chk card">
+        <li>給排水・電気・浄化槽で、業者を別々に手配している</li>
+        <li>水道の申請や浄化槽の届出まで任せられる業者がいない</li>
+        <li>繁忙期に設備業者がつかまらず、工程が止まる</li>
+        <li>引き渡し後の不具合に、すぐ動いてもらえない</li>
+      </ul>
+      <div class="card">
+        <h3>オヨカワなら、窓口ひとつで完結します</h3>
+        <p>給排水衛生・電気・浄化槽・空調をまとめてお受けします。各自治体の指定工事店として、申請手続きも当社で対応。現場ごとの業者調整の手間を減らします。</p>
+        <a class="btn mt">企業の方へ（詳しく見る）</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="blk">
+    <span class="bl">選ばれる理由（抜粋）</span>
+    <h2 class="sh">オヨカワ設備工業が選ばれる理由</h2>
+    <div class="grid g3 mt">
+      <div class="card"><div class="ph sq">アイコン or 写真</div><h3>設備工事をワンストップで</h3><p>水・電気・浄化槽・空調を一括で。発注窓口を一本化できます。</p></div>
+      <div class="card"><div class="ph sq">指定工事店の証書写真</div><h3>各自治体の指定工事店</h3><p>八匝水道企業団・旭市・香取市ほかの指定を受け、申請まで対応。</p></div>
+      <div class="card"><div class="ph sq">職人の施工写真</div><h3>有資格の職人が自社施工</h3><p>管工事施工管理技士・浄化槽設備士・電気工事士が現場を担当。</p></div>
+    </div>
+    <div class="center mt"><a class="btn">選ばれる理由をすべて見る</a></div>
+  </div>
+
+  <div class="blk gray">
+    <span class="bl">事業内容</span>
+    <h2 class="sh">事業内容</h2>
+    <div class="grid g5 mt">
+      <div class="card"><div class="ph sq">写真</div><h3>給排水衛生設備工事</h3></div>
+      <div class="card"><div class="ph sq">写真</div><h3>電気工事</h3></div>
+      <div class="card"><div class="ph sq">写真</div><h3>浄化槽工事</h3></div>
+      <div class="card"><div class="ph sq">写真</div><h3>空調設備工事</h3></div>
+      <div class="card"><div class="ph sq">写真</div><h3>水回りリフォーム</h3><span class="small">個人のお客様向け</span></div>
+    </div>
+    <div class="note"><b>注記：</b>主軸3事業（給排水・電気・浄化槽）はカードを大きく、空調・水回りリフォームは小さくする等で優先度を見せる。</div>
+  </div>
+
+  <div class="blk dark">
+    <span class="bl">企業の方へ バナー</span>
+    <div class="grid g2">
+      <div><h2 class="sh">工務店さまの「設備部門」として。</h2><p>まずは1現場からのご相談も歓迎しています。新規のお取引・協力会社のご相談はこちらから。</p><a class="btn acc mt">企業の方へ</a></div>
+      <div class="flow" style="color:#222">
+        <div class="step"><b>ご相談</b><br><span class="small">電話・フォーム</span></div>
+        <div class="step"><b>現場確認</b><br><span class="small">図面・打合せ</span></div>
+        <div class="step"><b>お見積り</b><br><span class="small">無料</span></div>
+        <div class="step"><b>施工</b><br><span class="small">申請も対応</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="blk">
+    <span class="bl">施工実績</span>
+    <div class="st"><span class="tag ok">一部素材あり</span><span class="tag hear">法人案件の追加回収</span></div>
+    <h2 class="sh">施工実績</h2>
+    <div class="grid g3 mt">
+      <div class="card"><div class="ph sq">写真</div><span class="pill">商業施設</span><h3>匝瑳市 飲食店 浄化槽（30人槽）新設工事</h3></div>
+      <div class="card"><div class="ph sq">写真</div><span class="pill">公共</span><h3>匝瑳市 消防団機庫 設備工事</h3></div>
+      <div class="card"><div class="ph sq">写真</div><span class="pill">住宅</span><h3>【ダミー】旭市 新築住宅 給排水・電気一式</h3></div>
+    </div>
+    <div class="center mt"><a class="btn">施工実績一覧へ</a></div>
+  </div>
+
+  <div class="blk gray">
+    <span class="bl">お客様の声</span>
+    <div class="st"><span class="tag hear">取引先の声 要取材</span></div>
+    <h2 class="sh">お取引先さまの声</h2>
+    <div class="grid g2 mt">
+      <div class="card voice"><div class="ph" style="min-height:90px">ロゴ/写真</div><div><h3>「申請まで任せられるので工程が組みやすい」</h3><p class="small">【ダミー】香取市 工務店 A社さま／取引歴5年</p></div></div>
+      <div class="card voice"><div class="ph" style="min-height:90px">ロゴ/写真</div><div><h3>「急な不具合でもすぐ来てくれる」</h3><p class="small">【ダミー】旭市 建設会社 B社さま／取引歴3年</p></div></div>
+    </div>
+    <div class="center mt"><a class="btn">お客様の声をもっと見る</a></div>
+  </div>
+
+  <div class="blk rel" style="padding:0">
+    <span class="bl">経験者採用バナー</span>
+    <div class="ph" style="min-height:280px">背景：ベテラン職人のポートレート</div>
+    <div class="hero-over">
+      <h2 class="sh" style="font-size:30px">その腕を、正当に評価する会社へ。</h2>
+      <p>管工事・電気工事の経験者を募集しています。技術と資格が、そのまま待遇に反映される環境です。</p>
+      <div class="row"><a class="btn fill">求職者の方へ</a><a class="btn">募集要項を見る</a></div>
+    </div>
+  </div>
+
+  <div class="blk">
+    <span class="bl">FAQ抜粋</span>
+    <h2 class="sh">よくあるご質問</h2>
+    <div class="qa"><div class="q">Q. 1現場だけの依頼でも対応してもらえますか？<span>＋</span></div></div>
+    <div class="qa"><div class="q">Q. 水道の申請手続きも依頼できますか？<span>＋</span></div></div>
+    <div class="qa"><div class="q">Q. 対応エリアはどこまでですか？<span>＋</span></div></div>
+    <div class="qa"><div class="q">Q. 浄化槽の補助金について相談できますか？<span>＋</span></div></div>
+    <div class="center mt"><a class="btn">FAQ一覧へ</a></div>
+  </div>
+
+  <div class="blk gray">
+    <span class="bl">個人のお客様 サブ導線</span>
+    <div class="card row" style="justify-content:space-between">
+      <div><h3>個人のお客様へ｜水回りリフォーム・水漏れのご相談</h3><p class="small">浴室・キッチン・トイレのリフォーム、水漏れ修理、浄化槽の交換（補助金のご案内）も承ります。</p></div>
+      <a class="btn">個人のお客様はこちら</a>
+    </div>
+    <div class="note"><b>注記：</b>法人導線を邪魔しないよう、横長の控えめな帯で配置。遷移先は事業内容ページの「個人のお客様」セクション。</div>
+  </div>
+
+  <div class="blk">
+    <span class="bl">お知らせ・ブログ</span>
+    <div class="grid g2">
+      <div><h3>お知らせ</h3><div class="small">2026.00.00　お知らせタイトル<br>2026.00.00　お知らせタイトル<br>2026.00.00　お知らせタイトル</div></div>
+      <div><h3>ブログ</h3><div class="grid g3"><div class="ph sq">記事</div><div class="ph sq">記事</div><div class="ph sq">記事</div></div></div>
+    </div>
+  </div>
+
+  <div class="cta-slot"></div>
+  <div class="ftr-slot"></div>
+</section>
+
+<!-- ============ P02 事業内容 ============ -->
+<section class="page" data-no="02" data-name="事業内容" data-type="old" data-purpose="各事業の対応範囲・対象建物・関連資格を示し、法人の発注判断材料にする。個人向けはページ下部にまとめる">
+  <div class="hdr-slot"></div>
+  <div class="phead"><span class="en">Service</span><h1>事業内容</h1></div>
+  <div class="bread">HOME ＞ 事業内容</div>
+  <div class="blk">
+    <span class="bl">導入＋アンカー</span>
+    <p class="lead">給排水衛生設備を中心に、電気・浄化槽・空調まで、建物の設備工事をまとめてお受けしています。住宅から商業施設、畜産施設、公共施設まで対応します。</p>
+    <div class="row"><span class="pill on">給排水衛生設備</span><span class="pill">電気</span><span class="pill">浄化槽</span><span class="pill">空調</span><span class="pill">個人のお客様</span></div>
+  </div>
+  <div class="blk gray">
+    <span class="bl">事業セクション（×4 繰り返し）</span>
+    <div class="grid g2">
+      <div class="ph" style="min-height:300px">施工写真</div>
+      <div>
+        <h2 class="sh">給排水衛生設備工事</h2>
+        <p>給水・排水管、ポンプ、給湯設備、衛生器具の設置・更新。水道本管からの引き込みも対応します。</p>
+        <table class="tbl mt">
+          <tr><th>主な工事</th><td>給排水配管／水道引き込み／給湯設備／衛生器具設置／下水道接続</td></tr>
+          <tr><th>対象建物</th><td>戸建住宅・集合住宅・店舗・事務所・畜産施設・公共施設</td></tr>
+          <tr><th>関連資格・指定</th><td>給水装置工事主任技術者／指定給水装置事業者／下水道排水設備指定工事店</td></tr>
+        </table>
+        <a class="btn mt">関連する施工実績</a>
+      </div>
+    </div>
+    <div class="note"><b>注記：</b>電気工事（前身・及川電気設備からの技術）、浄化槽工事（新設・移設・交換、補助金案内）、空調設備工事も同じレイアウトで左右交互に配置。</div>
+  </div>
+  <div class="blk">
+    <span class="bl">対応範囲マトリクス</span>
+    <h2 class="sh">工事×建物 対応一覧</h2>
+    <table class="tbl cmp center">
+      <tr><th></th><th>住宅</th><th>店舗・事務所</th><th>畜産施設</th><th>公共施設</th></tr>
+      <tr><th>給排水衛生</th><td>●</td><td>●</td><td>●</td><td>●</td></tr>
+      <tr><th>電気</th><td>●</td><td>●</td><td>●</td><td>●</td></tr>
+      <tr><th>浄化槽</th><td>●</td><td>●</td><td>●</td><td>●</td></tr>
+      <tr><th>空調</th><td>●</td><td>●</td><td>○</td><td>○</td></tr>
+    </table>
+    <p class="small mt">※対応可否はクライアント確認</p>
+  </div>
+  <div class="blk gray" id="personal">
+    <span class="bl">個人のお客様（サブ導線の着地）</span>
+    <h2 class="sh">個人のお客様へ</h2>
+    <div class="grid g3">
+      <div class="card"><div class="ph sq">写真</div><h3>水回りリフォーム</h3><p>浴室・キッチン・トイレ・洗面台。主要メーカー対応。</p></div>
+      <div class="card"><div class="ph sq">写真</div><h3>水漏れ・つまり</h3><p>匝瑳市・旭市周辺ならすぐに伺います。</p></div>
+      <div class="card"><div class="ph sq">写真</div><h3>浄化槽の交換</h3><p>自治体の補助金が使える場合はご案内します。</p></div>
+    </div>
+    <div class="center mt"><a class="btn">個人のご相談フォーム</a></div>
+  </div>
+  <div class="cta-slot"></div>
+  <div class="ftr-slot"></div>
+</section>
+
+<!-- ============ P03 施工実績 ============ -->
+<section class="page" data-no="03" data-name="施工実績" data-type="old" data-purpose="法人が「この規模・この建物を任せられるか」を判断できる実績DB。建物種別で絞り込み">
+  <div class="hdr-slot"></div>
+  <div class="phead"><span class="en">Works</span><h1>施工実績</h1></div>
+  <div class="bread">HOME ＞ 施工実績</div>
+  <div class="blk">
+    <span class="bl">絞り込み＋一覧</span>
+    <div class="st"><span class="tag ok">既存4件</span><span class="tag hear">法人案件を最低10件</span></div>
+    <div class="row"><span class="pill on">すべて</span><span class="pill">住宅</span><span class="pill">店舗・事務所</span><span class="pill">畜産施設</span><span class="pill">公共施設</span><span class="pill">リフォーム</span></div>
+    <div class="grid g3 mt">
+      <div class="card"><div class="ph sq">写真</div><span class="pill">店舗</span><span class="pill">浄化槽</span><h3>匝瑳市 飲食店 浄化槽30人槽 新設</h3><p class="small">エリア：匝瑳市／工期：○日</p></div>
+      <div class="card"><div class="ph sq">写真</div><span class="pill">公共</span><h3>匝瑳市 消防団機庫</h3><p class="small">エリア：匝瑳市</p></div>
+      <div class="card"><div class="ph sq">写真</div><span class="pill">住宅</span><span class="pill">リフォーム</span><h3>匝瑳市O様邸 キッチンリフォーム</h3><p class="small">エリア：匝瑳市</p></div>
+      <div class="card"><div class="ph sq">写真</div><span class="pill">畜産施設</span><h3>【ダミー】旭市 養豚場 給排水設備更新</h3></div>
+      <div class="card"><div class="ph sq">写真</div><span class="pill">住宅</span><h3>【ダミー】香取市 新築住宅 設備一式（工務店さま発注）</h3></div>
+      <div class="card"><div class="ph sq">写真</div><span class="pill">店舗</span><h3>【ダミー】成田市 事務所 電気・空調工事</h3></div>
+    </div>
+  </div>
+  <div class="blk gray">
+    <span class="bl">実績詳細テンプレ</span>
+    <div class="grid g2">
+      <div><div class="ph" style="min-height:260px">メイン写真＋サムネ</div></div>
+      <div>
+        <table class="tbl">
+          <tr><th>建物種別</th><td>店舗（飲食店）</td></tr>
+          <tr><th>エリア</th><td>匝瑳市</td></tr>
+          <tr><th>工事内容</th><td>浄化槽30人槽 新設／給排水接続</td></tr>
+          <tr><th>発注形態</th><td>元請／工務店さま経由 など</td></tr>
+          <tr><th>工期</th><td>○日</td></tr>
+        </table>
+        <h3 class="mt">施工のポイント</h3><p>現場で工夫した点、工程調整、申請対応などを150〜300字で。</p>
+      </div>
+    </div>
+    <div class="note"><b>注記：</b>「発注形態」を必ず入れ、工務店経由の案件が多いことを見せる。施主名は伏せる。</div>
+  </div>
+  <div class="cta-slot"></div>
+  <div class="ftr-slot"></div>
+</section>
+
+<!-- ============ P04 採用情報 ============ -->
+<section class="page" data-no="04" data-name="採用情報（募集要項）" data-type="old" data-purpose="募集要項と応募フォーム。PRは「求職者の方へ」に任せ、ここは条件確認と応募に絞る">
+  <div class="hdr-slot"></div>
+  <div class="phead"><span class="en">Recruit</span><h1>採用情報</h1></div>
+  <div class="bread">HOME ＞ 採用情報</div>
+  <div class="blk">
+    <span class="bl">導入</span>
+    <p class="lead">管工事・電気工事の経験者を募集しています。会社の考え方や働き方は「求職者の方へ」をご覧ください。</p>
+    <a class="btn">求職者の方へ（オヨカワで働く理由）</a>
+  </div>
+  <div class="blk gray">
+    <span class="bl">募集要項</span>
+    <div class="st"><span class="tag kari">条件すべて仮</span></div>
+    <div class="tabs"><span class="on">設備施工スタッフ（経験者）</span><span>電気工事スタッフ（経験者）</span></div>
+    <table class="tbl">
+      <tr><th>仕事内容</th><td>給排水衛生設備・浄化槽・水道引き込み工事の施工。住宅から商業施設・公共施設まで。</td></tr>
+      <tr><th>応募資格</th><td>管工事の実務経験○年以上／普通自動車免許（AT限定不可）</td></tr>
+      <tr><th>歓迎資格</th><td>管工事施工管理技士／給水装置工事主任技術者／浄化槽設備士／第二種電気工事士</td></tr>
+      <tr><th>給与</th><td>【仮】日給○○,○○○円〜○○,○○○円（経験・資格・技能により決定）<br>月給換算例：○○万円〜（月22日勤務）</td></tr>
+      <tr><th>手当</th><td>資格手当／残業手当／家族手当／電話代支給</td></tr>
+      <tr><th>勤務時間</th><td>8:00〜17:00（休憩あり・現場により異なる）</td></tr>
+      <tr><th>休日</th><td>日曜・年末年始（例年12/29〜1/7）・お盆・GW</td></tr>
+      <tr><th>保険</th><td>労災保険・雇用保険（社会保険の加入状況は要確認）</td></tr>
+      <tr><th>勤務地</th><td>千葉県匝瑳市平木7886-1（現場は千葉県内）</td></tr>
+    </table>
+    <div class="note"><b>注記：</b>現行の「30代以下優遇」は年齢制限の原則禁止に抵触するおそれがあるため削除推奨。経験者に響かせるため、給与は下限だけでなく上限・月給換算・資格手当額を出すのが理想。条件確定までは仮表記。</div>
+  </div>
+  <div class="blk">
+    <span class="bl">選考フロー</span>
+    <div class="flow">
+      <div class="step"><b>応募</b><br><span class="small">フォーム・電話</span></div>
+      <div class="step"><b>面談</b><br><span class="small">現場見学も可</span></div>
+      <div class="step"><b>面接</b><br><span class="small">代表と</span></div>
+      <div class="step"><b>内定</b><br><span class="small">応募から約2週間</span></div>
+    </div>
+  </div>
+  <div class="blk gray">
+    <span class="bl">応募フォーム</span>
+    <div class="form">
+      <div class="f">お名前<span class="req">必須</span><div class="in"></div></div>
+      <div class="f">電話番号<span class="req">必須</span><div class="in"></div></div>
+      <div class="f">メールアドレス<div class="in"></div></div>
+      <div class="f">経験年数・経験工事<span class="req">必須</span><div class="in"></div></div>
+      <div class="f">保有資格<div class="in"></div></div>
+      <div class="f">ご質問・自己PR<div class="in ta"></div></div>
+    </div>
+    <div class="center mt"><a class="btn fill lg">応募内容を送信する</a></div>
+    <div class="note"><b>注記：</b>経験者は電話より「まず話を聞きたい」層も多いため、「カジュアル面談希望」のチェックを追加。</div>
+  </div>
+  <div class="ftr-slot"></div>
+</section>
+
+<!-- ============ P05 会社概要 ============ -->
+<section class="page" data-no="05" data-name="会社概要" data-type="old" data-purpose="許可・指定・資格を一覧化し、法人の与信・協力会社登録に必要な情報を揃える">
+  <div class="hdr-slot"></div>
+  <div class="phead"><span class="en">Company</span><h1>会社概要</h1></div>
+  <div class="bread">HOME ＞ 会社概要</div>
+  <div class="blk">
+    <span class="bl">基本情報</span>
+    <table class="tbl">
+      <tr><th>会社名</th><td>株式会社オヨカワ設備工業</td></tr>
+      <tr><th>代表者</th><td>及川 健蔵（オヨカワ ケンゾウ）</td></tr>
+      <tr><th>所在地</th><td>〒289-2113 千葉県匝瑳市平木7886-1</td></tr>
+      <tr><th>TEL/FAX</th><td>0479-79-2707</td></tr>
+      <tr><th>営業時間</th><td>8:00〜17:00（日曜・祝日定休）</td></tr>
+      <tr><th>創業</th><td>平成元年（前身：及川電気設備）／令和2年 現体制</td></tr>
+      <tr><th>事業内容</th><td>給排水衛生設備工事／電気工事／浄化槽工事／空調設備工事／水回りリフォーム</td></tr>
+      <tr><th>従業員数</th><td>○名（要確認）</td></tr>
+      <tr><th>対応エリア</th><td>千葉県内（周辺地域も応相談）</td></tr>
+    </table>
+  </div>
+  <div class="blk gray">
+    <span class="bl">許可・指定・届出</span>
+    <div class="grid g3">
+      <div class="card"><h3>建設業許可</h3><p>千葉県知事許可（般-4）第55717号</p></div>
+      <div class="card"><h3>電気工事業届出</h3><p>千葉県知事届出 第20220081号</p></div>
+      <div class="card"><h3>浄化槽工事業届出</h3><p>千葉県知事（届-4）第1770号</p></div>
+      <div class="card"><h3>指定給水装置事業者</h3><p>八匝水道企業団・多古町・旭市・香取市</p></div>
+      <div class="card"><h3>下水道排水設備指定工事店</h3><p>旭市・香取市</p></div>
+    </div>
+  </div>
+  <div class="blk">
+    <span class="bl">保有資格</span>
+    <div class="row">
+      <span class="pill">2級管工事施工管理技士</span><span class="pill">2級土木施工管理技士</span><span class="pill">浄化槽設備士</span><span class="pill">給水装置工事主任技術者</span><span class="pill">下水道排水設備工事責任技術者</span><span class="pill">第二種電気工事士</span>
+    </div>
+    <div class="note"><b>注記：</b>資格ごとの保有人数が分かれば併記（例：第二種電気工事士 ○名）。</div>
+  </div>
+  <div class="blk gray">
+    <span class="bl">対応エリア・アクセス</span>
+    <div class="grid g2">
+      <div class="ph" style="min-height:260px">対応エリア図（匝瑳市を中心に旭・香取・成田・山武・多古・横芝光）</div>
+      <div class="ph" style="min-height:260px">Googleマップ埋め込み</div>
+    </div>
+  </div>
+  <div class="cta-slot"></div>
+  <div class="ftr-slot"></div>
+</section>
+
+<!-- ============ P06 ブログ ============ -->
+<section class="page" data-no="06" data-name="ブログ" data-type="old" data-purpose="法人向け・求職者向けの検索流入を集め、各PRページへ送客する">
+  <div class="hdr-slot"></div>
+  <div class="phead"><span class="en">Blog</span><h1>ブログ・コラム</h1></div>
+  <div class="bread">HOME ＞ ブログ</div>
+  <div class="blk">
+    <span class="bl">カテゴリ＋一覧＋サイド</span>
+    <div class="row"><span class="pill on">すべて</span><span class="pill">工務店さま向け</span><span class="pill">設備の基礎知識</span><span class="pill">浄化槽・補助金</span><span class="pill">現場・職人</span><span class="pill">お知らせ</span></div>
+    <div class="grid mt" style="grid-template-columns:3fr 1fr">
+      <div class="grid g3">
+        <div class="card"><div class="ph sq">アイキャッチ</div><span class="small">2026.00.00｜工務店さま向け</span><h3>新築の設備業者を一本化するメリット</h3></div>
+        <div class="card"><div class="ph sq">アイキャッチ</div><span class="small">2026.00.00｜浄化槽・補助金</span><h3>匝瑳市の浄化槽補助金の流れ</h3></div>
+        <div class="card"><div class="ph sq">アイキャッチ</div><span class="small">2026.00.00｜現場・職人</span><h3>配管工の経験年数で変わる仕事</h3></div>
+        <div class="card"><div class="ph sq">アイキャッチ</div></div><div class="card"><div class="ph sq">アイキャッチ</div></div><div class="card"><div class="ph sq">アイキャッチ</div></div>
+      </div>
+      <div>
+        <div class="card"><h3>企業の方へ</h3><p class="small">取引のご相談</p></div>
+        <div class="card mt"><h3>経験者採用</h3><p class="small">募集中</p></div>
+        <div class="card mt"><h3>人気記事</h3><p class="small">記事リスト</p></div>
+      </div>
+    </div>
+    <div class="note"><b>注記：</b>記事下に「企業の方へ」「求職者の方へ」CTAを記事カテゴリに応じて出し分け。狙うキーワード例：千葉 設備工事 協力会社／匝瑳市 浄化槽 補助金／旭市 給排水 業者／千葉 配管工 求人 経験者。</div>
+  </div>
+  <div class="ftr-slot"></div>
+</section>
+
+<!-- ============ P07 お問い合わせ ============ -->
+<section class="page" data-no="07" data-name="お問い合わせ" data-type="old" data-purpose="法人／個人／採用を最初に振り分け、法人は取引判断に必要な情報を一度で受け取る">
+  <div class="hdr-slot"></div>
+  <div class="phead"><span class="en">Contact</span><h1>お問い合わせ</h1></div>
+  <div class="bread">HOME ＞ お問い合わせ</div>
+  <div class="blk">
+    <span class="bl">電話＋種別タブ</span>
+    <div class="card row" style="justify-content:space-between"><div><h3>お電話：0479-79-2707</h3><p class="small">受付 8:00〜17:00（日曜・祝日除く）</p></div><a class="btn">LINEで相談</a></div>
+    <div class="tabs mt"><span class="on">法人のご相談</span><span>個人のご相談</span><span>採用への応募</span></div>
+    <div class="form">
+      <div class="f">会社名<span class="req">必須</span><div class="in"></div></div>
+      <div class="f">ご担当者名<span class="req">必須</span><div class="in"></div></div>
+      <div class="f">電話番号<span class="req">必須</span><div class="in"></div></div>
+      <div class="f">メールアドレス<span class="req">必須</span><div class="in"></div></div>
+      <div class="f">ご相談の種類<span class="req">必須</span><div><span class="pill">新規取引のご相談</span><span class="pill">見積依頼</span><span class="pill">協力会社としての登録</span><span class="pill">その他</span></div></div>
+      <div class="f">工事の種類<div><span class="pill">給排水</span><span class="pill">電気</span><span class="pill">浄化槽</span><span class="pill">空調</span><span class="pill">一式</span></div></div>
+      <div class="f">現場エリア・時期<div class="in"></div></div>
+      <div class="f">図面・資料の添付<div class="in"></div></div>
+      <div class="f">ご相談内容<div class="in ta"></div></div>
+    </div>
+    <div class="center mt"><a class="btn fill lg">相談内容を送信する</a></div>
+    <div class="note"><b>注記：</b>タブで項目を切り替え。個人は「住所・症状・写真添付」、採用は採用ページのフォームと同項目。送信後は「2営業日以内に担当からご連絡します」と明記。</div>
+  </div>
+  <div class="ftr-slot"></div>
+</section>
+
+<!-- ============ P08 選ばれる理由 ============ -->
+<section class="page" data-no="08" data-name="選ばれる理由" data-type="new" data-purpose="他社との違いを6つの理由と比較表で示し、「この会社に任せたい」の根拠をつくる">
+  <div class="hdr-slot"></div>
+  <div class="phead"><span class="en">Reason</span><h1>選ばれる理由</h1></div>
+  <div class="bread">HOME ＞ 選ばれる理由</div>
+  <div class="blk">
+    <span class="bl">導入</span>
+    <h2 class="sh">現場を止めない。窓口を増やさない。</h2>
+    <p class="lead">工務店さまや建設会社さまから継続してご依頼をいただいている理由を、6つにまとめました。</p>
+  </div>
+  <div class="blk gray">
+    <span class="bl">理由 ×6（左右交互）</span>
+    <div class="grid g2" style="align-items:center">
+      <div class="ph" style="min-height:240px">写真：給排水と電気を同じ現場で施工する様子</div>
+      <div><span class="small">理由 1</span><h2 class="sh">設備工事をワンストップで</h2><p>給排水衛生・電気・浄化槽・空調を一社でお受けします。業者ごとの日程調整や取り合いの確認が不要になり、工程管理がシンプルになります。</p></div>
+    </div>
+    <div class="grid g3 mt">
+      <div class="card"><span class="small">理由 2</span><h3>各自治体の指定工事店</h3><p>八匝水道企業団・多古町・旭市・香取市の指定給水装置事業者。水道申請から竣工検査まで対応。</p></div>
+      <div class="card"><span class="small">理由 3</span><h3>有資格の職人が自社施工</h3><p>管工事施工管理技士・浄化槽設備士・電気工事士が担当。丸投げはしません。</p></div>
+      <div class="card"><span class="small">理由 4</span><h3>電気設備から続く技術</h3><p>平成元年創業の及川電気設備が前身。電気と水、両方が分かる施工。</p></div>
+      <div class="card"><span class="small">理由 5</span><h3>公共工事の実績</h3><p>民間に加え公共工事の実績あり。書類・品質管理の基準が違います。</p></div>
+      <div class="card"><span class="small">理由 6</span><h3>東総エリアの機動力</h3><p>匝瑳市拠点から旭・香取・成田・山武へ。急な不具合にもすぐ伺えます。</p></div>
+      <div class="card"><span class="small">補足</span><h3>引き渡し後も窓口ひとつ</h3><p>アフター対応も当社で一括。施主さまへのご説明もサポートします。</p></div>
+    </div>
+    <div class="note"><b>注記：</b>理由1のみ大きく扱い、残りはカード。理由5は公共工事の具体例（件数・発注者区分）をヒアリング。</div>
+  </div>
+  <div class="blk">
+    <span class="bl">比較表</span>
+    <h2 class="sh">一般的な設備業者との違い</h2>
+    <table class="tbl cmp">
+      <tr><th>項目</th><th>一般的な設備業者</th><th>オヨカワ設備工業</th></tr>
+      <tr><td>発注窓口</td><td>工事ごとに別業者</td><td class="yes">一社で完結</td></tr>
+      <tr><td>水道の申請</td><td>別途手配が必要な場合あり</td><td class="yes">指定工事店として対応</td></tr>
+      <tr><td>浄化槽</td><td>専門業者へ外注</td><td class="yes">自社で新設・交換</td></tr>
+      <tr><td>電気工事</td><td>電気業者を別手配</td><td class="yes">自社で対応</td></tr>
+      <tr><td>施工体制</td><td>外注中心の場合あり</td><td class="yes">有資格者が自社施工</td></tr>
+    </table>
+  </div>
+  <div class="cta-slot"></div>
+  <div class="ftr-slot"></div>
+</section>
+
+<!-- ============ P09 企業の方へ ============ -->
+<section class="page" data-no="09" data-name="企業の方へ" data-type="new" data-purpose="工務店・建設会社向けの集客PRハブ。悩み→解決→対応範囲→流れ→声→FAQ→相談の1ページ完結">
+  <div class="hdr-slot"></div>
+  <div class="blk rel" style="padding:0">
+    <span class="bl">ページヒーロー</span>
+    <div class="ph" style="min-height:360px">背景：現場で工務店担当者と打合せする代表の写真</div>
+    <div class="hero-over">
+      <h1>工務店さまの<br>「設備部門」として。</h1>
+      <p>水道・電気・浄化槽の設備工事をまとめてお任せいただけます。新規のお取引、協力会社のご相談を受け付けています。</p>
+      <div class="row"><a class="btn acc lg">取引について相談する</a><span class="tel">TEL 0479-79-2707</span></div>
+    </div>
+  </div>
+  <div class="blk">
+    <span class="bl">対象</span>
+    <h2 class="sh">こんな企業さまからご依頼いただいています</h2>
+    <div class="grid g3">
+      <div class="card"><h3>工務店・ハウスメーカー</h3><p>新築・リフォームの設備工事一式</p></div>
+      <div class="card"><h3>建設会社・ゼネコン</h3><p>店舗・事務所・公共施設の設備工事</p></div>
+      <div class="card"><h3>施設オーナー・管理会社</h3><p>畜産施設・商業施設の設備更新や保守</p></div>
+    </div>
+  </div>
+  <div class="blk gray">
+    <span class="bl">お悩み → 解決（3セット）</span>
+    <div class="grid g3">
+      <div class="card"><p class="small">お悩み</p><h3>業者手配が多くて工程が組みにくい</h3><hr style="margin:10px 0;border:0;border-top:1px dashed #bbb"><p class="small">解決</p><p>給排水・電気・浄化槽を一括発注。取り合いの調整も当社で。</p></div>
+      <div class="card"><p class="small">お悩み</p><h3>水道申請・浄化槽の届出が負担</h3><hr style="margin:10px 0;border:0;border-top:1px dashed #bbb"><p class="small">解決</p><p>指定工事店として申請書類の作成から対応します。</p></div>
+      <div class="card"><p class="small">お悩み</p><h3>引き渡し後の不具合対応が遅い</h3><hr style="margin:10px 0;border:0;border-top:1px dashed #bbb"><p class="small">解決</p><p>匝瑳市拠点から東総エリアへ迅速に駆けつけます。</p></div>
+    </div>
+  </div>
+  <div class="blk">
+    <span class="bl">取引するメリット</span>
+    <h2 class="sh">オヨカワと取引するメリット</h2>
+    <div class="grid g4">
+      <div class="card"><h3>窓口の一本化</h3><p>連絡・請求がひとつに</p></div>
+      <div class="card"><h3>申請対応</h3><p>水道・下水・浄化槽</p></div>
+      <div class="card"><h3>繁忙期も相談可</h3><p>工程に合わせて調整</p></div>
+      <div class="card"><h3>施主対応の補助</h3><p>設備説明に同席可</p></div>
+    </div>
+    <div class="note"><b>注記：</b>「繁忙期も相談可」「施主説明に同席」は実際に対応可能かヒアリング。</div>
+  </div>
+  <div class="blk gray">
+    <span class="bl">取引開始までの流れ</span>
+    <h2 class="sh">お取引開始までの流れ</h2>
+    <div class="flow">
+      <div class="step"><b>1. ご相談</b><p class="small">電話・フォームで概要をお知らせください</p></div>
+      <div class="step"><b>2. 打合せ</b><p class="small">図面確認・現場確認</p></div>
+      <div class="step"><b>3. お見積り</b><p class="small">無料でご提出</p></div>
+      <div class="step"><b>4. 施工</b><p class="small">申請・工程調整を含む</p></div>
+      <div class="step"><b>5. 引き渡し後</b><p class="small">不具合対応も窓口ひとつ</p></div>
+    </div>
+  </div>
+  <div class="blk">
+    <span class="bl">法人向け実績＋声</span>
+    <div class="grid g2">
+      <div><h3>法人のお取引実績</h3><div class="grid g2"><div class="ph sq">実績</div><div class="ph sq">実績</div></div></div>
+      <div><h3>お取引先さまの声</h3><div class="card"><p>「【ダミー】申請まで任せられるので、担当者の負担が大きく減りました」</p><p class="small">香取市 工務店 A社さま</p></div></div>
+    </div>
+  </div>
+  <div class="blk gray">
+    <span class="bl">対応エリア</span>
+    <div class="grid g2"><div class="ph" style="min-height:220px">エリアマップ</div><div><h3>主な対応エリア</h3><p>匝瑳市・旭市・香取市・成田市・山武市・多古町・横芝光町ほか千葉県内。県外も内容によりご相談ください。</p></div></div>
+  </div>
+  <div class="blk">
+    <span class="bl">法人FAQ</span>
+    <div class="qa"><div class="q">Q. 1現場だけのお試し発注もできますか？<span>－</span></div><div class="a">A. はい、まずは1現場からご相談ください。</div></div>
+    <div class="qa"><div class="q">Q. 見積りの目安日数は？<span>＋</span></div></div>
+    <div class="qa"><div class="q">Q. 支払条件は相談できますか？<span>＋</span></div></div>
+  </div>
+  <div class="blk dark center">
+    <span class="bl">法人CTA</span>
+    <h2 class="sh" style="text-align:center">まずは1現場から、ご相談ください。</h2>
+    <p>図面をお送りいただければ、概算のお見積りをお出しします。</p>
+    <div class="row mt" style="justify-content:center"><a class="btn acc lg">取引について相談する</a><a class="btn lg">協力会社として登録する</a></div>
+  </div>
+  <div class="ftr-slot"></div>
+</section>
+
+<!-- ============ P10 求職者の方へ ============ -->
+<section class="page" data-no="10" data-name="求職者の方へ" data-type="new" data-purpose="腕の良い経験者向けPR。評価・待遇・仕事の幅・人（代表）で「ここなら報われる」を伝え、募集要項へ送る">
+  <div class="hdr-slot"></div>
+  <div class="blk rel" style="padding:0">
+    <span class="bl">ページヒーロー</span>
+    <div class="ph" style="min-height:380px">背景：ベテラン職人の手元・横顔（モノクロ寄り）</div>
+    <div class="hero-over">
+      <h1>その腕を、<br>正当に評価する会社へ。</h1>
+      <p>管工事・電気工事の経験者を募集しています。積み上げてきた技術と資格が、そのまま待遇と任される仕事に反映される環境です。</p>
+      <div class="row"><a class="btn fill lg">エントリーする</a><a class="btn lg">まずは話を聞く</a></div>
+    </div>
+  </div>
+  <div class="blk">
+    <span class="bl">経験者へのメッセージ</span>
+    <h2 class="sh">こんな思いはありませんか？</h2>
+    <ul class="chk card" style="max-width:720px">
+      <li>技術があっても、年数だけで給料が決まる</li>
+      <li>同じ種類の工事ばかりで、腕を広げられない</li>
+      <li>資格を取っても、手当や評価に反映されない</li>
+    </ul>
+  </div>
+  <div class="blk gray">
+    <span class="bl">オヨカワで働く理由</span>
+    <h2 class="sh">オヨカワで働く理由</h2>
+    <div class="grid g2">
+      <div class="card"><h3>技術と資格で決まる評価</h3><p>【仮】技能・資格・担当範囲で給与を決定。資格手当あり。</p></div>
+      <div class="card"><h3>工事の幅が広がる</h3><p>給排水・浄化槽・電気・空調。住宅から公共施設まで経験できる。</p></div>
+      <div class="card"><h3>現場を任される</h3><p>経験者には早い段階で現場責任者を任せます。将来の幹部候補、独立の相談も可。</p></div>
+      <div class="card"><h3>無理のない働き方</h3><p>残業を抑え、日曜・長期休暇はしっかり休む。</p></div>
+    </div>
+  </div>
+  <div class="blk">
+    <span class="bl">給与モデル・キャリア</span>
+    <div class="st"><span class="tag kari">金額仮</span></div>
+    <h2 class="sh">給与モデル</h2>
+    <div class="grid g3">
+      <div class="card"><h3>経験5年・有資格</h3><div class="num">○○万円</div><p class="small">年収例</p></div>
+      <div class="card"><h3>経験10年・現場責任者</h3><div class="num">○○万円</div><p class="small">年収例</p></div>
+      <div class="card"><h3>施工管理技士・職長</h3><div class="num">○○万円</div><p class="small">年収例</p></div>
+    </div>
+    <div class="note"><b>注記：</b>経験者の判断材料として最重要。条件未確定のため仮置き。確定次第差し替え。</div>
+  </div>
+  <div class="blk gray">
+    <span class="bl">1日の流れ</span>
+    <div class="tl">
+      <div class="it"><b>7:40 出社・積み込み</b><p class="small">資材と工具を確認</p></div>
+      <div class="it"><b>8:00 現場へ</b><p class="small">旭市の新築住宅など</p></div>
+      <div class="it"><b>12:00 昼休憩</b></div>
+      <div class="it"><b>16:30 片付け・日報</b></div>
+      <div class="it"><b>17:00 退社</b></div>
+    </div>
+  </div>
+  <div class="blk">
+    <span class="bl">代表メッセージ＋先輩の声</span>
+    <div class="st"><span class="tag hear">要取材</span></div>
+    <div class="grid g2">
+      <div class="card voice"><div class="ph" style="min-height:120px">代表写真</div><div><h3>代表 及川健蔵より</h3><p>経験者の方へ向けた一言（本当に腕の良い人に来てほしい理由、評価の考え方）。</p></div></div>
+      <div class="card voice"><div class="ph" style="min-height:120px">社員写真</div><div><h3>【ダミー】入社2年目・経験12年</h3><p>前職との違い、入社の決め手。</p></div></div>
+    </div>
+  </div>
+  <div class="blk dark center">
+    <span class="bl">採用CTA</span>
+    <h2 class="sh" style="text-align:center">まずは、話を聞くだけでも。</h2>
+    <p>現場見学・カジュアル面談も受け付けています。</p>
+    <div class="row mt" style="justify-content:center"><a class="btn acc lg">募集要項・エントリー</a><span class="tel">TEL 0479-79-2707</span></div>
+  </div>
+  <div class="ftr-slot"></div>
+</section>
+
+<!-- ============ P11 オヨカワ設備工業について ============ -->
+<section class="page" data-no="11" data-name="オヨカワ設備工業について" data-type="new" data-purpose="代表・理念・沿革・今後の方針で「どんな会社か」を伝え、法人・求職者双方の信頼を補強">
+  <div class="hdr-slot"></div>
+  <div class="phead"><span class="en">About</span><h1>オヨカワ設備工業について</h1></div>
+  <div class="bread">HOME ＞ オヨカワ設備工業について</div>
+  <div class="blk">
+    <span class="bl">代表挨拶</span>
+    <div class="st"><span class="tag hear">代表インタビュー</span></div>
+    <div class="grid g2" style="grid-template-columns:1fr 1.4fr">
+      <div class="ph" style="min-height:320px">代表 及川健蔵 ポートレート</div>
+      <div><h2 class="sh">代表挨拶</h2><p>父が営んだ「及川電気設備」の技術を受け継ぎ、令和2年に水回りを中心とした設備会社として新たにスタートしました。……（創業の経緯・仕事への姿勢・取引先への思い）</p><p class="mt small">代表取締役　及川 健蔵</p></div>
+    </div>
+    <div class="note"><b>注記：</b>前身の代替わりの経緯は要確認（現行サイトは「代替わりを経て」とのみ記載）。</div>
+  </div>
+  <div class="blk gray">
+    <span class="bl">企業理念</span>
+    <h2 class="sh">依頼主の気持ちに寄り添う、誠実な仕事。</h2>
+    <p class="lead">表面だけを整えるのではなく、中長期のメリット・デメリットまでお伝えしたうえで、納得いただける設備をつくります。</p>
+    <div class="grid g3"><div class="card"><h3>誠実</h3><p>見えない配管こそ丁寧に</p></div><div class="card"><h3>柔軟</h3><p>現場と工程に合わせて動く</p></div><div class="card"><h3>地域</h3><p>東総のインフラを支える</p></div></div>
+    <div class="note"><b>注記：</b>3つの価値観は現行文言からの仮置き。代表にヒアリングして確定。</div>
+  </div>
+  <div class="blk">
+    <span class="bl">沿革</span>
+    <div class="st"><span class="tag hear">年表要確認</span></div>
+    <h2 class="sh">沿革</h2>
+    <div class="tl">
+      <div class="it"><b>平成元年（1989）</b><p>「及川電気設備」創業</p></div>
+      <div class="it"><b>令和2年（2020）</b><p>株式会社オヨカワ設備工業として新たにスタート</p></div>
+      <div class="it"><b>令和○年</b><p>指定給水装置事業者・下水道排水設備指定工事店の指定を受ける</p></div>
+      <div class="it"><b>令和4年（2022）</b><p>電気工事業届出（千葉県知事届出 第20220081号）</p></div>
+      <div class="it"><b>令和○年</b><p>公共工事を初受注 など</p></div>
+    </div>
+  </div>
+  <div class="blk gray">
+    <span class="bl">今後の方針</span>
+    <h2 class="sh">これからのオヨカワ</h2>
+    <div class="grid g3">
+      <div class="card"><h3>法人取引の拡大</h3><p>工務店・建設会社さまの設備パートナーとして、東総・北総全域へ。</p></div>
+      <div class="card"><h3>職人が報われる会社へ</h3><p>技術と資格を正当に評価し、腕の良い職人が集まる会社に。</p></div>
+      <div class="card"><h3>地域インフラを守る</h3><p>公共工事・浄化槽更新を通じて、地域の水環境を支える。</p></div>
+    </div>
+  </div>
+  <div class="cta-slot"></div>
+  <div class="ftr-slot"></div>
+</section>
+
+<!-- ============ P12 FAQ ============ -->
+<section class="page" data-no="12" data-name="FAQ" data-type="new" data-purpose="法人・個人・採用の疑問をまとめ、AI検索（AIO）で引用されやすい一問一答を用意する">
+  <div class="hdr-slot"></div>
+  <div class="phead"><span class="en">FAQ</span><h1>よくあるご質問</h1></div>
+  <div class="bread">HOME ＞ よくあるご質問</div>
+  <div class="blk">
+    <span class="bl">タブ＋アコーディオン</span>
+    <div class="tabs"><span class="on">企業の方</span><span>個人のお客様</span><span>採用について</span></div>
+    <div class="qa"><div class="q">Q. オヨカワ設備工業はどんな工事に対応していますか？<span>－</span></div><div class="a">A. 給排水衛生設備工事、電気工事、浄化槽工事、空調設備工事を中心に、住宅・店舗・畜産施設・公共施設の設備工事に対応しています。</div></div>
+    <div class="qa"><div class="q">Q. 工務店ですが、1現場だけの依頼も可能ですか？<span>＋</span></div></div>
+    <div class="qa"><div class="q">Q. 水道の申請手続きも依頼できますか？<span>＋</span></div></div>
+    <div class="qa"><div class="q">Q. 対応エリアはどこですか？<span>＋</span></div></div>
+    <div class="qa"><div class="q">Q. 見積りにかかる日数は？<span>＋</span></div></div>
+    <div class="qa"><div class="q">Q. 協力会社として登録するには？<span>＋</span></div></div>
+    <h3 class="mt">個人のお客様（例）</h3>
+    <p class="small">水漏れはすぐ来てもらえる？／浄化槽の補助金は使える？／リフォームの費用目安は？／見積りは無料？</p>
+    <h3 class="mt">採用（例）</h3>
+    <p class="small">経験何年から応募できる？／資格がなくても応募できる？／給与はどう決まる？／現場見学はできる？</p>
+    <div class="note"><b>注記（AIO対策）：</b>回答の1文目で結論を言い切る（社名・地域・工事名を含める）。FAQPage構造化データ（JSON-LD）を実装。各回答から関連ページへ内部リンク。各タブ6〜8問、計20問前後。</div>
+  </div>
+  <div class="cta-slot"></div>
+  <div class="ftr-slot"></div>
+</section>
+
+<!-- ============ P13 保有設備一覧 ============ -->
+<section class="page" data-no="13" data-name="保有設備一覧" data-type="new" data-purpose="車両・機械・測定機器の保有状況で施工能力を証明し、法人の発注不安を減らす">
+  <div class="hdr-slot"></div>
+  <div class="phead"><span class="en">Equipment</span><h1>保有設備一覧</h1></div>
+  <div class="bread">HOME ＞ 保有設備一覧</div>
+  <div class="blk">
+    <span class="bl">導入＋写真</span>
+    <div class="st"><span class="tag ok">一部素材あり</span><span class="tag hear">リスト回収</span></div>
+    <p class="lead">自社で機材を保有しているため、外部手配の待ちが少なく、工程に合わせて柔軟に動けます。</p>
+    <div class="grid g4"><div class="ph sq">車両集合写真</div><div class="ph sq">重機</div><div class="ph sq">配管加工機</div><div class="ph sq">測定機器</div></div>
+  </div>
+  <div class="blk gray">
+    <span class="bl">カテゴリ別一覧表</span>
+    <div class="row"><span class="pill on">車両</span><span class="pill">重機</span><span class="pill">施工機械</span><span class="pill">測定・検査機器</span><span class="pill">電気工事用機器</span></div>
+    <table class="tbl cmp mt">
+      <tr><th>名称</th><th>台数</th><th>主な用途</th></tr>
+      <tr><td>【ダミー】小型バックホウ（0.1㎥）</td><td>○台</td><td>浄化槽・引き込み工事の掘削</td></tr>
+      <tr><td>【ダミー】2tダンプ</td><td>○台</td><td>資材・残土運搬</td></tr>
+      <tr><td>【ダミー】作業車（軽トラック・バン）</td><td>○台</td><td>現場移動・資材運搬</td></tr>
+      <tr><td>【ダミー】水圧テストポンプ</td><td>○台</td><td>給水管の耐圧試験</td></tr>
+      <tr><td>【ダミー】管内カメラ</td><td>○台</td><td>排水管の調査</td></tr>
+    </table>
+    <div class="note"><b>注記：</b>「一部ある」素材を反映し、実物写真があるものから掲載。メーカー・型式・用途の順で回収シートを用意。</div>
+  </div>
+  <div class="cta-slot"></div>
+  <div class="ftr-slot"></div>
+</section>
+
+<!-- ============ P14 お客様のお声 ============ -->
+<section class="page" data-no="14" data-name="お客様のお声" data-type="new" data-purpose="取引先（法人）の声を主役に、第三者の評価で信頼を補強する。個人の声はサブ">
+  <div class="hdr-slot"></div>
+  <div class="phead"><span class="en">Voice</span><h1>お客様のお声</h1></div>
+  <div class="bread">HOME ＞ お客様のお声</div>
+  <div class="blk">
+    <span class="bl">取引先インタビュー（大）</span>
+    <div class="st"><span class="tag hear">1社 要取材</span></div>
+    <div class="grid g2">
+      <div class="ph" style="min-height:300px">取引先担当者と代表のツーショット</div>
+      <div>
+        <span class="pill">工務店</span><span class="pill">香取市</span><span class="pill">取引歴○年</span>
+        <h2 class="sh mt">【ダミー】「設備はオヨカワさんに任せる、が社内の合言葉です」</h2>
+        <h3>取引のきっかけ</h3><p class="small">……</p>
+        <h3 class="mt">依頼して変わったこと</h3><p class="small">……</p>
+        <h3 class="mt">今後期待すること</h3><p class="small">……</p>
+      </div>
+    </div>
+  </div>
+  <div class="blk gray">
+    <span class="bl">取引先の声（カード）</span>
+    <div class="grid g3">
+      <div class="card"><h3>「工程を相談しやすい」</h3><p>【ダミー】本文80〜120字</p><p class="small">旭市 建設会社 B社さま</p></div>
+      <div class="card"><h3>「申請が早い」</h3><p>【ダミー】本文</p><p class="small">成田市 工務店 C社さま</p></div>
+      <div class="card"><h3>「畜舎の急な漏水にも対応」</h3><p>【ダミー】本文</p><p class="small">匝瑳市 畜産業 D社さま</p></div>
+    </div>
+  </div>
+  <div class="blk">
+    <span class="bl">個人のお客様の声（サブ）</span>
+    <div class="grid g4">
+      <div class="card"><p class="small">★★★★★</p><p>【ダミー】キッチンリフォーム</p></div>
+      <div class="card"><p class="small">★★★★★</p><p>【ダミー】水漏れ修理</p></div>
+      <div class="card"><p class="small">★★★★★</p><p>【ダミー】浄化槽交換</p></div>
+      <div class="card"><p class="small">★★★★★</p><p>【ダミー】トイレ交換</p></div>
+    </div>
+    <div class="center mt"><a class="btn">Googleのクチコミを見る</a></div>
+    <div class="note"><b>注記：</b>法人の声は社名の匿名可否を確認。回収用アンケート（3問）を別途用意すると集めやすい。</div>
+  </div>
+  <div class="cta-slot"></div>
+  <div class="ftr-slot"></div>
+</section>
+
+</main>
+</div>
+
+<template id="tpl-hdr">
+  <header class="hdr">
+    <div class="logo">ロゴ（既存流用・リファイン）</div>
+    <nav class="gnav"><a>選ばれる理由</a><a>事業内容</a><a>施工実績</a><a>企業の方へ</a><a>会社について</a><a>採用情報</a></nav>
+    <div class="hcta"><span class="tel">TEL 0479-79-2707</span><a class="btn acc">企業の方へ</a><a class="btn">採用情報</a></div>
+  </header>
+</template>
+<template id="tpl-cta">
+  <div class="blk gray">
+    <span class="bl">共通CTA（3分岐）</span>
+    <h2 class="sh center" style="text-align:center">お問い合わせ</h2>
+    <div class="grid g3 mt">
+      <div class="card center"><h3>企業の方</h3><p class="small">新規取引・見積依頼</p><a class="btn acc mt">取引について相談する</a></div>
+      <div class="card center"><h3>個人のお客様</h3><p class="small">リフォーム・水漏れ</p><a class="btn mt">個人のご相談</a></div>
+      <div class="card center"><h3>求職者の方</h3><p class="small">経験者採用</p><a class="btn mt">エントリーする</a></div>
+    </div>
+    <p class="center mt"><b>TEL 0479-79-2707</b>　受付 8:00〜17:00（日曜・祝日除く）</p>
+  </div>
+</template>
+<template id="tpl-ftr">
+  <footer class="ftr">
+    <div class="cols">
+      <div><div class="logo">ロゴ</div><p class="mt">〒289-2113 千葉県匝瑳市平木7886-1<br>TEL/FAX 0479-79-2707</p><p class="small mt">建設業許可 千葉県知事（般-4）第55717号<br>指定給水装置事業者／下水道排水設備指定工事店</p></div>
+      <ul><li><b>企業の方へ</b></li><li>選ばれる理由</li><li>事業内容</li><li>施工実績</li><li>保有設備一覧</li><li>お客様のお声</li></ul>
+      <ul><li><b>会社について</b></li><li>オヨカワ設備工業について</li><li>会社概要</li><li>ブログ</li><li>よくあるご質問</li></ul>
+      <ul><li><b>採用</b></li><li>求職者の方へ</li><li>採用情報</li><li class="mt"><b>個人のお客様へ</b></li><li>水回りリフォーム・水漏れ</li><li>お問い合わせ</li></ul>
+    </div>
+    <p class="copy">Instagram／LINE アイコン　｜　© 株式会社オヨカワ設備工業</p>
+  </footer>
+</template>
+
+<script>
+const pages=[...document.querySelectorAll('.page')];
+const menu=document.getElementById('menu');
+const tpl=id=>document.getElementById(id).content.cloneNode(true);
+pages.forEach((p,i)=>{
+  p.querySelector('.hdr-slot')?.replaceWith(tpl('tpl-hdr'));
+  p.querySelector('.cta-slot')?.replaceWith(tpl('tpl-cta'));
+  p.querySelector('.ftr-slot')?.replaceWith(tpl('tpl-ftr'));
+  const m=document.createElement('div');m.className='pmeta';
+  m.innerHTML=`<b>P${p.dataset.no}｜${p.dataset.name}</b>${p.dataset.type==='new'?'新規ページ':'既存ページ（改修）'}<span class="purpose">目的：${p.dataset.purpose}</span>`;
+  p.prepend(m);
+  const b=document.createElement('button');
+  b.innerHTML=`<span class="bd ${p.dataset.type}">${p.dataset.type==='new'?'新規':'既存'}</span>${p.dataset.no} ${p.dataset.name}`;
+  b.onclick=()=>show(i);menu.appendChild(b);
+});
+function show(i){pages.forEach((p,j)=>p.classList.toggle('on',i===j));menu.querySelectorAll('button').forEach((b,j)=>b.classList.toggle('on',i===j));window.scrollTo(0,0);location.hash='p'+pages[i].dataset.no;}
+const h=location.hash.match(/p(\d+)/);show(h?Math.max(0,pages.findIndex(p=>p.dataset.no===h[1].padStart(2,'0'))):0);
+</script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@keyframes ni-menu-fade{from{opacity:0}to{opacity:1}}
+@keyframes ni-menu-item{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.ni-mobile-menu{animation:ni-menu-fade .34s ease both;}
+.ni-mobile-menu > a{animation:ni-menu-item .52s cubic-bezier(.2,.7,.2,1) both;}
+.ni-mobile-menu > a:nth-child(1){animation-delay:.06s}
+.ni-mobile-menu > a:nth-child(2){animation-delay:.10s}
+.ni-mobile-menu > a:nth-child(3){animation-delay:.14s}
+.ni-mobile-menu > a:nth-child(4){animation-delay:.18s}
+.ni-mobile-menu > a:nth-child(5){animation-delay:.22s}
+.ni-mobile-menu > a:nth-child(6){animation-delay:.26s}
+.ni-mobile-menu > a:nth-child(7){animation-delay:.30s}
+.ni-mobile-menu > a:nth-child(8){animation-delay:.34s}
+.ni-mobile-menu > a:nth-child(9){animation-delay:.38s}
+.ni-mobile-menu > a:nth-child(10){animation-delay:.42s}
+.ni-mobile-menu > a:nth-child(11){animation-delay:.46s}
+.ni-mobile-menu > a:nth-child(12){animation-delay:.50s}
+.ni-mobile-menu > a:nth-child(13){animation-delay:.54s}
+.ni-mobile-menu > a:nth-child(14){animation-delay:.58s}
+.ni-mobile-menu > a:nth-child(n+15){animation-delay:.62s}
+@media (prefers-reduced-motion: reduce){ .ni-mobile-menu, .ni-mobile-menu > a{animation:none !important;} }
+@keyframes ni-bounce-loop{0%{transform:translateY(0)}10%{transform:translateY(-8px)}19%{transform:translateY(0)}26%{transform:translateY(-3px)}32%{transform:translateY(0)}100%{transform:translateY(0)}}
+.hdr-cta .ni-char{display:inline-block;}
+.hdr-cta:hover .ni-char{animation-name:ni-bounce-loop;animation-duration:.95s;animation-timing-function:cubic-bezier(.28,.84,.42,1);animation-iteration-count:infinite;animation-fill-mode:both;}
+.hdr-cta:hover .ni-char:nth-child(1){animation-delay:0s}
+.hdr-cta:hover .ni-char:nth-child(2){animation-delay:.045s}
+.hdr-cta:hover .ni-char:nth-child(3){animation-delay:.09s}
+.hdr-cta:hover .ni-char:nth-child(4){animation-delay:.135s}
+.hdr-cta:hover .ni-char:nth-child(5){animation-delay:.18s}
+.hdr-cta:hover .ni-char:nth-child(6){animation-delay:.225s}
+@media (prefers-reduced-motion: reduce){ .hdr-cta:hover .ni-char{animation:none !important;} }
+</style>
+</helmet>
+<header style="position:fixed; top:0; left:0; right:0; z-index:60; background:{{ headerBg }}; -webkit-backdrop-filter:{{ headerBlur }}; backdrop-filter:{{ headerBlur }}; border-bottom:{{ headerBorder }}; box-shadow:{{ headerShadow }}; transition:background .45s ease, box-shadow .45s ease, border-color .45s ease;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px); height:clamp(64px,8vw,84px); display:flex; align-items:center; justify-content:space-between; gap:20px;">
+      <a href="/" aria-label="株式会社オヨカワ設備工業 ホーム" style="text-decoration:none; display:flex; align-items:center; transition:opacity .45s;">
+        <img src="{{ logoSrc }}" alt="株式会社オヨカワ設備工業" style="height:clamp(22px,2.4vw,30px); width:auto; flex:none; display:block;">
+      </a>
+      <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+        <nav style="display:flex; align-items:center; gap:clamp(12px,1.4vw,24px);">
+          <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+            <div onMouseEnter="{{ item.onEnter }}" onMouseLeave="{{ item.onLeave }}" style="position:relative; display:flex; align-items:center;">
+              <a href="{{ item.href }}" style="text-decoration:none; color:{{ item.color }}; font-size:14px; letter-spacing:.03em; font-weight:500; transition:color .3s, background-size .3s ease; white-space:nowrap; display:inline-flex; align-items:center; gap:6px; padding-bottom:3px; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px;" style-hover="background-size:100% 1px !important;">{{ item.label }}<sc-if value="{{ item.hasChildren }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="font-size:8px; opacity:.55; transform:translateY(1px);">&#9660;</span></sc-if></a>
+              <sc-if value="{{ item.showDropdown }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute; top:100%; left:50%; transform:translateX(-50%); padding-top:18px; min-width:216px; z-index:70;">
+                  <div style="background:#ffffff; border:1px solid rgba(0,0,0,.08); border-radius:3px; box-shadow:0 26px 54px -26px rgba(0,0,0,.45); padding:8px; display:flex; flex-direction:column;">
+                    <sc-for list="{{ item.children }}" as="c" hint-placeholder-count="3">
+                      <a href="{{ c.href }}" style="text-decoration:none; color:#1A2230; font-size:13.5px; letter-spacing:.03em; padding:11px 16px; border-radius:2px; white-space:nowrap; transition:background .25s, color .25s;" style-hover="background:#F4F6F9; color:#000000;">{{ c.label }}</a>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+          <a href="tel:0479-79-2707" style="text-decoration:none; color:{{ headerColor }}; font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:17px; letter-spacing:.04em; white-space:nowrap; transition:color .4s;">TEL 0479-79-2707</a>
+          <a href="/business" class="hdr-cta" style="text-decoration:none; background:#F7C21B; color:#0B2E59; font-size:14px; font-weight:700; padding:11px 18px; border-radius:4px; letter-spacing:.05em; white-space:nowrap;"><span class="ni-char">企</span><span class="ni-char">業</span><span class="ni-char">の</span><span class="ni-char">方</span><span class="ni-char">へ</span></a>
+          <a href="/recruit" style="text-decoration:none; border:1.5px solid {{ headerColor }}; color:{{ headerColor }}; font-size:14px; font-weight:700; padding:9px 16px; border-radius:4px; letter-spacing:.05em; white-space:nowrap; transition:color .4s, border-color .4s;">採用情報</a>
+        </nav>
+      </sc-if>
+      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ toggleMenu }}" aria-label="メニューを開閉" style="display:flex; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; min-width:44px; min-height:44px; align-items:center; justify-content:center;">
+          <span style="display:block; width:24px; height:2px; background:{{ headerColor }}; transition:background .4s;"></span>
+          <span style="display:block; width:24px; height:2px; background:{{ headerColor }}; transition:background .4s;"></span>
+          <span style="display:block; width:24px; height:2px; background:{{ headerColor }}; transition:background .4s;"></span>
+        </button>
+      </sc-if>
+    </div>
+  </header>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div class="ni-mobile-menu" style="position:fixed; inset:0; z-index:55; background:#0B2E59; color:#F4F6F9; padding:clamp(68px,9vh,86px) clamp(24px,7vw,52px) 90px; display:flex; flex-direction:column; overflow:auto;">
+      <a href="/reason" onClick="{{ closeMenu }}" style="text-decoration:none; color:#F4F6F9; padding:9px 0; border-bottom:1px solid rgba(255,255,255,.12); display:flex; justify-content:space-between; align-items:baseline; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(17px,4.4vw,21px); min-height:44px;">選ばれる理由 <span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:14px; letter-spacing:.08em; opacity:.55;">Reason</span></a>
+      <a href="/service" onClick="{{ closeMenu }}" style="text-decoration:none; color:#F4F6F9; padding:9px 0; border-bottom:1px solid rgba(255,255,255,.12); display:flex; justify-content:space-between; align-items:baseline; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(17px,4.4vw,21px); min-height:44px;">事業内容 <span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:14px; letter-spacing:.08em; opacity:.55;">Service</span></a>
+      <a href="/blog-ex/instance" onClick="{{ closeMenu }}" style="text-decoration:none; color:#F4F6F9; padding:9px 0; border-bottom:1px solid rgba(255,255,255,.12); display:flex; justify-content:space-between; align-items:baseline; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(17px,4.4vw,21px); min-height:44px;">施工実績 <span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:14px; letter-spacing:.08em; opacity:.55;">Works</span></a>
+      <a href="/business" onClick="{{ closeMenu }}" style="text-decoration:none; color:#F4F6F9; padding:9px 0; border-bottom:1px solid rgba(255,255,255,.12); display:flex; justify-content:space-between; align-items:baseline; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(17px,4.4vw,21px); min-height:44px;">企業の方へ <span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:14px; letter-spacing:.08em; opacity:.55;">For Business</span></a>
+      <a href="/company" onClick="{{ closeMenu }}" style="text-decoration:none; color:#F4F6F9; padding:9px 0 5px; display:flex; justify-content:space-between; align-items:baseline; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(17px,4.4vw,21px); min-height:44px;">会社について <span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:14px; letter-spacing:.08em; opacity:.55;">Company</span></a>
+      <a href="/company" onClick="{{ closeMenu }}" style="text-decoration:none; color:rgba(244,246,249,.86); padding:5px 0 5px 22px; display:flex; align-items:center; gap:11px; font-size:clamp(13px,3.4vw,15px); letter-spacing:.02em; min-height:32px;"><span aria-hidden="true" style="opacity:.4;">—</span>オヨカワ設備工業について</a>
+      <a href="/company/profile" onClick="{{ closeMenu }}" style="text-decoration:none; color:rgba(244,246,249,.86); padding:5px 0 5px 22px; display:flex; align-items:center; gap:11px; font-size:clamp(13px,3.4vw,15px); letter-spacing:.02em; min-height:32px;"><span aria-hidden="true" style="opacity:.4;">—</span>会社概要</a>
+      <a href="/company/equipment" onClick="{{ closeMenu }}" style="text-decoration:none; color:rgba(244,246,249,.86); padding:5px 0 5px 22px; display:flex; align-items:center; gap:11px; font-size:clamp(13px,3.4vw,15px); letter-spacing:.02em; min-height:32px;"><span aria-hidden="true" style="opacity:.4;">—</span>保有設備一覧</a>
+      <a href="/voice" onClick="{{ closeMenu }}" style="text-decoration:none; color:rgba(244,246,249,.86); padding:5px 0 5px 22px; display:flex; align-items:center; gap:11px; font-size:clamp(13px,3.4vw,15px); letter-spacing:.02em; min-height:32px;"><span aria-hidden="true" style="opacity:.4;">—</span>お客様のお声</a>
+      <a href="/faq" onClick="{{ closeMenu }}" style="text-decoration:none; color:rgba(244,246,249,.86); padding:5px 0 5px 22px; display:flex; align-items:center; gap:11px; font-size:clamp(13px,3.4vw,15px); letter-spacing:.02em; min-height:32px;"><span aria-hidden="true" style="opacity:.4;">—</span>よくあるご質問</a>
+      <a href="/blog" onClick="{{ closeMenu }}" style="text-decoration:none; color:rgba(244,246,249,.86); padding:5px 0 8px 22px; border-bottom:1px solid rgba(255,255,255,.12); display:flex; align-items:center; gap:11px; font-size:clamp(13px,3.4vw,15px); letter-spacing:.02em; min-height:32px;"><span aria-hidden="true" style="opacity:.4;">—</span>ブログ</a>
+      <a href="/recruit" onClick="{{ closeMenu }}" style="text-decoration:none; color:#F4F6F9; padding:9px 0 5px; display:flex; justify-content:space-between; align-items:baseline; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(17px,4.4vw,21px); min-height:44px;">採用情報 <span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:14px; letter-spacing:.08em; opacity:.55;">Recruit</span></a>
+      <a href="/recruit" onClick="{{ closeMenu }}" style="text-decoration:none; color:rgba(244,246,249,.86); padding:5px 0 5px 22px; display:flex; align-items:center; gap:11px; font-size:clamp(13px,3.4vw,15px); letter-spacing:.02em; min-height:32px;"><span aria-hidden="true" style="opacity:.4;">—</span>求職者の方へ</a>
+      <a href="/recruit/requirements" onClick="{{ closeMenu }}" style="text-decoration:none; color:rgba(244,246,249,.86); padding:5px 0 8px 22px; border-bottom:1px solid rgba(255,255,255,.12); display:flex; align-items:center; gap:11px; font-size:clamp(13px,3.4vw,15px); letter-spacing:.02em; min-height:32px;"><span aria-hidden="true" style="opacity:.4;">—</span>募集要項・エントリー</a>
+      <a href="/form/inquiry" onClick="{{ closeMenu }}" style="margin-top:14px; text-decoration:none; background:#F7C21B; color:#0B2E59; text-align:center; padding:13px; border-radius:4px; font-weight:700; letter-spacing:.06em;">お問い合わせ</a>
+      <a href="tel:0479-79-2707" style="margin-top:10px; text-decoration:none; color:#C9D6E6; text-align:center; font-family:'Barlow Semi Condensed',sans-serif; font-weight:500; font-size:21px; letter-spacing:.06em; min-height:44px; display:flex; align-items:center; justify-content:center;">TEL 0479-79-2707</a>
+    </div>
+  </sc-if>
+  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <nav aria-label="クイックメニュー" style="position:fixed; left:0; right:0; bottom:0; z-index:58; display:grid; grid-template-columns:1fr 1.2fr 1fr; background:#ffffff; border-top:1px solid #D5DCE5; box-shadow:0 -8px 24px -16px rgba(0,0,0,.35); font-family:'Zen Kaku Gothic New',sans-serif;">
+      <a href="tel:0479-79-2707" style="text-decoration:none; color:#0B2E59; min-height:56px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; font-size:12px; font-weight:700;"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"></path></svg>電話する</a>
+      <a href="/business" style="text-decoration:none; background:#F7C21B; color:#0B2E59; min-height:56px; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; letter-spacing:.04em;">企業の方へ</a>
+      <a href="/recruit" style="text-decoration:none; color:#0B2E59; min-height:56px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; border-left:1px solid #D5DCE5;">採用</a>
+    </nav>
+  </sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1340,&quot;height&quot;:120},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#1F5FAF&quot;,&quot;options&quot;:[&quot;#1F5FAF&quot;,&quot;#0B2E59&quot;,&quot;#2A6FC4&quot;,&quot;#174C8F&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;&quot;,&quot;options&quot;:[&quot;&quot;,&quot;service&quot;,&quot;reason&quot;,&quot;works&quot;,&quot;business&quot;,&quot;about&quot;,&quot;recruit&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;pageTitle&quot;:{&quot;editor&quot;:null,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;description&quot;:{&quot;editor&quot;:null,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { mobile: false, menuOpen: false, scrolled: false, navOpen: null };
+  componentDidMount(){
+    this.mq = window.matchMedia('(max-width: 1180px)');
+    this._onMq = (e)=> this.setState({ mobile: e.matches });
+    this._onMq(this.mq); this.mq.addEventListener('change', this._onMq);
+    this._onScroll = ()=>{ const v = window.scrollY > 40; if(v !== this.state.scrolled) this.setState({ scrolled:v }); };
+    window.addEventListener('scroll', this._onScroll, { passive:true });
+    this.applyMeta();
+  }
+  applyMeta(){
+    const t = this.props.pageTitle;
+    if(t){ try { document.title = t; } catch(e){} }
+    const setMeta = (name, content)=>{
+      if(!content) return;
+      let m = document.head.querySelector('meta[name="'+name+'"]');
+      if(!m){ m = document.createElement('meta'); m.setAttribute('name', name); document.head.appendChild(m); }
+      m.setAttribute('content', content);
+    };
+    setMeta('description', this.props.description);
+    setMeta('keywords', '匝瑳市 設備工事,千葉 給排水衛生設備工事,浄化槽工事 匝瑳市,電気工事 匝瑳市,設備工事 協力会社 千葉');
+    const setLink = (rel, href, sizes)=>{
+      let l = document.head.querySelector('link[rel="'+rel+'"]');
+      if(!l){ l = document.createElement('link'); l.setAttribute('rel', rel); document.head.appendChild(l); }
+      l.setAttribute('href', href); if(sizes) l.setAttribute('sizes', sizes);
+    };
+    setLink('icon', 'assets/favicon-48.png', '48x48');
+    setLink('apple-touch-icon', 'assets/favicon-48.png');
+    const setProp = (prop, content)=>{
+      if(!content) return;
+      let m = document.head.querySelector('meta[property="'+prop+'"]');
+      if(!m){ m = document.createElement('meta'); m.setAttribute('property', prop); document.head.appendChild(m); }
+      m.setAttribute('content', content);
+    };
+    setProp('og:type', 'website');
+    setProp('og:site_name', '株式会社オヨカワ設備工業');
+    if(this.props.pageTitle) setProp('og:title', this.props.pageTitle);
+    if(this.props.description) setProp('og:description', this.props.description);
+    setProp('og:image', 'assets/ogp-320x240.png');
+  }
+  componentDidUpdate(prev){
+    if(prev.pageTitle !== this.props.pageTitle || prev.description !== this.props.description){ this.applyMeta(); }
+  }
+  componentWillUnmount(){ if(this.mq) this.mq.removeEventListener('change', this._onMq); window.removeEventListener('scroll', this._onScroll); }
+  renderVals(){
+    const accent = this.props.accent || '#1F5FAF';
+    const active = this.props.active || '';
+    const sc = this.state.scrolled || this.state.menuOpen;
+    const navData = [
+      { key:'reason', label:'選ばれる理由', href:'/reason', children:[] },
+      { key:'service', label:'事業内容', href:'/service', children:[] },
+      { key:'works', label:'施工実績', href:'/blog-ex/instance', children:[] },
+      { key:'business', label:'企業の方へ', href:'/business', children:[] },
+      { key:'about', label:'会社について', href:'/company', children:[
+        { label:'オヨカワ設備工業について', href:'/company' },
+        { label:'会社概要', href:'/company/profile' },
+        { label:'保有設備一覧', href:'/company/equipment' },
+        { label:'お客様のお声', href:'/voice' },
+        { label:'よくあるご質問', href:'/faq' },
+        { label:'ブログ', href:'/blog' } ] },
+      { key:'recruit', label:'採用情報', href:'/recruit', children:[
+        { label:'求職者の方へ', href:'/recruit' },
+        { label:'募集要項・エントリー', href:'/recruit/requirements' } ] }
+    ];
+    const navItems = navData.map((n,i)=>({
+      label:n.label, href:n.href, children:n.children,
+      hasChildren: n.children.length > 0,
+      isActive: n.key === active,
+      color: (n.key === active) ? (sc ? '#1F5FAF' : '#F7C21B') : (sc ? '#0B2E59' : '#F4F6F9'),
+      showDropdown: n.children.length > 0 && this.state.navOpen === i,
+      onEnter: ()=> this.setState({ navOpen:i }),
+      onLeave: ()=> this.setState({ navOpen:null })
+    }));
+    return {
+      accent, navItems,
+      isMobile: this.state.mobile, isDesktop: !this.state.mobile,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: ()=> this.setState(s=>({ menuOpen: !s.menuOpen })),
+      closeMenu: ()=> this.setState({ menuOpen:false }),
+      headerBg: sc ? 'rgba(255,255,255,0.96)' : 'transparent',
+      headerColor: sc ? '#1A2230' : '#F4F6F9',
+      headerBorder: sc ? '1px solid rgba(26,34,48,0.1)' : '1px solid rgba(255,255,255,0)',
+      headerShadow: sc ? '0 14px 36px -26px rgba(0,0,0,0.55)' : 'none',
+      headerBlur: sc ? 'saturate(1.1) blur(14px)' : 'none',
+      logoSrc: sc ? 'assets/oyokawa-logo.png' : 'assets/oyokawa-logo-light.png',
+      ctaBtnColor: sc ? '#ffffff' : '#0B2E59',
+      ctaBtnBg: sc ? accent : '#F4F6F9'
+    };
+  }
+}
+</script>
+</body>
+</html>

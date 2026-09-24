@@ -1,0 +1,89 @@
+/* === add.css 貼り付け ここから === */
+/* ============================================================
+   TOP BLOGカード（parts228 系）— Cuezilla add.css
+   トップページ内動的セクション生成ルール §3-C（更新日あり／BLOGの既定）
+   カード内順序：更新日 → タイトル → サムネイル
+     ※「更新日 → タイトル」の相対順は固定。サムネイルはその前後どちらでも可。
+   セクション見出し・「一覧へ」ボタンは parts228 の出力外＝.parts228_wrap 内にサイト側クラスで配置。
+   日付書式はCMS出力に従いCSSで作り替えない。
+
+   ★重要（スコープ）：施工実績一覧ページも同じ parts228 系のため、add.css は1本で両方に効く。
+   本ブロックは TOP 側だけに当たるよう、TOPページのbodyクラス `.home` で全ルールを包んでいる。
+   **Cuezilla が TOP に付与する実際のbody/ページ判別クラスに置き換えて使うこと**（CMS側依存）。
+   施工実績一覧側は `add_css/施工実績_add.css` のブロックをそのまま併用する。
+   ============================================================ */
+
+/* ---- 一覧グリッド（PC3列／タブ2列／SP1列・件数非依存） ---- */
+.home .parts228_post_list{
+  list-style:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  display:grid !important;
+  grid-template-columns:repeat(3,1fr) !important;
+  gap:clamp(18px,2.4vw,28px) !important;
+}
+@media (max-width:1024px){
+  .home .parts228_post_list{ grid-template-columns:repeat(2,1fr) !important; }
+}
+@media (max-width:767px){
+  .home .parts228_post_list{ grid-template-columns:1fr !important; }
+}
+
+/* ---- 繰り返し1単位 ---- */
+.home .parts228_post_wrap{
+  display:flex !important;
+  flex-direction:column !important;
+  background:#ffffff !important;
+  border:1px solid #D5DCE5 !important;
+  border-radius:0 !important;
+  padding:clamp(18px,2vw,24px) !important;
+}
+
+/* ---- 更新日（パーツ標準の日付要素。独自クラスを後付けしない） ---- */
+.home .parts228_post_status{ margin:0 0 12px !important; }
+.home .parts228_post_date{
+  font-family:'Barlow Semi Condensed',sans-serif !important;
+  font-size:14px !important;
+  letter-spacing:.06em !important;
+  color:#6B7686 !important;
+}
+
+/* ---- タイトル ---- */
+.home .parts228_post_title-excerpt{ margin:0 0 16px !important; }
+.home .parts228_post_title{
+  margin:0 !important;
+  font-family:'Zen Kaku Gothic New',sans-serif !important;
+  font-weight:600 !important;
+  font-size:18px !important;
+  line-height:1.55 !important;
+  min-height:3.1em !important;
+}
+.home .parts228_post_title a{
+  color:#1A2230 !important;
+  text-decoration:none !important;
+  transition:color .25s ease !important;
+}
+.home .parts228_post_title a:hover{ color:#174C8F !important; }
+@media (max-width:1024px){ .home .parts228_post_title{ font-size:16px !important; } }
+
+/* ---- サムネイル（カード最下部） ---- */
+.home .parts228_post_img{
+  display:block !important;
+  height:220px !important;
+  overflow:hidden !important;
+  border-radius:2px !important;
+  margin-top:auto !important;
+}
+.home .parts228_post_img img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  display:block !important;
+}
+@media (max-width:767px){ .home .parts228_post_img{ height:205px !important; } }
+
+/* ---- 保険：TOPに絞り込みタブ・ページャが出力された場合のみ隠す（TOPスコープ限定） ----
+   既定はCMS側で出力しない設定にすること。施工実績一覧側では絶対に隠さない。 */
+.home .parts228_filter,
+.home .parts228_pagenation{ display:none !important; }
+/* === add.css 貼り付け ここまで === */

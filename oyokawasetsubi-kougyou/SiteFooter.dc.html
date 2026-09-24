@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+.ft-top{display:grid;grid-template-columns:1fr;gap:clamp(32px,4vw,48px);padding-bottom:clamp(40px,5vw,56px);border-bottom:1px solid rgba(255,255,255,.1);}
+.ft-nav{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(28px,4vw,48px) clamp(24px,4vw,40px);}
+@media (min-width:768px){
+  .ft-top{grid-template-columns:minmax(260px,1fr) 1.5fr;gap:clamp(40px,6vw,80px);align-items:start;}
+}
+.ft-nav > div{min-width:0;}
+@media (max-width:1180px){ .ft-bottom{padding-bottom:86px !important;} }
+@media (min-width:1100px){ .ft-nav{grid-template-columns:repeat(4,1fr);} }
+</style>
+</helmet>
+<footer style="background:#0B2E59; color:#C9D6E6; padding:clamp(56px,8vh,84px) 0 0; font-family:'Zen Kaku Gothic New',sans-serif;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div class="ft-top">
+        <div>
+          <img src="assets/oyokawa-logo-light.png" alt="株式会社オヨカワ設備工業" style="display:block; height:28px; width:auto; margin:0 0 20px;">
+          <p style="margin:0; font-size:14.5px; line-height:1.9;">〒289-2113<br>千葉県匝瑳市平木7886-1</p>
+          <p style="margin:10px 0 0; font-size:14.5px; line-height:1.9;">TEL/FAX <a href="tel:0479-79-2707" style="color:#ffffff; text-decoration:none; font-family:'Barlow Semi Condensed',sans-serif; font-size:17px; letter-spacing:.04em;">0479-79-2707</a><br>営業 8:00〜17:00（日曜・祝日定休）</p>
+          <p style="margin:14px 0 0; font-size:13px; color:#B8C7DB; line-height:1.8;">建設業許可 千葉県知事許可（般-4）第55717号<br>電気工事業届出 千葉県知事届出 第20220081号<br>浄化槽工事業届出 千葉県知事（届-4）第1770号<br>指定給水装置事業者（八匝水道企業団・多古町・旭市・香取市）<br>下水道排水設備指定工事店（旭市・香取市）</p>
+        </div>
+        <div class="ft-nav">
+        <div>
+          <p style="margin:0 0 16px; font-size:13px; letter-spacing:.16em; color:#F7C21B; font-family:'Barlow Semi Condensed',sans-serif; font-weight:500;">企業の方へ — Business</p>
+          <div style="display:flex; flex-direction:column; gap:7px;">
+            <a href="/business" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">企業の方へ</a>
+            <a href="/reason" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">選ばれる理由</a>
+            <a href="/service" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">事業内容</a>
+            <a href="/blog-ex/instance" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">施工実績</a>
+            <a href="/company/equipment" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">保有設備一覧</a>
+            <a href="/voice" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">お客様のお声</a>
+          </div>
+        </div>
+        <div>
+          <p style="margin:0 0 16px; font-size:13px; letter-spacing:.16em; color:#F7C21B; font-family:'Barlow Semi Condensed',sans-serif; font-weight:500;">会社について — Company</p>
+          <div style="display:flex; flex-direction:column; gap:7px;">
+            <a href="/company" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">オヨカワ設備工業について</a>
+            <a href="/company/profile" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">会社概要</a>
+            <a href="/blog" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">ブログ</a>
+            <a href="/faq" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">よくあるご質問</a>
+            <a href="/privacypolicy" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">プライバシーポリシー</a>
+          </div>
+        </div>
+        <div>
+          <p style="margin:0 0 16px; font-size:13px; letter-spacing:.16em; color:#F7C21B; font-family:'Barlow Semi Condensed',sans-serif; font-weight:500;">採用 — Recruit</p>
+          <div style="display:flex; flex-direction:column; gap:7px;">
+            <a href="/recruit" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">求職者の方へ</a>
+            <a href="/recruit/requirements" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">募集要項・エントリー</a>
+          </div>
+        </div>
+        <div>
+          <p style="margin:0 0 16px; font-size:13px; letter-spacing:.16em; color:#F7C21B; font-family:'Barlow Semi Condensed',sans-serif; font-weight:500;">個人のお客様へ — Home</p>
+          <div style="display:flex; flex-direction:column; gap:7px;">
+            <a href="/service#personal" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">水回りリフォーム・水漏れ</a>
+            <a href="/form/inquiry" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">お問い合わせ</a>
+            <span style="display:block; height:1px; background:rgba(255,255,255,.12); margin:6px 0;"></span>
+            <a href="https://www.instagram.com/osk___2020?igsh=YWFyOGloNHk0a2Rm" target="_blank" rel="noopener" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">Instagram</a>
+            <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=775itpnw" target="_blank" rel="noopener" style="text-decoration:none; color:#EEF2F8; font-size:15px; display:inline-block; align-self:flex-start; background-image:linear-gradient(currentColor,currentColor); background-repeat:no-repeat; background-position:0 100%; background-size:0% 1px; transition:background-size .3s ease; padding:4px 0 2px;" style-hover="background-size:100% 1px !important;">LINE</a>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="ft-bottom" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; padding:24px 0 30px;">
+        <span style="font-size:14px; font-weight:700; letter-spacing:.08em; color:#ffffff;">水・電気・浄化槽。設備工事を、一社で。</span>
+        <span style="font-size:13px; color:#C9D6E6;">&copy; {{ year }} 株式会社オヨカワ設備工業</span>
+      </div>
+    </div>
+  </footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1340,&quot;height&quot;:360}}">
+class Component extends DCLogic {
+  renderVals(){
+    return { year: new Date().getFullYear() };
+  }
+}
+</script>
+</body>
+</html>

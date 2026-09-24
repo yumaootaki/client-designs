@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Barlow+Semi+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@keyframes ni-bounce-loop{0%{transform:translateY(0)}10%{transform:translateY(-8px)}19%{transform:translateY(0)}26%{transform:translateY(-3px)}32%{transform:translateY(0)}100%{transform:translateY(0)}}
+@keyframes ni-ripple{0%{transform:scale(1);opacity:.5;}100%{transform:scale(1.22);opacity:0;}}
+.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal;}
+.cc-box{position:relative;}
+.cc-box::before,.cc-box::after{content:"";position:absolute;inset:0;border-radius:3px;border:2px solid currentColor;opacity:0;pointer-events:none;}
+.cc-box:hover::before{animation:ni-ripple 1.3s ease-out infinite;}
+.cc-box:hover::after{animation:ni-ripple 1.3s ease-out infinite .65s;}
+.cc-char{display:inline-block;}
+.cc-box:hover .cc-char{animation-name:ni-bounce-loop;animation-duration:.95s;animation-timing-function:cubic-bezier(.28,.84,.42,1);animation-iteration-count:infinite;animation-fill-mode:both;}
+.cc-box:hover .cc-char:nth-child(1){animation-delay:0s}
+.cc-box:hover .cc-char:nth-child(2){animation-delay:.045s}
+.cc-box:hover .cc-char:nth-child(3){animation-delay:.09s}
+.cc-box:hover .cc-char:nth-child(4){animation-delay:.135s}
+.cc-box:hover .cc-char:nth-child(5){animation-delay:.18s}
+.cc-box:hover .cc-char:nth-child(6){animation-delay:.225s}
+.cc-box:hover .cc-char:nth-child(7){animation-delay:.27s}
+.cc-box:hover .cc-char:nth-child(8){animation-delay:.315s}
+.cc-box:hover .cc-char:nth-child(9){animation-delay:.36s}
+.cc-box:hover .cc-char:nth-child(10){animation-delay:.405s}
+.cc-box:hover .cc-char:nth-child(11){animation-delay:.45s}
+.cc-box:hover .cc-char:nth-child(12){animation-delay:.495s}
+@media (prefers-reduced-motion: reduce){ .cc-box:hover .cc-char, .cc-box:hover::before, .cc-box:hover::after{animation:none !important;} }
+@media (min-width:600px) and (max-width:1024px){ .cc-boxes{grid-template-columns:1fr 1fr !important;} }
+@media (min-width:1025px){ .tel-note{white-space:nowrap; font-size:13.5px !important; letter-spacing:-0.01em;} }
+</style>
+</helmet>
+<section data-screen-label="CTA" style="position:relative; background:#0B2E59; color:#F4F6F9; padding:clamp(56px,8vh,96px) 0; overflow:hidden; font-family:'Zen Kaku Gothic New',sans-serif;">
+  <div aria-hidden="true" style="position:absolute; inset:0; z-index:0; background:url('assets/p-pipe-work.jpg') center/cover no-repeat;"></div>
+  <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(8,32,64,.86), rgba(11,46,89,.94) 70%, rgba(11,46,89,1));"></div>
+  <div style="position:relative; z-index:2; max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+    <div style="text-align:center; max-width:760px; margin:0 auto clamp(34px,4.5vw,48px);">
+      <p style="margin:0 0 8px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(21px,2vw,25px); letter-spacing:.06em; color:#F7C21B;">{{ caption }}</p>
+      <h2 style="margin:0 0 22px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(22px,5vw,54px); line-height:1.2;">{{ heading }}</h2>
+      <p style="margin:0; font-size:clamp(15px,1.6vw,17px); line-height:2; color:rgba(244,246,249,.95);">{{ intro }}</p>
+    </div>
+    <div class="cc-boxes" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:clamp(16px,2vw,24px); max-width:1100px; margin:0 auto;">
+      <a href="/form/inquiry" class="cc-box" style="text-decoration:none; background:#F7C21B; color:#0B2E59; min-height:190px; padding:clamp(22px,2.6vw,30px); display:flex; flex-direction:column; justify-content:space-between; gap:12px; border-radius:4px; box-shadow:0 18px 40px -24px rgba(0,0,0,.55); transition:box-shadow .35s ease;" style-hover="box-shadow:0 30px 56px -26px rgba(0,0,0,.6);">
+        <span style="display:flex; flex-direction:column; gap:6px;"><span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:14px; letter-spacing:.14em; font-weight:600; color:#0B2E59;">FOR BUSINESS</span><span style="font-weight:700; font-size:clamp(21px,2.2vw,26px); line-height:1.35;">企業の方</span><span style="font-size:15px; line-height:1.8; color:#0B2E59;">新規のお取引・お見積りのご依頼、協力会社のご相談</span></span>
+        <span style="font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(11,46,89,.3); padding-top:12px;">取引について相談する<span aria-hidden="true">&rarr;</span></span>
+      </a>
+      <a href="/form/inquiry" class="cc-box" style="text-decoration:none; background:#ffffff; color:#0B2E59; min-height:190px; padding:clamp(22px,2.6vw,30px); display:flex; flex-direction:column; justify-content:space-between; gap:12px; border-radius:4px; box-shadow:0 18px 40px -24px rgba(0,0,0,.55); transition:box-shadow .35s ease;" style-hover="box-shadow:0 30px 56px -26px rgba(0,0,0,.6);">
+        <span style="display:flex; flex-direction:column; gap:6px;"><span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:14px; letter-spacing:.14em; font-weight:600; color:#1F5FAF;">FOR HOME</span><span style="font-weight:700; font-size:clamp(21px,2.2vw,26px); line-height:1.35;">個人のお客様</span><span style="font-size:15px; line-height:1.8; color:#4A5566;">水回りリフォーム・水漏れ・浄化槽の交換</span></span>
+        <span style="font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:space-between; border-top:1px solid #D5DCE5; padding-top:12px;">個人のご相談<span aria-hidden="true">&rarr;</span></span>
+      </a>
+      <a href="/recruit/requirements" class="cc-box" style="text-decoration:none; background:#ffffff; color:#0B2E59; min-height:190px; padding:clamp(22px,2.6vw,30px); display:flex; flex-direction:column; justify-content:space-between; gap:12px; border-radius:4px; box-shadow:0 18px 40px -24px rgba(0,0,0,.55); transition:box-shadow .35s ease;" style-hover="box-shadow:0 30px 56px -26px rgba(0,0,0,.6);">
+        <span style="display:flex; flex-direction:column; gap:6px;"><span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:14px; letter-spacing:.14em; font-weight:600; color:#1F5FAF;">RECRUIT</span><span style="font-weight:700; font-size:clamp(21px,2.2vw,26px); line-height:1.35;">求職者の方</span><span style="font-size:15px; line-height:1.8; color:#4A5566;">管工事・電気工事の経験者を募集しています</span></span>
+        <span style="font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:space-between; border-top:1px solid #D5DCE5; padding-top:12px;">エントリーする<span aria-hidden="true">&rarr;</span></span>
+      </a>
+    </div>
+    <p style="margin:clamp(28px,3.4vw,40px) 0 0; text-align:center; font-size:15px; line-height:1.9;"><a href="tel:0479-79-2707" style="color:#ffffff; text-decoration:none; font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:clamp(26px,3vw,34px); letter-spacing:.04em; display:inline-flex; min-height:44px; align-items:center;">TEL 0479-79-2707</a><br><span style="color:rgba(244,246,249,.9);">受付 8:00〜17:00（日曜・祝日除く）</span></p>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1340,&quot;height&quot;:640},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#1F5FAF&quot;,&quot;options&quot;:[&quot;#1F5FAF&quot;,&quot;#0B2E59&quot;,&quot;#2A6FC4&quot;,&quot;#174C8F&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;caption&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Contact&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;heading&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;お問い合わせ&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;intro&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;ご相談の内容に合わせて、窓口をお選びください。&quot;,&quot;tsType&quot;:&quot;string&quot;}}">class Component extends DCLogic {
+  renderVals(){
+    return {
+      accent: this.props.accent || '#1F5FAF',
+      caption: this.props.caption || 'Contact',
+      heading: this.props.heading || 'お問い合わせ',
+      intro: this.props.intro || 'ご相談の内容に合わせて、窓口をお選びください。'
+    };
+  }
+}</script>
+</body>
+</html>

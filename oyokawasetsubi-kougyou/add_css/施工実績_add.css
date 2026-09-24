@@ -1,0 +1,195 @@
+/* === add.css 貼り付け ここから === */
+/* ============================================================
+   施工実績ページ（parts228 系）— Cuezilla add.css
+   対象：カテゴリ絞り込み（nav.parts228_filter） ～ 一覧 ～ ページネーション（下はすぐフッター）
+   グリッド：PC 3列 / タブレット 2列 / スマホ 1列
+   外部CSS非依存・自己完結。色/フォント/変数はこのブロック内で定義。
+   theme_default.css に勝つよう必要箇所に !important。
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Barlow+Semi+Condensed:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --ni-bg:#F4F6F9;        /* ページ地色 */
+  --ni-card:#FFFFFF;      /* カード地色 */
+  --ni-ink:#1A2230;       /* 基本文字 */
+  --ni-sub:#4A5566;       /* 副文字 */
+  --ni-muted:#6B7686;     /* 日付など弱い文字 */
+  --ni-line:#D5DCE5;      /* 罫線 */
+  --ni-line2:#D5DCE5;     /* ページャ枠線 */
+  --ni-accent:#1F5FAF;    /* アクセント */
+  --ni-deep:#0a2a52;      /* 現在ページ塗り */
+  --ni-tagbg:#EEF2F7;     /* タグ地色 */
+  --ni-tagln:#D5DCE5;     /* タグ枠線 */
+  --ni-mincho:'Zen Kaku Gothic New',sans-serif;
+  --ni-en:'Barlow Semi Condensed',sans-serif;
+}
+
+/* ---- セクション枠 ---- */
+.parts228_section{
+  background:var(--ni-bg) !important;
+  padding:clamp(56px,8vh,90px) 0 clamp(72px,10vh,120px) !important;
+}
+.parts228_wrap{
+  max-width:1340px !important;
+  margin:0 auto !important;
+  padding:0 clamp(18px,4vw,46px) !important;
+}
+
+/* ---- カテゴリ絞り込み（タグタブ） ----
+   ※ nav はタグ0件時にCMSが出力しない。余白は nav 自身の margin-bottom に持たせ、
+     .parts228_post_list に上余白を足さない（nav が消えた時に余白だけ残るのを防ぐ）。 */
+.parts228_filter{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:10px !important;
+  margin-bottom:32px !important;
+}
+.parts228_filter_item{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-height:44px !important;
+  padding:10px 20px !important;
+  border:1px solid var(--ni-line2) !important;
+  border-radius:999px !important;
+  background:var(--ni-card) !important;
+  color:var(--ni-sub) !important;
+  text-decoration:none !important;
+  font-size:15px !important;
+  font-weight:700 !important;
+  line-height:1.4 !important;
+  transition:border-color .3s, color .3s, background .3s !important;
+}
+.parts228_filter_item:hover{ border-color:var(--ni-accent) !important; }
+.parts228_filter_item:focus-visible{ outline:2px solid var(--ni-accent) !important; outline-offset:2px !important; }
+.parts228_filter_item.is-active{
+  background:var(--ni-deep) !important;
+  border-color:var(--ni-deep) !important;
+  color:#fff !important;
+  font-weight:900 !important;
+}
+
+/* ---- 一覧グリッド（件数非依存） ---- */
+.parts228_post_list{
+  list-style:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  display:grid !important;
+  grid-template-columns:repeat(3,1fr) !important;
+  gap:clamp(18px,2.4vw,30px) !important;
+}
+@media (max-width:900px){
+  .parts228_post_list{ grid-template-columns:repeat(2,1fr) !important; }
+}
+@media (max-width:560px){
+  .parts228_post_list{ grid-template-columns:1fr !important; }
+}
+
+/* ---- 繰り返し1単位 ---- */
+.parts228_post_wrap{
+  display:flex !important;
+  flex-direction:column !important;
+  background:var(--ni-card) !important;
+  border:1px solid var(--ni-line) !important;
+  border-radius:3px !important;
+  overflow:hidden !important;
+  transition:transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s ease !important;
+}
+.parts228_post_wrap:hover{
+  transform:translateY(-4px) !important;
+  box-shadow:0 30px 60px -44px rgba(4,16,34,.6) !important;
+}
+
+/* ---- 画像 ---- */
+.parts228_post_img{
+  position:relative !important;
+  display:block !important;
+  aspect-ratio:4 / 3 !important;
+  overflow:hidden !important;
+  background:#103a6c;
+}
+.parts228_post_img a{ display:block !important; position:absolute !important; inset:0 !important; }
+.parts228_post_img img{ width:100% !important; height:100% !important; object-fit:cover !important; display:block !important; }
+
+/* ---- 日付（ステータス行内） ---- */
+.parts228_post_status{ margin:clamp(15px,1.8vw,20px) clamp(15px,1.8vw,20px) 0 !important; }
+.parts228_post_date{
+  font-family:var(--ni-en) !important;
+  font-size:14px !important;
+  letter-spacing:.05em !important;
+  color:var(--ni-muted) !important;
+}
+
+/* ---- タグ ---- */
+.parts-blog-ex-tag_wrap{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:7px !important;
+  margin:10px clamp(15px,1.8vw,20px) 0 !important;
+}
+.parts-blog-ex_tag{
+  font-size:11.5px !important;
+  letter-spacing:.04em !important;
+  color:var(--ni-accent) !important;
+  background:var(--ni-tagbg) !important;
+  border:1px solid var(--ni-tagln) !important;
+  padding:4px 10px !important;
+  border-radius:2px !important;
+}
+
+/* ---- タイトル ---- */
+.parts228_post_title-excerpt{ margin:10px clamp(15px,1.8vw,20px) clamp(18px,2vw,24px) !important; }
+.parts228_post_title{
+  margin:0 !important;
+  font-family:var(--ni-mincho) !important;
+  font-weight:600 !important;
+  font-size:clamp(16px,1.8vw,20px) !important;
+  line-height:1.5 !important;
+}
+.parts228_post_title a{ color:var(--ni-ink) !important; text-decoration:none !important; }
+.parts228_post_title a:hover{ color:var(--ni-accent) !important; }
+
+/* ---- 抜粋（既定でCMS側コメントアウト。抜粋を有効化した場合のみ表示） ---- */
+.parts228_post_excerpt{
+  margin:0 clamp(15px,1.8vw,20px) clamp(18px,2vw,24px) !important;
+  font-size:13.5px !important;
+  line-height:1.9 !important;
+  color:var(--ni-sub) !important;
+}
+
+/* ---- ページネーション ---- */
+.parts228_pagenation{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  flex-wrap:wrap !important;
+  gap:8px !important;
+  margin-top:clamp(40px,5vw,64px) !important;
+}
+.parts228_pagenation a,
+.parts228_pagenation .pagination_num,
+.parts228_pagenation .pagination_prev,
+.parts228_pagenation .pagination_next{
+  min-width:44px !important;
+  min-height:44px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:0 12px !important;
+  text-decoration:none !important;
+  font-family:var(--ni-en) !important;
+  font-size:16px !important;
+  color:var(--ni-sub) !important;
+  border:1px solid var(--ni-line2) !important;
+  border-radius:2px !important;
+  background:var(--ni-card) !important;
+  transition:border-color .3s, color .3s, background .3s !important;
+}
+.parts228_pagenation a:hover{ border-color:var(--ni-accent) !important; color:var(--ni-accent) !important; }
+.parts228_pagenation .pagination_num.current{
+  background:var(--ni-deep) !important;
+  color:#fff !important;
+  border-color:var(--ni-deep) !important;
+  pointer-events:none !important;
+}
+/* === add.css 貼り付け ここまで === */

@@ -1,0 +1,167 @@
+/* === add.css 貼り付け ここから === */
+/* ============================================================
+   採用情報＝求人応募ページ（parts219 系・添付欄あり）— Cuezilla add.css
+   対象：応募フォーム本体（下はすぐフッター）
+   見た目方針：装飾枠を足さない、入力欄だけのフラットデザイン。
+              囲み（.contact_section）は構造維持・上書きで装飾。
+   添付欄：履歴書(attach)・職務経歴書(attach2) を表示する構成。
+   外部CSS非依存・自己完結。色/フォント/変数はこのブロック内で定義。
+   theme_default.css に勝つよう必要箇所に !important。
+   ※協力会社募集（parts219系・添付なし）に流用する場合は
+     dl.attach / dl.attach2 行をCMS側で出さないだけで本CSSはそのまま使用可。
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Barlow+Semi+Condensed:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --ni-bg:#E8EDF3;        /* 応募フォーム地色（落ち着いたトーン） */
+  --ni-ink:#1A2230;
+  --ni-sub:#4A5566;
+  --ni-line:#D5DCE5;
+  --ni-field:#C3CCD8;
+  --ni-accent:#1F5FAF;
+  --ni-deep:#0a2a52;
+  --ni-req:#0B2E59;
+  --ni-mincho:'Zen Kaku Gothic New',sans-serif;
+  --ni-gothic:'Zen Kaku Gothic New', sans-serif;
+}
+
+/* ---- 囲み（装飾を足さず素直に。フォーム上の導入文 parts210 もこの中） ---- */
+.contact_section{
+  background:var(--ni-bg) !important;
+  padding:clamp(72px,11vh,130px) 0 !important;
+}
+.contact_section>*{
+  max-width:880px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding-left:clamp(18px,4vw,46px) !important;
+  padding-right:clamp(18px,4vw,46px) !important;
+}
+
+/* ---- 導入文（parts210） ---- */
+.parts210_section_content{ margin-bottom:clamp(30px,4vw,46px) !important; }
+.parts210_content{
+  margin:0 0 8px !important;
+  font-family:var(--ni-mincho) !important;
+  font-weight:600 !important;
+  font-size:clamp(15px,1.7vw,18px) !important;
+  line-height:2.05 !important;
+  color:var(--ni-ink) !important;
+}
+
+/* ---- フォーム本体（フラット） ---- */
+.parts219_section_form{ width:100% !important; }
+.parts219_form_wrap{ width:100% !important; }
+
+/* 各行：ラベル列＋入力列。640px以下で縦積み */
+.parts219_form_wrap dl{
+  display:grid !important;
+  grid-template-columns:clamp(150px,20vw,230px) 1fr !important;
+  gap:clamp(10px,2vw,32px) !important;
+  align-items:start !important;
+  margin:0 !important;
+  padding:clamp(16px,2vw,22px) 0 !important;
+  border-bottom:1px solid var(--ni-line) !important;
+}
+.parts219_form_wrap dl.form_textarea,
+.parts219_form_wrap dl.attach,
+.parts219_form_wrap dl.attach2{ align-items:start !important; }
+@media (max-width:640px){
+  .parts219_form_wrap dl{ grid-template-columns:1fr !important; gap:8px !important; }
+}
+
+/* ラベル */
+.parts219_form_wrap dt{
+  font-family:var(--ni-mincho) !important;
+  font-weight:600 !important;
+  font-size:15.5px !important;
+  color:var(--ni-ink) !important;
+  padding-top:10px !important;
+  display:flex !important;
+  align-items:baseline !important;
+  gap:10px !important;
+  flex-wrap:wrap !important;
+}
+.parts219_form_wrap dt.form_text_dt{ align-items:flex-start !important; }
+.parts219_form_wrap dd{ margin:0 !important; }
+
+/* 入力欄（素直・フラット） */
+.parts219_form_wrap input[type=text],
+.parts219_form_wrap input[type=email],
+.parts219_form_wrap input[type=tel],
+.parts219_form_wrap textarea{
+  width:100% !important;
+  font-family:inherit !important;
+  font-size:15px !important;
+  color:var(--ni-ink) !important;
+  background:#fff !important;
+  border:1px solid var(--ni-field) !important;
+  border-radius:2px !important;
+  padding:12px 14px !important;
+}
+.parts219_form_wrap input[type=text]:focus,
+.parts219_form_wrap input[type=email]:focus,
+.parts219_form_wrap input[type=tel]:focus,
+.parts219_form_wrap textarea:focus{
+  outline:2px solid var(--ni-accent) !important;
+  outline-offset:1px !important;
+  border-color:var(--ni-accent) !important;
+}
+.parts219_form_wrap textarea{ min-height:140px !important; resize:vertical !important; }
+
+/* 住所行（〒＋郵便番号＋住所） */
+.parts219_form_wrap .form_address dd{
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  flex-wrap:wrap !important;
+  color:var(--ni-sub) !important;
+  font-size:14px !important;
+}
+.parts219_form_wrap input.zip{ width:clamp(120px,40%,200px) !important; }
+
+/* 添付欄（履歴書 attach／職務経歴書 attach2） */
+.parts219_form_wrap input[type=file]{
+  font-family:inherit !important;
+  font-size:14px !important;
+  color:var(--ni-sub) !important;
+  padding:8px 0 !important;
+}
+
+/* 必須バッジ・注記・エラー */
+.parts219_form_wrap .required{
+  font-size:11px !important;
+  font-weight:700 !important;
+  letter-spacing:.06em !important;
+  color:#fff !important;
+  background:var(--ni-req) !important;
+  padding:3px 8px !important;
+  border-radius:2px !important;
+}
+.parts219_form_wrap .attention{
+  font-size:12px !important;
+  font-weight:400 !important;
+  color:var(--ni-req) !important;
+  font-family:var(--ni-gothic) !important;
+  line-height:1.7 !important;
+}
+.parts219_form_wrap .error{ margin:6px 0 0 !important; font-size:12.5px !important; color:var(--ni-req) !important; min-height:0 !important; }
+
+/* 送信ボタン（控えめ・テーマトーン） */
+.contact_submit{ margin-top:clamp(26px,3.4vw,40px) !important; text-align:center !important; }
+.contact_submit input{
+  font-family:var(--ni-mincho) !important;
+  font-weight:600 !important;
+  font-size:16px !important;
+  letter-spacing:.06em !important;
+  color:#fff !important;
+  background:var(--ni-deep) !important;
+  border:none !important;
+  border-radius:2px !important;
+  padding:17px 56px !important;
+  min-height:44px !important;
+  cursor:pointer !important;
+  transition:background .3s !important;
+}
+.contact_submit input:hover{ background:var(--ni-accent) !important; }
+/* === add.css 貼り付け ここまで === */

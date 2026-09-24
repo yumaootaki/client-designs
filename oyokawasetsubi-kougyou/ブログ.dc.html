@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Barlow+Semi+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{margin:0;}
+.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal;}
+::selection{background:#1F5FAF;color:#fff;}
+@media (max-width:1024px){ section[data-screen-label$="ヒーロー"]{min-height:38svh !important;} }
+/* === ブログ（parts222系）プレビュー用スタイル === */
+.parts222_section{background:#F4F6F9;padding:clamp(50px,7vh,80px) 0 clamp(72px,10vh,120px);}
+.parts222_section>h2{max-width:1340px;margin:0 auto clamp(28px,4vw,46px);padding:0 clamp(18px,4vw,46px);font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(26px,4vw,42px);color:#1A2230;}
+.parts222_wrap{max-width:1340px;margin:0 auto;padding:0 clamp(18px,4vw,46px);display:grid;grid-template-columns:1fr clamp(260px,26vw,320px);gap:clamp(32px,4vw,60px);align-items:start;}
+@media (max-width:880px){.parts222_wrap{grid-template-columns:1fr;}}
+.parts222_post_list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,2.2vw,28px);}
+@media (max-width:520px){.parts222_post_list{grid-template-columns:1fr;}}
+.parts222_post_wrap{display:block;background:#FFFFFF;border:1px solid #D5DCE5;border-radius:3px;overflow:hidden;text-decoration:none;color:#1A2230;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease;}
+.parts222_post_wrap:hover{transform:translateY(-4px);box-shadow:0 30px 60px -44px rgba(4,16,34,.6);}
+.parts222_post_img{position:relative;aspect-ratio:16/10;overflow:hidden;}
+.parts222_post_img::before{content:"PHOTO";position:absolute;top:11px;right:13px;font-size:10.5px;letter-spacing:.15em;color:rgba(255,255,255,.55);z-index:1;}
+.parts222_post_img img{width:100%;height:100%;object-fit:cover;display:block;}
+.parts222_post_img.has-img::before{display:none;}
+.parts222_post_status{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:clamp(14px,1.7vw,18px) clamp(15px,1.8vw,20px) 0;}
+.parts222_post_date{font-family:'Barlow Semi Condensed',sans-serif;font-size:14px;letter-spacing:.05em;color:#6B7686;}
+.parts222_post_category{font-size:11.5px;letter-spacing:.04em;color:#1F5FAF;background:#EEF2F7;border:1px solid #D5DCE5;padding:3px 10px;border-radius:2px;}
+.parts222_post_title-excerpt{margin:10px clamp(15px,1.8vw,20px) clamp(18px,2vw,22px);}
+.parts222_post_title{margin:0;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:600;font-size:clamp(16px,1.7vw,19px);line-height:1.5;color:#1A2230;}
+.parts222_pagenation{grid-column:1 / -1;display:flex;justify-content:center;align-items:center;gap:8px;margin-top:clamp(36px,5vw,56px);}
+.parts222_pagenation a,.parts222_pagenation .page-item{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-family:'Barlow Semi Condensed',sans-serif;font-size:15px;color:#4A5566;border:1px solid #D5DCE5;border-radius:2px;background:#FFFFFF;padding:0 10px;transition:all .3s;}
+.parts222_pagenation a:hover{border-color:#1F5FAF;color:#1F5FAF;}
+.parts222_pagenation .page-item a{border:none;background:transparent;min-width:0;min-height:0;padding:0;}
+.parts222_pagenation .page-item:hover{border-color:#1F5FAF;}
+.parts222_pagenation .page-item:hover a{color:#1F5FAF;}
+.parts222_pagenation .pagination_num.current{background:#0a2a52;color:#fff;border-color:#0a2a52;}
+.parts222_sidebar{display:flex;flex-direction:column;gap:clamp(24px,3vw,36px);}
+.parts222_sidebar_wrap h3{margin:0 0 0;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:600;font-size:15px;color:#fff;background:#0B2E59;padding:13px 16px;border-radius:2px 2px 0 0;letter-spacing:.04em;}
+.parts222_sidebar_wrap ul{list-style:none;margin:0;padding:0;border:1px solid #D5DCE5;border-top:none;border-radius:0 0 2px 2px;background:#FFFFFF;}
+.parts222_sidebar_wrap li{border-bottom:1px solid #E3E8EF;}
+.parts222_sidebar_wrap li:last-child{border-bottom:none;}
+.parts222_sidebar_wrap li a{display:block;padding:13px 16px;text-decoration:none;color:#1A2230;transition:background .3s;}
+.parts222_sidebar_wrap li a:hover{background:#EEF2F7;}
+.parts222_sidebar_date{display:block;font-family:'Barlow Semi Condensed',sans-serif;font-size:13px;color:#6B7686;letter-spacing:.04em;margin-bottom:4px;}
+.parts222_sidebar_post_title{margin:0;font-size:13.5px;line-height:1.6;color:#2A3445;}
+.parts222_sidebar_wrap.category_post_count li a{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.parts222_sidebar_post_category{margin:0;font-size:14px;color:#2A3445;}
+.parts222_sidebar_post_category_count{font-family:'Barlow Semi Condensed',sans-serif;font-size:13px;color:#667085;border:1px solid #D5DCE5;border-radius:2px;min-width:26px;height:24px;display:inline-flex;align-items:center;justify-content:center;padding:0 6px;}
+@keyframes ni-pan{0%{transform:scale(1.08) translate3d(0,0,0);}100%{transform:scale(1.16) translate3d(-2%,-1.5%,0);}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;}}
+</style>
+</helmet>
+
+<div style="font-family:'Zen Kaku Gothic New',sans-serif; color:#1A2230; background:#F4F6F9; -webkit-font-smoothing:antialiased; line-height:1.85; overflow-x:hidden;">
+
+  <dc-import name="SiteHeader" accent="{{ accent }}" active="blog" page-title="ブログ・コラム｜株式会社オヨカワ設備工業（千葉県匝瑳市）" description="株式会社オヨカワ設備工業のブログ。工務店さま向けの設備工事の情報、浄化槽・補助金、現場・職人の話題をお届けします。" hint-size="100%,84px"></dc-import>
+
+  <section data-screen-label="ブログヒーロー" style="position:relative; min-height:50svh; display:flex; align-items:flex-end; overflow:hidden; background:#4d4d4d; color:#F4F6F9;"><div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to right, rgba(11,46,89,.9) 0%, rgba(11,46,89,.8) 55%, rgba(8,36,72,.4) 100%), url('assets/p-shop-duct.jpg') center/cover no-repeat;"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; background:radial-gradient(120% 95% at 56% 16%, rgba(31,95,175,.4), rgba(6,26,54,0) 56%), linear-gradient(270deg,#0B2E59 0%,#061a36 60%,#030d1f 100%); animation:ni-pan 24s ease-in-out infinite alternate; transform-origin:56% 26%;"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; opacity:.14; background-image:repeating-linear-gradient(125deg, rgba(190,210,235,.5) 0 1px, transparent 1px 16px); mix-blend-mode:screen;"></div>
+    <div aria-hidden="true" style="position:absolute; right:clamp(-14px,-1vw,0px); bottom:clamp(8px,3vh,30px); font-family:'Barlow Semi Condensed',sans-serif; font-weight:400; font-size:clamp(96px,22vw,300px); line-height:.8; color:rgba(190,210,235,.07); white-space:nowrap; pointer-events:none;">Blog</div>
+    <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(to right, rgba(3,14,32,.9) 0%, rgba(3,14,32,.35) 55%, transparent 100%);"></div>
+    <div style="position:relative; z-index:2; width:100%; max-width:1340px; margin:0 auto; padding:clamp(84px,11vh,110px) clamp(18px,4vw,46px) clamp(38px,5vh,56px);">
+      <nav aria-label="パンくず" style="display:flex; flex-wrap:wrap; align-items:center; gap:9px; font-size:12.5px; letter-spacing:.04em; color:rgba(244,246,249,.66); margin-bottom:clamp(18px,3vw,30px);">
+        <a href="/" style="color:rgba(244,246,249,.66); text-decoration:none;">ホーム</a>
+        <span aria-hidden="true" style="opacity:.5;">/</span>
+        <span style="color:#A9C4E8;">ブログ</span>
+      </nav>
+      <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(15px,2vw,20px); letter-spacing:.08em; color:#ffffff; display:flex; align-items:center; gap:14px;"><span style="display:inline-block; width:clamp(28px,4vw,52px); height:1px; background:#ffffff;"></span>Blog</p>
+      <h1 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:clamp(38px,6.4vw,92px); line-height:1.06; letter-spacing:.02em; text-shadow:0 12px 46px rgba(0,0,0,.42);">ブログ</h1>
+      <p style="margin:clamp(16px,2.2vw,24px) 0 0; max-width:540px; font-size:clamp(15px,1.7vw,18px); line-height:2; color:rgba(244,246,249,1);">工務店さま向けの設備工事の情報から、浄化槽・補助金、現場・職人の話題までお届けします。</p>
+    </div>
+  </section>
+
+  <!-- 🔒 CMS固定領域（parts222系）：構造/クラス/input name 変更禁止・承認/解除なし。見た目はadd.cssのみ -->
+  <!-- 🔒 LOCK START -->
+  <section class="parts222_section" data-screen-label="ブログ一覧">
+    <h2>BLOG</h2>
+    <div class="parts222_wrap">
+      <main class="parts222_main">
+        <ul class="parts222_post_list">
+          <!-- CMS LOOP START -->
+          <a class="parts222_post_wrap" href="/blog">
+            <div class="parts222_post_img has-img"><img src="assets/p-drain-1.jpg" alt="" /></div>
+            <div class="parts222_post_status"><span class="parts222_post_date">2026.00.00</span><span class="parts222_post_category">工務店さま向け</span></div>
+            <div class="parts222_post_title-excerpt"><h3 class="parts222_post_title">新築の設備業者を一本化するメリット</h3></div>
+          </a>
+          <!-- CMS LOOP END -->
+          <a class="parts222_post_wrap" href="/blog">
+            <div class="parts222_post_img" style="background:linear-gradient(155deg,#0f3a6e,#061c3a);"></div>
+            <div class="parts222_post_status"><span class="parts222_post_date">2026.00.00</span><span class="parts222_post_category">現場・職人</span></div>
+            <div class="parts222_post_title-excerpt"><h3 class="parts222_post_title">配管工の経験年数で変わる仕事</h3></div>
+          </a>
+          <a class="parts222_post_wrap" href="/blog">
+            <div class="parts222_post_img" style="background:linear-gradient(155deg,#133d73,#081d3a);"></div>
+            <div class="parts222_post_status"><span class="parts222_post_date">2026.00.00</span><span class="parts222_post_category">浄化槽・補助金</span></div>
+            <div class="parts222_post_title-excerpt"><h3 class="parts222_post_title">浄化槽の補助金の流れ</h3></div>
+          </a>
+          <a class="parts222_post_wrap" href="/blog">
+            <div class="parts222_post_img" style="background:linear-gradient(155deg,#15457f,#082347);"></div>
+            <div class="parts222_post_status"><span class="parts222_post_date">2026.00.00</span><span class="parts222_post_category">工務店さま向け</span></div>
+            <div class="parts222_post_title-excerpt"><h3 class="parts222_post_title">記事タイトルが入ります</h3></div>
+          </a>
+          <a class="parts222_post_wrap" href="/blog">
+            <div class="parts222_post_img" style="background:linear-gradient(155deg,#0f3a6e,#061a36);"></div>
+            <div class="parts222_post_status"><span class="parts222_post_date">2026.00.00</span><span class="parts222_post_category">お知らせ</span></div>
+            <div class="parts222_post_title-excerpt"><h3 class="parts222_post_title">記事タイトルが入ります</h3></div>
+          </a>
+          <a class="parts222_post_wrap" href="/blog">
+            <div class="parts222_post_img" style="background:linear-gradient(155deg,#0d3566,#061a36);"></div>
+            <div class="parts222_post_status"><span class="parts222_post_date">2026.00.00</span><span class="parts222_post_category">工務店さま向け</span></div>
+            <div class="parts222_post_title-excerpt"><h3 class="parts222_post_title">記事タイトルが入ります</h3></div>
+          </a>
+        </ul>
+        <div class="parts222_pagenation">
+          <a class="pagination_prev" href="#" aria-label="最初へ">&laquo;</a>
+          <a class="pagination_num current d-none d-xl-block" href="#">1</a>
+          <a class="pagination_num d-none d-xl-block" href="#">2</a>
+          <a class="pagination_num d-none d-xl-block" href="#">3</a>
+          <a class="pagination_next" href="#" aria-label="次へ">次へ &raquo;</a>
+          <span class="page-item"><a href="#">最後 &raquo;</a></span>
+        </div>
+      </main>
+      <aside class="parts222_sidebar">
+        <div class="parts222_sidebar_wrap">
+          <h3>最近の投稿</h3>
+          <ul>
+            <li><a href="/blog"><span class="parts222_sidebar_date">2026.00.00</span><p class="parts222_sidebar_post_title">新築の設備業者を一本化するメリット</p></a></li>
+            <li><a href="/blog"><span class="parts222_sidebar_date">2026.00.00</span><p class="parts222_sidebar_post_title">配管工の経験年数で変わる仕事</p></a></li>
+            <li><a href="/blog"><span class="parts222_sidebar_date">2026.00.00</span><p class="parts222_sidebar_post_title">浄化槽の補助金の流れ</p></a></li>
+          </ul>
+        </div>
+        <div class="parts222_sidebar_wrap category_post_count">
+          <h3>カテゴリー</h3>
+          <ul>
+            <li><a href="/blog"><p class="parts222_sidebar_post_category">工務店さま向け</p><span class="parts222_sidebar_post_category_count">0</span></a></li>
+            <li><a href="/blog"><p class="parts222_sidebar_post_category">現場・職人</p><span class="parts222_sidebar_post_category_count">0</span></a></li>
+            <li><a href="/blog"><p class="parts222_sidebar_post_category">浄化槽・補助金</p><span class="parts222_sidebar_post_category_count">0</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <!-- 🔒 LOCK END -->
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#1F5FAF&quot;, &quot;options&quot;: [&quot;#1F5FAF&quot;, &quot;#0B2E59&quot;, &quot;#2A6FC4&quot;, &quot;#174C8F&quot;], &quot;tsType&quot;: &quot;string&quot; }
+}">
+class Component extends DCLogic {
+  state = { mobile:false, menuOpen:false, scrolled:false };
+  componentDidMount(){
+    this.mq = window.matchMedia('(max-width: 960px)');
+    this._onMq = (e)=> this.setState({ mobile: e.matches });
+    this._onMq(this.mq); this.mq.addEventListener('change', this._onMq);
+    this._onScroll = ()=>{ const v = window.scrollY > 40; if(v !== this.state.scrolled) this.setState({ scrolled:v }); };
+    window.addEventListener('scroll', this._onScroll, { passive:true });
+  }
+  componentWillUnmount(){ if(this.mq) this.mq.removeEventListener('change', this._onMq); window.removeEventListener('scroll', this._onScroll); }
+  renderVals(){
+    const accent = this.props.accentColor || '#1F5FAF';
+    const sc = this.state.scrolled || this.state.menuOpen;
+    return {
+      accent,
+      isMobile: this.state.mobile, isDesktop: !this.state.mobile,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: ()=> this.setState(s=>({ menuOpen: !s.menuOpen })),
+      closeMenu: ()=> this.setState({ menuOpen:false }),
+      headerBg: sc ? 'rgba(244,246,249,0.92)' : 'transparent',
+      headerColor: sc ? '#1A2230' : '#F4F6F9',
+      headerBorder: sc ? '1px solid rgba(26,34,48,0.1)' : '1px solid rgba(255,255,255,0)',
+      headerShadow: sc ? '0 14px 36px -26px rgba(0,0,0,0.55)' : 'none',
+      headerBlur: sc ? 'saturate(1.1) blur(14px)' : 'none',
+      ctaBtnColor: sc ? '#ffffff' : '#0B2E59',
+      ctaBtnBg: sc ? accent : '#F4F6F9',
+      year: new Date().getFullYear()
+    };
+  }
+}
+</script>
+</body>
+</html>

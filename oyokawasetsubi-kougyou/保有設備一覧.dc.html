@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Barlow+Semi+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{margin:0;}
+.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal;}
+::selection{background:#1F5FAF;color:#fff;}
+@media (max-width:1024px){ section[data-screen-label$="ヒーロー"]{min-height:38svh !important;} }
+@keyframes ni-pan{0%{transform:scale(1.08) translate3d(0,0,0);}100%{transform:scale(1.16) translate3d(-2%,-1.5%,0);}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;}}
+summary::-webkit-details-marker{display:none;}
+details[open] .qa-plus{transform:rotate(45deg);}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #F7C21B;outline-offset:2px;}
+</style>
+</helmet>
+
+<div style="font-family:'Zen Kaku Gothic New',sans-serif; color:#1A2230; background:#F4F6F9; -webkit-font-smoothing:antialiased; line-height:1.95; overflow-x:hidden;">
+
+  <dc-import name="SiteHeader" accent="{{ accent }}" active="about" page-title="保有設備一覧｜株式会社オヨカワ設備工業（千葉県匝瑳市）" description="株式会社オヨカワ設備工業の保有設備一覧。車両・重機・測定機器を自社で保有し、工程に合わせて柔軟に対応します。" hint-size="100%,84px"></dc-import>
+
+  <section data-screen-label="保有設備一覧ヒーロー" style="position:relative; min-height:50svh; display:flex; align-items:flex-end; overflow:hidden; background:#4d4d4d; color:#F4F6F9;"><div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to right, rgba(11,46,89,.9) 0%, rgba(11,46,89,.8) 55%, rgba(8,36,72,.4) 100%), url('assets/p-demolition.jpg') center/cover no-repeat;"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; background:radial-gradient(120% 95% at 50% 18%, rgba(31,95,175,.38), rgba(6,26,54,0) 56%), linear-gradient(270deg,#0B2E59 0%,#061a36 60%,#030d1f 100%); animation:ni-pan 24s ease-in-out infinite alternate; transform-origin:50% 26%;"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; opacity:.12; background-image:repeating-linear-gradient(125deg, rgba(190,210,235,.5) 0 1px, transparent 1px 16px); mix-blend-mode:screen;"></div>
+    <div aria-hidden="true" style="position:absolute; right:clamp(-14px,-1vw,0px); bottom:clamp(8px,3vh,30px); font-family:'Barlow Semi Condensed',sans-serif; font-weight:400; font-size:clamp(96px,22vw,300px); line-height:.8; color:rgba(190,210,235,.07); white-space:nowrap; pointer-events:none;">Equipment</div>
+    <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(to right, rgba(3,14,32,.9) 0%, rgba(3,14,32,.35) 55%, transparent 100%);"></div>
+    <div style="position:relative; z-index:2; width:100%; max-width:1340px; margin:0 auto; padding:clamp(88px,12vh,116px) clamp(18px,4vw,46px) clamp(40px,5vh,60px);">
+      <nav aria-label="パンくず" style="display:flex; flex-wrap:wrap; align-items:center; gap:9px; font-size:12.5px; letter-spacing:.04em; color:rgba(244,246,249,.66); margin-bottom:clamp(20px,3vw,32px);">
+        <a href="/" style="color:rgba(244,246,249,.66); text-decoration:none;">ホーム</a>
+        <span aria-hidden="true" style="opacity:.5;">/</span>
+        <a href="/company" style="color:rgba(244,246,249,.66); text-decoration:none;">会社について</a>
+        <span aria-hidden="true" style="opacity:.5;">/</span>
+        <span style="color:#A9C4E8;">保有設備一覧</span>
+      </nav>
+      <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(15px,2vw,20px); letter-spacing:.08em; color:#ffffff; display:flex; align-items:center; gap:14px;"><span style="display:inline-block; width:clamp(28px,4vw,52px); height:1px; background:#ffffff;"></span>Equipment</p>
+      <h1 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:clamp(32px,5vw,56px); line-height:1.2; letter-spacing:.02em; text-shadow:0 12px 46px rgba(0,0,0,.42);">保有設備一覧</h1>
+      <p style="margin:clamp(18px,2.4vw,26px) 0 0; max-width:600px; font-size:clamp(15px,1.7vw,17px); line-height:1.95; color:#ffffff;">車両・重機・測定機器の保有状況をご紹介します。</p>
+    </div>
+  </section>
+
+  <section data-screen-label="保有設備の写真" style="background:#FFFFFF; padding:clamp(64px,10vh,110px) 0;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div style="max-width:720px; margin-bottom:clamp(28px,4vw,44px);"><p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,19px); font-weight:500; letter-spacing:.12em; color:#1F5FAF;">Equipment</p>
+        <h2 style="margin:0 0 16px; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35; color:#0B2E59;">自社保有の機材で、工程に合わせて動けます</h2>
+        <p style="margin:0; font-size:clamp(15px,1.6vw,16.5px); line-height:1.9; color:#4A5566;">自社で機材を保有しているため、外部手配の待ちが少なく、工程に合わせて柔軟に対応できます。</p></div>
+      <!-- 要取材：保有設備の写真・リスト（メーカー・型式・台数・用途） -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:clamp(12px,1.6vw,20px);">
+        <div role="img" aria-label="作業車両（写真差し替え予定）" style="position:relative; aspect-ratio:4/3; border-radius:4px; overflow:hidden; background:#0B2E59; display:flex; align-items:flex-end; padding:14px 16px; color:#EEF3F9;"><div aria-hidden="true" style="position:absolute; inset:0; opacity:.3; background-image:repeating-linear-gradient(125deg, rgba(255,255,255,.06) 0 2px, transparent 2px 18px);"></div><span style="position:relative; font-weight:700; font-size:15px;">作業車両</span><span aria-hidden="true" style="position:absolute; top:12px; right:14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:11px; letter-spacing:.16em; color:rgba(255,255,255,.5);">PHOTO</span></div>
+        <div role="img" aria-label="小型重機（写真差し替え予定）" style="position:relative; aspect-ratio:4/3; border-radius:4px; overflow:hidden; background:#0B2E59; display:flex; align-items:flex-end; padding:14px 16px; color:#EEF3F9;"><div aria-hidden="true" style="position:absolute; inset:0; opacity:.3; background-image:repeating-linear-gradient(125deg, rgba(255,255,255,.06) 0 2px, transparent 2px 18px);"></div><span style="position:relative; font-weight:700; font-size:15px;">小型重機</span><span aria-hidden="true" style="position:absolute; top:12px; right:14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:11px; letter-spacing:.16em; color:rgba(255,255,255,.5);">PHOTO</span></div>
+        <div role="img" aria-label="配管加工機（写真差し替え予定）" style="position:relative; aspect-ratio:4/3; border-radius:4px; overflow:hidden; background:#0B2E59; display:flex; align-items:flex-end; padding:14px 16px; color:#EEF3F9;"><div aria-hidden="true" style="position:absolute; inset:0; opacity:.3; background-image:repeating-linear-gradient(125deg, rgba(255,255,255,.06) 0 2px, transparent 2px 18px);"></div><span style="position:relative; font-weight:700; font-size:15px;">配管加工機</span><span aria-hidden="true" style="position:absolute; top:12px; right:14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:11px; letter-spacing:.16em; color:rgba(255,255,255,.5);">PHOTO</span></div>
+        <div role="img" aria-label="測定・検査機器（写真差し替え予定）" style="position:relative; aspect-ratio:4/3; border-radius:4px; overflow:hidden; background:#0B2E59; display:flex; align-items:flex-end; padding:14px 16px; color:#EEF3F9;"><div aria-hidden="true" style="position:absolute; inset:0; opacity:.3; background-image:repeating-linear-gradient(125deg, rgba(255,255,255,.06) 0 2px, transparent 2px 18px);"></div><span style="position:relative; font-weight:700; font-size:15px;">測定・検査機器</span><span aria-hidden="true" style="position:absolute; top:12px; right:14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:11px; letter-spacing:.16em; color:rgba(255,255,255,.5);">PHOTO</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="カテゴリ別一覧" style="background:#F4F6F9; padding:clamp(64px,10vh,110px) 0;">
+    <div style="max-width:1100px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div style="margin-bottom:clamp(24px,3vw,36px);"><p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,19px); font-weight:500; letter-spacing:.12em; color:#1F5FAF;">List</p>
+        <h2 style="margin:0; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35; color:#0B2E59;">カテゴリ別一覧</h2></div>
+      <nav aria-label="カテゴリ" style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:clamp(28px,4vw,40px);">
+        <a href="#eq-car" style="text-decoration:none; background:#0B2E59; color:#ffffff; border:1.5px solid #0B2E59; font-weight:700; font-size:14.5px; padding:9px 18px; border-radius:999px; min-height:44px; display:inline-flex; align-items:center;">車両</a>
+        <a href="#eq-machine" style="text-decoration:none; background:#ffffff; color:#0B2E59; border:1.5px solid #0B2E59; font-weight:700; font-size:14.5px; padding:9px 18px; border-radius:999px; min-height:44px; display:inline-flex; align-items:center;">重機・施工機械</a>
+        <a href="#eq-test" style="text-decoration:none; background:#ffffff; color:#0B2E59; border:1.5px solid #0B2E59; font-weight:700; font-size:14.5px; padding:9px 18px; border-radius:999px; min-height:44px; display:inline-flex; align-items:center;">測定・検査機器</a>
+      </nav>
+      <div id="eq-car" style="scroll-margin-top:100px; margin-bottom:clamp(36px,5vw,52px);">
+        <h3 style="margin:0 0 14px; font-weight:700; font-size:clamp(19px,2vw,22px); color:#0B2E59; display:flex; align-items:center; gap:12px;"><span aria-hidden="true" style="width:18px; height:2px; background:#F7C21B;"></span>車両</h3>
+        <div style="overflow-x:auto;"><table style="width:100%; min-width:520px; border-collapse:collapse; background:#FFFFFF; font-size:15px; line-height:1.7;">
+          <thead><tr><th scope="col" style="padding:12px 16px; text-align:left; background:#0B2E59; color:#ffffff; font-size:14px;">名称</th><th scope="col" style="padding:12px 16px; text-align:left; background:#0B2E59; color:#ffffff; font-size:14px; width:6em;">台数</th><th scope="col" style="padding:12px 16px; text-align:left; background:#0B2E59; color:#ffffff; font-size:14px;">主な用途</th></tr></thead>
+          <tbody><tr><td style="padding:14px 16px; border-bottom:1px solid #D5DCE5;">作業車（軽トラック・バン）（サンプル）</td><td style="padding:14px 16px; border-bottom:1px solid #D5DCE5; white-space:nowrap; font-family:'Barlow Semi Condensed',sans-serif; font-size:17px;">○台</td><td style="padding:14px 16px; border-bottom:1px solid #D5DCE5; color:#4A5566;">現場移動・資材運搬</td></tr><tr><td style="padding:14px 16px; border-bottom:1px solid #D5DCE5;">2tダンプ（サンプル）</td><td style="padding:14px 16px; border-bottom:1px solid #D5DCE5; white-space:nowrap; font-family:'Barlow Semi Condensed',sans-serif; font-size:17px;">○台</td><td style="padding:14px 16px; border-bottom:1px solid #D5DCE5; color:#4A5566;">資材・残土運搬</td></tr></tbody>
+        </table></div>
+      </div>
+      <div id="eq-machine" style="scroll-margin-top:100px; margin-bottom:clamp(36px,5vw,52px);">
+        <h3 style="margin:0 0 14px; font-weight:700; font-size:clamp(19px,2vw,22px); color:#0B2E59; display:flex; align-items:center; gap:12px;"><span aria-hidden="true" style="width:18px; height:2px; background:#F7C21B;"></span>重機・施工機械</h3>
+        <div style="overflow-x:auto;"><table style="width:100%; min-width:520px; border-collapse:collapse; background:#FFFFFF; font-size:15px; line-height:1.7;">
+          <thead><tr><th scope="col" style="padding:12px 16px; text-align:left; background:#0B2E59; color:#ffffff; font-size:14px;">名称</th><th scope="col" style="padding:12px 16px; text-align:left; background:#0B2E59; color:#ffffff; font-size:14px; width:6em;">台数</th><th scope="col" style="padding:12px 16px; text-align:left; background:#0B2E59; color:#ffffff; font-size:14px;">主な用途</th></tr></thead>
+          <tbody><tr><td style="padding:14px 16px; border-bottom:1px solid #D5DCE5;">小型バックホウ（サンプル）</td><td style="padding:14px 16px; border-bottom:1px solid #D5DCE5; white-space:nowrap; font-family:'Barlow Semi Condensed',sans-serif; font-size:17px;">○台</td><td style="padding:14px 16px; border-bottom:1px solid #D5DCE5; color:#4A5566;">浄化槽・引き込み工事の掘削</td></tr></tbody>
+        </table></div>
+      </div>
+      <div id="eq-test" style="scroll-margin-top:100px; margin-bottom:clamp(36px,5vw,52px);">
+        <h3 style="margin:0 0 14px; font-weight:700; font-size:clamp(19px,2vw,22px); color:#0B2E59; display:flex; align-items:center; gap:12px;"><span aria-hidden="true" style="width:18px; height:2px; background:#F7C21B;"></span>測定・検査機器</h3>
+        <div style="overflow-x:auto;"><table style="width:100%; min-width:520px; border-collapse:collapse; background:#FFFFFF; font-size:15px; line-height:1.7;">
+          <thead><tr><th scope="col" style="padding:12px 16px; text-align:left; background:#0B2E59; color:#ffffff; font-size:14px;">名称</th><th scope="col" style="padding:12px 16px; text-align:left; background:#0B2E59; color:#ffffff; font-size:14px; width:6em;">台数</th><th scope="col" style="padding:12px 16px; text-align:left; background:#0B2E59; color:#ffffff; font-size:14px;">主な用途</th></tr></thead>
+          <tbody><tr><td style="padding:14px 16px; border-bottom:1px solid #D5DCE5;">水圧テストポンプ（サンプル）</td><td style="padding:14px 16px; border-bottom:1px solid #D5DCE5; white-space:nowrap; font-family:'Barlow Semi Condensed',sans-serif; font-size:17px;">○台</td><td style="padding:14px 16px; border-bottom:1px solid #D5DCE5; color:#4A5566;">給水管の耐圧試験</td></tr><tr><td style="padding:14px 16px; border-bottom:1px solid #D5DCE5;">管内カメラ（サンプル）</td><td style="padding:14px 16px; border-bottom:1px solid #D5DCE5; white-space:nowrap; font-family:'Barlow Semi Condensed',sans-serif; font-size:17px;">○台</td><td style="padding:14px 16px; border-bottom:1px solid #D5DCE5; color:#4A5566;">排水管の調査</td></tr></tbody>
+        </table></div>
+      </div>
+      <p style="margin:0; font-size:14px; color:#4A5566;">※掲載内容は順次更新します。</p>
+    </div>
+  </section>
+
+  <dc-import name="ContactCTA" accent="{{ accent }}" caption="Contact" heading="設備工事のご相談はこちら" intro="ご相談の内容に合わせて、窓口をお選びください。" hint-size="100%,640px"></dc-import>
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#1F5FAF&quot;, &quot;options&quot;: [&quot;#1F5FAF&quot;, &quot;#0B2E59&quot;, &quot;#2A6FC4&quot;, &quot;#174C8F&quot;], &quot;tsType&quot;: &quot;string&quot; }
+}">
+class Component extends DCLogic {
+  state = { mobile:false, menuOpen:false, scrolled:false };
+  componentDidMount(){
+    this.mq = window.matchMedia('(max-width: 960px)');
+    this._onMq = (e)=> this.setState({ mobile: e.matches });
+    this._onMq(this.mq); this.mq.addEventListener('change', this._onMq);
+    this._onScroll = ()=>{ const v = window.scrollY > 40; if(v !== this.state.scrolled) this.setState({ scrolled:v }); };
+    window.addEventListener('scroll', this._onScroll, { passive:true });
+  }
+  componentWillUnmount(){ if(this.mq) this.mq.removeEventListener('change', this._onMq); window.removeEventListener('scroll', this._onScroll); }
+  renderVals(){
+    const accent = this.props.accentColor || '#1F5FAF';
+    const sc = this.state.scrolled || this.state.menuOpen;
+    return {
+      accent,
+      isMobile: this.state.mobile, isDesktop: !this.state.mobile,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: ()=> this.setState(s=>({ menuOpen: !s.menuOpen })),
+      closeMenu: ()=> this.setState({ menuOpen:false }),
+      headerBg: sc ? 'rgba(244,246,249,0.92)' : 'transparent',
+      headerColor: sc ? '#1A2230' : '#F4F6F9',
+      headerBorder: sc ? '1px solid rgba(26,34,48,0.1)' : '1px solid rgba(255,255,255,0)',
+      headerShadow: sc ? '0 14px 36px -26px rgba(0,0,0,0.55)' : 'none',
+      headerBlur: sc ? 'saturate(1.1) blur(14px)' : 'none',
+      ctaBtnColor: sc ? '#ffffff' : '#0B2E59',
+      ctaBtnBg: sc ? accent : '#F4F6F9',
+      year: new Date().getFullYear()
+    };
+  }
+}
+</script>
+</body>
+</html>

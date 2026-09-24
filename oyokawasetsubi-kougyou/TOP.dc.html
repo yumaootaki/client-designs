@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Barlow+Semi+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{margin:0;}
+.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal;}
+::selection{background:#1F5FAF;color:#fff;}
+.work-tile{display:block;position:relative;overflow:hidden;text-decoration:none;border-radius:0;background:#082347;}
+.work-tile .work-media{position:absolute;inset:0;transition:transform 1.15s cubic-bezier(.2,.7,.2,1);}
+.work-tile:hover .work-media{transform:scale(1.07);}
+@media (prefers-reduced-motion: reduce){.work-tile:hover .work-media{transform:none;}}
+@keyframes ni-pan{0%{transform:scale(1.08) translate3d(0,0,0);}100%{transform:scale(1.18) translate3d(-2%,-1.5%,0);}}
+@keyframes ni-cue{0%,100%{transform:translateY(0);opacity:.35;}50%{transform:translateY(11px);opacity:1;}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;}}
+@keyframes ni-bounce-hop{0%{transform:translateY(0)}28%{transform:translateY(-8px)}52%{transform:translateY(0)}72%{transform:translateY(-3px)}88%{transform:translateY(0)}100%{transform:translateY(0)}}
+@keyframes ni-bounce-loop{0%{transform:translateY(0)}10%{transform:translateY(-8px)}19%{transform:translateY(0)}26%{transform:translateY(-3px)}32%{transform:translateY(0)}100%{transform:translateY(0)}}
+.ni-char{display:inline-block;}
+.ni-bounce{letter-spacing:-0.03em !important;gap:2px !important;font-size:17px !important;}
+.ni-bounce:hover .ni-char{animation-name:ni-bounce-loop;animation-duration:.95s;animation-timing-function:cubic-bezier(.28,.84,.42,1);animation-iteration-count:infinite;animation-fill-mode:both;}
+.cta-box:hover .ni-char{animation-name:ni-bounce-loop;animation-duration:.95s;animation-timing-function:cubic-bezier(.28,.84,.42,1);animation-iteration-count:infinite;animation-fill-mode:both;}
+.cta-box{position:relative;}
+.cta-box::before,.cta-box::after{content:"";position:absolute;inset:0;border-radius:3px;border:2px solid currentColor;opacity:0;pointer-events:none;}
+.cta-box:hover::before{animation:ni-ripple 1.3s ease-out infinite;}
+.cta-box:hover::after{animation:ni-ripple 1.3s ease-out infinite .65s;}
+.cta-letterhop{gap:2px !important;position:relative;}
+.cta-letterhop::before,.cta-letterhop::after{content:"";position:absolute;inset:0;border-radius:2px;border:2px solid currentColor;opacity:0;pointer-events:none;}
+.cta-letterhop:hover::before{animation:ni-ripple 1.3s ease-out infinite;}
+.cta-letterhop:hover::after{animation:ni-ripple 1.3s ease-out infinite .65s;}
+@keyframes ni-ripple{0%{transform:scale(1);opacity:.5;}100%{transform:scale(1.22);opacity:0;}}
+.cta-letterhop:hover .ni-char{animation-name:ni-bounce-loop;animation-duration:.95s;animation-timing-function:cubic-bezier(.28,.84,.42,1);animation-iteration-count:infinite;animation-fill-mode:both;}
+@media (prefers-reduced-motion: reduce){.cta-letterhop:hover .ni-char{animation:none !important;}}
+@media (max-width:1024px){
+  section[data-screen-label]:not(.oy-frame){padding-top:clamp(54px,8vh,100px) !important;padding-bottom:clamp(54px,8vh,100px) !important;}
+  .design-parts-52 .parts-52-textarea .d-inline-block{font-size:15px !important;}
+}
+.recruit-stats > div{text-align:center;}
+.design-parts-52 li a{transition:color .25s ease;}
+@media (min-width:600px) and (max-width:1024px){
+  .cta-boxes{grid-template-columns:1fr 1fr !important;}
+  .cta-inq-head{font-size:clamp(22px,2.9vw,30px) !important;}
+}
+.design-parts-52 li a:hover, .design-parts-52 li a:hover *{color:#174C8F !important;}
+@media (min-width:1025px){
+  .about-bio{max-width:none !important;}
+  .reason-h3{font-size:38px !important;}
+  .tel-note{white-space:nowrap; font-size:13.5px !important; letter-spacing:-0.01em;}
+}
+@media (min-width:768px){
+  .recruit-cta{display:flex !important;width:fit-content;margin-left:auto;}
+}
+@media (min-width:1025px){
+  .recruit-cta{font-size:17px !important; padding:19px 38px !important; gap:2px !important;}
+}
+@media (min-width:768px) and (max-width:1024px){
+}
+@media (max-width:767px){
+  .recruit-stats{grid-template-columns:repeat(2,1fr) !important;}
+  .recruit-stats > div{text-align:center;}
+  .recruit-cta{display:flex !important;width:fit-content;margin-left:auto;margin-right:auto;}
+}
+@media (min-width:601px) and (max-width:960px){
+  .work-grid-mobile > a:first-child{grid-row:span 2 !important;}
+  .work-grid-mobile > a:last-child{grid-column:1 / -1 !important; justify-self:center; width:calc(50% - 5px);}
+}
+@media (max-width:600px){
+  .recruit-wm{font-size:31vw !important; right:auto !important; left:50% !important; transform:translateX(-50%); top:clamp(16px,3vw,30px) !important;}
+  .design-parts-52 .content{min-height:0;padding:25px 0;gap:4px;}
+  .design-parts-52 li a{min-height:0 !important;padding:0 !important;}
+  .design-parts-52 .parts-52-textarea{gap:4px 14px !important;}
+  .work-grid-mobile{grid-template-columns:1fr !important;}
+  .work-grid-mobile > a{grid-column:span 1 !important;}
+}
+@media (max-width:1100px){ .biz-flow{grid-template-columns:1fr 1fr !important;} .biz-pipe{display:none;} }
+summary::-webkit-details-marker{display:none;}
+details[open] summary span:last-child{transform:rotate(45deg);}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #F7C21B;outline-offset:2px;}
+@keyframes oy-marq{from{transform:translate3d(0,0,0);}to{transform:translate3d(-50%,0,0);}}
+@keyframes oy-strip-up{from{transform:translate3d(0,0,0);}to{transform:translate3d(0,-50%,0);}}
+@keyframes oy-strip-down{from{transform:translate3d(0,-50%,0);}to{transform:translate3d(0,0,0);}}
+.oy-marq{display:inline-flex;will-change:transform;animation:oy-marq 32s linear infinite;}
+.oy-marq-slow{animation-duration:48s;}
+.oy-strip-up{animation:oy-strip-up 38s linear infinite;will-change:transform;}
+.oy-strip-down{animation:oy-strip-down 42s linear infinite;will-change:transform;}
+.oy-strips{display:none;}
+@media (min-width:960px){.oy-strips{display:block;}}
+@keyframes oy-spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.oy-spin{animation:oy-spin 24s linear infinite;transform-origin:50% 50%;}
+.oy-lift{transition:transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s ease;}
+.oy-lift:hover{transform:translateY(-6px);box-shadow:0 26px 40px -24px rgba(4,16,34,.55);}
+@media (prefers-reduced-motion: reduce){.oy-lift:hover{transform:none;}}
+/* === TOP BLOGカード（parts228系・写真下／更新日→タイトル→サムネ） === */
+.parts228_post_list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,28px);}
+.parts228_post_wrap{display:flex;flex-direction:column;background:#ffffff;border:1px solid #D5DCE5;padding:clamp(18px,2vw,24px);}
+.parts228_post_status{margin:0 0 12px;}
+.parts228_post_date{font-family:'Barlow Semi Condensed',sans-serif;font-size:14px;letter-spacing:.06em;color:#6B7686;}
+.parts228_post_title{margin:0;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:600;font-size:18px;line-height:1.55;min-height:3.1em;}
+.parts228_post_title a{color:#1A2230;text-decoration:none;transition:color .25s ease;}
+.parts228_post_title a:hover{color:#174C8F;}
+.parts228_post_title-excerpt{margin:0 0 16px;}
+.parts228_post_img{display:block;height:220px;overflow:hidden;border-radius:2px;margin-top:auto;}
+.parts228_post_img img{width:100%;height:100%;object-fit:cover;display:block;}
+@media (max-width:1024px){.parts228_post_list{grid-template-columns:repeat(2,1fr);}.parts228_post_title{font-size:16px;}}
+@media (max-width:767px){.parts228_post_list{grid-template-columns:1fr;}.parts228_post_img{height:205px;}}
+.hero-rise{display:inline-block;overflow:hidden;vertical-align:top;padding:.18em .05em;margin:-.18em -.05em;}
+.rise-in{display:inline-block;transform:translateY(135%);}
+.rise-go .rise-in{animation:ni-rise .68s cubic-bezier(.19,.67,.32,1) both;}
+@keyframes ni-rise{0%{transform:translateY(135%);}100%{transform:translateY(0);}}
+@media (prefers-reduced-motion: reduce){.rise-in{transform:none !important;} .rise-go .rise-in{animation:none !important;}}
+</style>
+</helmet>
+
+<div style="font-family:'Zen Kaku Gothic New',sans-serif; color:#1A2230; background:#F4F6F9; -webkit-font-smoothing:antialiased; line-height:1.85; overflow-x:hidden;">
+
+  <dc-import name="SiteHeader" accent="{{ accent }}" active="" page-title="匝瑳市の給排水衛生設備・電気・浄化槽工事｜株式会社オヨカワ設備工業" description="千葉県匝瑳市の株式会社オヨカワ設備工業は、給排水衛生設備・電気・浄化槽・空調工事をまとめてお受けする設備工事会社です。工務店さま・建設会社さまの設備パートナーとして、水道の申請から施工・引き渡し後の対応まで対応します。" hint-size="100%,84px"></dc-import>
+
+  <sc-if value="{{ heroCinematic }}" hint-placeholder-val="{{ true }}">
+  <section class="oy-frame" data-screen-label="ヒーロー" style="position:relative; background:#1F5FAF; padding-top:clamp(64px,8vw,84px); color:#F4F6F9;">
+    <div style="padding:0 clamp(10px,2.6vw,36px) 10px;">
+      <div style="position:relative; min-height:calc(100svh - clamp(64px,8vw,84px) - 34px - clamp(10px,2.6vw,36px)); overflow:hidden; background:#0B2E59; display:flex; align-items:center;">
+        <video id="hero-video" autoplay="" muted="" loop="" playsinline="" poster="assets/p-pipe-work.jpg" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; filter:saturate(.85) contrast(1.05); transition:opacity .6s ease;"><source src="assets/hero.mp4" type="video/mp4"></source></video>
+        <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(90deg, rgba(6,26,54,.55) 0%, rgba(6,26,54,.22) 50%, rgba(6,26,54,0) 100%);"></div>
+        <div style="position:relative; z-index:3; width:100%; max-width:1340px; margin:0 auto; padding:clamp(56px,9vh,96px) clamp(20px,4.6vw,64px);">
+          <p style="margin:0 0 clamp(18px,2.4vw,26px); font-weight:700; font-size:clamp(13px,1.4vw,15px); letter-spacing:.14em; color:#ffffff; text-shadow:0 1px 3px rgba(0,0,0,.6); display:flex; align-items:center; gap:14px;"><span aria-hidden="true" style="display:inline-block; width:clamp(28px,4vw,52px); height:2px; background:#F7C21B;"></span><span class="line-chunk"><span class="line-chunk">千葉県匝瑳市の</span><span class="line-chunk">設備工事会社</span></span></p>
+          <h1 class="hero-rise-text" style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:clamp(40px,7.2vw,104px); line-height:1.12; letter-spacing:-.01em; max-width:9.5em; text-shadow:0 2px 6px rgba(0,0,0,.45), 0 6px 28px rgba(0,0,0,.4);"><span class="line-chunk">水・電気・浄化槽。</span><span class="line-chunk">設備工事を、</span><span class="line-chunk">一社で。</span></h1>
+          <p style="display:inline-block; margin:clamp(20px,2.8vw,32px) 0 0; background:#F7C21B; color:#0B2E59; font-weight:900; font-size:clamp(15px,2vw,22px); letter-spacing:.04em; padding:.5em .9em;"><span class="line-chunk">株式会社オヨカワ設備工業｜</span><span class="line-chunk">給排水・電気・浄化槽</span></p>
+          <p style="margin:clamp(20px,2.6vw,28px) 0 clamp(26px,3.6vw,36px); max-width:560px; font-size:clamp(15px,1.6vw,17px); line-height:1.95; color:#ffffff; text-shadow:0 1px 3px rgba(0,0,0,.6), 0 2px 14px rgba(0,0,0,.45);">千葉県匝瑳市を拠点に、東総・北総エリアの工務店さまの設備パートナーとして、水道の申請から施工・引き渡し後の対応まで引き受けます。</p>
+          <div style="display:flex; flex-wrap:wrap; gap:14px;">
+            <a href="/business" class="cta-letterhop" style="text-decoration:none; background:#ffffff; color:#0B2E59; font-weight:900; font-size:16px; letter-spacing:.04em; padding:16px 28px; border-radius:4px; display:inline-flex; align-items:center; justify-content:center; gap:10px; min-width:240px; min-height:56px;">企業の方へ｜取引のご相談 <span style="font-family:'Barlow Semi Condensed',sans-serif;">&rarr;</span></a>
+            <a href="/recruit" class="cta-letterhop" style="text-decoration:none; background:transparent; color:#F4F6F9; font-weight:700; font-size:16px; letter-spacing:.04em; padding:16px 28px; border-radius:4px; border:1.5px solid rgba(244,246,249,.8); display:inline-flex; align-items:center; justify-content:center; gap:10px; min-width:220px; min-height:56px;">経験者採用はこちら <span style="font-family:'Barlow Semi Condensed',sans-serif;">&rarr;</span></a>
+          </div>
+        </div>
+        <button type="button" onClick="{{ toggleVideo }}" aria-label="{{ videoBtnLabel }}" style="position:absolute; right:clamp(14px,2.4vw,28px); bottom:clamp(14px,2.4vw,28px); z-index:4; width:44px; height:44px; border-radius:50%; border:1.5px solid rgba(255,255,255,.8); background:rgba(11,46,89,.6); color:#ffffff; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:13px; font-family:'Barlow Semi Condensed',sans-serif;">{{ videoBtnIcon }}</button>
+      </div>
+    </div>
+    <div aria-hidden="true" style="overflow:hidden; white-space:nowrap; padding:0 0 10px; color:#ffffff; font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:13px; letter-spacing:.2em;"><div class="oy-marq"><div style="display:inline-flex; gap:28px; padding-right:28px;"><span>WATER</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>ELECTRIC</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>SEPTIC TANK</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>AIR CONDITIONING</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>OYOKAWA SETSUBI KOGYO</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>WATER</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>ELECTRIC</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>SEPTIC TANK</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>AIR CONDITIONING</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>OYOKAWA SETSUBI KOGYO</span><span aria-hidden="true" style="color:#F7C21B;">●</span></div><div style="display:inline-flex; gap:28px; padding-right:28px;"><span>WATER</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>ELECTRIC</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>SEPTIC TANK</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>AIR CONDITIONING</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>OYOKAWA SETSUBI KOGYO</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>WATER</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>ELECTRIC</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>SEPTIC TANK</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>AIR CONDITIONING</span><span aria-hidden="true" style="color:#F7C21B;">●</span><span>OYOKAWA SETSUBI KOGYO</span><span aria-hidden="true" style="color:#F7C21B;">●</span></div></div></div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ heroSplit }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="ヒーロー（別案）" style="display:flex; flex-direction:{{ splitDir }}; min-height:100svh; background:#061a36; color:#F4F6F9;">
+    <div style="flex:1; display:flex; align-items:flex-end; padding:clamp(96px,14vh,150px) clamp(24px,5vw,64px) clamp(48px,7vh,80px); background:linear-gradient(160deg,#0d3566,#041326);">
+      <div>
+        <h1 style="margin:0 0 22px; font-weight:500; font-size:clamp(12px,1.5vw,15px); letter-spacing:.16em; color:#B8CCE4; display:flex; align-items:center; gap:14px;"><span style="display:inline-block; width:42px; height:1px; background:{{ accent }};"></span>千葉県匝瑳市の設備工事会社</h1>
+        <p class="hero-rise-text" style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:clamp(34px,5vw,64px); line-height:1.3;"><span class="line-chunk">水・電気・浄化槽。</span><span class="line-chunk">設備工事を、</span><span class="line-chunk">一社で。</span></p>
+        <p style="margin:26px 0 34px; max-width:460px; font-size:clamp(15px,1.6vw,17px); line-height:2; color:rgba(244,246,249,.9);">東総・北総エリアの工務店さまの設備パートナーとして、水道の申請から施工・引き渡し後の対応まで引き受けます。</p>
+        <a href="/business" style="text-decoration:none; background:#F7C21B; color:#0B2E59; font-weight:700; font-size:15px; padding:16px 32px; border-radius:2px; display:inline-flex; align-items:center; gap:10px;">企業の方へ｜取引のご相談 <span style="font-family:'Barlow Semi Condensed',sans-serif;">&rarr;</span></a>
+      </div>
+    </div>
+    <div style="flex:1; position:relative; overflow:hidden; background:#0B2E59; min-height:46svh;">
+      <div aria-hidden="true" style="position:absolute; inset:0; background:radial-gradient(120% 90% at 50% 30%, rgba(31,95,175,.45), rgba(6,26,54,0) 60%), linear-gradient(150deg,#0b2e59,#051a35); animation:ni-pan 22s ease-in-out infinite alternate;"></div>
+      <img src="assets/p-pipe-work.jpg" alt="給排水管を施工する職人の手元" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(.6);">
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- 🔒 CMS固定領域（design-parts-52系）：構造/クラス変更禁止・承認/解除なし。見た目はadd.cssのみ -->
+  <!-- 🔒 LOCK START -->
+  <section class="design-parts-52_top design-parts-52 bg-color" style="background:#F4F6F9;">
+    <div class="container" style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div class="content mx-auto" style="display:flex; align-items:center; gap:clamp(16px,3vw,40px); min-height:80px; border-bottom:1px solid #D5DCE5; flex-wrap:wrap;">
+        <h4 class="banner-area" style="margin:0; font-family:'Barlow Semi Condensed',sans-serif; letter-spacing:.22em; font-size:19px; font-weight:600; color:{{ accent }}; display:flex; align-items:center; gap:12px; white-space:nowrap;">NEWS<span style="display:inline-block; width:26px; height:1px; background:#C3CCD8;"></span></h4>
+        <ul class="mb-0" style="list-style:none; margin:0; padding:0; flex:1; min-width:240px;">
+          <!-- CMS LOOP START -->
+          <li><a href="/blog" style="display:flex; align-items:center; min-height:60px; text-decoration:none; color:#1A2230;"><div class="parts-52-textarea" style="display:flex; align-items:center; gap:clamp(14px,2.4vw,28px); flex-wrap:wrap;"><span class="date" style="font-family:'Barlow Semi Condensed',sans-serif; letter-spacing:.08em; font-size:15px; color:#6B7686; white-space:nowrap;">0000.00.00</span><span class="d-inline-block" style="font-size:16px; line-height:1.7;">新着情報のタイトルがここに入ります</span></div></a></li>
+          <!-- CMS LOOP END -->
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- 🔒 LOCK END -->
+
+  <section data-screen-label="数字で見るオヨカワ" style="position:relative; background:#FFFFFF; padding:clamp(64px,9vh,110px) 0;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="margin-bottom:clamp(28px,4vw,44px);">
+        <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(17px,1.8vw,20px); font-weight:500; letter-spacing:.12em; color:#1F5FAF;">Facts</p>
+        <h2 class="head-rise" style="margin:0 0 18px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(28px,3.6vw,40px); line-height:1.35;"><span class="line-chunk">数字で見る</span><span class="line-chunk">オヨカワ設備工業</span></h2>
+      </div>
+      <!-- 要取材：取引社数・年間施工件数（法人が判断しやすい数字）をヒアリングで回収 -->
+      <div data-reveal class="recruit-stats" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:clamp(20px,3vw,40px); border-top:2px solid #0B2E59; padding-top:clamp(28px,4vw,40px);">
+        <div><span data-countup style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:clamp(46px,5.6vw,68px); line-height:1; color:#0B2E59;">1989</span><span style="font-size:16px; margin-left:5px;">年</span><p style="margin:10px 0 0; font-size:15px; color:#4A5566;">前身「及川電気設備」創業</p></div>
+        <div><span data-countup style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:clamp(46px,5.6vw,68px); line-height:1; color:#0B2E59;">5</span><span style="font-size:16px; margin-left:5px;">種</span><p style="margin:10px 0 0; font-size:15px; color:#4A5566;">許可・指定・届出</p></div>
+        <div><span data-countup style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:clamp(46px,5.6vw,68px); line-height:1; color:#0B2E59;">6</span><span style="font-size:16px; margin-left:5px;">種</span><p style="margin:10px 0 0; font-size:15px; color:#4A5566;">保有する国家資格等</p></div>
+        <div><span style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:clamp(46px,5.6vw,68px); line-height:1; color:#0B2E59;">○○</span><span style="font-size:16px; margin-left:5px;">社</span><p style="margin:10px 0 0; font-size:15px; color:#4A5566;">お取引のある工務店・建設会社</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="お悩み→解決" style="position:relative; background:#F4F6F9; padding:clamp(80px,12vh,130px) 0; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; left:clamp(18px,4vw,46px); top:0; width:2px; height:clamp(48px,8vh,80px); background:#F7C21B;"></div>
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="max-width:760px; margin-bottom:clamp(32px,5vw,52px);">
+        <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(17px,1.8vw,20px); font-weight:500; letter-spacing:.12em; color:#1F5FAF;">For Builders</p>
+        <h2 class="head-rise" style="margin:0 0 18px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(28px,3.6vw,40px); line-height:1.35;"><span class="line-chunk">設備業者の手配で、</span><span class="line-chunk">こんなお困りごとは</span><span class="line-chunk">ありませんか？</span></h2>
+      </div>
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:clamp(24px,4vw,56px); align-items:stretch;">
+        <ul style="list-style:none; margin:0; padding:clamp(12px,2vw,20px) clamp(20px,2.6vw,32px); background:#FFFFFF; border:1px solid #D5DCE5; border-radius:4px;">
+          <li style="display:flex; gap:14px; align-items:flex-start; padding:16px 0; border-bottom:1px solid #D5DCE5; font-size:clamp(15px,1.6vw,16.5px); line-height:1.7;"><span aria-hidden="true" style="flex:none; width:20px; height:20px; margin-top:3px; border:2px solid #0B2E59; border-radius:2px;"></span><span>給排水・電気・浄化槽で、業者を別々に手配している</span></li>
+          <li style="display:flex; gap:14px; align-items:flex-start; padding:16px 0; border-bottom:1px solid #D5DCE5; font-size:clamp(15px,1.6vw,16.5px); line-height:1.7;"><span aria-hidden="true" style="flex:none; width:20px; height:20px; margin-top:3px; border:2px solid #0B2E59; border-radius:2px;"></span><span>水道の申請や浄化槽の届出まで任せられる業者がいない</span></li>
+          <li style="display:flex; gap:14px; align-items:flex-start; padding:16px 0; border-bottom:1px solid #D5DCE5; font-size:clamp(15px,1.6vw,16.5px); line-height:1.7;"><span aria-hidden="true" style="flex:none; width:20px; height:20px; margin-top:3px; border:2px solid #0B2E59; border-radius:2px;"></span><span>繁忙期に設備業者がつかまらず、工程が止まる</span></li>
+          <li style="display:flex; gap:14px; align-items:flex-start; padding:16px 0; border-bottom:1px solid #D5DCE5; font-size:clamp(15px,1.6vw,16.5px); line-height:1.7;"><span aria-hidden="true" style="flex:none; width:20px; height:20px; margin-top:3px; border:2px solid #0B2E59; border-radius:2px;"></span><span>引き渡し後の不具合に、すぐ動いてもらえない</span></li>
+        </ul>
+        <div style="position:relative; background:#0B2E59; color:#F4F6F9; border-radius:4px; padding:clamp(28px,3.4vw,44px); display:flex; flex-direction:column; justify-content:center; gap:18px;">
+          <span aria-hidden="true" style="position:absolute; left:0; top:clamp(28px,3.4vw,44px); width:clamp(20px,3vw,40px); height:2px; background:#F7C21B;"></span>
+          <p style="margin:0; font-family:'Barlow Semi Condensed',sans-serif; font-size:15px; letter-spacing:.14em; color:#F7C21B; padding-left:clamp(12px,1.4vw,18px);">SOLUTION</p>
+          <h3 style="margin:0; font-weight:700; font-size:clamp(22px,2.6vw,30px); line-height:1.45;"><span class="line-chunk">オヨカワなら、</span><span class="line-chunk">窓口ひとつで</span><span class="line-chunk">完結します。</span></h3>
+          <p style="margin:0; font-size:clamp(15px,1.6vw,16.5px); line-height:1.9; color:rgba(244,246,249,.9);">給排水衛生・電気・浄化槽・空調をまとめてお受けします。各自治体の指定工事店として、申請手続きも当社で対応。現場ごとの業者調整の手間を減らします。</p>
+          <div><a href="/business" class="ni-bounce" style="text-decoration:none; color:#F4F6F9; font-weight:700; font-size:15px; letter-spacing:.04em; display:inline-flex; align-items:center; gap:10px; border-bottom:1px solid currentColor; padding-bottom:4px; min-height:44px; white-space:nowrap;">企業の方へ（詳しく見る） <span style="font-family:'Barlow Semi Condensed',sans-serif;">&rarr;</span></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="選ばれる理由" style="position:relative; overflow:hidden; background:#F4F6F9; padding:clamp(80px,12vh,150px) 0;">
+    <div aria-hidden="true" style="position:absolute; left:0; right:0; bottom:0; height:50%; z-index:0; background-image:linear-gradient(rgba(244,246,249,.9), rgba(244,246,249,.88)), url('assets/p-drain-2.jpg'); background-size:cover; background-position:center; background-repeat:no-repeat; -webkit-mask-image:linear-gradient(to bottom, transparent 0%, #000 24%); mask-image:linear-gradient(to bottom, transparent 0%, #000 24%);"></div>
+    <div aria-hidden="true" style="position:absolute; top:clamp(150px,20vw,300px); left:clamp(-10px,-1vw,0px); font-family:'Barlow Semi Condensed',sans-serif; font-weight:400; font-size:clamp(120px,27vw,380px); line-height:.78; color:rgba(26,34,48,.045); letter-spacing:.01em; white-space:nowrap; pointer-events:none; z-index:0;">REASON</div>
+    <div style="position:relative; z-index:1; max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="max-width:760px; margin-bottom:clamp(40px,6vw,72px);">
+        <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(19px,2vw,23px); letter-spacing:.06em; color:{{ accent }};">Why Oyokawa</p>
+        <h2 class="head-rise" style="margin:0 0 18px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(30px,5vw,54px); line-height:1.2;"><span class="line-chunk">現場を止めない。</span><span class="line-chunk">窓口を増やさない。</span></h2>
+        <p style="margin:0; font-size:clamp(15px,1.6vw,17px); line-height:2; color:#4A5566;">オヨカワ設備工業が工務店さま・建設会社さまに選ばれる理由をご紹介します。</p>
+      </div>
+
+      <div data-reveal style="display:flex; flex-direction:column;">
+        <div style="margin-left:0; max-width:680px; border-top:1px solid #D5DCE5; padding:clamp(22px,3vw,34px) 0;">
+          <div style="display:flex; align-items:center; gap:clamp(16px,3vw,40px);">
+            <span style="flex:none; width:clamp(54px,5.5vw,86px); font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(42px,5vw,70px); line-height:.85; color:{{ accent }};">01</span>
+            <h3 class="reason-h3" style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(22px,2.6vw,30px); line-height:1.4;">設備工事をワンストップで</h3>
+          </div>
+          <p style="margin:11px 0 0; padding-left:calc(clamp(54px,5.5vw,86px) + clamp(16px,3vw,40px)); font-size:clamp(14px,1.5vw,15.5px); line-height:1.95; color:#4A5566;">水・電気・浄化槽・空調を一括で。発注窓口を一本化できます。</p>
+        </div>
+        <div style="margin-left:clamp(0px,7vw,120px); max-width:680px; border-top:1px solid #D5DCE5; padding:clamp(22px,3vw,34px) 0;">
+          <div style="display:flex; align-items:center; gap:clamp(16px,3vw,40px);">
+            <span style="flex:none; width:clamp(54px,5.5vw,86px); font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(42px,5vw,70px); line-height:.85; color:{{ accent }};">02</span>
+            <h3 class="reason-h3" style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(22px,2.6vw,30px); line-height:1.4;">各自治体の指定工事店</h3>
+          </div>
+          <p style="margin:11px 0 0; padding-left:calc(clamp(54px,5.5vw,86px) + clamp(16px,3vw,40px)); font-size:clamp(14px,1.5vw,15.5px); line-height:1.95; color:#4A5566;">八匝水道企業団・多古町・旭市・香取市の指定給水装置事業者。水道の申請まで対応します。</p>
+        </div>
+        <div style="margin-left:clamp(0px,14vw,240px); max-width:680px; border-top:1px solid #D5DCE5; padding:clamp(22px,3vw,34px) 0;">
+          <div style="display:flex; align-items:center; gap:clamp(16px,3vw,40px);">
+            <span style="flex:none; width:clamp(54px,5.5vw,86px); font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(42px,5vw,70px); line-height:.85; color:{{ accent }};">03</span>
+            <h3 class="reason-h3" style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(22px,2.6vw,30px); line-height:1.4;">有資格の職人が自社施工</h3>
+          </div>
+          <p style="margin:11px 0 0; padding-left:calc(clamp(54px,5.5vw,86px) + clamp(16px,3vw,40px)); font-size:clamp(14px,1.5vw,15.5px); line-height:1.95; color:#4A5566;">管工事施工管理技士・浄化槽設備士・電気工事士などの有資格者が現場を担当します。</p>
+        </div>
+        <div style="margin-left:clamp(0px,21vw,360px); max-width:680px; border-top:1px solid #D5DCE5; padding:clamp(22px,3vw,34px) 0;">
+          <div style="display:flex; align-items:center; gap:clamp(16px,3vw,40px);">
+            <span style="flex:none; width:clamp(54px,5.5vw,86px); font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(42px,5vw,70px); line-height:.85; color:{{ accent }};">04</span>
+            <h3 class="reason-h3" style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(22px,2.6vw,30px); line-height:1.4;">電気設備から続く技術</h3>
+          </div>
+          <p style="margin:11px 0 0; padding-left:calc(clamp(54px,5.5vw,86px) + clamp(16px,3vw,40px)); font-size:clamp(14px,1.5vw,15.5px); line-height:1.95; color:#4A5566;">平成元年創業の「及川電気設備」が前身。電気と水、両方が分かる施工をお届けします。</p>
+        </div>
+      </div>
+      <div data-reveal style="margin-top:clamp(40px,6vw,64px); text-align:center;">
+        <a href="/reason" class="ni-bounce" style="text-decoration:none; color:{{ accent }}; font-weight:700; font-size:15px; letter-spacing:.04em; display:inline-flex; align-items:center; gap:10px; border-bottom:1px solid {{ accent }}; padding-bottom:4px;">選ばれる理由をすべて見る <span style="font-family:'Barlow Semi Condensed',sans-serif;">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="事業（ギャラリー）" style="position:relative; background:radial-gradient(140% 80% at 80% 0%, #15457f 0%, #0d3566 55%, #0a2a52 100%); color:#F4F6F9; padding:clamp(80px,12vh,150px) 0; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; right:clamp(30px,7vw,170px); top:clamp(70px,11vh,150px); font-family:'Barlow Semi Condensed',sans-serif; font-weight:400; font-size:clamp(72px,12vw,200px); color:rgba(190,210,235,.07); white-space:nowrap; letter-spacing:.02em; pointer-events:none; line-height:1; z-index:0;">{{ activeEn }}</div>
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="max-width:680px; margin-bottom:clamp(40px,6vw,68px);">
+        <p style="margin:0 0 16px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(19px,2vw,23px); letter-spacing:.06em; color:#F7C21B;">Service</p>
+        <h2 class="head-rise" style="margin:0 0 22px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(28px,3.6vw,40px); line-height:1.35; letter-spacing:.02em;">事業内容</h2>
+        <p style="margin:0; font-size:clamp(15px,1.6vw,17px); line-height:2; color:rgba(244,246,249,.82);">給排水衛生設備を中心に、電気・浄化槽・空調まで。住宅から店舗、畜産施設、公共施設まで、建物の設備工事をまとめてお受けしています。</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:clamp(36px,5vw,72px); align-items:stretch;">
+        <div style="position:relative; min-height:clamp(240px,34vw,430px); margin-left:calc(-1 * (clamp(18px,4vw,46px) + max(0px, (100vw - 1340px) / 2))); width:calc(100% + clamp(18px,4vw,46px) + max(0px, (100vw - 1340px) / 2));">
+          <div style="position:relative; width:100%; height:100%; min-height:inherit;">
+            <sc-for list="{{ activePlates }}" as="plate" hint-placeholder-count="0">
+              <figure style="position:absolute; inset:0; margin:0; border-radius:0 3px 3px 0; overflow:hidden; opacity:{{ plate.opacity }}; z-index:{{ plate.z }}; transition:opacity .6s ease; background-color:#0d3566; background-image:{{ plate.imgCss }}; background-size:cover; background-position:center; box-shadow:0 44px 88px -42px rgba(0,0,0,.75); display:flex; flex-direction:column; justify-content:space-between; padding:clamp(18px,2.6vw,28px); color:#EEF3F9;">
+                <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(to top, rgba(4,16,34,.72), transparent 55%);"></div>
+                <div style="position:relative; display:flex; justify-content:space-between; align-items:flex-start; font-family:'Barlow Semi Condensed',sans-serif; letter-spacing:.14em; font-size:12px; opacity:.85; text-shadow:0 1px 6px rgba(0,0,0,.5);"><span></span><span>{{ plate.num }} / {{ plate.total }}</span></div>
+                <figcaption style="position:relative;"><span style="display:block; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(18px,1.9vw,22px); text-shadow:0 2px 10px rgba(0,0,0,.55);">{{ plate.name }}</span></figcaption>
+              </figure>
+            </sc-for>
+          </div>
+        </div>
+
+        <div onMouseLeave="{{ onMenuLeave }}" style="display:flex; flex-direction:column;">
+          <sc-for list="{{ labels }}" as="lab" hint-placeholder-count="4">
+            <a href="{{ lab.href }}" onMouseEnter="{{ lab.onEnter }}" style="position:relative; text-decoration:none; color:#EEF3F9; padding:clamp(16px,2.2vw,22px) 6px; border-top:1px solid rgba(255,255,255,.13); display:flex; align-items:center; gap:18px; opacity:{{ lab.labOpacity }}; transition:opacity .4s ease;">
+              <span style="flex:1; display:flex; flex-direction:column; gap:5px;">
+                <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(22px,3.4vw,35px); line-height:1.1;">{{ lab.jp }}</span>
+                <span style="font-size:16px; letter-spacing:.1em; opacity:.62;"><span style="font-family:'Barlow Semi Condensed',sans-serif; letter-spacing:.04em;">{{ lab.en }}</span>　／　{{ lab.sub }}</span>
+              </span>
+              <span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:22px; opacity:.6;">&rarr;</span>
+              <span aria-hidden="true" style="position:absolute; left:0; bottom:-1px; height:2px; width:{{ lab.lineW }}; background:#EEF3F9; transition:width .5s cubic-bezier(.2,.7,.2,1);"></span>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+    <div data-reveal style="max-width:1340px; margin:clamp(32px,4vw,48px) auto 0; padding:0 clamp(18px,4vw,46px); text-align:right;"><a href="/service" class="ni-bounce" style="text-decoration:none; color:#F4F6F9; font-weight:700; font-size:15px; letter-spacing:.04em; display:inline-flex; align-items:center; gap:10px; border-bottom:1px solid currentColor; padding-bottom:4px; min-height:44px; white-space:nowrap;">事業内容を詳しく見る <span style="font-family:'Barlow Semi Condensed',sans-serif;">&rarr;</span></a></div>
+  </section>
+
+  <section data-screen-label="対応する建物" style="background:#FFFFFF; padding:clamp(80px,12vh,130px) 0;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:clamp(36px,5vw,56px);">
+        <div>
+          <p style="margin:0 0 16px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(19px,2vw,23px); letter-spacing:.06em; color:{{ accent }};">Buildings</p>
+          <h2 class="head-rise" style="margin:0 0 18px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(28px,3.6vw,40px); line-height:1.35;"><span class="line-chunk">住宅から公共施設まで、</span><span class="line-chunk">建物を選ばず対応</span></h2>
+          <p style="margin:0; font-size:clamp(15px,1.6vw,17px); line-height:2; color:#4A5566; max-width:480px;">戸建住宅・集合住宅・店舗・事務所・畜産施設・公共施設。建物の用途に合わせて、設備工事をまとめてお受けします。</p>
+        </div>
+        <a href="/blog-ex/instance" class="ni-bounce" style="text-decoration:none; color:{{ accent }}; font-weight:700; font-size:15px; letter-spacing:.04em; display:inline-flex; align-items:center; gap:10px; border-bottom:1px solid {{ accent }}; padding-bottom:4px; white-space:nowrap;">施工実績を見る <span style="font-family:'Barlow Semi Condensed',sans-serif;">&rarr;</span></a>
+      </div>
+      <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <div data-reveal style="display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:clamp(170px,18vw,240px); gap:clamp(4px,0.5vw,8px);">
+        <a href="/blog-ex/instance" class="work-tile" style="grid-column:span 4; grid-row:span 2;">
+          <div class="work-media" style="background:url('assets/p-kitchen.jpg') center/cover no-repeat;"></div>
+          <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(4,16,34,.82), transparent 60%);"></div>
+          <div style="position:absolute; left:0; bottom:0; z-index:2; padding:clamp(18px,2vw,28px); color:#EEF3F9;">
+            <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(21px,2.5vw,32px); line-height:1.3;">戸建住宅</span>
+            <span style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 13px; margin-top:11px; font-size:12.5px; color:rgba(244,246,249,.74);"><span>新築・リフォーム</span><span aria-hidden="true" style="opacity:.4;">|</span><span>給排水衛生・電気</span><span aria-hidden="true" style="opacity:.4;">|</span><span>浄化槽</span></span>
+          </div>
+        </a>
+        <a href="/blog-ex/instance" class="work-tile" style="grid-column:span 2; grid-row:span 1;">
+          <div class="work-media" style="background:url('assets/p-shop-duct.jpg') center/cover no-repeat;"></div>
+          <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(4,16,34,.78), transparent 62%);"></div>
+          <div style="position:absolute; left:0; bottom:0; z-index:2; padding:clamp(13px,1.4vw,18px); color:#EEF3F9;"><span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(15px,1.5vw,18px); line-height:1.35;">店舗・飲食店</span><span style="display:block; margin-top:4px; font-size:11.5px; color:rgba(244,246,249,.7);">厨房・排気・浄化槽</span></div>
+        </a>
+        <a href="/blog-ex/instance" class="work-tile" style="grid-column:span 2; grid-row:span 1;">
+          <div class="work-media" style="background:url('assets/p-drain-2.jpg') center/cover no-repeat;"></div>
+          <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(4,16,34,.78), transparent 62%);"></div>
+          <div style="position:absolute; left:0; bottom:0; z-index:2; padding:clamp(13px,1.4vw,18px); color:#EEF3F9;"><span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(15px,1.5vw,18px); line-height:1.35;">畜産施設</span><span style="display:block; margin-top:4px; font-size:11.5px; color:rgba(244,246,249,.7);">給排水設備の更新</span></div>
+        </a>
+        <a href="/blog-ex/instance" class="work-tile" style="grid-column:span 2; grid-row:span 1;">
+          <div class="work-media" style="background:url('assets/p-drain-1.jpg') center/cover no-repeat;"></div>
+          <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(4,16,34,.78), transparent 62%);"></div>
+          <div style="position:absolute; left:0; bottom:0; z-index:2; padding:clamp(13px,1.4vw,18px); color:#EEF3F9;"><span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(15px,1.5vw,18px); line-height:1.35;">公共施設</span><span style="display:block; margin-top:4px; font-size:11.5px; color:rgba(244,246,249,.7);">公共工事にも対応</span></div>
+        </a>
+        <a href="/blog-ex/instance" class="work-tile" style="grid-column:span 2; grid-row:span 1;">
+          <div class="work-media" style="background:url('assets/p-shop-booth.jpg') center/cover no-repeat;"></div>
+          <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(4,16,34,.78), transparent 62%);"></div>
+          <div style="position:absolute; left:0; bottom:0; z-index:2; padding:clamp(13px,1.4vw,18px); color:#EEF3F9;"><span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(15px,1.5vw,18px); line-height:1.35;">事務所・集合住宅</span><span style="display:block; margin-top:4px; font-size:11.5px; color:rgba(244,246,249,.7);">電気・空調</span></div>
+        </a>
+        <a href="/blog-ex/instance" class="work-tile" style="grid-column:span 2; grid-row:span 1;">
+          <div class="work-media" style="background:url('assets/p-toilet-after.jpg') center/cover no-repeat;"></div>
+          <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(4,16,34,.78), transparent 62%);"></div>
+          <div style="position:absolute; left:0; bottom:0; z-index:2; padding:clamp(13px,1.4vw,18px); color:#EEF3F9;"><span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:clamp(15px,1.5vw,18px); line-height:1.35;">水回りリフォーム</span><span style="display:block; margin-top:4px; font-size:11.5px; color:rgba(244,246,249,.7);">個人のお客様</span></div>
+        </a>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <div data-reveal class="work-grid-mobile" style="display:grid; grid-template-columns:repeat(2,1fr); grid-auto-rows:clamp(200px,54vw,270px); gap:10px;">
+        <a href="/blog-ex/instance" class="work-tile" style="grid-column:span 2;">
+          <div class="work-media" style="background:url('assets/p-kitchen.jpg') center/cover no-repeat;"></div>
+          <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(4,16,34,.82), transparent 60%);"></div>
+          <div style="position:absolute; left:0; bottom:0; z-index:2; padding:18px; color:#EEF3F9;"><span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:21px; line-height:1.32;">戸建住宅</span><span style="display:block; margin-top:5px; font-size:12px; color:rgba(244,246,249,.72);">新築・リフォーム／給排水・電気・浄化槽</span></div>
+        </a>
+        <a href="/blog-ex/instance" class="work-tile">
+          <div class="work-media" style="background:url('assets/p-shop-duct.jpg') center/cover no-repeat;"></div>
+          <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(4,16,34,.78), transparent 62%);"></div>
+          <div style="position:absolute; left:0; bottom:0; z-index:2; padding:14px; color:#EEF3F9;"><span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:15px; line-height:1.35;">店舗・飲食店</span><span style="display:block; margin-top:4px; font-size:11px; color:rgba(244,246,249,.7);">厨房・排気・浄化槽</span></div>
+        </a>
+        <a href="/blog-ex/instance" class="work-tile">
+          <div class="work-media" style="background:url('assets/p-drain-2.jpg') center/cover no-repeat;"></div>
+          <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(4,16,34,.78), transparent 62%);"></div>
+          <div style="position:absolute; left:0; bottom:0; z-index:2; padding:14px; color:#EEF3F9;"><span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:15px; line-height:1.35;">畜産施設</span><span style="display:block; margin-top:4px; font-size:11px; color:rgba(244,246,249,.7);">給排水設備の更新</span></div>
+        </a>
+        <a href="/blog-ex/instance" class="work-tile">
+          <div class="work-media" style="background:url('assets/p-drain-1.jpg') center/cover no-repeat;"></div>
+          <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(4,16,34,.78), transparent 62%);"></div>
+          <div style="position:absolute; left:0; bottom:0; z-index:2; padding:14px; color:#EEF3F9;"><span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:15px; line-height:1.35;">公共施設</span><span style="display:block; margin-top:4px; font-size:11px; color:rgba(244,246,249,.7);">公共工事にも対応</span></div>
+        </a>
+        <a href="/blog-ex/instance" class="work-tile">
+          <div class="work-media" style="background:url('assets/p-shop-booth.jpg') center/cover no-repeat;"></div>
+          <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(4,16,34,.78), transparent 62%);"></div>
+          <div style="position:absolute; left:0; bottom:0; z-index:2; padding:14px; color:#EEF3F9;"><span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:15px; line-height:1.35;">事務所・集合住宅</span><span style="display:block; margin-top:4px; font-size:11px; color:rgba(244,246,249,.7);">電気・空調</span></div>
+        </a>
+        <a href="/blog-ex/instance" class="work-tile">
+          <div class="work-media" style="background:url('assets/p-toilet-after.jpg') center/cover no-repeat;"></div>
+          <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(4,16,34,.78), transparent 62%);"></div>
+          <div style="position:absolute; left:0; bottom:0; z-index:2; padding:14px; color:#EEF3F9;"><span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:600; font-size:15px; line-height:1.35;">水回りリフォーム</span><span style="display:block; margin-top:4px; font-size:11px; color:rgba(244,246,249,.7);">個人のお客様</span></div>
+        </a>
+      </div>
+      </sc-if>
+    </div>
+  </section>
+
+
+  <div aria-hidden="true" data-label="marquee-biz" style="background:#1F5FAF; overflow:hidden; white-space:nowrap; padding:clamp(8px,1.4vw,16px) 0 0;">
+    <div class="oy-marq oy-marq-slow" style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:700; font-size:clamp(64px,12vw,176px); line-height:1; letter-spacing:.02em; color:transparent; -webkit-text-stroke:1.5px rgba(255,255,255,.55);"><div style="display:inline-flex; gap:.3em; padding-right:.3em;"><span>WATER</span><span>ELECTRIC</span><span>SEPTIC TANK</span><span>PARTNER</span><span>WATER</span><span>ELECTRIC</span><span>SEPTIC TANK</span><span>PARTNER</span></div><div style="display:inline-flex; gap:.3em; padding-right:.3em;"><span>WATER</span><span>ELECTRIC</span><span>SEPTIC TANK</span><span>PARTNER</span><span>WATER</span><span>ELECTRIC</span><span>SEPTIC TANK</span><span>PARTNER</span></div></div>
+  </div>
+  <section class="oy-frame" data-screen-label="企業の方へバナー" style="background:#1F5FAF; padding:clamp(10px,2vw,20px) clamp(10px,2.6vw,36px) clamp(10px,2.6vw,36px);">
+    <div style="position:relative; background:#0B2E59; color:#F4F6F9; padding:clamp(56px,8vh,100px) 0; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; right:-4%; top:-18%; font-family:'Barlow Semi Condensed',sans-serif; font-weight:300; font-size:clamp(120px,22vw,320px); color:rgba(190,210,235,.06); line-height:1; pointer-events:none; white-space:nowrap;">PARTNER</div>
+    <div style="position:relative; max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px); display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:clamp(32px,5vw,72px); align-items:center;">
+      <div data-reveal>
+        <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(17px,1.8vw,20px); font-weight:500; letter-spacing:.12em; color:#F7C21B;">For Business</p>
+        <h2 class="head-rise" style="margin:0 0 18px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(28px,3.6vw,40px); line-height:1.35;"><span class="line-chunk">工務店さまの</span><span class="line-chunk">「設備部門」として。</span></h2>
+        <p style="margin:0; font-size:clamp(15px,1.6vw,16.5px); line-height:1.9; color:rgba(244,246,249,.86);">まずは1現場からのご相談も歓迎しています。新規のお取引・協力会社のご相談はこちらから。</p>
+        <div style="margin-top:clamp(24px,3vw,32px);"><a href="/business" class="cta-letterhop" style="text-decoration:none; background:#F7C21B; color:#0B2E59; font-weight:700; font-size:16px; letter-spacing:.04em; padding:16px 30px; border-radius:4px; display:inline-flex; align-items:center; gap:10px; min-height:54px;">企業の方へ <span style="font-family:'Barlow Semi Condensed',sans-serif;">&rarr;</span></a></div>
+      </div>
+      <div data-reveal class="biz-flow" style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px;">
+        <div class="oy-lift" style="position:relative; background:#FFFFFF; color:#0B2E59; border-radius:4px; padding:18px 16px; display:flex; flex-direction:column; gap:4px;"><span style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:14px; letter-spacing:.1em; color:#1F5FAF;">STEP 1</span><span style="font-weight:700; font-size:17px;">ご相談</span><span style="font-size:13.5px; color:#4A5566;">電話・フォーム</span><span aria-hidden="true" class="biz-pipe" style="position:absolute; top:50%; right:-14px; width:14px; height:2px; background:#F7C21B;"></span></div>
+        <div class="oy-lift" style="position:relative; background:#FFFFFF; color:#0B2E59; border-radius:4px; padding:18px 16px; display:flex; flex-direction:column; gap:4px;"><span style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:14px; letter-spacing:.1em; color:#1F5FAF;">STEP 2</span><span style="font-weight:700; font-size:17px;">現場確認</span><span style="font-size:13.5px; color:#4A5566;">図面・打合せ</span><span aria-hidden="true" class="biz-pipe" style="position:absolute; top:50%; right:-14px; width:14px; height:2px; background:#F7C21B;"></span></div>
+        <div class="oy-lift" style="position:relative; background:#FFFFFF; color:#0B2E59; border-radius:4px; padding:18px 16px; display:flex; flex-direction:column; gap:4px;"><span style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:14px; letter-spacing:.1em; color:#1F5FAF;">STEP 3</span><span style="font-weight:700; font-size:17px;">お見積り</span><span style="font-size:13.5px; color:#4A5566;">無料</span><span aria-hidden="true" class="biz-pipe" style="position:absolute; top:50%; right:-14px; width:14px; height:2px; background:#F7C21B;"></span></div>
+        <div class="oy-lift" style="position:relative; background:#FFFFFF; color:#0B2E59; border-radius:4px; padding:18px 16px; display:flex; flex-direction:column; gap:4px;"><span style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:14px; letter-spacing:.1em; color:#1F5FAF;">STEP 4</span><span style="font-weight:700; font-size:17px;">施工</span><span style="font-size:13.5px; color:#4A5566;">申請も対応</span></div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- 🔒 CMS固定領域（parts228系）：構造/クラス変更禁止・承認/解除なし。見た目はadd.cssのみ -->
+  <!-- 🔒 LOCK START -->
+  <section class="parts228_section" data-screen-label="ブログ" style="background-color:#E8EDF3; background-image:linear-gradient(#F4F6F9 1px, transparent 1px), linear-gradient(90deg, #F4F6F9 1px, transparent 1px); background-size:clamp(27px,2.67vw,37px) clamp(27px,2.67vw,37px); padding:clamp(80px,12vh,150px) 0;">
+    <div class="parts228_wrap" style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div class="top-blog-head" data-reveal style="display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:clamp(36px,5vw,56px);">
+        <div>
+          <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(17px,1.8vw,20px); font-weight:500; letter-spacing:.12em; color:#1F5FAF;">Works</p>
+          <h2 class="head-rise" style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(28px,3.6vw,40px); line-height:1.35; color:#1A2230;">施工実績</h2>
+          <p style="margin:14px 0 0; font-size:17px; color:#4A5566;">工務店さま・建設会社さまからのご依頼を中心に、最新の施工事例をご紹介します。</p>
+        </div>
+        <a href="/blog-ex/instance" class="ni-bounce" style="text-decoration:none; color:{{ accent }}; font-weight:700; font-size:15px; letter-spacing:.04em; display:inline-flex; align-items:center; gap:10px; border-bottom:1px solid {{ accent }}; padding-bottom:4px; white-space:nowrap;">施工実績一覧へ <span style="font-family:'Barlow Semi Condensed',sans-serif;">&rarr;</span></a>
+      </div>
+      <main class="parts228_main" data-reveal>
+        <ul class="parts228_post_list">
+          <!-- CMS LOOP START -->
+          <li class="parts228_post_wrap">
+            <div class="parts228_post_status"><span class="parts228_post_date">0000.00.00</span></div>
+            <div class="parts228_post_title-excerpt"><h3 class="parts228_post_title"><a href="/blog-ex/instance">匝瑳市 飲食店 浄化槽（30人槽）新設工事</a></h3></div>
+            <a class="parts228_post_img" href="/blog-ex/instance"><img src="assets/p-shop-duct.jpg" alt="" /></a>
+          </li>
+          <!-- CMS LOOP END -->
+          <li class="parts228_post_wrap">
+            <div class="parts228_post_status"><span class="parts228_post_date">0000.00.00</span></div>
+            <div class="parts228_post_title-excerpt"><h3 class="parts228_post_title"><a href="/blog-ex/instance">匝瑳市 消防団機庫 設備工事</a></h3></div>
+            <a class="parts228_post_img" href="/blog-ex/instance"><img src="assets/p-drain-1.jpg" alt="" /></a>
+          </li>
+          <li class="parts228_post_wrap">
+            <div class="parts228_post_status"><span class="parts228_post_date">0000.00.00</span></div>
+            <div class="parts228_post_title-excerpt"><h3 class="parts228_post_title"><a href="/blog-ex/instance">匝瑳市O様邸 キッチンリフォーム</a></h3></div>
+            <a class="parts228_post_img" href="/blog-ex/instance"><img src="assets/p-kitchen.jpg" alt="" /></a>
+          </li>
+        </ul>
+      </main>
+    </div>
+  </section>
+  <!-- 🔒 LOCK END -->
+
+  <section data-screen-label="お取引先さまの声" style="background:#F4F6F9; padding:clamp(80px,12vh,130px) 0;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:clamp(32px,4vw,48px);">
+        <div><p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(17px,1.8vw,20px); font-weight:500; letter-spacing:.12em; color:#1F5FAF;">Voice</p>
+        <h2 class="head-rise" style="margin:0 0 18px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(28px,3.6vw,40px); line-height:1.35;">お取引先さまの声</h2></div>
+        <a href="/voice" class="ni-bounce" style="text-decoration:none; color:#1F5FAF; font-weight:700; font-size:15px; letter-spacing:.04em; display:inline-flex; align-items:center; gap:10px; border-bottom:1px solid currentColor; padding-bottom:4px; min-height:44px; white-space:nowrap;">お客様の声をもっと見る <span style="font-family:'Barlow Semi Condensed',sans-serif;">&rarr;</span></a>
+      </div>
+      <!-- 要取材：取引先の声（下記はダミー。社名の匿名可否を確認） -->
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); gap:clamp(16px,2vw,24px);">
+        <figure class="oy-lift" style="margin:0; background:#FFFFFF; border:1px solid #D5DCE5; border-radius:4px; padding:clamp(22px,2.6vw,32px); display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,2vw,24px); align-items:start;">
+          <div aria-hidden="true" style="width:clamp(64px,7vw,88px); aspect-ratio:1; border-radius:4px; background:#E8EDF3; display:flex; align-items:center; justify-content:center; font-family:'Barlow Semi Condensed',sans-serif; font-size:12px; letter-spacing:.1em; color:#6B7686;">LOGO</div>
+          <div><blockquote style="margin:0 0 10px; font-weight:700; font-size:clamp(17px,1.9vw,20px); line-height:1.55; color:#0B2E59;">「申請まで任せられるので、工程が組みやすい」</blockquote><p style="margin:0 0 12px; font-size:15px; line-height:1.85; color:#4A5566;">給排水と浄化槽をまとめてお願いでき、申請の段取りも任せられるので、社内の調整が減りました。</p><figcaption style="font-size:13.5px; color:#6B7686;">香取市 工務店 A社さま（サンプル）</figcaption></div>
+        </figure>
+        <figure class="oy-lift" style="margin:0; background:#FFFFFF; border:1px solid #D5DCE5; border-radius:4px; padding:clamp(22px,2.6vw,32px); display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,2vw,24px); align-items:start;">
+          <div aria-hidden="true" style="width:clamp(64px,7vw,88px); aspect-ratio:1; border-radius:4px; background:#E8EDF3; display:flex; align-items:center; justify-content:center; font-family:'Barlow Semi Condensed',sans-serif; font-size:12px; letter-spacing:.1em; color:#6B7686;">LOGO</div>
+          <div><blockquote style="margin:0 0 10px; font-weight:700; font-size:clamp(17px,1.9vw,20px); line-height:1.55; color:#0B2E59;">「急な不具合でも、すぐに来てくれる」</blockquote><p style="margin:0 0 12px; font-size:15px; line-height:1.85; color:#4A5566;">引き渡し後の不具合にも、窓口ひとつで対応してもらえるので施主さまへの説明がしやすくなりました。</p><figcaption style="font-size:13.5px; color:#6B7686;">旭市 建設会社 B社さま（サンプル）</figcaption></div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+
+  <div aria-hidden="true" data-label="marquee-recruit" style="background:#1F5FAF; overflow:hidden; white-space:nowrap; padding:clamp(8px,1.4vw,16px) 0 0;">
+    <div class="oy-marq oy-marq-slow" style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:700; font-size:clamp(64px,12vw,176px); line-height:1; letter-spacing:.02em; color:transparent; -webkit-text-stroke:1.5px rgba(255,255,255,.55);"><div style="display:inline-flex; gap:.3em; padding-right:.3em;"><span>RECRUIT</span><span>RECRUIT</span><span>RECRUIT</span><span>RECRUIT</span><span>RECRUIT</span><span>RECRUIT</span></div><div style="display:inline-flex; gap:.3em; padding-right:.3em;"><span>RECRUIT</span><span>RECRUIT</span><span>RECRUIT</span><span>RECRUIT</span><span>RECRUIT</span><span>RECRUIT</span></div></div>
+  </div>
+<section class="oy-frame" data-screen-label="採用" style="background:#1F5FAF; padding:clamp(10px,2vw,20px) clamp(10px,2.6vw,36px) clamp(10px,2.6vw,36px);">
+      <div style="position:relative; background:linear-gradient(rgba(6,26,54,.86), rgba(6,26,54,.92)), url('assets/p-demolition.jpg') center/cover no-repeat; color:#F4F6F9; padding:clamp(64px,10vh,120px) 0; overflow:hidden;">
+    <div style="position:relative; max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,340px),1fr)); gap:clamp(36px,5vw,72px); align-items:center;">
+    <div>
+      <div data-reveal style="max-width:640px; margin-bottom:clamp(40px,6vw,60px);">
+        <p style="margin:0 0 16px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(19px,2vw,23px); letter-spacing:.06em; color:#F7C21B;">Recruit</p>
+        <h2 class="head-rise" style="margin:0 0 20px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(28px,3.6vw,40px); line-height:1.35;"><span class="line-chunk">その腕を、</span><span class="line-chunk">正当に評価する</span><span class="line-chunk">会社へ。</span></h2>
+        <p style="margin:0; font-size:clamp(15px,1.6vw,17px); line-height:2; color:rgba(244,246,249,.82);">管工事・電気工事の経験者を募集しています。積み上げてきた技術と資格が、任される仕事と待遇に反映される環境です。</p>
+      </div>
+      <!-- 要取材：給与・待遇の確定値（下記は現行サイト掲載の条件のみ） -->
+      <div data-reveal class="recruit-stats" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px,1fr)); gap:clamp(20px,3vw,40px); border-top:1px solid rgba(255,255,255,.14); padding-top:clamp(30px,4vw,44px); margin-bottom:clamp(36px,5vw,48px);">
+        <div><span style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:clamp(34px,4.2vw,52px); line-height:1; color:#A9C4E8;">8:00-17:00</span><p style="margin:9px 0 0; font-size:16px; color:rgba(244,246,249,.72);">就業時間（現場により異なる）</p></div>
+        <div><span style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:clamp(34px,4.2vw,52px); line-height:1; color:#A9C4E8;">SUN</span><p style="margin:9px 0 0; font-size:16px; color:rgba(244,246,249,.72);">日曜休み／年末年始・お盆・GW</p></div>
+        <div><span data-countup style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:clamp(34px,4.2vw,52px); line-height:1; color:#A9C4E8;">6</span><span style="font-size:16px; margin-left:5px;">種</span><p style="margin:9px 0 0; font-size:16px; color:rgba(244,246,249,.72);">社内の保有資格</p></div>
+        <div><span style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:clamp(34px,4.2vw,52px); line-height:1; color:#A9C4E8;">正社員</span><p style="margin:9px 0 0; font-size:16px; color:rgba(244,246,249,.72);">資格取得支援制度あり</p></div>
+      </div>
+      <div data-reveal style="display:flex; flex-wrap:wrap; gap:14px; justify-content:flex-start;"><a href="/recruit/requirements" style="text-decoration:none; border:1.5px solid rgba(244,246,249,.7); color:#F4F6F9; font-weight:700; font-size:15px; letter-spacing:.05em; padding:15px 28px; border-radius:4px; display:inline-flex; align-items:center; gap:10px; min-height:52px;">募集要項を見る</a><a href="/recruit" class="recruit-cta cta-letterhop" style="text-decoration:none; background:#F4F6F9; color:#0B2E59; font-weight:700; font-size:15px; letter-spacing:.05em; padding:16px 32px; border-radius:4px; display:inline-flex; align-items:center; gap:10px; margin-left:0;">求職者の方へ <span style="font-family:'Barlow Semi Condensed',sans-serif;">&rarr;</span></a></div>
+    </div>
+    <div data-reveal style="display:flex; justify-content:center;">
+      <div style="position:relative; width:min(100%,520px); aspect-ratio:1;">
+        <svg class="oy-spin" viewBox="0 0 200 200" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; overflow:visible;">
+          <defs><path id="oy-recruit-ring" d="M100,100 m-86,0 a86,86 0 1,1 172,0 a86,86 0 1,1 -172,0" fill="none"></path></defs>
+          <text fill="#ffffff" textLength="530" lengthAdjust="spacing" style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:700; font-size:12.5px; letter-spacing:.12em;"><textPath href="#oy-recruit-ring" startOffset="0">RECRUIT ● OYOKAWA SETSUBI ● RECRUIT ● OYOKAWA SETSUBI ● </textPath></text>
+        </svg>
+        <div style="position:absolute; inset:15%; border-radius:50%; overflow:hidden; background:#0B2E59; border:3px solid #F7C21B;">
+          <img src="assets/p-demolition.jpg" alt="店舗の改修現場で作業する職人" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <section data-screen-label="よくあるご質問" style="background:#FFFFFF; padding:clamp(80px,12vh,130px) 0;">
+    <div style="max-width:980px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="margin-bottom:clamp(28px,4vw,44px);"><p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(17px,1.8vw,20px); font-weight:500; letter-spacing:.12em; color:#1F5FAF;">FAQ</p>
+        <h2 class="head-rise" style="margin:0 0 18px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(28px,3.6vw,40px); line-height:1.35;">よくあるご質問</h2></div>
+      <div data-reveal style="display:flex; flex-direction:column; gap:10px;">
+        <details style="background:#FFFFFF; border:1px solid #D5DCE5; border-radius:4px;">
+          <summary style="list-style:none; cursor:pointer; padding:18px clamp(18px,2.4vw,28px); min-height:44px; display:flex; gap:14px; align-items:flex-start; font-weight:700; font-size:clamp(15px,1.7vw,17px); line-height:1.6; color:#0B2E59;"><span aria-hidden="true" style="font-family:'Barlow Semi Condensed',sans-serif; font-size:20px; line-height:1.2; color:#1F5FAF;">Q</span><span style="flex:1;">1現場だけの依頼でも対応してもらえますか？</span><span aria-hidden="true" style="font-size:20px; line-height:1.2; color:#1F5FAF;">＋</span></summary>
+          <div style="padding:0 clamp(18px,2.4vw,28px) 20px calc(clamp(18px,2.4vw,28px) + 26px); font-size:15.5px; line-height:1.9; color:#4A5566;">はい、対応しています。まずは1現場からのご相談も歓迎しています。</div>
+        </details>
+        <details style="background:#FFFFFF; border:1px solid #D5DCE5; border-radius:4px;">
+          <summary style="list-style:none; cursor:pointer; padding:18px clamp(18px,2.4vw,28px); min-height:44px; display:flex; gap:14px; align-items:flex-start; font-weight:700; font-size:clamp(15px,1.7vw,17px); line-height:1.6; color:#0B2E59;"><span aria-hidden="true" style="font-family:'Barlow Semi Condensed',sans-serif; font-size:20px; line-height:1.2; color:#1F5FAF;">Q</span><span style="flex:1;">水道の申請手続きも依頼できますか？</span><span aria-hidden="true" style="font-size:20px; line-height:1.2; color:#1F5FAF;">＋</span></summary>
+          <div style="padding:0 clamp(18px,2.4vw,28px) 20px calc(clamp(18px,2.4vw,28px) + 26px); font-size:15.5px; line-height:1.9; color:#4A5566;">はい。オヨカワ設備工業は八匝水道企業団・多古町・旭市・香取市の指定給水装置事業者、旭市・香取市の下水道排水設備指定工事店です。申請手続きも当社で対応します。</div>
+        </details>
+        <details style="background:#FFFFFF; border:1px solid #D5DCE5; border-radius:4px;">
+          <summary style="list-style:none; cursor:pointer; padding:18px clamp(18px,2.4vw,28px); min-height:44px; display:flex; gap:14px; align-items:flex-start; font-weight:700; font-size:clamp(15px,1.7vw,17px); line-height:1.6; color:#0B2E59;"><span aria-hidden="true" style="font-family:'Barlow Semi Condensed',sans-serif; font-size:20px; line-height:1.2; color:#1F5FAF;">Q</span><span style="flex:1;">対応エリアはどこまでですか？</span><span aria-hidden="true" style="font-size:20px; line-height:1.2; color:#1F5FAF;">＋</span></summary>
+          <div style="padding:0 clamp(18px,2.4vw,28px) 20px calc(clamp(18px,2.4vw,28px) + 26px); font-size:15.5px; line-height:1.9; color:#4A5566;">千葉県匝瑳市を拠点に、千葉県内に対応しています。周辺地域もご相談ください。</div>
+        </details>
+        <details style="background:#FFFFFF; border:1px solid #D5DCE5; border-radius:4px;">
+          <summary style="list-style:none; cursor:pointer; padding:18px clamp(18px,2.4vw,28px); min-height:44px; display:flex; gap:14px; align-items:flex-start; font-weight:700; font-size:clamp(15px,1.7vw,17px); line-height:1.6; color:#0B2E59;"><span aria-hidden="true" style="font-family:'Barlow Semi Condensed',sans-serif; font-size:20px; line-height:1.2; color:#1F5FAF;">Q</span><span style="flex:1;">浄化槽の補助金について相談できますか？</span><span aria-hidden="true" style="font-size:20px; line-height:1.2; color:#1F5FAF;">＋</span></summary>
+          <div style="padding:0 clamp(18px,2.4vw,28px) 20px calc(clamp(18px,2.4vw,28px) + 26px); font-size:15.5px; line-height:1.9; color:#4A5566;">はい。浄化槽の交換など、工事によっては自治体の補助金制度を利用できる場合があります。お気軽にご相談ください。</div>
+        </details>
+      </div>
+      <div data-reveal style="margin-top:clamp(28px,4vw,40px); text-align:center;"><a href="/faq" class="ni-bounce" style="text-decoration:none; color:#1F5FAF; font-weight:700; font-size:15px; letter-spacing:.04em; display:inline-flex; align-items:center; gap:10px; border-bottom:1px solid currentColor; padding-bottom:4px; min-height:44px; white-space:nowrap;">よくあるご質問をすべて見る <span style="font-family:'Barlow Semi Condensed',sans-serif;">&rarr;</span></a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="個人のお客様へ" style="background:#F4F6F9; padding:clamp(48px,7vh,72px) 0;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="background:#FFFFFF; border:1px solid #D5DCE5; border-radius:4px; padding:clamp(22px,3vw,32px) clamp(22px,3.4vw,40px); display:flex; flex-wrap:wrap; gap:20px 32px; align-items:center; justify-content:space-between;">
+        <div style="flex:1 1 420px;">
+          <p style="margin:0 0 6px; font-weight:700; font-size:clamp(17px,2vw,20px); color:#0B2E59;"><span class="line-chunk">個人のお客様へ｜</span><span class="line-chunk">水回りリフォーム・</span><span class="line-chunk">水漏れのご相談</span></p>
+          <p style="margin:0; font-size:15px; line-height:1.85; color:#4A5566;">浴室・キッチン・トイレのリフォーム、水漏れ修理、浄化槽の交換（補助金のご案内）も承ります。</p>
+        </div>
+        <a href="/service#personal" style="text-decoration:none; border:1.5px solid #0B2E59; color:#0B2E59; font-weight:700; font-size:15px; padding:14px 26px; border-radius:4px; display:inline-flex; align-items:center; gap:10px; min-height:50px; white-space:nowrap;">個人のお客様はこちら <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="CTA" style="position:relative; background:#0B2E59; color:#F4F6F9; padding:clamp(34px,6.5vh,96px) 0 clamp(52px,7vh,88px); overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; inset:0; z-index:0; background:url('assets/p-pipe-work.jpg') center/cover no-repeat;"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(8,32,64,.82), rgba(11,46,89,.92) 70%, rgba(11,46,89,1));"></div>
+    <div style="position:relative; z-index:2; max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="text-align:center; max-width:760px; margin:0 auto clamp(26px,3.5vw,38px);">
+        <p style="margin:0 0 8px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(21px,2vw,25px); letter-spacing:.06em; color:#F7C21B;">Contact</p>
+        <h2 class="head-rise" style="margin:0 0 22px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(28px,3.6vw,40px); line-height:1.35;">お問い合わせ</h2>
+        <p style="margin:0; font-size:clamp(15px,1.6vw,17px); line-height:2; color:rgba(244,246,249,.95);">ご相談の内容に合わせて、窓口をお選びください。</p>
+      </div>
+      <div data-reveal class="cta-boxes" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:clamp(16px,2vw,24px); max-width:1100px; margin:0 auto;">
+        <a href="/form/inquiry" class="cta-box" style="text-decoration:none; background:#F7C21B; color:#0B2E59; min-height:190px; padding:clamp(22px,2.6vw,30px); display:flex; flex-direction:column; justify-content:space-between; gap:12px; border-radius:4px; box-shadow:0 18px 40px -24px rgba(0,0,0,.55); transition:box-shadow .35s ease;" style-hover="box-shadow:0 30px 56px -26px rgba(0,0,0,.6);">
+          <span style="display:flex; flex-direction:column; gap:6px;"><span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:14px; letter-spacing:.14em; font-weight:600; color:#0B2E59;">FOR BUSINESS</span><span style="font-weight:700; font-size:clamp(21px,2.2vw,26px); line-height:1.35;">企業の方</span><span style="font-size:15px; line-height:1.8; color:#0B2E59;">新規のお取引・お見積りのご依頼、協力会社のご相談</span></span>
+          <span style="font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(11,46,89,.3); padding-top:12px;">取引について相談する<span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a href="/form/inquiry" class="cta-box" style="text-decoration:none; background:#ffffff; color:#0B2E59; min-height:190px; padding:clamp(22px,2.6vw,30px); display:flex; flex-direction:column; justify-content:space-between; gap:12px; border-radius:4px; box-shadow:0 18px 40px -24px rgba(0,0,0,.55); transition:box-shadow .35s ease;" style-hover="box-shadow:0 30px 56px -26px rgba(0,0,0,.6);">
+          <span style="display:flex; flex-direction:column; gap:6px;"><span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:14px; letter-spacing:.14em; font-weight:600; color:#1F5FAF;">FOR HOME</span><span style="font-weight:700; font-size:clamp(21px,2.2vw,26px); line-height:1.35;">個人のお客様</span><span style="font-size:15px; line-height:1.8; color:#4A5566;">水回りリフォーム・水漏れ・浄化槽の交換</span></span>
+          <span style="font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:space-between; border-top:1px solid #D5DCE5; padding-top:12px;">個人のご相談<span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a href="/recruit/requirements" class="cta-box" style="text-decoration:none; background:#ffffff; color:#0B2E59; min-height:190px; padding:clamp(22px,2.6vw,30px); display:flex; flex-direction:column; justify-content:space-between; gap:12px; border-radius:4px; box-shadow:0 18px 40px -24px rgba(0,0,0,.55); transition:box-shadow .35s ease;" style-hover="box-shadow:0 30px 56px -26px rgba(0,0,0,.6);">
+          <span style="display:flex; flex-direction:column; gap:6px;"><span style="font-family:'Barlow Semi Condensed',sans-serif; font-size:14px; letter-spacing:.14em; font-weight:600; color:#1F5FAF;">RECRUIT</span><span style="font-weight:700; font-size:clamp(21px,2.2vw,26px); line-height:1.35;">求職者の方</span><span style="font-size:15px; line-height:1.8; color:#4A5566;">管工事・電気工事の経験者を募集しています</span></span>
+          <span style="font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:space-between; border-top:1px solid #D5DCE5; padding-top:12px;">エントリーする<span aria-hidden="true">&rarr;</span></span>
+        </a>
+      </div>
+      <p data-reveal style="margin:clamp(28px,3.4vw,40px) 0 0; text-align:center; font-size:15px; line-height:1.9;"><a href="tel:0479-79-2707" style="color:#ffffff; text-decoration:none; font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:clamp(26px,3vw,34px); letter-spacing:.04em; display:inline-flex; min-height:44px; align-items:center;">TEL 0479-79-2707</a><br><span style="color:rgba(244,246,249,.9);">受付 8:00〜17:00（日曜・祝日除く）</span></p>
+      <div data-reveal style="margin-top:clamp(40px,5.5vw,64px); padding-top:clamp(34px,4vw,48px); border-top:1px solid rgba(255,255,255,.16); display:flex; flex-direction:column; align-items:center; gap:clamp(18px,2.4vw,26px);">
+        <p style="margin:0; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(15px,1.8vw,19px); letter-spacing:.08em; color:#A9C4E8;">Follow &amp; Links</p>
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:clamp(12px,1.6vw,18px);">
+          <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=775itpnw" target="_blank" rel="noopener" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:13px; padding:clamp(20px,2.6vw,30px) clamp(30px,4.2vw,46px); min-height:clamp(64px,8vw,86px); border:1px solid rgba(255,255,255,.34); border-radius:999px; color:#F4F6F9; font-weight:700; font-size:clamp(17px,2vw,21px); letter-spacing:.02em; transition:background .3s ease, border-color .3s ease;" style-hover="background:rgba(255,255,255,.12) !important; border-color:rgba(255,255,255,.62) !important;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M21 11.5c0 4.14-4.03 7.5-9 7.5-1.02 0-2-.14-2.91-.4L4 20l.9-3.27C3.73 15.4 3 13.55 3 11.5 3 7.36 7.03 4 12 4s9 3.36 9 7.5z"></path></svg>LINE公式</a>
+          <a href="https://www.instagram.com/osk___2020?igsh=YWFyOGloNHk0a2Rm" target="_blank" rel="noopener" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:13px; padding:clamp(20px,2.6vw,30px) clamp(30px,4.2vw,46px); min-height:clamp(64px,8vw,86px); border:1px solid rgba(255,255,255,.34); border-radius:999px; color:#F4F6F9; font-weight:700; font-size:clamp(17px,2vw,21px); letter-spacing:.02em; transition:background .3s ease, border-color .3s ease;" style-hover="background:rgba(255,255,255,.12) !important; border-color:rgba(255,255,255,.62) !important;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#1F5FAF&quot;, &quot;options&quot;: [&quot;#1F5FAF&quot;, &quot;#0B2E59&quot;, &quot;#2A6FC4&quot;, &quot;#174C8F&quot;], &quot;tsType&quot;: &quot;string&quot; },
+  &quot;heroStyle&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;cinematic&quot;, &quot;options&quot;: [&quot;cinematic&quot;, &quot;split&quot;], &quot;tsType&quot;: &quot;string&quot; },
+  &quot;heroCopy&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;水・電気・浄化槽。設備工事を、一社で。&quot;, &quot;tsType&quot;: &quot;string&quot; }
+}">
+class Component extends DCLogic {
+  state = { videoPaused: false, active: 0, plate: 0, hovering: false, mobile: false, menuOpen: false, scrolled: false, navOpen: null };
+  cats = [
+    { jp:'給排水衛生設備工事', en:'Plumbing', sub:'給排水配管・水道引き込み', href:'/service#plumbing', image:'assets/p-pipe-work.jpg', plates:[] },
+    { jp:'電気工事', en:'Electrical', sub:'照明・電源引き込み・配線', href:'/service#electric', image:'assets/p-shop-booth.jpg', plates:[] },
+    { jp:'浄化槽工事', en:'Septic Tank', sub:'新設・移設・交換', href:'/service#septic', image:'assets/p-drain-1.jpg', plates:[] },
+    { jp:'空調設備工事', en:'Air Conditioning', sub:'空調・換気設備', href:'/service#hvac', image:'assets/p-shop-duct.jpg', plates:[] },
+    { jp:'水回りリフォーム', en:'Renovation', sub:'個人のお客様向け', href:'/service#personal', image:'assets/p-kitchen.jpg', plates:[] }
+  ];
+  componentDidMount(){
+    this.mq = window.matchMedia('(max-width: 960px)');
+    this._onMq = (e)=> this.setState({ mobile: e.matches });
+    this._onMq(this.mq); this.mq.addEventListener('change', this._onMq);
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!this.reduced){
+      this.t2 = setInterval(()=> this.setState(s=> s.hovering ? null : ({ active:(s.active+1)%this.cats.length, plate:0 })), 4400);
+    }
+    this._onScroll = ()=>{ const v = window.scrollY > 40; if(v !== this.state.scrolled) this.setState({ scrolled:v }); };
+    window.addEventListener('scroll', this._onScroll, { passive:true });
+    if(!this.reduced){
+      this.io = new IntersectionObserver((ents)=>{ ents.forEach(en=>{ if(en.isIntersecting){ en.target.style.opacity='1'; en.target.style.transform='none'; this.io.unobserve(en.target); } }); }, { threshold:0.1, rootMargin:'0px 0px -7% 0px' });
+      requestAnimationFrame(()=>{ document.querySelectorAll('[data-reveal]').forEach((el)=>{ el.style.opacity='0'; el.style.transform='translateY(26px)'; el.style.transitionProperty='opacity, transform'; el.style.transitionDuration='1s'; el.style.transitionTimingFunction='cubic-bezier(.2,.7,.2,1)'; this.io.observe(el); }); });
+    }
+    this.setupCountUp();
+    const v = document.getElementById('hero-video');
+    if(v){
+      v.muted = true; v.loop = true; v.playsInline = true; v.playbackRate = 0.8;
+      const saveData = navigator.connection && navigator.connection.saveData;
+      if(this.reduced || (saveData && window.innerWidth < 768)){ v.pause(); v.removeAttribute('autoplay'); this.setState({ videoPaused:true }); }
+      else { const p = v.play(); if(p && p.catch) p.catch(()=>{}); }
+      v.addEventListener('loadedmetadata', ()=>{ v.playbackRate = 0.8; });
+      v.addEventListener('timeupdate', ()=>{ if(!v.duration) return; const left = v.duration - v.currentTime; v.style.opacity = (left < 0.6 || v.currentTime < 0.3) ? '0' : '1'; });
+      this.video = v;
+    }
+    this.setupBounceLetters();
+    this.splitHeroRise();
+    this.setupHeadRise();
+  }
+  setupBounceLetters(){
+    document.querySelectorAll('.ni-bounce, .cta-bounce-text, .cta-letterhop').forEach(link=>{
+      if(link.dataset.bounceReady) return;
+      link.dataset.bounceReady = '1';
+      const chars = [];
+      Array.from(link.childNodes).forEach(node=>{
+        if(node.nodeType === 3){ // text node → wrap each non-space char
+          const frag = document.createDocumentFragment();
+          Array.from(node.textContent).forEach(ch=>{
+            if(ch === ' '){ frag.appendChild(document.createTextNode(' ')); return; }
+            const s = document.createElement('span');
+            s.className = 'ni-char'; s.textContent = ch;
+            frag.appendChild(s); chars.push(s);
+          });
+          link.replaceChild(frag, node);
+        } else if(node.nodeType === 1){ // element (e.g. arrow span) → bounce as one unit
+          node.classList.add('ni-char'); chars.push(node);
+        }
+      });
+      chars.forEach((c,i)=>{ c.style.animationDelay = (i*0.045)+'s'; });
+    });
+  }
+  riseSplit(el, baseDelay){
+    if(el.dataset.riseReady) return; el.dataset.riseReady='1';
+    const chunks = Array.from(el.children).filter(c=> c.classList && c.classList.contains('line-chunk'));
+    const targets = chunks.length ? chunks : [el];
+    let i = 0;
+    targets.forEach(chunk=>{
+      const text = chunk.textContent; chunk.textContent='';
+      Array.from(text).forEach(ch=>{
+        const mask = document.createElement('span'); mask.className='hero-rise';
+        const inner = document.createElement('span'); inner.className='rise-in';
+        inner.textContent = ch;
+        inner.style.animationDelay = ((baseDelay||0) + i*0.034)+'s';
+        if(!this.reduced){ inner.addEventListener('animationend', ()=>{ mask.style.overflow='visible'; }, { once:true }); }
+        else { mask.style.overflow='visible'; }
+        mask.appendChild(inner); chunk.appendChild(mask); i++;
+      });
+    });
+  }
+  splitHeroRise(){
+    document.querySelectorAll('.hero-rise-text').forEach(p=>{ this.riseSplit(p, 0.06); p.classList.add('rise-go'); });
+  }
+  setupHeadRise(){
+    const heads = Array.from(document.querySelectorAll('.head-rise'));
+    if(!heads.length) return;
+    heads.forEach(h=> this.riseSplit(h, 0));
+    if(this.reduced){ heads.forEach(h=> h.classList.add('rise-go')); return; }
+    this.ioHead = new IntersectionObserver((ents)=>{ ents.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('rise-go'); this.ioHead.unobserve(en.target); } }); }, { threshold:0.2, rootMargin:'0px 0px -12% 0px' });
+    heads.forEach(h=> this.ioHead.observe(h));
+  }
+  setupCountUp(){
+    const els = Array.from(document.querySelectorAll('[data-countup]'));
+    if(!els.length) return;
+    els.forEach(el=>{ el.dataset.target = el.textContent; });
+    if(this.reduced) return;
+    els.forEach(el=>{ el.textContent = el.dataset.target.replace(/\d/g,'0'); });
+    const animate = (el)=>{
+      const target = el.dataset.target;
+      const parts = target.split(/(\d+)/);
+      const nums = parts.map(p=> /^\d+$/.test(p) ? parseInt(p,10) : null);
+      const dur = 1400, t0 = performance.now();
+      const ease = t => 1 - Math.pow(1 - t, 3);
+      const tick = (now)=>{
+        const t = Math.min(1, (now - t0)/dur);
+        const e = ease(t);
+        let out = '';
+        parts.forEach((p,i)=>{ out += nums[i]===null ? p : String(Math.round(nums[i]*e)).padStart(p.length,'0'); });
+        el.textContent = out;
+        if(t < 1) requestAnimationFrame(tick); else { el.textContent = target; el.dataset.countDone = '1'; }
+      };
+      requestAnimationFrame(tick);
+    };
+    const begin = (el)=>{ if(el.dataset.countStarted==='1') return; el.dataset.countStarted='1'; animate(el); };
+    // Fire when the element has scrolled up into the top ~30% of the viewport.
+    this._maybeStartCounts = ()=>{
+      els.forEach(el=>{ const r = el.getBoundingClientRect(); if(r.top < window.innerHeight*0.32 && r.bottom > 0) begin(el); });
+    };
+    this.ioCount = new IntersectionObserver((ents)=>{ ents.forEach(en=>{ if(en.isIntersecting){ begin(en.target); this.ioCount.unobserve(en.target); } }); }, { threshold:0, rootMargin:'0px 0px -68% 0px' });
+    els.forEach(el=> this.ioCount.observe(el));
+    window.addEventListener('scroll', this._maybeStartCounts, { passive:true });
+    this._maybeStartCounts();
+  }
+  componentDidUpdate(){
+    document.querySelectorAll('[data-countup]').forEach(el=>{
+      const target = el.dataset.target;
+      if(target === undefined) return;
+      if(el.dataset.countDone === '1' || this.reduced){ if(el.textContent !== target) el.textContent = target; }
+      else if(el.dataset.countStarted !== '1'){ const z = target.replace(/\d/g,'0'); if(el.textContent !== z) el.textContent = z; }
+    });
+  }
+  componentWillUnmount(){ clearInterval(this.t1); clearInterval(this.t2); if(this.mq) this.mq.removeEventListener('change', this._onMq); window.removeEventListener('scroll', this._onScroll); if(this._maybeStartCounts) window.removeEventListener('scroll', this._maybeStartCounts); if(this.io) this.io.disconnect(); if(this.ioCount) this.ioCount.disconnect(); }
+  renderVals(){
+    const accent = this.props.accentColor || '#1F5FAF';
+    const sc = this.state.scrolled || this.state.menuOpen;
+    const cur = this.cats[this.state.active];
+    const activePlates = this.cats.map((c, idx)=>({
+      name: c.jp, img: c.image, imgCss: "url('" + c.image + "')", num: String(idx+1).padStart(2,'0'), total: String(this.cats.length).padStart(2,'0'),
+      opacity: idx === this.state.active ? 1 : 0,
+      z: idx === this.state.active ? 3 : 1
+    }));
+    const labels = this.cats.map((c,i)=>({
+      jp:c.jp, en:c.en, sub:c.sub, href:c.href, isActive: i===this.state.active,
+      lineW: i===this.state.active ? '100%' : '0%',
+      labOpacity: i===this.state.active ? 1 : 0.5,
+      onEnter: ()=> this.setState({ hovering:true, active:i, plate:0 })
+    }));
+    return {
+      accent,
+      heroCopy: this.props.heroCopy || '水・電気・浄化槽。設備工事を、一社で。',
+      heroCinematic: (this.props.heroStyle || 'cinematic') === 'cinematic',
+      heroSplit: (this.props.heroStyle || 'cinematic') === 'split',
+      isMobile: this.state.mobile, isDesktop: !this.state.mobile,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: ()=> this.setState(s=>({ menuOpen: !s.menuOpen })),
+      closeMenu: ()=> this.setState({ menuOpen:false }),
+      headerBg: sc ? 'rgba(244,246,249,0.92)' : 'transparent',
+      headerColor: sc ? '#1A2230' : '#F4F6F9',
+      headerBorder: sc ? '1px solid rgba(26,34,48,0.1)' : '1px solid rgba(255,255,255,0)',
+      headerShadow: sc ? '0 14px 36px -26px rgba(0,0,0,0.55)' : 'none',
+      headerBlur: sc ? 'saturate(1.1) blur(14px)' : 'none',
+      ctaBtnColor: sc ? '#ffffff' : '#0B2E59',
+      ctaBtnBg: sc ? accent : '#F4F6F9',
+      splitDir: this.state.mobile ? 'column' : 'row',
+      activeEn: cur.en, activeJp: cur.jp, activeSub: cur.sub, activeHref: cur.href,
+      activePlates, labels,
+      onMenuLeave: ()=> this.setState({ hovering:false }),
+      toggleVideo: ()=>{ const v = this.video; if(!v) return; if(v.paused){ v.playbackRate = 0.8; v.play(); this.setState({ videoPaused:false }); } else { v.pause(); this.setState({ videoPaused:true }); } },
+      videoBtnLabel: this.state.videoPaused ? '背景動画を再生' : '背景動画を一時停止',
+      videoBtnIcon: this.state.videoPaused ? '▶' : 'Ⅱ',
+      year: new Date().getFullYear()
+    };
+  }
+}
+</script>
+</body>
+</html>

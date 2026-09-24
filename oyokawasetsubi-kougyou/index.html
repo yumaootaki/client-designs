@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>株式会社オヨカワ設備工業 — サイトプレビュー</title>
+<style>
+  html, body { margin:0; padding:0; height:100%; background:#0B2E59; }
+  #site { display:block; border:0; width:100%; height:100dvh; }
+  /* 初回ロード中のスプラッシュ */
+  #splash {
+    position:fixed; inset:0; z-index:10; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:14px;
+    background:#0B2E59; color:#f4f1e8;
+    font-family:-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;
+    transition:opacity .4s ease; 
+  }
+  #splash.hidden { opacity:0; pointer-events:none; }
+  #splash .mark { font-weight:700; font-size:20px; letter-spacing:.12em; }
+  #splash .sub { font-size:12px; letter-spacing:.18em; opacity:.6; }
+  #splash .bar { width:120px; height:2px; background:rgba(255,255,255,.16); overflow:hidden; border-radius:2px; }
+  #splash .bar i { display:block; width:40%; height:100%; background:#F7C21B; animation:slide 1.1s ease-in-out infinite; }
+  @keyframes slide { 0%{transform:translateX(-120%);} 100%{transform:translateX(320%);} }
+  @media (prefers-reduced-motion: reduce){ #splash .bar i{ animation:none; width:100%; } }
+</style>
+</head>
+<body>
+<div id="splash" role="status" aria-live="polite">
+  <div class="mark">株式会社オヨカワ設備工業</div>
+  <div class="sub">SITE PREVIEW</div>
+  <div class="bar"><i></i></div>
+</div>
+<iframe id="site" title="株式会社オヨカワ設備工業 サイトプレビュー"></iframe>
+
+<script>
+(function(){
+  // スラッグ → 実ファイル の対応表（共通ルール §4 準拠）
+  var MAP = {
+    '/'                      : 'TOP.dc.html',
+    '/service'               : '仕事を知る.dc.html',
+    '/reason'                : '選ばれる理由.dc.html',
+    '/business'              : '企業の方へ.dc.html',
+    '/recruit'               : '採用を知る.dc.html',
+    '/recruit/requirements'  : '募集概要.dc.html',
+    '/company'               : '私たちについて.dc.html',
+    '/company/profile'       : '会社概要.dc.html',
+    '/company/equipment'     : '保有設備一覧.dc.html',
+    '/voice'                 : 'お客様のお声.dc.html',
+    '/faq'                   : 'よくあるご質問.dc.html',
+    '/blog-ex/instance'      : '施工実績.dc.html',
+    '/blog'                  : 'ブログ.dc.html',
+    '/form/inquiry'          : 'お問い合わせ.dc.html',
+    '/privacypolicy'         : 'プライバシーポリシー.dc.html'
+  };
+
+  var frame = document.getElementById('site');
+  var splash = document.getElementById('splash');
+  var splashDone = false;
+  var pendingAnchor = null;
+
+  function scrollToAnchor(){
+    var id = pendingAnchor; if(!id) return;
+    var tries = 0;
+    (function poll(){
+      var doc; try { doc = frame.contentDocument; } catch(e){ return; }
+      var el = doc && doc.getElementById(id);
+      if(el){
+        pendingAnchor = null;
+        var win = frame.contentWindow;
+        var top = el.getBoundingClientRect().top + win.scrollY - 90;
+        var smooth = !(win.matchMedia && win.matchMedia('(prefers-reduced-motion: reduce)').matches);
+        win.scrollTo({ top: top, behavior: smooth ? 'smooth' : 'auto' });
+        return;
+      }
+      if(++tries < 40) setTimeout(poll, 150);
+    })();
+  }
+
+  function slugFromHash(){
+    var h = decodeURIComponent((location.hash || '').replace(/^#/, '')) || '/';
+    h = h.replace(/\/+$/, '') || '/';        // 末尾スラッシュ除去
+    return MAP[h] ? h : '/';                  // 未知スラッグはTOPへ
+  }
+
+  function fileForCurrent(){ return MAP[slugFromHash()] || MAP['/']; }
+
+  function load(){
+    var file = fileForCurrent();
+    // 既に同じファイルなら再読込しない
+    var cur = frame.getAttribute('data-file');
+    if(cur === file){ scrollToAnchor(); return; }
+    frame.setAttribute('data-file', file);
+    frame.src = file;
+  }
+
+  // ハッシュ変更（戻る/進む含む）でページ切替
+  window.addEventListener('hashchange', load);
+
+  // iframe内のリンククリックを横取りしてスラッグ遷移に変換
+  frame.addEventListener('load', function(){
+    // 初回スプラッシュを消す
+    if(!splashDone){ splashDone = true; splash.classList.add('hidden'); setTimeout(function(){ splash.style.display='none'; }, 450); }
+    // 親タブのタイトルを同期
+    try { if(frame.contentDocument && frame.contentDocument.title){ document.title = frame.contentDocument.title; } } catch(e){}
+    // ページ先頭へ
+    try { frame.contentWindow.scrollTo(0,0); } catch(e){}
+    if(pendingAnchor) setTimeout(scrollToAnchor, 300);
+
+    var doc;
+    try { doc = frame.contentDocument; } catch(e){ return; }
+    if(!doc || doc.__niRouterBound) return;
+    doc.__niRouterBound = true;
+
+    doc.addEventListener('click', function(e){
+      var a = e.target && e.target.closest ? e.target.closest('a') : null;
+      if(!a) return;
+      var href = a.getAttribute('href');
+      if(!href) return;
+      // 内部スラッグ（/ 始まり）だけ横取り。tel:・mailto:・http(s)・# はそのまま
+      if(href.charAt(0) === '/'){
+        e.preventDefault();
+        var hashIdx = href.indexOf('#');
+        pendingAnchor = hashIdx > -1 ? href.slice(hashIdx + 1) : null;
+        var slug = href.split('#')[0].replace(/\/+$/, '') || '/';
+        if(!MAP[slug]) slug = '/';
+        if(('#' + slug) !== location.hash){
+          location.hash = slug;   // hashchange → load()
+        } else {
+          load();
+        }
+      }
+    }, true);
+  });
+
+  // 初期表示
+  load();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+/* === add.css 貼り付け ここから === */
+/* ============================================================
+   ブログページ（parts222 系）— Cuezilla add.css
+   対象：一覧 ～ ページネーション ＋ サイドバー（下はすぐフッター）
+   レイアウト：本文2カラム（左=記事一覧／右=サイドバー固定幅）
+              一覧グリッド PC2列 / タブレット2列 / スマホ1列、880px以下で1カラム縦積み
+   外部CSS非依存・自己完結。色/フォント/変数はこのブロック内で定義。
+   theme_default.css に勝つよう必要箇所に !important。
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Barlow+Semi+Condensed:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --ni-bg:#F4F6F9;
+  --ni-card:#FFFFFF;
+  --ni-ink:#1A2230;
+  --ni-sub:#2A3445;
+  --ni-muted:#6B7686;
+  --ni-line:#D5DCE5;
+  --ni-line2:#D5DCE5;
+  --ni-line3:#E3E8EF;
+  --ni-accent:#1F5FAF;
+  --ni-deep:#0a2a52;
+  --ni-tagbg:#EEF2F7;
+  --ni-tagln:#D5DCE5;
+  --ni-hover:#EEF2F7;
+  --ni-mincho:'Zen Kaku Gothic New',sans-serif;
+  --ni-en:'Barlow Semi Condensed',sans-serif;
+}
+
+/* ---- セクション枠 ＋ 見出し ---- */
+.parts222_section{
+  background:var(--ni-bg) !important;
+  padding:clamp(50px,7vh,80px) 0 clamp(72px,10vh,120px) !important;
+}
+.parts222_section>h2{
+  max-width:1340px !important;
+  margin:0 auto clamp(28px,4vw,46px) !important;
+  padding:0 clamp(18px,4vw,46px) !important;
+  font-family:var(--ni-mincho) !important;
+  font-weight:700 !important;
+  font-size:clamp(26px,4vw,42px) !important;
+  color:var(--ni-ink) !important;
+}
+
+/* ---- 2カラムラッパ ---- */
+.parts222_wrap{
+  max-width:1340px !important;
+  margin:0 auto !important;
+  padding:0 clamp(18px,4vw,46px) !important;
+  display:grid !important;
+  grid-template-columns:1fr clamp(260px,26vw,320px) !important;
+  gap:clamp(32px,4vw,60px) !important;
+  align-items:start !important;
+}
+@media (max-width:880px){
+  .parts222_wrap{ grid-template-columns:1fr !important; }
+}
+
+/* ---- 記事一覧グリッド ---- */
+.parts222_main{ min-width:0 !important; }
+.parts222_post_list{
+  list-style:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  display:grid !important;
+  grid-template-columns:repeat(2,1fr) !important;
+  gap:clamp(18px,2.2vw,28px) !important;
+}
+@media (max-width:520px){
+  .parts222_post_list{ grid-template-columns:1fr !important; }
+}
+
+/* ---- 繰り返し1単位（aがラッパ） ---- */
+.parts222_post_wrap{
+  display:block !important;
+  background:var(--ni-card) !important;
+  border:1px solid var(--ni-line) !important;
+  border-radius:3px !important;
+  overflow:hidden !important;
+  text-decoration:none !important;
+  color:var(--ni-ink) !important;
+  transition:transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s ease !important;
+}
+.parts222_post_wrap:hover{
+  transform:translateY(-4px) !important;
+  box-shadow:0 30px 60px -44px rgba(4,16,34,.6) !important;
+}
+
+/* ---- 画像 ---- */
+.parts222_post_img{ position:relative !important; aspect-ratio:16 / 10 !important; overflow:hidden !important; background:#103a6c; }
+.parts222_post_img img{ width:100% !important; height:100% !important; object-fit:cover !important; display:block !important; }
+
+/* ---- ステータス行（日付＋カテゴリを横並び） ---- */
+.parts222_post_status{
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+  flex-wrap:wrap !important;
+  margin:clamp(14px,1.7vw,18px) clamp(15px,1.8vw,20px) 0 !important;
+}
+.parts222_post_date{
+  font-family:var(--ni-en) !important;
+  font-size:14px !important;
+  letter-spacing:.05em !important;
+  color:var(--ni-muted) !important;
+}
+.parts222_post_category{
+  font-size:11.5px !important;
+  letter-spacing:.04em !important;
+  color:var(--ni-accent) !important;
+  background:var(--ni-tagbg) !important;
+  border:1px solid var(--ni-tagln) !important;
+  padding:3px 10px !important;
+  border-radius:2px !important;
+}
+
+/* ---- タイトル ---- */
+.parts222_post_title-excerpt{ margin:10px clamp(15px,1.8vw,20px) clamp(18px,2vw,22px) !important; }
+.parts222_post_title{
+  margin:0 !important;
+  font-family:var(--ni-mincho) !important;
+  font-weight:600 !important;
+  font-size:clamp(16px,1.7vw,19px) !important;
+  line-height:1.5 !important;
+  color:var(--ni-ink) !important;
+}
+/* 抜粋は既定で非表示（CMSコメントアウト）。有効化時のみ */
+.parts222_post_excerpt{
+  margin:0 clamp(15px,1.8vw,20px) clamp(18px,2vw,22px) !important;
+  font-size:13.5px !important;
+  line-height:1.9 !important;
+  color:var(--ni-sub) !important;
+}
+
+/* ---- ページネーション（数字はPC幅のみ表示の実構造に追従） ---- */
+.parts222_pagenation{
+  grid-column:1 / -1 !important;
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  flex-wrap:wrap !important;
+  gap:8px !important;
+  margin-top:clamp(36px,5vw,56px) !important;
+}
+.parts222_pagenation a,
+.parts222_pagenation .page-item,
+.parts222_pagenation .pagination_num,
+.parts222_pagenation .pagination_prev,
+.parts222_pagenation .pagination_next{
+  min-width:44px !important;
+  min-height:44px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:0 10px !important;
+  text-decoration:none !important;
+  font-family:var(--ni-en) !important;
+  font-size:15px !important;
+  color:var(--ni-sub) !important;
+  border:1px solid var(--ni-line2) !important;
+  border-radius:2px !important;
+  background:var(--ni-card) !important;
+  transition:border-color .3s, color .3s, background .3s !important;
+}
+.parts222_pagenation a:hover{ border-color:var(--ni-accent) !important; color:var(--ni-accent) !important; }
+.parts222_pagenation .pagination_num.current{
+  background:var(--ni-deep) !important;
+  color:#fff !important;
+  border-color:var(--ni-deep) !important;
+  pointer-events:none !important;
+}
+
+/* ---- サイドバー ---- */
+.parts222_sidebar{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:clamp(24px,3vw,36px) !important;
+  min-width:0 !important;
+}
+.parts222_sidebar_wrap h3{
+  margin:0 !important;
+  font-family:var(--ni-mincho) !important;
+  font-weight:600 !important;
+  font-size:15px !important;
+  color:#fff !important;
+  background:var(--ni-deep) !important;
+  padding:13px 16px !important;
+  border-radius:2px 2px 0 0 !important;
+  letter-spacing:.04em !important;
+}
+.parts222_sidebar_wrap ul{
+  list-style:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:1px solid var(--ni-line) !important;
+  border-top:none !important;
+  border-radius:0 0 2px 2px !important;
+  background:var(--ni-card) !important;
+}
+.parts222_sidebar_wrap li{ border-bottom:1px solid var(--ni-line3) !important; }
+.parts222_sidebar_wrap li:last-child{ border-bottom:none !important; }
+.parts222_sidebar_wrap li a{
+  display:block !important;
+  padding:13px 16px !important;
+  text-decoration:none !important;
+  color:var(--ni-ink) !important;
+  transition:background .3s !important;
+}
+.parts222_sidebar_wrap li a:hover{ background:var(--ni-hover) !important; }
+
+/* 最近の投稿 */
+.parts222_sidebar_date{
+  display:block !important;
+  font-family:var(--ni-en) !important;
+  font-size:13px !important;
+  color:var(--ni-muted) !important;
+  letter-spacing:.04em !important;
+  margin-bottom:4px !important;
+}
+.parts222_sidebar_post_title{ margin:0 !important; font-size:13.5px !important; line-height:1.6 !important; color:var(--ni-sub) !important; }
+
+/* カテゴリ（名称＋件数） */
+.parts222_sidebar_wrap.category_post_count li a{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:10px !important;
+}
+.parts222_sidebar_post_category{ margin:0 !important; font-size:14px !important; color:var(--ni-sub) !important; }
+.parts222_sidebar_post_category_count{
+  font-family:var(--ni-en) !important;
+  font-size:13px !important;
+  color:#667085 !important;
+  border:1px solid var(--ni-tagln) !important;
+  border-radius:2px !important;
+  min-width:26px !important;
+  height:24px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:0 6px !important;
+}
+/* === add.css 貼り付け ここまで === */

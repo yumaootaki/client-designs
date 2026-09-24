@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Barlow+Semi+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{margin:0;}
+.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal;}
+::selection{background:#1F5FAF;color:#fff;}
+@media (max-width:1024px){ section[data-screen-label$="ヒーロー"]{min-height:38svh !important;} }
+.prof-row{display:grid;grid-template-columns:clamp(120px,20vw,230px) 1fr;gap:clamp(14px,2.4vw,44px);padding:clamp(18px,2.4vw,28px) 0;border-bottom:1px solid #D5DCE5;}
+@media (max-width:600px){.prof-row{grid-template-columns:1fr;gap:6px;}}
+@keyframes ni-pan{0%{transform:scale(1.08) translate3d(0,0,0);}100%{transform:scale(1.16) translate3d(-2%,-1.5%,0);}}
+@keyframes ni-bounce-loop{0%{transform:translateY(0)}10%{transform:translateY(-8px)}19%{transform:translateY(0)}26%{transform:translateY(-3px)}32%{transform:translateY(0)}100%{transform:translateY(0)}}
+@keyframes ni-ripple{0%{transform:scale(1);opacity:.5;}100%{transform:scale(1.22);opacity:0;}}
+.cc-box{position:relative;}
+.cc-box::before,.cc-box::after{content:"";position:absolute;inset:0;border-radius:3px;border:2px solid currentColor;opacity:0;pointer-events:none;}
+.cc-box:hover::before{animation:ni-ripple 1.3s ease-out infinite;}
+.cc-box:hover::after{animation:ni-ripple 1.3s ease-out infinite .65s;}
+.cc-char{display:inline-block;}
+.cc-box:hover .cc-char{animation-name:ni-bounce-loop;animation-duration:.95s;animation-timing-function:cubic-bezier(.28,.84,.42,1);animation-iteration-count:infinite;animation-fill-mode:both;}
+.cc-box:hover .cc-char:nth-child(1){animation-delay:0s}.cc-box:hover .cc-char:nth-child(2){animation-delay:.045s}.cc-box:hover .cc-char:nth-child(3){animation-delay:.09s}.cc-box:hover .cc-char:nth-child(4){animation-delay:.135s}.cc-box:hover .cc-char:nth-child(5){animation-delay:.18s}.cc-box:hover .cc-char:nth-child(6){animation-delay:.225s}.cc-box:hover .cc-char:nth-child(7){animation-delay:.27s}.cc-box:hover .cc-char:nth-child(8){animation-delay:.315s}.cc-box:hover .cc-char:nth-child(9){animation-delay:.36s}.cc-box:hover .cc-char:nth-child(10){animation-delay:.405s}
+@media (prefers-reduced-motion: reduce){ .cc-box:hover .cc-char, .cc-box:hover::before, .cc-box:hover::after{animation:none !important;} }
+@media (prefers-reduced-motion: reduce){*{animation:none !important;}}
+.works-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid #D5DCE5;border-radius:3px;background:#fff;}
+.works-tbl{width:100%;border-collapse:collapse;min-width:640px;}
+.works-tbl th{color:#F4F6F9;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:600;padding:14px 14px;text-align:center;letter-spacing:.05em;font-size:13.5px;border:1px solid rgba(255,255,255,.16);}
+.works-tbl td{padding:13px 16px;border:1px solid #DDE3EB;color:#2A3445;line-height:1.7;font-size:14px;background:#fff;vertical-align:middle;}
+.works-tbl td.yr{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;text-align:center;background:#FFFFFF;white-space:nowrap;color:#1A2230;font-size:14.5px;}
+.works-tbl td.ct,.works-tbl td.cl{text-align:center;}
+.works-tbl tr.more td{background:#FFFFFF;text-align:center;color:#6B7686;letter-spacing:.3em;}
+</style>
+</helmet>
+
+<div style="font-family:'Zen Kaku Gothic New',sans-serif; color:#1A2230; background:#F4F6F9; -webkit-font-smoothing:antialiased; line-height:1.85; overflow-x:hidden;">
+
+  <dc-import name="SiteHeader" accent="{{ accent }}" active="about" page-title="会社概要｜株式会社オヨカワ設備工業（千葉県匝瑳市）" description="株式会社オヨカワ設備工業の会社概要。所在地・連絡先・許可番号・指定工事店・保有資格・対応エリアを掲載しています。" hint-size="100%,84px"></dc-import>
+
+  <section data-screen-label="会社概要ヒーロー" style="position:relative; min-height:50svh; display:flex; align-items:flex-end; overflow:hidden; background:#4d4d4d; color:#F4F6F9;"><div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to right, rgba(11,46,89,.9) 0%, rgba(11,46,89,.8) 55%, rgba(8,36,72,.4) 100%), url('assets/p-drain-1.jpg') center/cover no-repeat;"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; background:radial-gradient(120% 95% at 50% 16%, rgba(31,95,175,.4), rgba(6,26,54,0) 56%), linear-gradient(270deg,#0B2E59 0%,#061a36 60%,#030d1f 100%); animation:ni-pan 24s ease-in-out infinite alternate; transform-origin:50% 26%;"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; opacity:.14; background-image:repeating-linear-gradient(125deg, rgba(190,210,235,.5) 0 1px, transparent 1px 16px); mix-blend-mode:screen;"></div>
+    <div aria-hidden="true" style="position:absolute; right:clamp(-14px,-1vw,0px); bottom:clamp(8px,3vh,30px); font-family:'Barlow Semi Condensed',sans-serif; font-weight:400; font-size:clamp(96px,22vw,300px); line-height:.8; color:rgba(190,210,235,.07); white-space:nowrap; pointer-events:none;">Company</div>
+    <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(to right, rgba(3,14,32,.9) 0%, rgba(3,14,32,.35) 55%, transparent 100%);"></div>
+    <div style="position:relative; z-index:2; width:100%; max-width:1340px; margin:0 auto; padding:clamp(88px,12vh,116px) clamp(18px,4vw,46px) clamp(40px,5vh,60px);">
+      <nav aria-label="パンくず" style="display:flex; flex-wrap:wrap; align-items:center; gap:9px; font-size:12.5px; letter-spacing:.04em; color:rgba(244,246,249,.66); margin-bottom:clamp(20px,3vw,32px);">
+        <a href="/" style="color:rgba(244,246,249,.66); text-decoration:none;">ホーム</a>
+        <span aria-hidden="true" style="opacity:.5;">/</span>
+        <a href="/company" style="color:rgba(244,246,249,.66); text-decoration:none;">オヨカワ設備工業について</a>
+        <span aria-hidden="true" style="opacity:.5;">/</span>
+        <span style="color:#A9C4E8;">会社概要</span>
+      </nav>
+      <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(15px,2vw,20px); letter-spacing:.08em; color:#ffffff; display:flex; align-items:center; gap:14px;"><span style="display:inline-block; width:clamp(28px,4vw,52px); height:1px; background:#ffffff;"></span>Company Profile</p>
+      <h1 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:clamp(34px,5vw,56px); line-height:1.2; letter-spacing:.02em; text-shadow:0 12px 46px rgba(0,0,0,.42);">会社概要</h1>
+    </div>
+  </section>
+
+  <section data-screen-label="会社概要テーブル" style="background:#F4F6F9; padding:clamp(72px,11vh,130px) 0;">
+    <div style="max-width:980px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="border-top:2px solid #0B2E59;">
+        <div class="prof-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">会社名</span><div style="font-size:15px; color:#1A2230; line-height:1.9;">株式会社オヨカワ設備工業</div></div>
+        <div class="prof-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">代表者</span><div style="font-size:15px; color:#1A2230; line-height:1.9;">代表取締役　及川 健蔵（オヨカワ ケンゾウ）</div></div>
+        <div class="prof-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">所在地</span><div style="font-size:15px; color:#1A2230; line-height:1.9;">〒289-2113　千葉県匝瑳市平木7886-1</div></div>
+        <div class="prof-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">TEL／FAX</span><div style="font-size:15px; color:#1A2230; line-height:1.9;"><a href="tel:0479-79-2707" style="color:#1A2230; text-decoration:none; font-family:'Barlow Semi Condensed',sans-serif; font-size:18px; letter-spacing:.03em;">0479-79-2707</a></div></div>
+        <div class="prof-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">営業時間</span><div style="font-size:15px; color:#1A2230; line-height:1.9;">8:00〜17:00</div></div>
+        <div class="prof-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">定休日</span><div style="font-size:15px; color:#1A2230; line-height:1.9;">日曜日・祝日</div></div>
+        <div class="prof-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">創業</span><div style="font-size:15px; color:#1A2230; line-height:1.9;">平成元年（前身：及川電気設備）／令和2年 現体制</div></div>
+        <div class="prof-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">事業内容</span><div style="font-size:15px; color:#1A2230; line-height:1.9;">給排水衛生設備工事／電気工事／浄化槽工事／空調設備工事／水回りリフォーム</div></div>
+        <div class="prof-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">対応エリア</span><div style="font-size:15px; color:#1A2230; line-height:1.9;">千葉県内（周辺地域も応相談）</div></div>
+        <!-- 要取材：従業員数・資本金 -->
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="許可・指定・届出" style="background:#E8EDF3; padding:clamp(72px,11vh,130px) 0;">
+    <div style="max-width:1180px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="margin-bottom:clamp(30px,4vw,46px);">
+        <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,20px); letter-spacing:.1em; color:#1F5FAF;">License</p>
+        <h2 style="margin:0 0 14px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35;">許可・指定・届出</h2>
+        <p style="margin:0; font-size:clamp(15px,1.6vw,16.5px); line-height:1.9; color:#4A5566;">協力会社登録や与信のご確認にご利用ください。</p>
+      </div>
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:clamp(14px,1.8vw,20px);">
+        <div style="background:#FFFFFF; border:1px solid #D5DCE5; border-top:3px solid #0B2E59; border-radius:4px; padding:clamp(20px,2.4vw,28px);"><p style="margin:0 0 10px; font-weight:700; font-size:clamp(17px,1.9vw,20px); color:#0B2E59;">建設業許可</p><p style="margin:0; font-size:15.5px; line-height:1.8; color:#1A2230;">千葉県知事許可（般-4）第55717号</p></div>
+        <div style="background:#FFFFFF; border:1px solid #D5DCE5; border-top:3px solid #0B2E59; border-radius:4px; padding:clamp(20px,2.4vw,28px);"><p style="margin:0 0 10px; font-weight:700; font-size:clamp(17px,1.9vw,20px); color:#0B2E59;">電気工事業届出</p><p style="margin:0; font-size:15.5px; line-height:1.8; color:#1A2230;">千葉県知事届出 第20220081号</p></div>
+        <div style="background:#FFFFFF; border:1px solid #D5DCE5; border-top:3px solid #0B2E59; border-radius:4px; padding:clamp(20px,2.4vw,28px);"><p style="margin:0 0 10px; font-weight:700; font-size:clamp(17px,1.9vw,20px); color:#0B2E59;">浄化槽工事業届出</p><p style="margin:0; font-size:15.5px; line-height:1.8; color:#1A2230;">千葉県知事（届-4）第1770号</p></div>
+        <div style="background:#FFFFFF; border:1px solid #D5DCE5; border-top:3px solid #0B2E59; border-radius:4px; padding:clamp(20px,2.4vw,28px);"><p style="margin:0 0 10px; font-weight:700; font-size:clamp(17px,1.9vw,20px); color:#0B2E59;">指定給水装置事業者</p><p style="margin:0; font-size:15.5px; line-height:1.8; color:#1A2230;">八匝水道企業団・多古町・旭市・香取市</p></div>
+        <div style="background:#FFFFFF; border:1px solid #D5DCE5; border-top:3px solid #0B2E59; border-radius:4px; padding:clamp(20px,2.4vw,28px);"><p style="margin:0 0 10px; font-weight:700; font-size:clamp(17px,1.9vw,20px); color:#0B2E59;">下水道排水設備指定工事店</p><p style="margin:0; font-size:15.5px; line-height:1.8; color:#1A2230;">旭市・香取市</p></div>
+      </div>
+      <div data-reveal style="margin-top:clamp(44px,6vw,68px);">
+        <h3 style="margin:0 0 18px; font-weight:700; font-size:clamp(19px,2vw,22px); color:#0B2E59;">保有資格</h3>
+        <!-- 要取材：資格ごとの保有人数 -->
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+          <span style="font-size:14.5px; color:#0B2E59; background:#FFFFFF; border:1.5px solid #0B2E59; padding:8px 16px; border-radius:999px;">2級管工事施工管理技士</span>
+          <span style="font-size:14.5px; color:#0B2E59; background:#FFFFFF; border:1.5px solid #0B2E59; padding:8px 16px; border-radius:999px;">2級土木施工管理技士</span>
+          <span style="font-size:14.5px; color:#0B2E59; background:#FFFFFF; border:1.5px solid #0B2E59; padding:8px 16px; border-radius:999px;">浄化槽設備士</span>
+          <span style="font-size:14.5px; color:#0B2E59; background:#FFFFFF; border:1.5px solid #0B2E59; padding:8px 16px; border-radius:999px;">給水装置工事主任技術者</span>
+          <span style="font-size:14.5px; color:#0B2E59; background:#FFFFFF; border:1.5px solid #0B2E59; padding:8px 16px; border-radius:999px;">下水道排水設備工事責任技術者</span>
+          <span style="font-size:14.5px; color:#0B2E59; background:#FFFFFF; border:1.5px solid #0B2E59; padding:8px 16px; border-radius:999px;">第二種電気工事士</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="アクセス" style="background:#E8EDF3; padding:clamp(72px,11vh,130px) 0;">
+    <div style="max-width:1340px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="margin-bottom:clamp(30px,4vw,46px);">
+        <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,20px); letter-spacing:.06em; color:{{ accent }};">Area &amp; Access</p>
+        <h2 style="margin:0 0 14px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35;">対応エリア・アクセス</h2>
+        <p style="margin:0; font-size:clamp(15px,1.6vw,17px); line-height:2; color:#4A5566;">〒289-2113　千葉県匝瑳市平木7886-1</p>
+      </div>
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:clamp(16px,2vw,24px);">
+        <div style="position:relative; aspect-ratio:4/3; border-radius:4px; overflow:hidden; background:#0B2E59; color:#EEF3F9; display:flex; flex-direction:column; justify-content:flex-end; padding:clamp(20px,2.4vw,30px);">
+          <div aria-hidden="true" style="position:absolute; inset:0; opacity:.3; background-image:repeating-linear-gradient(125deg, rgba(255,255,255,.06) 0 2px, transparent 2px 18px);"></div>
+          <span aria-hidden="true" style="position:absolute; top:16px; right:18px; font-family:'Barlow Semi Condensed',sans-serif; font-size:12px; letter-spacing:.16em; color:rgba(255,255,255,.55);">AREA MAP</span>
+          <span style="position:relative; font-weight:700; font-size:clamp(18px,2vw,22px);">匝瑳市を中心に千葉県内</span>
+          <span style="position:relative; display:block; margin-top:6px; font-size:14px; color:rgba(244,246,249,.8);">旭市・香取市・成田市・山武市ほか（周辺地域も応相談）</span>
+        </div>
+        <div style="position:relative; aspect-ratio:4/3; border-radius:4px; overflow:hidden; background:#DDE3EB;">
+          <iframe title="株式会社オヨカワ設備工業の地図" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12962.610388357643!2d140.5770298!3d35.6855552!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x76515b73d8bddfea!2z44Kq44Oo44Kr44Ov6Kit5YKZ5bel5qWt!5e0!3m2!1sja!2sjp!4v1629944952316!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="ContactCTA" accent="{{ accent }}" caption="Contact" heading="お気軽に、ご連絡ください。" intro="新規のお取引・協力会社のご相談も、こちらから承ります。" hint-size="100%,640px"></dc-import>
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#1F5FAF&quot;, &quot;options&quot;: [&quot;#1F5FAF&quot;, &quot;#0B2E59&quot;, &quot;#2A6FC4&quot;, &quot;#174C8F&quot;], &quot;tsType&quot;: &quot;string&quot; }
+}">
+class Component extends DCLogic {
+  state = { mobile:false, menuOpen:false, scrolled:false };
+  componentDidMount(){
+    this.mq = window.matchMedia('(max-width: 960px)');
+    this._onMq = (e)=> this.setState({ mobile: e.matches });
+    this._onMq(this.mq); this.mq.addEventListener('change', this._onMq);
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this._onScroll = ()=>{ const v = window.scrollY > 40; if(v !== this.state.scrolled) this.setState({ scrolled:v }); };
+    window.addEventListener('scroll', this._onScroll, { passive:true });
+    if(!this.reduced){
+      this.io = new IntersectionObserver((ents)=>{ ents.forEach(en=>{ if(en.isIntersecting){ en.target.style.opacity='1'; en.target.style.transform='none'; this.io.unobserve(en.target); } }); }, { threshold:0.08, rootMargin:'0px 0px -7% 0px' });
+      requestAnimationFrame(()=>{ document.querySelectorAll('[data-reveal]').forEach((el)=>{ el.style.opacity='0'; el.style.transform='translateY(26px)'; el.style.transitionProperty='opacity, transform'; el.style.transitionDuration='1s'; el.style.transitionTimingFunction='cubic-bezier(.2,.7,.2,1)'; this.io.observe(el); }); });
+    }
+  }
+  componentWillUnmount(){ if(this.mq) this.mq.removeEventListener('change', this._onMq); window.removeEventListener('scroll', this._onScroll); if(this.io) this.io.disconnect(); }
+  renderVals(){
+    const accent = this.props.accentColor || '#1F5FAF';
+    const sc = this.state.scrolled || this.state.menuOpen;
+    return {
+      accent,
+      isMobile: this.state.mobile, isDesktop: !this.state.mobile,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: ()=> this.setState(s=>({ menuOpen: !s.menuOpen })),
+      closeMenu: ()=> this.setState({ menuOpen:false }),
+      headerBg: sc ? 'rgba(244,246,249,0.92)' : 'transparent',
+      headerColor: sc ? '#1A2230' : '#F4F6F9',
+      headerBorder: sc ? '1px solid rgba(26,34,48,0.1)' : '1px solid rgba(255,255,255,0)',
+      headerShadow: sc ? '0 14px 36px -26px rgba(0,0,0,0.55)' : 'none',
+      headerBlur: sc ? 'saturate(1.1) blur(14px)' : 'none',
+      ctaBtnColor: sc ? '#ffffff' : '#0B2E59',
+      ctaBtnBg: sc ? accent : '#F4F6F9',
+      year: new Date().getFullYear()
+    };
+  }
+}
+</script>
+</body>
+</html>

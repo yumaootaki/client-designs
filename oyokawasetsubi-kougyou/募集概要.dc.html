@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Barlow+Semi+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{margin:0;}
+.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal;}
+::selection{background:#1F5FAF;color:#fff;}
+@media (max-width:1024px){ section[data-screen-label$="ヒーロー"]{min-height:38svh !important;} }
+.spec-row{display:grid;grid-template-columns:clamp(120px,18vw,210px) 1fr;gap:clamp(14px,2.4vw,40px);padding:clamp(18px,2.4vw,28px) 0;border-bottom:1px solid #D5DCE5;}
+@media (max-width:620px){.spec-row{grid-template-columns:1fr;gap:8px;}}
+.parts219_form_wrap dl{display:grid;grid-template-columns:clamp(150px,20vw,230px) 1fr;gap:clamp(10px,2vw,32px);align-items:start;padding:clamp(16px,2vw,22px) 0;border-bottom:1px solid #D5DCE5;}
+.parts219_form_wrap dl.form_textarea,.parts219_form_wrap dl.attach,.parts219_form_wrap dl.attach2{align-items:start;}
+@media (max-width:640px){.parts219_form_wrap dl{grid-template-columns:1fr;gap:8px;}}
+.parts219_form_wrap dt{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:600;font-size:15.5px;color:#1A2230;padding-top:10px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+.parts219_form_wrap dd{margin:0;}
+.parts219_form_wrap input[type=text],.parts219_form_wrap input[type=email],.parts219_form_wrap input[type=tel],.parts219_form_wrap textarea{width:100%;font-family:inherit;font-size:15px;color:#1A2230;background:#fff;border:1px solid #C3CCD8;border-radius:2px;padding:12px 14px;line-height:1.7;}
+.parts219_form_wrap input[type=text]:focus,.parts219_form_wrap input[type=email]:focus,.parts219_form_wrap input[type=tel]:focus,.parts219_form_wrap textarea:focus{outline:2px solid #1F5FAF;outline-offset:1px;border-color:#1F5FAF;}
+.parts219_form_wrap input.zip{width:clamp(120px,40%,200px);}
+.parts219_form_wrap textarea{min-height:140px;resize:vertical;}
+.parts219_form_wrap input[type=file]{font-family:inherit;font-size:14px;color:#4A5566;padding:8px 0;}
+.parts219_form_wrap .required{font-size:11px;font-weight:700;letter-spacing:.06em;color:#fff;background:#0B2E59;padding:3px 8px;border-radius:2px;}
+.parts219_form_wrap .attention{font-size:12px;font-weight:400;color:#0B2E59;font-family:'Zen Kaku Gothic New',sans-serif;}
+.parts219_form_wrap .error{margin:6px 0 0;font-size:12.5px;color:#0B2E59;min-height:0;}
+.parts219_form_wrap .form_address dd{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:#4A5566;font-size:14px;}
+.contact_submit{margin-top:clamp(26px,3.4vw,40px);text-align:center;}
+.contact_submit input{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:600;font-size:16px;letter-spacing:.06em;color:#fff;background:#0a2a52;border:none;border-radius:2px;padding:17px 56px;cursor:pointer;transition:background .35s;}
+.contact_submit input:hover{background:#1F5FAF;}
+@keyframes ni-pan{0%{transform:scale(1.08) translate3d(0,0,0);}100%{transform:scale(1.16) translate3d(-2%,-1.5%,0);}}
+@keyframes ni-bounce-loop{0%{transform:translateY(0)}10%{transform:translateY(-8px)}19%{transform:translateY(0)}26%{transform:translateY(-3px)}32%{transform:translateY(0)}100%{transform:translateY(0)}}
+.nav-bounce .ni-char{display:inline-block;}
+.nav-bounce:hover .ni-char{animation:ni-bounce-loop .95s cubic-bezier(.28,.84,.42,1) infinite both;}
+@media (prefers-reduced-motion: reduce){ .nav-bounce:hover .ni-char{animation:none !important;} }
+@media (prefers-reduced-motion: reduce){*{animation:none !important;}}
+</style>
+</helmet>
+
+<div style="font-family:'Zen Kaku Gothic New',sans-serif; color:#1A2230; background:#F4F6F9; -webkit-font-smoothing:antialiased; line-height:1.85; overflow-x:hidden;">
+
+  <dc-import name="SiteHeader" accent="{{ accent }}" active="recruit" page-title="採用情報（募集要項）｜設備施工・電気工事スタッフ募集｜株式会社オヨカワ設備工業" description="株式会社オヨカワ設備工業の募集要項と応募フォーム。千葉県匝瑳市を拠点に、管工事・電気工事の経験者を正社員で募集しています。" hint-size="100%,84px"></dc-import>
+
+  <section data-screen-label="募集概要ヒーロー" style="position:relative; min-height:50svh; display:flex; align-items:flex-end; overflow:hidden; background:#4d4d4d; color:#F4F6F9;"><div aria-hidden="true" style="position:absolute; inset:0; z-index:1; background:linear-gradient(to right, rgba(11,46,89,.9) 0%, rgba(11,46,89,.8) 55%, rgba(8,36,72,.4) 100%), url('assets/p-drain-2.jpg') center/cover no-repeat;"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; background:radial-gradient(120% 95% at 50% 16%, rgba(31,95,175,.42), rgba(6,26,54,0) 56%), linear-gradient(270deg,#0B2E59 0%,#061a36 60%,#030d1f 100%); animation:ni-pan 24s ease-in-out infinite alternate; transform-origin:50% 26%;"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; opacity:.14; background-image:repeating-linear-gradient(125deg, rgba(190,210,235,.5) 0 1px, transparent 1px 16px); mix-blend-mode:screen;"></div>
+    <div aria-hidden="true" style="position:absolute; right:clamp(-14px,-1vw,0px); bottom:clamp(8px,3vh,30px); font-family:'Barlow Semi Condensed',sans-serif; font-weight:400; font-size:clamp(96px,22vw,300px); line-height:.8; color:rgba(190,210,235,.07); white-space:nowrap; pointer-events:none;">Entry</div>
+    <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(to right, rgba(3,14,32,.9) 0%, rgba(3,14,32,.35) 55%, transparent 100%);"></div>
+    <div style="position:relative; z-index:2; width:100%; max-width:1340px; margin:0 auto; padding:clamp(88px,12vh,116px) clamp(18px,4vw,46px) clamp(40px,5vh,60px);">
+      <nav aria-label="パンくず" style="display:flex; flex-wrap:wrap; align-items:center; gap:9px; font-size:12.5px; letter-spacing:.04em; color:rgba(244,246,249,.66); margin-bottom:clamp(20px,3vw,32px);">
+        <a href="/" style="color:rgba(244,246,249,.66); text-decoration:none;">ホーム</a>
+        <span aria-hidden="true" style="opacity:.5;">/</span>
+        <a href="/recruit" style="color:rgba(244,246,249,.66); text-decoration:none;">求職者の方へ</a>
+        <span aria-hidden="true" style="opacity:.5;">/</span>
+        <span style="color:#A9C4E8;">採用情報</span>
+      </nav>
+      <p style="margin:0 0 16px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(15px,2vw,20px); letter-spacing:.08em; color:#ffffff; display:flex; align-items:center; gap:14px;"><span style="display:inline-block; width:clamp(28px,4vw,52px); height:1px; background:#ffffff;"></span>Requirements</p>
+      <h1 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:clamp(34px,5vw,56px); line-height:1.2; letter-spacing:.02em; text-shadow:0 12px 46px rgba(0,0,0,.42);">採用情報</h1>
+      <p style="margin:clamp(18px,2.4vw,26px) 0 0; max-width:560px; font-size:clamp(15px,1.7vw,18px); line-height:2; color:rgba(244,246,249,1);">管工事・電気工事の経験者を募集しています。会社の考え方や働き方は<a href="/recruit" style="color:#ffffff; text-decoration:underline; text-underline-offset:3px;">「求職者の方へ」</a>をご覧ください。</p>
+    </div>
+  </section>
+
+  <section data-screen-label="募集要項" style="background:#F4F6F9; padding:clamp(72px,11vh,130px) 0;">
+    <div style="max-width:980px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div data-reveal style="margin-bottom:clamp(30px,4vw,48px);">
+        <p style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,20px); letter-spacing:.06em; color:{{ accent }};">Job Details</p>
+        <h2 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.35;">募集要項</h2>
+      </div>
+      <div data-reveal style="border-top:2px solid #0B2E59;">
+        <div class="spec-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">募集職種</span><div style="font-size:15px; color:#1A2230; line-height:1.95;">設備施工スタッフ（経験者）／電気工事スタッフ（経験者）</div></div>
+        <div class="spec-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">仕事内容</span><div style="font-size:15px; color:#1A2230; line-height:1.95;">設備施工スタッフ：給排水衛生設備・浄化槽・水道引き込み工事の施工。住宅から商業施設・公共施設まで。<br>電気工事スタッフ：照明・電源引き込み・電気配線などの電気工事の施工。</div></div>
+        <div class="spec-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">雇用形態</span><div style="font-size:15px; color:#1A2230; line-height:1.95;">正社員</div></div>
+        <div class="spec-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">勤務地</span><div style="font-size:15px; color:#1A2230; line-height:1.95;">千葉県匝瑳市平木7886-1（現場は千葉県内）</div></div>
+        <div class="spec-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">応募資格</span><div style="font-size:15px; color:#1A2230; line-height:1.95;">管工事または電気工事の実務経験のある方<br>普通自動車免許（AT限定不可）<!-- 要取材：必要経験年数 --></div></div>
+        <div class="spec-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">歓迎資格</span><div style="font-size:15px; color:#1A2230; line-height:1.95;">管工事施工管理技士／給水装置工事主任技術者／浄化槽設備士／第二種電気工事士</div></div>
+        <div class="spec-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">就業時間</span><div style="font-size:15px; color:#1A2230; line-height:1.95;">8:00〜17:00（休憩あり）<br><span style="font-size:13.5px; color:#4A5566;">※現場によって異なります</span></div></div>
+        <div class="spec-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">給与</span><div style="font-size:15px; color:#1A2230; line-height:1.95;">日給○○,○○○円〜（経験・資格・技能により決定）<!-- 要取材：給与・月給換算例・資格手当額 --></div></div>
+        <div class="spec-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">諸手当</span><div style="font-size:15px; color:#1A2230; line-height:1.95;">残業手当／家族手当／電話代支給</div></div>
+        <div class="spec-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">福利厚生</span><div style="font-size:15px; color:#1A2230; line-height:1.95;">資格取得支援制度</div></div>
+        <div class="spec-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">休日・休暇</span><div style="font-size:15px; color:#1A2230; line-height:1.95;">日曜日・年末年始・お盆・GW<br><span style="font-size:13.5px; color:#4A5566;">※例年の年末年始は12/29〜1/7</span></div></div>
+        <div class="spec-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">保険</span><div style="font-size:15px; color:#1A2230; line-height:1.95;">労働災害保険・雇用保険<!-- 要取材：社会保険の加入状況 --></div></div>
+        <div class="spec-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">選考プロセス</span><div style="font-size:15px; color:#1A2230; line-height:1.95;">応募 → 面接日決定 → 面接 → 内定</div></div>
+        <div class="spec-row"><span style="font-weight:700; font-size:15px; color:#0B2E59;">応募方法</span><div style="font-size:15px; color:#1A2230; line-height:1.95;">下記の応募フォーム、またはお電話（<a href="tel:0479-79-2707" style="color:#1F5FAF;">0479-79-2707</a>／担当まで）<br><span style="font-size:13.5px; color:#4A5566;">数日経っても折り返しがない場合、メールが届いていない可能性があります。お手数ですが再度お電話ください。</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔒 CMS固定領域（parts219系）：構造/クラス/input name 変更禁止・承認/解除なし。見た目はadd.cssのみ -->
+  <!-- 🔒 LOCK START -->
+  <section class="contact_section" data-screen-label="応募フォーム" style="background:#E8EDF3; padding:clamp(72px,11vh,130px) 0;">
+    <div style="max-width:880px; margin:0 auto; padding:0 clamp(18px,4vw,46px);">
+      <div class="parts210_section_content" data-reveal style="margin-bottom:clamp(30px,4vw,46px);">
+        <div class="parts210_content_wrap">
+          <p class="parts210_content" style="margin:0 0 14px; font-family:'Barlow Semi Condensed',sans-serif; font-size:clamp(16px,2vw,20px); letter-spacing:.06em; color:{{ accent }};">Application</p>
+          <h2 style="margin:0 0 16px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(26px,4.2vw,44px); line-height:1.24;">応募フォーム</h2>
+          <p style="margin:0; font-size:clamp(14.5px,1.6vw,16px); line-height:2; color:#4A5566;">下記フォームよりご応募ください。履歴書・職務経歴書は、お持ちの場合に添付してください（後日のご提出でもかまいません）。<span style="color:#0B2E59;">必須</span>の項目はご入力をお願いします。</p>
+        </div>
+      </div>
+      <div class="parts219_section_form">
+        <div class="parts219_form_wrap">
+          <form method="POST" action="/form/confirm/recruit" enctype="multipart/form-data">
+            <dl><dt>お名前 <span class="required">必須</span></dt><dd><input name="name" type="text" placeholder="例：山田 太郎"><p class="error"></p></dd></dl>
+            <dl><dt>フリガナ <span class="required">必須</span></dt><dd><input name="name_kana" type="text" placeholder="例：ヤマダ タロウ"><p class="error"></p></dd></dl>
+            <dl><dt>メールアドレス <span class="required">必須</span></dt><dd><input name="email" type="email" placeholder="例：info@example.com"><p class="error"></p></dd></dl>
+            <dl><dt>メールアドレス（確認用） <span class="required">必須</span></dt><dd><input name="email_confirmation" type="email" placeholder="確認のため再度ご入力ください"><p class="error"></p></dd></dl>
+            <dl><dt>電話番号 <span class="required">必須</span></dt><dd><input name="tel" type="tel" placeholder="例：000-0000-0000"><p class="error"></p></dd></dl>
+            <dl class="form_address"><dt>ご住所</dt><dd>〒 <input class="zip" name="zip" type="text" placeholder="000-0000"> <input name="address" type="text" placeholder="千葉県…"><p class="error"></p></dd></dl>
+            <dl class="attach"><dt class="form_text_dt">履歴書 <span class="attention">※ファイル名は半角英数字でお願いします</span></dt><dd><input type="file" name="attach"><p class="error"></p></dd></dl>
+            <dl class="attach2"><dt class="form_text_dt">職務経歴書 <span class="attention">※ファイル名は半角英数字でお願いします</span></dt><dd><input type="file" name="attach2"><p class="error"></p></dd></dl>
+            <dl class="form_textarea"><dt class="form_text_dt">ご質問・メッセージ</dt><dd><textarea name="memo" placeholder="ご質問やご希望があればご記入ください。"></textarea><p class="error"></p></dd></dl>
+            <div class="contact_submit"><input type="submit" value="確認画面へ"></div>
+          </form>
+        </div>
+      </div>
+      <div data-reveal style="margin-top:clamp(26px,3.4vw,40px); text-align:center; font-size:14px; color:#4A5566;">お電話でのご応募：<a href="tel:0479-79-2707" style="color:#1A2230; text-decoration:none; font-family:'Barlow Semi Condensed',sans-serif; font-size:19px; letter-spacing:.04em;">0479-79-2707</a>　担当まで</div>
+      <div data-reveal style="margin-top:clamp(28px,4vw,40px); display:flex; justify-content:flex-start;">
+        <a href="/recruit" class="nav-bounce" style="text-decoration:none; color:{{ accent }}; font-weight:700; font-size:15px; letter-spacing:.04em; display:inline-flex; align-items:center; gap:2px;"><span style="font-family:'Barlow Semi Condensed',sans-serif;">&larr;</span> 採用トップへ戻る</a>
+      </div>
+    </div>
+  </section>
+  <!-- 🔒 LOCK END -->
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#1F5FAF&quot;, &quot;options&quot;: [&quot;#1F5FAF&quot;, &quot;#0B2E59&quot;, &quot;#2A6FC4&quot;, &quot;#174C8F&quot;], &quot;tsType&quot;: &quot;string&quot; }
+}">
+class Component extends DCLogic {
+  state = { mobile:false, menuOpen:false, scrolled:false };
+  componentDidMount(){
+    this.mq = window.matchMedia('(max-width: 960px)');
+    this._onMq = (e)=> this.setState({ mobile: e.matches });
+    this._onMq(this.mq); this.mq.addEventListener('change', this._onMq);
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this._onScroll = ()=>{ const v = window.scrollY > 40; if(v !== this.state.scrolled) this.setState({ scrolled:v }); };
+    window.addEventListener('scroll', this._onScroll, { passive:true });
+    this.wrapNavBounce();
+    // 添付ファイル名チェック（半角英数字のみ）
+    this._fileCheck = (e)=>{
+      const f = e.target.files && e.target.files[0];
+      const errEl = e.target.parentElement.querySelector('.error');
+      if(!f){ if(errEl) errEl.textContent=''; return; }
+      const ok = /^[A-Za-z0-9._-]+$/.test(f.name);
+      if(errEl) errEl.textContent = ok ? '' : 'ファイル名は半角英数字でお願いします。';
+    };
+    requestAnimationFrame(()=>{
+      document.querySelectorAll('input[name="attach"], input[name="attach2"]').forEach(inp=> inp.addEventListener('change', this._fileCheck));
+    });
+    if(!this.reduced){
+      this.io = new IntersectionObserver((ents)=>{ ents.forEach(en=>{ if(en.isIntersecting){ en.target.style.opacity='1'; en.target.style.transform='none'; this.io.unobserve(en.target); } }); }, { threshold:0.08, rootMargin:'0px 0px -7% 0px' });
+      requestAnimationFrame(()=>{ document.querySelectorAll('[data-reveal]').forEach((el)=>{ el.style.opacity='0'; el.style.transform='translateY(26px)'; el.style.transitionProperty='opacity, transform'; el.style.transitionDuration='1s'; el.style.transitionTimingFunction='cubic-bezier(.2,.7,.2,1)'; this.io.observe(el); }); });
+    }
+  }
+  componentWillUnmount(){ if(this.mq) this.mq.removeEventListener('change', this._onMq); window.removeEventListener('scroll', this._onScroll); if(this.io) this.io.disconnect(); }
+  wrapNavBounce(){
+    document.querySelectorAll('.nav-bounce').forEach(link=>{
+      if(link.dataset.bounceReady) return; link.dataset.bounceReady='1';
+      const chars=[];
+      Array.from(link.childNodes).forEach(node=>{
+        if(node.nodeType===3){ const frag=document.createDocumentFragment();
+          Array.from(node.textContent).forEach(ch=>{ if(ch===' '){ frag.appendChild(document.createTextNode(' ')); return; } const s=document.createElement('span'); s.className='ni-char'; s.textContent=ch; frag.appendChild(s); chars.push(s); });
+          link.replaceChild(frag,node);
+        } else if(node.nodeType===1){ node.classList.add('ni-char'); chars.push(node); }
+      });
+      chars.forEach((c,i)=>{ c.style.animationDelay=(i*0.045)+'s'; });
+    });
+  }
+  renderVals(){
+    const accent = this.props.accentColor || '#1F5FAF';
+    const sc = this.state.scrolled || this.state.menuOpen;
+    return {
+      accent,
+      isMobile: this.state.mobile, isDesktop: !this.state.mobile,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: ()=> this.setState(s=>({ menuOpen: !s.menuOpen })),
+      closeMenu: ()=> this.setState({ menuOpen:false }),
+      headerBg: sc ? 'rgba(244,246,249,0.92)' : 'transparent',
+      headerColor: sc ? '#1A2230' : '#F4F6F9',
+      headerBorder: sc ? '1px solid rgba(26,34,48,0.1)' : '1px solid rgba(255,255,255,0)',
+      headerShadow: sc ? '0 14px 36px -26px rgba(0,0,0,0.55)' : 'none',
+      headerBlur: sc ? 'saturate(1.1) blur(14px)' : 'none',
+      ctaBtnColor: sc ? '#ffffff' : '#0B2E59',
+      ctaBtnBg: sc ? accent : '#F4F6F9',
+      year: new Date().getFullYear()
+    };
+  }
+}
+</script>
+</body>
+</html>
