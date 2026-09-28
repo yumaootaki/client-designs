@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
+<style>
+  span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal;}
+  @media (max-width:860px){ #footer-grid{grid-template-columns:1fr 1fr!important;} #footer-grid>div:first-child{grid-column:1/-1;} }
+  @media (max-width:520px){ #footer-grid{grid-template-columns:1fr!important;} }
+  footer a:focus-visible{outline:3px solid #5BB8E6;outline-offset:2px;}
+</style>
+</helmet>
+<footer id="contact" data-screen-label="Footer">
+  <sc-if value="{{ contact }}" hint-placeholder-val="{{ false }}">
+  <section style="background:var(--c-cream);padding:clamp(64px,9vh,110px) clamp(20px,5vw,56px);text-align:center;">
+    <p style="font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(28px,4.4vw,54px);letter-spacing:.06em;line-height:1;color:var(--c-brand);margin:0 0 clamp(16px,2.4vw,26px);">CONTACT</p>
+    <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(24px,4vw,40px);line-height:1.5;color:var(--c-ink);margin:0;text-wrap:pretty;"><span class="line-chunk">現場の住所と工期が</span><span class="line-chunk">わかれば、</span><span class="line-chunk">まずはご相談ください</span></h2>
+    <p style="font-size:clamp(15px,2vw,16px);line-height:1.9;color:#3C5470;margin:clamp(16px,2.4vw,22px) 0 0;">お見積りは無料です。本数や範囲がわからなくても、現地確認で算出します。</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;max-width:760px;margin:clamp(28px,4vw,40px) auto 0;">
+      <a href="お問い合わせ.dc.html" style="display:flex;align-items:center;justify-content:center;gap:10px;min-height:68px;background:var(--c-brand);color:#fff;border-radius:999px;font-size:16px;font-weight:700;letter-spacing:.06em;" style-hover="background:var(--c-ink);">無料で見積りを依頼する →</a>
+      <a href="tel:048-774-1378" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:68px;background:#fff;border:2px solid var(--c-brand);border-radius:999px;color:var(--c-brand);line-height:1.2;">
+        <span style="font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(20px,2.4vw,24px);letter-spacing:.06em;">TEL 048-774-1378</span>
+        <span style="font-size:12px;color:#3C5470;margin-top:2px;">受付 9:00〜16:30</span>
+      </a>
+    </div>
+  </section>
+  </sc-if>
+  <div style="background:var(--c-ink);color:#DCE8F3;">
+    <div id="footer-grid" style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vh,72px) clamp(20px,5vw,56px) clamp(36px,5vh,52px);display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start;">
+      <div>
+        <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(18px,2vw,22px);letter-spacing:.06em;color:#fff;margin:0 0 18px;">有限会社星電気工事</p>
+        <address style="font-style:normal;font-size:14px;line-height:1.9;display:flex;flex-direction:column;gap:12px;">
+          <span><span style="display:block;font-weight:700;color:#fff;">本社</span>〒362-0011 埼玉県上尾市大字平塚1987-5</span>
+          <span><span style="display:block;font-weight:700;color:#fff;">川越事務所</span>埼玉県川越市石原町27-1</span>
+          <span>TEL <a href="tel:048-774-1378" style="color:#fff;">048-774-1378</a>／FAX 048-773-8631<br>受付 9:00〜16:30</span>
+        </address>
+      </div>
+      <nav aria-label="ご依頼の方">
+        <p style="font-size:13px;font-weight:700;letter-spacing:.1em;color:#5BB8E6;margin:0 0 14px;">ご依頼の方</p>
+        <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;line-height:1.5;">
+          <a href="防護管リース.dc.html" style="padding:6px 0;" style-hover="color:#fff;">防護管リース</a>
+          <a href="業務案内.dc.html" style="padding:6px 0;" style-hover="color:#fff;">業務案内</a>
+          <a href="料金表.dc.html" style="padding:6px 0;" style-hover="color:#fff;">料金表</a>
+          <a href="施工実績.dc.html" style="padding:6px 0;" style-hover="color:#fff;">施工実績</a>
+          <a href="ご依頼を検討中の方へ.dc.html" style="padding:6px 0;" style-hover="color:#fff;">ご依頼を検討中の方へ</a>
+          <a href="よくあるご質問.dc.html" style="padding:6px 0;" style-hover="color:#fff;">よくあるご質問</a>
+          <a href="お問い合わせ.dc.html" style="padding:6px 0;" style-hover="color:#fff;">お問い合わせ</a>
+        </div>
+      </nav>
+      <nav aria-label="会社・採用">
+        <p style="font-size:13px;font-weight:700;letter-spacing:.1em;color:#5BB8E6;margin:0 0 14px;">会社・採用</p>
+        <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;line-height:1.5;">
+          <a href="星電気工事について.dc.html" style="padding:6px 0;" style-hover="color:#fff;">星電気工事について</a>
+          <a href="会社概要.dc.html" style="padding:6px 0;" style-hover="color:#fff;">会社概要</a>
+          <a href="スタッフ紹介.dc.html" style="padding:6px 0;" style-hover="color:#fff;">スタッフ紹介</a>
+          <a href="求職者の皆さまへ.dc.html" style="padding:6px 0;" style-hover="color:#fff;">求職者の皆さまへ</a>
+          <a href="採用情報.dc.html" style="padding:6px 0;" style-hover="color:#fff;">採用情報</a>
+          <a href="ブログ.dc.html" style="padding:6px 0;" style-hover="color:#fff;">ブログ</a>
+          <a href="プライバシーポリシー.dc.html" style="padding:6px 0;" style-hover="color:#fff;">プライバシーポリシー</a>
+        </div>
+      </nav>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.14);">
+      <p style="text-align:center;font-family:'Outfit',sans-serif;font-size:12px;letter-spacing:.12em;color:#DCE8F3;padding:16px 0;margin:0;">© 有限会社星電気工事</p>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:420},&quot;contact&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}"></script>
+</body>
+</html>

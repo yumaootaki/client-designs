@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>有限会社星電気工事 リプレイス ワイヤーフレーム(全14ページ)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FFFFFF; --sky:#EAF5FB; --aqua:#5BB8E6; --blue:#1F5FA8; --navy:#0F2E57;
+  --line:#D5E3EE; --mute:#6B7F95; --ph:#F2F6F9; --bg:#F5F8FB; --warn:#C2410C;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;color:var(--navy);background:var(--bg);line-height:1.75;font-size:15px}
+h1,h2,h3,h4{font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;line-height:1.4;margin:0}
+a{color:inherit}
+.topbar{background:var(--navy);color:#fff;padding:14px 24px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;justify-content:space-between}
+.topbar h1{font-size:17px;font-weight:700}
+.legend{display:flex;gap:14px;font-size:12px;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.layout{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+nav.side{background:#fff;border-right:1px solid var(--line);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto}
+.side h4{font-size:12px;color:var(--mute);margin:14px 6px 6px;font-weight:500}
+.side button{display:flex;width:100%;text-align:left;gap:8px;align-items:center;border:0;background:none;padding:8px 10px;border-radius:6px;font:inherit;font-size:14px;color:var(--navy);cursor:pointer}
+.side button:hover{background:var(--sky)}
+.side button[aria-current="true"]{background:var(--blue);color:#fff}
+.side button:focus-visible,.m-btn:focus-visible{outline:3px solid var(--aqua);outline-offset:2px}
+.tag{font-size:11px;padding:1px 7px;border-radius:10px;white-space:nowrap}
+.tag.old{background:#E5ECF2;color:var(--mute)}
+.tag.new{background:var(--aqua);color:#fff}
+button[aria-current="true"] .tag{background:#fff;color:var(--blue)}
+main{padding:28px clamp(16px,3vw,40px) 80px;min-width:0}
+.page{max-width:1100px;margin:0 auto}
+.meta{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin-bottom:22px}
+.meta h2{font-size:22px;margin-bottom:10px}
+.meta dl{display:grid;grid-template-columns:110px 1fr;gap:6px 14px;margin:0;font-size:14px}
+.meta dt{color:var(--mute)}
+.meta dd{margin:0}
+.frame{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.sec{display:grid;grid-template-columns:200px 1fr;border-top:1px dashed var(--line)}
+.sec:first-child{border-top:0}
+.lab{padding:18px 16px;background:#FAFCFD;border-right:1px dashed var(--line);font-size:12px;color:var(--mute)}
+.lab b{display:block;font-size:14px;color:var(--navy);margin-bottom:4px}
+.lab .n{color:var(--blue);font-weight:700}
+.mock{padding:22px 24px;min-width:0}
+.ph{background:repeating-linear-gradient(135deg,var(--ph) 0 10px,#E8EEF3 10px 20px);border:1px solid var(--line);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:12px;min-height:110px;text-align:center;padding:8px}
+.m-btn{display:inline-block;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:700;text-decoration:none;border:2px solid var(--blue)}
+.m-btn.pri{background:var(--blue);color:#fff}
+.m-btn.sec2{background:#fff;color:var(--blue)}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.req{color:var(--warn);font-weight:700}
+/* header / footer mock */
+.gh{display:flex;align-items:center;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.logo{font-family:"Zen Kaku Gothic New";font-weight:900;font-size:17px}
+.gnav{display:flex;gap:14px;font-size:13px;flex-wrap:wrap;flex:1}
+.gtel{font-size:13px;font-weight:700;color:var(--blue)}
+.gf{background:var(--navy);color:#DCE8F3;padding:22px 20px;font-size:12px;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:16px}
+.gf b{color:#fff;font-size:14px;display:block;margin-bottom:6px}
+/* hero */
+.m-hero{position:relative;background:linear-gradient(180deg,#fff 0%,var(--sky) 100%);border-radius:8px;padding:34px 30px 30px;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;overflow:hidden}
+.m-hero.small{grid-template-columns:1fr;padding:26px 28px}
+.m-hero h2{font-size:clamp(24px,3.2vw,36px);font-weight:900;letter-spacing:.02em}
+.m-hero.small h2{font-size:26px}
+.m-hero p{max-width:34em}
+.band{margin-top:18px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--aqua);padding:10px 14px;font-size:13px;border-radius:4px}
+.wire{position:absolute;left:0;right:0;top:8px;height:120px;pointer-events:none}
+.wire .base{fill:none;stroke:var(--navy);stroke-width:2;opacity:.55}
+.wire .sleeve{fill:none;stroke:var(--aqua);stroke-width:10;stroke-linecap:round;stroke-dasharray:150 1000;stroke-dashoffset:150;animation:slide 2.4s cubic-bezier(.3,.7,.2,1) .4s forwards}
+@keyframes slide{to{stroke-dashoffset:-430}}
+@media (prefers-reduced-motion:reduce){.wire .sleeve{animation:none;stroke-dashoffset:-430}}
+.has-line{padding-top:120px}
+/* generic blocks */
+.m-h{font-size:20px;font-weight:700;margin-bottom:6px}
+.m-sub{color:var(--mute);font-size:13px;margin:0 0 14px}
+.grid{display:grid;gap:14px}
+.card{border:1px solid var(--line);border-radius:8px;padding:14px;background:#fff}
+.card h4{font-size:15px;margin:8px 0 4px}
+.card p{font-size:13px;margin:0;color:#3C5470}
+.card .ph{min-height:80px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{border-top:3px solid var(--blue);padding:10px 4px}
+.stat strong{font-family:"Zen Kaku Gothic New";font-size:26px;font-weight:900;display:block;color:var(--blue)}
+.stat span{font-size:12px;color:var(--mute)}
+.steps{counter-reset:s;display:grid;gap:10px}
+.step{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;border:1px solid var(--line);border-radius:8px;padding:12px;background:#fff}
+.step::before{counter-increment:s;content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--sky);color:var(--blue);font-weight:700;display:flex;align-items:center;justify-content:center}
+.step h4{font-size:15px}
+.step p{margin:2px 0 0;font-size:13px;color:#3C5470}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th,.tbl td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.tbl th{width:30%;background:#FAFCFD;font-weight:500;color:var(--mute)}
+.tblwrap{overflow-x:auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px;background:#fff}
+.faq details{border-bottom:1px solid var(--line);padding:10px 0}
+.faq summary{cursor:pointer;font-weight:700}
+.faq summary::before{content:"Q. ";color:var(--blue)}
+.faq p{margin:6px 0 0;font-size:14px}
+.faq p::before{content:"A. ";color:var(--aqua);font-weight:700}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.m-banner{background:var(--navy);color:#fff;border-radius:8px;padding:24px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.m-banner p{margin:4px 0 0;color:#C9DBEC;font-size:14px}
+.m-banner .m-btn{border-color:#fff;background:#fff;color:var(--navy)}
+.m-cta{background:var(--sky);border-radius:8px;padding:26px;text-align:center}
+.m-cta .btns{justify-content:center}
+.form{display:grid;gap:10px}
+.field{display:grid;grid-template-columns:180px 1fr;gap:10px;align-items:center;font-size:13px}
+.field .inp{height:36px;border:1px solid var(--line);border-radius:6px;background:#FAFCFD}
+.tl{border-left:2px solid var(--aqua);padding-left:16px;display:grid;gap:10px}
+.tl div b{color:var(--blue);margin-right:10px}
+.note{font-size:12px;color:var(--mute);margin-top:10px}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  nav.side{position:static;height:auto;display:flex;gap:6px;overflow-x:auto;padding:10px}
+  .side h4{display:none}
+  .side button{white-space:nowrap;width:auto}
+  .sec{grid-template-columns:1fr}
+  .lab{border-right:0;border-bottom:1px dashed var(--line)}
+  .m-hero,.twocol,.m-banner,.gf{grid-template-columns:1fr}
+  .field{grid-template-columns:1fr}
+  .meta dl{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>有限会社星電気工事 リプレイス ワイヤーフレーム(既存7P+新規7P/全14ページ)</h1>
+  <div class="legend">
+    <span><i class="dot" style="background:#fff"></i>白</span>
+    <span><i class="dot" style="background:#5BB8E6"></i>水色</span>
+    <span><i class="dot" style="background:#1F5FA8"></i>青</span>
+    <span><i class="dot" style="background:#0F2E57;border:1px solid #fff"></i>紺(文字)</span>
+    <span class="req" style="color:#FDBA74">【要確認】=ヒアリング項目</span>
+  </div>
+</div>
+<div class="layout">
+  <nav class="side" id="side" aria-label="ページ一覧"></nav>
+  <main id="main"></main>
+</div>
+
+<script>
+const R = '<span class="req">【要確認】</span>';
+const PAGES = [
+/* ===================== 既存(リライト) ===================== */
+{id:'top',name:'TOP',kind:'old',url:'/',
+ goal:'受注問い合わせ(主)/求人応募(副)',
+ kw:'防護管 取り付け 埼玉県/防護管 リース 埼玉/電柱 防護管',
+ flow:'防護管リース・料金表・見積り依頼へ誘導。求人はFV下バンド+中盤バナー',
+ secs:[
+ {t:'hero',name:'ファーストビュー',aim:'受注メイン。電線に防護管が被さるラインアニメーションを唯一の演出にする',svg:true,
+  h:'電線のそばの現場を、<br>止めずに、安全に。',
+  sub:'埼玉県全域で、電柱・電線の防護管取り付けとリースに対応します。上尾・川越を拠点に、取付からリース、撤去までひとつの窓口で。',
+  ctas:['無料で見積りを依頼する','防護管リースを見る'],
+  band:'電気工事士を募集中。未経験から資格取得まで支えます。 <u>求職者の皆さまへ</u>'},
+ {t:'stats',name:'数字で見る信頼',aim:'誠実さを根拠で示す',items:[['30年以上','代表の業界歴'],['【要確認】件','年間の防護管施工数'],['埼玉県全域','対応エリア'],['最短【要確認】日','ご相談から取付まで']]},
+ {t:'cards',name:'こんな現場でご相談ください',aim:'自分ごと化+ターゲット選別(営業会社流入対策)',cols:4,h:'電線の近くで、こんな作業はありませんか',
+  items:[['足場の組立・解体','電線に足場が近づく外壁・屋根工事'],['クレーン・重機作業','吊り荷や重機アームが電線に接近する現場'],['解体工事','建物解体時の電線接触リスクに'],['新築・外構工事','資材搬入や高所作業がある現場']]},
+ {t:'cards',name:'サービス',aim:'3事業への入口',cols:3,h:'星電気工事の仕事',
+  items:[['防護管工事','電線への防護管の取付・撤去を自社スタッフが施工します。'],['防護管リース','必要な本数を必要な期間だけ。取付から撤去まで込みで対応します。'],['配線工事一式','外線工事、電線の張り替え、新築の引込み工事に対応します。']]},
+ {t:'steps',name:'ワンストップの強み',aim:'差別化。依頼側の手間が減ることを流れで見せる',h:'取付・リース・撤去を、ひとつの窓口で',
+  items:[['現地確認','電線の位置と作業内容を確認し、必要な本数を算出します。'],['手配・段取り','工程に合わせて取付日を決めます。電力会社との調整は'+R],['取付','自社スタッフが施工します。'],['リース期間中の対応','工程の延長・短縮にも柔軟に対応します。'],['撤去','作業完了後、速やかに撤去します。']]},
+ {t:'cards',name:'施工実績ピックアップ',aim:'施工実績ページへ。現場種別・エリアを明記',cols:3,img:true,
+  items:[['川越市|足場工事に伴う防護管取付','期間:約1ヶ月/本数'+R],['上尾市|解体工事の防護管リース','期間:約2週間/本数'+R],['坂戸市|新築引込み工事','配線工事一式']]},
+ {t:'cards',name:'お客様の声',aim:'第三者の評価で安心材料を補強',cols:2,
+  items:[['建設会社様(川越市)','「急な工程変更にもすぐ対応してもらえた」'+R],['足場工事業者様(上尾市)','「取付から撤去まで任せられるので段取りが楽」'+R]]},
+ {t:'chips',name:'対応エリア',aim:'エリアKWの受け皿。埼玉県全域へ拡大',h:'埼玉県全域に対応しています',
+  items:['上尾市','川越市','さいたま市','鶴ヶ島市','坂戸市','川島町','狭山市','桶川市','北本市','鴻巣市','所沢市','ふじみ野市','その他 埼玉県全域','県外は'+R]},
+ {t:'banner',name:'求人バナー',aim:'求人導線(副)',h:'ライフラインを守る仕事を、次の世代へ。',sub:'普通免許(MT)があれば経験不問。未経験から電気工事士を目指せます。',cta:'求職者の皆さまへ'},
+ {t:'cards',name:'ブログ・お知らせ',aim:'週1更新の受け皿。滞在時間改善',cols:3,img:true,
+  items:[['防護管の基礎','防護管リースの費用はどう決まる?'],['現場事例','足場工事での防護管取付の流れ'],['採用・社内','未経験入社1年目の一日']]},
+ {t:'cta',name:'お問い合わせCTA',aim:'全ページ共通',h:'現場の住所と工期がわかれば、まずはご相談ください',sub:'お見積りは無料です。TEL 048-774-1378(受付 9:00〜16:30)',ctas:['無料で見積りを依頼する','電話で相談する']}
+ ]},
+{id:'information',name:'会社概要',kind:'old',url:'/information',
+ goal:'信頼確認(元請・求職者の両方)',kw:'星電気工事 上尾市/有限会社星電気工事',flow:'星電気工事について・採用情報へ',
+ secs:[
+ {t:'hero',small:true,name:'ページタイトル',aim:'',h:'会社概要',sub:'有限会社星電気工事の会社情報と所在地です。'},
+ {t:'table',name:'会社データ',aim:'許認可・取引先で信頼を補強',rows:[['会社名','有限会社星電気工事'],['代表者',R],['本社','〒362-0011 埼玉県上尾市大字平塚1987-5'],['事業所','川越事務所(川越市石原町27-1) 本社との表記統一'+R],['TEL/FAX','048-774-1378/048-773-8631'],['設立',R],['事業内容','防護管工事・防護管リース・配線工事一式(外線工事、電線張替、引込み工事)'],['許認可・資格',R],['従業員数','5名'],['主要取引先',R]]},
+ {t:'twocol',name:'アクセス',aim:'2拠点を地図で',a:'<div class="ph">Googleマップ(本社)</div>',b:'<div class="ph">Googleマップ(川越事務所)</div>'},
+ {t:'banner',name:'誘導バナー',aim:'代表メッセージ・想いは新規ページへ',h:'代表メッセージと私たちの約束',sub:'星電気工事がどんな会社か、もう少し詳しくお伝えします。',cta:'星電気工事について'},
+ {t:'cta',name:'CTA',aim:'共通',h:'お見積り・ご相談はお気軽に',sub:'TEL 048-774-1378',ctas:['見積りを依頼する']}
+ ]},
+{id:'work',name:'業務案内',kind:'old',url:'/work',
+ goal:'サービス理解→問い合わせ',kw:'外線工事 埼玉/電線 張り替え 工事/引込み工事 上尾市',flow:'防護管リース・料金表・施工実績へ',
+ secs:[
+ {t:'hero',small:true,name:'ページタイトル',aim:'',h:'業務案内',sub:'防護管工事と配線工事一式。電線まわりの工事を一貫して担います。'},
+ {t:'cards',name:'サービス一覧',aim:'アンカーリンク',cols:3,img:true,items:[['防護管工事','取付・撤去'],['防護管リース','詳細は専用ページへ'],['配線工事一式','外線・張替・引込み']]},
+ {t:'twocol',name:'防護管工事',aim:'リライト。対応電線・作業範囲を具体化',a:'<div class="m-h">防護管工事</div><p>電線に防護管を取り付け、近接作業時の感電・接触事故を防ぎます。対応する電線の種類、1日あたりの施工本数'+R+'。</p><a class="m-btn sec2">防護管リースを見る</a>',b:'<div class="ph">施工写真(取付中)</div>'},
+ {t:'twocol',name:'配線工事一式',aim:'リライト。工事種別ごとに段落化',a:'<div class="ph">施工写真(外線工事)</div>',b:'<div class="m-h">配線工事一式</div><p>外線工事、電線の張り替え工事、新築工事にともなう配線引き込み工事に対応します。</p>'},
+ {t:'steps',name:'工事の流れ',aim:'',items:[['お問い合わせ','電話・フォームで現場情報をお知らせください。'],['現地確認・お見積り','無料で伺います。'],['施工','自社スタッフが施工します。'],['完了・撤去','防護管の撤去まで対応します。']]},
+ {t:'cta',name:'CTA',aim:'共通',h:'工事内容が決まっていなくてもご相談ください',sub:'',ctas:['見積りを依頼する','料金表を見る']}
+ ]},
+{id:'jisseki',name:'施工実績',kind:'old',url:'/jisseki',
+ goal:'実績で安心→問い合わせ',kw:'防護管 施工事例 埼玉/防護管 取付 川越市',flow:'各実績→お問い合わせ',
+ secs:[
+ {t:'hero',small:true,name:'ページタイトル',aim:'',h:'施工実績',sub:'埼玉県内で手がけた防護管工事・配線工事の一部をご紹介します。'},
+ {t:'chips',name:'絞り込み',aim:'工事種別で絞り込み',items:['すべて','防護管取付','防護管リース','配線工事']},
+ {t:'cards',name:'実績一覧',aim:'カードに現場種別/エリア/期間/本数を必ず記載(SEO)',cols:3,img:true,
+  items:[['川越市|足場工事','防護管取付/約1ヶ月'],['上尾市|解体工事','防護管リース/約2週間'],['坂戸市|新築','引込み工事'],['狭山市|外壁塗装','防護管取付'],['鶴ヶ島市|クレーン作業','防護管リース'],['さいたま市|電線張替','配線工事']]},
+ {t:'text',name:'実績詳細の型',aim:'個別ページの構成テンプレ',h:'実績詳細ページの構成',body:'現場概要(エリア・工事種別・期間・本数) → ご依頼内容 → 当社の対応 → 施工写真(Before/After) → お客様の声'},
+ {t:'cta',name:'CTA',aim:'共通',h:'同じような現場はありませんか',sub:'',ctas:['見積りを依頼する']}
+ ]},
+{id:'recruit',name:'採用情報',kind:'old',url:'/recruit',
+ goal:'応募(募集要項に特化)',kw:'外線工事 求人 埼玉/電気工事士 求人 上尾市/電気工事 未経験 川越市',flow:'求職者の皆さまへ・スタッフ紹介と相互リンク',
+ secs:[
+ {t:'hero',small:true,name:'ページタイトル',aim:'',h:'採用情報|外線電気工事スタッフ',sub:'経験は問いません。普通免許(MT)をお持ちの方を募集しています。'},
+ {t:'table',name:'募集要項',aim:'Indeed等への転載も想定し網羅',rows:[['職種','外線電気工事スタッフ(防護管工事・配線工事)'],['雇用形態','正社員'+R],['仕事内容','電線への防護管の取付・撤去、外線工事、引込み工事'],['応募資格','普通自動車免許(MT)必須/経験・資格不問'],['給与',R],['勤務時間',R],['休日・休暇',R],['勤務地','上尾市/川越市 ※現場へは社用車で移動'+R],['待遇・福利厚生','資格取得支援、資格手当、社会保険完備'+R]]},
+ {t:'steps',name:'選考の流れ',aim:'応募ハードルを下げる',items:[['応募','フォームまたは電話で。'],['面接・職場見学','現場の雰囲気を見てから決められます。'+R],['内定','面接から1週間以内に連絡'+R],['入社','先輩と一緒に現場に出ます。']]},
+ {t:'banner',name:'誘導バナー',aim:'仕事理解・人を知るページへ',h:'どんな人が働いているか知りたい方へ',sub:'キャリアパスやスタッフの声を紹介しています。',cta:'求職者の皆さまへ'},
+ {t:'form',name:'応募フォーム',aim:'項目は最小限',fields:['お名前','年齢','電話番号','メールアドレス','普通免許(MT)の有無','電気工事の経験','ご質問']}
+ ]},
+{id:'blog',name:'ブログ',kind:'old',url:'/blog',
+ goal:'検索流入・滞在時間',kw:'記事ごとに設定(週1本・5,000字目標)',flow:'記事末に見積りCTA/求人CTAをカテゴリで出し分け',
+ secs:[
+ {t:'hero',small:true,name:'ページタイトル',aim:'',h:'ブログ',sub:'防護管の基礎知識、現場の事例、社内の様子をお届けします。'},
+ {t:'chips',name:'カテゴリ',aim:'KWクラスタと一致させる',items:['防護管の基礎知識','現場事例','費用・リース','採用・社内の様子','お知らせ']},
+ {t:'cards',name:'記事一覧',aim:'アイキャッチ+日付+カテゴリ',cols:3,img:true,
+  items:[['防護管の基礎知識','防護管とは?必要になる工事と設置の流れ'],['費用・リース','防護管リースの費用相場と決まり方'],['現場事例','解体工事で防護管が必要になるケース'],['採用・社内の様子','未経験から電気工事士になるまで'],['現場事例','クレーン作業時の電線対策'],['お知らせ','年末年始の営業について']]},
+ {t:'text',name:'記事末CTAの出し分け',aim:'',h:'記事末CTA',body:'防護管・費用・現場事例カテゴリ → 見積り依頼CTA/採用カテゴリ → 求職者の皆さまへCTA'}
+ ]},
+{id:'contact',name:'お問い合わせ',kind:'old',url:'/contact',
+ goal:'問い合わせ完了',kw:'—',flow:'用件で2分岐',
+ secs:[
+ {t:'hero',small:true,name:'ページタイトル',aim:'',h:'お問い合わせ',sub:'お見積りは無料です。わかる範囲でご記入ください。'},
+ {t:'cards',name:'用件の分岐',aim:'受注と応募を入口で分ける',cols:2,items:[['工事・リースのご依頼','防護管の取付・リース、配線工事のご相談'],['採用へのご応募・ご質問','採用情報ページの応募フォームへ']]},
+ {t:'form',name:'依頼フォーム',aim:'見積りに必要な情報を先に取得',fields:['会社名','ご担当者名','電話番号','メールアドレス','現場住所','工事予定時期','作業内容(足場・解体・クレーン等)','必要な期間・本数(わかる範囲)','現場写真(任意)','ご相談内容']},
+ {t:'text',name:'電話・注意書き',aim:'営業電話の抑制文も',h:'お電話でのご相談',body:'TEL 048-774-1378(受付 9:00〜16:30)<br><span class="note">※営業・勧誘目的のご連絡はご遠慮ください。</span>'}
+ ]},
+/* ===================== 新規 ===================== */
+{id:'lease',name:'①防護管リース',kind:'new',url:'/lease',
+ goal:'主力事業の受注',kw:'防護管 リース 埼玉/防護管 レンタル/電柱 防護管 設置',flow:'料金表・見積り依頼へ',
+ secs:[
+ {t:'hero',small:true,name:'ページタイトル',aim:'主力商品LP的に扱う',h:'防護管リース',sub:'必要な期間だけ、必要な本数を。取付から撤去まで当社が行います。',ctas:['無料で見積りを依頼する','料金表を見る']},
+ {t:'twocol',name:'防護管とは',aim:'初めての担当者向けに図解',a:'<div class="m-h">防護管とは</div><p>電線にかぶせる絶縁カバーです。足場や重機が電線に近づく作業で、感電や電線損傷を防ぎます。</p>',b:'<div class="ph">図解:電線+防護管+足場のイラスト</div>'},
+ {t:'cards',name:'必要になる現場',aim:'',cols:4,items:[['足場工事','外壁塗装・屋根工事'],['解体工事','木造・RC解体'],['クレーン作業','資材の吊り上げ'],['新築・外構','高所作業・搬入']]},
+ {t:'cards',name:'取扱い防護管',aim:'種類・サイズを写真付きで',cols:3,img:true,items:[['低圧用防護管',R],['高圧用防護管',R],['その他防護具',R]]},
+ {t:'steps',name:'リースの流れ',aim:'',items:[['お問い合わせ','現場住所・工期・作業内容をお知らせください。'],['現地確認','必要な本数と範囲を確認します。'],['お見積り','無料。目安は料金表でも確認できます。'],['取付','工程に合わせて自社スタッフが施工。'],['リース期間','延長・短縮にも対応します。'],['撤去','作業完了後に撤去して終了です。']]},
+ {t:'cards',name:'選ばれる理由',aim:'誠実さ=約束を守る',cols:3,items:[['自社施工','取付・撤去まで外注せず自社で対応。'],['在庫を保有','急ぎの現場にも対応'+R],['工程変更に柔軟','期間の延長・短縮に対応します。']]},
+ {t:'banner',name:'料金表へ',aim:'',h:'費用の目安を先に知りたい方へ',sub:'リース料・取付撤去費の目安を掲載しています。',cta:'料金表を見る'},
+ {t:'faq',name:'よくある質問(抜粋)',aim:'FAQページへ',items:[['何日前までに依頼すればいいですか?','目安は'+R+'。お急ぎの場合もご相談ください。'],['1本から借りられますか?',R],['工期が延びたらどうなりますか?','延長分のリース料で継続できます。']]},
+ {t:'cta',name:'CTA',aim:'',h:'現場の住所と工期を教えてください',sub:'本数がわからなくても現地確認で算出します。',ctas:['無料で見積りを依頼する']}
+ ]},
+{id:'for-clients',name:'②ご依頼を検討中の方へ',kind:'new',url:'/for-clients',
+ goal:'初回依頼の不安解消',kw:'防護管 依頼 流れ/防護管 業者 埼玉',flow:'お問い合わせへ',
+ secs:[
+ {t:'hero',small:true,name:'ページタイトル',aim:'',h:'はじめてご依頼される方へ',sub:'防護管が必要かどうかの判断から、お手伝いします。'},
+ {t:'cards',name:'よくある不安',aim:'不安→回答の対で見せる',cols:2,items:[['防護管が必要かわからない','現場を見て、必要かどうかからお伝えします。'],['本数や範囲がわからない','現地確認で算出します。'],['急な工程変更が心配','延長・短縮に柔軟に対応します。'],['費用が見えない','料金表で目安を公開し、見積りは無料です。']]},
+ {t:'steps',name:'ご依頼の流れ',aim:'各ステップの所要日数を記載',items:[['お問い合わせ','フォーム・電話。当日〜翌営業日に返信'+R],['現地確認','日程調整のうえ伺います。'],['お見積り','確認後'+R+'日以内に提出。'],['施工・リース','工程に合わせて取付。'],['撤去・精算','撤去後にご請求。']]},
+ {t:'chips',name:'見積りに必要な情報',aim:'問い合わせ時の準備チェック',h:'この情報があるとお見積りが早くなります',items:['現場住所','工事期間','作業内容','電線の位置がわかる写真','ご希望の取付日']},
+ {t:'cards',name:'お客様の声',aim:'',cols:2,items:[['建設会社様',R],['解体工事業者様',R]]},
+ {t:'cta',name:'CTA',aim:'',h:'わからないことだけの相談でも大丈夫です',sub:'',ctas:['相談する','FAQを見る']}
+ ]},
+{id:'for-applicants',name:'③求職者の皆さまへ',kind:'new',url:'/for-applicants',
+ goal:'仕事理解→応募',kw:'電気工事士 未経験 埼玉/外線工事 仕事内容',flow:'スタッフ紹介→採用情報(応募)',
+ secs:[
+ {t:'hero',small:true,name:'ページタイトル',aim:'世代交代メッセージを正面から',h:'ライフラインを守る仕事を、一から。',sub:'普通免許(MT)があれば経験は問いません。先輩の隣で、ひとつずつ覚えていけます。'},
+ {t:'twocol',name:'代表から求職者へ',aim:'誠実なトーンで。写真は代表の現場姿',a:'<div class="ph">代表の写真</div>',b:'<div class="m-h">代表からのメッセージ</div><p>30年以上この仕事を続けてきました。これからの現場を担う人を、会社全体で育てます。'+R+'(本人の言葉で取材)</p>'},
+ {t:'cards',name:'この仕事のやりがい',aim:'',cols:3,items:[['街の安全を支える','見えないところで事故を防ぐ仕事です。'],['技術が身につく','電気工事士など一生使える資格。'],['チームで動く','少人数だから一人ひとりに目が届きます。']]},
+ {t:'timeline',name:'1日の流れ',aim:R+'実際のスケジュールを取材',items:[['8:00','事務所集合・段取り確認'],['9:00','現場へ移動・防護管取付'],['12:00','昼休憩'],['13:00','別現場で撤去作業'],['16:30','帰社・片付け']]},
+ {t:'steps',name:'キャリアパス',aim:'年1〜2名採用の核。年数と資格で見せる',items:[['入社〜1年','先輩と一緒に現場へ。道具と安全ルールを覚えます。'],['1〜3年','第二種電気工事士を取得'+R+'。取付作業を任されます。'],['3〜5年','班長として現場をまとめます。'],['5年〜','現場責任者・次の世代を育てる立場へ。']]},
+ {t:'cards',name:'制度・福利厚生',aim:'',cols:4,items:[['資格取得支援',R],['資格手当',R],['社会保険',R],['社用車移動',R]]},
+ {t:'banner',name:'スタッフ紹介へ',aim:'',h:'一緒に働く人を見てみませんか',sub:'現場を支えるスタッフを紹介しています。',cta:'スタッフ紹介'},
+ {t:'cta',name:'応募CTA',aim:'',h:'まずは職場見学からでも',sub:'TEL 048-774-1378',ctas:['募集要項を見る','応募する']}
+ ]},
+{id:'price',name:'④料金表',kind:'new',url:'/price',
+ goal:'費用不安の解消→見積り依頼',kw:'防護管 リース 費用/防護管 料金 相場',flow:'見積り依頼へ',
+ secs:[
+ {t:'hero',small:true,name:'ページタイトル',aim:'目安価格+要見積りの方針',h:'料金表',sub:'掲載は目安です。現場の条件で変わるため、正式なお見積りは無料で作成します。'},
+ {t:'steps',name:'料金の考え方',aim:'内訳を先に示し、透明性=誠実さを出す',items:[['リース料','本数×期間で計算します。'],['取付・撤去費','本数と作業条件で決まります。'],['出張費','エリアによって異なります。']]},
+ {t:'price',name:'目安価格表',aim:R+'金額はすべて佐藤様に確認',rows:[['防護管リース(1本・1ヶ月)','〇〇円〜','最低期間'+R],['取付費(1本)','〇〇円〜','高所・夜間は別途'],['撤去費(1本)','〇〇円〜',''],['出張費','〇〇円〜','上尾市・川越市近郊は'+R],['期間延長','リース料の日割り'+R,''],['夜間・休日作業','別途お見積り','']]},
+ {t:'cards',name:'お見積り例',aim:'合計額の目安で判断材料に',cols:3,items:[['戸建て外壁塗装の足場','防護管〇本×1ヶ月<br>合計 〇〇円〜'],['木造住宅の解体','防護管〇本×2週間<br>合計 〇〇円〜'],['新築外構工事','防護管〇本×3週間<br>合計 〇〇円〜']]},
+ {t:'chips',name:'料金に影響する条件',aim:'',items:['電線の種類','取付の高さ','本数','期間','作業時間帯','現場までの距離']},
+ {t:'cta',name:'CTA',aim:'',h:'正確な金額は無料見積りで',sub:'現場写真を送っていただければ概算をお出しします。',ctas:['無料で見積りを依頼する']}
+ ]},
+{id:'about',name:'⑤星電気工事について',kind:'new',url:'/about',
+ goal:'人柄・姿勢で信頼獲得(受注・求人共通)',kw:'星電気工事 代表/上尾市 電気工事会社',flow:'スタッフ紹介・求職者へ・見積り依頼',
+ secs:[
+ {t:'hero',small:true,name:'ページタイトル',aim:'',h:'星電気工事について',sub:'電線まわりの安全を30年以上。私たちの仕事と約束です。'},
+ {t:'twocol',name:'代表メッセージ',aim:R+'取材して本人の言葉で',a:'<div class="ph">代表の写真</div>',b:'<div class="m-h">代表メッセージ</div><p>ひとつひとつの現場に誠心誠意を尽くし、「頼んでよかった」と言っていただける仕事を続けてきました。…</p>'},
+ {t:'cards',name:'私たちの約束',aim:'「誠実」を具体的な行動で',cols:3,items:[['安全を最優先に','無理な工程は引き受けず、代替案を出します。'],['約束の日を守る','工程に合わせて確実に取付・撤去します。'],['小さな現場も同じ姿勢で','1本からのご相談にも対応'+R]]},
+ {t:'text',name:'私たちの仕事の意味',aim:'',h:'見えないところで、ライフラインを守る',body:'電線が損傷すると、地域の停電や事故につながります。防護管工事は、工事現場と地域の暮らしの両方を守る仕事です。'},
+ {t:'timeline',name:'沿革',aim:R,items:[['〇〇年','創業'],['〇〇年','有限会社星電気工事を設立'],['〇〇年','防護管リース事業を開始'],['〇〇年','川越事務所を開設']]},
+ {t:'cta',name:'CTA',aim:'',h:'ご依頼・採用のご相談はこちら',sub:'',ctas:['見積りを依頼する','求職者の皆さまへ']}
+ ]},
+{id:'faq',name:'⑥FAQ',kind:'new',url:'/faq',
+ goal:'不安解消・滞在時間',kw:'防護管 リース 期間/防護管 何日前',flow:'各回答からリース・料金表・採用へ',
+ secs:[
+ {t:'hero',small:true,name:'ページタイトル',aim:'FAQ構造化データを実装',h:'よくあるご質問',sub:''},
+ {t:'chips',name:'カテゴリ',aim:'',items:['ご依頼について','防護管リースについて','料金について','採用について']},
+ {t:'faq',name:'ご依頼について',aim:'',items:[['対応エリアはどこですか?','埼玉県全域です。県外は'+R],['個人でも依頼できますか?',R],['土日も対応していますか?',R]]},
+ {t:'faq',name:'防護管リースについて',aim:'',items:[['リースの最短期間は?',R],['取付までの日数は?','目安は'+R+'。お急ぎの場合はご相談ください。'],['電力会社への申請は必要ですか?',R]]},
+ {t:'faq',name:'料金について',aim:'',items:[['見積りは無料ですか?','無料です。'],['支払い方法は?',R]]},
+ {t:'faq',name:'採用について',aim:'',items:[['未経験でも大丈夫ですか?','はい。先輩と一緒に現場で覚えていきます。'],['資格は必要ですか?','普通免許(MT)があれば応募できます。電気工事士は入社後に取得を支援します。'+R],['職場見学はできますか?',R]]},
+ {t:'cta',name:'CTA',aim:'',h:'解決しない場合はお気軽にお問い合わせください',sub:'',ctas:['お問い合わせ']}
+ ]},
+{id:'staff',name:'⑦スタッフ紹介',kind:'new',url:'/staff',
+ goal:'人の見える化→応募・依頼の安心',kw:'星電気工事 スタッフ/電気工事士 先輩',flow:'採用情報・求職者へ',
+ secs:[
+ {t:'hero',small:true,name:'ページタイトル',aim:'',h:'スタッフ紹介',sub:'現場を支える5人のスタッフです。'},
+ {t:'cards',name:'スタッフ一覧',aim:R+'写真撮影可否/顔出しNGなら後ろ姿・手元',cols:3,img:true,items:[['代表|〇〇','業界歴30年以上/保有資格'+R],['〇〇','経験〇年/第二種電気工事士'],['〇〇','経験〇年'],['〇〇','経験〇年'],['〇〇','経験〇年']]},
+ {t:'twocol',name:'スタッフインタビュー',aim:'Q&A形式で1〜2名',a:'<div class="ph">インタビュー写真</div>',b:'<div class="m-h">〇〇さん(入社〇年目)</div><p><b>入社のきっかけ</b><br>'+R+'</p><p><b>この仕事のやりがい</b><br>'+R+'</p><p><b>未経験の方へ</b><br>'+R+'</p>'},
+ {t:'banner',name:'採用情報へ',aim:'',h:'一緒に働く仲間を募集しています',sub:'未経験・経験者ともに歓迎します。',cta:'採用情報を見る'}
+ ]}
+];
+
+const side = document.getElementById('side');
+const main = document.getElementById('main');
+
+function btns(arr){return arr?`<div class="btns">${arr.map((b,i)=>`<a class="m-btn ${i?'sec2':'pri'}" href="#" onclick="return false">${b}</a>`).join('')}</div>`:''}
+const WIRE = `<svg class="wire" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+<path class="base" pathLength="1000" d="M-10 40 C 200 115, 420 115, 560 70 S 860 20, 1010 50"/>
+<path class="sleeve" pathLength="1000" d="M-10 40 C 200 115, 420 115, 560 70 S 860 20, 1010 50"/></svg>`;
+
+function block(s){
+  switch(s.t){
+  case 'hero': return `<div class="m-hero ${s.small?'small':''} ${s.svg?'has-line':''}">${s.svg?WIRE:''}<div><h2>${s.h}</h2>${s.sub?`<p>${s.sub}</p>`:''}${btns(s.ctas)}${s.band?`<div class="band">${s.band}</div>`:''}</div>${s.small?'':'<div class="ph" style="min-height:220px">メインビジュアル<br>(防護管取付中の現場写真)</div>'}</div>`;
+  case 'stats': return `<div class="stats">${s.items.map(i=>`<div class="stat"><strong>${i[0]}</strong><span>${i[1]}</span></div>`).join('')}</div>`;
+  case 'cards': return `${s.h?`<div class="m-h">${s.h}</div>`:''}<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(${s.cols>=4?150:190}px,1fr))">${s.items.map(i=>`<div class="card">${s.img?'<div class="ph">写真</div>':''}<h4>${i[0]}</h4><p>${i[1]}</p></div>`).join('')}</div>`;
+  case 'steps': return `${s.h?`<div class="m-h">${s.h}</div>`:''}<div class="steps">${s.items.map(i=>`<div class="step"><div><h4>${i[0]}</h4><p>${i[1]}</p></div></div>`).join('')}</div>`;
+  case 'table': return `<div class="tblwrap"><table class="tbl">${s.rows.map(r=>`<tr><th>${r[0]}</th><td>${r[1]}</td></tr>`).join('')}</table></div>`;
+  case 'price': return `<div class="tblwrap"><table class="tbl"><tr><th>項目</th><th style="width:22%">目安価格(税別)</th><th>備考</th></tr>${s.rows.map(r=>`<tr><td>${r[0]}</td><td><b>${r[1]}</b></td><td>${r[2]}</td></tr>`).join('')}</table></div>`;
+  case 'chips': return `${s.h?`<div class="m-h">${s.h}</div>`:''}<div class="chips">${s.items.map(i=>`<span class="chip">${i}</span>`).join('')}</div>`;
+  case 'faq': return `<div class="faq">${s.items.map(i=>`<details><summary>${i[0]}</summary><p>${i[1]}</p></details>`).join('')}</div>`;
+  case 'twocol': return `<div class="twocol"><div>${s.a}</div><div>${s.b}</div></div>`;
+  case 'text': return `<div class="m-h">${s.h}</div><p>${s.body}</p>`;
+  case 'timeline': return `<div class="tl">${s.items.map(i=>`<div><b>${i[0]}</b>${i[1]}</div>`).join('')}</div>`;
+  case 'banner': return `<div class="m-banner"><div><h3>${s.h}</h3><p>${s.sub}</p></div><a class="m-btn" href="#" onclick="return false">${s.cta}</a></div>`;
+  case 'cta': return `<div class="m-cta"><h3>${s.h}</h3>${s.sub?`<p>${s.sub}</p>`:''}${btns(s.ctas)}</div>`;
+  case 'form': return `<div class="form">${s.fields.map(f=>`<div class="field"><span>${f}</span><div class="inp"></div></div>`).join('')}<div class="btns"><a class="m-btn pri" href="#" onclick="return false">内容を確認する</a></div></div>`;
+  }
+  return '';
+}
+const HEADER = `<div class="gh"><span class="logo">有限会社星電気工事</span><div class="gnav"><span>防護管リース</span><span>業務案内</span><span>料金表</span><span>施工実績</span><span>星電気工事について</span><span>採用情報</span></div><span class="gtel">048-774-1378</span><a class="m-btn pri" href="#" onclick="return false" style="padding:7px 14px">見積り依頼</a></div>`;
+const FOOTER = `<div class="gf"><div><b>有限会社星電気工事</b>〒362-0011 埼玉県上尾市大字平塚1987-5<br>川越事務所:川越市石原町27-1${'【要確認】'}<br>TEL 048-774-1378/FAX 048-773-8631</div><div><b>ご依頼の方</b>防護管リース/業務案内/料金表/施工実績/ご依頼を検討中の方へ/FAQ/お問い合わせ</div><div><b>会社・採用</b>星電気工事について/会社概要/スタッフ紹介/求職者の皆さまへ/採用情報/ブログ</div></div>`;
+
+function render(id){
+  const p = PAGES.find(x=>x.id===id) || PAGES[0];
+  side.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current', b.dataset.id===p.id));
+  main.innerHTML = `<div class="page">
+   <div class="meta"><h2>${p.name} <span class="tag ${p.kind}">${p.kind==='new'?'新規':'既存リライト'}</span></h2>
+    <dl><dt>URL</dt><dd>${p.url}</dd><dt>ページの目的</dt><dd>${p.goal}</dd><dt>狙うキーワード</dt><dd>${p.kw}</dd><dt>導線</dt><dd>${p.flow}</dd></dl></div>
+   <div class="frame">${HEADER}
+    ${p.secs.map((s,i)=>`<section class="sec"><div class="lab"><span class="n">${String(i+1).padStart(2,'0')}</span><b>${s.name}</b>${s.aim||''}</div><div class="mock">${block(s)}</div></section>`).join('')}
+    ${FOOTER}</div></div>`;
+  window.scrollTo(0,0);
+  history.replaceState(null,'','#'+p.id);
+}
+function buildNav(){
+  const g = (k,label)=>`<h4>${label}</h4>`+PAGES.filter(p=>p.kind===k).map(p=>`<button data-id="${p.id}">${p.name}<span class="tag ${k}">${k==='new'?'新規':'既存'}</span></button>`).join('');
+  side.innerHTML = g('old','既存ページ(リライト)・7P') + g('new','新規ページ・7P');
+  side.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.id)));
+}
+buildNav();
+render(location.hash.slice(1)||'top');
+</script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>よくあるご質問｜防護管リース・採用｜星電気工事</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="theme.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="有限会社星電気工事">
+<meta property="og:image" content="assets/ogp.png">
+<meta property="og:image:width" content="320">
+<meta property="og:image:height" content="240">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  h1,h2,h3,h4,h5,h6{font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;}
+  span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal;}
+  :focus-visible{outline:3px solid #5BB8E6;outline-offset:2px;}
+  *{box-sizing:border-box;}
+  [data-role-grid],[data-method-grid],[data-where-grid],[data-sign-grid],[data-strength-grid],[data-dr-grid],[data-num-grid],[data-charm-grid],[data-career],[data-value-grid],[data-sdgs-grid],[data-cert-grid],[data-flow-grid]{grid-auto-rows:1fr;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fff;color:var(--c-ink);font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  [data-navitem]:hover [data-dropdown],[data-navitem]:focus-within [data-dropdown]{opacity:1!important;visibility:visible!important;}
+  .mnav-toggle,.mnav-btn,.mnav-panel{display:none;}
+  @media(max-width:840px){
+    nav[data-gnav]{display:none!important;}
+    #footer-grid{grid-template-columns:1fr!important;}
+    header{align-items:center!important;}
+    [data-protect]{display:none!important;}
+    .mnav-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--c-ink);border-radius:7px;margin:auto 16px;cursor:pointer;flex:none;position:relative;z-index:75;}
+    .mnav-btn span{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:transform .3s ease,opacity .3s ease,top .3s ease;}
+    .mnav-btn span:nth-child(1){top:15px;}.mnav-btn span:nth-child(2){top:21px;}.mnav-btn span:nth-child(3){top:27px;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(1){top:21px;transform:rotate(45deg);}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(2){opacity:0;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(3){top:21px;transform:rotate(-45deg);}
+    .mnav-panel{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--c-ink);z-index:74;padding:90px 26px 40px;transform:translateX(100%);transition:transform .42s cubic-bezier(.16,1,.3,1);overflow-y:auto;}
+    .mnav-toggle:checked ~ .mnav-panel{transform:none;}
+    .mnav-panel a{color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:16px;font-weight:700;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);letter-spacing:.04em;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .mnav-panel a.sub{font-size:13.5px;font-weight:500;padding-left:18px;color:rgba(255,255,255,.66);}
+    .mnav-panel a em{font-family:'Outfit',sans-serif;font-style:normal;font-size:10.5px;letter-spacing:.14em;color:var(--c-brand-2);font-weight:600;}
+  }
+  .rv,.rvl,.rvr,.rv-scale{opacity:0;transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+  .rv{transform:translateY(40px);}.rvl{transform:translateX(-48px);}.rvr{transform:translateX(48px);}.rv-scale{transform:scale(.95) translateY(22px);}
+  .rv.show,.rvl.show,.rvr.show,.rv-scale.show{opacity:1;transform:none;}
+  .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
+  @keyframes subheroZoom{from{transform:scale(1.12);}to{transform:scale(1.2);}}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+  .faq-item.open .faq-a{max-height:340px;}
+  .faq-item.open .faq-toggle{transform:rotate(45deg);}
+  @media (prefers-reduced-motion:reduce){
+    .rv,.rvl,.rvr,.rv-scale{opacity:1!important;transform:none!important;transition:none!important;}
+    [data-subhero-bg]{animation:none!important;transform:scale(1.12)!important;}
+    html{scroll-behavior:auto;}
+  }
+  @media (max-width:840px){ [data-gnav]{display:none!important;} }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"防護管が必要かどうかわかりません。","acceptedAnswer":{"@type":"Answer","text":"現場を見て、必要かどうかからお伝えします。お気軽にご相談ください。"}},{"@type":"Question","name":"工期が延びたらどうなりますか？","acceptedAnswer":{"@type":"Answer","text":"延長分のリース料で継続できます。"}},{"@type":"Question","name":"見積りは無料ですか？","acceptedAnswer":{"@type":"Answer","text":"無料です。現場の住所と工期がわかれば、お見積りを作成します。"}},{"@type":"Question","name":"未経験でも大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。先輩と一緒に現場で覚えていきます。"}},{"@type":"Question","name":"どんな業者から依頼を受けていますか？","acceptedAnswer":{"@type":"Answer","text":"建設会社、ハウスメーカー、足場工事業者、解体業者、クレーン・重機作業のある業者さまなど、電線の近くで作業される現場担当者さまからのご相談に対応しています。"}},{"@type":"Question","name":"見積りに必要な情報は？","acceptedAnswer":{"@type":"Answer","text":"現場住所、工事期間、作業内容、電線の位置がわかる写真、ご希望の取付日があると、お見積りが早くなります。"}},{"@type":"Question","name":"取付と撤去もお願いできますか？","acceptedAnswer":{"@type":"Answer","text":"はい。取付からリース期間中の対応、撤去まで当社が行います。"}},{"@type":"Question","name":"本数がわからなくても大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"現地確認で必要な本数と範囲を算出します。"}},{"@type":"Question","name":"料金はどのように決まりますか？","acceptedAnswer":{"@type":"Answer","text":"リース料（本数×期間）、取付・撤去費（本数と作業条件）、出張費（エリア）の組み合わせで決まります。"}},{"@type":"Question","name":"料金表の金額で確定ですか？","acceptedAnswer":{"@type":"Answer","text":"料金表は目安です。現場の条件で変わるため、正式な金額は現地確認後のお見積りでお伝えします。"}},{"@type":"Question","name":"どんな仕事をしますか？","acceptedAnswer":{"@type":"Answer","text":"電線への防護管の取付・撤去、外線工事、引込み工事を行います。"}},{"@type":"Question","name":"必要な免許はありますか？","acceptedAnswer":{"@type":"Answer","text":"普通自動車免許（MT）が必要です。"}}]}</script>
+</helmet>
+
+<div style="position:relative;overflow-x:clip;background:#fff;">
+
+  <!-- ============ HEADER (共通部品) ============ -->
+  <dc-import name="Header" hint-size="100%,0" style="position:absolute;top:0;left:0;width:100%;z-index:60;"></dc-import>
+
+  <!-- ============ HERO F ============ -->
+  <section id="subhero" data-screen-label="FAQHero" style="position:relative;height:clamp(340px,52vh,520px);overflow:hidden;background:#0F2E57;">
+    <div data-subhero-bg aria-hidden="true" style="position:absolute;inset:0;background:#D5E3EE url(assets/img/sky-pole.png) center/cover no-repeat;transform:scale(1.12);animation:subheroZoom 14s ease-in-out infinite alternate;will-change:transform;"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(15,46,87,.45) 0%,rgba(15,46,87,.78) 100%);"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(91,184,230,.22) 0%,rgba(31,95,168,.28) 100%);mix-blend-mode:multiply;"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;">
+      <p class="rv d1" style="font-family:'Outfit',sans-serif;font-size:clamp(11px,1.4vw,13px);letter-spacing:.34em;color:rgba(255,255,255,.78);margin:0 0 20px;">FAQ</p>
+      <h1 class="rv d2" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(26px,4.4vw,46px);color:#fff;margin:0 0 22px;letter-spacing:.06em;text-shadow:0 2px 24px rgba(15,46,87,.5);">よくあるご質問</h1>
+      <span class="rv d3" style="width:64px;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));display:inline-block;"></span>
+    </div>
+    <div style="position:absolute;bottom:22px;left:0;right:0;text-align:center;">
+      <span style="font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.55);">HOME ／ よくあるご質問</span>
+    </div>
+  </section>
+
+  <!-- ============ 導入 ============ -->
+  <section style="max-width:880px;margin:0 auto;padding:clamp(56px,8vh,90px) clamp(24px,5vw,40px) 0;text-align:center;">
+    <p class="rv" style="font-family:'Outfit',sans-serif;font-weight:600;font-size:12px;letter-spacing:.2em;color:var(--c-brand);margin:0 0 18px;">FAQ</p>
+    <h2 class="rv d1" style="font-size:clamp(22px,3.2vw,30px);font-weight:900;color:var(--c-ink);margin:0 0 18px;line-height:1.6;"><span class="line-chunk">ご依頼・リース・料金・採用の</span><span class="line-chunk">よくあるご質問</span></h2>
+    <p class="rv d2" style="font-size:clamp(15px,1.8vw,16px);line-height:2;color:var(--c-ink);margin:0;">カテゴリを選んで、気になる質問をタップしてください。</p>
+  </section>
+
+  <!-- ============ FAQ（タブ切替・アコーディオン） ============ -->
+  <section style="max-width:880px;margin:0 auto;padding:clamp(64px,9vh,110px) clamp(24px,5vw,40px) clamp(40px,6vh,72px);">
+    <!-- tabs -->
+    <div class="rv" role="tablist" style="display:flex;flex-wrap:wrap;gap:0;margin-bottom:clamp(28px,4vh,40px);border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+      <button data-tab="order" role="tab" aria-selected="true" style="flex:1 1 140px;padding:16px;min-height:52px;font-size:clamp(13px,1.5vw,15px);font-weight:700;letter-spacing:.04em;color:#fff;background:var(--c-brand);border:none;cursor:pointer;transition:background .3s ease,color .3s ease;">ご依頼について</button>
+      <button data-tab="lease" role="tab" aria-selected="false" style="flex:1 1 140px;padding:16px;min-height:52px;font-size:clamp(13px,1.5vw,15px);font-weight:700;letter-spacing:.04em;color:#3C5470;background:#fff;border:none;cursor:pointer;transition:background .3s ease,color .3s ease;">防護管リースについて</button>
+      <button data-tab="price" role="tab" aria-selected="false" style="flex:1 1 140px;padding:16px;min-height:52px;font-size:clamp(13px,1.5vw,15px);font-weight:700;letter-spacing:.04em;color:#3C5470;background:#fff;border:none;cursor:pointer;transition:background .3s ease,color .3s ease;">料金について</button>
+      <button data-tab="recruit" role="tab" aria-selected="false" style="flex:1 1 140px;padding:16px;min-height:52px;font-size:clamp(13px,1.5vw,15px);font-weight:700;letter-spacing:.04em;color:#3C5470;background:#fff;border:none;cursor:pointer;transition:background .3s ease,color .3s ease;">採用について</button>
+    </div>
+
+    <div data-panel="order" class="rv d1" style="display:flex;flex-direction:column;gap:12px;">
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">どんな業者から依頼を受けていますか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>建設会社、ハウスメーカー、足場工事業者、解体業者、クレーン・重機作業のある業者さまなど、電線の近くで作業される現場担当者さまからのご相談に対応しています。</p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">見積りに必要な情報は？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>現場住所、工事期間、作業内容、電線の位置がわかる写真、ご希望の取付日があると、お見積りが早くなります。</p></div>
+      </div>
+      <!-- 要取材：県外対応の可否 -->
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">対応エリアはどこですか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>埼玉県全域に対応しています。県外については<span style="display:inline-flex;margin-left:6px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;">要確認</span></p></div>
+      </div>
+      <!-- 要取材：個人依頼の可否 -->
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">個人でも依頼できますか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>〇〇〇〇<span style="display:inline-flex;margin-left:6px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;">要確認</span></p></div>
+      </div>
+      <!-- 要取材：土日対応の可否 -->
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">土日も対応していますか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>〇〇〇〇<span style="display:inline-flex;margin-left:6px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;">要確認</span></p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">防護管が必要かどうかわかりません。</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>現場を見て、必要かどうかからお伝えします。お気軽にご相談ください。</p></div>
+      </div>
+    </div>
+
+    <div data-panel="lease" class="rv d1" style="display:none;flex-direction:column;gap:12px;">
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">取付と撤去もお願いできますか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>はい。取付からリース期間中の対応、撤去まで当社が行います。</p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">本数がわからなくても大丈夫ですか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>現地確認で必要な本数と範囲を算出します。</p></div>
+      </div>
+      <!-- 要取材：最短リース期間 -->
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">リースの最短期間は？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>〇〇〇〇<span style="display:inline-flex;margin-left:6px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;">要確認</span></p></div>
+      </div>
+      <!-- 要取材：最短取付日数 -->
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">取付までの日数は？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>目安は〇日です<span style="display:inline-flex;margin-left:6px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;">要確認</span>。お急ぎの場合はご相談ください。</p></div>
+      </div>
+      <!-- 要取材：電力会社への申請対応の有無 -->
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">電力会社への申請は必要ですか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>〇〇〇〇<span style="display:inline-flex;margin-left:6px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;">要確認</span></p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">工期が延びたらどうなりますか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>延長分のリース料で継続できます。</p></div>
+      </div>
+    </div>
+
+    <div data-panel="price" class="rv d1" style="display:none;flex-direction:column;gap:12px;">
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">料金はどのように決まりますか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>リース料（本数×期間）、取付・撤去費（本数と作業条件）、出張費（エリア）の組み合わせで決まります。</p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">料金表の金額で確定ですか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>料金表は目安です。現場の条件で変わるため、正式な金額は現地確認後のお見積りでお伝えします。</p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">見積りは無料ですか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>無料です。現場の住所と工期がわかれば、お見積りを作成します。</p></div>
+      </div>
+      <!-- 要取材：支払い方法 -->
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">支払い方法は？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>〇〇〇〇<span style="display:inline-flex;margin-left:6px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;">要確認</span></p></div>
+      </div>
+    </div>
+
+    <div data-panel="recruit" class="rv d1" style="display:none;flex-direction:column;gap:12px;">
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">どんな仕事をしますか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>電線への防護管の取付・撤去、外線工事、引込み工事を行います。</p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">必要な免許はありますか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>普通自動車免許（MT）が必要です。</p></div>
+      </div>
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">未経験でも大丈夫ですか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>はい。先輩と一緒に現場で覚えていきます。</p></div>
+      </div>
+      <!-- 要取材：資格取得支援の内容 -->
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">資格は必要ですか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>普通免許（MT）があれば応募できます。電気工事士の取得支援については<span style="display:inline-flex;margin-left:6px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;">要確認</span></p></div>
+      </div>
+      <!-- 要取材：職場見学の可否 -->
+      <div class="faq-item" style="border:1px solid var(--c-line);border-radius:8px;overflow:hidden;">
+        <button class="faq-q" aria-expanded="false" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;min-height:56px;background:#fff;border:none;cursor:pointer;text-align:left;">
+          <span style="display:flex;gap:14px;align-items:flex-start;"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);flex:none;line-height:1.2;">Q</span><span style="font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.6;">職場見学はできますか？</span></span>
+          <span class="faq-toggle" aria-hidden="true" style="flex:none;font-size:20px;color:var(--c-brand);font-weight:300;transition:transform .3s ease;line-height:1;">＋</span>
+        </button>
+        <div class="faq-a"><p style="margin:0;padding:0 24px 24px 52px;font-size:15px;color:#3C5470;line-height:2;"><span style="font-family:'Outfit',sans-serif;color:var(--c-brand-2);font-weight:600;margin-right:8px;">A</span>〇〇〇〇<span style="display:inline-flex;margin-left:6px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;">要確認</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA C ============ -->
+  <section style="background:#fff;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));"></div>
+    <div class="rv" style="max-width:880px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);text-align:center;">
+      <p style="font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:.2em;color:var(--c-brand);margin:0 0 14px;">CONTACT</p>
+      <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(22px,3vw,28px);color:var(--c-ink);margin:0 0 14px;letter-spacing:.04em;"><span class="line-chunk">解決しない場合は</span><span class="line-chunk">お気軽にお問い合わせください</span></h2>
+      <p style="font-size:14px;color:#3C5470;margin:0 0 36px;line-height:2;">こちらに載っていないご質問も、お気軽にお問い合わせください。</p>
+      <div style="display:inline-flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <a href="/form/inquiry" style="display:inline-flex;align-items:center;gap:10px;background:var(--c-brand);color:#fff;border-radius:999px;font-size:15px;font-weight:700;letter-spacing:.06em;padding:16px 40px;justify-content:center;min-width:260px;box-sizing:border-box;transition:background .3s ease;" style-hover="background:var(--c-ink);">お問い合わせはこちら →</a>
+        <a href="tel:048-774-1378" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--c-ink);font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;letter-spacing:.1em;padding:16px 30px;border:2px solid var(--c-brand);border-radius:999px;justify-content:center;min-width:260px;box-sizing:border-box;">048-774-1378</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER (共通部品) ============ -->
+  <dc-import name="Footer" hint-size="100%,420px"></dc-import>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    // (ヘッダーの色切替は Header.dc.html が担当)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); } });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('.rv,.rvl,.rvr,.rv-scale').forEach((el) => io.observe(el));
+
+    // タブ切替
+    const tabs = Array.from(document.querySelectorAll('[data-tab]'));
+    const panels = {}; document.querySelectorAll('[data-panel]').forEach((p) => { panels[p.getAttribute('data-panel')] = p; });
+    tabs.forEach((t) => t.addEventListener('click', () => {
+      const key = t.getAttribute('data-tab');
+      tabs.forEach((o) => {
+        const on = o === t;
+        o.style.background = on ? 'var(--c-brand)' : '#fff';
+        o.style.color = on ? '#fff' : '#3C5470';
+        o.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      Object.keys(panels).forEach((k) => { if (panels[k]) panels[k].style.display = k === key ? 'flex' : 'none'; });
+    }));
+
+    // アコーディオン
+    document.querySelectorAll('.faq-q').forEach((q) => q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      if (item) { item.classList.toggle('open'); q.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false'); }
+    }));
+  }
+  componentWillUnmount() { if (this._onScroll) window.removeEventListener('scroll', this._onScroll); }
+}
+</script>
+</body>
+</html>

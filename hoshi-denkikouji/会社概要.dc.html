@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>会社概要｜有限会社星電気工事（埼玉県上尾市）</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="theme.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="有限会社星電気工事">
+<meta property="og:image" content="assets/ogp.png">
+<meta property="og:image:width" content="320">
+<meta property="og:image:height" content="240">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  h1,h2,h3,h4,h5,h6{font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;}
+  span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal;}
+  :focus-visible{outline:3px solid #5BB8E6;outline-offset:2px;}
+  *{box-sizing:border-box;}
+  [data-role-grid],[data-method-grid],[data-where-grid],[data-sign-grid],[data-strength-grid],[data-dr-grid],[data-num-grid],[data-charm-grid],[data-career],[data-value-grid],[data-sdgs-grid],[data-cert-grid],[data-flow-grid]{grid-auto-rows:1fr;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fff;color:var(--c-ink);font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  [data-navitem]:hover [data-dropdown],[data-navitem]:focus-within [data-dropdown]{opacity:1!important;visibility:visible!important;}
+  .mnav-toggle,.mnav-btn,.mnav-panel{display:none;}
+  @media(max-width:840px){
+    nav[data-gnav]{display:none!important;}
+    #footer-grid{grid-template-columns:1fr!important;}
+    header{align-items:center!important;}
+    [data-protect]{display:none!important;}
+    .mnav-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--c-ink);border-radius:7px;margin:auto 16px;cursor:pointer;flex:none;position:relative;z-index:75;}
+    .mnav-btn span{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:transform .3s ease,opacity .3s ease,top .3s ease;}
+    .mnav-btn span:nth-child(1){top:15px;}.mnav-btn span:nth-child(2){top:21px;}.mnav-btn span:nth-child(3){top:27px;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(1){top:21px;transform:rotate(45deg);}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(2){opacity:0;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(3){top:21px;transform:rotate(-45deg);}
+    .mnav-panel{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--c-ink);z-index:74;padding:90px 26px 40px;transform:translateX(100%);transition:transform .42s cubic-bezier(.16,1,.3,1);overflow-y:auto;}
+    .mnav-toggle:checked ~ .mnav-panel{transform:none;}
+    .mnav-panel a{color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:16px;font-weight:700;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);letter-spacing:.04em;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .mnav-panel a.sub{font-size:13.5px;font-weight:500;padding-left:18px;color:rgba(255,255,255,.66);}
+    .mnav-panel a em{font-family:'Outfit',sans-serif;font-style:normal;font-size:10.5px;letter-spacing:.14em;color:var(--c-brand-2);font-weight:600;}
+  }
+  .rv,.rvl,.rvr,.rv-scale{opacity:0;transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+  .rv{transform:translateY(40px);}.rvl{transform:translateX(-48px);}.rvr{transform:translateX(48px);}.rv-scale{transform:scale(.95) translateY(22px);}
+  .rv.show,.rvl.show,.rvr.show,.rv-scale.show{opacity:1;transform:none;}
+  .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
+  @keyframes subheroZoom{from{transform:scale(1.12);}to{transform:scale(1.2);}}
+  @media (prefers-reduced-motion:reduce){
+    .rv,.rvl,.rvr,.rv-scale{opacity:1!important;transform:none!important;transition:none!important;}
+    [data-subhero-bg]{animation:none!important;transform:scale(1.12)!important;}
+    html{scroll-behavior:auto;}
+  }
+  @media (max-width:840px){
+    [data-gnav]{display:none!important;}
+    [data-spec-row]{flex-direction:column!important;gap:6px!important;}
+    [data-spec-row] [data-spec-label]{width:auto!important;}
+    [data-cert-grid]{grid-template-columns:1fr 1fr!important;}
+  }
+</style>
+</helmet>
+
+<div style="position:relative;overflow-x:clip;background:#fff;">
+
+  <!-- ============ HEADER (共通部品) ============ -->
+  <dc-import name="Header" active="about" hint-size="100%,0" style="position:absolute;top:0;left:0;width:100%;z-index:60;"></dc-import>
+
+  <!-- ============ HERO F ============ -->
+  <section id="subhero" data-screen-label="会社概要Hero" style="position:relative;height:clamp(340px,52vh,520px);overflow:hidden;background:#0F2E57;">
+    <div data-subhero-bg aria-hidden="true" style="position:absolute;inset:0;background:#D5E3EE url(assets/img/poles-sky.jpg) center/cover no-repeat;transform:scale(1.12);animation:subheroZoom 14s ease-in-out infinite alternate;will-change:transform;"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(15,46,87,.45) 0%,rgba(15,46,87,.78) 100%);"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(91,184,230,.22) 0%,rgba(31,95,168,.28) 100%);mix-blend-mode:multiply;"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;">
+      <p class="rv d1" style="font-family:'Outfit',sans-serif;font-size:clamp(11px,1.4vw,13px);letter-spacing:.34em;color:rgba(255,255,255,.78);margin:0 0 20px;">COMPANY PROFILE</p>
+      <h1 class="rv d2" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(28px,4.6vw,48px);color:#fff;margin:0 0 22px;letter-spacing:.07em;text-shadow:0 2px 24px rgba(15,46,87,.5);">会社概要</h1>
+      <span class="rv d3" style="width:64px;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));display:inline-block;"></span>
+    </div>
+    <div style="position:absolute;bottom:22px;left:0;right:0;text-align:center;">
+      <span style="font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.55);">HOME ／ 会社概要</span>
+    </div>
+  </section>
+
+  <!-- ============ 会社概要テーブル ============ -->
+  <section style="max-width:1160px;margin:0 auto;padding:clamp(64px,9vh,110px) clamp(24px,5vw,40px) clamp(40px,6vh,64px);">
+    <div class="rv" style="display:flex;align-items:stretch;gap:18px;margin-bottom:clamp(28px,4vh,40px);">
+      <div style="width:3px;background:linear-gradient(180deg,var(--c-brand-2),var(--c-brand));flex:none;"></div>
+      <div>
+        <p style="font-family:'Outfit',sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 6px;">OVERVIEW</p>
+        <h3 style="font-size:clamp(20px,2.6vw,26px);font-weight:900;color:var(--c-ink);margin:0;letter-spacing:.04em;">会社概要</h3>
+      </div>
+    </div>
+    <div class="rv d1" style="display:flex;flex-direction:column;">
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-line);">
+        <span data-spec-label style="font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">社名</span>
+        <span style="font-size:15.5px;color:var(--c-ink);font-weight:500;line-height:1.8;">有限会社星電気工事</span>
+      </div>
+      <!-- 要取材：代表者名 -->
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-line);">
+        <span data-spec-label style="font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">代表者</span>
+        <span style="font-size:15.5px;color:var(--c-ink);font-weight:500;line-height:1.8;">〇〇 〇〇<span style="display:inline-flex;margin-left:8px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;vertical-align:middle;">要確認</span></span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-line);">
+        <span data-spec-label style="font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">本社</span>
+        <span style="font-size:15.5px;color:var(--c-ink);font-weight:500;line-height:1.8;">〒362-0011<br>埼玉県上尾市大字平塚1987-5</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-line);">
+        <span data-spec-label style="font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">川越事務所</span>
+        <span style="font-size:15.5px;color:var(--c-ink);font-weight:500;line-height:1.8;">埼玉県川越市石原町27-1</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-line);">
+        <span data-spec-label style="font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">電話番号</span>
+        <span style="font-size:15.5px;color:var(--c-ink);font-weight:500;line-height:1.8;">048-774-1378（受付 9:00〜16:30）</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-line);">
+        <span data-spec-label style="font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">FAX</span>
+        <span style="font-size:15.5px;color:var(--c-ink);font-weight:500;line-height:1.8;">048-773-8631</span>
+      </div>
+      <!-- 要取材：設立年 -->
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-line);">
+        <span data-spec-label style="font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">設立</span>
+        <span style="font-size:15.5px;color:var(--c-ink);font-weight:500;line-height:1.8;">〇〇年<span style="display:inline-flex;margin-left:8px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;vertical-align:middle;">要確認</span></span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-line);">
+        <span data-spec-label style="font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">事業内容</span>
+        <span style="font-size:15.5px;color:var(--c-ink);font-weight:500;line-height:1.8;">防護管工事（取付・撤去）／防護管リース／配線工事一式（外線工事、電線張替、新築引込み）</span>
+      </div>
+      <!-- 要取材：許認可・保有資格 -->
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-line);">
+        <span data-spec-label style="font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">許認可・資格</span>
+        <span style="font-size:15.5px;color:var(--c-ink);font-weight:500;line-height:1.8;">〇〇〇〇<span style="display:inline-flex;margin-left:8px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;vertical-align:middle;">要確認</span></span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-line);">
+        <span data-spec-label style="font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">従業員数</span>
+        <span style="font-size:15.5px;color:var(--c-ink);font-weight:500;line-height:1.8;">5名</span>
+      </div>
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--c-line);">
+        <span data-spec-label style="font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">対応エリア</span>
+        <span style="font-size:15.5px;color:var(--c-ink);font-weight:500;line-height:1.8;">埼玉県全域</span>
+      </div>
+      <!-- 要取材：主要取引先 -->
+      <div data-spec-row style="display:flex;gap:24px;align-items:baseline;padding:20px 0;">
+        <span data-spec-label style="font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--c-brand);flex:none;width:150px;">主要取引先</span>
+        <span style="font-size:15.5px;color:var(--c-ink);font-weight:500;line-height:1.8;">〇〇〇〇<span style="display:inline-flex;margin-left:8px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;vertical-align:middle;">要確認</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 保有資格 ============ -->
+  <section style="background:var(--c-cream-2);">
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,90px) clamp(24px,5vw,40px);">
+      <div class="rv" style="display:flex;align-items:stretch;gap:18px;margin-bottom:clamp(28px,4vh,40px);">
+        <div style="width:3px;background:linear-gradient(180deg,var(--c-brand-2),var(--c-brand));flex:none;"></div>
+        <div>
+          <p style="font-family:'Outfit',sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 6px;">QUALIFICATIONS</p>
+          <h3 style="font-size:clamp(20px,2.6vw,26px);font-weight:900;color:var(--c-ink);margin:0;letter-spacing:.04em;">許認可・保有資格</h3>
+        </div>
+      </div>
+      <div data-cert-grid class="rv d1" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
+        <!-- 要取材：許認可・保有資格の一覧 -->
+        <span style="font-size:14.5px;color:#0F2E57;padding:16px 20px;background:#fff;border:1px solid var(--c-line);border-radius:8px;">〇〇〇〇<span style="display:inline-flex;margin-left:8px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;vertical-align:middle;">要確認</span></span>
+        <span style="font-size:14.5px;color:#0F2E57;padding:16px 20px;background:#fff;border:1px solid var(--c-line);border-radius:8px;">〇〇〇〇<span style="display:inline-flex;margin-left:8px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;vertical-align:middle;">要確認</span></span>
+        <span style="font-size:14.5px;color:#0F2E57;padding:16px 20px;background:#fff;border:1px solid var(--c-line);border-radius:8px;">〇〇〇〇<span style="display:inline-flex;margin-left:8px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;vertical-align:middle;">要確認</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 業務内容 ============ -->
+  <section style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,90px) clamp(24px,5vw,40px);">
+    <div class="rv" style="display:flex;align-items:stretch;gap:18px;margin-bottom:clamp(28px,4vh,40px);">
+      <div style="width:3px;background:linear-gradient(180deg,var(--c-brand-2),var(--c-brand));flex:none;"></div>
+      <div>
+        <p style="font-family:'Outfit',sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 6px;">SERVICE</p>
+        <h3 style="font-size:clamp(20px,2.6vw,26px);font-weight:900;color:var(--c-ink);margin:0;letter-spacing:.04em;">業務内容</h3>
+      </div>
+    </div>
+    <div class="rv d1" style="display:flex;flex-direction:column;gap:clamp(24px,3.5vh,36px);">
+      <div>
+        <h4 style="font-size:17px;font-weight:700;color:var(--c-ink);margin:0 0 16px;letter-spacing:.03em;display:flex;align-items:center;gap:10px;"><span style="width:8px;height:8px;background:var(--c-brand-2);border-radius:50%;flex:none;"></span>防護管工事</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <span style="font-size:14px;color:#0F2E57;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">防護管の取付</span>
+          <span style="font-size:14px;color:#0F2E57;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">防護管の撤去</span>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:17px;font-weight:700;color:var(--c-ink);margin:0 0 16px;letter-spacing:.03em;display:flex;align-items:center;gap:10px;"><span style="width:8px;height:8px;background:var(--c-brand-2);border-radius:50%;flex:none;"></span>防護管リース</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <span style="font-size:14px;color:#0F2E57;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">取付から撤去まで込み</span>
+          <span style="font-size:14px;color:#0F2E57;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">期間の延長・短縮に対応</span>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:17px;font-weight:700;color:var(--c-ink);margin:0 0 16px;letter-spacing:.03em;display:flex;align-items:center;gap:10px;"><span style="width:8px;height:8px;background:var(--c-brand-2);border-radius:50%;flex:none;"></span>配線工事一式</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <span style="font-size:14px;color:#0F2E57;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">外線工事</span>
+          <span style="font-size:14px;color:#0F2E57;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">電線の張り替え工事</span>
+          <span style="font-size:14px;color:#0F2E57;padding:9px 16px;background:var(--c-cream-2);border-left:2px solid var(--c-brand);">新築の引込み工事</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 星電気工事の事業 ============ -->
+  <section style="position:relative;overflow:hidden;isolation:isolate;background:#fff;">
+    <div aria-hidden="true" style="position:absolute;top:-40px;right:-60px;width:min(420px,48vw);height:min(420px,48vw);background-image:radial-gradient(#BFD7E8 1.6px,transparent 1.6px);background-size:22px 22px;-webkit-mask-image:radial-gradient(circle,#000 35%,transparent 70%);mask-image:radial-gradient(circle,#000 35%,transparent 70%);z-index:-1;pointer-events:none;"></div>
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);">
+      <div class="rv" style="margin-bottom:clamp(28px,4vh,44px);max-width:760px;">
+        <p style="font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(26px,4vw,46px);letter-spacing:.06em;line-height:1;color:var(--c-brand);margin:0 0 14px;">BUSINESS</p>
+        <h2 style="font-size:clamp(22px,3.2vw,32px);font-weight:900;color:var(--c-ink);margin:0;line-height:1.45;">3つの事業</h2>
+        <p style="margin:16px 0 0;font-size:clamp(15px,1.8vw,16px);line-height:2;color:var(--c-ink);text-wrap:pretty;">上尾市・川越市を拠点に、電線まわりの工事を一貫して担っています。</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:clamp(14px,2vw,20px);">
+        <div class="rv" style="background:#fff;border:1px solid var(--c-line);border-radius:8px;padding:clamp(22px,3vw,32px);border-top:3px solid var(--c-brand-2);">
+          <h3 style="font-size:18px;font-weight:700;color:var(--c-ink);margin:0 0 10px;line-height:1.5;">防護管工事</h3>
+          <p style="font-size:15px;color:var(--c-ink);line-height:1.9;margin:0;text-wrap:pretty;">電線への防護管の取付・撤去を自社スタッフが施工します。</p>
+          <a href="業務案内.dc.html" style="display:inline-flex;align-items:center;min-height:44px;margin-top:12px;font-size:14px;font-weight:700;color:var(--c-brand);">業務案内を見る →</a>
+        </div>
+        <div class="rv d1" style="background:#fff;border:1px solid var(--c-line);border-radius:8px;padding:clamp(22px,3vw,32px);border-top:3px solid var(--c-brand-2);">
+          <h3 style="font-size:18px;font-weight:700;color:var(--c-ink);margin:0 0 10px;line-height:1.5;">防護管リース</h3>
+          <p style="font-size:15px;color:var(--c-ink);line-height:1.9;margin:0;text-wrap:pretty;">必要な本数を必要な期間だけ。取付から撤去まで込みで対応します。</p>
+          <a href="防護管リース.dc.html" style="display:inline-flex;align-items:center;min-height:44px;margin-top:12px;font-size:14px;font-weight:700;color:var(--c-brand);">防護管リースを見る →</a>
+        </div>
+        <div class="rv d2" style="background:#fff;border:1px solid var(--c-line);border-radius:8px;padding:clamp(22px,3vw,32px);border-top:3px solid var(--c-brand-2);">
+          <h3 style="font-size:18px;font-weight:700;color:var(--c-ink);margin:0 0 10px;line-height:1.5;">配線工事一式</h3>
+          <p style="font-size:15px;color:var(--c-ink);line-height:1.9;margin:0;text-wrap:pretty;">外線工事、電線の張り替え、新築の引込み工事に対応します。</p>
+          <a href="業務案内.dc.html" style="display:inline-flex;align-items:center;min-height:44px;margin-top:12px;font-size:14px;font-weight:700;color:var(--c-brand);">業務案内を見る →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 対応エリア ============ -->
+  <section style="position:relative;overflow:hidden;isolation:isolate;background:var(--c-cream);">
+    
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);">
+      <div class="rv" style="margin-bottom:clamp(28px,4vh,44px);max-width:760px;">
+        <p style="font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(26px,4vw,46px);letter-spacing:.06em;line-height:1;color:var(--c-brand);margin:0 0 14px;">AREA</p>
+        <h2 style="font-size:clamp(22px,3.2vw,32px);font-weight:900;color:var(--c-ink);margin:0;line-height:1.45;">埼玉県全域に対応しています</h2>
+        <p style="margin:16px 0 0;font-size:clamp(15px,1.8vw,16px);line-height:2;color:var(--c-ink);text-wrap:pretty;">2拠点から、県内の現場へ伺います。<!-- 要取材：県外対応の可否 --></p>
+      </div>
+      <ul class="rv" style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px;">
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">上尾市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">川越市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">さいたま市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">鶴ヶ島市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">坂戸市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">川島町</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">狭山市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">桶川市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">北本市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">鴻巣市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">所沢市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">ふじみ野市</li>
+        <li style="background:var(--c-brand);color:#fff;border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">その他 埼玉県全域</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ アクセス（地図） ============ -->
+  <section style="background:var(--c-cream-2);">
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,90px) clamp(24px,5vw,40px);">
+      <div class="rv" style="display:flex;align-items:stretch;gap:18px;margin-bottom:clamp(28px,4vh,40px);">
+        <div style="width:3px;background:linear-gradient(180deg,var(--c-brand-2),var(--c-brand));flex:none;"></div>
+        <div>
+          <p style="font-family:'Outfit',sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--c-brand);margin:0 0 6px;">ACCESS</p>
+          <h3 style="font-size:clamp(20px,2.6vw,26px);font-weight:900;color:var(--c-ink);margin:0;letter-spacing:.04em;">アクセス</h3>
+        </div>
+      </div>
+      <div class="rv-scale" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(20px,3vw,32px);">
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <p style="margin:0;font-size:16px;font-weight:700;color:var(--c-ink);">本社<span style="display:block;font-size:14.5px;font-weight:500;color:#3C5470;margin-top:4px;">〒362-0011 埼玉県上尾市大字平塚1987-5</span></p>
+          <div style="position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;border:1px solid var(--c-line);background:#D5E3EE;"><iframe title="本社の地図" src="https://maps.google.com/maps?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%E4%B8%8A%E5%B0%BE%E5%B8%82%E5%A4%A7%E5%AD%97%E5%B9%B3%E5%A1%9A1987-5&amp;z=15&amp;output=embed" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <p style="margin:0;font-size:16px;font-weight:700;color:var(--c-ink);">川越事務所<span style="display:block;font-size:14.5px;font-weight:500;color:#3C5470;margin-top:4px;">埼玉県川越市石原町27-1</span></p>
+          <div style="position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;border:1px solid var(--c-line);background:#D5E3EE;"><iframe title="川越事務所の地図" src="https://maps.google.com/maps?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%E5%B7%9D%E8%B6%8A%E5%B8%82%E7%9F%B3%E5%8E%9F%E7%94%BA27-1&amp;z=15&amp;output=embed" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA C ============ -->
+  <section style="background:#fff;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));"></div>
+    <div class="rv" style="max-width:880px;margin:0 auto;padding:clamp(64px,9vh,110px) clamp(24px,5vw,40px);text-align:center;">
+      <p style="font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:.2em;color:var(--c-brand);margin:0 0 14px;">ABOUT US</p>
+      <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(22px,3vw,28px);color:var(--c-ink);margin:0 0 14px;letter-spacing:.04em;">代表メッセージと私たちの約束</h2>
+      <p style="font-size:14px;color:#3C5470;margin:0 0 36px;line-height:2;">星電気工事がどんな会社か、もう少し詳しくお伝えします。</p>
+      <div style="display:inline-flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <a href="星電気工事について.dc.html" style="display:inline-flex;align-items:center;gap:10px;border-radius:999px;background:var(--c-brand);color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em;padding:16px 40px;justify-content:center;min-width:260px;box-sizing:border-box;transition:background .3s ease;" style-hover="background:var(--c-ink);">星電気工事について →</a>
+        <a href="スタッフ紹介.dc.html" style="display:inline-flex;align-items:center;gap:10px;border-radius:999px;background:#fff;color:var(--c-brand);font-size:14px;font-weight:700;letter-spacing:.06em;padding:16px 30px;border:2px solid var(--c-brand);border-radius:999px;justify-content:center;min-width:260px;box-sizing:border-box;">スタッフ紹介 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER (共通部品) ============ -->
+  <dc-import name="Footer" contact="true" hint-size="100%,720px"></dc-import>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    // (ヘッダーの色切替は Header.dc.html が担当)
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('.rv,.rvl,.rvr,.rv-scale').forEach((el) => io.observe(el));
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+}
+</script>
+</body>
+</html>

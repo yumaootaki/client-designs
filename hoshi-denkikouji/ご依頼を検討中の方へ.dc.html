@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>防護管工事のご依頼の流れ｜はじめての方へ｜星電気工事</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="theme.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="有限会社星電気工事">
+<meta property="og:image" content="assets/ogp.png">
+<meta property="og:image:width" content="320">
+<meta property="og:image:height" content="240">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  h1,h2,h3,h4,h5,h6{font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;}
+  span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal;}
+  :focus-visible{outline:3px solid #5BB8E6;outline-offset:2px;}
+  *{box-sizing:border-box;}
+  [data-role-grid],[data-method-grid],[data-where-grid],[data-sign-grid],[data-strength-grid],[data-dr-grid],[data-num-grid],[data-charm-grid],[data-career],[data-value-grid],[data-sdgs-grid],[data-cert-grid],[data-flow-grid]{grid-auto-rows:1fr;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fff;color:var(--c-ink);font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  [data-navitem]:hover [data-dropdown],[data-navitem]:focus-within [data-dropdown]{opacity:1!important;visibility:visible!important;}
+  .mnav-toggle,.mnav-btn,.mnav-panel{display:none;}
+  @media(max-width:840px){
+    nav[data-gnav]{display:none!important;}
+    #footer-grid{grid-template-columns:1fr!important;}
+    header{align-items:center!important;}
+    [data-protect]{display:none!important;}
+    .mnav-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--c-ink);border-radius:7px;margin:auto 16px;cursor:pointer;flex:none;position:relative;z-index:75;}
+    .mnav-btn span{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:transform .3s ease,opacity .3s ease,top .3s ease;}
+    .mnav-btn span:nth-child(1){top:15px;}.mnav-btn span:nth-child(2){top:21px;}.mnav-btn span:nth-child(3){top:27px;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(1){top:21px;transform:rotate(45deg);}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(2){opacity:0;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(3){top:21px;transform:rotate(-45deg);}
+    .mnav-panel{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--c-ink);z-index:74;padding:90px 26px 40px;transform:translateX(100%);transition:transform .42s cubic-bezier(.16,1,.3,1);overflow-y:auto;}
+    .mnav-toggle:checked ~ .mnav-panel{transform:none;}
+    .mnav-panel a{color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:16px;font-weight:700;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);letter-spacing:.04em;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .mnav-panel a.sub{font-size:13.5px;font-weight:500;padding-left:18px;color:rgba(255,255,255,.66);}
+    .mnav-panel a em{font-family:'Outfit',sans-serif;font-style:normal;font-size:10.5px;letter-spacing:.14em;color:var(--c-brand-2);font-weight:600;}
+  }
+  .rv,.rvl,.rvr,.rv-scale{opacity:0;transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+  .rv{transform:translateY(40px);}.rvl{transform:translateX(-48px);}.rvr{transform:translateX(48px);}.rv-scale{transform:scale(.95) translateY(22px);}
+  .rv.show,.rvl.show,.rvr.show,.rv-scale.show{opacity:1;transform:none;}
+  .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.42s;}
+  @keyframes subheroZoom{from{transform:scale(1.12);}to{transform:scale(1.2);}}
+  @media (prefers-reduced-motion:reduce){
+    .rv,.rvl,.rvr,.rv-scale{opacity:1!important;transform:none!important;transition:none!important;}
+    [data-subhero-bg]{animation:none!important;transform:scale(1.12)!important;}
+    html{scroll-behavior:auto;}
+  }
+  @media (max-width:840px){
+    [data-gnav]{display:none!important;}
+    [data-worklist]{grid-template-columns:1fr 1fr!important;}
+    [data-dr-grid]{grid-template-columns:1fr!important;}
+    [data-strength-grid]{grid-template-columns:1fr 1fr!important;}
+    [data-flow-grid]{grid-template-columns:1fr!important;}
+    [data-rel-grid]{grid-template-columns:1fr!important;}
+  }
+  @media (max-width:520px){
+    [data-strength-grid]{grid-template-columns:1fr!important;}
+    [data-worklist]{grid-template-columns:1fr!important;}
+  }
+</style>
+</helmet>
+
+<div style="position:relative;overflow-x:clip;background:#fff;">
+
+  <!-- ============ HEADER (共通部品) ============ -->
+  <dc-import name="Header" active="work" hint-size="100%,0" style="position:absolute;top:0;left:0;width:100%;z-index:60;"></dc-import>
+
+  <!-- ============ HERO F (cinematic) ============ -->
+  <section id="subhero" data-screen-label="ご依頼を検討中の方へHero" style="position:relative;height:clamp(340px,52vh,520px);overflow:hidden;background:#0F2E57;">
+    <div data-subhero-bg aria-hidden="true" style="position:absolute;inset:0;background:#D5E3EE url(assets/img/scaffold-1.jpg) center/cover no-repeat;transform:scale(1.12);animation:subheroZoom 14s ease-in-out infinite alternate;will-change:transform;"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(15,46,87,.45) 0%,rgba(15,46,87,.78) 100%);"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(91,184,230,.22) 0%,rgba(31,95,168,.28) 100%);mix-blend-mode:multiply;"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;">
+      <p class="rv d1" style="font-family:'Outfit',sans-serif;font-size:clamp(11px,1.4vw,13px);letter-spacing:.34em;color:rgba(255,255,255,.78);margin:0 0 20px;">FOR CLIENTS</p>
+      <h1 class="rv d2" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(30px,5vw,52px);color:#fff;margin:0 0 22px;letter-spacing:.08em;text-shadow:0 2px 24px rgba(15,46,87,.5);"><span class="line-chunk">はじめて</span><span class="line-chunk">ご依頼される方へ</span></h1>
+      <span class="rv d3" style="width:64px;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));display:inline-block;"></span>
+    </div>
+    <div style="position:absolute;bottom:22px;left:0;right:0;text-align:center;">
+      <span style="font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.55);">HOME ／ 業務案内 ／ ご依頼を検討中の方へ</span>
+    </div>
+  </section>
+
+  <!-- ============ INTRO LEAD ============ -->
+  <section style="max-width:880px;margin:0 auto;padding:clamp(64px,9vh,110px) clamp(24px,5vw,40px) clamp(40px,6vh,72px);text-align:center;">
+    <p class="rv" style="font-family:'Outfit',sans-serif;font-weight:600;font-size:12px;letter-spacing:.2em;color:var(--c-brand);margin:0 0 22px;">FIRST TIME</p>
+    <h2 class="rv d1" style="font-size:clamp(22px,3.2vw,32px);font-weight:900;line-height:1.7;color:var(--c-ink);margin:0 0 24px;"><span class="line-chunk">防護管が必要かどうかの</span><span class="line-chunk">判断から、</span><span class="line-chunk">お手伝いします。</span></h2>
+    <p class="rv d2" style="font-size:clamp(15px,1.8vw,16px);line-height:2.1;color:var(--c-ink);margin:0;text-wrap:pretty;">はじめて防護管を手配する現場担当者さまへ。よくある不安への回答、ご依頼の流れ、お見積りに必要な情報をまとめました。</p>
+  </section>
+
+  <!-- ============ よくある不安と回答 ============ -->
+  <section style="background:var(--c-cream-2);">
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);">
+      <div class="rv" style="margin-bottom:clamp(28px,4vh,44px);">
+        <p style="font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(26px,4vw,46px);letter-spacing:.06em;line-height:1;color:var(--c-brand);margin:0 0 14px;">Q&amp;A</p>
+        <h2 style="font-size:clamp(22px,3.2vw,32px);font-weight:900;color:var(--c-ink);margin:0;line-height:1.45;">よくある不安と回答</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(14px,2vw,20px);">
+        <div class="rv" style="background:#fff;border-radius:8px;padding:clamp(24px,3vw,32px);border:1px solid var(--c-line);">
+          <p style="margin:0 0 12px;display:flex;gap:12px;align-items:baseline;font-size:17px;font-weight:700;color:var(--c-ink);"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);">Q</span>防護管が必要かわからない</p>
+          <p style="margin:0;display:flex;gap:12px;align-items:baseline;font-size:15px;line-height:1.9;color:var(--c-ink);"><span style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:600;color:var(--c-brand-2);">A</span>現場を見て、必要かどうかからお伝えします。</p>
+        </div>
+        <div class="rv d1" style="background:#fff;border-radius:8px;padding:clamp(24px,3vw,32px);border:1px solid var(--c-line);">
+          <p style="margin:0 0 12px;display:flex;gap:12px;align-items:baseline;font-size:17px;font-weight:700;color:var(--c-ink);"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);">Q</span>本数や範囲がわからない</p>
+          <p style="margin:0;display:flex;gap:12px;align-items:baseline;font-size:15px;line-height:1.9;color:var(--c-ink);"><span style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:600;color:var(--c-brand-2);">A</span>現地確認で算出します。</p>
+        </div>
+        <div class="rv" style="background:#fff;border-radius:8px;padding:clamp(24px,3vw,32px);border:1px solid var(--c-line);">
+          <p style="margin:0 0 12px;display:flex;gap:12px;align-items:baseline;font-size:17px;font-weight:700;color:var(--c-ink);"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);">Q</span>急な工程変更が心配</p>
+          <p style="margin:0;display:flex;gap:12px;align-items:baseline;font-size:15px;line-height:1.9;color:var(--c-ink);"><span style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:600;color:var(--c-brand-2);">A</span>延長・短縮に柔軟に対応します。</p>
+        </div>
+        <div class="rv d1" style="background:#fff;border-radius:8px;padding:clamp(24px,3vw,32px);border:1px solid var(--c-line);">
+          <p style="margin:0 0 12px;display:flex;gap:12px;align-items:baseline;font-size:17px;font-weight:700;color:var(--c-ink);"><span style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--c-brand);">Q</span>費用が見えない</p>
+          <p style="margin:0;display:flex;gap:12px;align-items:baseline;font-size:15px;line-height:1.9;color:var(--c-ink);"><span style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:600;color:var(--c-brand-2);">A</span>料金表で目安を公開し、見積りは無料です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ご依頼の流れ ============ -->
+  <!-- 要取材：返信までの日数・見積り提出までの日数 -->
+  <section style="background:#fff;">
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);">
+      <div class="rv" style="margin-bottom:clamp(28px,4vh,44px);">
+        <p style="font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(26px,4vw,46px);letter-spacing:.06em;line-height:1;color:var(--c-brand);margin:0 0 14px;">FLOW</p>
+        <h2 style="font-size:clamp(22px,3.2vw,32px);font-weight:900;color:var(--c-ink);margin:0;line-height:1.45;">ご依頼の流れ</h2>
+      </div>
+      <ol data-flow-grid style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:clamp(12px,1.6vw,16px);">
+        <li class="rv" style="background:var(--c-cream-2);border-radius:8px;padding:clamp(22px,2.4vw,28px);border-top:3px solid var(--c-brand-2);">
+          <p style="font-family:'Outfit',sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;color:var(--c-brand);margin:0 0 10px;">STEP 01</p>
+          <h3 style="font-size:17px;font-weight:700;color:var(--c-ink);margin:0 0 8px;">お問い合わせ</h3>
+          <p style="font-size:14.5px;color:var(--c-ink);line-height:1.9;margin:0;">フォーム・電話。当日〜翌営業日に返信<span style="display:inline-flex;margin-left:6px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;vertical-align:middle;">要確認</span></p>
+        </li>
+        <li class="rv d1" style="background:var(--c-cream-2);border-radius:8px;padding:clamp(22px,2.4vw,28px);border-top:3px solid var(--c-brand-2);">
+          <p style="font-family:'Outfit',sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;color:var(--c-brand);margin:0 0 10px;">STEP 02</p>
+          <h3 style="font-size:17px;font-weight:700;color:var(--c-ink);margin:0 0 8px;">現地確認</h3>
+          <p style="font-size:14.5px;color:var(--c-ink);line-height:1.9;margin:0;">日程調整のうえ伺います。</p>
+        </li>
+        <li class="rv d2" style="background:var(--c-cream-2);border-radius:8px;padding:clamp(22px,2.4vw,28px);border-top:3px solid var(--c-brand-2);">
+          <p style="font-family:'Outfit',sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;color:var(--c-brand);margin:0 0 10px;">STEP 03</p>
+          <h3 style="font-size:17px;font-weight:700;color:var(--c-ink);margin:0 0 8px;">お見積り</h3>
+          <p style="font-size:14.5px;color:var(--c-ink);line-height:1.9;margin:0;">確認後〇日以内に提出<span style="display:inline-flex;margin-left:6px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;vertical-align:middle;">要確認</span></p>
+        </li>
+        <li class="rv d3" style="background:var(--c-cream-2);border-radius:8px;padding:clamp(22px,2.4vw,28px);border-top:3px solid var(--c-brand-2);">
+          <p style="font-family:'Outfit',sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;color:var(--c-brand);margin:0 0 10px;">STEP 04</p>
+          <h3 style="font-size:17px;font-weight:700;color:var(--c-ink);margin:0 0 8px;">施工・リース</h3>
+          <p style="font-size:14.5px;color:var(--c-ink);line-height:1.9;margin:0;">工程に合わせて取付。</p>
+        </li>
+        <li class="rv d3" style="background:var(--c-cream-2);border-radius:8px;padding:clamp(22px,2.4vw,28px);border-top:3px solid var(--c-brand-2);">
+          <p style="font-family:'Outfit',sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;color:var(--c-brand);margin:0 0 10px;">STEP 05</p>
+          <h3 style="font-size:17px;font-weight:700;color:var(--c-ink);margin:0 0 8px;">撤去・精算</h3>
+          <p style="font-size:14.5px;color:var(--c-ink);line-height:1.9;margin:0;">撤去後にご請求。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ こんな方からご相談いただいています ============ -->
+  <section style="position:relative;overflow:hidden;isolation:isolate;background:#fff;">
+    <div aria-hidden="true" style="position:absolute;top:-40px;right:-60px;width:min(420px,48vw);height:min(420px,48vw);background-image:radial-gradient(#BFD7E8 1.6px,transparent 1.6px);background-size:22px 22px;-webkit-mask-image:radial-gradient(circle,#000 35%,transparent 70%);mask-image:radial-gradient(circle,#000 35%,transparent 70%);z-index:-1;pointer-events:none;"></div>
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);">
+      <div class="rv" style="margin-bottom:clamp(28px,4vh,44px);max-width:760px;">
+        <p style="font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(26px,4vw,46px);letter-spacing:.06em;line-height:1;color:var(--c-brand);margin:0 0 14px;">FOR</p>
+        <h2 style="font-size:clamp(22px,3.2vw,32px);font-weight:900;color:var(--c-ink);margin:0;line-height:1.45;">こんな現場担当者さまへ</h2>
+        <p style="margin:16px 0 0;font-size:clamp(15px,1.8vw,16px);line-height:2;color:var(--c-ink);text-wrap:pretty;">電線の近くで作業がある現場なら、業種を問わずご相談ください。</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(14px,2vw,20px);">
+        <div class="rv" style="background:#fff;border:1px solid var(--c-line);border-radius:8px;padding:clamp(22px,3vw,32px);border-top:3px solid var(--c-brand-2);">
+          <h3 style="font-size:18px;font-weight:700;color:var(--c-ink);margin:0 0 10px;line-height:1.5;">建設会社さま</h3>
+          <p style="font-size:15px;color:var(--c-ink);line-height:1.9;margin:0;text-wrap:pretty;">新築・改修工事で、電線に近い作業がある現場。</p>
+        </div>
+        <div class="rv d1" style="background:#fff;border:1px solid var(--c-line);border-radius:8px;padding:clamp(22px,3vw,32px);border-top:3px solid var(--c-brand-2);">
+          <h3 style="font-size:18px;font-weight:700;color:var(--c-ink);margin:0 0 10px;line-height:1.5;">ハウスメーカーさま</h3>
+          <p style="font-size:15px;color:var(--c-ink);line-height:1.9;margin:0;text-wrap:pretty;">住宅の新築時の、足場・資材搬入や引込み工事。</p>
+        </div>
+        <div class="rv d2" style="background:#fff;border:1px solid var(--c-line);border-radius:8px;padding:clamp(22px,3vw,32px);border-top:3px solid var(--c-brand-2);">
+          <h3 style="font-size:18px;font-weight:700;color:var(--c-ink);margin:0 0 10px;line-height:1.5;">足場工事業者さま</h3>
+          <p style="font-size:15px;color:var(--c-ink);line-height:1.9;margin:0;text-wrap:pretty;">電線に足場が近づく外壁・屋根工事の現場。</p>
+        </div>
+        <div class="rv" style="background:#fff;border:1px solid var(--c-line);border-radius:8px;padding:clamp(22px,3vw,32px);border-top:3px solid var(--c-brand-2);">
+          <h3 style="font-size:18px;font-weight:700;color:var(--c-ink);margin:0 0 10px;line-height:1.5;">解体業者さま</h3>
+          <p style="font-size:15px;color:var(--c-ink);line-height:1.9;margin:0;text-wrap:pretty;">建物解体時の電線接触リスクへの対策。</p>
+        </div>
+        <div class="rv d1" style="background:#fff;border:1px solid var(--c-line);border-radius:8px;padding:clamp(22px,3vw,32px);border-top:3px solid var(--c-brand-2);">
+          <h3 style="font-size:18px;font-weight:700;color:var(--c-ink);margin:0 0 10px;line-height:1.5;">クレーン・重機作業のある業者さま</h3>
+          <p style="font-size:15px;color:var(--c-ink);line-height:1.9;margin:0;text-wrap:pretty;">吊り荷や重機アームが電線に近づく現場。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 対応エリア ============ -->
+  <section style="position:relative;overflow:hidden;isolation:isolate;background:var(--c-cream-2);">
+    
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);">
+      <div class="rv" style="margin-bottom:clamp(28px,4vh,44px);max-width:760px;">
+        <p style="font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(26px,4vw,46px);letter-spacing:.06em;line-height:1;color:var(--c-brand);margin:0 0 14px;">AREA</p>
+        <h2 style="font-size:clamp(22px,3.2vw,32px);font-weight:900;color:var(--c-ink);margin:0;line-height:1.45;">埼玉県全域に対応しています</h2>
+      </div>
+      <ul class="rv" style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px;">
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">上尾市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">川越市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">さいたま市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">鶴ヶ島市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">坂戸市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">川島町</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">狭山市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">桶川市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">北本市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">鴻巣市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">所沢市</li>
+        <li style="background:#fff;color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">ふじみ野市</li>
+        <li style="background:var(--c-brand);color:#fff;border:1px solid var(--c-line);border-radius:999px;padding:8px 18px;font-size:15px;">その他 埼玉県全域</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 見積りに必要な情報 ============ -->
+  <section style="background:var(--c-cream);">
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);">
+      <div class="rv" style="margin-bottom:clamp(28px,4vh,44px);">
+        <p style="font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(26px,4vw,46px);letter-spacing:.06em;line-height:1;color:var(--c-brand);margin:0 0 14px;">CHECK</p>
+        <h2 style="font-size:clamp(22px,3.2vw,32px);font-weight:900;color:var(--c-ink);margin:0;line-height:1.45;">この情報があるとお見積りが早くなります</h2>
+      </div>
+      <ul class="rv" style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;">
+        <li style="display:flex;align-items:center;gap:12px;background:#fff;border-radius:8px;padding:16px 18px;font-size:16px;font-weight:700;color:var(--c-ink);"><span aria-hidden="true" style="flex:none;width:24px;height:24px;border-radius:6px;background:var(--c-brand);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;">✓</span>現場住所</li>
+        <li style="display:flex;align-items:center;gap:12px;background:#fff;border-radius:8px;padding:16px 18px;font-size:16px;font-weight:700;color:var(--c-ink);"><span aria-hidden="true" style="flex:none;width:24px;height:24px;border-radius:6px;background:var(--c-brand);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;">✓</span>工事期間</li>
+        <li style="display:flex;align-items:center;gap:12px;background:#fff;border-radius:8px;padding:16px 18px;font-size:16px;font-weight:700;color:var(--c-ink);"><span aria-hidden="true" style="flex:none;width:24px;height:24px;border-radius:6px;background:var(--c-brand);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;">✓</span>作業内容</li>
+        <li style="display:flex;align-items:center;gap:12px;background:#fff;border-radius:8px;padding:16px 18px;font-size:16px;font-weight:700;color:var(--c-ink);"><span aria-hidden="true" style="flex:none;width:24px;height:24px;border-radius:6px;background:var(--c-brand);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;">✓</span>電線の位置がわかる写真</li>
+        <li style="display:flex;align-items:center;gap:12px;background:#fff;border-radius:8px;padding:16px 18px;font-size:16px;font-weight:700;color:var(--c-ink);"><span aria-hidden="true" style="flex:none;width:24px;height:24px;border-radius:6px;background:var(--c-brand);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;">✓</span>ご希望の取付日</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ お客様の声 ============ -->
+  <!-- 要取材：お客様の声（建設会社様・解体工事業者様） -->
+  <section style="background:#fff;">
+    <div style="max-width:1160px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(24px,5vw,40px);">
+      <div class="rv" style="margin-bottom:clamp(28px,4vh,44px);">
+        <p style="font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(26px,4vw,46px);letter-spacing:.06em;line-height:1;color:var(--c-brand);margin:0 0 14px;">VOICE</p>
+        <h2 style="font-size:clamp(22px,3.2vw,32px);font-weight:900;color:var(--c-ink);margin:0;line-height:1.45;">お客様の声</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(16px,2.4vw,24px);">
+        <figure class="rv" style="margin:0;background:var(--c-cream-2);border:1px solid var(--c-line);border-radius:8px;padding:clamp(24px,3vw,36px);">
+          <blockquote style="margin:0;font-size:16px;line-height:1.9;color:var(--c-ink);">〇〇〇〇<span style="display:inline-flex;margin-left:6px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;vertical-align:middle;">要確認</span></blockquote>
+          <figcaption style="margin-top:14px;font-size:14px;color:#3C5470;">建設会社様</figcaption>
+        </figure>
+        <figure class="rv d1" style="margin:0;background:var(--c-cream-2);border:1px solid var(--c-line);border-radius:8px;padding:clamp(24px,3vw,36px);">
+          <blockquote style="margin:0;font-size:16px;line-height:1.9;color:var(--c-ink);">〇〇〇〇<span style="display:inline-flex;margin-left:6px;font-size:11px;font-weight:700;color:#C2410C;border:1px solid #C2410C;border-radius:4px;padding:1px 5px;vertical-align:middle;">要確認</span></blockquote>
+          <figcaption style="margin-top:14px;font-size:14px;color:#3C5470;">解体工事業者様</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 関連導線 ============ -->
+  <section style="background:var(--c-ink);">
+    <div data-rel-grid style="max-width:1160px;margin:0 auto;padding:clamp(48px,7vh,80px) clamp(24px,5vw,40px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.5vw,24px);">
+      <a href="よくあるご質問.dc.html" class="rv" style="display:block;position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/7;">
+        <div style="position:absolute;inset:0;background:#D5E3EE url(assets/img/sky-pole.png) center/cover no-repeat;"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,46,87,.25) 30%,rgba(15,46,87,.8) 100%);"></div>
+        <div style="position:absolute;left:clamp(20px,3vw,32px);bottom:clamp(20px,3vw,28px);">
+          <p style="font-family:'Outfit',sans-serif;font-weight:600;font-size:10px;letter-spacing:.16em;color:var(--c-brand-2);margin:0 0 8px;">FAQ</p>
+          <p style="font-size:clamp(16px,2vw,20px);font-weight:700;color:#fff;margin:0;letter-spacing:.03em;display:flex;align-items:center;gap:10px;">よくあるご質問 <span style="font-size:14px;">→</span></p>
+        </div>
+      </a>
+      <a href="料金表.dc.html" class="rv d1" style="display:block;position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/7;">
+        <div style="position:absolute;inset:0;background:#D5E3EE url(assets/img/poles-sky.jpg) center/cover no-repeat;"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,46,87,.25) 30%,rgba(15,46,87,.8) 100%);"></div>
+        <div style="position:absolute;left:clamp(20px,3vw,32px);bottom:clamp(20px,3vw,28px);">
+          <p style="font-family:'Outfit',sans-serif;font-weight:600;font-size:10px;letter-spacing:.16em;color:var(--c-brand-2);margin:0 0 8px;">PRICE</p>
+          <p style="font-size:clamp(16px,2vw,20px);font-weight:700;color:#fff;margin:0;letter-spacing:.03em;display:flex;align-items:center;gap:10px;">料金表を見る <span style="font-size:14px;">→</span></p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ CTA C ============ -->
+  <section style="background:#fff;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c-brand-2),var(--c-brand));"></div>
+    <div class="rv" style="max-width:880px;margin:0 auto;padding:clamp(64px,9vh,110px) clamp(24px,5vw,40px);text-align:center;">
+      <p style="font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:.2em;color:var(--c-brand);margin:0 0 14px;">CONTACT</p>
+      <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(22px,3vw,28px);color:var(--c-ink);margin:0 0 14px;letter-spacing:.04em;"><span class="line-chunk">わからないことだけの相談でも</span><span class="line-chunk">大丈夫です</span></h2>
+      <p style="font-size:14px;color:#3C5470;margin:0 0 36px;line-height:2;">お見積りは無料です。受付 9:00〜16:30</p>
+      <div style="display:inline-flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <a href="/form/inquiry" style="display:inline-flex;align-items:center;gap:10px;background:var(--c-brand);color:#fff;border-radius:999px;font-size:15px;font-weight:700;letter-spacing:.06em;padding:16px 40px;justify-content:center;min-width:260px;box-sizing:border-box;transition:background .3s ease;" style-hover="background:var(--c-ink);">相談する →</a>
+        <a href="tel:048-774-1378" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--c-ink);font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;letter-spacing:.1em;padding:16px 30px;border:2px solid var(--c-brand);border-radius:999px;justify-content:center;min-width:260px;box-sizing:border-box;">048-774-1378</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER (共通部品) ============ -->
+  <dc-import name="Footer" hint-size="100%,420px"></dc-import>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    // (ヘッダーの色切替は Header.dc.html が担当)
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('.rv,.rvl,.rvr,.rv-scale').forEach((el) => io.observe(el));
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+}
+</script>
+</body>
+</html>

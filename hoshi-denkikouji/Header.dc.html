@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
+<style>
+  [data-navitem]:hover [data-dropdown],[data-navitem]:focus-within [data-dropdown]{opacity:1!important;visibility:visible!important;}
+  .mnav-toggle,.mnav-btn,.mnav-panel,.mbar{display:none;}
+  header a:focus-visible,header label:focus-visible,.mbar a:focus-visible{outline:3px solid #5BB8E6;outline-offset:2px;}
+  @media (max-width:1279px){ [data-htel]{display:none!important;} }
+  @media (max-width:1100px){
+    nav[data-gnav]{display:none!important;}
+    .mnav-btn{display:flex;align-items:center;justify-content:center;width:48px;height:48px;background:var(--c-ink);border-radius:8px;margin:auto 14px auto 0;cursor:pointer;flex:none;position:relative;z-index:75;}
+    .mnav-btn span{position:absolute;left:13px;right:13px;height:2px;background:#fff;transition:transform .3s ease,opacity .3s ease,top .3s ease;}
+    .mnav-btn span:nth-child(1){top:16px;}.mnav-btn span:nth-child(2){top:23px;}.mnav-btn span:nth-child(3){top:30px;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(1){top:23px;transform:rotate(45deg);}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(2){opacity:0;}
+    .mnav-toggle:checked ~ .mnav-btn span:nth-child(3){top:23px;transform:rotate(-45deg);}
+    .mnav-panel{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--c-ink);z-index:74;padding:92px 26px 110px;transform:translateX(100%);transition:transform .42s cubic-bezier(.16,1,.3,1);overflow-y:auto;}
+    .mnav-toggle:checked ~ .mnav-panel{transform:none;}
+    .mnav-panel a{color:#fff;font-size:16px;font-weight:700;padding:14px 4px;min-height:48px;border-bottom:1px solid rgba(255,255,255,.14);letter-spacing:.04em;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .mnav-panel a.sub{font-size:14px;font-weight:500;padding-left:18px;color:#DCE8F3;}
+    .mnav-panel a em{font-family:'Outfit',sans-serif;font-style:normal;font-size:11px;letter-spacing:.16em;color:#5BB8E6;font-weight:600;}
+  }
+  @media (max-width:767px){
+    .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:70;box-shadow:0 -6px 20px rgba(15,46,87,.14);}
+    .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:58px;font-size:15px;font-weight:700;letter-spacing:.06em;}
+    body{padding-bottom:58px;}
+    [data-hcta]{display:none!important;}
+  }
+</style>
+</helmet>
+<header data-hdr-bar style="position:fixed;top:0;left:0;width:100%;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.97);border-bottom:1px solid var(--c-line);transition:box-shadow .35s ease;min-height:clamp(64px,7vw,84px);">
+  <a href="トップページ(ページ遷移可能).dc.html" aria-label="有限会社星電気工事 トップへ" style="display:flex;align-items:center;padding:10px clamp(16px,2.2vw,32px);flex:none;">
+    <img src="assets/logo.png" alt="有限会社星電気工事" width="300" height="80" style="display:block;height:clamp(34px,3.6vw,44px);width:auto;">
+  </a>
+  <nav data-gnav aria-label="グローバルナビ" style="display:flex;align-items:center;gap:clamp(16px,1.8vw,30px);padding:0 clamp(16px,2vw,28px) 0 0;">
+    <div data-navitem style="position:relative;display:flex;align-items:center;">
+      <a href="防護管リース.dc.html" data-nav="lease" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;line-height:1.05;color:var(--c-ink);white-space:nowrap;padding:10px 0;" style-hover="color:var(--c-brand);"><span style="font-family:'Outfit',sans-serif;font-weight:500;font-size:11px;letter-spacing:.18em;color:var(--c-brand);">LEASE</span><span style="font-size:14px;font-weight:700;letter-spacing:.04em;">防護管リース</span></a>
+    </div>
+    <div data-navitem style="position:relative;display:flex;align-items:center;">
+      <a href="業務案内.dc.html" data-nav="work" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;line-height:1.05;color:var(--c-ink);white-space:nowrap;padding:10px 0;" style-hover="color:var(--c-brand);"><span style="font-family:'Outfit',sans-serif;font-weight:500;font-size:11px;letter-spacing:.18em;color:var(--c-brand);">SERVICE</span><span style="font-size:14px;font-weight:700;letter-spacing:.04em;">業務案内 <span aria-hidden="true" style="font-size:9px;opacity:.6;">▾</span></span></a>
+      <div data-dropdown style="position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:12px;opacity:0;visibility:hidden;transition:opacity .26s ease;z-index:80;">
+        <div style="min-width:220px;background:#fff;border:1px solid var(--c-line);border-radius:8px;box-shadow:0 18px 44px rgba(15,46,87,.16);padding:8px 0;">
+          <a href="業務案内.dc.html" style="display:block;padding:12px 22px;font-size:14px;font-weight:700;color:var(--c-ink);white-space:nowrap;" style-hover="background:var(--c-cream);color:var(--c-brand);">業務案内</a>
+          <a href="ご依頼を検討中の方へ.dc.html" style="display:block;padding:11px 22px 11px 34px;font-size:13.5px;color:#3C5470;white-space:nowrap;" style-hover="background:var(--c-cream);color:var(--c-brand);">ご依頼を検討中の方へ</a>
+          <a href="よくあるご質問.dc.html" style="display:block;padding:11px 22px 11px 34px;font-size:13.5px;color:#3C5470;white-space:nowrap;" style-hover="background:var(--c-cream);color:var(--c-brand);">よくあるご質問</a>
+        </div>
+      </div>
+    </div>
+    <div data-navitem style="position:relative;display:flex;align-items:center;">
+      <a href="料金表.dc.html" data-nav="price" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;line-height:1.05;color:var(--c-ink);white-space:nowrap;padding:10px 0;" style-hover="color:var(--c-brand);"><span style="font-family:'Outfit',sans-serif;font-weight:500;font-size:11px;letter-spacing:.18em;color:var(--c-brand);">PRICE</span><span style="font-size:14px;font-weight:700;letter-spacing:.04em;">料金表</span></a>
+    </div>
+    <div data-navitem style="position:relative;display:flex;align-items:center;">
+      <a href="施工実績.dc.html" data-nav="works" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;line-height:1.05;color:var(--c-ink);white-space:nowrap;padding:10px 0;" style-hover="color:var(--c-brand);"><span style="font-family:'Outfit',sans-serif;font-weight:500;font-size:11px;letter-spacing:.18em;color:var(--c-brand);">WORKS</span><span style="font-size:14px;font-weight:700;letter-spacing:.04em;">施工実績</span></a>
+    </div>
+    <div data-navitem style="position:relative;display:flex;align-items:center;">
+      <a href="星電気工事について.dc.html" data-nav="about" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;line-height:1.05;color:var(--c-ink);white-space:nowrap;padding:10px 0;" style-hover="color:var(--c-brand);"><span style="font-family:'Outfit',sans-serif;font-weight:500;font-size:11px;letter-spacing:.18em;color:var(--c-brand);">ABOUT</span><span style="font-size:14px;font-weight:700;letter-spacing:.04em;">星電気工事について <span aria-hidden="true" style="font-size:9px;opacity:.6;">▾</span></span></a>
+      <div data-dropdown style="position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:12px;opacity:0;visibility:hidden;transition:opacity .26s ease;z-index:80;">
+        <div style="min-width:220px;background:#fff;border:1px solid var(--c-line);border-radius:8px;box-shadow:0 18px 44px rgba(15,46,87,.16);padding:8px 0;">
+          <a href="星電気工事について.dc.html" style="display:block;padding:12px 22px;font-size:14px;font-weight:700;color:var(--c-ink);white-space:nowrap;" style-hover="background:var(--c-cream);color:var(--c-brand);">星電気工事について</a>
+          <a href="会社概要.dc.html" style="display:block;padding:11px 22px 11px 34px;font-size:13.5px;color:#3C5470;white-space:nowrap;" style-hover="background:var(--c-cream);color:var(--c-brand);">会社概要</a>
+          <a href="スタッフ紹介.dc.html" style="display:block;padding:11px 22px 11px 34px;font-size:13.5px;color:#3C5470;white-space:nowrap;" style-hover="background:var(--c-cream);color:var(--c-brand);">スタッフ紹介</a>
+        </div>
+      </div>
+    </div>
+    <div data-navitem style="position:relative;display:flex;align-items:center;">
+      <a href="採用情報.dc.html" data-nav="recruit" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;line-height:1.05;color:var(--c-ink);white-space:nowrap;padding:10px 0;" style-hover="color:var(--c-brand);"><span style="font-family:'Outfit',sans-serif;font-weight:500;font-size:11px;letter-spacing:.18em;color:var(--c-brand);">RECRUIT</span><span style="font-size:14px;font-weight:700;letter-spacing:.04em;">採用情報 <span aria-hidden="true" style="font-size:9px;opacity:.6;">▾</span></span></a>
+      <div data-dropdown style="position:absolute;top:100%;right:0;padding-top:12px;opacity:0;visibility:hidden;transition:opacity .26s ease;z-index:80;">
+        <div style="min-width:220px;background:#fff;border:1px solid var(--c-line);border-radius:8px;box-shadow:0 18px 44px rgba(15,46,87,.16);padding:8px 0;">
+          <a href="採用情報.dc.html" style="display:block;padding:12px 22px;font-size:14px;font-weight:700;color:var(--c-ink);white-space:nowrap;" style-hover="background:var(--c-cream);color:var(--c-brand);">採用情報（募集要項）</a>
+          <a href="求職者の皆さまへ.dc.html" style="display:block;padding:11px 22px 11px 34px;font-size:13.5px;color:#3C5470;white-space:nowrap;" style-hover="background:var(--c-cream);color:var(--c-brand);">求職者の皆さまへ</a>
+          <a href="スタッフ紹介.dc.html" style="display:block;padding:11px 22px 11px 34px;font-size:13.5px;color:#3C5470;white-space:nowrap;" style-hover="background:var(--c-cream);color:var(--c-brand);">スタッフ紹介</a>
+        </div>
+      </div>
+    </div>
+    <a href="tel:048-774-1378" data-htel style="display:flex;flex-direction:column;align-items:flex-end;line-height:1.15;color:var(--c-ink);padding-left:clamp(8px,1vw,14px);border-left:1px solid var(--c-line);">
+      <span style="font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(18px,1.6vw,22px);letter-spacing:.04em;color:var(--c-brand);white-space:nowrap;">048-774-1378</span>
+      <span style="font-size:11px;color:#3C5470;white-space:nowrap;">受付 9:00〜16:30</span>
+    </a>
+    <a href="お問い合わせ.dc.html" data-hcta style="display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 clamp(18px,1.8vw,26px);background:var(--c-brand);color:#fff;border-radius:999px;font-size:14px;font-weight:700;letter-spacing:.06em;white-space:nowrap;transition:background .3s ease;" style-hover="background:var(--c-ink);">見積り依頼</a>
+  </nav>
+  <input type="checkbox" id="mnav" class="mnav-toggle" aria-hidden="true">
+  <label for="mnav" class="mnav-btn" aria-label="メニューを開く" tabindex="0"><span></span><span></span><span></span></label>
+  <div class="mnav-panel">
+    <a href="防護管リース.dc.html">防護管リース<em>LEASE</em></a>
+    <a href="料金表.dc.html" class="sub">料金表</a>
+    <a href="業務案内.dc.html">業務案内<em>SERVICE</em></a>
+    <a href="ご依頼を検討中の方へ.dc.html" class="sub">ご依頼を検討中の方へ</a>
+    <a href="施工実績.dc.html">施工実績<em>WORKS</em></a>
+    <a href="星電気工事について.dc.html">星電気工事について<em>ABOUT</em></a>
+    <a href="会社概要.dc.html" class="sub">会社概要</a>
+    <a href="スタッフ紹介.dc.html" class="sub">スタッフ紹介</a>
+    <a href="採用情報.dc.html">採用情報<em>RECRUIT</em></a>
+    <a href="求職者の皆さまへ.dc.html" class="sub">求職者の皆さまへ</a>
+    <a href="よくあるご質問.dc.html">よくあるご質問<em>FAQ</em></a>
+    <a href="ブログ.dc.html">ブログ<em>BLOG</em></a>
+    <a href="お問い合わせ.dc.html">お問い合わせ<em>CONTACT</em></a>
+  </div>
+</header>
+<div class="mbar" aria-label="お問い合わせ">
+  <a href="tel:048-774-1378" style="background:#fff;color:var(--c-brand);border-top:1px solid var(--c-line);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A18 18 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg>電話する</a>
+  <a href="お問い合わせ.dc.html" style="background:var(--c-brand);color:#fff;">見積り依頼</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:110}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const upd = () => {
+      const bar = document.querySelector('[data-hdr-bar]');
+      if (bar) bar.style.boxShadow = (window.scrollY || document.documentElement.scrollTop) > 20 ? '0 4px 20px rgba(15,46,87,.10)' : 'none';
+    };
+    this._onScroll = () => requestAnimationFrame(upd);
+    window.addEventListener('scroll', this._onScroll, { passive: true, capture: true });
+    const applyActive = () => {
+      const cur = decodeURIComponent((location.pathname.split('/').pop() || '')).toLowerCase();
+      if (!cur) return;
+      document.querySelectorAll('header [data-navitem]').forEach((item) => {
+        const top = item.querySelector('a[data-nav]');
+        if (!top) return;
+        const hrefs = Array.from(item.querySelectorAll('a')).map((a) => decodeURIComponent((a.getAttribute('href') || '').split('/').pop() || '').toLowerCase());
+        if (hrefs.includes(cur)) { top.style.boxShadow = 'inset 0 -2px 0 #5BB8E6'; top.setAttribute('aria-current', 'page'); }
+      });
+    };
+    requestAnimationFrame(() => { upd(); applyActive(); });
+  }
+  componentWillUnmount() { if (this._onScroll) window.removeEventListener('scroll', this._onScroll, { capture: true }); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
