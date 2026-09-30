@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI検索 対応状況レポート｜株式会社エーステクニカ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1a2f5e; --navy-2:#2b4478; --navy-soft:#eef1f7;
+    --gold:#c9a84c; --gold-soft:#f7f1e1;
+    --ink:#23272f; --sub:#5b6270; --line:#d6dbe5;
+    --ok:#2e7d32; --part:#e07b1a; --ng:#c62828; --na:#8d939c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{background:#e9ebef}
+  body{font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif;font-size:9pt;color:var(--ink);line-height:1.6}
+  b,strong,.num{font-weight:700}
+  .page{width:210mm;height:297mm;margin:8mm auto;background:#fff;overflow:hidden;position:relative;
+        page-break-after:always;break-after:page;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+  .page:last-child{page-break-after:auto;break-after:auto}
+  .content-page{padding:14mm 16mm 13mm;display:flex;flex-direction:column}
+  section,.block,table,.flow-step{page-break-inside:avoid;break-inside:avoid}
+
+  /* ヘッダー・フッター */
+  .phead{display:flex;align-items:flex-end;justify-content:space-between;border-bottom:2px solid var(--navy);padding-bottom:2.5mm;margin-bottom:6mm}
+  .phead h2{font-size:15pt;font-weight:900;color:var(--navy);letter-spacing:.02em}
+  .phead .pno{font-size:8pt;color:var(--sub)}
+  .phead .pno b{color:var(--gold);font-size:11pt}
+  .pfoot{position:absolute;left:16mm;right:16mm;bottom:7mm;display:flex;justify-content:space-between;font-size:7pt;color:var(--sub);border-top:1px solid var(--line);padding-top:1.5mm}
+
+  p{font-size:8.5pt}
+  .lead{font-size:8.5pt;color:var(--ink);margin-bottom:5mm}
+  h3{font-size:11pt;color:var(--navy);font-weight:700;display:flex;align-items:center;gap:3mm;margin-bottom:3mm}
+  h3::before{content:"";width:1.2mm;height:4.5mm;background:var(--gold);display:inline-block}
+  h3 .badge{margin-left:auto}
+
+  /* バッジ */
+  .badge{display:inline-flex;align-items:center;gap:1.2mm;font-size:7.5pt;font-weight:700;color:#fff;border-radius:3mm;padding:.6mm 2.6mm;white-space:nowrap;line-height:1.4}
+  .badge .mk{font-size:8.5pt}
+  .b-ok{background:var(--ok)} .b-part{background:var(--part)} .b-ng{background:var(--ng)} .b-na{background:var(--na)}
+  .tag{display:inline-block;font-size:7.5pt;font-weight:700;padding:.3mm 2mm;border-radius:1mm}
+  .tag-yes{background:#e3f1e4;color:var(--ok)} .tag-no{background:#f3f4f6;color:var(--sub)}
+
+  /* 表 */
+  table{width:100%;border-collapse:collapse;font-size:8pt}
+  th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:1.8mm 2.2mm;font-size:7.8pt}
+  td{border-bottom:1px solid var(--line);padding:2mm 2.2mm;vertical-align:middle}
+  tr:nth-child(even) td{background:#f8f9fb}
+  td.c,th.c{text-align:center}
+  .small{font-size:7.3pt;color:var(--sub)}
+
+  /* 表紙 */
+  .cover{background:var(--navy);color:#fff;padding:0;display:flex;flex-direction:column}
+  .cover-top{padding:36mm 20mm 0}
+  .cover-rule{width:24mm;height:1.2mm;background:var(--gold);margin-bottom:9mm}
+  .cover h1{font-size:30pt;font-weight:900;letter-spacing:.04em;line-height:1.3}
+  .cover .sub{font-size:13pt;color:var(--gold);margin-top:5mm;font-weight:500}
+  .cover .company{margin-top:34mm;font-size:20pt;font-weight:700}
+  .cover .company small{font-size:11pt;font-weight:400;margin-left:3mm;opacity:.85}
+  .cover table{margin-top:10mm;width:120mm;font-size:9pt}
+  .cover td{border-bottom:1px solid rgba(255,255,255,.22);padding:2.8mm 0;color:#fff;background:transparent!important}
+  .cover td:first-child{width:32mm;color:var(--gold);font-weight:500}
+  .cover-foot{margin-top:auto;padding:0 20mm 16mm;font-size:8pt;opacity:.75;display:flex;justify-content:space-between}
+
+  /* 2ページ目 図解 */
+  .map{display:grid;grid-template-columns:1fr 12mm 1fr;grid-template-rows:auto auto;gap:6mm 0;align-items:center;margin-top:4mm}
+  .mbox{border:1.5px solid var(--navy);border-radius:2mm;padding:5mm 5mm 4.5mm;background:#fff}
+  .mbox .lbl{display:inline-block;background:var(--navy);color:#fff;font-size:8pt;font-weight:700;padding:.5mm 3mm;border-radius:1mm;margin-bottom:2.5mm}
+  .mbox h4{font-size:11pt;color:var(--navy);margin-bottom:1.5mm}
+  .mbox p{font-size:8pt;color:var(--sub)}
+  .mbox ul{margin-top:2.5mm;padding-left:4mm;font-size:7.8pt}
+  .mbox li{margin-bottom:.6mm}
+  .prep{grid-column:1;}
+  .prep2{grid-column:1;}
+  .arrow-col{grid-column:2;grid-row:1 / span 2;display:flex;align-items:center;justify-content:center;height:100%}
+  .result{grid-column:3;grid-row:1 / span 2;background:var(--navy-soft);border-color:var(--gold);border-width:2px;height:100%;display:flex;flex-direction:column;justify-content:center}
+  .result .lbl{background:var(--gold)}
+  .bigarrow{width:0;height:0;border-top:14mm solid transparent;border-bottom:14mm solid transparent;border-left:9mm solid var(--gold)}
+  .map-note{margin-top:7mm;background:var(--gold-soft);border-left:1.2mm solid var(--gold);padding:4mm 5mm;font-size:8.5pt}
+  .howto{margin-top:7mm}
+  .howto table td:first-child{width:38mm;font-weight:700;color:var(--navy)}
+
+  /* 3ページ目 */
+  .fact{margin-top:3mm;background:var(--navy-soft);border-radius:1.5mm;padding:3mm 4mm;font-size:8.5pt}
+  .fact + .fact{margin-top:2mm}
+  .block + .block{margin-top:7mm}
+  .na-box{border:1.5px dashed var(--na);border-radius:2mm;padding:5mm;color:var(--sub);font-size:8.5pt;background:#fafafa}
+
+  /* 4ページ目 */
+  .prep-table td:first-child{width:40mm;font-weight:700;color:var(--navy)}
+  .prep-table td:last-child{width:30mm;text-align:center}
+  .prep-table td{padding:2.6mm 2.4mm}
+  .subhead{font-size:9pt;font-weight:700;color:#fff;background:var(--navy-2);padding:1.5mm 3mm;border-radius:1mm;display:inline-block;margin-bottom:2mm}
+
+  /* 5ページ目 */
+  .score-wrap{display:flex;gap:8mm;align-items:stretch;margin-bottom:7mm}
+  .score-card{flex:0 0 66mm;background:var(--navy);color:#fff;border-radius:2mm;padding:6mm;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+  .score-card .big{font-size:54pt;font-weight:900;line-height:1;color:#fff}
+  .score-card .big span{font-size:14pt;font-weight:500;margin-left:1mm;color:var(--gold)}
+  .score-card .state{margin-top:4mm;font-size:9pt;font-weight:700;border-top:1px solid rgba(255,255,255,.3);padding-top:3mm;color:var(--gold)}
+  .bars{flex:1;display:flex;flex-direction:column;justify-content:center;gap:5mm}
+  .bar-row .bl{display:flex;justify-content:space-between;font-size:8.5pt;margin-bottom:1.2mm}
+  .bar-row .bl b{color:var(--navy)}
+  .track{height:6mm;background:#edf0f5;border-radius:1mm;overflow:hidden}
+  .fill{height:100%;background:var(--navy)}
+  .fill.g{background:var(--gold)}
+  .breakdown td,.breakdown th{font-size:7.5pt;padding:1.6mm 2.2mm}
+  .breakdown td.blk{font-weight:700;color:var(--navy);background:#fff!important;border-right:1px solid var(--line)}
+  .breakdown tr.sum td{background:var(--gold-soft)!important;font-weight:700}
+  .legend{margin-top:5mm;display:grid;grid-template-columns:repeat(4,1fr);gap:2mm;font-size:7.3pt}
+  .legend div{border:1px solid var(--line);border-radius:1mm;padding:2mm;background:#fff}
+  .legend div.on{border:1.5px solid var(--navy);background:var(--navy-soft)}
+  .legend b{display:block;color:var(--navy);font-size:8pt}
+
+  /* 6ページ目 */
+  .flow{display:flex;flex-direction:column;align-items:stretch;margin-top:2mm}
+  .flow-step{display:flex;border:1.5px solid var(--navy);border-radius:2mm;overflow:hidden;background:#fff}
+  .flow-step .fs-l{flex:0 0 34mm;background:var(--navy);color:#fff;padding:4mm;display:flex;flex-direction:column;justify-content:center}
+  .flow-step .fs-l .n{font-size:16pt;font-weight:900;color:var(--gold);line-height:1}
+  .flow-step .fs-l .t{font-size:9pt;font-weight:700;margin-top:1.5mm}
+  .flow-step .fs-l .k{font-size:7pt;opacity:.8;margin-top:1mm}
+  .flow-step .fs-r{padding:3.5mm 4.5mm;font-size:8.3pt;flex:1}
+  .flow-step .fs-r ul{padding-left:4mm}
+  .flow-step .fs-r li{margin-bottom:.5mm}
+  .flow-step.guess{border-color:var(--gold);border-style:dashed}
+  .flow-step.guess .fs-l{background:var(--gold)}
+  .flow-step.guess .fs-l .n{color:#fff}
+  .down{align-self:center;width:0;height:0;border-left:5mm solid transparent;border-right:5mm solid transparent;border-top:5mm solid var(--gold);margin:2mm 0}
+  .closing{margin-top:auto;margin-bottom:8mm;text-align:center;font-size:9pt;color:var(--navy);border-top:1px solid var(--line);padding-top:5mm}
+
+  @page{size:A4 portrait;margin:0}
+  @media print{
+    html,body{background:#fff}
+    .page{margin:0;box-shadow:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ 1ページ目：表紙 ============ -->
+<div class="page cover">
+  <div class="cover-top">
+    <div class="cover-rule"></div>
+    <h1>AI検索<br>対応状況レポート</h1>
+    <div class="sub">AIに"紹介される会社"になっているか</div>
+    <div class="company">株式会社エーステクニカ<small>御中</small></div>
+    <table>
+      <tr><td>対象サイト</td><td>https://ace-tekunika.co.jp/</td></tr>
+      <tr><td>業種</td><td>電気工事・空調工事</td></tr>
+      <tr><td>対応エリア</td><td>埼玉県熊谷市（調査時の対象エリア）</td></tr>
+      <tr><td>調査日</td><td><b>2026</b>年<b>9</b>月<b>30</b>日</td></tr>
+    </table>
+  </div>
+  <div class="cover-foot">
+    <span>株式会社エンジョイワークス</span>
+    <span>本レポートは調査日時点の表示内容をもとに作成しています</span>
+  </div>
+</div>
+
+<!-- ============ 2ページ目：このレポートで確認すること ============ -->
+<div class="page content-page">
+  <div class="phead"><h2>このレポートで確認すること</h2><div class="pno"><b>2</b> / 6</div></div>
+
+  <p class="lead">業者を探すとき、Googleで検索するだけでなく、ChatGPTなどのAIに「〇〇市でおすすめの業者は？」と質問して候補を絞る人が増えてきています。AIは、会社のホームページの内容と、ホームページの外にある評判や掲載情報の両方を参考にして、紹介する会社を選んでいます。<br>このレポートでは、以下の<b>3</b>つのブロックに分けて、御社のいまの状態を確認していきます。</p>
+
+  <section class="map">
+    <div class="mbox prep">
+      <span class="lbl">サイトの中の準備</span>
+      <h4>AIが紹介したくなる情報が、サイトにあるか</h4>
+      <ul>
+        <li>信用できる根拠（代表者・資格・実績の数字など）</li>
+        <li>施工事例</li>
+        <li>料金の目安</li>
+        <li>よくある質問</li>
+        <li>Googleに会社情報を正しく伝える設定</li>
+      </ul>
+    </div>
+    <div class="arrow-col"><div class="bigarrow"></div></div>
+    <div class="mbox result">
+      <span class="lbl">現状</span>
+      <h4>AIに紹介されているか</h4>
+      <p>実際に3つのAIへ質問し、御社の名前が挙がるか、社名で聞いたときに正しく説明されるかを確認します。</p>
+      <ul>
+        <li>AIでの紹介状況（<b>6</b>回のテスト）</li>
+        <li>社名で聞いたときの説明</li>
+      </ul>
+    </div>
+    <div class="mbox prep2">
+      <span class="lbl">サイトの外の準備</span>
+      <h4>AIが参考にする評判・掲載が、サイトの外にあるか</h4>
+      <ul>
+        <li>Googleマップの登録と口コミ</li>
+        <li>第三者のおすすめ記事への掲載</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="map-note">「サイトの中の準備」と「サイトの外の準備」が整っているほど、AIに紹介されやすくなります。「現状」は、この<b>2</b>つの準備の結果としてあらわれます。</div>
+
+  <section class="howto">
+    <h3>判定の見方</h3>
+    <table>
+      <tr><th>表示</th><th>意味</th></tr>
+      <tr><td><span class="badge b-ok"><span class="mk">○</span>できている</span></td><td>確認した基準を満たしている状態です</td></tr>
+      <tr><td><span class="badge b-part"><span class="mk">△</span>一部できている</span></td><td>一部は確認できたものの、基準の一部を満たしていない状態です</td></tr>
+      <tr><td><span class="badge b-ng"><span class="mk">×</span>できていない</span></td><td>確認した範囲では見当たらなかった状態です</td></tr>
+      <tr><td><span class="badge b-na">未確認</span></td><td>今回の調査では確認できなかった項目です（点数は<b>0</b>点として計算しています）</td></tr>
+    </table>
+  </section>
+
+  <div class="pfoot"><span>AI検索 対応状況レポート｜株式会社エーステクニカ</span><span>調査日 2026/09/30</span></div>
+</div>
+
+<!-- ============ 3ページ目：現状 ============ -->
+<div class="page content-page">
+  <div class="phead"><h2>現状：AIでの紹介状況・社名での説明</h2><div class="pno"><b>3</b> / 6</div></div>
+
+  <section class="block">
+    <h3>AIでの紹介状況<span class="badge b-part"><span class="mk">△</span>一部できている</span></h3>
+    <table>
+      <tr><th style="width:24mm">AIの種類</th><th style="width:52mm">質問した内容</th><th class="c" style="width:22mm">御社の紹介</th><th>代わりに紹介された会社（上位）</th></tr>
+      <tr><td>ChatGPT</td><td>熊谷市でおすすめの電気工事の会社を教えて</td><td class="c"><span class="tag tag-no">なし</span></td><td>東電工業社／福道電気／秀和電気</td></tr>
+      <tr><td>ChatGPT</td><td>熊谷市で電気工事の会社に就職したい。おすすめの会社を教えて</td><td class="c"><span class="tag tag-yes"><b>1</b>番目に紹介</span></td><td>（2番目以降）栄明電気／四つ菱電設／デンユウ</td></tr>
+      <tr><td>Gemini</td><td>熊谷市でおすすめの電気工事の会社を教えて</td><td class="c"><span class="tag tag-no">なし</span></td><td>ハウスデンキ／戸叶電気工事／関根電気工事</td></tr>
+      <tr><td>Gemini</td><td>熊谷市で電気工事の会社に就職したい。おすすめの会社を教えて</td><td class="c"><span class="tag tag-no">なし</span></td><td>埼北通信工業／デンユウ／栄明電気</td></tr>
+      <tr><td>GoogleのAIによる概要</td><td>熊谷市でおすすめの電気工事の会社を教えて</td><td class="c"><span class="tag tag-no">なし</span></td><td>沼尻電機／東電工業社</td></tr>
+      <tr><td>GoogleのAIによる概要</td><td>熊谷市で電気工事の会社に就職したい。おすすめの会社を教えて</td><td class="c"><span class="tag tag-no">なし</span></td><td>埼北通信工業／秀英／泉電設工事</td></tr>
+    </table>
+    <div class="fact"><b>6</b>回のテストのうち、御社が紹介されたのは<b>1</b>回でした。紹介されたのはChatGPTの「就職先を探す」質問で、所在地（熊谷市柿沼<b>567-1</b>）・電話番号・未経験者の応募可について、ホームページの採用情報と一致する内容で紹介されていました。お客様向けの「おすすめの会社」の質問では、<b>3</b>つのAIのいずれでも御社の名前は挙がりませんでした。</div>
+    <div class="fact">東電工業社さん、井原電気工事さんは、それぞれ<b>6</b>回中<b>3</b>回紹介されていました。栄明電気さん、埼北通信工業さん、デンユウさん、ユニ電気工事さんは、それぞれ<b>6</b>回中<b>2</b>回紹介されていました。</div>
+    <p class="small" style="margin-top:2mm">※紹介回数には、AIの回答内の「その他の会社」欄での掲載も含みます。</p>
+  </section>
+
+  <section class="block">
+    <h3>社名で聞いたときの説明<span class="badge b-na">未確認</span></h3>
+    <table>
+      <tr><th style="width:24mm">AIの種類</th><th>説明された内容</th><th class="c" style="width:26mm">正確さ</th></tr>
+      <tr><td>ChatGPT</td><td>今回の調査では確認できませんでした</td><td class="c"><span class="badge b-na">未確認</span></td></tr>
+      <tr><td>Gemini</td><td>今回の調査では確認できませんでした</td><td class="c"><span class="badge b-na">未確認</span></td></tr>
+      <tr><td>GoogleのAIによる概要</td><td>今回の調査では確認できませんでした</td><td class="c"><span class="badge b-na">未確認</span></td></tr>
+    </table>
+    <div class="na-box" style="margin-top:3mm">参考として、御社のホームページには「サイエンス機器事業部（分析機器・実験器具の販売・修理）」と「電気・空調・通信工事事業部」の<b>2</b>つの事業が掲載されています。社名で質問した際に、この<b>2</b>つの事業がどのように説明されるかは、今回の調査では確認できませんでした。</div>
+  </section>
+
+  <div class="pfoot"><span>AI検索 対応状況レポート｜株式会社エーステクニカ</span><span>調査日 2026/09/30</span></div>
+</div>
+
+<!-- ============ 4ページ目：準備状況 ============ -->
+<div class="page content-page">
+  <div class="phead"><h2>AIに紹介してもらうための準備は、いまこの状態です</h2><div class="pno"><b>4</b> / 6</div></div>
+
+  <section class="block">
+    <span class="subhead">サイトの中の準備（<b>5</b>項目）</span>
+    <table class="prep-table">
+      <tr><th>項目</th><th>御社の状態</th><th class="c">判定</th></tr>
+      <tr><td>信用できる根拠</td><td>会社案内ページに、設立年（平成<b>9</b>年）、建設業の許可番号（埼玉県知事許可 第<b>63364</b>号）、第一種電気工事士など約<b>30</b>種類の資格名が掲載されています。代表ごあいさつの文章はありますが、代表者の顔写真はありません。スタッフ紹介と、施工件数などの実績の数字は掲載されていません。</td><td><span class="badge b-part"><span class="mk">△</span>一部できている</span></td></tr>
+      <tr><td>施工事例</td><td>施工事例のページはありません。業務案内ページに作業写真が<b>9</b>枚あり、それぞれ「木造住宅配線工事」などの短い見出しが付いています。工事の内容・地域・工期の説明はなく、掲載時期は確認できませんでした。</td><td><span class="badge b-ng"><span class="mk">×</span>できていない</span></td></tr>
+      <tr><td>料金の目安</td><td>ホームページ全<b>4</b>ページの中に、工事費用に関する記載はありません。</td><td><span class="badge b-ng"><span class="mk">×</span>できていない</span></td></tr>
+      <tr><td>よくある質問</td><td>よくある質問のページやコーナーはありません。</td><td><span class="badge b-ng"><span class="mk">×</span>できていない</span></td></tr>
+      <tr><td>Googleに会社情報を正しく伝える設定</td><td>トップページをGoogleの確認ツールで調べたところ、会社情報の設定は検出されませんでした（<b>2026/09/30</b>時点）。</td><td><span class="badge b-ng"><span class="mk">×</span>できていない</span></td></tr>
+    </table>
+  </section>
+
+  <section class="block">
+    <span class="subhead">サイトの外の準備（<b>2</b>項目）</span>
+    <table class="prep-table">
+      <tr><th>項目</th><th>御社の状態</th><th class="c">判定</th></tr>
+      <tr><td>Googleマップの登録と口コミ</td><td>Googleマップへの登録はあります。口コミは<b>4</b>件、平均評価は<b>1.8</b>です。営業時間は登録されていません。AIに複数回紹介されていた東電工業社さんは口コミ<b>4</b>件・平均評価<b>3.0</b>、井原電気工事さんは口コミ<b>0</b>件でした。口コミへの返信の有無は、今回の調査では確認できませんでした。</td><td><span class="badge b-part"><span class="mk">△</span>一部できている</span></td></tr>
+      <tr><td>第三者のおすすめ記事への掲載</td><td>「熊谷市 おすすめ 電気工事」の検索結果上位<b>10</b>件には、比較サイト・まとめサイトが約<b>7</b>件表示されていました。検索結果に表示された範囲では、御社の名前は確認できませんでした。各記事の本文までは、今回の調査では確認できませんでした。</td><td><span class="badge b-na">未確認</span></td></tr>
+    </table>
+  </section>
+
+  <p class="small" style="margin-top:4mm">※「信用できる根拠」は、代表者の顔写真とメッセージ／保有資格／実績の数字／許可・登録情報／スタッフ紹介の<b>5</b>点のうち、<b>3</b>点が確認できたため「一部できている」としています。</p>
+
+  <div class="pfoot"><span>AI検索 対応状況レポート｜株式会社エーステクニカ</span><span>調査日 2026/09/30</span></div>
+</div>
+
+<!-- ============ 5ページ目：スコア ============ -->
+<div class="page content-page">
+  <div class="phead"><h2>AIに紹介されやすさ スコア</h2><div class="pno"><b>5</b> / 6</div></div>
+
+  <section class="score-wrap">
+    <div class="score-card">
+      <div class="big">14<span>点 / 100点</span></div>
+      <div class="state">AIの紹介対象にほぼ入っていない状態</div>
+    </div>
+    <div class="bars">
+      <div class="bar-row">
+        <div class="bl"><span>現状</span><span><b>5</b> / 40点</span></div>
+        <div class="track"><div class="fill" style="width:12.5%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bl"><span>サイトの中の準備</span><span><b>4</b> / 40点</span></div>
+        <div class="track"><div class="fill" style="width:10%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bl"><span>サイトの外の準備</span><span><b>5</b> / 20点</span></div>
+        <div class="track"><div class="fill g" style="width:25%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>点数の内訳</h3>
+    <table class="breakdown">
+      <tr><th style="width:30mm">ブロック</th><th>項目</th><th class="c" style="width:32mm">判定</th><th class="c" style="width:18mm">配点</th><th class="c" style="width:18mm">獲得</th></tr>
+      <tr><td class="blk" rowspan="2">現状</td><td>AIでの紹介状況（紹介<b>1</b>回×<b>5</b>点）</td><td class="c"><span class="badge b-part"><span class="mk">△</span>一部できている</span></td><td class="c"><b>30</b></td><td class="c"><b>5</b></td></tr>
+      <tr><td>社名で聞いたときの説明</td><td class="c"><span class="badge b-na">未確認</span></td><td class="c"><b>10</b></td><td class="c"><b>0</b></td></tr>
+      <tr><td class="blk" rowspan="5">サイトの中の準備</td><td>信用できる根拠</td><td class="c"><span class="badge b-part"><span class="mk">△</span>一部できている</span></td><td class="c"><b>8</b></td><td class="c"><b>4</b></td></tr>
+      <tr><td>施工事例</td><td class="c"><span class="badge b-ng"><span class="mk">×</span>できていない</span></td><td class="c"><b>8</b></td><td class="c"><b>0</b></td></tr>
+      <tr><td>料金の目安</td><td class="c"><span class="badge b-ng"><span class="mk">×</span>できていない</span></td><td class="c"><b>8</b></td><td class="c"><b>0</b></td></tr>
+      <tr><td>よくある質問</td><td class="c"><span class="badge b-ng"><span class="mk">×</span>できていない</span></td><td class="c"><b>8</b></td><td class="c"><b>0</b></td></tr>
+      <tr><td>Googleに会社情報を正しく伝える設定</td><td class="c"><span class="badge b-ng"><span class="mk">×</span>できていない</span></td><td class="c"><b>8</b></td><td class="c"><b>0</b></td></tr>
+      <tr><td class="blk" rowspan="2">サイトの外の準備</td><td>Googleマップの登録と口コミ</td><td class="c"><span class="badge b-part"><span class="mk">△</span>一部できている</span></td><td class="c"><b>10</b></td><td class="c"><b>5</b></td></tr>
+      <tr><td>第三者のおすすめ記事への掲載</td><td class="c"><span class="badge b-na">未確認</span></td><td class="c"><b>10</b></td><td class="c"><b>0</b></td></tr>
+      <tr class="sum"><td colspan="3">合計</td><td class="c"><b>100</b></td><td class="c"><b>14</b></td></tr>
+    </table>
+    <p class="small" style="margin-top:2mm">※未確認の項目は<b>0</b>点として計算しています。サイトの中と外の準備（<b>60</b>点満点）の小計は<b>9</b>点です。</p>
+  </section>
+
+  <section>
+    <div class="legend">
+      <div><b>80点以上</b>AIに紹介されやすい状態</div>
+      <div><b>60〜79点</b>紹介される可能性はあるが、競合に先を越されやすい状態</div>
+      <div><b>40〜59点</b>AIに紹介されにくい状態</div>
+      <div class="on"><b>39点以下</b>AIの紹介対象にほぼ入っていない状態</div>
+    </div>
+  </section>
+
+  <div class="pfoot"><span>AI検索 対応状況レポート｜株式会社エーステクニカ</span><span>調査日 2026/09/30</span></div>
+</div>
+
+<!-- ============ 6ページ目：このままの状態が続いた場合 ============ -->
+<div class="page content-page">
+  <div class="phead"><h2>いまの状態が続いた場合に、考えられること</h2><div class="pno"><b>6</b> / 6</div></div>
+
+  <div class="flow">
+    <div class="flow-step">
+      <div class="fs-l"><span class="n">1</span><span class="t">業者の探し方の変化</span><span class="k">事実</span></div>
+      <div class="fs-r">業者や就職先を探すとき、Googleで検索するだけでなく、ChatGPTなどのAIに質問して候補を絞り込む人が増えてきています。</div>
+    </div>
+    <div class="down"></div>
+    <div class="flow-step">
+      <div class="fs-l"><span class="n">2</span><span class="t">御社の現状</span><span class="k">事実</span></div>
+      <div class="fs-r">スコアは<b>14</b>点（<b>100</b>点満点）です。<b>6</b>回のテストのうち、御社が紹介されたのは<b>1</b>回（ChatGPTの就職先の質問）でした。お客様向けの「おすすめの会社」の質問では、<b>3</b>つのAIのいずれでも紹介されず、東電工業社さん・沼尻電機さん・ハウスデンキさんなどが挙げられていました。</div>
+    </div>
+    <div class="down"></div>
+    <div class="flow-step">
+      <div class="fs-l"><span class="n">3</span><span class="t">確認できたこと</span><span class="k">事実</span></div>
+      <div class="fs-r">
+        <ul>
+          <li>施工事例・料金の目安・よくある質問のページはありません</li>
+          <li>Googleに会社情報を正しく伝える設定は検出されませんでした</li>
+          <li>代表者の顔写真・スタッフ紹介・実績の数字は掲載されていません</li>
+          <li>Googleマップの口コミは<b>4</b>件、平均評価は<b>1.8</b>で、営業時間は登録されていません</li>
+        </ul>
+      </div>
+    </div>
+    <div class="down"></div>
+    <div class="flow-step guess">
+      <div class="fs-l"><span class="n">4</span><span class="t">考えられること</span><span class="k">推測</span></div>
+      <div class="fs-r">AIを使って業者や就職先を探す人が増えるにつれて、その方々の候補に御社が入りにくい状態が続く可能性があります。その結果、AIに具体的な情報が伝わっている他の会社へ、ご相談や応募が向かいやすくなると考えられます。</div>
+    </div>
+  </div>
+
+  <div class="closing">各項目の詳しい見方については、担当よりご説明いたします。</div>
+
+  <div class="pfoot"><span>AI検索 対応状況レポート｜株式会社エーステクニカ</span><span>調査日 2026/09/30</span></div>
+</div>
+
+</body>
+</html>
