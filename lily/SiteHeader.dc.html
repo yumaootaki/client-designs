@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Zen+Maru+Gothic:wght@500;700;900&amp;display=swap" rel="stylesheet">
+</helmet>
+<header style="position:fixed;top:0;left:0;right:0;z-index:50;padding:clamp(8px,1.4vw,16px) clamp(10px,2.4vw,24px);pointer-events:none">
+  <div style="pointer-events:auto;max-width:1320px;margin:0 auto;min-height:64px;padding:8px clamp(14px,2vw,22px);background:#fff;border-radius:clamp(22px,3vw,40px);box-shadow:0 10px 30px rgba(30,53,87,.10);display:flex;align-items:center;justify-content:space-between;gap:14px;font-family:'Noto Sans JP',sans-serif;color:#1E3557">
+    <a href="/" aria-label="株式会社Lily 水まわり安心ライフ（トップへ）" style="display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;min-height:44px">
+      <img src="images/logo.png" alt="株式会社Lily" style="height:clamp(30px,4.4vw,38px);width:auto;display:block">
+      <span style="font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.06em;color:#1A6F99;white-space:nowrap;padding:3px 10px;border:1.5px solid #8FD0EC;border-radius:999px">水まわり安心ライフ</span>
+    </a>
+    <sc-if value="{{ showDesktopNav }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="メインメニュー" style="display:flex;align-items:center;gap:0">
+        <sc-for list="{{ navItems }}" as="it" hint-placeholder-count="8">
+          <a href="{{ it.href }}" style="padding:10px 10px;font-family:'Zen Maru Gothic',sans-serif;font-size:14px;font-weight:700;color:#1E3557;text-decoration:none;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s" style-hover="background:#E4F4FB;color:#1A6F99">{{ it.label }}</a>
+        </sc-for>
+        <div onMouseEnter="{{ openDrop }}" onMouseLeave="{{ closeDrop }}" onFocus="{{ openDrop }}" onBlur="{{ blurDrop }}" style="position:relative">
+          <a href="/about" aria-haspopup="true" aria-expanded="{{ dropOpen }}" style="display:flex;align-items:center;gap:5px;padding:10px 10px;font-family:'Zen Maru Gothic',sans-serif;font-size:14px;font-weight:700;color:#1E3557;text-decoration:none;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s" style-hover="background:#E4F4FB;color:#1A6F99">Lilyについて<span aria-hidden="true" style="font-size:9px;color:#3AA6D6">▼</span></a>
+          <sc-if value="{{ dropOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:8px;z-index:5">
+              <div style="min-width:230px;background:#fff;border:1px solid #D3ECF7;border-radius:18px;box-shadow:0 18px 40px rgba(30,53,87,.14);padding:8px;display:flex;flex-direction:column">
+                <sc-for list="{{ dropItems }}" as="d" hint-placeholder-count="5">
+                  <a href="{{ d.href }}" style="display:flex;align-items:center;min-height:44px;padding:8px 14px;font-family:'Zen Maru Gothic',sans-serif;font-size:14px;font-weight:700;color:#1E3557;text-decoration:none;border-radius:12px;white-space:nowrap" style-hover="background:#E4F4FB;color:#1A6F99">{{ d.label }}</a>
+                </sc-for>
+                <a href="https://www.lily-ltd.jp/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px;padding:8px 14px;font-family:'Zen Maru Gothic',sans-serif;font-size:14px;font-weight:700;color:#1E3557;text-decoration:none;border-radius:12px;white-space:nowrap" style-hover="background:#E4F4FB;color:#1A6F99">採用情報（採用サイト）<span aria-hidden="true" style="color:#3AA6D6">↗</span></a>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+        <a href="/form/inquiry" style="padding:10px 10px;font-family:'Zen Maru Gothic',sans-serif;font-size:14px;font-weight:700;color:#1E3557;text-decoration:none;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s" style-hover="background:#E4F4FB;color:#1A6F99">お問い合わせ</a>
+        <a href="tel:0120847383" aria-label="電話をかける 0120-847-383（24時間受付）" style="margin-left:8px;min-height:50px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4px 20px;background:#CF3A71;color:#fff;text-decoration:none;border-radius:999px;white-space:nowrap;line-height:1.2;font-family:'Zen Maru Gothic',sans-serif;box-shadow:0 3px 0 #A82D5A">
+          <span style="font-size:1.12rem;font-weight:900;letter-spacing:.04em">0120-847-383</span>
+          <span style="font-size:.7rem;font-weight:700">24時間受付・年中無休</span>
+        </a>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <button type="button" onClick="{{ toggleMenu }}" aria-label="{{ burgerLabel }}" aria-expanded="{{ menuOpen }}" style="position:relative;z-index:80;width:48px;height:48px;border:2px solid #C9DCE8;border-radius:14px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;flex-shrink:0">
+        <span aria-hidden="true" style="width:20px;height:2px;display:block;border-radius:2px;background:#1E3557"></span>
+        <span aria-hidden="true" style="width:20px;height:2px;display:block;border-radius:2px;background:#1E3557"></span>
+        <span aria-hidden="true" style="width:20px;height:2px;display:block;border-radius:2px;background:#3AA6D6"></span>
+      </button>
+    </sc-if>
+  </div>
+</header>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:45;font-family:'Noto Sans JP',sans-serif">
+    <div onClick="{{ closeMenu }}" style="position:absolute;inset:0;background:rgba(30,53,87,.32)"></div>
+    <nav aria-label="メインメニュー" style="position:absolute;top:calc(64px + 2 * clamp(8px,1.4vw,16px));left:clamp(10px,2.4vw,24px);right:clamp(10px,2.4vw,24px);max-height:calc(100svh - 64px - 4 * clamp(8px,1.4vw,16px) - 64px);overflow-y:auto;background:#fff;border-radius:clamp(22px,3vw,32px);box-shadow:0 24px 60px rgba(30,53,87,.18);padding:clamp(18px,4vw,28px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:0 clamp(14px,3vw,28px)">
+        <sc-for list="{{ drawerItems }}" as="it" hint-placeholder-count="12">
+          <a href="{{ it.href }}" onClick="{{ closeMenu }}" style="display:flex;align-items:center;justify-content:space-between;min-height:48px;padding:10px 6px;font-family:'Zen Maru Gothic',sans-serif;font-size:15px;font-weight:700;color:#1E3557;text-decoration:none;border-bottom:1px solid #E4EEF4">{{ it.label }}<span aria-hidden="true" style="color:#3AA6D6">→</span></a>
+        </sc-for>
+        <a href="https://www.lily-ltd.jp/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;min-height:48px;padding:10px 6px;font-family:'Zen Maru Gothic',sans-serif;font-size:15px;font-weight:700;color:#1E3557;text-decoration:none;border-bottom:1px solid #E4EEF4">採用情報（採用サイト）<span aria-hidden="true" style="color:#3AA6D6">↗</span></a>
+      </div>
+      <a href="tel:0120847383" style="margin-top:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60px;padding:10px;background:#CF3A71;color:#fff;text-decoration:none;border-radius:999px;font-family:'Zen Maru Gothic',sans-serif;line-height:1.25;box-shadow:0 4px 0 #A82D5A"><span style="font-size:1.4rem;font-weight:900;letter-spacing:.04em">0120-847-383</span><span style="font-size:.76rem;font-weight:700">24時間受付・年中無休 ※営業電話お断り</span></a>
+    </nav>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:0;right:0;bottom:0;z-index:44;display:grid;grid-template-columns:2fr 1fr;box-shadow:0 -6px 20px rgba(30,53,87,.14);padding-bottom:env(safe-area-inset-bottom);background:#1C76A3">
+    <a href="tel:0120847383" aria-label="電話で相談する 0120-847-383" style="min-height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#CF3A71;color:#fff;text-decoration:none;font-family:'Zen Maru Gothic',sans-serif;line-height:1.2">
+      <span style="font-size:.74rem;font-weight:700">電話で相談（24時間受付）</span>
+      <span style="font-size:1.15rem;font-weight:900;letter-spacing:.04em">0120-847-383</span>
+    </a>
+    <a href="/form/inquiry" style="min-height:60px;display:flex;align-items:center;justify-content:center;gap:6px;background:#1C76A3;color:#fff;text-decoration:none;font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:.95rem">
+      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>メール
+    </a>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:96}}">
+class Component extends DCLogic {
+  state = { isMobile: false, menuOpen: false };
+
+  componentDidMount() {
+    this._onResize = () => {
+      const m = window.innerWidth < 1240;
+      if (m !== this.state.isMobile) this.setState({ isMobile: m, menuOpen: m ? this.state.menuOpen : false });
+    };
+    this._onKey = (e) => { if (e.key === 'Escape' && this.state.menuOpen) this.setState({ menuOpen: false }); };
+    window.addEventListener('resize', this._onResize);
+    window.addEventListener('keydown', this._onKey);
+    this._onResize();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+    window.removeEventListener('keydown', this._onKey);
+  }
+
+  renderVals() {
+    const nav = [
+      { href: '/', label: 'TOP' },
+      { href: '/trouble-guide', label: 'お困りの方へ' },
+      { href: '/trouble', label: '対応トラブル' },
+      { href: '/price', label: '料金表' },
+      { href: '/blog-ex/instance', label: '修理実績' },
+      { href: '/voice', label: 'お客様の声' },
+      { href: '/about', label: 'Lilyについて' },
+      { href: '/form/inquiry', label: 'お問い合わせ' },
+    ];
+    const extra = [
+      { href: '/work', label: '業務案内' },
+      { href: '/difference', label: '大手業者との違い' },
+      { href: '/faq', label: 'よくあるご質問' },
+      { href: '/information', label: '会社概要' },
+      { href: '/blog', label: 'お役立ちコラム' },
+      { href: '/recruit', label: '各種募集' },
+    ];
+    return {
+      navItems: nav.slice(0, 6),
+      dropItems: [
+        { href: '/about', label: 'Lilyについて' },
+        { href: '/difference', label: '大手業者との違い' },
+        { href: '/faq', label: 'よくあるご質問' },
+        { href: '/information', label: '会社概要' },
+        { href: '/recruit', label: '各種募集（協力会社さま）' },
+      ],
+      dropOpen: !!this.state.dropOpen,
+      openDrop: () => this.setState({ dropOpen: true }),
+      closeDrop: () => this.setState({ dropOpen: false }),
+      blurDrop: (e) => { if (!e.currentTarget.contains(e.relatedTarget)) this.setState({ dropOpen: false }); },
+      drawerItems: nav.concat(extra),
+      isMobile: this.state.isMobile,
+      showDesktopNav: !this.state.isMobile,
+      menuOpen: this.state.menuOpen,
+      burgerLabel: this.state.menuOpen ? 'メニューを閉じる' : 'メニューを開く',
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>

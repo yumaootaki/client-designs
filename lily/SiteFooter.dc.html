@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Zen+Maru+Gothic:wght@500;700;900&amp;display=swap" rel="stylesheet">
+</helmet>
+<div style="font-family:'Noto Sans JP',sans-serif">
+  <section aria-label="電話でのお問い合わせ" style="background:#FDEBF2;padding:clamp(2.4rem,5vw,3.4rem) clamp(1.25rem,5vw,6rem);text-align:center">
+    <p style="margin:0 0 .4rem;font-family:'Zen Maru Gothic',sans-serif;font-weight:900;font-size:clamp(1.15rem,1rem + .9vw,1.6rem);line-height:1.5;color:#1E3557"><span class="line-chunk" style="display:inline-block">水まわりのトラブル、</span><span class="line-chunk" style="display:inline-block">まずはお電話ください</span></p>
+    <p style="margin:0 0 1.4rem;font-weight:500;font-size:.98rem;color:#1E3557">24時間受付・年中無休。お見積りは無料です。</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px 18px;justify-content:center;align-items:center">
+      <a href="tel:0120847383" aria-label="電話をかける 0120-847-383（24時間受付）" style="display:inline-flex;flex-direction:column;align-items:center;justify-content:center;min-height:64px;padding:10px 32px;background:#CF3A71;color:#fff;text-decoration:none;border-radius:999px;box-shadow:0 5px 0 #A82D5A;font-family:'Zen Maru Gothic',sans-serif;line-height:1.25">
+        <span style="font-size:clamp(1.5rem,1.2rem + 1.4vw,2rem);font-weight:900;letter-spacing:.04em;white-space:nowrap">0120-847-383</span>
+        <span style="font-size:.78rem;font-weight:700">24時間受付・年中無休 ※営業電話お断り</span>
+      </a>
+      <a href="/form/inquiry" style="display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 30px;background:#fff;color:#1E3557;border:2px solid #C9DCE8;text-decoration:none;border-radius:999px;font-family:'Zen Maru Gothic',sans-serif;font-weight:700">メールで相談する</a>
+    </div>
+  </section>
+  <footer style="background:#1E3557;color:#fff;padding:clamp(3.4rem,7vw,5rem) clamp(1.25rem,5vw,6rem) clamp(6.5rem,10vw,3rem)">
+    <div style="max-width:1180px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(2rem,5vw,3.6rem)">
+        <div>
+          <p style="display:flex;align-items:center;gap:10px;margin:0 0 .4rem;font-family:'Zen Maru Gothic',sans-serif;font-weight:900;font-size:1.5rem;letter-spacing:.06em;color:#fff"><span aria-hidden="true" style="position:relative;display:inline-block;width:40px;height:32px;flex:0 0 auto"><span style="position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:#EC6A94"></span><span style="position:absolute;left:12px;top:9px;width:22px;height:22px;border-radius:50%;background:#3AA6D6"></span></span>株式会社Lily</p>
+          <p style="margin:0 0 1.2rem;font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:.85rem;color:#BFE3F3">水まわり安心ライフ</p>
+          <p style="margin:0;font-size:.92rem;line-height:1.9;color:#E8F3FA">〒330-0854<br>埼玉県さいたま市大宮区桜木町1-266-3</p>
+          <p style="margin:.8rem 0 0;font-size:.92rem;line-height:1.9;color:#E8F3FA">TEL <a href="tel:0120847383" style="color:#fff;font-weight:700;font-size:1.1rem;text-decoration:none">0120-847-383</a><br>24時間受付・年中無休 ※営業電話お断り</p>
+          <ul style="list-style:none;margin:1.2rem 0 0;padding:0;display:flex;flex-direction:column;gap:.35rem;font-size:.86rem;color:#E8F3FA">
+            <li>埼玉北部支店：熊谷市筑波2-20</li>
+            <li>埼玉東部支店：春日部市中央1-8-15</li>
+            <li>埼玉西部支店：川越市霞ケ関東1-4-11-2F</li>
+          </ul>
+        </div>
+        <nav aria-label="フッターメニュー" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0 1.4rem;align-content:start">
+          <sc-for list="{{ links }}" as="it" hint-placeholder-count="14">
+            <a href="{{ it.href }}" style="display:flex;align-items:center;min-height:40px;color:#E8F3FA;text-decoration:none;font-size:.9rem;transition:color .2s" style-hover="color:#8FD0EC">{{ it.label }}</a>
+          </sc-for>
+          <a href="https://www.lily-ltd.jp/" target="_blank" rel="noopener" style="display:flex;align-items:center;min-height:40px;color:#E8F3FA;text-decoration:none;font-size:.9rem" style-hover="color:#8FD0EC">採用情報（採用サイト）↗</a>
+        </nav>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem 1.5rem;margin-top:clamp(2.4rem,5vw,3.2rem);padding-top:clamp(1.6rem,3vw,2rem);border-top:1px solid rgba(255,255,255,.16)">
+        <p style="margin:0;font-size:.8rem;color:#C9DCE8">© 株式会社Lily All Rights Reserved.</p>
+        <nav aria-label="サイト情報" style="display:flex;flex-wrap:wrap;gap:1.2rem">
+          <a href="/privacypolicy" style="color:#C9DCE8;text-decoration:none;font-size:.8rem;min-height:32px;display:inline-flex;align-items:center" style-hover="color:#fff">プライバシーポリシー</a>
+          <a href="/sitemap" style="color:#C9DCE8;text-decoration:none;font-size:.8rem;min-height:32px;display:inline-flex;align-items:center" style-hover="color:#fff">サイトマップ</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:640}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      links: [
+        { href: '/', label: 'TOP' },
+        { href: '/trouble-guide', label: 'お困りの方へ' },
+        { href: '/trouble', label: '対応トラブル一覧' },
+        { href: '/price', label: '料金表' },
+        { href: '/work', label: '業務案内' },
+        { href: '/difference', label: '大手業者との違い' },
+        { href: '/blog-ex/instance', label: '修理実績' },
+        { href: '/voice', label: 'お客様の声' },
+        { href: '/faq', label: 'よくあるご質問' },
+        { href: '/about', label: 'Lilyについて' },
+        { href: '/information', label: '会社概要' },
+        { href: '/blog', label: 'お役立ちコラム' },
+        { href: '/recruit', label: '各種募集' },
+        { href: '/form/inquiry', label: 'お問い合わせ' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

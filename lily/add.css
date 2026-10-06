@@ -1,0 +1,209 @@
+/* =========================================================================
+   add.css 貼り付け用 — テンプレート（Cuezilla 動的パーツ装飾）
+   theme_default.css → add.css の順で読み込み、add.css が後勝ちで上書きする。
+   実在クラス（parts●●● / design-parts-52 / contact_section 等）を狙い、
+   HTMLは作り直さず見た目だけ整える。色・フォント・変数は本ファイル内で定義。
+   ========================================================================= */
+
+:root{
+  --accent:#1F7FAE;   /* 濃い水色（メインアクセント） */
+  --mustard:#1A6F99;  /* 水色・文字用 */
+  --teal:#1A6F99;
+  --dark:#1E3557;     /* 紺（文字・フッター） */
+  --beige:#C9DCE8;    /* 罫線 */
+  --ink:#1E3557;
+  --ink-2:#1E3557;
+  --ink-3:#4F6478;
+  --gray:#4F6478;
+  --paper:#E4F4FB;    /* 背景帯（淡い水色） */
+  --pink:#CF3A71;     /* CTA（電話ボタン）専用 */
+  --line:rgba(30,53,87,0.12);
+  --serif-en:'Zen Maru Gothic',sans-serif;
+  --serif-jp:'Zen Maru Gothic',sans-serif;
+  --sans-jp:'Noto Sans JP',sans-serif;
+}
+
+/* =========================================================================
+   1. 新着情報帯 ＝ design-parts-52 系（TOPページ内）
+   ========================================================================= */
+[class*="design-parts-52"]{padding:clamp(2.4rem,5vw,3.6rem) clamp(1.5rem,6vw,7rem)}
+[class*="design-parts-52"].bg-color{background:var(--paper) !important}
+[class*="design-parts-52"] .container{max-width:1280px;margin:0 auto}
+[class*="design-parts-52"] .content{display:flex;align-items:center;gap:clamp(1rem,3vw,2.4rem);padding:0.4rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+[class*="design-parts-52"] h4.banner-area{flex:0 0 auto;margin:0;background:var(--accent) !important;color:#fff !important;font-family:var(--serif-en);letter-spacing:0.24em;text-transform:uppercase;font-size:0.95rem;font-weight:600;padding:0.55rem 1.5rem;line-height:1}
+[class*="design-parts-52"] ul.mb-0{flex:1 1 auto;list-style:none;margin:0;padding:0}
+[class*="design-parts-52"] li{min-height:60px;display:flex;align-items:center}
+[class*="design-parts-52"] li a{display:flex;align-items:center;width:100%;text-decoration:none;color:var(--ink-2);transition:color .3s}
+[class*="design-parts-52"] li a:hover{color:var(--accent)}
+[class*="design-parts-52"] .parts-52-textarea{display:flex;align-items:baseline;gap:clamp(.9rem,2vw,1.8rem);flex-wrap:wrap}
+[class*="design-parts-52"] .parts-52-textarea .date{font-family:var(--serif-en);color:var(--gray);letter-spacing:0.08em;font-size:0.98rem}
+[class*="design-parts-52"] .parts-52-textarea .d-inline-block{font-family:var(--sans-jp);font-weight:400;font-size:1rem;line-height:1.7;color:var(--ink-2)}
+@media(max-width:991px){[class*="design-parts-52"] .content{flex-direction:column;align-items:stretch;gap:1rem}[class*="design-parts-52"] h4.banner-area{align-self:flex-start}}
+
+/* =========================================================================
+   2. 記事カード ＝ parts131415_blog 系（TOPページ内 WORKS / BLOG）
+   ========================================================================= */
+[class*="parts131415_blog"].bg-img{background:#ffffff !important;background-image:none !important;padding:clamp(4.5rem,9vw,8rem) clamp(1.5rem,6vw,7rem)}
+[class*="parts131415_blog"] .container-lg{max-width:1280px;margin:0 auto}
+[class*="parts131415_blog"] .parts131415_blog_title_wrap{text-align:center;margin-bottom:clamp(2.8rem,5vw,4rem)}
+[class*="parts131415_blog"] .parts131415_blog_title_wrap h2{font-family:var(--serif-en);color:var(--ink) !important;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;font-size:clamp(1.6rem,1rem + 2vw,2.3rem);margin:0 0 0.9rem}
+[class*="parts131415_blog"] .parts131415_blog_title_wrap p{font-family:var(--sans-jp);font-weight:300;font-size:0.85rem;letter-spacing:0.18em;color:var(--gray);margin:0}
+[class*="parts131415_blog"] .card{background:transparent !important;border:0 !important}
+[class*="parts131415_blog"] .card-body{padding:0}
+[class*="parts131415_blog"] .card-title{font-family:var(--serif-en);color:var(--accent) !important;letter-spacing:0.06em;font-size:0.9rem;font-weight:500 !important;margin:0 0 0.7rem;text-align:left !important}
+[class*="parts131415_blog"] .card-body a{display:block;text-decoration:none;color:inherit;transition:opacity .3s}
+[class*="parts131415_blog"] .card-body a:hover{opacity:0.8}
+[class*="parts131415_blog"] .card-text{font-family:var(--sans-jp);font-weight:400 !important;font-size:clamp(.98rem,.92rem + .3vw,1.08rem);line-height:1.7;color:var(--ink);margin:0 0 1rem}
+[class*="parts131415_blog"] .parts131415_blog_thumbnail{width:100%;height:clamp(12.8rem,11rem + 8vw,15rem);overflow:hidden}
+[class*="parts131415_blog"] .parts131415_blog_thumbnail img{width:100%;height:100%;object-fit:cover;display:block}
+/* グリッドは本番テーマ(Bootstrap)が供給。下記はスタンドアロン確認用シム */
+[class*="parts131415_blog"] .row{display:flex;flex-wrap:wrap;margin:0 -0.75rem}
+[class*="parts131415_blog"] .col{flex:0 0 100%;max-width:100%;padding:0.75rem}
+@media(min-width:576px){[class*="parts131415_blog"] .row-cols-sm-2>.col{flex:0 0 50%;max-width:50%}}
+@media(min-width:992px){[class*="parts131415_blog"] .row-cols-lg-3>.col{flex:0 0 33.3333%;max-width:33.3333%}}
+
+/* =========================================================================
+   3. 施工実績 一覧 ＝ parts228 系（/blog-ex/instance）
+   グリッド：PC 3列／タブレット 2列／スマホ 1列
+   ========================================================================= */
+.parts228_section{background:#fff;padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,6vw,7rem) clamp(4rem,8vw,6rem)}
+.parts228_wrap{max-width:1280px;margin:0 auto}
+/* --- カテゴリ絞り込み（タグタブ / nav 不在でも成立するよう余白は nav 側に持たせる） --- */
+.parts228_filter{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:clamp(1.8rem,3.5vw,2.6rem)}
+.parts228_filter_item{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink-2);text-decoration:none;font-family:var(--sans-jp);font-size:0.86rem;font-weight:700;line-height:1.4;transition:border-color .3s,background .3s,color .3s}
+.parts228_filter_item:hover{border-color:var(--accent)}
+.parts228_filter_item:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.parts228_filter_item.is-active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:900}
+.parts228_post_list{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,3vw,2rem);list-style:none;margin:0;padding:0}
+@media(max-width:991px){.parts228_post_list{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.parts228_post_list{grid-template-columns:1fr}}
+.parts228_post_wrap{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;transition:box-shadow .3s,transform .3s}
+.parts228_post_wrap:hover{box-shadow:0 12px 30px rgba(0,0,0,0.1);transform:translateY(-3px)}
+.parts228_post_img{display:block;position:relative;height:clamp(180px,22vw,230px);overflow:hidden;color:inherit;text-decoration:none}
+.parts228_post_img a{color:inherit;text-decoration:none}
+.parts228_post_img a{display:block;width:100%;height:100%}
+.parts228_post_img img{width:100%;height:100%;object-fit:cover;display:block}
+.parts228_post_body{padding:1.4rem 1.5rem 1.7rem;display:flex;flex-direction:column;gap:0.7rem}
+.parts228_post_status{display:flex;align-items:center;gap:0.9rem;flex-wrap:wrap}
+.parts228_post_date{font-family:var(--serif-en);font-size:0.92rem;letter-spacing:0.08em;color:var(--gray)}
+.parts-blog-ex-tag_wrap{display:flex;flex-wrap:wrap;gap:0.4rem}
+.parts-blog-ex_tag{font-family:var(--sans-jp);font-weight:400;font-size:0.72rem;letter-spacing:0.04em;color:var(--ink-2);background:var(--paper);border:1px solid var(--line);padding:0.2rem 0.7rem;border-radius:1px}
+.parts228_post_title{font-family:var(--serif-jp);font-weight:500;font-size:1.08rem;line-height:1.6;letter-spacing:0.02em;color:var(--ink);margin:0}
+.parts228_post_excerpt{font-family:var(--sans-jp);font-weight:300;font-size:0.9rem;line-height:1.8;color:var(--ink-3);margin:0}
+.parts228_pagenation{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0.5rem;margin-top:clamp(2.6rem,5vw,3.8rem)}
+.parts228_pagenation a,.parts228_pagenation span{font-family:var(--serif-en);font-size:0.92rem;letter-spacing:0.04em;color:var(--ink-2);text-decoration:none;min-width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;padding:0 0.7rem;border:1px solid rgba(30,53,87,0.18);transition:background .25s,color .25s,border-color .25s}
+.parts228_pagenation a:hover{border-color:var(--accent);color:var(--accent)}
+.parts228_pagenation .pagination_num.current{background:var(--accent);border-color:var(--accent);color:#fff}
+.parts228_post_title a{color:inherit;text-decoration:none;transition:color .3s}
+.parts228_post_title a:hover{color:var(--accent)}
+
+/* --- TOPページ内 BLOG（parts228 系・§3-C 写真上・更新日あり）／見出し・一覧ボタンはサイト側クラス --- */
+/* TOPのWORKSセクションと並びを揃えるため、CMS出力（写真→更新日→タイトル）を
+   grid-template-areas で「更新日→タイトル→写真」に配置補正する（order は読み上げ順が崩れるので不使用）。 */
+#blog .parts228_post_wrap{display:grid;grid-template-areas:"body" "img";grid-template-rows:auto auto}
+#blog .parts228_post_body{grid-area:body;padding:1.4rem 1.5rem 1.2rem}
+#blog .parts228_post_img{grid-area:img}
+#blog.parts228_section{background:var(--paper);padding:clamp(4.5rem,9vw,8rem) clamp(1.5rem,6vw,7rem)}
+#blog .top_blog_title_wrap{text-align:center;margin-bottom:clamp(2.8rem,5vw,4rem)}
+#blog .top_blog_title_wrap h2{font-family:var(--serif-en);color:var(--ink);font-weight:500;letter-spacing:0.28em;text-transform:uppercase;font-size:clamp(1.6rem,1.2rem + 1.4vw,2.3rem);margin:0 0 0.6rem}
+#blog .top_blog_title_wrap p{font-family:var(--sans-jp);font-weight:300;font-size:0.85rem;letter-spacing:0.18em;color:var(--gray);margin:0}
+#blog .parts228_post_img{height:220px}
+#blog .top_blog_more{display:flex;justify-content:center;margin-top:clamp(2.4rem,4.5vw,3.4rem)}
+#blog .top_blog_more a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 2.4rem;border:1px solid var(--accent);color:var(--accent);background:transparent;font-family:var(--serif-en);letter-spacing:0.22em;text-transform:uppercase;font-size:0.86rem;text-decoration:none;transition:background .3s,color .3s}
+#blog .top_blog_more a:hover{background:var(--accent);color:#fff}
+
+/* =========================================================================
+   4. ブログ 一覧＋サイドバー ＝ parts222 系（/blog）
+   一覧：PC 2列／タブレット 2列／スマホ 1列。PCは本文＋サイドバーの2カラム。
+   ========================================================================= */
+.parts222_section{background:#fff;padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,6vw,7rem) clamp(4rem,8vw,6rem)}
+.parts222_section > h2{text-align:center;font-family:var(--serif-en);font-weight:500;letter-spacing:0.28em;text-transform:uppercase;font-size:clamp(1.5rem,1rem + 1.8vw,2.1rem);color:var(--ink);margin:0 auto clamp(2.4rem,5vw,3.6rem);max-width:1280px}
+.parts222_wrap{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:clamp(2.4rem,4vw,3.2rem)}
+@media(min-width:992px){.parts222_wrap{grid-template-columns:minmax(0,1fr) 300px;align-items:start;gap:clamp(2rem,4vw,3.5rem)}}
+.parts222_post_list{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.4rem,3vw,1.8rem);list-style:none;margin:0;padding:0}
+@media(max-width:600px){.parts222_post_list{grid-template-columns:1fr}}
+.parts222_post_wrap{border:1px solid var(--line);background:#fff;transition:box-shadow .3s,transform .3s}
+.parts222_post_wrap:hover{box-shadow:0 12px 30px rgba(0,0,0,0.1);transform:translateY(-3px)}
+.parts222_post_wrap > a{display:block;text-decoration:none;color:inherit}
+.parts222_post_img{position:relative;height:clamp(170px,20vw,210px);overflow:hidden}
+.parts222_post_img img{width:100%;height:100%;object-fit:cover;display:block}
+.parts222_post_status{display:flex;align-items:center;gap:0.9rem;flex-wrap:wrap;padding:1.3rem 1.4rem 0}
+.parts222_post_date{font-family:var(--serif-en);font-size:0.9rem;letter-spacing:0.08em;color:var(--gray)}
+.parts222_post_category{font-family:var(--sans-jp);font-weight:400;font-size:0.72rem;letter-spacing:0.04em;color:var(--ink-2);background:var(--paper);border:1px solid rgba(30,53,87,0.14);padding:0.2rem 0.7rem;border-radius:1px}
+.parts222_post_title-excerpt{padding:0.7rem 1.4rem 1.5rem}
+.parts222_post_title{font-family:var(--serif-jp);font-weight:500;font-size:1.06rem;line-height:1.6;letter-spacing:0.02em;color:var(--ink);margin:0}
+.parts222_pagenation{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0.5rem;margin-top:clamp(2.6rem,5vw,3.6rem)}
+.parts222_pagenation a,.parts222_pagenation span{font-family:var(--serif-en);font-size:0.9rem;letter-spacing:0.04em;color:var(--ink-2);text-decoration:none;min-width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;padding:0 0.7rem;border:1px solid rgba(30,53,87,0.18);transition:background .25s,color .25s,border-color .25s}
+.parts222_pagenation a:hover{border-color:var(--accent);color:var(--accent)}
+.parts222_pagenation .pagination_num.current{background:var(--accent);border-color:var(--accent);color:#fff}
+.parts222_pagenation .pagination_num{display:none}
+@media(min-width:1200px){.parts222_pagenation .pagination_num{display:inline-flex}}
+.parts222_sidebar{display:flex;flex-direction:column;gap:clamp(1.8rem,3vw,2.6rem)}
+.parts222_sidebar_wrap h3{font-family:var(--serif-en);font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:0.92rem;color:var(--ink);margin:0 0 0.6rem;padding-bottom:0.7rem;border-bottom:2px solid var(--accent)}
+.parts222_sidebar_wrap ul{list-style:none;margin:0;padding:0}
+.parts222_sidebar_wrap li{border-bottom:1px solid var(--line)}
+.parts222_sidebar_wrap li a{display:block;text-decoration:none;color:inherit;padding:0.9rem 0;transition:opacity .25s}
+.parts222_sidebar_wrap li a:hover{opacity:0.65}
+.parts222_sidebar_date{display:block;font-family:var(--serif-en);font-size:0.82rem;letter-spacing:0.08em;color:var(--gray);margin-bottom:0.3rem}
+.parts222_sidebar_post_title{font-family:var(--sans-jp);font-weight:400;font-size:0.92rem;line-height:1.6;color:var(--ink);margin:0}
+.category_post_count li a{display:flex;align-items:center;justify-content:space-between;gap:0.8rem}
+.parts222_sidebar_post_category{font-family:var(--sans-jp);font-weight:400;font-size:0.92rem;color:var(--ink);margin:0}
+.parts222_sidebar_post_category_count{flex:0 0 auto;font-family:var(--serif-en);font-size:0.8rem;color:var(--ink-3);border:1px solid rgba(30,53,87,0.18);min-width:28px;height:24px;display:inline-flex;align-items:center;justify-content:center;padding:0 0.4rem}
+
+/* =========================================================================
+   5. 導入文 ＝ parts210 系（フォームページ上部）
+   ========================================================================= */
+.parts210_section_content{padding:clamp(2.5rem,5vw,3.5rem) clamp(1.5rem,6vw,7rem) 0}
+.parts210_content_wrap{max-width:820px;margin:0 auto;text-align:center}
+.parts210_content{font-family:var(--sans-jp);font-weight:300;font-size:clamp(.95rem,.9rem + .35vw,1.08rem);line-height:2.05;letter-spacing:0.02em;color:#1E3557}
+
+/* =========================================================================
+   6. フォーム共通（contact_section）＝ 装飾枠なしのフラット
+   お問い合わせ parts213 系 ／ 応募 parts219 系 で共通利用
+   ========================================================================= */
+.contact_section{background:#fff;padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,6vw,7rem) clamp(3.5rem,7vw,6rem)}
+.parts213_section_form,.parts219_section_form{max-width:780px;margin:0 auto}
+.parts213_form_wrap form,.parts219_form_wrap form{display:flex;flex-direction:column;gap:0}
+.parts213_form_wrap dl,.parts219_form_wrap dl{display:grid;grid-template-columns:1fr;gap:0.55rem;margin:0;padding:1.5rem 0;border-bottom:1px solid var(--line)}
+.parts213_form_wrap dl:first-of-type,.parts219_form_wrap dl:first-of-type{border-top:1px solid var(--line)}
+.parts213_form_wrap dt,.parts219_form_wrap dt{font-family:var(--sans-jp);font-weight:500;font-size:0.98rem;letter-spacing:0.02em;color:var(--ink);display:flex;align-items:baseline;flex-wrap:wrap;gap:0.6rem}
+.parts213_form_wrap dd,.parts219_form_wrap dd{margin:0}
+.parts213_form_wrap .required,.parts219_form_wrap .required{font-family:var(--sans-jp);font-weight:500;font-size:0.7rem;letter-spacing:0.06em;color:#fff;background:var(--accent);padding:0.18rem 0.6rem;line-height:1.3;border-radius:1px;align-self:center}
+.parts213_form_wrap .attention,.parts219_form_wrap .attention{display:block;flex:1 1 100%;font-family:var(--sans-jp);font-weight:300;font-size:0.8rem;line-height:1.7;color:var(--accent);letter-spacing:0.01em;margin-top:0.3rem}
+.parts213_form_wrap input[type="text"],.parts213_form_wrap input[type="email"],.parts213_form_wrap textarea,
+.parts219_form_wrap input[type="text"],.parts219_form_wrap input[type="email"],.parts219_form_wrap input[type="tel"],.parts219_form_wrap textarea{width:100%;font-family:var(--sans-jp);font-weight:400;font-size:1rem;color:var(--ink);background:var(--paper);border:1px solid rgba(30,53,87,0.2);border-radius:0;padding:0.85rem 1rem;line-height:1.6;transition:border-color .25s,background .25s}
+.parts213_form_wrap input:focus,.parts213_form_wrap textarea:focus,
+.parts219_form_wrap input:focus,.parts219_form_wrap textarea:focus{outline:none;border-color:var(--accent);background:#fff}
+.parts213_form_wrap input::placeholder,.parts213_form_wrap textarea::placeholder,
+.parts219_form_wrap input::placeholder,.parts219_form_wrap textarea::placeholder{color:#4F6478}
+.parts213_form_wrap textarea{min-height:180px;resize:vertical}
+.parts219_form_wrap textarea{min-height:160px;resize:vertical}
+.parts219_form_wrap input[type="file"]{font-family:var(--sans-jp);font-size:0.9rem;color:var(--ink-2)}
+.parts219_form_wrap .form_address dd{display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap}
+.parts219_form_wrap .form_address .zip{max-width:9rem}
+/* お問い合わせ項目 チェックボックス群（parts213） */
+.parts213_form_wrap .checkbox_group{display:flex;flex-direction:column;gap:0.7rem}
+.parts213_form_wrap .checkbox_group label{display:flex;align-items:center;gap:0.7rem;font-family:var(--sans-jp);font-weight:400;font-size:0.98rem;color:var(--ink);cursor:pointer;padding:0.55rem 0.85rem;border:1px solid rgba(30,53,87,0.16);background:var(--paper);transition:border-color .2s}
+.parts213_form_wrap .checkbox_group label:hover{border-color:var(--accent)}
+.parts213_form_wrap .checkbox_group input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent);flex:0 0 auto}
+.parts213_form_wrap .form_text_dt{flex-direction:column;align-items:flex-start}
+.parts213_form_wrap .error,.parts219_form_wrap .error{margin:0.4rem 0 0;font-family:var(--sans-jp);font-size:0.82rem;color:#c0392b;min-height:1em}
+.parts213_form_wrap .contact_submit,.parts219_form_wrap .contact_submit{border:0;padding:0;margin-top:2.2rem;display:flex;justify-content:center}
+.parts213_form_wrap .contact_submit input[type="submit"],.parts219_form_wrap .contact_submit input[type="submit"]{appearance:none;cursor:pointer;font-family:var(--serif-en);text-transform:uppercase;letter-spacing:0.18em;font-size:0.95rem;color:#fff;background:var(--dark);border:1px solid var(--dark);border-radius:0;padding:1.05rem 3.4rem;transition:opacity .3s}
+.parts213_form_wrap .contact_submit input[type="submit"]:hover,.parts219_form_wrap .contact_submit input[type="submit"]:hover{opacity:0.82}
+
+/* === add.css 貼り付け ここまで === */
+
+/* ===== Lilyスキン（丸み・ピル型）（丸み・ピル型）— add.css と同値 ===== */
+[class*="design-parts-52"] h4.banner-area{border-radius:999px;font-family:'Zen Maru Gothic',sans-serif}
+[class*="design-parts-52"] .content{border-radius:clamp(18px,3vw,32px);background:#fff;padding:.5rem clamp(.6rem,2vw,1.4rem);border:1px solid #D3ECF7;box-shadow:0 10px 30px rgba(30,53,87,.06)}
+[class*="parts131415_blog"] .parts131415_blog_thumbnail,[class*="_post_img"]{border-radius:20px;overflow:hidden}
+[class*="_post_wrap"]{border-radius:24px;overflow:hidden}
+[class*="_more"] a,[class*="_pagination"] a{border-radius:999px}
+[class*="_filter_item"]{border-radius:999px}
+[class*="parts21"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),[class*="parts21"] textarea,[class*="parts21"] select{border-radius:12px}
+[class*="parts21"] button,[class*="parts21"] input[type="submit"],[class*="parts21"] .btn{border-radius:999px}
+
+/* ===== 記事サムネイル（img を枠いっぱいに） ===== */
+[class*="_post_img"]{position:relative}
+[class*="_post_img"] img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
