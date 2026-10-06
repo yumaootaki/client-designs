@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI検索 対応状況レポート｜株式会社Force</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1a2f5e; --navy-2:#2b4479; --gold:#c9a84c; --gold-pale:#f6efdb;
+  --ink:#1f2633; --sub:#5b6475; --line:#d9dee8; --bg-soft:#f3f5f9;
+  --ok:#2e8b57; --mid:#e08a1e; --ng:#c8392f; --na:#8a909a;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{background:#e4e7ee}
+body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;font-size:9pt;color:var(--ink);line-height:1.7}
+b,strong,.num{font-weight:700}
+
+.page{width:210mm;height:297mm;margin:10mm auto;background:#fff;position:relative;overflow:hidden;page-break-after:always;break-after:page;box-shadow:0 2px 12px rgba(26,47,94,.15)}
+.page:last-child{page-break-after:auto;break-after:auto}
+.content-page{height:297mm;padding:14mm 16mm 14mm;overflow:hidden}
+
+/* header / footer */
+.run-head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1.2pt solid var(--navy);padding-bottom:2mm;margin-bottom:7mm;font-size:7.5pt;color:var(--sub)}
+.run-head .co{color:var(--navy);font-weight:700}
+.run-foot{position:absolute;left:16mm;right:16mm;bottom:8mm;display:flex;justify-content:space-between;font-size:7pt;color:var(--sub);border-top:.5pt solid var(--line);padding-top:1.5mm}
+
+h2.page-title{font-size:16pt;font-weight:900;color:var(--navy);line-height:1.35;padding-left:4mm;border-left:2.2mm solid var(--gold);margin-bottom:3mm}
+.lead{font-size:8.5pt;color:var(--sub);margin-bottom:6mm}
+h3.sec{display:flex;align-items:center;gap:3mm;font-size:11pt;font-weight:700;color:var(--navy);margin-bottom:2.5mm}
+.section{page-break-inside:avoid;break-inside:avoid;margin-bottom:6mm}
+p.body{font-size:8.5pt}
+
+/* badges */
+.badge{display:inline-flex;align-items:center;gap:1.2mm;font-size:7.5pt;font-weight:700;color:#fff;border-radius:1mm;padding:.6mm 2.2mm;white-space:nowrap;line-height:1.5}
+.badge .mk{font-size:9pt}
+.b-ok{background:var(--ok)} .b-mid{background:var(--mid)} .b-ng{background:var(--ng)} .b-na{background:var(--na)}
+.badge.sm{font-size:6.5pt;padding:.3mm 1.6mm}
+
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:8pt}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:1.8mm 2.5mm;font-size:7.5pt}
+td{padding:2mm 2.5mm;border-bottom:.5pt solid var(--line);vertical-align:middle}
+tr:nth-child(even) td{background:var(--bg-soft)}
+td.c{text-align:center}
+.yes{color:var(--ok);font-weight:700} .no{color:var(--sub)}
+.ai{font-weight:700;color:var(--navy);white-space:nowrap}
+.q{color:var(--sub);font-size:7.5pt}
+
+.fact{background:var(--gold-pale);border-left:1.2mm solid var(--gold);padding:2.5mm 4mm;font-size:8.5pt;margin-top:3mm}
+.note{font-size:7pt;color:var(--sub);margin-top:1.5mm}
+
+/* ---------- cover ---------- */
+.cover{background:var(--navy);color:#fff;padding:0}
+.cover-inner{height:297mm;padding:34mm 22mm 20mm;display:flex;flex-direction:column}
+.cover .kicker{font-size:9pt;color:var(--gold);letter-spacing:.2em;margin-bottom:10mm}
+.cover h1{font-size:34pt;font-weight:900;line-height:1.25;letter-spacing:.02em}
+.cover .rule{width:46mm;height:1.4mm;background:var(--gold);margin:9mm 0 7mm}
+.cover .subt{font-size:13pt;font-weight:500;color:#e7ebf4}
+.cover .client{margin-top:auto;font-size:20pt;font-weight:700;margin-bottom:2mm}
+.cover .client small{font-size:11pt;font-weight:400;margin-left:2mm;color:#c7cfe0}
+.cover table{margin-top:6mm;font-size:9pt;border-top:.6pt solid rgba(255,255,255,.35)}
+.cover td{color:#fff;background:transparent!important;border-bottom:.6pt solid rgba(255,255,255,.35);padding:2.6mm 0}
+.cover td:first-child{width:32mm;color:var(--gold);font-weight:500}
+.cover .issuer{margin-top:8mm;font-size:8pt;color:#aeb8cf}
+
+/* ---------- p2 map ---------- */
+.map{margin:4mm 0 6mm;page-break-inside:avoid}
+.map-row{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+.blk{border:1pt solid var(--navy);border-radius:2mm;padding:5mm 5mm 4.5mm;background:#fff}
+.blk .tag{display:inline-block;font-size:7.5pt;font-weight:700;color:var(--navy);background:var(--gold-pale);border:.6pt solid var(--gold);border-radius:1mm;padding:.3mm 2mm;margin-bottom:2mm}
+.blk h4{font-size:12pt;font-weight:900;color:var(--navy);margin-bottom:1.5mm}
+.blk p{font-size:8pt;color:var(--sub)}
+.blk ul{list-style:none;margin-top:2.5mm;font-size:7.5pt}
+.blk li{padding:.8mm 0 .8mm 3.5mm;position:relative;border-top:.4pt dashed var(--line)}
+.blk li:before{content:"";position:absolute;left:0;top:2.6mm;width:1.4mm;height:1.4mm;background:var(--gold);border-radius:50%}
+.join{display:flex;flex-direction:column;align-items:center;margin:3mm 0}
+.join .bar{width:calc(100% - 60mm);height:6mm;border:1.2pt solid var(--gold);border-top:none;border-radius:0 0 3mm 3mm}
+.join .stem{width:1.2pt;height:6mm;background:var(--gold)}
+.join .head{width:0;height:0;border-left:3mm solid transparent;border-right:3mm solid transparent;border-top:4mm solid var(--gold)}
+.join .lbl{font-size:8pt;color:var(--navy);font-weight:700;background:#fff;padding:0 3mm;margin-top:-10.5mm;margin-bottom:6mm}
+.blk.result{background:var(--navy);border-color:var(--navy);width:70%;margin:0 auto;text-align:center}
+.blk.result h4{color:#fff}
+.blk.result p{color:#d6dcea}
+.blk.result .tag{background:var(--gold);color:var(--navy)}
+.legend{display:flex;gap:4mm;align-items:center;font-size:7.5pt;color:var(--sub);margin-top:2mm;flex-wrap:wrap}
+
+/* ---------- p4 ---------- */
+.prep td.item{width:38mm;font-weight:700;color:var(--navy);font-size:8pt}
+.prep td.st{font-size:8pt}
+.prep td.jd{width:30mm;text-align:center}
+.prep td.jd .badge{margin:.5mm 0}
+
+/* ---------- p5 score ---------- */
+.score-hero{display:grid;grid-template-columns:62mm 1fr;gap:8mm;align-items:center;border:1pt solid var(--line);border-radius:2mm;padding:6mm 7mm;margin-bottom:7mm;page-break-inside:avoid}
+.ring{width:56mm;height:56mm;border-radius:50%;background:conic-gradient(var(--gold) 0 42%, #e8ebf2 42% 100%);display:flex;align-items:center;justify-content:center}
+.ring-in{width:44mm;height:44mm;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring-in .n{font-size:34pt;font-weight:900;color:var(--navy);line-height:1}
+.ring-in .d{font-size:8pt;color:var(--sub);margin-top:1mm}
+.state-lbl{font-size:7.5pt;color:var(--sub)}
+.state{font-size:15pt;font-weight:900;color:var(--navy);margin:1mm 0 3mm;line-height:1.35}
+.bars .row{display:grid;grid-template-columns:34mm 1fr 18mm;align-items:center;gap:3mm;margin:2mm 0;font-size:8pt}
+.bars .track{height:5mm;background:#e8ebf2;border-radius:1mm;overflow:hidden}
+.bars .fill{height:100%;background:var(--navy)}
+.bars .val{text-align:right;font-weight:700;color:var(--navy)}
+.bars .val small{font-weight:400;color:var(--sub)}
+.score-tbl td{padding:1.5mm 2.5mm;font-size:7.5pt}
+.score-tbl th{font-size:7pt;padding:1.4mm 2.5mm}
+.score-tbl td.pt{text-align:right;font-weight:700;width:22mm}
+.score-tbl tr.sub td{background:var(--gold-pale)!important;font-weight:700;color:var(--navy)}
+.scale{display:grid;grid-template-columns:repeat(4,1fr);gap:2mm;margin-top:4mm;font-size:7pt}
+.scale div{border:.6pt solid var(--line);border-radius:1mm;padding:1.8mm 2mm;color:var(--sub);line-height:1.5}
+.scale div b{color:var(--navy);display:block;font-size:7.5pt}
+.scale div.cur{border:1.2pt solid var(--gold);background:var(--gold-pale)}
+
+/* ---------- p6 flow ---------- */
+.flow{page-break-inside:avoid}
+.step{display:grid;grid-template-columns:30mm 1fr;border:1pt solid var(--line);border-radius:2mm;overflow:hidden}
+.step .lab{background:var(--navy);color:#fff;padding:4mm 3mm;display:flex;flex-direction:column;justify-content:center;font-weight:700;font-size:9pt;line-height:1.4}
+.step .lab small{display:block;font-size:6.5pt;font-weight:500;color:var(--gold);margin-top:1mm}
+.step .txt{padding:4mm 5mm;font-size:8.5pt}
+.step.guess{border:1.2pt solid var(--gold)}
+.step.guess .lab{background:var(--gold);color:var(--navy)}
+.step.guess .lab small{color:var(--navy)}
+.arrow{width:0;height:0;border-left:4mm solid transparent;border-right:4mm solid transparent;border-top:4mm solid var(--gold);margin:2.2mm auto}
+.chips{display:flex;flex-wrap:wrap;gap:1.5mm;margin-top:2mm}
+.closing{margin-top:8mm;font-size:8.5pt;color:var(--sub);text-align:right}
+
+@page{size:A4 portrait;margin:0}
+@media print{
+  html,body{background:#fff}
+  .page{margin:0;box-shadow:none}
+}
+@media screen and (max-width:820px){
+  .page{transform-origin:top left}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. 表紙 ============ -->
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="kicker">AI SEARCH REPORT</div>
+    <h1>AI検索<br>対応状況レポート</h1>
+    <div class="rule"></div>
+    <div class="subt">AIに"紹介される会社"になっているか</div>
+
+    <div class="client">株式会社Force<small>様</small></div>
+    <table>
+      <tr><td>対象サイト</td><td>https://www.force-saitama.com/</td></tr>
+      <tr><td>業種</td><td>住宅基礎工事（とび・土工工事業）</td></tr>
+      <tr><td>対応エリア</td><td>和光市（関東圏）</td></tr>
+      <tr><td>調査日</td><td><b>2026</b>年<b>10</b>月<b>6</b>日</td></tr>
+    </table>
+    <div class="issuer">株式会社エンジョイワークス</div>
+  </div>
+</section>
+
+<!-- ============ 2. このレポートで確認すること ============ -->
+<section class="page content-page">
+  <div class="run-head"><span class="co">株式会社Force 様｜AI検索 対応状況レポート</span><span>このレポートで確認すること</span></div>
+
+  <div class="section">
+    <h2 class="page-title">このレポートで確認すること</h2>
+    <p class="body">業者を探すとき、Googleで検索するだけでなく、ChatGPTなどのAIに「〇〇市でおすすめの業者は？」と質問して候補を絞る人が増えてきています。AIは、会社のホームページの内容と、ホームページの外での評判や掲載情報をもとに、紹介する会社を選んでいます。</p>
+    <p class="body" style="margin-top:2mm">このレポートでは、御社がいまAIからどのように扱われているかを、次の3つのブロックに分けて確認します。</p>
+  </div>
+
+  <div class="map">
+    <div class="map-row">
+      <div class="blk">
+        <span class="tag">原因 1</span>
+        <h4>サイトの中の準備</h4>
+        <p>AIが紹介したくなる情報が、ホームページにあるか</p>
+        <ul>
+          <li>信用できる根拠（代表者・資格・実績の数字など）</li>
+          <li>施工事例</li>
+          <li>料金の目安</li>
+          <li>よくある質問</li>
+          <li>Googleに会社情報を正しく伝える設定</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <span class="tag">原因 2</span>
+        <h4>サイトの外の準備</h4>
+        <p>AIが参考にする評判・掲載が、ホームページの外にあるか</p>
+        <ul>
+          <li>Googleマップの登録と口コミ</li>
+          <li>第三者のおすすめ記事への掲載</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="join">
+      <div class="bar"></div>
+      <div class="stem"></div>
+      <div class="head"></div>
+    </div>
+    <p style="text-align:center;font-size:8pt;color:var(--navy);font-weight:700;margin:-1mm 0 3mm">2つの準備が整っているほど、AIに紹介されやすくなります</p>
+
+    <div class="blk result">
+      <span class="tag">結果</span>
+      <h4>現状</h4>
+      <p>実際にAIに紹介されているか／社名で聞いたときに正しく説明されているか</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="sec">判定の見方</h3>
+    <div class="legend">
+      <span class="badge b-ok"><span class="mk">○</span>できている</span>
+      <span class="badge b-mid"><span class="mk">△</span>一部できている</span>
+      <span class="badge b-ng"><span class="mk">×</span>できていない</span>
+      <span class="badge b-na">未確認</span>
+      <span>（今回の調査で確認できなかった項目）</span>
+    </div>
+    <p class="note" style="margin-top:3mm">調査対象のAI：ChatGPT／Gemini／GoogleのAIによる概要（Google検索結果の上部に表示されるAIの回答）</p>
+  </div>
+
+  <div class="run-foot"><span>AI検索 対応状況レポート</span><span>2</span></div>
+</section>
+
+<!-- ============ 3. 現状 ============ -->
+<section class="page content-page">
+  <div class="run-head"><span class="co">株式会社Force 様｜AI検索 対応状況レポート</span><span>現状</span></div>
+
+  <h2 class="page-title">現状：AIでの紹介状況</h2>
+  <p class="lead">3つのAIに2種類の質問をし、計6回のテストで御社が紹介されるかを確認しました。</p>
+
+  <div class="section">
+    <h3 class="sec">AIでの紹介状況 <span class="badge b-mid"><span class="mk">△</span>一部できている</span></h3>
+    <table>
+      <thead><tr><th style="width:26mm">AIの種類</th><th>質問した内容</th><th style="width:22mm">御社の紹介</th><th style="width:52mm">代わりに紹介された会社</th></tr></thead>
+      <tbody>
+        <tr><td class="ai">ChatGPT</td><td class="q">和光市でおすすめの基礎工事の会社を教えて</td><td class="no">紹介なし</td><td>大木建設、紀和建設工業、晃成</td></tr>
+        <tr><td class="ai">Gemini</td><td class="q">和光市でおすすめの基礎工事の会社を教えて</td><td class="yes"><b>2</b>番目に紹介</td><td>住成、紀和建設工業、サタケ工業</td></tr>
+        <tr><td class="ai">Google AI概要</td><td class="q">和光市でおすすめの基礎工事の会社を教えて</td><td class="yes"><b>1</b>番目に紹介</td><td>紀和建設工業、五光コーポレーション</td></tr>
+        <tr><td class="ai">ChatGPT</td><td class="q">和光市で基礎工事をやっている会社に就職したい。おすすめの会社を教えて</td><td class="no">紹介なし</td><td>住成、岩田建設、伸幸建設</td></tr>
+        <tr><td class="ai">Gemini</td><td class="q">同上</td><td class="no">紹介なし</td><td>ライズ、日伸工業、紀和建設工業</td></tr>
+        <tr><td class="ai">Google AI概要</td><td class="q">同上</td><td class="yes"><b>2</b>番目に紹介</td><td>田中建設</td></tr>
+      </tbody>
+    </table>
+    <div class="fact">
+      6回のテストのうち、御社が紹介されたのは<b>3</b>回でした。ChatGPTでは<b>2</b>回とも紹介されていません。<br>
+      Googleで紹介された<b>2</b>回は、いずれも御社のホームページがAIが参考にしたサイトに含まれていました。<br>
+      紀和建設工業さんは6回中<b>5</b>回紹介されていました。
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="sec">社名で聞いたときの説明 <span class="badge b-mid"><span class="mk">△</span>一部できている</span></h3>
+    <p class="note" style="margin:0 0 2mm">質問した内容：「(株)Force 和光市」</p>
+    <table>
+      <thead><tr><th style="width:26mm">AIの種類</th><th>説明された内容</th><th style="width:30mm">正確さ</th></tr></thead>
+      <tbody>
+        <tr><td class="ai">ChatGPT</td><td>「調べます」と表示されたのみで、御社についての説明は出ませんでした。</td><td><span class="badge b-ng sm">情報なし</span></td></tr>
+        <tr><td class="ai">Gemini</td><td>とび・土工・基礎工事の会社、所在地（和光市新倉）、関東エリア全域で活動、新築住宅から公共施設まで対応、と説明されていました。ホームページの内容と一致しています。</td><td><span class="badge b-ok sm">正確</span></td></tr>
+        <tr><td class="ai">Google AI概要</td><td>AIによる概要は表示されませんでした。検索結果の右側には、Googleマップの登録情報（業種・所在地・電話番号・説明文）が表示されています。</td><td><span class="badge b-ng sm">情報なし</span></td></tr>
+      </tbody>
+    </table>
+    <div class="fact">3つのAIのうち、御社を正しく説明したのは<b>1</b>つでした。</div>
+  </div>
+
+  <div class="run-foot"><span>AI検索 対応状況レポート</span><span>3</span></div>
+</section>
+
+<!-- ============ 4. 準備状況 ============ -->
+<section class="page content-page">
+  <div class="run-head"><span class="co">株式会社Force 様｜AI検索 対応状況レポート</span><span>準備状況</span></div>
+
+  <h2 class="page-title">AIに紹介してもらうための準備は、<br>いまこの状態です</h2>
+  <p class="lead">ホームページの中と外、合わせて7つの項目を確認しました。</p>
+
+  <div class="section">
+    <h3 class="sec">サイトの中の準備</h3>
+    <table class="prep">
+      <thead><tr><th>項目</th><th>御社の状態</th><th style="text-align:center">判定</th></tr></thead>
+      <tbody>
+        <tr><td class="item">信用できる根拠</td>
+          <td class="st">会社概要ページには代表者名・従業員数（<b>4</b>名）・所在地が掲載されています。代表者の顔写真、保有資格、創業年数や施工件数などの数字、建設業許可番号、スタッフ紹介の記載はありません（確認した<b>5</b>点のうち<b>0</b>点）。</td>
+          <td class="jd"><span class="badge b-ng"><span class="mk">×</span>できていない</span></td></tr>
+        <tr><td class="item">施工事例</td>
+          <td class="st">業務内容ページに施工事例の写真が<b>8</b>件掲載されています。写真のみで、工事内容・地域・工期の説明や掲載時期の記載はありません。</td>
+          <td class="jd"><span class="badge b-ng"><span class="mk">×</span>できていない</span></td></tr>
+        <tr><td class="item">料金の目安</td>
+          <td class="st">料金に関する記載はありません。「見積もり無料」の表記があります。</td>
+          <td class="jd"><span class="badge b-ng"><span class="mk">×</span>できていない</span></td></tr>
+        <tr><td class="item">よくある質問</td>
+          <td class="st">業務内容ページの中に<b>5</b>問掲載されています（工期、雨の日の工事、追加費用、見積もりなど）。専用のページはありません。</td>
+          <td class="jd"><span class="badge b-mid"><span class="mk">△</span>一部できている</span></td></tr>
+        <tr><td class="item">Googleに会社情報を正しく伝える設定</td>
+          <td class="st">トップページで会社情報の設定が<b>2</b>件確認でき、エラーはありません。よくある質問の設定は、今回の調査では確認できませんでした。</td>
+          <td class="jd"><span class="badge b-ok"><span class="mk">○</span>できている</span><br><span class="badge b-na sm">FAQ設定は未確認</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h3 class="sec">サイトの外の準備</h3>
+    <table class="prep">
+      <thead><tr><th>項目</th><th>御社の状態</th><th style="text-align:center">判定</th></tr></thead>
+      <tbody>
+        <tr><td class="item">Googleマップの登録と口コミ</td>
+          <td class="st">登録はあります。口コミは<b>0</b>件で、営業時間は登録されていません。<br><span class="q">参考：紀和建設工業さん 口コミ<b>4</b>件・平均評価<b>4.3</b>／サタケ工業さん 口コミ<b>18</b>件・平均評価<b>4.5</b></span></td>
+          <td class="jd"><span class="badge b-mid"><span class="mk">△</span>一部できている</span></td></tr>
+        <tr><td class="item">第三者のおすすめ記事への掲載</td>
+          <td class="st">「和光市でおすすめの基礎工事の会社」の検索結果上位<b>10</b>件のうち、おすすめ・一覧の記事は<b>4</b>件ありました。御社の掲載が確認できたのは<b>1</b>件（ツクリンク）です。残り<b>3</b>件は、今回の調査では確認できませんでした。</td>
+          <td class="jd"><span class="badge b-mid"><span class="mk">△</span>一部できている</span><br><span class="badge b-na sm">3件は未確認</span></td></tr>
+      </tbody>
+    </table>
+    <p class="note">※検索結果では、御社のホームページが<b>1</b>位に表示されていました。</p>
+  </div>
+
+  <div class="run-foot"><span>AI検索 対応状況レポート</span><span>4</span></div>
+</section>
+
+<!-- ============ 5. スコア ============ -->
+<section class="page content-page">
+  <div class="run-head"><span class="co">株式会社Force 様｜AI検索 対応状況レポート</span><span>スコア</span></div>
+
+  <h2 class="page-title">AIに紹介されやすさ スコア</h2>
+  <p class="lead">ここまでの判定を、100点満点で数値にしました。</p>
+
+  <div class="score-hero">
+    <div class="ring"><div class="ring-in"><span class="n">42</span><span class="d">点／<b>100</b>点</span></div></div>
+    <div>
+      <div class="state-lbl">いまの状態</div>
+      <div class="state">AIに紹介されにくい状態</div>
+      <div class="bars">
+        <div class="row"><span>現状</span><div class="track"><div class="fill" style="width:50%"></div></div><span class="val">20<small>/40点</small></span></div>
+        <div class="row"><span>サイトの中の準備</span><div class="track"><div class="fill" style="width:30%"></div></div><span class="val">12<small>/40点</small></span></div>
+        <div class="row"><span>サイトの外の準備</span><div class="track"><div class="fill" style="width:50%"></div></div><span class="val">10<small>/20点</small></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="sec">点数の内訳</h3>
+    <table class="score-tbl">
+      <thead><tr><th>ブロック</th><th>項目</th><th>判定</th><th style="text-align:right">獲得／配点</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="2">現状</td><td>AIでの紹介状況（紹介<b>1</b>回につき<b>5</b>点）</td><td>紹介<b>3</b>回</td><td class="pt">15 / 30</td></tr>
+        <tr><td>社名で聞いたときの説明</td><td><span class="badge b-mid sm">△</span></td><td class="pt">5 / 10</td></tr>
+        <tr><td rowspan="5">サイトの中の準備</td><td>信用できる根拠</td><td><span class="badge b-ng sm">×</span></td><td class="pt">0 / 8</td></tr>
+        <tr><td>施工事例</td><td><span class="badge b-ng sm">×</span></td><td class="pt">0 / 8</td></tr>
+        <tr><td>料金の目安</td><td><span class="badge b-ng sm">×</span></td><td class="pt">0 / 8</td></tr>
+        <tr><td>よくある質問</td><td><span class="badge b-mid sm">△</span></td><td class="pt">4 / 8</td></tr>
+        <tr><td>Googleに会社情報を正しく伝える設定</td><td><span class="badge b-ok sm">○</span></td><td class="pt">8 / 8</td></tr>
+        <tr><td rowspan="2">サイトの外の準備</td><td>Googleマップの登録と口コミ</td><td><span class="badge b-mid sm">△</span></td><td class="pt">5 / 10</td></tr>
+        <tr><td>第三者のおすすめ記事への掲載</td><td><span class="badge b-mid sm">△</span></td><td class="pt">5 / 10</td></tr>
+        <tr class="sub"><td colspan="3">合計</td><td class="pt">42 / 100</td></tr>
+      </tbody>
+    </table>
+    <p class="note">※サイトの中と外の準備（60点満点）での小計は<b>22</b>点です。</p>
+  </div>
+
+  <div class="section">
+    <h3 class="sec">点数の見方</h3>
+    <div class="scale">
+      <div><b>80点以上</b>AIに紹介されやすい状態</div>
+      <div><b>60〜79点</b>紹介される可能性はあるが、競合に先を越されやすい状態</div>
+      <div class="cur"><b>40〜59点</b>AIに紹介されにくい状態</div>
+      <div><b>39点以下</b>AIの紹介対象にほぼ入っていない状態</div>
+    </div>
+  </div>
+
+  <div class="run-foot"><span>AI検索 対応状況レポート</span><span>5</span></div>
+</section>
+
+<!-- ============ 6. このままの状態が続いた場合 ============ -->
+<section class="page content-page">
+  <div class="run-head"><span class="co">株式会社Force 様｜AI検索 対応状況レポート</span><span>今後について</span></div>
+
+  <h2 class="page-title">いまの状態が続いた場合に、考えられること</h2>
+  <p class="lead">今回確認できた事実と、そこから考えられることを順に整理しました。</p>
+
+  <div class="flow">
+    <div class="step">
+      <div class="lab">業者の探し方の変化<small>事実</small></div>
+      <div class="txt">業者を探すとき、Googleで検索するだけでなく、AIに質問して候補を絞る人が増えてきています。</div>
+    </div>
+    <div class="arrow"></div>
+
+    <div class="step">
+      <div class="lab">御社の現状<small>事実</small></div>
+      <div class="txt">
+        スコアは<b>42</b>点／<b>100</b>点です。6回のテストのうち、御社が紹介されたのは<b>3</b>回で、ChatGPTでは<b>2</b>回とも紹介されていません。社名で聞いたときに正しく説明したAIは、3つのうち<b>1</b>つでした。<br>
+        一方、紀和建設工業さんは6回中<b>5</b>回紹介されていました。
+      </div>
+    </div>
+    <div class="arrow"></div>
+
+    <div class="step">
+      <div class="lab">確認できたこと<small>事実</small></div>
+      <div class="txt">
+        次の項目が「できていない」「一部できている」状態です。
+        <div class="chips">
+          <span class="badge b-ng sm">× 信用できる根拠</span>
+          <span class="badge b-ng sm">× 施工事例</span>
+          <span class="badge b-ng sm">× 料金の目安</span>
+          <span class="badge b-mid sm">△ よくある質問</span>
+          <span class="badge b-mid sm">△ Googleマップの口コミ</span>
+          <span class="badge b-mid sm">△ おすすめ記事への掲載</span>
+        </div>
+        <div style="margin-top:2mm">Googleマップの口コミは<b>0</b>件、施工事例は写真<b>8</b>件のみ、よくある質問は<b>5</b>問です。</div>
+      </div>
+    </div>
+    <div class="arrow"></div>
+
+    <div class="step guess">
+      <div class="lab">考えられること<small>推測</small></div>
+      <div class="txt">AIを使って業者を探す方が増えるにつれて、とくにChatGPTを使う方の候補に御社が入りにくくなる可能性があります。その場合、複数のAIで繰り返し紹介されている会社に、相談が流れやすくなることも考えられます。</div>
+    </div>
+  </div>
+
+  <p class="closing">各項目の詳しい見方については、担当よりご説明いたします。</p>
+
+  <div class="run-foot"><span>AI検索 対応状況レポート</span><span>6</span></div>
+</section>
+
+</body>
+</html>
