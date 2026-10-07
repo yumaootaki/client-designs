@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI検索 対応状況レポート｜株式会社 髙成建設</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1a2f5e; --navy2:#2b4580; --gold:#c9a84c; --gold-l:#f6efdc;
+  --ink:#222a38; --sub:#5b6577; --line:#d7dce5; --bg:#f4f6fa;
+  --ok:#2e8b57; --part:#e08a1e; --ng:#c8392f; --na:#8a9099;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{background:#e6e9ef}
+body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;font-size:9pt;color:var(--ink);line-height:1.65}
+b{font-weight:700}
+@page{size:A4 portrait;margin:0}
+.page{width:210mm;height:297mm;overflow:hidden;position:relative;background:#fff;margin:10mm auto;box-shadow:0 2px 12px rgba(26,47,94,.15);page-break-after:always;break-after:page;padding:14mm 15mm 14mm}
+.page:last-child{page-break-after:auto;break-after:auto}
+section,.blk,table,.flow-step{page-break-inside:avoid;break-inside:avoid}
+@media print{
+  html,body{background:#fff}
+  .page{margin:0;box-shadow:none}
+}
+
+/* 共通ヘッダー */
+.ph{display:flex;align-items:flex-end;justify-content:space-between;border-bottom:2px solid var(--navy);padding-bottom:3mm;margin-bottom:6mm}
+.ph h2{font-size:15pt;font-weight:900;color:var(--navy);letter-spacing:.02em}
+.ph .pn{font-size:8pt;color:var(--sub)}
+.ph .pn b{color:var(--gold);font-size:11pt}
+.foot{position:absolute;left:15mm;right:15mm;bottom:8mm;display:flex;justify-content:space-between;font-size:7pt;color:var(--sub);border-top:1px solid var(--line);padding-top:2mm}
+h3{font-size:11pt;color:var(--navy);font-weight:700;display:flex;align-items:center;gap:3mm;margin-bottom:3mm}
+h3::before{content:"";width:3px;height:12pt;background:var(--gold)}
+p.txt{font-size:8.5pt;line-height:1.8}
+.note{font-size:7.5pt;color:var(--sub);line-height:1.6}
+
+/* バッジ */
+.bd{display:inline-flex;align-items:center;gap:1.5mm;border-radius:3px;padding:.6mm 2.4mm;font-size:7.5pt;font-weight:700;color:#fff;white-space:nowrap}
+.bd i{font-style:normal;font-size:9pt}
+.ok{background:var(--ok)} .part{background:var(--part)} .ng{background:var(--ng)} .na{background:var(--na)}
+
+/* 表 */
+table{width:100%;border-collapse:collapse;font-size:8pt}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:1.8mm 2.2mm;font-size:7.8pt}
+td{border-bottom:1px solid var(--line);padding:1.9mm 2.2mm;vertical-align:middle;line-height:1.6}
+tr:nth-child(even) td{background:#f8f9fc}
+td.c{text-align:center}
+.none{color:var(--ng);font-weight:700}
+
+/* 表紙 */
+.cover{background:var(--navy);color:#fff;padding:0}
+.cover .inner{height:100%;display:flex;flex-direction:column;padding:28mm 22mm 20mm}
+.cover .tag{font-size:9pt;color:var(--gold);letter-spacing:.15em;border-left:3px solid var(--gold);padding-left:3mm}
+.cover h1{font-size:34pt;font-weight:900;line-height:1.3;margin-top:22mm;letter-spacing:.03em}
+.cover .subt{font-size:13pt;margin-top:6mm;color:#dfe5f2}
+.cover .rule{width:40mm;height:2px;background:var(--gold);margin:16mm 0 12mm}
+.cover .co{font-size:20pt;font-weight:700}
+.cover .co small{font-size:11pt;font-weight:400;margin-left:2mm}
+.cover table{margin-top:auto;font-size:9pt;color:#fff}
+.cover td{border-bottom:1px solid rgba(255,255,255,.22);padding:3mm 2mm;background:transparent!important}
+.cover td:first-child{width:38mm;color:var(--gold);font-weight:500}
+.cover .by{margin-top:10mm;font-size:8pt;color:#aeb9d3}
+
+/* 2ページ目 図解 */
+.map{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:6mm}
+.mbox{border:1.5px solid var(--navy);border-radius:4px;padding:5mm}
+.mbox .lb{display:inline-block;background:var(--navy);color:#fff;font-size:9pt;font-weight:700;padding:1mm 3mm;border-radius:2px}
+.mbox h4{font-size:11pt;color:var(--navy);margin:3mm 0 2mm}
+.mbox ul{list-style:none;font-size:8pt;color:var(--sub)}
+.mbox li{padding-left:3.5mm;position:relative;line-height:1.75}
+.mbox li::before{content:"";position:absolute;left:0;top:2.2mm;width:1.5mm;height:1.5mm;background:var(--gold)}
+.arrow{grid-column:1/3;display:flex;flex-direction:column;align-items:center;color:var(--gold);font-size:8.5pt;font-weight:700}
+.arrow .ar{width:0;height:0;border-left:9mm solid transparent;border-right:9mm solid transparent;border-top:7mm solid var(--gold);margin-top:1.5mm}
+.result{grid-column:1/3;background:var(--navy);color:#fff;border-radius:4px;padding:5mm 6mm;display:flex;gap:6mm;align-items:center}
+.result .lb{background:var(--gold);color:var(--navy);font-size:9pt;font-weight:900;padding:1mm 3mm;border-radius:2px;white-space:nowrap}
+.result h4{font-size:12pt}
+.result p{font-size:8pt;color:#d5dcec}
+.legend{margin-top:7mm;background:var(--bg);border-radius:4px;padding:4mm 5mm}
+.legend .row{display:flex;gap:4mm;flex-wrap:wrap;margin-top:2mm}
+
+/* 3ページ */
+.lead{background:var(--gold-l);border-left:3px solid var(--gold);padding:2.6mm 4mm;font-size:8.5pt;margin:3mm 0}
+.hrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:2mm}
+.hrow h3{margin-bottom:0}
+
+/* 4ページ */
+.state{font-size:8pt;line-height:1.7}
+td.jd{width:30mm;text-align:center}
+td.it{width:36mm;font-weight:700;color:var(--navy)}
+
+/* 5ページ スコア */
+.score{display:flex;align-items:center;gap:10mm;border:1.5px solid var(--navy);border-radius:4px;padding:7mm 10mm;margin-bottom:7mm}
+.score .num{font-size:60pt;font-weight:900;color:var(--navy);line-height:1}
+.score .num small{font-size:14pt;color:var(--sub);font-weight:500;margin-left:1mm}
+.score .st{border-left:2px solid var(--gold);padding-left:7mm}
+.score .st .k{font-size:8pt;color:var(--sub)}
+.score .st .v{font-size:14pt;font-weight:700;color:var(--navy);margin-top:1mm}
+.bars{margin-bottom:7mm}
+.bar{display:grid;grid-template-columns:36mm 1fr 22mm;align-items:center;gap:4mm;margin-bottom:3.5mm;font-size:8.5pt}
+.bar .tr{height:7mm;background:#e9ecf2;border-radius:2px;overflow:hidden}
+.bar .fl{height:100%;background:var(--navy)}
+.bar .v{text-align:right}
+.bar .v b{font-size:11pt;color:var(--navy)}
+.scale{display:grid;grid-template-columns:repeat(4,1fr);gap:2mm;margin-top:5mm}
+.scale div{border:1px solid var(--line);border-radius:3px;padding:2mm 2.5mm;font-size:7.3pt;color:var(--sub);line-height:1.5}
+.scale div b{display:block;color:var(--ink);font-size:8pt}
+.scale div.cur{border:1.5px solid var(--gold);background:var(--gold-l)}
+
+/* 6ページ フロー */
+.flow-step{display:grid;grid-template-columns:26mm 1fr;border:1.5px solid var(--navy);border-radius:4px;overflow:hidden}
+.flow-step .k{background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;font-size:8pt;text-align:center;padding:3mm}
+.flow-step .k b{font-size:13pt;color:var(--gold)}
+.flow-step .k span{margin-top:1mm}
+.flow-step .b{padding:4mm 5mm;font-size:8.5pt;line-height:1.8}
+.flow-step .b h4{font-size:10pt;color:var(--navy);margin-bottom:1.2mm}
+.flow-step.guess{border-color:var(--gold)}
+.flow-step.guess .k{background:var(--gold);color:var(--navy)}
+.flow-step.guess .k b{color:var(--navy)}
+.down{width:0;height:0;border-left:5mm solid transparent;border-right:5mm solid transparent;border-top:4.5mm solid var(--gold);margin:2.2mm auto}
+.flow-step ul{list-style:none}
+.flow-step li{padding-left:3.5mm;position:relative}
+.flow-step li::before{content:"";position:absolute;left:0;top:2.4mm;width:1.4mm;height:1.4mm;background:var(--navy)}
+.closing{margin-top:8mm;text-align:center;font-size:9pt;color:var(--navy);border-top:1px solid var(--line);padding-top:5mm}
+</style>
+</head>
+<body>
+
+<!-- 1 表紙 -->
+<div class="page cover">
+  <div class="inner">
+    <div class="tag">診断レポート</div>
+    <h1>AI検索<br>対応状況レポート</h1>
+    <div class="subt">AIに"紹介される会社"になっているか</div>
+    <div class="rule"></div>
+    <div class="co">株式会社 髙成建設<small>様</small></div>
+    <table>
+      <tr><td>対象サイト</td><td>https://kousei0358.com/</td></tr>
+      <tr><td>業種</td><td>外構工事・土木工事</td></tr>
+      <tr><td>対応エリア</td><td>一都三県</td></tr>
+      <tr><td>調査日</td><td><b>2026</b>年<b>10</b>月<b>7</b>日</td></tr>
+    </table>
+    <div class="by">株式会社エンジョイワークス</div>
+  </div>
+</div>
+
+<!-- 2 このレポートで確認すること -->
+<div class="page">
+  <div class="ph"><h2>このレポートで確認すること</h2><div class="pn"><b>2</b> / 6</div></div>
+  <section>
+    <p class="txt">業者を探すとき、Googleで検索するだけでなく、ChatGPTなどのAIに「〇〇市でおすすめの業者は？」と質問して候補を絞る人が増えてきています。AIは、会社のサイトに書かれている情報と、サイトの外での評判や掲載の両方を参考にして、紹介する会社を選んでいます。</p>
+    <p class="txt" style="margin-top:2mm">このレポートでは、御社がいまAIにどのように扱われているかを、次の3つのブロックに分けて確認します。</p>
+  </section>
+
+  <section class="map">
+    <div class="mbox">
+      <span class="lb">サイトの中の準備</span>
+      <h4>AIが紹介したくなる情報が<br>サイトにあるか</h4>
+      <ul>
+        <li>信用できる根拠</li>
+        <li>施工事例</li>
+        <li>料金の目安</li>
+        <li>よくある質問</li>
+        <li>Googleに会社情報を正しく伝える設定</li>
+      </ul>
+    </div>
+    <div class="mbox">
+      <span class="lb">サイトの外の準備</span>
+      <h4>AIが参考にする評判・掲載が<br>サイトの外にあるか</h4>
+      <ul>
+        <li>Googleマップの登録と口コミ</li>
+        <li>第三者のおすすめ記事への掲載</li>
+      </ul>
+    </div>
+    <div class="arrow">2つの準備が整っているほど、AIに紹介されやすくなります<div class="ar"></div></div>
+    <div class="result">
+      <span class="lb">現状</span>
+      <div>
+        <h4>AIに紹介されているか（結果）</h4>
+        <p>3つのAIに質問して紹介されるかを確認し、あわせて社名で聞いたときに正しく説明されるかを確認します。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="legend">
+    <div style="font-size:8.5pt;font-weight:700;color:var(--navy)">判定の見方</div>
+    <div class="row">
+      <span class="bd ok"><i>○</i>できている</span>
+      <span class="bd part"><i>△</i>一部できている</span>
+      <span class="bd ng"><i>×</i>できていない</span>
+      <span class="bd na">未確認</span>
+    </div>
+    <p class="note" style="margin-top:2mm">調査したAI：ChatGPT／Gemini／GoogleのAIによる概要（Google検索の上部に表示されるAIの回答）</p>
+  </section>
+  <div class="foot"><span>AI検索 対応状況レポート｜株式会社 髙成建設</span><span>調査日 2026.10.07</span></div>
+</div>
+
+<!-- 3 現状 -->
+<div class="page">
+  <div class="ph"><h2>現状｜AIでの紹介状況・社名での説明</h2><div class="pn"><b>3</b> / 6</div></div>
+
+  <section>
+    <div class="hrow"><h3>AIでの紹介状況</h3><span class="bd ng"><i>×</i>できていない</span></div>
+    <table>
+      <tr><th style="width:24mm">AIの種類</th><th>質問した内容</th><th style="width:20mm">御社の紹介</th><th style="width:62mm">代わりに紹介された会社（上位3社）</th></tr>
+      <tr><td>ChatGPT</td><td rowspan="3">川口市でおすすめの外構工事の会社を教えて</td><td class="c none">なし</td><td>GREENTEAMツインテック／ブロックピース／MIDONIWA</td></tr>
+      <tr><td>Gemini</td><td class="c none">なし</td><td>コイケ工業／ブロックピース／ツインテック</td></tr>
+      <tr><td>Google AI概要</td><td class="c none">なし</td><td>ガーデンプラス／ブロックピース／ヒライエクステリア</td></tr>
+      <tr><td>ChatGPT</td><td rowspan="3">川口市で外構工事の会社に就職したいんだけども、おすすめの会社を教えて</td><td class="c none">なし</td><td>ブロックピース／外構工事（川口市北園町）／Bures</td></tr>
+      <tr><td>Gemini</td><td class="c none">なし</td><td>スズケンプロ／コイケ工業／ツインテック</td></tr>
+      <tr><td>Google AI概要</td><td class="c none">なし</td><td>ヒマンヤード／富士住建／Bures</td></tr>
+    </table>
+    <div class="lead"><b>6</b>回のテストのうち、御社が紹介されたのは<b>0</b>回でした。AIが参考にしたサイトにも、<b>6</b>回とも御社のサイトは含まれていませんでした。</div>
+    <p class="txt">ブロックピースさんは<b>6</b>回中<b>4</b>回、GREENTEAMツインテックさんとヒライエクステリアさんは<b>6</b>回中<b>3</b>回紹介されていました（上位3社以外での紹介も含む）。</p>
+    <p class="note">※2つ目の質問は、就職先を探す方を想定した内容で実施しています。</p>
+  </section>
+
+  <section style="margin-top:6mm">
+    <div class="hrow"><h3>社名で聞いたときの説明</h3><span class="bd part"><i>△</i>一部できている</span></div>
+    <table>
+      <tr><th style="width:24mm">AIの種類</th><th>説明された内容</th><th style="width:30mm">正確さ</th></tr>
+      <tr><td>ChatGPT</td><td>外構・エクステリア工事の会社として、所在地（西新井宿）、代表者、従業員数、工事の種類、施工地域、「お客様第一」「仕上がりにこだわる」という方針まで、サイトと同じ内容で説明されていました。</td><td class="c"><span class="bd ok"><i>○</i>正確</span></td></tr>
+      <tr><td>Gemini</td><td>業種・代表者は正しく説明されていました。所在地は西新井宿に加え、会社概要ページにない「本前川<b>3-39-3</b>」も併記されていました。対応エリアや会社の特徴は説明されていませんでした。</td><td class="c"><span class="bd part"><i>△</i>一部不足</span></td></tr>
+      <tr><td>Google AI概要</td><td>社名で検索した際、AIによる説明は表示されませんでした（Googleマップの登録情報は表示されています）。</td><td class="c"><span class="bd ng"><i>×</i>情報なし</span></td></tr>
+    </table>
+    <p class="txt" style="margin-top:3mm">インターネット上では、御社の所在地として「西新井宿<b>1157-1</b>」「戸塚<b>4-19-3</b>」「本前川<b>3-39-3</b>」の<b>3</b>種類の表記が見られました。</p>
+  </section>
+  <div class="foot"><span>AI検索 対応状況レポート｜株式会社 髙成建設</span><span>調査日 2026.10.07</span></div>
+</div>
+
+<!-- 4 準備状況 -->
+<div class="page">
+  <div class="ph"><h2>AIに紹介してもらうための準備は、いまこの状態です</h2><div class="pn"><b>4</b> / 6</div></div>
+
+  <section>
+    <h3>サイトの中の準備</h3>
+    <table>
+      <tr><th>項目</th><th>御社の状態</th><th style="text-align:center">判定</th></tr>
+      <tr><td class="it">信用できる根拠</td><td class="state">トップページと代表挨拶ページに、代表者の写真とメッセージが掲載されています。保有資格、創業年や施工件数などの実績の数字、建設業許可番号、スタッフ紹介の記載はありません（<b>5</b>点中<b>1</b>点）。</td><td class="jd"><span class="bd ng"><i>×</i>できていない</span></td></tr>
+      <tr><td class="it">施工事例</td><td class="state">施工事例ページの掲載は<b>1</b>件（<b>2021</b>年<b>8</b>月）です。場所・工期・概算費用・説明文が書かれています。それ以降の掲載はありません。トップページにはInstagramの投稿が表示されています。</td><td class="jd"><span class="bd part"><i>△</i>一部できている</span></td></tr>
+      <tr><td class="it">料金の目安</td><td class="state">施工事例<b>1</b>件に「概算費用<b>20</b>万円〜<b>40</b>万円」の記載があります。業務案内ページは工事の種類と写真の掲載で、料金の記載はありません。</td><td class="jd"><span class="bd part"><i>△</i>一部できている</span></td></tr>
+      <tr><td class="it">よくある質問</td><td class="state">「よくあるご質問」ページに<b>5</b>問掲載されています（相談方法・見積・支払方法・個人宅への対応・対応エリア）。</td><td class="jd"><span class="bd part"><i>△</i>一部できている</span></td></tr>
+      <tr><td class="it">Googleに会社情報を<br>正しく伝える設定</td><td class="state">トップページを確認したところ、Googleに会社情報を伝える設定は検出されませんでした。</td><td class="jd"><span class="bd ng"><i>×</i>できていない</span></td></tr>
+    </table>
+  </section>
+
+  <section style="margin-top:7mm">
+    <h3>サイトの外の準備</h3>
+    <table>
+      <tr><th>項目</th><th>御社の状態</th><th style="text-align:center">判定</th></tr>
+      <tr><td class="it">Googleマップの<br>登録と口コミ</td><td class="state">Googleマップの登録があり、写真・営業時間・説明文が入力されています。口コミは<b>1</b>件、平均評価は<b>5.0</b>です。AIによく紹介されていた会社の口コミは、ブロックピースさん<b>31</b>件（平均<b>4.9</b>）、GREENTEAMツインテックさん<b>33</b>件（平均<b>4.8</b>）でした。</td><td class="jd"><span class="bd part"><i>△</i>一部できている</span></td></tr>
+      <tr><td class="it">第三者の<br>おすすめ記事への掲載</td><td class="state">「川口市 外構 おすすめ」の検索上位<b>10</b>件への掲載は、今回の調査では確認できませんでした。なお、外構業者の比較サイト「エクステリア選び」には御社の掲載ページがあります。</td><td class="jd"><span class="bd na">未確認</span></td></tr>
+    </table>
+    <p class="note" style="margin-top:2mm">※他社の口コミ件数は、AIの回答画面に表示された数値です。</p>
+  </section>
+  <div class="foot"><span>AI検索 対応状況レポート｜株式会社 髙成建設</span><span>調査日 2026.10.07</span></div>
+</div>
+
+<!-- 5 スコア -->
+<div class="page">
+  <div class="ph"><h2>AIに紹介されやすさ スコア</h2><div class="pn"><b>5</b> / 6</div></div>
+
+  <section class="score">
+    <div class="num"><b>22</b><small>点／<b>100</b>点</small></div>
+    <div class="st">
+      <div class="k">いまの状態</div>
+      <div class="v">AIの紹介対象にほぼ入っていない状態</div>
+    </div>
+  </section>
+
+  <section class="bars">
+    <div class="bar"><span>現状</span><div class="tr"><div class="fl" style="width:12.5%"></div></div><span class="v"><b>5</b> / <b>40</b>点</span></div>
+    <div class="bar"><span>サイトの中の準備</span><div class="tr"><div class="fl" style="width:30%"></div></div><span class="v"><b>12</b> / <b>40</b>点</span></div>
+    <div class="bar"><span>サイトの外の準備</span><div class="tr"><div class="fl" style="width:25%"></div></div><span class="v"><b>5</b> / <b>20</b>点</span></div>
+  </section>
+
+  <section>
+    <h3>点数の内訳</h3>
+    <table style="font-size:7.8pt">
+      <tr><th>ブロック</th><th>項目</th><th style="text-align:center">判定</th><th style="text-align:right">配点</th><th style="text-align:right">獲得</th></tr>
+      <tr><td rowspan="2">現状</td><td>AIでの紹介状況（紹介<b>1</b>回につき<b>5</b>点）</td><td class="c"><span class="bd ng"><i>×</i>できていない</span></td><td style="text-align:right"><b>30</b></td><td style="text-align:right"><b>0</b></td></tr>
+      <tr><td>社名で聞いたときの説明</td><td class="c"><span class="bd part"><i>△</i>一部できている</span></td><td style="text-align:right"><b>10</b></td><td style="text-align:right"><b>5</b></td></tr>
+      <tr><td rowspan="5">サイトの中の準備</td><td>信用できる根拠</td><td class="c"><span class="bd ng"><i>×</i>できていない</span></td><td style="text-align:right"><b>8</b></td><td style="text-align:right"><b>0</b></td></tr>
+      <tr><td>施工事例</td><td class="c"><span class="bd part"><i>△</i>一部できている</span></td><td style="text-align:right"><b>8</b></td><td style="text-align:right"><b>4</b></td></tr>
+      <tr><td>料金の目安</td><td class="c"><span class="bd part"><i>△</i>一部できている</span></td><td style="text-align:right"><b>8</b></td><td style="text-align:right"><b>4</b></td></tr>
+      <tr><td>よくある質問</td><td class="c"><span class="bd part"><i>△</i>一部できている</span></td><td style="text-align:right"><b>8</b></td><td style="text-align:right"><b>4</b></td></tr>
+      <tr><td>Googleに会社情報を正しく伝える設定</td><td class="c"><span class="bd ng"><i>×</i>できていない</span></td><td style="text-align:right"><b>8</b></td><td style="text-align:right"><b>0</b></td></tr>
+      <tr><td rowspan="2">サイトの外の準備</td><td>Googleマップの登録と口コミ</td><td class="c"><span class="bd part"><i>△</i>一部できている</span></td><td style="text-align:right"><b>10</b></td><td style="text-align:right"><b>5</b></td></tr>
+      <tr><td>第三者のおすすめ記事への掲載</td><td class="c"><span class="bd na">未確認</span></td><td style="text-align:right"><b>10</b></td><td style="text-align:right"><b>0</b></td></tr>
+    </table>
+    <p class="note" style="margin-top:2mm">※未確認の項目は<b>0</b>点として計算しています。</p>
+  </section>
+
+  <section class="scale">
+    <div><b><b>80</b>点以上</b>AIに紹介されやすい状態</div>
+    <div><b><b>60</b>〜<b>79</b>点</b>紹介される可能性はあるが、競合に先を越されやすい状態</div>
+    <div><b><b>40</b>〜<b>59</b>点</b>AIに紹介されにくい状態</div>
+    <div class="cur"><b><b>39</b>点以下</b>AIの紹介対象にほぼ入っていない状態</div>
+  </section>
+  <div class="foot"><span>AI検索 対応状況レポート｜株式会社 髙成建設</span><span>調査日 2026.10.07</span></div>
+</div>
+
+<!-- 6 このままの状態が続いた場合 -->
+<div class="page">
+  <div class="ph"><h2>いまの状態が続いた場合に、考えられること</h2><div class="pn"><b>6</b> / 6</div></div>
+
+  <div class="flow-step">
+    <div class="k"><b>1</b><span>業者の<br>探し方の変化</span></div>
+    <div class="b"><h4>事実</h4>業者を探すときに、検索だけでなくAIに質問して候補を絞る人が増えてきています。工事の依頼先だけでなく、就職先を探す方もAIに質問しています。</div>
+  </div>
+  <div class="down"></div>
+  <div class="flow-step">
+    <div class="k"><b>2</b><span>御社の現状</span></div>
+    <div class="b"><h4>事実</h4>スコアは<b>22</b>点／<b>100</b>点でした。<b>3</b>つのAIへの<b>6</b>回の質問で、御社が紹介されたのは<b>0</b>回です。代わりに、ブロックピースさん（<b>4</b>回）、GREENTEAMツインテックさん・ヒライエクステリアさん（各<b>3</b>回）が紹介されていました。</div>
+  </div>
+  <div class="down"></div>
+  <div class="flow-step">
+    <div class="k"><b>3</b><span>確認できた<br>こと</span></div>
+    <div class="b"><h4>事実</h4>
+      <ul>
+        <li>資格・実績の数字・許可番号・スタッフ紹介の記載はありません</li>
+        <li>施工事例ページの掲載は<b>1</b>件で、<b>2021</b>年<b>8</b>月以降の掲載はありません</li>
+        <li>料金の記載は<b>1</b>か所、よくある質問は<b>5</b>問です</li>
+        <li>Googleに会社情報を伝える設定は検出されませんでした</li>
+        <li>Googleマップの口コミは<b>1</b>件です（紹介されていた会社は<b>30</b>件以上）</li>
+      </ul>
+    </div>
+  </div>
+  <div class="down"></div>
+  <div class="flow-step guess">
+    <div class="k"><b>4</b><span>考えられる<br>こと</span></div>
+    <div class="b"><h4>推測</h4>AIに質問して業者や就職先を探す人が増えるにつれて、その方々の候補に御社が入りにくい状態が続くと考えられます。その結果、工事のご相談や求人への応募が、AIに繰り返し紹介されている会社に向かいやすくなる可能性があります。</div>
+  </div>
+
+  <div class="closing">各項目の詳しい見方については、担当よりご説明いたします。</div>
+  <div class="foot"><span>AI検索 対応状況レポート｜株式会社 髙成建設</span><span>調査日 2026.10.07</span></div>
+</div>
+
+</body>
+</html>
