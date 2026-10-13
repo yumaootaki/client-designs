@@ -1,0 +1,231 @@
+/* ===================================================================
+   株式会社総和 — 指示書トンマナ上書き＋追加コンポーネント
+   配色トークンは assets/global.css :root に集約（Navy/Ice/Frost/Orange/LINE/Base/Ink）
+   フォント：見出し Zen Kaku Gothic New ／ 本文 BIZ UDPGothic（この2書体に限定）
+   動き：タブ切り替え・FAQ開閉のみ（スクロール演出は停止）
+=================================================================== */
+
+body { font-family: var(--font-jp); font-weight: 400; line-height: 1.8; background: var(--bg); }
+h1, h2, h3, h4, .btn, .nav a, .eyebrow, .vtitle, .sechead-title, .lhero-title, .hubcard-title,
+.frow-title, .step-title, .rcard-title, .faq-q, .person-name, .machine-name, .reason h3,
+.branch-card h3, .digest-body h3, .salary-amount, .sc-income, .ctaband-title, .contact h2,
+.pq-text, .emband-text, .leadcopy-title, .day-time, .r-no, .step-no, .frow-no, .hubcard-en, .lhero-en {
+  font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
+}
+span.line-chunk { display: inline-block; overflow-wrap: anywhere; word-break: normal; }
+
+/* 動きはほぼなし：reveal を無効化（常時表示） */
+.js [data-reveal], [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ボタン：Orange／LINE は Ink 文字でコントラスト確保 */
+.btn-primary { background: var(--green); border-color: var(--green); color: #fff; }
+.btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); }
+.cbtn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 56px; padding: 14px 24px; border-radius: 6px;
+  font-family: "Zen Kaku Gothic New", sans-serif; font-weight: 700; font-size: 1.0625rem; line-height: 1.4;
+  text-align: center; border: 2px solid transparent; transition: filter .2s, background-color .2s;
+}
+.cbtn svg { width: 22px; height: 22px; flex: none; }
+.cbtn small { display: block; font-size: .8125rem; font-weight: 700; opacity: .9; }
+.cbtn-line { background: var(--line-green); color: #0B1A10; }
+.cbtn-tel { background: var(--orange); color: #1F1206; }
+.cbtn-form { background: #fff; color: var(--green); border-color: #fff; }
+.cbtn-form.on-light { border-color: var(--green); }
+.cbtn:hover { filter: brightness(1.06); }
+.cbtn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.cbtn-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.cbtn-row .cbtn { flex: 1 1 220px; }
+
+/* ---------- ヘッダー ---------- */
+.site-header { gap: 20px; background: rgba(247, 250, 252, .96); box-shadow: 0 1px 0 var(--line); padding-block: 10px; }
+.brand { gap: 10px; color: var(--green); }
+.brand-logo { height: clamp(40px, 4vw, 52px); filter: none !important; }
+.brand-name { font-family: "Zen Kaku Gothic New", sans-serif; font-weight: 900; font-size: clamp(1.0625rem, 1.6vw, 1.3rem); letter-spacing: .06em; white-space: nowrap; color: var(--green); }
+.nav { gap: clamp(14px, 1.3vw, 24px); }
+.site-header .nav a { color: var(--text); font-weight: 700; }
+.hcta { display: flex; gap: 8px; margin-left: auto; }
+.hcta a { min-height: 44px; padding: 8px 14px; border-radius: 999px; font-size: 1rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-family: "Zen Kaku Gothic New", sans-serif; }
+.hcta .h-line { background: var(--line-green); color: #0B1A10; }
+.hcta .h-tel { background: var(--orange); color: #1F1206; }
+.hcta svg { width: 18px; height: 18px; }
+@media (min-width: 1441px) { .nav { margin-left: auto; } .hcta { margin-left: 8px; } }
+@media (max-width: 1440px) {
+  .nav-toggle { order: 3; }
+  .nav-toggle i { background: var(--green) !important; }
+  .nav-open .nav-toggle i { background: #fff !important; }
+}
+@media (max-width: 640px) { .hcta { display: none; } }
+
+/* ---------- SP固定バー（LINE／電話／フォーム 3等分） ---------- */
+@media (max-width: 640px) {
+  .mobile-cta { gap: 0; padding: 0 0 env(safe-area-inset-bottom, 0px); background: var(--green); border-top: 0; }
+  .mcta-btn { flex: 1 1 0; min-height: 60px; border-radius: 0; font-size: 1rem; flex-direction: column; gap: 2px; line-height: 1.2; font-family: "Zen Kaku Gothic New", sans-serif; }
+  .mcta-btn svg { width: 20px; height: 20px; }
+  .mcta-line { background: var(--line-green); color: #0B1A10; }
+  .mcta-tel { background: var(--orange); color: #1F1206; }
+  .mcta-form { background: var(--green); color: #fff; }
+  body { padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* ---------- フッター ---------- */
+.site-footer { background: var(--green); color: rgba(255,255,255,.88); border-top: 0; }
+.site-footer a { color: #fff; }
+.footer-brand .f-brand { display: inline-flex; align-items: center; gap: 12px; }
+.footer-brand .f-brand img { height: 48px; background: #fff; border-radius: 6px; padding: 4px 6px; }
+.footer-brand .f-brand span { font-family: "Zen Kaku Gothic New", sans-serif; font-weight: 900; font-size: 1.3rem; color: #fff; letter-spacing: .06em; }
+.footer-brand p, .footer-brand .addr { color: rgba(255,255,255,.88); }
+.footer-col h4 { color: var(--accent); font-family: "Zen Kaku Gothic New", sans-serif; letter-spacing: .08em; }
+.footer-col a { color: #fff; }
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom { border-color: rgba(255,255,255,.2); color: rgba(255,255,255,.8); }
+.footer-top { border-color: rgba(255,255,255,.2); }
+.f-tel { display: inline-flex; flex-direction: column; margin-top: 18px; padding: 12px 18px; border: 1px solid rgba(255,255,255,.35); border-radius: 6px; }
+.f-tel small { font-size: 1rem; color: rgba(255,255,255,.85); }
+.f-tel b { font-family: "Zen Kaku Gothic New", sans-serif; font-size: 1.5rem; letter-spacing: .04em; color: #fff; }
+
+/* ---------- TOP ヒーロー（左右分割・写真に文字を重ねない） ---------- */
+.shero { background: var(--ice); padding-top: clamp(76px, 9vw, 96px); }
+.shero-grid { display: grid; grid-template-columns: 1fr; }
+.shero-text { padding: clamp(32px, 5vw, 64px) var(--gutter) clamp(32px, 4vw, 48px); max-width: 720px; }
+.shero-title { font-weight: 900; font-size: clamp(1.6rem, 3.2vw, 2.5rem); line-height: 1.5; color: var(--green); letter-spacing: .02em; text-wrap: pretty; }
+.shero-sub { margin-top: 18px; font-size: clamp(1rem, 1.4vw, 1.125rem); font-weight: 700; color: var(--text); }
+.shero-media { min-height: 260px; position: relative; overflow: hidden; }
+.shero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 78% 60%; }
+.cond { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 24px; padding: 0; }
+.cond li { display: flex; align-items: baseline; gap: 12px; background: #fff; border: 1px solid var(--accent); border-left: 6px solid var(--green); padding: 12px 16px; font-weight: 700; color: var(--green); font-size: 1.0625rem; line-height: 1.5; }
+.cond li b { font-family: "Zen Kaku Gothic New", sans-serif; font-size: 1.25rem; font-weight: 900; }
+.cond li .k { flex: none; font-size: 1rem; color: var(--muted); font-weight: 700; min-width: 4.5em; }
+.shero .cbtn-row { margin-top: 24px; }
+.shero .cbtn-form { border-color: var(--green); }
+.shero-note { margin-top: 10px; font-size: 1rem; color: var(--muted); }
+@media (min-width: 1000px) {
+  .shero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: stretch; }
+  .shero-text { padding-left: max(var(--gutter), calc((100vw - var(--maxw)) / 2 + var(--gutter))); }
+  .shero-media { min-height: 100%; }
+}
+
+/* ---------- 入口の振り分け（大型2枚） ---------- */
+.entry-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 760px) { .entry-grid { grid-template-columns: 1fr 1fr; } }
+.entry { display: flex; flex-direction: column; background: #fff; border: 2px solid var(--green); border-radius: 8px; overflow: hidden; transition: box-shadow .2s; }
+.entry:hover { box-shadow: 0 14px 34px rgba(27,47,78,.16); }
+.entry-media { aspect-ratio: 16 / 9; overflow: hidden; background: var(--bg-soft); }
+.entry-media img { width: 100%; height: 100%; object-fit: cover; }
+.entry-body { padding: clamp(20px, 3vw, 32px); display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.entry-tag { align-self: flex-start; padding: 4px 12px; background: var(--ice); color: var(--green); font-weight: 700; font-size: 1rem; border-radius: 999px; }
+.entry h3 { font-size: clamp(1.4rem, 2.6vw, 1.75rem); font-weight: 900; color: var(--green); line-height: 1.4; }
+.entry p { color: var(--text); }
+.entry-go { margin-top: auto; padding-top: 8px; font-weight: 700; color: var(--green); display: inline-flex; align-items: center; gap: 8px; font-family: "Zen Kaku Gothic New", sans-serif; }
+.entry-go::after { content: "→"; }
+.entry.alt { border-color: var(--orange); }
+.entry.alt .entry-tag { background: #FCE9DA; color: var(--orange-ink); }
+
+/* ---------- 汎用 ---------- */
+.sec-ice { background: var(--ice); }
+.sec-base { background: var(--bg); }
+.sec-white { background: #fff; }
+.sechead-title, .vtitle { color: var(--green); }
+.eyebrow { color: var(--green); }
+.eyebrow::before { background: var(--accent); }
+.mt-lg { margin-top: clamp(28px, 4vw, 44px); }
+.center { text-align: center; }
+.textlink { color: var(--green); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.textlink:hover { color: var(--orange-ink); }
+.more-row { margin-top: clamp(24px, 4vw, 40px); display: flex; flex-wrap: wrap; gap: 12px; }
+.lead-p { max-width: 40em; }
+
+/* 比べる表（総和の回答だけを並べる） */
+.data-table .data-row dt { color: var(--green); font-weight: 700; }
+.data-table .data-row dd b { color: var(--green); }
+
+/* 時間帯カード（reasons-grid を流用・番号の代わりに開始時刻） */
+.reason .r-no.time { font-size: clamp(1.8rem, 3.6vw, 2.4rem); color: var(--green); letter-spacing: .02em; }
+
+/* 先輩カード（person-card 流用） */
+.person-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; padding: 0; }
+.person-meta li { font-size: 1rem; padding: 2px 10px; background: var(--ice); color: var(--green); border-radius: 999px; font-weight: 700; }
+
+/* タブ（1日の流れ・車両） */
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.tab-btn { min-height: 48px; padding: 10px 20px; border: 2px solid var(--green); border-radius: 6px; background: #fff; color: var(--green); font-weight: 700; font-family: "Zen Kaku Gothic New", sans-serif; font-size: 1rem; }
+.tab-btn[aria-selected="true"] { background: var(--green); color: #fff; }
+.tab-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.tab-panel[hidden] { display: none; }
+.trio { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 760px) { .trio { grid-template-columns: repeat(3, 1fr); } }
+.trio figure { margin: 0; background: #fff; border: 1px solid var(--line); }
+.trio img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--bg-soft); }
+.trio figcaption { padding: 10px 14px; font-weight: 700; color: var(--green); }
+
+/* ギャラリー */
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+@media (min-width: 900px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+.gallery figure { margin: 0; }
+.gallery img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: var(--bg-soft); }
+.gallery figcaption { font-size: 1rem; color: var(--muted); padding-top: 6px; }
+
+/* 荷主様向けの小さな帯 */
+.shipper { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding-block: clamp(32px, 5vw, 48px); }
+.shipper-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; }
+.shipper h2 { font-size: clamp(1.15rem, 2vw, 1.4rem); color: var(--green); font-weight: 700; }
+.shipper p { color: var(--muted); margin-top: 4px; }
+.shipper .btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn-sm { min-height: 44px; padding: 10px 18px; border: 2px solid var(--green); border-radius: 6px; color: var(--green); font-weight: 700; display: inline-flex; align-items: center; background: #fff; font-family: "Zen Kaku Gothic New", sans-serif; }
+.btn-sm:hover { background: var(--green); color: #fff; }
+
+/* CTA帯（全ページ末尾）：3ボタン */
+.ctaband { background: var(--green); }
+.ctaband-photo { display: none; }
+.ctaband-title { font-weight: 700; }
+.ctaband .cbtn-row { justify-content: center; max-width: 960px; margin: clamp(24px, 4vh, 36px) auto 0; }
+.ctaband-note { margin-top: 14px; }
+
+/* TOP最終CTA（contact 流用） */
+.contact { background: var(--green); }
+.contact-media { display: none; }
+.contact .cbtn-row { justify-content: center; max-width: 960px; margin: 28px auto 0; }
+
+/* 応募方法（3つ） */
+.apply3 { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 900px) { .apply3 { grid-template-columns: repeat(3, 1fr); } }
+.apply3 > div { background: #fff; border: 1px solid var(--line); padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+.apply3 h3 { color: var(--green); font-size: 1.25rem; }
+.apply3 .cbtn { margin-top: auto; }
+
+/* 求人の方はこちら（お問い合わせ冒頭） */
+.jobnote { background: var(--ice); padding: 20px 24px; margin-bottom: 24px; }
+.jobnote h3 { color: var(--green); font-size: 1.15rem; margin-bottom: 6px; }
+.jobnote .cbtn-row { margin-top: 12px; }
+.telbox { margin-top: 16px; }
+.telbox b { font-family: "Zen Kaku Gothic New", sans-serif; font-size: 1.5rem; color: var(--green); }
+
+/* lhero（下層ヘッダー）微調整 */
+.lhero { margin-top: clamp(64px, 7vw, 76px); background: var(--bg); }
+.lhero-en { color: rgba(27,47,78,.06); font-weight: 900; }
+.lhero-title { font-weight: 900; }
+.lp { object-fit: cover; }
+
+/* vtitle（縦書き見出し）配色 */
+.vtitle { font-weight: 900; }
+
+/* NEWS帯・BLOG（CMS領域）外側の余白 */
+.top-news { padding-block: 0; }
+.top-blog-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 28px; }
+.top-blog-head h2 { font-size: clamp(1.6rem, 3vw, 2rem); color: var(--green); font-weight: 900; letter-spacing: .06em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .entry, .cbtn, .btn-sm { transition: none; }
+}
+
+/* 給与カード：テキスト・レンジ表示用（2枚時は空列を作らない） */
+.salary-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)) !important; }
+.salary-card.is-text .sc-num, .salary-card.is-range .sc-num { font-size: clamp(1.25rem, 2.4vw, 1.6rem); line-height: 1.4; word-break: keep-all; overflow-wrap: anywhere; }
+.salary-card.is-range .sc-income, .salary-card.is-text .sc-income { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px; justify-content: flex-start; }
+.salary-card.is-range .sc-income em { font-size: 1rem; }
+/* フッター住所は折り返し可 */
+.footer-brand .addr { white-space: normal; }
+
+/* 濃紺面の上の小ラベルは白（一般 .eyebrow 上書きより後に置く） */
+.lhero .lhero-eyebrow, .ctaband .ctaband-eyebrow, .emband .emband-eyebrow, .contact .eyebrow, .numband .eyebrow { color: #fff; }
+.lhero .lhero-eyebrow::before, .ctaband .ctaband-eyebrow::before, .emband .emband-eyebrow::before, .contact .eyebrow::before { background: var(--accent); }

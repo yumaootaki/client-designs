@@ -1,0 +1,50 @@
+/* 総和固有の追加部品（site2.css の上に重ねる） */
+.sh__logo { display: flex; align-items: center; gap: 10px; }
+.sh__logo img { height: 46px; width: auto; }
+.sh__logo-txt { display: flex; flex-direction: column; line-height: 1.2; }
+.sh__line { background: #06C755 !important; color: #0B1A10 !important; border-color: #06C755 !important; }
+.cbtn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.cbtn { flex: 1 1 200px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 58px; padding: 12px 20px; border-radius: 8px; font-weight: 700; font-size: 17px; line-height: 1.35; text-align: center; border: 2px solid transparent; transition: filter .2s; }
+.cbtn svg { width: 22px; height: 22px; flex: none; }
+.cbtn small { display: block; font-size: 14px; }
+.cbtn-line { background: #06C755; color: #0B1A10; }
+.cbtn-tel { background: #E8833A; color: #1F1206; }
+.cbtn-form { background: #fff; color: #1B2F4E; border-color: #fff; }
+.cbtn:hover { filter: brightness(1.07); }
+.cbtn:focus-visible { outline: 3px solid #F2A866; outline-offset: 3px; }
+.fv-cond { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; }
+.fv-cond li { padding: 8px 14px; border: 1px solid rgba(255,255,255,.45); border-radius: 999px; color: #fff; font-weight: 700; font-size: 16px; background: rgba(19,34,58,.55); }
+.fv-cond b { color: #F2A866; }
+.souwa-people { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 32px; }
+@media (min-width: 760px) { .souwa-people { grid-template-columns: repeat(3, 1fr); } }
+.souwa-people figure { margin: 0; background: #fff; border-radius: 14px; overflow: hidden; border: 1px solid #CFDCE6; }
+.souwa-people img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #E3ECF2; }
+.souwa-people figcaption { padding: 16px 18px; }
+.souwa-people b { display: block; color: #1B2F4E; }
+.souwa-faq { margin-top: 28px; border-top: 1px solid #CFDCE6; }
+.souwa-faq details { border-bottom: 1px solid #CFDCE6; }
+.souwa-faq summary { list-style: none; cursor: pointer; display: flex; gap: 14px; align-items: baseline; padding: 20px 4px; font-weight: 700; color: #1B2F4E; min-height: 44px; }
+.souwa-faq summary::-webkit-details-marker { display: none; }
+.souwa-faq summary::before { content: "Q"; color: #9A4A12; font-family: "Outfit", sans-serif; font-size: 20px; }
+.souwa-faq summary::after { content: "+"; margin-left: auto; font-size: 22px; }
+.souwa-faq details[open] summary::after { content: "−"; }
+.souwa-faq p { padding: 0 4px 22px 34px; }
+.souwa-badges-time li { font-family: "Outfit", sans-serif; }
+.mobile-cta2 { display: none; }
+@media (max-width: 640px) {
+  .mobile-cta2 { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 900; padding-bottom: env(safe-area-inset-bottom, 0px); background: #1B2F4E; }
+  .mobile-cta2 a { flex: 1 1 0; min-height: 60px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-weight: 700; font-size: 15px; }
+  .mobile-cta2 svg { width: 20px; height: 20px; }
+  .mobile-cta2 .m-line { background: #06C755; color: #0B1A10; }
+  .mobile-cta2 .m-tel { background: #E8833A; color: #1F1206; }
+  .mobile-cta2 .m-form { color: #fff; }
+  body { padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* スクロール連動の文字色（未点灯→点灯） */
+[data-ink].ink-ready .ink-ch{ color: rgba(31,41,51,.18); transition: color .35s ease; }
+[data-ink].ink-ready .ink-ch.on{ color: inherit; }
+.bg-deep [data-ink].ink-ready .ink-ch, .site-hz [data-ink].ink-ready .ink-ch, .site-recruit [data-ink].ink-ready .ink-ch, .site-panel__body [data-ink].ink-ready .ink-ch{ color: rgba(255,255,255,.22); }
+.bg-deep [data-ink].ink-ready .ink-ch.on, .site-hz [data-ink].ink-ready .ink-ch.on, .site-recruit [data-ink].ink-ready .ink-ch.on, .site-panel__body [data-ink].ink-ready .ink-ch.on{ color: inherit; }
+mark [data-ink] .ink-ch.on, mark .ink-ch.on{ color: inherit; }
+@media (prefers-reduced-motion: reduce){ [data-ink].ink-ready .ink-ch{ color: inherit !important; transition: none; } }

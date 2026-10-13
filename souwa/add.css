@@ -1,0 +1,291 @@
+/* === add.css 貼り付け ここから ===
+   株式会社総和サイト用｜Cuezilla 動的パーツ（parts●●● / design-parts●●）の見た目調整
+   ------------------------------------------------------------------
+   ・このファイルは CMS の theme_default.css の後に読み込まれる前提（後勝ち）。
+   ・HTML構造・クラス名・input name は変更禁止（共通ルール §0-5 ハードロック）。ここは見た目のみ。
+   ・外部CSS非依存＝色・フォントはこのファイル内で定義（assets/global.css の値をミラー）。
+   ・固有IDサフィックス（_◯◯◯）に依存しないよう [class*="…"] で当てる。
+   ・現時点でこのテンプレのHTMLは静的モックアップ。CMS実クラス実装時にそのまま効く形で用意している。
+   ------------------------------------------------------------------ */
+
+/* ===== 0. トークン（assets/global.css の :root と同値） ===== */
+:root {
+  --ac-green: #1B2F4E;
+  --ac-green-dark: #13223A;
+  --ac-accent: #6FA8C7;
+  --ac-green-rgb: 27, 47, 78;
+  --ac-bg: #ffffff;
+  --ac-bg-light: #DCEBF3;
+  --ac-bg-soft: #EAF3F8;
+  --ac-text: #1F2933;
+  --ac-muted: #4A5563;
+  --ac-line: #CFDCE6;
+  --ac-error: #b3261e;
+  --ac-font-jp: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
+  --ac-radius: 8px;
+  --ac-maxw: 1200px;
+  --ac-gutter: clamp(20px, 5vw, 80px);
+}
+
+/* 全動的パーツ共通の地色・書体 */
+[class*="parts228"],
+[class*="parts222"],
+[class*="parts213"],
+[class*="parts219"],
+[class*="parts131415_blog"],
+[class*="design-parts-52"],
+.contact_section {
+  font-family: var(--ac-font-jp) !important;
+  color: var(--ac-text);
+}
+
+/* 可視フォーカス（共通ルール §2 / WCAG AA） */
+[class*="parts228"] a:focus-visible,
+[class*="parts222"] a:focus-visible,
+[class*="design-parts-52"] a:focus-visible,
+.contact_section :is(a, input, textarea, select, button):focus-visible {
+  outline: 2px solid var(--ac-accent) !important;
+  outline-offset: 2px !important;
+}
+
+/* ===== 1. 記事一覧 ＝ parts228 系（下層 /blog-ex/instance 用・本サイトでは未使用） ===== */
+.parts228_section { padding: clamp(56px, 9vw, 104px) 0 !important; background: var(--ac-bg); }
+.parts228_wrap { width: min(100% - var(--ac-gutter) * 2, var(--ac-maxw)); margin-inline: auto !important; }
+
+/* 1-1. カテゴリ絞り込み（タグタブ）※CMS生成・構造は触らない
+   余白は nav 自身の margin-bottom に持たせる（タグ0件時は nav ごと消えるため） */
+.parts228_filter { display: flex !important; flex-wrap: wrap; gap: 10px; margin: 0 0 32px !important; }
+.parts228_filter_item {
+  display: inline-flex !important; align-items: center; justify-content: center;
+  min-height: 44px; padding: 10px 20px;
+  border: 1px solid var(--ac-line); border-radius: 999px;
+  background: var(--ac-bg); color: var(--ac-text); text-decoration: none !important;
+  font-size: 15px; font-weight: 700; line-height: 1.4;
+  transition: border-color .2s, background-color .2s;
+}
+.parts228_filter_item:hover { border-color: var(--ac-accent); background: var(--ac-bg-light); }
+.parts228_filter_item.is-active {
+  background: var(--ac-green) !important; border-color: var(--ac-green) !important;
+  color: #fff !important; font-weight: 900;
+}
+
+/* 1-2. 一覧グリッド（PC3列／タブ2列／SP1列。post_list に上余白を足さない） */
+.parts228_post_list {
+  display: grid !important; grid-template-columns: 1fr; gap: 32px 24px;
+  margin-top: 0 !important; padding: 0 !important; list-style: none;
+}
+@media (min-width: 768px) { .parts228_post_list { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .parts228_post_list { grid-template-columns: repeat(3, 1fr); } }
+
+.parts228_post_wrap { background: var(--ac-bg); }
+.parts228_post_img { display: block; overflow: hidden; border-radius: var(--ac-radius); background: var(--ac-bg-soft); }
+.parts228_post_img img {
+  display: block; width: 100%; height: 220px; object-fit: cover;
+  transition: transform .5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.parts228_post_wrap:hover .parts228_post_img img { transform: scale(1.04); }
+.parts228_post_status { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
+.parts228_post_date {
+  font-size: 13px; font-weight: 700; letter-spacing: .04em; color: var(--ac-muted);
+}
+.parts228_post_title { margin: 8px 0 0 !important; font-size: 17px; font-weight: 700; line-height: 1.6; }
+.parts228_post_title a { color: var(--ac-text); text-decoration: none; }
+.parts228_post_title a:hover { color: var(--ac-green); }
+.parts228_post_excerpt { margin-top: 8px; font-size: 14px; line-height: 1.9; color: var(--ac-muted); }
+
+/* タグ（記事に付くラベル） */
+.parts-blog-ex-tag_wrap { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.parts-blog-ex_tag {
+  display: inline-block; padding: 4px 10px; border-radius: 999px;
+  background: var(--ac-bg-soft); color: var(--ac-green-dark);
+  font-size: 12px; font-weight: 700; line-height: 1.5;
+}
+
+/* 1-3. ページネーション */
+.parts228_pagenation, .parts222_pagenation {
+  display: flex !important; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: 8px; margin-top: clamp(40px, 6vw, 64px) !important; padding: 0 !important; list-style: none;
+}
+.parts228_pagenation :is(.pagination_prev, .pagination_num, .pagination_next, .page-item) a,
+.parts222_pagenation :is(.pagination_prev, .pagination_num, .pagination_next, .page-item) a,
+.parts228_pagenation :is(.pagination_prev, .pagination_num, .pagination_next, .page-item),
+.parts222_pagenation :is(.pagination_prev, .pagination_num, .pagination_next, .page-item) {
+  min-width: 44px; min-height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700; text-decoration: none;
+}
+.parts228_pagenation .pagination_num, .parts222_pagenation .pagination_num {
+  border: 1px solid var(--ac-line); border-radius: var(--ac-radius); color: var(--ac-text);
+}
+.parts228_pagenation .pagination_num.current, .parts222_pagenation .pagination_num.current {
+  background: var(--ac-green) !important; border-color: var(--ac-green) !important; color: #fff !important;
+}
+
+/* ===== 2. TOP 記事カード ＝ parts228 系（写真上・更新日あり／BLOGの既定） =====
+   TOPでは nav.parts228_filter と .parts228_pagenation を出さない前提。
+   セクション見出し・「一覧へ」ボタンは parts228 の出力外＝サイト側クラスで .parts228_wrap 内に置く。 */
+.top-blog .parts228_section { background: var(--ac-bg-light); }
+.top-blog .parts228_post_list { gap: 28px 24px; }
+.top-blog .parts228_post_img img { height: 220px; }
+
+/* ===== 3. ブログ一覧 ＝ parts222 系（一覧＋サイドバー） ===== */
+.parts222_section { padding: clamp(56px, 9vw, 104px) 0 !important; }
+.parts222_section > h2 {
+  width: min(100% - var(--ac-gutter) * 2, var(--ac-maxw)); margin: 0 auto 40px !important;
+  font-size: clamp(26px, 4vw, 38px); font-weight: 900; letter-spacing: .02em;
+}
+.parts222_wrap {
+  width: min(100% - var(--ac-gutter) * 2, var(--ac-maxw)); margin-inline: auto !important;
+  display: grid !important; grid-template-columns: 1fr; gap: 56px 40px;
+}
+@media (min-width: 1024px) { .parts222_wrap { grid-template-columns: minmax(0, 1fr) 300px; } }
+
+.parts222_post_list { display: grid !important; grid-template-columns: 1fr; gap: 32px 24px; padding: 0 !important; list-style: none; }
+@media (min-width: 600px) { .parts222_post_list { grid-template-columns: repeat(2, 1fr); } }
+.parts222_post_wrap { display: block; text-decoration: none !important; color: inherit; }
+.parts222_post_img { display: block; overflow: hidden; border-radius: var(--ac-radius); background: var(--ac-bg-soft); }
+.parts222_post_img img { display: block; width: 100%; height: 210px; object-fit: cover; }
+.parts222_post_status { display: flex; align-items: center; gap: 12px; margin-top: 16px; font-size: 13px; color: var(--ac-muted); }
+.parts222_post_date { font-weight: 700; letter-spacing: .04em; }
+.parts222_post_category { font-weight: 700; color: var(--ac-green); }
+.parts222_post_title { margin: 8px 0 0 !important; font-size: 17px; font-weight: 700; line-height: 1.6; }
+
+/* サイドバー（構造的スタイルのみ・色はトークン内で完結） */
+.parts222_sidebar_wrap + .parts222_sidebar_wrap { margin-top: 40px; }
+.parts222_sidebar_wrap > h3 {
+  margin: 0 0 16px !important; padding: 12px 16px;
+  background: var(--ac-green); color: #fff;
+  font-size: 15px; font-weight: 700; letter-spacing: .04em;
+}
+.parts222_sidebar_wrap ul { margin: 0 !important; padding: 0 !important; list-style: none; }
+.parts222_sidebar_wrap li { border-bottom: 1px solid var(--ac-line); }
+.parts222_sidebar_wrap li a {
+  display: block; padding: 14px 4px; min-height: 44px;
+  color: var(--ac-text); text-decoration: none;
+}
+.parts222_sidebar_wrap li a:hover { color: var(--ac-green); }
+.parts222_sidebar_date { display: block; font-size: 12px; font-weight: 700; color: var(--ac-muted); }
+.parts222_sidebar_post_title { margin: 4px 0 0 !important; font-size: 14px; line-height: 1.6; }
+.parts222_sidebar_wrap.category_post_count li a { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.parts222_sidebar_post_category { margin: 0 !important; font-size: 14px; }
+.parts222_sidebar_post_category_count {
+  flex: none; min-width: 28px; padding: 2px 6px; text-align: center;
+  border: 1px solid var(--ac-line); font-size: 12px; font-weight: 700; color: var(--ac-muted);
+}
+
+/* ===== 4. フォーム ＝ parts213（お問い合わせ）／parts219（応募）共通 =====
+   装飾枠は足さない：囲みカード・背景塗り・角丸・影・上部の色帯・グラデーション禁止。
+   ラベルと入力欄を素直に縦に並べるだけ。 */
+.contact_section {
+  padding: clamp(48px, 8vw, 88px) 0 !important;
+  background: none !important; border: 0 !important; box-shadow: none !important; border-radius: 0 !important;
+}
+.parts213_section_form, .parts219_section_form { background: none !important; box-shadow: none !important; }
+.parts213_form_wrap, .parts219_form_wrap {
+  width: min(100% - var(--ac-gutter) * 2, 760px); margin-inline: auto !important;
+  background: none !important; border: 0 !important; box-shadow: none !important; border-radius: 0 !important;
+}
+
+.contact_section dl { display: block; margin: 0 0 28px !important; }
+.contact_section dt {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
+  margin: 0 0 8px !important; font-size: 15px; font-weight: 700; line-height: 1.6;
+}
+.contact_section dd { margin: 0 !important; }
+.contact_section .required {
+  flex: none; padding: 3px 8px; background: var(--ac-green); color: #fff;
+  font-size: 11px; font-weight: 700; letter-spacing: .04em; line-height: 1.5;
+}
+.contact_section .attention { display: block; width: 100%; margin-top: 4px; font-size: 13px; font-weight: 400; color: var(--ac-error); line-height: 1.7; }
+.contact_section .error { margin: 6px 0 0 !important; font-size: 13px; color: var(--ac-error); }
+
+.contact_section :is(input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea) {
+  width: 100%; min-height: 48px; padding: 12px 14px;
+  background: var(--ac-bg); border: 1px solid var(--ac-line); border-radius: 4px;
+  font-family: inherit; font-size: 16px; color: var(--ac-text); line-height: 1.6;
+}
+.contact_section textarea { min-height: 200px; resize: vertical; }
+.contact_section :is(input, select, textarea):focus {
+  border-color: var(--ac-green); outline: 2px solid var(--ac-accent); outline-offset: 1px;
+}
+.contact_section ::placeholder { color: #8593a3; }
+
+/* チェックボックス群（お問い合わせ項目） */
+.contact_section dd label {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px; margin-right: 20px; font-size: 15px; cursor: pointer;
+}
+.contact_section input[type="checkbox"], .contact_section input[type="radio"] { width: 20px; height: 20px; accent-color: var(--ac-green); }
+
+/* 住所行・添付行（parts219） */
+.contact_section dl.form_address dd { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.contact_section input.zip { max-width: 180px; }
+.contact_section input[type="file"] { width: 100%; min-height: 44px; padding: 10px 0; font-size: 14px; }
+
+/* 送信ボタン（控えめ・テーマのトーンに沿う） */
+.contact_submit { margin-top: 40px; text-align: center; }
+.contact_submit input[type="submit"] {
+  min-width: 260px; min-height: 52px; padding: 14px 32px;
+  background: var(--ac-green); border: 1px solid var(--ac-green); border-radius: 4px;
+  color: #fff; font-family: inherit; font-size: 16px; font-weight: 700; letter-spacing: .04em; cursor: pointer;
+  transition: background-color .2s;
+}
+.contact_submit input[type="submit"]:hover { background: var(--ac-green-dark); border-color: var(--ac-green-dark); }
+
+/* フォーム上の導入文（parts210） */
+.parts210_section_content { padding: clamp(32px, 5vw, 56px) 0 0 !important; }
+.parts210_content_wrap { width: min(100% - var(--ac-gutter) * 2, 760px); margin-inline: auto !important; }
+.parts210_content { font-size: 15px; line-height: 2; color: var(--ac-muted); }
+
+/* ===== 5. 新着情報帯 ＝ design-parts-52 系（TOP／未設置。CMS化時に有効） =====
+   直値上書き：NEWSラベル背景 #bf172e → ブランド色、.bg-color の #dddddd → テンプレ地色。
+   横並び化は PC=992px から（前倒し禁止）。 */
+[class*="design-parts-52"].bg-color, [class*="design-parts-52"] .bg-color {
+  background: #fff !important; padding: 16px 0;
+  border-bottom: 1px solid var(--ac-line);
+}
+[class*="design-parts-52"] .container {
+  width: min(100% - var(--ac-gutter) * 2, var(--ac-maxw)); margin-inline: auto !important;
+}
+[class*="design-parts-52"] .content {
+  display: flex; flex-direction: column; align-items: stretch; gap: 12px;
+}
+[class*="design-parts-52"] .banner-area {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 120px; min-height: 44px; padding: 8px 20px; margin: 0 !important;
+  background: var(--ac-green) !important; color: #fff !important;
+  font-size: 14px; font-weight: 700; letter-spacing: .1em;
+}
+[class*="design-parts-52"] ul { margin: 0 !important; padding: 0 !important; list-style: none; }
+[class*="design-parts-52"] li a { display: block; padding: 8px 0; color: var(--ac-text); text-decoration: none; }
+[class*="design-parts-52"] li a:hover .d-inline-block { color: var(--ac-green); text-decoration: underline; }
+[class*="design-parts-52"] .parts-52-textarea { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 20px; }
+[class*="design-parts-52"] .date { flex: none; font-size: 13px; font-weight: 700; letter-spacing: .04em; color: var(--ac-muted); }
+[class*="design-parts-52"] .d-inline-block { font-size: 15px; line-height: 1.7; }
+@media (min-width: 992px) {
+  [class*="design-parts-52"] .content { flex-direction: row; align-items: center; gap: 32px; }
+  [class*="design-parts-52"] li a { min-height: 60px; display: flex; align-items: center; padding: 0; }
+}
+
+/* ===== 6. 記事カード ＝ parts131415_blog 系（日付なし・明示指定時のみ） ===== */
+[class*="parts131415_blog"].bg-img {
+  background-image: none !important; background: var(--ac-bg-light) !important;
+}
+[class*="parts131415_blog"] .parts131415_blog_title_wrap { text-align: center; margin-bottom: 40px; }
+[class*="parts131415_blog"] .parts131415_blog_title_wrap h2 {
+  color: var(--ac-text) !important; font-size: clamp(26px, 4vw, 38px); font-weight: 900; letter-spacing: .02em;
+}
+[class*="parts131415_blog"] .card { background: var(--ac-bg); }
+[class*="parts131415_blog"] .card-title { font-size: 13px; font-weight: 700; color: var(--ac-green); letter-spacing: .04em; }
+[class*="parts131415_blog"] .card-text { font-size: 16px; line-height: 1.6; color: var(--ac-text); }
+[class*="parts131415_blog"] .parts131415_blog_thumbnail img { width: 100%; height: 240px; object-fit: cover; }
+@media (max-width: 991px) { [class*="parts131415_blog"] .parts131415_blog_thumbnail img { height: 215px; } }
+@media (max-width: 575px) { [class*="parts131415_blog"] .parts131415_blog_thumbnail img { height: 205px; } }
+
+/* ===== 7. モーション配慮（共通ルール §2） ===== */
+@media (prefers-reduced-motion: reduce) {
+  [class*="parts228"] *, [class*="parts222"] *, .contact_section * {
+    transition: none !important; animation: none !important;
+  }
+}
+/* === add.css 貼り付け ここまで === */

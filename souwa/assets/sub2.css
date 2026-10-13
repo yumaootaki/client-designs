@@ -1,0 +1,68 @@
+/* 下層ページ：TOP（site2.css）のトンマナに合わせる上書き */
+:root{
+  --font-jp: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --font-serif: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-en: "Outfit", "Zen Kaku Gothic New", sans-serif;
+  --font-mono: "Outfit", "Zen Kaku Gothic New", sans-serif;
+  --bg-light: #EEF5FA;
+}
+body{ font-family: var(--f-ja); }
+
+
+/* 下層ヒーロー：濃紺・斜めライン・ゴースト英字 */
+.lhero{ position: relative; margin-top: 0; isolation: isolate; overflow: hidden; color: #fff; min-height: clamp(340px, 46vh, 500px); }
+.lhero .site-diag{ z-index: 0; }
+.lhero-panel{ display: none; }
+.lhero-inner{ z-index: 1; width: 100%; max-width: calc(var(--wrap, 1200px) + var(--gutter) * 2); padding-inline: var(--gutter); }
+.lhero-en{ color: rgba(255,255,255,.07); font-family: "Outfit", sans-serif; font-weight: 700; top: auto; bottom: -.08em; left: var(--gutter); letter-spacing: .02em; }
+.lhero-eyebrow{ font-family: "Outfit", sans-serif; letter-spacing: .18em; color: #F2A866 !important; }
+.lhero-eyebrow::before{ background: #F2A866 !important; }
+.lhero-title{ font-family: "Shippori Mincho", serif; font-weight: 700; font-size: clamp(30px, 4.6vw, 60px); line-height: 1.45; letter-spacing: .06em; }
+.lhero-lead{ color: rgba(255,255,255,.9); }
+.lp{ border-radius: 14px; box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+.lhero-crumb{ position: relative; z-index: 1; }
+.lhero-crumb .breadcrumb, .lhero-crumb .breadcrumb a, .lhero-crumb .breadcrumb span{ color: rgba(255,255,255,.85); }
+
+/* セクション見出し（sec-en＋site-h2） */
+.sechead2{ margin-bottom: clamp(28px, 4vw, 48px); }
+.sechead2.is-center{ text-align: center; }
+.sechead2 .site-h2{ margin-top: 4px; }
+.sechead2 .sechead-lead{ margin-top: 16px; max-width: 44em; color: var(--c-ink-soft); }
+.sechead2.is-center .sechead-lead{ margin-inline: auto; }
+.section{ background: transparent; }
+.section[style*="--bg-light"]{ background: var(--c-white) !important; }
+.leadcopy-title, .emband-text, .pq-text{ font-family: "Shippori Mincho", serif; }
+.emband{ background: var(--c-deep); }
+
+/* 部品の書体・色を新トンマナへ */
+.step-no, .r-no, .frow-no, .jobrow-no, .hubcard-en, .frow-tag, .jobrow-tag, .day-time, .salary-amount, .sc-num{ font-family: "Outfit", "Zen Kaku Gothic New", sans-serif; }
+.step-no, .frow-no, .jobrow-no, .rcard-no{ color: #9A4A12; }
+.frow-media img, .jobrow-ph img, .hubcard-media img, .machine-ph img, .person-ph img, .trio img, .gallery img, .entry-media img{ border-radius: 14px; }
+.data-table .data-row{ border-color: var(--c-rule); }
+.faq-q-mark{ color: #9A4A12; font-family: "Outfit", sans-serif; }
+.btn-ghost{ border-color: var(--c-deep); color: var(--c-deep); }
+.btn-ghost:hover{ background: var(--c-deep); color: #fff; }
+.shipper{ background: var(--c-white); }
+
+/* フォーム・ブログページ：CMS固定領域の外側の余白のみ */
+.parts210_section_content, .contact_section, .parts222_section{ position: relative; z-index: 1; }
+
+/* ヒーロー：縦積み・写真は右半分、テキストと重ねない */
+.lhero{ flex-direction: column; align-items: stretch; justify-content: center; }
+.lhero-inner{ flex: 1; width: 100%; margin-inline: auto; }
+.lhero-crumb{ width: 100%; max-width: calc(var(--wrap, 1200px) + var(--gutter) * 2); margin-inline: auto; padding: 0 var(--gutter) 20px; }
+@media (min-width: 761px){ .lhero-text{ max-width: 50%; } .lhero-photos{ width: 46%; } }
+@media (max-width: 760px){ .lhero-photos{ display: none; } .lhero-text{ max-width: none; } }
+
+.lhero .lhero-crumb .breadcrumb [aria-current="page"]{ color: #fff !important; }
+.lhero .lhero-crumb .breadcrumb li::before, .lhero .lhero-crumb .breadcrumb li::after{ color: rgba(255,255,255,.6); border-color: rgba(255,255,255,.6); }
+
+/* 見切れ対策：ゴースト英字は画面幅に収める／タイトルは小さめ・幅広に／写真は版面内に */
+.lhero-en{ font-size: min(10vw, 8rem) !important; white-space: nowrap; max-width: calc(100% - var(--gutter) * 2); overflow: hidden; line-height: .9; }
+.lhero-title{ font-size: clamp(26px, 3.6vw, 48px); }
+.lhero-text{ position: relative; z-index: 3; }
+@media (min-width: 761px){ .lhero-text{ max-width: 56%; } .lhero-photos{ width: 40%; right: var(--gutter); } .lp1{ right: 18%; width: 72%; } .lp2{ right: 0; width: 46%; } }
+@media (max-width: 760px){ .lhero{ min-height: 0; } .lhero-inner{ padding-block: 48px 24px; } .lhero-title{ font-size: clamp(24px, 7vw, 32px); } }
+
+.lhero-title{ white-space: normal !important; }
+.lhero-crumb{ left: auto !important; right: auto !important; inset: auto !important; }
