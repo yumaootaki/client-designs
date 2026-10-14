@@ -38,6 +38,18 @@ section a:hover,section button:hover,footer a:hover,footer button:hover{opacity:
 @keyframes heroUp{from{opacity:0;transform:translateY(46px)}to{opacity:1;transform:none}}
 @keyframes scrollcue{0%{transform:translateY(0);opacity:.9}70%{opacity:.1}100%{transform:translateY(15px);opacity:0}}
 @keyframes heroCharIn{from{opacity:0}to{opacity:1}}
+@keyframes heroDraw{to{stroke-dashoffset:0}}
+@keyframes heroFloat{from{translate:0 -10px}to{translate:0 12px}}
+@keyframes heroMarqV{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,-50%,0)}}
+@keyframes heroScrollLine{0%{transform:translateY(-100%)}100%{transform:translateY(240%)}}
+.hero-vmarq,.hero4-photos{display:none}
+@media (min-width:900px){
+  .hero-vmarq,.hero4-photos{display:block}
+  .hero4-strip{display:none}
+  .hero4-copy{align-items:flex-start !important;text-align:left !important;max-width:calc(100% - clamp(400px,50vw,860px) - clamp(64px,6.4vw,104px) + clamp(40px,6vw,120px));container-type:inline-size;padding-bottom:clamp(110px,12vw,150px) !important}
+  .hero4-btns{justify-content:flex-start !important}
+  .hero4-h1{font-size:clamp(34px,11cqw,80px) !important}
+}
 @media (max-width:1024px){.reason-row{flex-direction:column}.reason-row>div{flex:1 1 auto !important;width:100%}.reason-photo{order:-1;aspect-ratio:3/2 !important}.issue-photo{aspect-ratio:4/3 !important}}
 /* ===== CMS dynamic sections (Cuezilla) — add.css basis ===== */
 [class*="design-parts-52"]{background:#fff !important;border-bottom:1px solid rgba(27,58,91,.12);padding:0 !important}
@@ -160,101 +172,89 @@ section a:hover,section button:hover,footer a:hover,footer button:hover{opacity:
   </div>
 </sc-if>
 
-<!-- ============ HERO（斜め分割＋筆致＋マーキー） ============ -->
-<section id="hero3" data-screen-label="ヒーロー" aria-label="メインビジュアル" style="position:relative;isolation:isolate;overflow:hidden;min-height:max(660px,100svh);background:#0B1D30">
+<!-- ============ HERO（白地・コピー＋下から上へ流れる写真コラージュ＋上昇する▲＋軽鉄下地のライン描画） ============ -->
+<section id="hero3" data-screen-label="ヒーロー" aria-label="メインビジュアル" class="hero4" style="position:relative;isolation:isolate;overflow:hidden;min-height:max(660px,100svh);background:#fff">
 
-  <div aria-hidden="true" style="position:absolute;inset:0;z-index:0">
-    <img src="assets/issue-nankoji.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center;animation:hero3Zoom 20s ease-in-out infinite alternate">
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(11,29,48,.38),rgba(11,29,48,.62))"></div>
-  </div>
-
-  <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;background:#fff;clip-path:polygon(0 0,var(--xt) 0,var(--xb) var(--yb),0 var(--y0))"></div>
-
-  <svg aria-hidden="true" viewBox="0 0 1440 560" preserveAspectRatio="none" style="position:absolute;z-index:2;top:0;left:0;width:100%;height:clamp(300px,46vw,620px);overflow:visible;pointer-events:none">
-    <defs>
-      <filter id="hero3Ink" x="-10%" y="-40%" width="125%" height="190%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.006 0.028" numOctaves="4" seed="11" result="n"></feTurbulence>
-        <feDisplacementMap in="SourceGraphic" in2="n" scale="26" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
-      </filter>
-      <filter id="hero3InkFine" x="-10%" y="-40%" width="125%" height="190%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="3" seed="4" result="n2"></feTurbulence>
-        <feDisplacementMap in="SourceGraphic" in2="n2" scale="14" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
-      </filter>
-      <mask id="hero3Sweep1" maskUnits="userSpaceOnUse" x="-400" y="-300" width="2400" height="1200">
-        <path data-brush="1" d="M-280,-172 C180,-128 520,-92 900,126 C1150,240 1360,300 1690,344" fill="none" stroke="#fff" stroke-width="420" stroke-linecap="butt" visibility="hidden" style="animation:hero3Paint 16s cubic-bezier(.16,.9,.2,1) infinite"></path>
-      </mask>
-      <mask id="hero3Sweep2" maskUnits="userSpaceOnUse" x="-400" y="-300" width="2400" height="1200">
-        <path data-brush="1" d="M-300,690 C120,650 470,556 830,384 C1130,240 1400,96 1700,-140" fill="none" stroke="#fff" stroke-width="400" stroke-linecap="butt" visibility="hidden" style="animation:hero3Paint 16s cubic-bezier(.16,.9,.2,1) infinite;animation-delay:8s"></path>
-      </mask>
-    </defs>
-    <g style="transform-origin:55% 30%;animation:hero3Sweep 16s cubic-bezier(.16,.9,.2,1) infinite">
-      <g mask="url(#hero3Sweep1)">
-        <path filter="url(#hero3Ink)" fill="#F2C200" d="M-300,-230 C180,-150 520,-104 900,70 C1150,190 1360,278 1700,286 L1700,400 C1360,392 1150,304 900,184 C520,10 180,-46 -300,-116 Z"></path>
-        <path filter="url(#hero3InkFine)" fill="#E5B800" opacity=".92" d="M-290,-206 C182,-134 522,-86 902,92 C1152,212 1358,292 1692,300 L1692,362 C1358,356 1152,278 902,158 C522,-12 182,-64 -290,-142 Z"></path>
-        <path filter="url(#hero3InkFine)" fill="#FFDE4D" opacity=".55" d="M-270,-190 C186,-124 524,-74 904,108 C1152,226 1356,304 1676,314 L1676,338 C1356,330 1152,250 904,132 C524,-40 186,-88 -270,-158 Z"></path>
-        <path filter="url(#hero3InkFine)" fill="#F2C200" opacity=".75" d="M1300,300 C1420,318 1540,332 1690,332 L1690,372 C1536,372 1412,356 1296,336 Z"></path>
-      </g>
-    </g>
-    <g style="transform-origin:50% 60%;animation:hero3SweepUp 16s cubic-bezier(.16,.9,.2,1) infinite;animation-delay:8s">
-      <g mask="url(#hero3Sweep2)">
-        <path filter="url(#hero3Ink)" fill="#F2C200" d="M-320,760 C120,716 480,616 840,440 C1140,296 1410,150 1700,-92 L1700,16 C1410,254 1140,400 840,548 C480,712 120,800 -320,850 Z"></path>
-        <path filter="url(#hero3InkFine)" fill="#E5B800" opacity=".92" d="M-310,738 C124,694 482,594 842,420 C1142,276 1408,132 1696,-104 L1696,-44 C1408,192 1142,336 842,486 C482,652 124,742 -310,792 Z"></path>
-        <path filter="url(#hero3InkFine)" fill="#FFDE4D" opacity=".55" d="M-300,716 C128,672 486,574 846,400 C1144,258 1404,116 1684,-116 L1684,-92 C1404,140 1144,282 846,432 C486,600 128,690 -300,740 Z"></path>
-        <path filter="url(#hero3InkFine)" fill="#F2C200" opacity=".75" d="M1330,80 C1432,20 1546,-52 1690,-150 L1690,-104 C1552,-8 1440,60 1346,120 Z"></path>
-      </g>
-    </g>
-  </svg>
-
-  <div style="position:relative;z-index:4;padding:clamp(104px,15vw,150px) clamp(20px,5vw,64px) clamp(250px,42vw,300px);max-width:min(760px, calc((var(--xt) + var(--xb))/2 - clamp(16px,3vw,40px)));container-type:inline-size">
-    <p style="margin:0 0 clamp(14px,2.5vw,22px);font-family:'Anton',sans-serif;font-weight:400;letter-spacing:.22em;font-size:clamp(11px,2.4cqw,14px);color:#1B3A5B;animation:hero3Up .8s .05s cubic-bezier(.2,.7,.2,1) both">INTERIOR FINISHING WORKS ／ KAWAGOE, SAITAMA</p>
-    <h1 style="margin:0;font-weight:900;color:#0B1D30;font-size:clamp(30px,11.5cqw,70px);line-height:1.24;letter-spacing:.01em;text-wrap:pretty;animation:hero3Up .9s .12s cubic-bezier(.2,.7,.2,1) both"><span class="line-chunk"><span class="line-chunk">正確な施工が、</span></span><br><span class="line-chunk"><span class="line-chunk">次の</span><span class="line-chunk" style="color:#1B3A5B">仕事</span><span class="line-chunk">につながる。</span></span></h1>
-    <p style="margin:clamp(16px,3vw,26px) 0 0;max-width:30em;font-size:clamp(14px,3.2cqw,17px);font-weight:500;color:#1F2A3C;line-height:1.95;animation:hero3Up .9s .2s cubic-bezier(.2,.7,.2,1) both">埼玉県川越市を拠点に、一都三県で軽天工事・ボード工事を。<br>店舗・商業施設・ビル・公共施設・マンションの内装下地をお任せいただけます。</p>
-    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(24px,4vw,36px);animation:hero3Up .9s .28s cubic-bezier(.2,.7,.2,1) both">
-      <a href="/service" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:14px 30px;background:#1B3A5B;color:#fff;font-weight:900;font-size:15px;letter-spacing:.04em;transition:background .3s ease,gap .25s ease" style-hover="background:#0B1D30;gap:16px;color:#fff">業務案内を見る<span aria-hidden="true">→</span></a>
-      <a href="/form/inquiry" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:14px 30px;border:2px solid #1B3A5B;color:#1B3A5B;font-weight:900;font-size:15px;letter-spacing:.04em;transition:background .3s ease,color .3s ease" style-hover="background:#1B3A5B;color:#fff">お問い合わせ<span aria-hidden="true">→</span></a>
-    </div>
-  </div>
-
-  <div aria-hidden="true" style="position:absolute;inset:0;z-index:5;pointer-events:none;clip-path:polygon(0 0,var(--xt) 0,var(--xb) var(--yb),0 var(--y0))">
-    <div style="position:absolute;left:0;right:0;bottom:calc(var(--tick) + clamp(8px,2vw,18px));display:flex;flex-direction:column;gap:0">
-      <div style="overflow:hidden">
-        <div style="display:flex;width:max-content;animation:hero3MarqL 30s linear infinite;will-change:transform">
-          <span style="font-family:'Anton',sans-serif;font-size:clamp(56px,14vw,150px);line-height:1.02;letter-spacing:.02em;color:#1B3A5B;white-space:nowrap;padding-right:.3em">KEITEN ✦ BOARD ✦ KEITEN ✦ BOARD ✦ </span>
-          <span style="font-family:'Anton',sans-serif;font-size:clamp(56px,14vw,150px);line-height:1.02;letter-spacing:.02em;color:#1B3A5B;white-space:nowrap;padding-right:.3em">KEITEN ✦ BOARD ✦ KEITEN ✦ BOARD ✦ </span>
-        </div>
-      </div>
-      <div style="overflow:hidden">
-        <div style="display:flex;width:max-content;animation:hero3MarqR 44s linear infinite;will-change:transform">
-          <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,5.2vw,48px);line-height:1.25;letter-spacing:.14em;color:#1B3A5B;white-space:nowrap;padding-right:.6em">SINCE 2010 ／ KAWAGOE SAITAMA ／ 1都3県 対応 ／ 創業以来 無事故 ／ </span>
-          <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,5.2vw,48px);line-height:1.25;letter-spacing:.14em;color:#1B3A5B;white-space:nowrap;padding-right:.6em">SINCE 2010 ／ KAWAGOE SAITAMA ／ 1都3県 対応 ／ 創業以来 無事故 ／ </span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div aria-hidden="true" style="position:absolute;inset:0;z-index:5;pointer-events:none;clip-path:polygon(var(--xt) 0,100% 0,100% 100%,0 100%,0 var(--y0),var(--xb) var(--yb))">
-    <div style="position:absolute;left:0;right:0;bottom:calc(var(--tick) + clamp(8px,2vw,18px));display:flex;flex-direction:column;gap:0">
-      <div style="overflow:hidden">
-        <div style="display:flex;width:max-content;animation:hero3MarqL 30s linear infinite;will-change:transform">
-          <span style="font-family:'Anton',sans-serif;font-size:clamp(56px,14vw,150px);line-height:1.02;letter-spacing:.02em;color:#fff;white-space:nowrap;padding-right:.3em">KEITEN ✦ BOARD ✦ KEITEN ✦ BOARD ✦ </span>
-          <span style="font-family:'Anton',sans-serif;font-size:clamp(56px,14vw,150px);line-height:1.02;letter-spacing:.02em;color:#fff;white-space:nowrap;padding-right:.3em">KEITEN ✦ BOARD ✦ KEITEN ✦ BOARD ✦ </span>
-        </div>
-      </div>
-      <div style="overflow:hidden">
-        <div style="display:flex;width:max-content;animation:hero3MarqR 44s linear infinite;will-change:transform">
-          <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,5.2vw,48px);line-height:1.25;letter-spacing:.14em;color:#fff;white-space:nowrap;padding-right:.6em">SINCE 2010 ／ KAWAGOE SAITAMA ／ 1都3県 対応 ／ 創業以来 無事故 ／ </span>
-          <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,5.2vw,48px);line-height:1.25;letter-spacing:.14em;color:#fff;white-space:nowrap;padding-right:.6em">SINCE 2010 ／ KAWAGOE SAITAMA ／ 1都3県 対応 ／ 創業以来 無事故 ／ </span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <a href="#works" aria-label="施工実績セクションへ移動" style="position:absolute;z-index:7;right:clamp(14px,3vw,44px);bottom:calc(var(--tick) + clamp(76px,18vw,120px));width:var(--badge);height:var(--badge);border-radius:50%;background:#0B1D30;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(11,29,48,.34);transition:background .3s ease" style-hover="background:#1B3A5B;color:#fff">
-    <svg aria-hidden="true" viewBox="0 0 120 120" style="position:absolute;inset:0;width:100%;height:100%;animation:hero3Spin 24s linear infinite">
-      <defs><path id="hero3BadgeArc" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" fill="none"></path></defs>
-      <text fill="#F2C200" font-family="Anton, sans-serif" font-size="12" letter-spacing="2.9"><textPath href="#hero3BadgeArc" startOffset="0">WORKS ✦ SCROLL ✦ WORKS ✦ SCROLL ✦ </textPath></text>
+  <!-- 背景：街並み（店舗・マンション・ビル・公共施設・商業施設）が線で建ち上がっていく -->
+  <div aria-hidden="true" style="position:absolute;z-index:0;left:0;right:0;bottom:0;display:flex;justify-content:center;pointer-events:none">
+    <svg viewBox="0 0 1440 660" preserveAspectRatio="xMidYMax meet" style="width:max(100%,900px);flex:none;height:auto;opacity:.16">
+      <path d="M40,640 V530 H170 V640 M30,530 H180 M40,530 L52,510 H158 L170,530" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.3s cubic-bezier(.55,0,.2,1) 0.60s forwards"></path>
+      <path d="M56,560 h26 v40 h-26 Z M94,560 h26 v40 h-26 Z M132,560 h26 v40 h-26 Z M92,640 V600 H118 V640" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.8s cubic-bezier(.55,0,.2,1) 1.30s forwards"></path>
+      <path d="M190,640 V300 H340 V640 M184,300 H346" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.3s cubic-bezier(.55,0,.2,1) 1.02s forwards"></path>
+      <path d="M196,330 H334 M196,364 H334 M196,398 H334 M196,432 H334 M196,466 H334 M196,500 H334 M196,534 H334 M196,568 H334 M206,312 h22 v14 h-22 Z M240,312 h22 v14 h-22 Z M274,312 h22 v14 h-22 Z M308,312 h22 v14 h-22 Z M206,346 h22 v14 h-22 Z M240,346 h22 v14 h-22 Z M274,346 h22 v14 h-22 Z M308,346 h22 v14 h-22 Z M206,380 h22 v14 h-22 Z M240,380 h22 v14 h-22 Z M274,380 h22 v14 h-22 Z M308,380 h22 v14 h-22 Z M206,414 h22 v14 h-22 Z M240,414 h22 v14 h-22 Z M274,414 h22 v14 h-22 Z M308,414 h22 v14 h-22 Z M206,448 h22 v14 h-22 Z M240,448 h22 v14 h-22 Z M274,448 h22 v14 h-22 Z M308,448 h22 v14 h-22 Z M206,482 h22 v14 h-22 Z M240,482 h22 v14 h-22 Z M274,482 h22 v14 h-22 Z M308,482 h22 v14 h-22 Z M206,516 h22 v14 h-22 Z M240,516 h22 v14 h-22 Z M274,516 h22 v14 h-22 Z M308,516 h22 v14 h-22 Z M206,550 h22 v14 h-22 Z M240,550 h22 v14 h-22 Z M274,550 h22 v14 h-22 Z M308,550 h22 v14 h-22 Z" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.8s cubic-bezier(.55,0,.2,1) 1.72s forwards"></path>
+      <path d="M360,640 V170 H480 V640 M420,170 V120 M410,140 H430" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.3s cubic-bezier(.55,0,.2,1) 1.44s forwards"></path>
+      <path d="M378,190 V620 M400,190 V620 M422,190 V620 M444,190 V620 M466,190 V620 " pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.8s cubic-bezier(.55,0,.2,1) 2.14s forwards"></path>
+      <path d="M500,640 V470 H730 V640 M488,470 L615,400 L742,470 Z M500,620 H730" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.3s cubic-bezier(.55,0,.2,1) 1.86s forwards"></path>
+      <path d="M524,484 V620 M554,484 V620 M584,484 V620 M614,484 V620 M644,484 V620 M674,484 V620 M704,484 V620 " pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.8s cubic-bezier(.55,0,.2,1) 2.56s forwards"></path>
+      <path d="M750,640 V470 H1010 V640 M750,500 H1010" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.3s cubic-bezier(.55,0,.2,1) 2.28s forwards"></path>
+      <path d="M766,520 h30 v36 h-30 Z M808,520 h30 v36 h-30 Z M850,520 h30 v36 h-30 Z M892,520 h30 v36 h-30 Z M934,520 h30 v36 h-30 Z M976,520 h30 v36 h-30 Z M766,572 h30 v36 h-30 Z M808,572 h30 v36 h-30 Z M850,572 h30 v36 h-30 Z M892,572 h30 v36 h-30 Z M934,572 h30 v36 h-30 Z M976,572 h30 v36 h-30 Z M856,640 V596 H904 V640" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.8s cubic-bezier(.55,0,.2,1) 2.98s forwards"></path>
+      <path d="M1030,640 V190 H1060 V140 H1120 V190 H1150 V640" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.3s cubic-bezier(.55,0,.2,1) 2.70s forwards"></path>
+      <path d="M1044,210 h18 v20 h-18 Z M1072,210 h18 v20 h-18 Z M1100,210 h18 v20 h-18 Z M1128,210 h18 v20 h-18 Z M1044,242 h18 v20 h-18 Z M1072,242 h18 v20 h-18 Z M1100,242 h18 v20 h-18 Z M1128,242 h18 v20 h-18 Z M1044,274 h18 v20 h-18 Z M1072,274 h18 v20 h-18 Z M1100,274 h18 v20 h-18 Z M1128,274 h18 v20 h-18 Z M1044,306 h18 v20 h-18 Z M1072,306 h18 v20 h-18 Z M1100,306 h18 v20 h-18 Z M1128,306 h18 v20 h-18 Z M1044,338 h18 v20 h-18 Z M1072,338 h18 v20 h-18 Z M1100,338 h18 v20 h-18 Z M1128,338 h18 v20 h-18 Z M1044,370 h18 v20 h-18 Z M1072,370 h18 v20 h-18 Z M1100,370 h18 v20 h-18 Z M1128,370 h18 v20 h-18 Z M1044,402 h18 v20 h-18 Z M1072,402 h18 v20 h-18 Z M1100,402 h18 v20 h-18 Z M1128,402 h18 v20 h-18 Z M1044,434 h18 v20 h-18 Z M1072,434 h18 v20 h-18 Z M1100,434 h18 v20 h-18 Z M1128,434 h18 v20 h-18 Z M1044,466 h18 v20 h-18 Z M1072,466 h18 v20 h-18 Z M1100,466 h18 v20 h-18 Z M1128,466 h18 v20 h-18 Z M1044,498 h18 v20 h-18 Z M1072,498 h18 v20 h-18 Z M1100,498 h18 v20 h-18 Z M1128,498 h18 v20 h-18 Z M1044,530 h18 v20 h-18 Z M1072,530 h18 v20 h-18 Z M1100,530 h18 v20 h-18 Z M1128,530 h18 v20 h-18 Z M1044,562 h18 v20 h-18 Z M1072,562 h18 v20 h-18 Z M1100,562 h18 v20 h-18 Z M1128,562 h18 v20 h-18 Z M1044,594 h18 v20 h-18 Z M1072,594 h18 v20 h-18 Z M1100,594 h18 v20 h-18 Z M1128,594 h18 v20 h-18 Z" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.8s cubic-bezier(.55,0,.2,1) 3.40s forwards"></path>
+      <path d="M1090,140 V60 M1040,60 H1250 M1090,60 L1250,60 M1090,60 L1200,60 M1090,78 L1140,60 M1090,78 L1060,60 M1230,60 V96 M1222,96 h16 v12 h-16 Z M1090,60 L1110,40 L1130,60" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.3s cubic-bezier(.55,0,.2,1) 3.12s forwards"></path>
+      <path d="M1180,640 V360 H1310 V640 M1174,360 H1316" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.3s cubic-bezier(.55,0,.2,1) 3.54s forwards"></path>
+      <path d="M1194,380 h20 v22 h-20 Z M1224,380 h20 v22 h-20 Z M1254,380 h20 v22 h-20 Z M1284,380 h20 v22 h-20 Z M1194,412 h20 v22 h-20 Z M1224,412 h20 v22 h-20 Z M1254,412 h20 v22 h-20 Z M1284,412 h20 v22 h-20 Z M1194,444 h20 v22 h-20 Z M1224,444 h20 v22 h-20 Z M1254,444 h20 v22 h-20 Z M1284,444 h20 v22 h-20 Z M1194,476 h20 v22 h-20 Z M1224,476 h20 v22 h-20 Z M1254,476 h20 v22 h-20 Z M1284,476 h20 v22 h-20 Z M1194,508 h20 v22 h-20 Z M1224,508 h20 v22 h-20 Z M1254,508 h20 v22 h-20 Z M1284,508 h20 v22 h-20 Z M1194,540 h20 v22 h-20 Z M1224,540 h20 v22 h-20 Z M1254,540 h20 v22 h-20 Z M1284,540 h20 v22 h-20 Z M1194,572 h20 v22 h-20 Z M1224,572 h20 v22 h-20 Z M1254,572 h20 v22 h-20 Z M1284,572 h20 v22 h-20 Z" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.8s cubic-bezier(.55,0,.2,1) 4.24s forwards"></path>
+      <path d="M1330,640 V520 H1430 V640" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.3s cubic-bezier(.55,0,.2,1) 3.96s forwards"></path>
+      <path d="M1344,540 h30 v46 h-30 Z M1386,540 h30 v46 h-30 Z M1370,640 V596 H1392 V640" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.8s cubic-bezier(.55,0,.2,1) 4.66s forwards"></path>
+      <path d="M178,640 V612 M178,604 m-10,0 a10,10 0 1,0 20,0 a10,10 0 1,0 -20,0 M742,640 V612 M742,604 m-10,0 a10,10 0 1,0 20,0 a10,10 0 1,0 -20,0 M1166,640 V612 M1166,604 m-10,0 a10,10 0 1,0 20,0 a10,10 0 1,0 -20,0" pathLength="1" fill="none" stroke="#1B3A5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.2s cubic-bezier(.55,0,.2,1) 4.60s forwards"></path>
     </svg>
-    <span aria-hidden="true" style="position:relative;font-family:'Anton',sans-serif;font-size:clamp(13px,3vw,16px);letter-spacing:.1em">↓</span>
+  </div>
+
+  <!-- ▲ 下から上へ流れる三角 -->
+  <div aria-hidden="true" style="position:absolute;z-index:1;top:0;bottom:0;left:6%;width:clamp(44px,6.4vw,104px);overflow:visible;pointer-events:none">
+    <div style="height:200%;display:flex;flex-direction:column;animation:heroMarqV 24s linear infinite;will-change:transform"><div style="height:50%;position:relative"><div style="position:absolute;top:70%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(44px,6.4vw,104px);height:auto;display:block;overflow:visible;animation:hero3Spin 36s linear infinite"><polygon points="50,8 94,86 6,86" fill="none" stroke="#F2C200" stroke-width="6" stroke-linejoin="round"></polygon></svg></div></div><div style="height:50%;position:relative"><div style="position:absolute;top:70%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(44px,6.4vw,104px);height:auto;display:block;overflow:visible;animation:hero3Spin 36s linear infinite"><polygon points="50,8 94,86 6,86" fill="none" stroke="#F2C200" stroke-width="6" stroke-linejoin="round"></polygon></svg></div></div></div>
+  </div>
+  <div aria-hidden="true" style="position:absolute;z-index:1;top:0;bottom:0;left:22%;width:clamp(22px,2.6vw,40px);overflow:visible;pointer-events:none">
+    <div style="height:200%;display:flex;flex-direction:column;animation:heroMarqV 32s linear infinite;will-change:transform"><div style="height:50%;position:relative"><div style="position:absolute;top:20%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(22px,2.6vw,40px);height:auto;display:block;overflow:visible;animation:hero3Spin 32s linear infinite reverse"><polygon points="50,8 94,86 6,86" fill="#1B3A5B" stroke="#1B3A5B" stroke-width="0" stroke-linejoin="round"></polygon></svg></div></div><div style="height:50%;position:relative"><div style="position:absolute;top:20%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(22px,2.6vw,40px);height:auto;display:block;overflow:visible;animation:hero3Spin 32s linear infinite reverse"><polygon points="50,8 94,86 6,86" fill="#1B3A5B" stroke="#1B3A5B" stroke-width="0" stroke-linejoin="round"></polygon></svg></div></div></div>
+  </div>
+  <div aria-hidden="true" style="position:absolute;z-index:1;top:0;bottom:0;left:38%;width:clamp(56px,9vw,150px);overflow:visible;pointer-events:none">
+    <div style="height:200%;display:flex;flex-direction:column;animation:heroMarqV 38s linear infinite;will-change:transform"><div style="height:50%;position:relative"><div style="position:absolute;top:60%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(56px,9vw,150px);height:auto;display:block;overflow:visible;animation:hero3Spin 28s linear infinite"><polygon points="50,8 94,86 6,86" fill="#F2C200" stroke="#F2C200" stroke-width="0" stroke-linejoin="round"></polygon></svg></div></div><div style="height:50%;position:relative"><div style="position:absolute;top:60%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(56px,9vw,150px);height:auto;display:block;overflow:visible;animation:hero3Spin 28s linear infinite"><polygon points="50,8 94,86 6,86" fill="#F2C200" stroke="#F2C200" stroke-width="0" stroke-linejoin="round"></polygon></svg></div></div></div>
+  </div>
+  <div aria-hidden="true" style="position:absolute;z-index:1;top:0;bottom:0;left:54%;width:clamp(28px,3.4vw,56px);overflow:visible;pointer-events:none">
+    <div style="height:200%;display:flex;flex-direction:column;animation:heroMarqV 20s linear infinite;will-change:transform"><div style="height:50%;position:relative"><div style="position:absolute;top:30%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(28px,3.4vw,56px);height:auto;display:block;overflow:visible;animation:hero3Spin 20s linear infinite reverse"><polygon points="50,8 94,86 6,86" fill="none" stroke="#1B3A5B" stroke-width="6" stroke-linejoin="round"></polygon></svg></div></div><div style="height:50%;position:relative"><div style="position:absolute;top:30%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(28px,3.4vw,56px);height:auto;display:block;overflow:visible;animation:hero3Spin 20s linear infinite reverse"><polygon points="50,8 94,86 6,86" fill="none" stroke="#1B3A5B" stroke-width="6" stroke-linejoin="round"></polygon></svg></div></div></div>
+  </div>
+  <div aria-hidden="true" style="position:absolute;z-index:1;top:0;bottom:0;left:74%;width:clamp(48px,7vw,120px);overflow:visible;pointer-events:none">
+    <div style="height:200%;display:flex;flex-direction:column;animation:heroMarqV 46s linear infinite;will-change:transform"><div style="height:50%;position:relative"><div style="position:absolute;top:76%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(48px,7vw,120px);height:auto;display:block;overflow:visible;animation:hero3Spin 30s linear infinite"><polygon points="50,8 94,86 6,86" fill="none" stroke="#1B3A5B" stroke-width="6" stroke-linejoin="round"></polygon></svg></div></div><div style="height:50%;position:relative"><div style="position:absolute;top:76%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(48px,7vw,120px);height:auto;display:block;overflow:visible;animation:hero3Spin 30s linear infinite"><polygon points="50,8 94,86 6,86" fill="none" stroke="#1B3A5B" stroke-width="6" stroke-linejoin="round"></polygon></svg></div></div></div>
+  </div>
+  <div aria-hidden="true" style="position:absolute;z-index:1;top:0;bottom:0;left:90%;width:clamp(24px,3vw,48px);overflow:visible;pointer-events:none">
+    <div style="height:200%;display:flex;flex-direction:column;animation:heroMarqV 28s linear infinite;will-change:transform"><div style="height:50%;position:relative"><div style="position:absolute;top:10%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(24px,3vw,48px);height:auto;display:block;overflow:visible;animation:hero3Spin 24s linear infinite reverse"><polygon points="50,8 94,86 6,86" fill="#F2C200" stroke="#F2C200" stroke-width="0" stroke-linejoin="round"></polygon></svg></div></div><div style="height:50%;position:relative"><div style="position:absolute;top:10%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(24px,3vw,48px);height:auto;display:block;overflow:visible;animation:hero3Spin 24s linear infinite reverse"><polygon points="50,8 94,86 6,86" fill="#F2C200" stroke="#F2C200" stroke-width="0" stroke-linejoin="round"></polygon></svg></div></div></div>
+  </div>
+
+  <!-- PC：写真コラージュが下から上へ流れる -->
+  <div class="hero4-photos" aria-hidden="false" style="position:absolute;z-index:2;top:0;bottom:0;right:clamp(64px,6.4vw,104px);width:clamp(400px,50vw,860px);overflow:hidden;pointer-events:none;animation:hero3Up 1.2s .8s cubic-bezier(.2,.7,.2,1) both">
+    <div style="display:flex;flex-direction:column;animation:heroMarqV 70s linear infinite;will-change:transform"><div style="display:flex;flex-wrap:wrap;align-items:flex-start;padding-bottom:8%"><div style="width:50%;margin-left:6%;margin-top:4%;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/work-1.jpg" alt="軽天工事で組んだ天井下地" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:32%;margin-left:6%;margin-top:22%;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/work-3.jpg" alt="間仕切り壁の下地施工" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:40%;margin-left:0%;margin-top:8%;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/issue-carport.jpg" alt="軽量鉄骨の間仕切り壁下地" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:52%;margin-left:6%;margin-top:2%;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/entry-personal.jpg" alt="スタッフの集合写真" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:76%;margin-left:14%;margin-top:8%;aspect-ratio:16/10;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/work-6.jpg" alt="ボード張りを終えた室内" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:36%;margin-left:4%;margin-top:8%;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/work-4.jpg" alt="曲面のR下がり壁の造作" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:44%;margin-left:12%;margin-top:18%;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/issue-kokyo.jpg" alt="床のパーティクルボード張り" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:66%;margin-left:2%;margin-top:8%;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/hero.jpg" alt="内装工事の作業風景" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:34%;margin-left:18%;margin-top:8%;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/work-2.jpg" alt="軽天スタッドを建て込んだ内装下地" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:36%;margin-left:8%;margin-top:20%;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/persona-1.jpg" alt="休憩時にスタッフで食事に行く様子" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div></div><div aria-hidden="true" style="display:flex;flex-wrap:wrap;align-items:flex-start;padding-bottom:8%"><div style="width:50%;margin-left:6%;margin-top:4%;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/work-1.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:32%;margin-left:6%;margin-top:22%;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/work-3.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:40%;margin-left:0%;margin-top:8%;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/issue-carport.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:52%;margin-left:6%;margin-top:2%;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/entry-personal.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:76%;margin-left:14%;margin-top:8%;aspect-ratio:16/10;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/work-6.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:36%;margin-left:4%;margin-top:8%;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/work-4.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:44%;margin-left:12%;margin-top:18%;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/issue-kokyo.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:66%;margin-left:2%;margin-top:8%;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/hero.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:34%;margin-left:18%;margin-top:8%;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/work-2.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:36%;margin-left:8%;margin-top:20%;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(11,29,48,.12)"><img src="assets/persona-1.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div></div></div>
+  </div>
+
+  <!-- 右端：縦マーキー -->
+  <div class="hero-vmarq" aria-hidden="true" style="position:absolute;z-index:1;top:0;bottom:0;right:clamp(10px,1.6vw,24px);width:clamp(40px,4.2vw,60px);overflow:hidden;pointer-events:none">
+    <div style="display:flex;flex-direction:column;animation:heroMarqV 36s linear infinite;will-change:transform">
+      <span style="writing-mode:vertical-rl;font-family:'Anton',sans-serif;font-size:clamp(34px,3.8vw,54px);letter-spacing:.08em;color:#1B3A5B;opacity:.14;white-space:nowrap;padding-bottom:.4em">KEITEN ✦ BOARD ✦ INTERIOR WORKS ✦ SINCE 2010 ✦ </span>
+      <span style="writing-mode:vertical-rl;font-family:'Anton',sans-serif;font-size:clamp(34px,3.8vw,54px);letter-spacing:.08em;color:#1B3A5B;opacity:.14;white-space:nowrap;padding-bottom:.4em">KEITEN ✦ BOARD ✦ INTERIOR WORKS ✦ SINCE 2010 ✦ </span>
+    </div>
+  </div>
+
+  <div class="hero4-inner" style="position:relative;z-index:3;min-height:inherit;display:flex;flex-direction:column;justify-content:center">
+    <!-- コピー -->
+    <div class="hero4-copy" style="width:100%;padding:clamp(112px,15vw,150px) clamp(24px,6vw,72px) clamp(28px,4vw,40px);text-align:center;display:flex;flex-direction:column;align-items:center">
+      <p style="margin:0 0 clamp(22px,3.4vw,34px);font-weight:900;font-size:clamp(15px,2.2vw,19px);letter-spacing:.12em;color:#1B3A5B;animation:hero3Up .8s .1s cubic-bezier(.2,.7,.2,1) both"><span style="background:linear-gradient(transparent 62%,#F2C200 62%);padding:0 .3em"><span class="line-chunk">創業15年、</span><span class="line-chunk">川越から一都三県へ</span></span></p>
+      <h1 class="hero4-h1" style="margin:0;font-weight:900;color:#0B1D30;font-size:clamp(30px,8.4vw,64px);line-height:1.45;letter-spacing:.02em;animation:hero3Up .9s .25s cubic-bezier(.2,.7,.2,1) both"><span class="line-chunk">正確な施工が、</span><br><span class="line-chunk">次の<span style="color:#1B3A5B;font-size:1.14em;line-height:1;display:inline-block;border-bottom:clamp(4px,.6vw,8px) solid #F2C200;padding:0 .04em .04em">仕事</span>に</span><span class="line-chunk">つながる。</span></h1>
+      <p style="margin:clamp(22px,3.4vw,34px) 0 0;font-weight:700;font-size:clamp(16px,2.2vw,20px);line-height:1.8;color:#1A1A1A;animation:hero3Up .9s .4s cubic-bezier(.2,.7,.2,1) both"><span class="line-chunk">軽天・ボード工事を通じて、</span><span class="line-chunk">建物の内側をカタチに。</span></p>
+      <p style="margin:clamp(12px,1.8vw,18px) 0 0;font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(11px,1.3vw,13px);letter-spacing:.14em;line-height:1.9;color:#1B3A5B;animation:hero3Up .9s .52s cubic-bezier(.2,.7,.2,1) both"><span class="line-chunk">INTERIOR FINISHING WORKS ／ LIGHT-GAUGE STEEL &amp; GYPSUM BOARD</span><br><span class="line-chunk">KAWAGOE, SAITAMA ／ SINCE 2010</span></p>
+      <div class="hero4-btns" style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:clamp(26px,4vw,40px);animation:hero3Up .9s .64s cubic-bezier(.2,.7,.2,1) both">
+        <a href="/service" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:14px 30px;background:#1B3A5B;color:#fff;font-weight:900;font-size:15px;letter-spacing:.04em;transition:background .3s ease,gap .25s ease" style-hover="background:#0B1D30;gap:16px;color:#fff">業務案内を見る<span aria-hidden="true">→</span></a>
+        <a href="/form/inquiry" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:14px 30px;background:#F2C200;color:#0B1D30;font-weight:900;font-size:15px;letter-spacing:.04em;transition:background .3s ease" style-hover="background:#ffd633;color:#0B1D30">お問い合わせ<span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <!-- SP：写真が横に流れる -->
+    <div class="hero4-strip" aria-hidden="false" style="position:relative;overflow:hidden;padding:clamp(8px,3vw,20px) 0 clamp(96px,22vw,120px);pointer-events:none;animation:hero3Up 1s .7s cubic-bezier(.2,.7,.2,1) both">
+      <div style="display:flex;width:max-content;animation:hero3MarqL 50s linear infinite;will-change:transform"><div style="display:flex;gap:14px;padding-right:14px;align-items:flex-end"><div style="flex:none;height:30vw;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;margin-bottom:0vw"><img src="assets/work-1.jpg" alt="軽天工事で組んだ天井下地" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:24vw;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;margin-bottom:6vw"><img src="assets/work-3.jpg" alt="間仕切り壁の下地施工" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:28vw;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;margin-bottom:2vw"><img src="assets/issue-carport.jpg" alt="軽量鉄骨の間仕切り壁下地" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:22vw;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;margin-bottom:8vw"><img src="assets/entry-personal.jpg" alt="スタッフの集合写真" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:32vw;aspect-ratio:16/10;overflow:hidden;background:#E9EDF1;margin-bottom:0vw"><img src="assets/work-6.jpg" alt="ボード張りを終えた室内" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:26vw;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;margin-bottom:4vw"><img src="assets/work-4.jpg" alt="曲面のR下がり壁の造作" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:30vw;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;margin-bottom:0vw"><img src="assets/issue-kokyo.jpg" alt="床のパーティクルボード張り" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:24vw;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;margin-bottom:6vw"><img src="assets/hero.jpg" alt="内装工事の作業風景" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:28vw;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;margin-bottom:2vw"><img src="assets/work-2.jpg" alt="軽天スタッドを建て込んだ内装下地" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:22vw;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;margin-bottom:8vw"><img src="assets/persona-1.jpg" alt="休憩時にスタッフで食事に行く様子" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div></div><div aria-hidden="true" style="display:flex;gap:14px;padding-right:14px;align-items:flex-end"><div style="flex:none;height:30vw;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;margin-bottom:0vw"><img src="assets/work-1.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:24vw;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;margin-bottom:6vw"><img src="assets/work-3.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:28vw;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;margin-bottom:2vw"><img src="assets/issue-carport.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:22vw;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;margin-bottom:8vw"><img src="assets/entry-personal.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:32vw;aspect-ratio:16/10;overflow:hidden;background:#E9EDF1;margin-bottom:0vw"><img src="assets/work-6.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:26vw;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;margin-bottom:4vw"><img src="assets/work-4.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:30vw;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;margin-bottom:0vw"><img src="assets/issue-kokyo.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:24vw;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;margin-bottom:6vw"><img src="assets/hero.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:28vw;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;margin-bottom:2vw"><img src="assets/work-2.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:22vw;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;margin-bottom:8vw"><img src="assets/persona-1.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div></div></div>
+    </div>
+  </div>
+
+  <!-- SCROLL -->
+  <a href="#works" aria-label="施工実績セクションへ移動" style="position:absolute;z-index:4;left:50%;bottom:0;width:60px;margin-left:-30px;display:flex;flex-direction:column;align-items:center;gap:10px;padding-top:8px;min-height:44px;color:#1B3A5B">
+    <span style="font-family:'Anton',sans-serif;font-size:12px;letter-spacing:.24em">SCROLL</span>
+    <span aria-hidden="true" style="position:relative;display:block;width:1px;height:clamp(44px,7vw,70px);background:rgba(27,58,91,.22);overflow:hidden"><span style="position:absolute;left:0;top:0;width:1px;height:45%;background:#1B3A5B;animation:heroScrollLine 2s cubic-bezier(.6,0,.3,1) infinite"></span></span>
   </a>
 
   <!-- 新着情報はヒーロー直下の CMS帯（design-parts-52）が正。ヒーロー内には重複させない。 -->
@@ -745,10 +745,10 @@ class Component extends DCLogic {
     // 数字カウントアップ（画面内に入ったら0→確定値）。reduced-motion時は確定値のまま
     const reduceN = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reduceN) {
-      this.setState({ stat1: 0, stat2: 0, stat3: 0, stat4: 0, stat5: 0 });
+      this.setState({ stat1: 0, stat2: 10, stat3: 0, stat4: 0, stat5: 0 });
       setTimeout(() => {
         const el = document.querySelector('[data-countup-section]');
-        if (!el) { this.setState({ stat1: 16, stat2: 0, stat3: 900 }); }
+        if (!el) { this.setState({ stat1: 16, stat2: 0, stat3: 15 }); }
         else {
         const io = new IntersectionObserver((ents) => {
           ents.forEach((e) => {
@@ -762,7 +762,7 @@ class Component extends DCLogic {
         io.observe(el);
         this._io2 = io;
         // フォールバック：万一オブザーバが発火しない場合のみ、確定値を表示（アニメは画面内トリガーに任せる）
-        this._countSafety = setTimeout(() => { if (!this._counting) { this.setState({ stat1: 16, stat2: 0, stat3: 900 }); } }, 12000);
+        this._countSafety = setTimeout(() => { if (!this._counting) { this.setState({ stat1: 16, stat2: 0, stat3: 15 }); } }, 12000);
         }
         // エリア・建物種別の数字
         const mel = document.querySelector('[data-countup-machine]');
@@ -838,7 +838,8 @@ class Component extends DCLogic {
     const step = (now) => {
       const p = Math.min(1, (now - start) / dur);
       const k = ease(p);
-      this.setState({ stat1: Math.round(targets[0] * k), stat2: Math.round(targets[1] * k), stat3: Math.round(targets[2] * k) });
+      // 02（事故件数）は目標0のため、10→0のカウントダウンで動かす
+      this.setState({ stat1: Math.round(targets[0] * k), stat2: Math.round(10 * (1 - k)), stat3: Math.round(targets[2] * k) });
       if (p < 1) { this._raf = requestAnimationFrame(step); }
       else { this.setState({ counted: true }); }
     };
