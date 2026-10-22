@@ -1,0 +1,76 @@
+/* 合同会社一葉固有の追加部品（site2.css の上に重ねる） */
+.sh__logo { display: flex; align-items: center; gap: 10px; }
+.sh__logo img { height: 46px; width: auto; }
+.sh__logo-txt { display: flex; flex-direction: column; line-height: 1.2; }
+.sh__line { background: #06C755 !important; color: #0B1A10 !important; border-color: #06C755 !important; }
+.cbtn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.cbtn { flex: 1 1 200px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 58px; padding: 12px 20px; border-radius: 8px; font-weight: 700; font-size: 17px; line-height: 1.35; text-align: center; border: 2px solid transparent; transition: filter .2s; }
+.cbtn svg { width: 22px; height: 22px; flex: none; }
+.cbtn small { display: block; font-size: 14px; }
+.cbtn-line { background: #06C755; color: #0B1A10; }
+.cbtn-tel { background: #7FB24A; color: #13261A; }
+.cbtn-form { background: #fff; color: #1F4A34; border-color: #fff; }
+.cbtn:hover { filter: brightness(1.07); }
+.cbtn:focus-visible { outline: 3px solid #B9DB8C; outline-offset: 3px; }
+.fv-cond { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; }
+.fv-cond li { padding: 8px 14px; border: 1px solid rgba(255,255,255,.45); border-radius: 999px; color: #fff; font-weight: 700; font-size: 16px; background: rgba(20,51,36,.55); }
+.fv-cond b { color: #B9DB8C; }
+.x-people { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 32px; }
+@media (min-width: 760px) { .x-people { grid-template-columns: repeat(3, 1fr); } }
+.x-people figure { margin: 0; background: #fff; border-radius: 14px; overflow: hidden; border: 1px solid #D3DECF; }
+.x-people img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #E6EEE2; }
+.x-people figcaption { padding: 16px 18px; }
+.x-people b { display: block; color: #1F4A34; }
+.x-faq { margin-top: 28px; border-top: 1px solid #D3DECF; }
+.x-faq details { border-bottom: 1px solid #D3DECF; }
+.x-faq summary { list-style: none; cursor: pointer; display: flex; gap: 14px; align-items: baseline; padding: 20px 4px; font-weight: 700; color: #1F4A34; min-height: 44px; }
+.x-faq summary::-webkit-details-marker { display: none; }
+.x-faq summary::before { content: "Q"; color: #3E6B1F; font-family: "Outfit", sans-serif; font-size: 20px; }
+.x-faq summary::after { content: "+"; margin-left: auto; font-size: 22px; }
+.x-faq details[open] summary::after { content: "−"; }
+.x-faq p { padding: 0 4px 22px 34px; }
+.x-badges-time li { font-family: "Outfit", sans-serif; }
+.mobile-cta2 { display: none; }
+@media (max-width: 640px) {
+  .mobile-cta2 { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 900; padding-bottom: env(safe-area-inset-bottom, 0px); background: #1F4A34; }
+  .mobile-cta2 a { flex: 1 1 0; min-height: 60px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-weight: 700; font-size: 15px; }
+  .mobile-cta2 svg { width: 20px; height: 20px; }
+  .mobile-cta2 .m-line { background: #06C755; color: #0B1A10; }
+  .mobile-cta2 .m-tel { background: #7FB24A; color: #13261A; }
+  .mobile-cta2 .m-form { color: #fff; }
+  body { padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* スクロール連動の文字色（未点灯→点灯） */
+[data-ink].ink-ready .ink-ch{ color: rgba(19,45,32,.18); transition: color .35s ease; }
+[data-ink].ink-ready .ink-ch.on{ color: inherit; }
+.bg-deep [data-ink].ink-ready .ink-ch, .site-hz [data-ink].ink-ready .ink-ch, .site-recruit [data-ink].ink-ready .ink-ch, .site-panel__body [data-ink].ink-ready .ink-ch{ color: rgba(255,255,255,.22); }
+.bg-deep [data-ink].ink-ready .ink-ch.on, .site-hz [data-ink].ink-ready .ink-ch.on, .site-recruit [data-ink].ink-ready .ink-ch.on, .site-panel__body [data-ink].ink-ready .ink-ch.on{ color: inherit; }
+mark [data-ink] .ink-ch.on, mark .ink-ch.on{ color: inherit; }
+@media (prefers-reduced-motion: reduce){ [data-ink].ink-ready .ink-ch{ color: inherit !important; transition: none; } }
+
+.cbtn-apply { background: #7FB24A; color: #13261A; }
+.cbtn-visit { background: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
+.cbtn-visit.on-light { color: #1F4A34; border-color: #1F4A34; }
+.sh__logo img { background: #fff; padding: 4px 8px; border-radius: 4px; height: 44px; }
+.sh__logo-txt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.mobile-cta2 .m-apply { background: #7FB24A; color: #13261A; }
+.mobile-cta2 .m-visit { color: #fff; }
+
+.fv-lp { display: inline-grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 18px; margin-top: 22px; min-height: 64px; padding: 12px 20px 12px 22px; max-width: 100%; background: rgba(255,255,255,.96); color: #143324; border-left: 6px solid #7FB24A; border-radius: 6px; box-shadow: 0 10px 28px rgba(10,28,19,.28); text-decoration: none; transition: transform .2s, box-shadow .2s; }
+.fv-lp__en { grid-column: 1; font-family: "Outfit", sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .14em; color: #3E6B1F; }
+.fv-lp__t { grid-column: 1; font-weight: 900; font-size: clamp(16px, 1.6vw, 19px); line-height: 1.4; }
+.fv-lp__a { grid-column: 2; grid-row: 1 / span 2; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #1F4A34; color: #fff; font-size: 18px; }
+.fv-lp:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(10,28,19,.34); }
+.fv-lp:focus-visible { outline: 3px solid #B9DB8C; outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .fv-lp { transition: none; } .fv-lp:hover { transform: none; } }
+
+.entry-flow::after { content: none !important; }
+.entry-flow { font-size: 15px; letter-spacing: .02em; }
+
+.site-stats--onLight{ border-color: var(--c-rule) !important; }
+.site-stats--onLight > div{ border-color: var(--c-rule) !important; }
+.site-stats--onLight dt{ color: #3E6B1F !important; }
+.site-stats--onLight dd{ color: #1F4A34 !important; }
+.site-stats--onLight dd span{ color: #3E6B1F !important; }

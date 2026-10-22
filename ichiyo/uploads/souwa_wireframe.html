@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>株式会社総和 リプレイス ワイヤーフレーム（求人特化型・全14ページ）</title>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2F4E; --ice:#DCEBF3; --frost:#6FA8C7; --orange:#E8833A; --line:#06C755;
+  --base:#F7FAFC; --ink:#1F2933; --gray:#D5DCE3; --gray2:#EEF2F5; --mute:#6B7785;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"BIZ UDPGothic",sans-serif;color:var(--ink);background:#E9EEF2;display:flex;min-height:100vh;font-size:15px;line-height:1.75}
+aside{width:280px;flex-shrink:0;background:var(--navy);color:#fff;padding:20px 0;position:sticky;top:0;height:100vh;overflow-y:auto}
+aside h1{font-family:"Zen Kaku Gothic New",sans-serif;font-size:16px;padding:0 20px 4px}
+aside .sub{font-size:12px;opacity:.7;padding:0 20px 16px;border-bottom:1px solid rgba(255,255,255,.15)}
+aside .grp{font-size:11px;opacity:.6;padding:14px 20px 4px}
+aside button{display:flex;gap:10px;align-items:baseline;width:100%;text-align:left;background:none;border:0;color:#fff;font:inherit;font-size:13px;padding:7px 20px;cursor:pointer}
+aside button .no{font-size:11px;opacity:.6;width:20px}
+aside button .tag{margin-left:auto;font-size:10px;padding:1px 6px;border-radius:3px;background:rgba(255,255,255,.15)}
+aside button .tag.new{background:var(--orange)}
+aside button.on{background:rgba(255,255,255,.12);box-shadow:inset 3px 0 0 var(--orange)}
+aside button:focus-visible{outline:2px solid var(--orange);outline-offset:-2px}
+main{flex:1;padding:24px;overflow-x:auto}
+.bar{display:flex;gap:12px;align-items:center;margin-bottom:16px;flex-wrap:wrap}
+.bar .ttl{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:20px;color:var(--navy)}
+.bar .meta{font-size:12px;color:var(--mute)}
+.bar .dev{margin-left:auto;display:flex;border:1px solid var(--gray);border-radius:4px;overflow:hidden}
+.bar .dev button{border:0;background:#fff;padding:6px 14px;font:inherit;font-size:12px;cursor:pointer}
+.bar .dev button.on{background:var(--navy);color:#fff}
+.purpose{background:#fff;border-left:4px solid var(--orange);padding:12px 16px;font-size:13px;margin-bottom:16px;max-width:1200px}
+.purpose b{color:var(--navy)}
+.canvas{background:#fff;margin:0 auto;max-width:1200px;box-shadow:0 0 0 1px var(--gray);transition:max-width .25s}
+.canvas.sp{max-width:390px}
+/* 共通ヘッダー */
+.hd{display:flex;align-items:center;gap:16px;padding:14px 24px;border-bottom:1px solid var(--gray)}
+.logo{width:150px;height:40px;border:1.5px dashed var(--frost);display:grid;place-items:center;font-size:11px;color:var(--frost)}
+.gnav{display:flex;gap:16px;font-size:12px;color:var(--mute);flex-wrap:wrap}
+.hd .hcta{margin-left:auto;display:flex;gap:8px}
+.pill{font-size:12px;padding:6px 12px;border-radius:999px;color:#fff;white-space:nowrap}
+.pill.l{background:var(--line)} .pill.t{background:var(--orange)}
+.sp .gnav,.sp .hd .hcta{display:none}
+.sp .hd::after{content:"≡";margin-left:auto;font-size:22px;color:var(--navy)}
+/* セクション */
+.sec{position:relative;padding:36px 32px;border-bottom:1px dashed var(--gray)}
+.sp .sec{padding:28px 16px}
+.sec .lbl{position:absolute;top:8px;left:8px;font-size:10px;background:var(--navy);color:#fff;padding:1px 7px;border-radius:2px}
+.sec h2{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:24px;color:var(--navy);line-height:1.45;margin:6px 0 10px;max-width:40em}
+.sp .sec h2{font-size:20px}
+.sec p.txt{max-width:44em;margin-bottom:14px}
+.note{margin-top:14px;font-size:12px;background:#FFF6EE;border:1px solid #F4CFAE;color:#8A4A17;padding:8px 12px;border-radius:3px}
+.note::before{content:"制作メモ：";font-weight:700}
+.hero{background:var(--ice);padding:48px 32px}
+.hero h2{font-size:34px;font-weight:900}
+.sp .hero{padding:32px 16px}.sp .hero h2{font-size:24px}
+.img{background:repeating-linear-gradient(45deg,var(--gray2),var(--gray2) 10px,#E3E9EE 10px,#E3E9EE 20px);border:1px solid var(--gray);min-height:180px;display:grid;place-items:center;text-align:center;font-size:12px;color:var(--mute);padding:12px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:14px}
+.sp .grid{grid-template-columns:1fr}
+.card{border:1px solid var(--gray);padding:16px;background:#fff}
+.card b{display:block;color:var(--navy);margin-bottom:4px;font-family:"Zen Kaku Gothic New",sans-serif}
+.card .ph{height:110px;margin:-16px -16px 12px;background:var(--gray2);display:grid;place-items:center;font-size:11px;color:var(--mute)}
+table{border-collapse:collapse;width:100%;max-width:820px;margin-bottom:14px;font-size:14px}
+th,td{border:1px solid var(--gray);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--gray2);width:30%;color:var(--navy);font-weight:700}
+.steps{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;counter-reset:s}
+.steps div{flex:1;min-width:150px;border:1px solid var(--frost);padding:12px;background:#fff;counter-increment:s;font-size:14px}
+.steps div::before{content:"STEP " counter(s);display:block;font-size:11px;color:var(--frost);font-weight:700}
+.faq details{border-bottom:1px solid var(--gray);padding:12px 0;max-width:820px}
+.faq summary{cursor:pointer;font-weight:700;color:var(--navy)}
+.faq summary::before{content:"Q. ";color:var(--orange)}
+.faq p{margin-top:6px;font-size:14px}
+.faq p::before{content:"A. ";font-weight:700;color:var(--frost)}
+.quote{border-left:4px solid var(--frost);background:var(--base);padding:14px 18px;margin-bottom:14px;max-width:44em;font-size:15px}
+.quote small{display:block;color:var(--mute);margin-top:4px}
+.tabs{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+.tabs span{border:1px solid var(--navy);padding:4px 14px;font-size:13px;border-radius:3px}
+.tabs span:first-child{background:var(--navy);color:#fff}
+.facts{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.facts span{background:#fff;border:1px solid var(--frost);padding:8px 14px;font-weight:700;color:var(--navy);font-size:14px}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.btn{border:1.5px solid var(--navy);color:var(--navy);padding:10px 18px;font-size:14px;font-weight:700;background:#fff}
+.cta{background:var(--navy);color:#fff;padding:28px 24px;text-align:center}
+.cta h3{font-family:"Zen Kaku Gothic New",sans-serif;font-size:20px;margin-bottom:6px}
+.cta p{font-size:13px;opacity:.85;margin-bottom:14px}
+.cta .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cta .b{padding:14px 22px;font-weight:700;border-radius:4px;min-width:220px}
+.cta .b.l{background:var(--line)} .cta .b.t{background:var(--orange)} .cta .b.f{background:#fff;color:var(--navy)}
+.ph-chk{color:#C0392B;font-weight:700}
+.ft{background:var(--navy);color:#fff;padding:24px 32px;font-size:12px;opacity:.95}
+.ft .cols{display:flex;gap:32px;flex-wrap:wrap;margin-bottom:10px}
+.spbar{display:none}
+.sp .spbar{display:flex;position:sticky;bottom:0;font-size:12px;font-weight:700;text-align:center}
+.sp .spbar div{flex:1;padding:12px 4px;color:#fff}
+@media (max-width:860px){body{flex-direction:column}aside{width:100%;height:auto;position:static}main{padding:12px}}
+@media (prefers-reduced-motion:reduce){.canvas{transition:none}}
+</style>
+</head>
+<body>
+<aside>
+  <h1>株式会社総和</h1>
+  <div class="sub">求人特化型リプレイス<br>ワイヤーフレーム 全14ページ</div>
+  <div id="nav"></div>
+</aside>
+<main>
+  <div class="bar">
+    <div class="ttl" id="ttl"></div>
+    <div class="meta" id="meta"></div>
+    <div class="dev"><button class="on" data-d="pc">PC</button><button data-d="sp">SP</button></div>
+  </div>
+  <div class="purpose" id="purpose"></div>
+  <div class="canvas" id="canvas"></div>
+</main>
+
+<script>
+/* 記法: 'img:説明' 'cards:見出し|本文;;…' 'pcards:写真付きカード' 'table:項目|内容;;…'
+   'steps:a;;b' 'faq:Q|A;;…' 'quote:本文|出典' 'tabs:a;;b' 'facts:a;;b' 'btns:a;;b' 'cta' 'cta:見出し|補足'
+   【要確認】は赤字で表示 */
+const PAGES=[
+{no:1,name:'TOP',kind:'既存',slug:'/',grp:'求人',
+ purpose:'平均滞在34秒への対策として、ファーストビューで「条件3点＋応募手段」を見せ切る。経験者／未経験の2入口へ振り分け、迷わせない。',
+ secs:[
+ {hero:1,n:'ヒーロー',h:'大きな会社が合わなかったあなたへ。印西の小さな運送会社で、腰を据えて走りませんか。',p:'2t・4t冷凍冷蔵車のルート配送。関東一円、99％日帰りです。',
+  w:['facts:正社員 月給35万円以上;;勤務開始は7時／14時／20時から選べる;;家族手当・愛車手当あり','img:先輩ドライバー（40〜50代）と冷凍冷蔵車の実写真。人物が主役','cta:まずは話だけでも聞いてみませんか|LINEなら24時間メッセージOK。求人ダイヤルは採用担当が直接出ます'],
+  note:'背景写真の上にコピーを載せず、写真とコピーは左右分割（SPは上下）。人物写真が用意できるまではトラック単体写真で仮置き。'},
+ {n:'入口の振り分け',h:'あなたに合うページからご覧ください',
+  w:['cards:運送の経験がある方|今の職場と条件を比べてみてください。中型免許・4t経験は好待遇です;;未経験・ブランクがある方|最初は横に乗るところから。2tから始められます'],
+  note:'2枚の大型カード。それぞれ①経験者ページ／②未経験ページへ。回遊ループ（採用情報⇔求職者のみなさまへ⇔TOP）を断つ要。'},
+ {n:'総和らしさ',h:'「うちでは結構、仲良くやってます」',
+  w:['quote:大きい会社が合わなくてうちに来た人も、ここでは仲良くやってくれています。|代表 【要確認：氏名・掲載可否】','img:休憩中・朝礼など、スタッフ同士の自然な写真'],p:'少人数だから、顔と名前が一致する。困ったときにすぐ相談できる距離感です。',
+  note:'リンク：③総和で働く魅力'},
+ {n:'先輩ドライバー',h:'一緒に走る先輩たち',w:['pcards:Aさん（40代）|前職：大手運送会社／4t担当;;Bさん（50代）|前職：【要確認】／2t担当;;Cさん（30代）|未経験入社／2t担当'],note:'リンク：④先輩ドライバー紹介。40〜50代を前に並べ、年齢を書かずにターゲットを伝える。'},
+ {n:'1日の流れダイジェスト',h:'働く時間帯は3パターンから',w:['cards:朝7時スタート|【要確認】時頃に終業;;昼14時スタート|【要確認】;;夜20時スタート|【要確認】'],note:'リンク：⑤1日の流れと車両紹介'},
+ {n:'給与ダイジェスト',h:'収入の目安',w:['table:正社員（月給制）|月給35万円以上;;日給（正社員・アルバイト）|10,000円〜14,000円;;手当|家族手当・愛車手当・交通費（規定内）・資格取得支援'],note:'リンク：⑥給与・休日の考え方'},
+ {n:'よくある質問（抜粋）',w:['faq:40代・50代からの転職でも大丈夫ですか？|同業から転職して活躍している先輩が多数います。【要確認】;;中型免許がなくても応募できますか？|普通免許で2tから始められます。限定解除の支援もあります;;LINEで質問だけしてもいいですか？|はい。応募前のご相談だけでも歓迎です'],note:'リンク：⑦よくある質問'},
+ {n:'荷主様向け（小さめ）',h:'千葉県内の食品配送をお任せください',p:'スーパー・飲食店・ドラッグストア・仕分けセンターへの冷凍冷蔵配送。',w:['btns:業務案内を見る;;取引のお問い合わせ'],note:'求人が主役なのでトーンを落とした帯で。'},
+ {n:'お知らせ・ブログ',w:['cards:2026.xx.xx|記事タイトル;;2026.xx.xx|記事タイトル;;2026.xx.xx|記事タイトル']},
+ {n:'最終CTA',w:['cta']}
+ ]},
+{no:2,name:'業務案内',kind:'既存',slug:'/work',grp:'会社',
+ purpose:'荷主向けの信頼づくりと、安全への姿勢の明示（煽り運転等のクレーム抑止）。求職者には「どんな荷物をどこへ運ぶか」の具体像を渡す。',
+ secs:[
+ {hero:1,n:'ページヒーロー',h:'地域の「食」を、冷たいまま届ける',p:'千葉県印西市を拠点に、冷凍・冷蔵食品の集荷と配送を行っています。'},
+ {n:'事業内容',h:'食品のルート配送',w:['cards:主な配送先|スーパー、飲食店、ドラッグストア、仕分けセンター;;取り扱い|冷凍・冷蔵食品を中心に【要確認：常温の有無】;;エリア|関東一円（遠くても埼玉・神奈川・栃木まで）']},
+ {n:'車両と温度管理',w:['img:2t・4t冷凍冷蔵車の外観','table:保有車両|2t冷凍冷蔵車 【要確認】台／4t冷凍冷蔵車 【要確認】台;;温度帯|【要確認】']},
+ {n:'安全への取り組み',h:'安全運転は、運送会社のいちばんの仕事です',w:['cards:ドライブレコーダー|全車に搭載し、運転を記録・振り返り;;デジタルタコメーター|速度・休憩を管理し、無理のない運行;;運転教育|定期的な指導で運転技術とマナーを向上'],
+  note:'走行マナーへのご意見は「⑥お問い合わせ」の専用区分へ誘導するリンクを置く（固定電話への入電を減らす）。'},
+ {n:'今後の展開（予告枠）',p:'平ボディ車による配送業務も準備中です。【構想確定まで非表示可】',note:'平ボディ経験者の求人を出す際は、①経験者ページの小枠とセットで公開。'},
+ {n:'荷主様CTA',w:['btns:取引のお問い合わせ'],note:'求職者向けには「一緒に走るドライバーを募集しています」バナーを併置。'}
+ ]},
+{no:3,name:'求職者のみなさまへ',kind:'既存',slug:'/about',grp:'求人',
+ purpose:'役割を「振り分けハブ」に転換。採用情報との重複を解消し、知りたいこと別に各ページへ送る。',
+ secs:[
+ {hero:1,n:'ページヒーロー',h:'総和の求人について、知りたいことから選んでください',p:'2t・4t冷凍冷蔵車のルートドライバーを募集しています。'},
+ {n:'2択の入口',w:['cards:運送の経験がある方へ|前職との違い、経験者の待遇を見る;;未経験・ブランクがある方へ|研修の流れ、免許支援を見る'],note:'TOPと同じ2択。ここが最も大きく目立つ要素。'},
+ {n:'早見表',h:'総和の仕事 早わかり',w:['table:車両|2t・4t冷凍冷蔵車;;仕事|食品のルート配送（ルート固定）;;エリア|関東一円・99％日帰り;;時間帯|7時／14時／20時スタートから選択;;給与|正社員 月給35万円以上／日給10,000〜14,000円;;休日|週休制（シフト）・年末年始・お盆・GW']},
+ {n:'知りたいこと別リンク',w:['cards:どんな雰囲気？|③総和で働く魅力;;誰と働く？|④先輩ドライバー紹介;;1日の流れは？|⑤1日の流れと車両紹介;;給料と休みは？|⑥給与・休日の考え方;;応募前の疑問|⑦よくある質問;;募集要項|④採用情報']},
+ {n:'CTA',w:['cta']}
+ ]},
+{no:4,name:'採用情報',kind:'既存',slug:'/recruit',grp:'求人',
+ purpose:'現状唯一滞在が長い（1分36秒）ページ。要項と応募方法に絞り「読み終えたら応募」に直結させる。JobPosting構造化データを実装。',
+ secs:[
+ {hero:1,n:'ページヒーロー',h:'募集要項',p:'ルートドライバー（2t・4t冷凍冷蔵車）'},
+ {n:'募集要項',w:['table:職種|① ルートドライバー（2t）<br>② ルートドライバー（4t）;;仕事内容|冷凍・冷蔵食品のルート配送。ルートは固定;;配送エリア|関東一円（遠くても埼玉・神奈川・栃木まで）、99％日帰り;;雇用形態|正社員・アルバイト;;応募資格|2t：普通自動車免許 ／ 4t：中型免許【要確認：免許区分】<br>中型免許・トラック・ダンプ経験者は好待遇;;勤務時間|実働8時間（残業あり）。7時／14時／20時スタートから選択（コースによる）;;給与|正社員：月給35万円以上<br>正社員・アルバイト：日給10,000〜14,000円;;諸手当|交通費（規定内）、愛車手当、家族手当、資格取得支援制度;;昇給|随時;;休日|週休制（シフト制）、年末年始、お盆、GW;;保険|雇用・労災・健康・厚生年金;;勤務地|印西営業所 【要確認：住所】'],
+  note:'現行の「募集資格：18歳〜」は前面に出さない。年齢の上限・幅の指定は記載しない（法令順守）。'},
+ {n:'選考の流れ',w:['steps:LINE・電話・フォームで応募;;面接日を決定;;面接（見学も可【要確認】）;;内定・入社']},
+ {n:'応募方法',h:'応募しやすい方法でどうぞ',w:['cards:LINEで応募・相談|QRコード／友だち追加ボタン【要確認：アカウント】;;求人ダイヤル|070-6965-8178（採用担当直通）受付時間【要確認】;;応募フォーム|下の簡易フォームから']},
+ {n:'簡易応募フォーム',w:['table:お名前（必須）|入力欄;;電話番号（必須）|入力欄;;連絡のつきやすい時間帯|選択;;お持ちの免許|普通／準中型／中型／大型;;運送の経験|あり／なし;;ご質問など|自由記入'],note:'現行の住所・メール確認欄などは削除し、入力負担を下げる。'}
+ ]},
+{no:5,name:'会社概要',kind:'既存',slug:'/information',grp:'会社',
+ purpose:'会社の実在性と信頼性の担保。固定電話はこのページとお問い合わせだけに載せる（荷主向け）。',
+ secs:[
+ {hero:1,n:'ページヒーロー',h:'会社概要'},
+ {n:'代表あいさつ',w:['img:代表の写真【要確認：掲載可否】'],p:'地域の「食」を陰ながら支える存在として…（現行あいさつ文をリライト）'},
+ {n:'会社データ',w:['table:社名|株式会社総和;;代表者|【要確認】;;設立|【要確認】;;本社|【要確認：住所】;;印西営業所|千葉県印西市草深十町歩1240-28【要確認】;;事業内容|一般貨物自動車運送事業（食品配送）;;許可番号|【要確認】;;保有車両|【要確認】;;従業員数|【要確認】;;電話|0476-46-7825（取引・一般のお問い合わせ）']},
+ {n:'アクセス',w:['img:Googleマップ（本社）','img:Googleマップ（印西営業所）']},
+ {n:'沿革',w:['table:年|出来事（【要確認】）'],note:'有限会社→株式会社の変更年があれば記載し、表記ゆれの理由を明示。'}
+ ]},
+{no:6,name:'お問い合わせ',kind:'既存',slug:'/contact',grp:'会社',
+ purpose:'荷主・一般向けの窓口。求人はLINE・携帯へ振り分け、走行へのご意見は専用区分で受けて固定電話の負担を減らす。',
+ secs:[
+ {hero:1,n:'ページヒーロー',h:'お問い合わせ'},
+ {n:'求人の方はこちら',w:['cta:求人へのご応募・ご質問はこちらから|採用担当が直接対応します'],note:'ページ冒頭に配置。'},
+ {n:'お問い合わせフォーム',w:['table:お問い合わせ種別（必須）|配送のご依頼・お取引／走行に関するご意見／その他;;会社名|入力欄;;お名前（必須）|入力欄;;電話番号|入力欄;;メールアドレス（必須）|入力欄;;日時・場所・車両番号|「走行に関するご意見」選択時のみ表示;;内容（必須）|自由記入'],
+  note:'種別で通知先を分けられる設計に。'},
+ {n:'お電話',p:'0476-46-7825　受付時間【要確認】'}
+ ]},
+{no:7,name:'ブログ',kind:'既存',slug:'/blog',grp:'会社',
+ purpose:'2021年8月で停止中。バージョンアップ時のブログ代行（2日に1記事）の受け皿。求人キーワードでの流入とAI検索での露出を狙う。',
+ secs:[
+ {hero:1,n:'ページヒーロー',h:'総和のブログ'},
+ {n:'カテゴリ',w:['tabs:すべて;;求人・働き方;;現場の様子;;お知らせ']},
+ {n:'記事一覧',w:['cards:記事サムネイル|タイトル・日付・カテゴリ;;記事サムネイル|タイトル・日付・カテゴリ;;記事サムネイル|タイトル・日付・カテゴリ;;記事サムネイル|タイトル・日付・カテゴリ;;記事サムネイル|タイトル・日付・カテゴリ;;記事サムネイル|タイトル・日付・カテゴリ']},
+ {n:'記事下の固定CTA',w:['cta'],note:'記事テーマ例：印西市 ドライバー 求人／冷凍車ドライバーの仕事内容／2tルート配送は未経験でもできる？／中型免許の限定解除とは／40代からのトラック転職。旧記事の「有限会社」表記は修正。'}
+ ]},
+{no:8,name:'経験者ドライバーの方へ',kind:'新規',slug:'/experienced',grp:'求人',
+ purpose:'40〜50代の運送経験者が「今より良い条件か」を確かめるページ。年齢は書かず、比較と待遇で判断材料を渡す。',
+ secs:[
+ {hero:1,n:'ページヒーロー',h:'経験があるなら、条件で選んでください。',p:'中型免許・トラック経験のある方は好待遇でお迎えします。',w:['facts:正社員 月給35万円以上;;99％日帰り;;家族手当あり']},
+ {n:'今の職場と比べる',h:'今の職場と比べてみてください',w:['table:帰宅|総和：99％日帰り（関東一円）;;働く時間|総和：7時／14時／20時スタートから選べる;;ルート|総和：固定ルート。毎日同じ道・同じ納品先;;給与|総和：正社員は月給35万円以上;;人間関係|総和：少人数。顔が見える距離;;荷役|総和：【要確認：手積み・カゴ車など】'],
+  note:'左列に「チェック項目」、右列に総和の回答。他社を名指しで比べない。'},
+ {n:'経験者の待遇',w:['cards:4tを任せます|中型免許保有者は4tルートを担当【要確認】;;経験を給与に反映|経験・免許に応じて日給・月給を決定【要確認】;;研修は短めに|横乗りはルートを覚える分だけ【要確認：日数】']},
+ {n:'転職した先輩の声',w:['quote:前の会社は大きすぎて…ここは社長との距離が近く、相談しやすいです。|Aさん（40代）前職：大手運送会社【要確認：実インタビュー】'],note:'リンク：④先輩ドライバー紹介'},
+ {n:'平ボディ経験者の方へ（予告枠）',p:'平ボディでの配送も準備中です。経験のある方はお気軽にご相談ください。【構想確定まで非表示】'},
+ {n:'CTA',w:['cta:まずは条件だけ聞いてみませんか|今の職場と比べてから決めてください']}
+ ]},
+{no:9,name:'未経験・ブランクのある方へ',kind:'新規',slug:'/beginner',grp:'求人',
+ purpose:'横乗り研修と限定解除支援で、未経験・ブランクの不安を一つずつ消す。',
+ secs:[
+ {hero:1,n:'ページヒーロー',h:'最初は、横に乗るところから。',p:'普通免許があれば2tから始められます。未経験で入社した先輩も多数在籍しています。'},
+ {n:'よくある不安と答え',w:['cards:道を覚えられるか不安|ルートは固定。先輩と一緒に走りながら覚えます;;積み込みが分からない|積み込み・荷下ろしもマンツーマンで教えます;;大きい車が怖い|最初は2tから。慣れてから4tへ;;ブランクがある|運転感覚が戻るまで横乗りを延長できます【要確認】']},
+ {n:'研修の流れ',w:['steps:先輩の横に乗ってルートと作業を覚える（【要確認】日程度）;;先輩が横に乗った状態で運転;;一人で2tルートを担当;;希望者は限定解除・中型へステップアップ']},
+ {n:'免許取得の支援',h:'限定解除・中型免許の取得を支援します',p:'資格取得支援制度があります。【要確認：費用負担の範囲・条件】',w:['img:免許区分の図（普通・準中型・中型、運転できる車の目安）']},
+ {n:'未経験入社の先輩の声',w:['quote:最初は不安でしたが、横に乗って教えてもらえたのですぐ慣れました。|Cさん（30代）未経験入社【要確認：実インタビュー】']},
+ {n:'CTA',w:['cta:研修のことだけでも聞いてみませんか|LINEで気軽に質問できます']}
+ ]},
+{no:10,name:'総和で働く魅力',kind:'新規',slug:'/appeal',grp:'求人',
+ purpose:'売りの「アットホーム」を、抽象語ではなく具体的な場面と声で伝える。',
+ secs:[
+ {hero:1,n:'ページヒーロー',h:'大きな会社が合わなかった人が、ここでは仲良くやっています。'},
+ {n:'魅力4つ',w:['cards:しがらみが少ない|派閥や面倒な上下関係はありません【要確認：具体例】;;顔が見える距離|社長にも直接相談できる少人数の会社です;;家庭と両立できる|99％日帰り。時間帯も選べます;;家族を大切にできる待遇|家族手当・愛車手当があります']},
+ {n:'代表の言葉',w:['img:代表の写真','quote:大きい会社が合わなくて来た人も、うちでは結構仲良くやってくれています。|代表【要確認】']},
+ {n:'職場の写真',w:['img:事務所・駐車場・休憩の様子（3〜6枚のギャラリー）']},
+ {n:'CTA',w:['cta']}
+ ]},
+{no:11,name:'先輩ドライバー紹介',kind:'新規',slug:'/staff',grp:'求人',
+ purpose:'「誰と働くか」「誰に教わるか」を顔で見せる。40〜50代を中心に配置。',
+ secs:[
+ {hero:1,n:'ページヒーロー',h:'一緒に走る先輩たちです'},
+ {n:'一覧',w:['pcards:Aさん（40代）|入社【要確認】年／前職：大手運送／4t・朝便;;Bさん（50代）|入社【要確認】年／前職：【要確認】／2t・昼便;;Cさん（30代）|入社【要確認】年／未経験入社／2t・朝便']},
+ {n:'個別インタビュー（人数分くり返し）',w:['img:先輩の写真（運転席・荷台前など）','table:総和に入ったきっかけ|回答;;今の仕事|回答;;総和のいいところ|回答;;応募を迷っている人へ|回答']},
+ {n:'教育担当の紹介',h:'横乗りで教えるのは、この人です',w:['pcards:教育担当 Dさん|ドライバー歴【要確認】年。「分かるまで何度でも横に乗ります」']},
+ {n:'CTA',w:['cta']}
+ ]},
+{no:12,name:'1日の流れと車両紹介',kind:'新規',slug:'/day',grp:'求人',
+ purpose:'勤務時間帯・ルート・車両を具体的に見せ、働く姿を想像できるようにする。',
+ secs:[
+ {hero:1,n:'ページヒーロー',h:'1日の流れと、乗るトラック'},
+ {n:'時間帯別の1日',w:['tabs:朝7時スタート;;昼14時スタート;;夜20時スタート','table:7:00|出社・点呼・車両点検【要確認】;;7:30|センターで積み込み;;8:30〜|配送（【要確認】件）;;12:00|休憩;;13:00〜|配送・帰庫;;16:00|日報・退勤'],note:'タブで3パターン切り替え。各時間帯の実際の流れはヒアリングで確定。'},
+ {n:'ルートの例',w:['cards:配送先|スーパー・飲食店・ドラッグストアなど;;1日の件数|【要確認】件;;走るエリア|印西市を中心に【要確認】']},
+ {n:'車両紹介',w:['tabs:2t冷凍冷蔵車;;4t冷凍冷蔵車','img:外観','img:運転席（ドラレコ・デジタコの位置）','img:荷台・冷凍機'],note:'2t／4tそれぞれ外観・運転席・荷台の3カット。AT/MT【要確認】も明記。'},
+ {n:'CTA',w:['cta']}
+ ]},
+{no:13,name:'給与・休日の考え方',kind:'新規',slug:'/salary',grp:'求人',
+ purpose:'日給月給→月給の仕組みと収入の目安、休みの取り方を透明にして、家庭持ちが生活設計できるようにする。',
+ secs:[
+ {hero:1,n:'ページヒーロー',h:'給与と休日の考え方'},
+ {n:'給与の基本',w:['table:正社員（月給制）|月給35万円以上;;日給（正社員・アルバイト）|10,000円〜14,000円;;昇給|随時']},
+ {n:'日給月給から月給へ',w:['steps:入社時は日給月給（日給×出勤日数）;;【要確認：条件・期間】;;月給制へ切り替え（月給35万円以上）'],note:'図解で見せる。切り替え条件はヒアリングで確定。'},
+ {n:'収入の目安',w:['cards:未経験・2tの場合|月収【要確認】万円程度;;経験者・4tの場合|月収【要確認】万円程度'],note:'モデル月収は実例ベースで。手当込みかどうかを明記。'},
+ {n:'手当',w:['cards:家族手当|【要確認：金額・条件】;;愛車手当|【要確認：内容】;;交通費|規定内支給;;資格取得支援|限定解除・中型免許など']},
+ {n:'休日の取り方',w:['table:休日|週休制（シフト制）【要確認：週◯日】;;長期休暇|年末年始・お盆・GW;;希望休|【要確認：出し方・締め切り】'],note:'「子どもの行事で休めるか」が伝わる一文を入れたい。'},
+ {n:'CTA',w:['cta']}
+ ]},
+{no:14,name:'よくある質問',kind:'新規',slug:'/faq',grp:'求人',
+ purpose:'応募前の不安を先回り。FAQPage構造化データでAI検索に「就職先」として拾われやすくする。',
+ secs:[
+ {hero:1,n:'ページヒーロー',h:'よくある質問'},
+ {n:'応募について',w:['faq:40代・50代からの転職でも大丈夫ですか？|同業から転職して活躍している先輩が多数います。【要確認】;;LINEで質問だけしてもいいですか？|はい。応募前のご相談だけでも歓迎です;;面接の前に見学できますか？|【要確認】;;面接には何を持っていけばいいですか？|【要確認】']},
+ {n:'仕事について',w:['faq:手積み・手降ろしはありますか？|【要確認】;;道を覚えるまでどのくらいかかりますか？|ルートは固定で、横乗りで覚えます。【要確認：目安】;;夜の時間帯の仕事はどんな内容ですか？|【要確認】;;事故やトラブルのときは？|会社がすぐ対応します。【要確認】']},
+ {n:'給与・待遇について',w:['faq:月給制にはいつ切り替わりますか？|【要確認】;;家族手当はいくらですか？|【要確認】;;休みの希望は出せますか？|【要確認】;;中型免許の取得費用は出ますか？|資格取得支援制度があります。【要確認】']},
+ {n:'CTA',w:['cta']}
+ ]}
+];
+
+const esc=s=>s.replace(/【要確認([^】]*)】/g,'<span class="ph-chk">【要確認$1】</span>');
+function part(item){
+  const i=item.indexOf(':');const t=i<0?item:item.slice(0,i);const v=i<0?'':item.slice(i+1);
+  const rows=v.split(';;');
+  switch(t){
+    case 'img':return `<div class="img">画像：${esc(v)}</div>`;
+    case 'cards':return `<div class="grid">${rows.map(r=>{const[a,b]=r.split('|');return `<div class="card"><b>${esc(a)}</b>${esc(b||'')}</div>`}).join('')}</div>`;
+    case 'pcards':return `<div class="grid">${rows.map(r=>{const[a,b]=r.split('|');return `<div class="card"><div class="ph">写真</div><b>${esc(a)}</b>${esc(b||'')}</div>`}).join('')}</div>`;
+    case 'table':return `<table>${rows.map(r=>{const[a,b]=r.split('|');return `<tr><th>${esc(a)}</th><td>${esc(b||'')}</td></tr>`}).join('')}</table>`;
+    case 'steps':return `<div class="steps">${rows.map(r=>`<div>${esc(r)}</div>`).join('')}</div>`;
+    case 'faq':return `<div class="faq">${rows.map(r=>{const[a,b]=r.split('|');return `<details><summary>${esc(a)}</summary><p>${esc(b)}</p></details>`}).join('')}</div>`;
+    case 'quote':{const[a,b]=v.split('|');return `<div class="quote">「${esc(a)}」<small>${esc(b||'')}</small></div>`}
+    case 'tabs':return `<div class="tabs">${rows.map(r=>`<span>${r}</span>`).join('')}</div>`;
+    case 'facts':return `<div class="facts">${rows.map(r=>`<span>${r}</span>`).join('')}</div>`;
+    case 'btns':return `<div class="btnrow">${rows.map(r=>`<span class="btn">${r}</span>`).join('')}</div>`;
+    case 'cta':{const[a,b]=v?v.split('|'):['まずは話だけでも聞いてみませんか','応募前のご質問だけでも大丈夫です'];
+      return `<div class="cta"><h3>${a}</h3><p>${b}</p><div class="row"><span class="b l">LINEで相談・応募する</span><span class="b t">求人ダイヤル 070-6965-8178</span><span class="b f">応募フォームへ</span></div></div>`}
+  }return '';
+}
+function draw(p){
+  document.getElementById('ttl').textContent=`${p.no}. ${p.name}`;
+  document.getElementById('meta').textContent=`${p.kind}ページ ／ ${p.slug}`;
+  document.getElementById('purpose').innerHTML=`<b>このページの役割：</b>${esc(p.purpose)}`;
+  const nav=['求職者のみなさまへ','働く魅力','先輩紹介','1日の流れ','給与・休日','よくある質問','採用情報','会社概要'];
+  let h=`<div class="hd"><div class="logo">ロゴ（2020年版CDR→SVG）</div><div class="gnav">${nav.map(n=>`<span>${n}</span>`).join('')}</div><div class="hcta"><span class="pill l">LINEで相談</span><span class="pill t">求人ダイヤル</span></div></div>`;
+  p.secs.forEach(s=>{
+    h+=`<section class="sec${s.hero?' hero':''}"><span class="lbl">${s.n}</span>`;
+    if(s.h)h+=`<h2>${esc(s.h)}</h2>`;
+    if(s.p)h+=`<p class="txt">${esc(s.p)}</p>`;
+    (s.w||[]).forEach(w=>h+=part(w));
+    if(s.note)h+=`<div class="note">${esc(s.note)}</div>`;
+    h+=`</section>`;
+  });
+  h+=`<div class="ft"><div class="cols"><div><b>株式会社総和</b><br>千葉県印西市<br>求人ダイヤル 070-6965-8178</div><div>求人：求職者のみなさまへ／経験者の方へ／未経験の方へ／働く魅力／先輩紹介／1日の流れ／給与・休日／よくある質問／採用情報</div><div>会社：業務案内／会社概要／ブログ／お問い合わせ</div></div>© 株式会社総和</div>`;
+  h+=`<div class="spbar"><div style="background:var(--line)">LINEで相談</div><div style="background:var(--orange)">電話する</div><div style="background:var(--navy)">応募フォーム</div></div>`;
+  document.getElementById('canvas').innerHTML=h;
+  document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',+b.dataset.no===p.no));
+  window.scrollTo(0,0);
+}
+const navEl=document.getElementById('nav');
+['求人','会社'].forEach(g=>{
+  navEl.insertAdjacentHTML('beforeend',`<div class="grp">${g==='求人'?'求人ページ':'会社ページ'}</div>`);
+  PAGES.filter(p=>p.grp===g).forEach(p=>navEl.insertAdjacentHTML('beforeend',`<button data-no="${p.no}"><span class="no">${p.no}</span>${p.name}<span class="tag ${p.kind==='新規'?'new':''}">${p.kind}</span></button>`));
+});
+navEl.addEventListener('click',e=>{const b=e.target.closest('button');if(b)draw(PAGES.find(p=>p.no==b.dataset.no))});
+document.querySelectorAll('.dev button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.dev button').forEach(x=>x.classList.toggle('on',x===b));
+  document.getElementById('canvas').classList.toggle('sp',b.dataset.d==='sp');
+}));
+draw(PAGES[0]);
+</script>
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>求職者のみなさまへ | 合同会社一葉</title>
+<meta name="description" content="神奈川県で外構工事を手がける合同会社一葉の採用ページ。家の顔をつくる仕事、何十年も残る仕事を、一緒にやりませんか。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== TOKENS ==========
+   墨(sumi)     #1f1c18  … 夜明け前の現場、濡れたモルタル
+   石(stone)    #e7e3db  … 乾いたコンクリートブロックの面
+   目地(joint)  #cfc9bd  … ブロックの目地
+   砂(sand)     #8c8579  … 砂利・砕石
+   真鍮(brass)  #b38b4d  … 使い込んだコテの柄
+================================ */
+:root{
+  --sumi:#1f1c18;
+  --sumi-2:#2b2722;
+  --stone:#e7e3db;
+  --stone-2:#dcd7cd;
+  --joint:#cfc9bd;
+  --sand:#8c8579;
+  --ink:#24211d;
+  --ink-2:#5b554c;
+  --brass:#b38b4d;
+  --brass-l:#cfa865;
+  --serif:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;
+  --sans:'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
+  --roman:'Cormorant Garamond','Times New Roman',serif;
+  --wrap:1180px;
+  --gut:72px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--stone);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.8;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px;}
+
+/* ブロック積みの目地パターン（このページの象徴） */
+.joints{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='120'%3E%3Cpath d='M0 .5H240M0 60.5H240M120.5 0V60M.5 60V120M240 60V120' stroke='%23ffffff' stroke-opacity='.06' fill='none'/%3E%3C/svg%3E");
+}
+.joints-dark{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='120'%3E%3Cpath d='M0 .5H240M0 60.5H240M120.5 0V60M.5 60V120M240 60V120' stroke='%231f1c18' stroke-opacity='.07' fill='none'/%3E%3C/svg%3E");
+}
+
+/* ========== PHOTO PLACEHOLDER ========== */
+.ph{position:relative;overflow:hidden;background:#a9a398;display:flex;align-items:center;justify-content:center;}
+.ph.dk{background:#3a352e;}
+.ph.dk2{background:#26231f;}
+.ph.md{background:#7b7468;}
+.ph span{position:relative;z-index:1;max-width:30em;padding:0 24px;font-size:11px;font-weight:300;line-height:1.9;letter-spacing:.06em;text-align:center;color:rgba(255,255,255,.55);}
+.ph span::before{content:'PHOTO';display:block;font-family:var(--roman);font-style:italic;font-size:13px;letter-spacing:.2em;margin-bottom:6px;color:rgba(255,255,255,.35);}
+
+/* ========== REVEAL ========== */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.75,.2,1),transform .9s cubic-bezier(.2,.75,.2,1);}
+.rvL{opacity:0;transform:translateX(-32px);transition:opacity .9s cubic-bezier(.2,.75,.2,1),transform .9s cubic-bezier(.2,.75,.2,1);}
+.rvR{opacity:0;transform:translateX(32px);transition:opacity .9s cubic-bezier(.2,.75,.2,1),transform .9s cubic-bezier(.2,.75,.2,1);}
+.rv.on,.rvL.on,.rvR.on{opacity:1;transform:none;}
+.dl1{transition-delay:.12s;}
+.dl2{transition-delay:.26s;}
+.dl3{transition-delay:.4s;}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .rv,.rvL,.rvR{opacity:1;transform:none;transition:none;}
+  .scroll-line{animation:none !important;}
+}
+
+/* ========== HEADER ========== */
+.hd{position:fixed;inset:0 0 auto;z-index:100;height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(31,28,24,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06);}
+.hd-logo{display:flex;align-items:baseline;gap:12px;color:#fff;}
+.hd-logo b{font-family:var(--serif);font-weight:800;font-size:20px;letter-spacing:.12em;}
+.hd-logo i{font-family:var(--roman);font-size:14px;color:var(--brass-l);letter-spacing:.14em;}
+.hd-nav{display:flex;align-items:center;gap:28px;}
+.hd-nav a{font-size:12px;color:rgba(255,255,255,.62);letter-spacing:.08em;transition:color .2s;}
+.hd-nav a:hover{color:#fff;}
+.hd-nav .hd-cta{color:var(--sumi);background:var(--brass-l);padding:10px 22px;font-weight:700;letter-spacing:.14em;transition:background .2s;}
+.hd-nav .hd-cta:hover{background:#ddb977;color:var(--sumi);}
+
+/* ========== 01 HERO ========== */
+.hero{position:relative;height:100vh;min-height:680px;display:flex;align-items:flex-end;overflow:hidden;color:#fff;}
+.hero .ph{position:absolute;inset:0;}
+.hero .ph span{transform:translateY(-12vh);}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,28,24,.25) 0%,rgba(31,28,24,.05) 35%,rgba(31,28,24,.82) 100%);pointer-events:none;}
+.hero-in{position:relative;z-index:2;width:100%;padding:0 var(--gut) 110px;}
+.hero-en{display:block;font-family:var(--roman);font-style:italic;font-size:clamp(16px,1.6vw,20px);color:var(--brass-l);letter-spacing:.08em;margin-bottom:22px;}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(42px,7vw,96px);line-height:1.22;letter-spacing:.02em;}
+.hero h1 .ln{display:block;}
+.hero-sub{margin-top:30px;max-width:34em;font-size:14px;font-weight:300;line-height:2.1;color:rgba(255,255,255,.72);}
+.bc{position:absolute;z-index:2;left:var(--gut);bottom:34px;display:flex;gap:10px;font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.45);}
+.bc a:hover{color:#fff;}
+.bc .sep{color:rgba(255,255,255,.25);}
+.scroll{position:absolute;z-index:2;right:var(--gut);bottom:34px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.scroll small{writing-mode:vertical-rl;font-family:var(--roman);font-style:italic;font-size:13px;letter-spacing:.2em;color:rgba(255,255,255,.5);}
+.scroll-line{width:1px;height:56px;background:rgba(255,255,255,.55);transform-origin:top;animation:drop 2.2s ease-in-out infinite;}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+
+/* 共通テキスト部品 */
+.en{display:block;font-family:var(--roman);font-style:italic;font-size:17px;color:var(--brass);letter-spacing:.06em;margin-bottom:22px;}
+.h2{font-family:var(--serif);font-weight:800;font-size:clamp(30px,3.9vw,50px);line-height:1.5;letter-spacing:.03em;}
+.rule{width:40px;height:2px;background:var(--brass);margin:34px 0;}
+.body{font-size:15px;font-weight:300;line-height:2.35;color:var(--ink-2);max-width:31em;}
+.body p+p{margin-top:1.2em;}
+
+/* ========== 02 本質（写真左 × テキスト右） ========== */
+.s-essence{padding:170px 0 150px;}
+.essence{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut);display:grid;grid-template-columns:1.05fr 1fr;gap:96px;align-items:center;}
+.essence-ph{aspect-ratio:4/5;}
+.essence-cap{margin-top:14px;font-size:11px;color:var(--sand);letter-spacing:.06em;}
+
+/* ========== 03 PULL QUOTE 1 ========== */
+.s-pull1{background-color:var(--sumi);color:#fff;padding:150px var(--gut);text-align:center;}
+.pull1{font-family:var(--serif);font-weight:800;font-size:clamp(28px,4.6vw,60px);line-height:1.6;letter-spacing:.03em;max-width:16em;margin:0 auto;}
+.pull1-by{display:block;margin-top:44px;font-family:var(--roman);font-style:italic;font-size:16px;color:var(--brass-l);letter-spacing:.1em;}
+
+/* ========== 04 決定的な瞬間（全幅写真＋右下オーバーレイ） ========== */
+.s-moment{position:relative;background:var(--sumi);}
+.moment-ph{width:100%;height:min(72vw,760px);min-height:460px;}
+.moment-box{position:absolute;right:0;bottom:0;width:min(560px,100%);background:var(--sumi);color:#fff;padding:56px 64px 60px;}
+.moment-box .en{color:var(--brass-l);}
+.moment-copy{font-family:var(--serif);font-weight:700;font-size:clamp(22px,2.6vw,32px);line-height:1.75;letter-spacing:.03em;margin-bottom:24px;}
+.moment-body{font-size:14px;font-weight:300;line-height:2.25;color:rgba(255,255,255,.66);}
+
+/* ========== 05 スケール（テキスト左 × 写真右） ========== */
+.s-scale{padding:170px 0 190px;}
+.scale{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut);display:grid;grid-template-columns:1fr 520px;gap:100px;align-items:center;}
+.scale-visual{position:relative;}
+.scale-main{aspect-ratio:3/4;}
+.scale-sub{position:absolute;left:-56px;bottom:-56px;width:56%;aspect-ratio:1;border:10px solid var(--stone);}
+.scale-years{display:flex;align-items:baseline;gap:14px;margin-top:40px;padding-top:28px;border-top:1px solid var(--joint);}
+.scale-years b{font-family:var(--roman);font-weight:600;font-size:64px;line-height:1;color:var(--sumi);}
+.scale-years span{font-size:13px;color:var(--ink-2);line-height:1.8;}
+
+/* ========== 06 PULL QUOTE 2（2カラム テキストのみ） ========== */
+.s-pull2{background-color:var(--stone-2);padding:150px 0;}
+.pull2{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut);display:grid;grid-template-columns:1.1fr 1fr;gap:88px;align-items:start;}
+.pull2-copy{font-family:var(--serif);font-weight:800;font-size:clamp(32px,4.4vw,58px);line-height:1.5;letter-spacing:.03em;color:var(--sumi);}
+.pull2-body{padding-top:14px;border-left:2px solid var(--brass);padding-left:40px;}
+.pull2-body .body{max-width:none;}
+.pull2-sign{margin-top:30px;font-size:12px;color:var(--sand);letter-spacing:.08em;}
+
+/* ========== 07 技術習得（写真左 × テキスト右） ========== */
+.s-skill{padding:170px 0 120px;}
+.skill{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut);display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center;}
+.skill-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.skill-photos .ph:first-child{grid-column:1/-1;aspect-ratio:16/10;}
+.skill-photos .ph{aspect-ratio:1;}
+
+/* ========== 08 成長ステップ（タイムライン） ========== */
+.s-steps{padding:60px 0 170px;}
+.steps-head{max-width:var(--wrap);margin:0 auto 70px;padding:0 var(--gut);}
+.steps{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut);display:grid;grid-template-columns:repeat(4,1fr);position:relative;}
+.steps::before{content:'';position:absolute;left:var(--gut);right:var(--gut);top:27px;height:1px;background:var(--joint);}
+.step{position:relative;padding-right:32px;}
+.step-no{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:var(--stone);border:1px solid var(--brass);display:flex;align-items:center;justify-content:center;font-family:var(--roman);font-size:24px;font-weight:600;color:var(--brass);margin-bottom:28px;}
+.step:last-child .step-no{background:var(--brass);color:#fff;}
+.step-when{font-size:12px;color:var(--sand);letter-spacing:.08em;margin-bottom:8px;}
+.step h3{font-family:var(--serif);font-weight:800;font-size:22px;line-height:1.5;margin-bottom:14px;}
+.step p{font-size:13.5px;font-weight:300;line-height:2.1;color:var(--ink-2);}
+.steps-note{max-width:var(--wrap);margin:48px auto 0;padding:0 var(--gut);font-size:12px;color:var(--sand);}
+
+/* ========== 09 新ステージ宣言（フルスクリーン＋左テキスト） ========== */
+.s-stage{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden;}
+.s-stage .ph{position:absolute;inset:0;}
+.s-stage .ph span{margin-left:45%;}
+.s-stage::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(31,28,24,.9) 0%,rgba(31,28,24,.65) 42%,rgba(31,28,24,.05) 75%);pointer-events:none;}
+.stage-in{position:relative;z-index:2;padding:120px var(--gut);max-width:720px;}
+.stage-in .en{color:var(--brass-l);}
+.stage-in .h2{font-size:clamp(34px,4.8vw,64px);}
+.stage-in .body{color:rgba(255,255,255,.74);}
+.stage-in .rule{background:var(--brass-l);}
+
+/* ========== 10 キャリアパス 2×2 ========== */
+.s-career{padding:170px 0;}
+.career-head{max-width:var(--wrap);margin:0 auto 64px;padding:0 var(--gut);display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:end;}
+.career{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut);display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--joint);border:2px solid var(--joint);}
+.card{background:var(--stone);padding:52px 48px 48px;position:relative;}
+.card.feature{background:var(--sumi);color:#fff;}
+.card-route{font-size:12px;color:var(--sand);letter-spacing:.06em;margin-bottom:14px;}
+.card.feature .card-route{color:var(--brass-l);}
+.card h3{font-family:var(--serif);font-weight:800;font-size:clamp(22px,2.2vw,28px);line-height:1.5;margin-bottom:18px;}
+.card p{font-size:14px;font-weight:300;line-height:2.1;color:var(--ink-2);}
+.card.feature p{color:rgba(255,255,255,.7);}
+.badge{position:absolute;top:28px;right:28px;font-family:var(--roman);font-weight:600;font-size:14px;letter-spacing:.14em;color:var(--sumi);background:var(--brass-l);padding:3px 12px;}
+.card-flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
+.card-flow span{font-size:12px;border:1px solid var(--joint);padding:4px 12px;color:var(--ink-2);}
+.card.feature .card-flow span{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.75);}
+
+/* ========== 11 スタッフの声 ========== */
+.s-voice{background:var(--stone-2);padding:170px 0;}
+.voice-head{max-width:var(--wrap);margin:0 auto 80px;padding:0 var(--gut);}
+.voices{max-width:960px;margin:0 auto;padding:0 var(--gut);display:flex;flex-direction:column;gap:96px;}
+.voice{display:grid;grid-template-columns:300px 1fr;gap:64px;align-items:start;}
+.voice:nth-child(even){grid-template-columns:1fr 300px;}
+.voice:nth-child(even) .voice-ph{order:2;}
+.voice-ph{aspect-ratio:4/5;}
+.voice-q{font-family:var(--serif);font-weight:800;font-size:clamp(22px,2.4vw,28px);line-height:1.6;color:var(--sumi);margin-bottom:22px;}
+.voice-who{font-size:12px;color:var(--sand);letter-spacing:.06em;margin-bottom:22px;}
+.voice-who b{font-weight:500;color:var(--ink);margin-right:10px;font-size:14px;}
+.voice-note{display:inline-block;margin-top:18px;font-size:11px;color:#8a5a2b;background:rgba(179,139,77,.14);padding:3px 10px;}
+
+/* ========== 12 代表メッセージ ========== */
+.s-ceo{background-color:var(--sumi);color:#fff;padding:180px var(--gut);text-align:center;}
+.ceo-ph{width:150px;height:150px;border-radius:50%;margin:0 auto 48px;}
+.ceo-ph span{font-size:9px;}
+.ceo-ph span::before{font-size:10px;}
+.ceo-copy{font-family:var(--serif);font-weight:800;font-size:clamp(28px,4vw,50px);line-height:1.6;letter-spacing:.03em;margin-bottom:56px;}
+.ceo-body{max-width:34em;margin:0 auto;font-size:15px;font-weight:300;line-height:2.5;color:rgba(255,255,255,.74);text-align:left;}
+.ceo-body p+p{margin-top:1.4em;}
+.ceo-sign{margin-top:56px;font-size:13px;color:rgba(255,255,255,.55);letter-spacing:.08em;}
+.ceo-sign b{display:block;margin-top:8px;font-family:var(--serif);font-size:26px;font-weight:700;color:#fff;letter-spacing:.2em;}
+
+/* ========== 13 CTA ========== */
+.s-cta{padding:150px var(--gut);text-align:center;}
+.cta-copy{font-family:var(--serif);font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.6;margin-bottom:20px;}
+.cta-sub{font-size:14px;font-weight:300;color:var(--ink-2);line-height:2.1;margin-bottom:52px;}
+.cta-row{display:flex;justify-content:center;align-items:stretch;gap:20px;flex-wrap:wrap;}
+.btn{display:flex;flex-direction:column;justify-content:center;min-width:320px;padding:26px 40px;font-weight:700;letter-spacing:.12em;transition:background .25s,color .25s;}
+.btn-entry{background:var(--sumi);color:#fff;font-size:17px;}
+.btn-entry:hover{background:var(--brass);}
+.btn-tel{border:1.5px solid var(--sumi);color:var(--sumi);}
+.btn-tel:hover{background:var(--sumi);color:#fff;}
+.btn-tel small{font-size:11px;font-weight:400;letter-spacing:.08em;}
+.btn-tel strong{font-family:var(--roman);font-weight:600;font-size:30px;letter-spacing:.06em;line-height:1.3;}
+
+/* ========== 14 FOOTER ========== */
+.ft{background:var(--sumi);color:rgba(255,255,255,.6);padding:72px var(--gut) 40px;}
+.ft-in{max-width:var(--wrap);margin:0 auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.ft-logo b{display:block;font-family:var(--serif);font-weight:800;font-size:22px;color:#fff;letter-spacing:.12em;}
+.ft-logo i{font-family:var(--roman);color:var(--brass-l);letter-spacing:.14em;}
+.ft-info{margin-top:18px;font-size:12px;line-height:2;}
+.ft-nav{display:grid;grid-template-columns:repeat(2,auto);gap:10px 40px;font-size:12px;align-content:start;}
+.ft-nav a:hover{color:#fff;}
+.ft-copy{max-width:var(--wrap);margin:56px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-family:var(--roman);font-size:13px;letter-spacing:.08em;color:rgba(255,255,255,.35);}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width:900px){
+  :root{--gut:24px;}
+  .hd{padding:0 20px;height:56px;}
+  .hd-nav a:not(.hd-cta){display:none;}
+  .hd-nav .hd-cta{padding:9px 16px;font-size:12px;}
+  .hd-logo i{display:none;}
+  .hero{min-height:600px;}
+  .hero-in{padding-bottom:96px;}
+  .hero-sub{font-size:13px;}
+  .scroll{display:none;}
+  .bc{bottom:28px;}
+  .s-essence,.s-scale,.s-skill,.s-career,.s-voice{padding:100px 0;}
+  .s-steps{padding:20px 0 100px;}
+  .essence,.scale,.skill,.pull2,.career-head{grid-template-columns:1fr;gap:48px;}
+  .scale-visual{order:-1;margin:0 0 40px 28px;}
+  .scale-sub{left:-28px;bottom:-40px;border-width:6px;}
+  .s-pull1,.s-pull2{padding:100px var(--gut);}
+  .s-pull2 .pull2{padding:0;}
+  .pull2-body{padding-left:24px;}
+  .moment-ph{height:70vh;min-height:420px;}
+  .moment-box{position:relative;width:100%;padding:44px var(--gut) 52px;}
+  .steps{grid-template-columns:1fr;gap:40px;}
+  .steps::before{left:calc(var(--gut) + 27px);right:auto;top:0;bottom:0;width:1px;height:auto;}
+  .step{display:grid;grid-template-columns:56px 1fr;column-gap:24px;padding:0;}
+  .step-no{grid-row:1/span 3;margin:0;}
+  .s-stage .ph span{margin:40vh 0 0;}
+  .s-stage::after{background:linear-gradient(180deg,rgba(31,28,24,.45) 0%,rgba(31,28,24,.9) 60%);}
+  .stage-in{padding:120px var(--gut) 90px;align-self:flex-end;}
+  .career{grid-template-columns:1fr;}
+  .card{padding:44px 28px 40px;}
+  .voice,.voice:nth-child(even){grid-template-columns:1fr;gap:28px;}
+  .voice:nth-child(even) .voice-ph{order:0;}
+  .voice-ph{aspect-ratio:4/3;}
+  .voices{gap:72px;}
+  .s-ceo{padding:120px var(--gut);}
+  .s-cta{padding:100px var(--gut);}
+  .btn{min-width:0;width:100%;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="hd">
+  <a href="/" class="hd-logo" aria-label="合同会社一葉 トップへ"><b>一葉</b><i>Ichiyou</i></a>
+  <nav class="hd-nav" aria-label="ページ内ナビゲーション">
+    <a href="#work">仕事のこと</a>
+    <a href="#growth">成長ステップ</a>
+    <a href="#career">キャリア</a>
+    <a href="#message">代表メッセージ</a>
+    <a href="/contact" class="hd-cta">エントリー</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ===== 01 HERO ===== -->
+<section class="hero">
+  <div class="ph dk2"><span>夕暮れ時、完成したばかりの戸建ての門まわりを正面から。新しいブロック塀と門柱に西日が斜めに当たり、玄関ポーチの明かりが灯り始めた瞬間。人は入れず、家の「顔」だけを堂々と撮る</span></div>
+  <div class="hero-in">
+    <span class="hero-en rv">The face of a home, built by hand.</span>
+    <h1 class="rv dl1"><span class="ln">この家の顔は、</span><span class="ln">俺たちがつくった。</span></h1>
+    <p class="hero-sub rv dl2">門、塀、アプローチ。家族が毎日くぐる場所を、神奈川で13年つくり続けてきました。合同会社一葉は、腕で勝負する外構工事の会社です。</p>
+  </div>
+  <nav class="bc" aria-label="パンくずリスト">
+    <a href="/">TOP</a><span class="sep">/</span><a href="/recruit">採用情報</a><span class="sep">/</span><span>求職者のみなさまへ</span>
+  </nav>
+  <div class="scroll" aria-hidden="true"><small>Scroll</small><div class="scroll-line"></div></div>
+</section>
+
+<!-- ===== 02 仕事の本質（写真左 × テキスト右） ===== -->
+<section class="s-essence" id="work">
+  <div class="essence">
+    <div class="rvL">
+      <div class="ph essence-ph md"><span>完成した外構の門柱の前で、ランドセルを背負った子どもが振り返って手を振る後ろ姿（施主様のご家族に許可を得て撮影、顔は写さない）。門柱の表札と塀の目地がしっかり見えるローアングル</span></div>
+      <p class="essence-cap">施工例：戸建て外構（門まわり・ブロック塀）</p>
+    </div>
+    <div class="rvR">
+      <span class="en">What we really build</span>
+      <h2 class="h2">「いってきます」も<br>「ただいま」も、<br>この門を通っていく。</h2>
+      <div class="rule"></div>
+      <div class="body">
+        <p>外構は、家のいちばん外側にある仕事です。通りから家を見たとき、最初に目に入るのが門と塀。家に帰る家族が、毎日最初にくぐるのがアプローチです。</p>
+        <p>つまり俺たちがつくっているのは、ブロックやコンクリートではなく、その家の第一印象と、家族の毎日の通り道。だから一段も、一ミリも、手を抜けません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 PULL QUOTE 1 ===== -->
+<section class="s-pull1 joints">
+  <p class="pull1 rv">積んだ一段は、この先何十年も、家族の帰り道に立ち続ける。</p>
+  <span class="pull1-by rv dl1">Built to stand for decades.</span>
+</section>
+
+<!-- ===== 04 決定的な瞬間（全幅写真 + 右下オーバーレイ） ===== -->
+<section class="s-moment">
+  <div class="ph moment-ph dk"><span>雨上がりの現場。濡れて色が濃くなったコンクリートと、水たまりに映る曇り空。その奥で、レインウェアのまま水糸を張り直す職人の横顔。足元には泥のついた長靴とコテ</span></div>
+  <div class="moment-box rv">
+    <span class="en">The moment</span>
+    <p class="moment-copy">雨は何日も続いた。<br>工期は、待ってくれない。</p>
+    <p class="moment-body">止めるのは簡単だった。でも、引き渡しの日は決まっている。シートを張り、段取りを組み替え、雨の切れ間を読んで一工程ずつ前に進めた。最後のブロックを積み終えたとき、胸に来たのは達成感より先に、深い安堵だった。あれは、腕の見せどころだったと思う。</p>
+  </div>
+</section>
+
+<!-- ===== 05 スケール感（テキスト左 × 写真右） ===== -->
+<section class="s-scale joints-dark">
+  <div class="scale">
+    <div class="rvL">
+      <span class="en">Thirteen years in Kanagawa</span>
+      <h2 class="h2">あの街にも、この街にも。<br>俺たちの積んだ塀がある。</h2>
+      <div class="rule"></div>
+      <div class="body">
+        <p>建物は、いつか建て替えられることがあります。でも、しっかり基礎を打って積んだブロック塀は、驚くほど長くそこに残る。子どもが大きくなって、家族のかたちが変わっても、門だけは同じ場所で家を守っています。</p>
+        <p>現場の帰り道、昔手がけた塀の前を通りかかることがある。目地がまっすぐ通っているのを見ると、黙って少しだけ誇らしくなる。それがこの仕事です。</p>
+      </div>
+      <div class="scale-years">
+        <b>2013</b>
+        <span>平成25年4月 創業<br>神奈川県内の戸建て外構を中心に施工</span>
+      </div>
+    </div>
+    <div class="scale-visual rvR">
+      <div class="ph scale-main"><span>住宅街の道を少し高い位置から見下ろすアングル。手前から奥へ、一葉が施工した門まわり・ブロック塀が並ぶ通り。朝の柔らかい光で、塀のラインが奥まで続く奥行き感を出す</span></div>
+      <div class="ph scale-sub dk"><span>何年も前に施工したブロック塀の寄り。年月が経っても崩れていない、まっすぐな目地のアップ</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 06 PULL QUOTE 2（2カラム テキストのみ） ===== -->
+<section class="s-pull2">
+  <div class="pull2">
+    <p class="pull2-copy rvL">難しい現場ほど、<br>面白い。</p>
+    <div class="pull2-body rvR">
+      <div class="body">
+        <p>傾斜のきつい敷地。隣家との隙間が数十センチしかない境界。短い工期。図面どおりにはいかない現場ほど、職人の頭と手が試されます。</p>
+        <p>どう段取りを組むか、どこで工夫するか。自分の技術がなければ、この現場は終わらなかった。そう思える瞬間が、何よりの自信になる。毎日同じことの繰り返しではない、踏ん張る日も、穏やかに進める日もある。その波ごと楽しめるのが、この仕事の醍醐味です。</p>
+      </div>
+      <p class="pull2-sign">代表の言葉より</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 07 技術習得（写真左 × テキスト右） ===== -->
+<section class="s-skill" id="growth">
+  <div class="skill">
+    <div class="skill-photos rvL">
+      <div class="ph md"><span>代表が若手の後ろに立ち、水平器を当てながらブロックの通りを一緒に確認している場面。二人の手元と水平器の気泡にピントを合わせる</span></div>
+      <div class="ph"><span>モルタルを練る手元。スコップ、練り舟、飛び散るモルタルの質感</span></div>
+      <div class="ph dk"><span>使い込まれたコテ・ゴムハンマー・水糸が並ぶ道具箱の真上からの俯瞰</span></div>
+    </div>
+    <div class="rvR">
+      <span class="en">Skill grows with love for the work</span>
+      <h2 class="h2">経験は、あとから<br>ついてくる。<br>まず、好きになれるか。</h2>
+      <div class="rule"></div>
+      <div class="body">
+        <p>入社した日から上手な人はいません。道具の名前を覚え、モルタルの硬さを手で覚え、水糸一本の張り方で仕上がりが変わることを、現場で体に入れていく。</p>
+        <p>大事なのは、本気でこの仕事をやりたいと思えるかどうか。そして、いつかこの仕事を好きになってくれるかどうか。その気持ちさえあれば、技術は隣で全部見せます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 08 成長ステップ（タイムライン） ===== -->
+<section class="s-steps">
+  <div class="steps-head rv">
+    <span class="en">Four steps to a craftsman</span>
+    <h2 class="h2">道具を持った日から、<br>一現場を任される日まで。</h2>
+  </div>
+  <ol class="steps" style="list-style:none;">
+    <li class="step rv">
+      <div class="step-no">1</div>
+      <p class="step-when">入社〜半年</p>
+      <h3>現場と道具を知る</h3>
+      <p>資材の運搬、掘削、片付け。現場の流れと道具の使い方を、先輩の隣で覚えていく時期。</p>
+    </li>
+    <li class="step rv dl1">
+      <div class="step-no">2</div>
+      <p class="step-when">半年〜1年</p>
+      <h3>基礎を打つ</h3>
+      <p>丁張り、鉄筋、ベースコンクリート。見えなくなる部分こそ、仕上がりを決めることを知る。</p>
+    </li>
+    <li class="step rv dl2">
+      <div class="step-no">3</div>
+      <p class="step-when">1年〜3年</p>
+      <h3>ブロックを積む</h3>
+      <p>水糸を張り、一段ずつ通りを合わせる。自分が積んだ塀が、初めて家の顔になる。</p>
+    </li>
+    <li class="step rv dl3">
+      <div class="step-no">4</div>
+      <p class="step-when">3年〜</p>
+      <h3>一現場を任される</h3>
+      <p>段取りから仕上げまで、現場を丸ごと預かる。施主様の「ありがとう」を正面で受け取る立場へ。</p>
+    </li>
+  </ol>
+  <p class="steps-note">※期間は目安です。経験や習熟度に合わせて進めます。</p>
+</section>
+
+<!-- ===== 09 新ステージ宣言（フルスクリーン + 左テキスト） ===== -->
+<section class="s-stage">
+  <div class="ph dk2"><span>早朝、トラックの荷台に資材を積み込む作業風景をやや引きで。空がまだ青白い時間帯、ヘッドライトとトラックのシルエット。これから現場へ向かう「始まり」の空気感</span></div>
+  <div class="stage-in">
+    <span class="en rv">A new chapter</span>
+    <h2 class="h2 rv dl1">三つの現場を、<br>同時に動かせる<br>会社へ。</h2>
+    <div class="rule rv dl1"></div>
+    <div class="body rv dl2">
+      <p>一葉はいま、次の段階に進もうとしています。目指すのは、7〜8人の職人で、3つの現場を同時に動かせるチーム。</p>
+      <p>だからいま入る人は、その最初の仲間です。できあがった組織に入るのではなく、一緒に会社をつくっていく。そんな時期に立ち会えるのは、今だけです。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10 キャリアパス 2×2 ===== -->
+<section class="s-career" id="career">
+  <div class="career-head">
+    <div class="rv">
+      <span class="en">Career paths</span>
+      <h2 class="h2">どこから始めても、<br>道はつながっている。</h2>
+    </div>
+    <p class="body rv dl1">未経験からでも、経験を積んだ職人でも。それぞれの入り口から、一葉の柱になる道を用意しています。</p>
+  </div>
+  <div class="career">
+    <article class="card rv">
+      <p class="card-route">未経験からのスタート</p>
+      <h3>外構職人</h3>
+      <p>道具の持ち方から、隣で教えます。まずは現場の空気に慣れることから。学歴や前職は問いません。</p>
+      <div class="card-flow"><span>見習い</span><span>職人</span><span>一人前</span></div>
+    </article>
+    <article class="card rv dl1">
+      <p class="card-route">外構・エクステリアの経験者</p>
+      <h3>職長・現場リーダー</h3>
+      <p>腕に覚えのある方へ。あなたの技術を、一現場まるごと預ける形で活かしてください。</p>
+      <div class="card-flow"><span>職人</span><span>職長</span><span>現場リーダー</span></div>
+    </article>
+    <article class="card feature rv dl1">
+      <span class="badge">NEW</span>
+      <p class="card-route">3現場体制の立ち上げメンバー</p>
+      <h3>現場責任者</h3>
+      <p>これから増える現場を、代表と並んで動かす立場。段取り、施主様との打ち合わせ、若手の育成まで任せたいポジションです。</p>
+      <div class="card-flow"><span>職長</span><span>現場責任者</span><span>会社の柱</span></div>
+    </article>
+    <article class="card rv dl2">
+      <span class="badge">NEW</span>
+      <p class="card-route">技術を形に残したい方</p>
+      <h3>資格取得チャレンジ</h3>
+      <p>現場で積んだ経験を、資格という形で証明する道。ブロック建築技能士など、腕の証になる資格への挑戦を後押しします。</p>
+      <div class="card-flow"><span>実務経験</span><span>資格取得</span><span>技能の証明</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== 11 スタッフの声 ===== -->
+<section class="s-voice">
+  <div class="voice-head rv">
+    <span class="en">Voices from the site</span>
+    <h2 class="h2">現場で、<br>こんな瞬間があった。</h2>
+  </div>
+  <div class="voices">
+    <article class="voice rv">
+      <div class="ph voice-ph md"><span>職人Aさんのポートレート。施工した門柱の横に立ち、腕組みせず自然体で少し笑っている。背景は完成した外構</span></div>
+      <div>
+        <p class="voice-q">「自分が積んだ塀の前で、施主さんが写真を撮ってくれた。」</p>
+        <p class="voice-who"><b>職人Aさん</b>入社◯年目 / 前職：◯◯</p>
+        <div class="body"><p>初めて最初から最後まで任されたブロック塀でした。引き渡しの日、施主さんがスマホで門の写真を撮っていて、「家の顔ができた」と言ってくれた。帰りの車の中で、ずっとその言葉を思い出していました。</p></div>
+        <span class="voice-note">※サンプル原稿：取材後に差し替え</span>
+      </div>
+    </article>
+    <article class="voice rv">
+      <div class="ph voice-ph dk"><span>職人Bさんが現場でコテを手に作業中の横顔。真剣な表情。汗とモルタルのついた手元も入れる</span></div>
+      <div>
+        <p class="voice-q">「未経験の自分に、親方は一回もキレなかった。」</p>
+        <p class="voice-who"><b>職人Bさん</b>入社◯年目 / 未経験から入社</p>
+        <div class="body"><p>最初は水平器の見方もわからなかった。失敗した段を積み直すとき、親方は怒鳴るんじゃなくて、黙って横で一段積んで見せてくれた。あの背中を見て、この人の下で覚えたいと思いました。</p></div>
+        <span class="voice-note">※サンプル原稿：取材後に差し替え</span>
+      </div>
+    </article>
+    <article class="voice rv">
+      <div class="ph voice-ph"><span>職長クラスのCさんが、図面を片手に現場全体を見渡している引きの1枚。腰道具、ヘルメットなしでも可（安全上問題ない場面で）</span></div>
+      <div>
+        <p class="voice-q">「工期ギリギリの現場ほど、終わったあとの一服がうまい。」</p>
+        <p class="voice-who"><b>職長Cさん</b>経験◯年 / 経験者として入社</p>
+        <div class="body"><p>段取りを何度も組み替えて、雨の切れ間を狙って仕上げた現場がありました。全部終わって片付けたあと、親方と缶コーヒーを飲みながら完成した門を眺めた時間。あれがあるから、またやれるんだと思います。</p></div>
+        <span class="voice-note">※サンプル原稿：取材後に差し替え</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== 12 代表メッセージ ===== -->
+<section class="s-ceo joints" id="message">
+  <div class="ph ceo-ph md rv"><span>代表のポートレート。完成した外構の前で正面から</span></div>
+  <p class="ceo-copy rv">一から、本気で教えます。<br>そして、背中でも伝えていきたい。<br>だから、ついてきてほしい。</p>
+  <div class="ceo-body rv dl1">
+    <p>教えることから、逃げるつもりはありません。わからないことは、わかるまで何度でも説明します。そのうえで、現場では自分が先頭に立ってやって見せる。言葉と背中、その両方で受け取った技術は、きっと一生ものになると思っています。</p>
+    <p>正直、楽な仕事ではありません。雨の中で工期に追われることもあります。それでも、難しい現場を自分の腕でやり遂げたときの達成感は、ほかの仕事ではなかなか味わえないものです。穏やかに楽しく進められる日もある。毎日が同じではないところが、この仕事のいいところです。</p>
+    <p>経験はなくても大丈夫です。本気でこの仕事をやりたいと思える人、この仕事を好きになってくれる人と、一緒に汗をかきたい。何十年も残る家の顔を、一緒につくっていきましょう。</p>
+  </div>
+  <p class="ceo-sign rv dl2">合同会社一葉 代表<b>◯◯ ◯◯</b></p>
+</section>
+
+<!-- ===== 13 CTA ===== -->
+<section class="s-cta joints-dark">
+  <p class="cta-copy rv">まずは、現場を見に来ませんか。</p>
+  <p class="cta-sub rv dl1">話を聞くだけでも大丈夫です。<br>エントリーフォーム、またはお電話でお気軽にご連絡ください。</p>
+  <div class="cta-row rv dl2">
+    <a href="/contact" class="btn btn-entry">エントリーする</a>
+    <a href="tel:000-0000-0000" class="btn btn-tel"><small>お電話でのお問い合わせ</small><strong>000-0000-0000</strong><small>受付時間：【要確認】</small></a>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== 14 FOOTER ===== -->
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-logo">
+      <b>合同会社一葉</b><i>Ichiyou</i>
+      <p class="ft-info">外構工事・エクステリア工事<br>対応エリア：神奈川県内<br>創業：平成25年4月</p>
+    </div>
+    <nav class="ft-nav" aria-label="フッターナビゲーション">
+      <a href="/">TOP</a>
+      <a href="/recruit">採用情報</a>
+      <a href="#work">仕事のこと</a>
+      <a href="#career">キャリアパス</a>
+      <a href="#message">代表メッセージ</a>
+      <a href="/contact">エントリー</a>
+    </nav>
+  </div>
+  <p class="ft-copy">&copy; Ichiyou LLC. All rights reserved.</p>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.rv,.rvL,.rvR');
+  if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('on');});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}
+    });
+  },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>
