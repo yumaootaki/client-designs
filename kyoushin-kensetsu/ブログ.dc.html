@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>ブログ｜有限会社協進建設｜現場日誌・採用ブログ</title>
+<link rel="icon" type="image/png" sizes="48x48" href="images/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="有限会社協進建設">
+<meta property="og:image" content="images/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#ffffff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal}
+@keyframes bleedReveal{0%{opacity:0;transform:translateY(26px);filter:blur(8px)}100%{opacity:1;transform:translateY(0);filter:blur(0)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;scroll-behavior:auto !important;transition:none !important}}
+.ph{background:#CBE0E9;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.06) 0 14px,rgba(0,0,0,0.04) 14px 28px);display:flex;align-items:center;justify-content:center;text-align:center;color:rgba(0,41,59,0.5);font-family:'Outfit',sans-serif;letter-spacing:0.16em;font-size:0.78rem;text-transform:uppercase}
+
+/* ===== add.css 貼り付け ここから（ブログ一覧＝parts222系） ===== */
+.parts222_section{background:#fff;padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,6vw,7rem) clamp(4rem,8vw,6rem)}
+.parts222_section > h2{text-align:center;font-family:'Outfit',sans-serif;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;font-size:clamp(1.5rem,1rem + 1.8vw,2.1rem);color:#00293B;margin:0 auto clamp(2.4rem,5vw,3.6rem);max-width:1280px}
+.parts222_wrap{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:clamp(2.4rem,4vw,3.2rem)}
+@media(min-width:992px){.parts222_wrap{grid-template-columns:minmax(0,1fr) 300px;align-items:start;gap:clamp(2rem,4vw,3.5rem)}}
+.parts222_post_list{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.4rem,3vw,1.8rem);list-style:none;margin:0;padding:0}
+@media(max-width:600px){.parts222_post_list{grid-template-columns:1fr}}
+.parts222_post_wrap{border:1px solid rgba(0,41,59,0.1);background:#fff;transition:box-shadow .3s,transform .3s}
+.parts222_post_wrap:hover{box-shadow:0 12px 30px rgba(0,0,0,0.1);transform:translateY(-3px)}
+.parts222_post_wrap > a{display:block;text-decoration:none;color:inherit}
+.parts222_post_img{position:relative;height:clamp(170px,20vw,210px);overflow:hidden}
+.parts222_post_img img{width:100%;height:100%;object-fit:cover;display:block}
+.parts222_post_status{display:flex;align-items:center;gap:0.9rem;flex-wrap:wrap;padding:1.3rem 1.4rem 0}
+.parts222_post_date{font-family:'Outfit',sans-serif;font-size:0.9rem;letter-spacing:0.08em;color:#4A7489}
+.parts222_post_category{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:400;font-size:0.72rem;letter-spacing:0.04em;color:#3C6C82;background:#E8F3FC;border:1px solid rgba(0,41,59,0.14);padding:0.2rem 0.7rem;border-radius:1px}
+.parts222_post_title-excerpt{padding:0.7rem 1.4rem 1.5rem}
+.parts222_post_title{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:1.06rem;line-height:1.6;letter-spacing:0.02em;color:#00293B;margin:0}
+.parts222_pagenation{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0.5rem;margin-top:clamp(2.6rem,5vw,3.6rem)}
+.parts222_pagenation a,.parts222_pagenation span{font-family:'Outfit',sans-serif;font-size:0.9rem;letter-spacing:0.04em;color:#3C6C82;text-decoration:none;min-width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;padding:0 0.7rem;border:1px solid rgba(0,41,59,0.18);transition:background .25s,color .25s,border-color .25s}
+.parts222_pagenation a:hover{border-color:var(--accent,#1F63B5);color:var(--accent,#1F63B5)}
+.parts222_pagenation .pagination_num.current{background:var(--accent,#1F63B5);border-color:var(--accent,#1F63B5);color:#fff}
+.parts222_pagenation .pagination_num{display:none}
+@media(min-width:1200px){.parts222_pagenation .pagination_num{display:inline-flex}}
+.parts222_sidebar{display:flex;flex-direction:column;gap:clamp(1.8rem,3vw,2.6rem)}
+.parts222_sidebar_wrap{}
+.parts222_sidebar_wrap h3{font-family:'Outfit',sans-serif;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:0.92rem;color:#00293B;margin:0 0 0.6rem;padding-bottom:0.7rem;border-bottom:2px solid var(--accent,#1F63B5)}
+.parts222_sidebar_wrap ul{list-style:none;margin:0;padding:0}
+.parts222_sidebar_wrap li{border-bottom:1px solid rgba(0,41,59,0.1)}
+.parts222_sidebar_wrap li a{display:block;text-decoration:none;color:inherit;padding:0.9rem 0;transition:opacity .25s}
+.parts222_sidebar_wrap li a:hover{opacity:0.65}
+.parts222_sidebar_date{display:block;font-family:'Outfit',sans-serif;font-size:0.82rem;letter-spacing:0.08em;color:#4A7489;margin-bottom:0.3rem}
+.parts222_sidebar_post_title{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:400;font-size:0.92rem;line-height:1.6;color:#00293B;margin:0}
+.category_post_count li a{display:flex;align-items:center;justify-content:space-between;gap:0.8rem}
+.parts222_sidebar_post_category{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:400;font-size:0.92rem;color:#00293B;margin:0}
+.parts222_sidebar_post_category_count{flex:0 0 auto;font-family:'Outfit',sans-serif;font-size:0.8rem;color:#4A7489;border:1px solid rgba(0,41,59,0.18);min-width:28px;height:24px;display:inline-flex;align-items:center;justify-content:center;padding:0 0.4rem}
+
+/* ===== 川田電設風スキン（丸み・ピル型）— add.css と同値 ===== */
+[class*="design-parts-52"] h4.banner-area{border-radius:999px;font-family:'Outfit',sans-serif}
+[class*="design-parts-52"] .content{border-radius:clamp(18px,3vw,32px);background:#fff;padding:.5rem clamp(.6rem,2vw,1.4rem);border:1px solid #E3EEF8;box-shadow:0 10px 30px rgba(0,57,83,.06)}
+[class*="parts131415_blog"] .parts131415_blog_thumbnail,[class*="_post_img"]{border-radius:20px;overflow:hidden}
+[class*="_post_wrap"]{border-radius:24px;overflow:hidden}
+[class*="_more"] a,[class*="_pagination"] a{border-radius:999px}
+[class*="_filter_item"]{border-radius:999px}
+[class*="parts21"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),[class*="parts21"] textarea,[class*="parts21"] select{border-radius:12px}
+[class*="parts21"] button,[class*="parts21"] input[type="submit"],[class*="parts21"] .btn{border-radius:999px}
+
+/* プレビュー用ダミー写真（CMS出力時は実画像に置換） */
+.parts228_post_img [role="img"],.parts222_post_img [role="img"]{background:url(images/roadwork.jpg) center/cover no-repeat !important;color:transparent !important}
+.parts228_post_wrap:nth-child(3n+2) .parts228_post_img [role="img"],.parts222_post_wrap:nth-child(3n+2) .parts222_post_img [role="img"]{background-image:url(images/kyoshin-night.jpg) !important}
+.parts228_post_wrap:nth-child(3n) .parts228_post_img [role="img"],.parts222_post_wrap:nth-child(3n) .parts222_post_img [role="img"]{background-image:url(images/paving-road.webp) !important}
+</style>
+<script src="nav-router.js"></script>
+</helmet>
+<div id="top" style="--accent:{{ accent }};--beige:{{ beige }};--dark:{{ dark }};--mustard:{{ mustard }};--teal:{{ teal }};font-family:'Zen Kaku Gothic New',sans-serif;color:#00293B;overflow-x:hidden;position:relative">
+
+  <dc-import name="SiteHeader" accent="{{ accent }}" hint-size="100%,0px" style="display:block;height:0"></dc-import>
+<section id="pagehead" data-screen-label="下層ヘッダー" style="position:relative;padding-top:calc(64px + 2 * clamp(8px,1.4vw,16px));margin-bottom:clamp(1rem,3vw,2.4rem)"><div aria-hidden="true" style="position:absolute;top:0;left:0;right:clamp(20px,5vw,80px);bottom:0;overflow:hidden;border-radius:0 0 clamp(40px,7vw,90px) 0;background-color:#E8F3FC;background-image:radial-gradient(#FFFFFF 1.8px,transparent 1.8px),radial-gradient(#FFFFFF 1.8px,transparent 1.8px);background-size:22px 22px,22px 22px;background-position:0 0,11px 11px;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;right:clamp(10px,6vw,110px);bottom:clamp(-30px,-2vw,-10px);width:min(300px,34vw);aspect-ratio:1.1;border-radius:47% 53% 54% 46% / 47% 53% 47% 53%;border:3px solid #8FC3EE;pointer-events:none"></div><div style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(2.4rem,6vw,4.5rem) clamp(1.5rem,6vw,7rem) clamp(2.6rem,5vw,4rem)"><p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#3C6C82;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px)"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#5FA8E6;display:block;flex:0 0 auto"></span>Blog</p><h1 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.9rem,1.2rem + 3vw,3.4rem);line-height:1.35;letter-spacing:.02em;color:#00293B;margin:0">ブログ</h1><nav aria-label="パンくず" style="display:flex;flex-wrap:wrap;gap:0.6rem;align-items:center;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.8rem;letter-spacing:0.06em;color:#255873;margin-top:clamp(1.4rem,3vw,2rem)"><a href="/" style="color:inherit;text-decoration:none">TOP</a><span aria-hidden="true" style="color:#5FA8E6">／</span><span>ブログ</span></nav></div></section>
+
+  <section style="background-color:#E8F3FC;background-image:radial-gradient(#FFFFFF 1.8px,transparent 1.8px),radial-gradient(#FFFFFF 1.8px,transparent 1.8px);background-size:22px 22px,22px 22px;background-position:0 0,11px 11px;padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,7rem);text-align:center">
+    <div style="max-width:820px;margin:0 auto">
+      <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;color:var(--accent,#1F63B5);margin:0 0 1.6rem">Blog</p>
+      <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(1rem,.93rem + .4vw,1.18rem);line-height:2.1;letter-spacing:0.03em;color:#00293B;margin:0"><span class="line-chunk">現場日誌と、</span><span class="line-chunk">採用ブログ。</span><br><span class="line-chunk">協進建設の毎日を</span><span class="line-chunk">発信しています。</span></p>
+    </div>
+  </section>
+
+  <!-- 🔒 CMS固定領域（parts222系）：構造/クラス/input name 変更禁止・承認/解除なし。見た目はadd.cssのみ -->
+  <!-- 🔒 LOCK START -->
+<section class="parts222_section">
+    <h2>BLOG</h2>
+    <div class="parts222_wrap">
+      <main class="parts222_main">
+        <ul class="parts222_post_list">
+          <!-- CMS LOOP START（CMSがブログ記事を記事数だけ出力。下記 li が繰り返し1単位 / 表示順は固定） -->
+          <li class="parts222_post_wrap">
+            <a href="/blog">
+              <div class="parts222_post_img"><span class="ph" style="position:absolute;inset:0">記事サムネ</span></div>
+              <div class="parts222_post_status"><span class="parts222_post_date">2026.00.00</span><span class="parts222_post_category">お知らせ</span></div>
+              <div class="parts222_post_title-excerpt"><h3 class="parts222_post_title">ブログ記事のタイトルがここに入ります</h3></div>
+            </a>
+          </li>
+          <!-- CMS LOOP END -->
+          <li class="parts222_post_wrap">
+            <a href="/blog">
+              <div class="parts222_post_img"><span class="ph" style="position:absolute;inset:0">記事サムネ</span></div>
+              <div class="parts222_post_status"><span class="parts222_post_date">2026.00.00</span><span class="parts222_post_category">工法</span></div>
+              <div class="parts222_post_title-excerpt"><h3 class="parts222_post_title">ブログ記事のタイトルがここに入ります</h3></div>
+            </a>
+          </li>
+          <li class="parts222_post_wrap">
+            <a href="/blog">
+              <div class="parts222_post_img"><span class="ph" style="position:absolute;inset:0">記事サムネ</span></div>
+              <div class="parts222_post_status"><span class="parts222_post_date">2026.00.00</span><span class="parts222_post_category">求人</span></div>
+              <div class="parts222_post_title-excerpt"><h3 class="parts222_post_title">ブログ記事のタイトルがここに入ります</h3></div>
+            </a>
+          </li>
+          <li class="parts222_post_wrap">
+            <a href="/blog">
+              <div class="parts222_post_img"><span class="ph" style="position:absolute;inset:0">記事サムネ</span></div>
+              <div class="parts222_post_status"><span class="parts222_post_date">2026.00.00</span><span class="parts222_post_category">現場</span></div>
+              <div class="parts222_post_title-excerpt"><h3 class="parts222_post_title">ブログ記事のタイトルがここに入ります</h3></div>
+            </a>
+          </li>
+        </ul>
+        <nav class="parts222_pagenation" aria-label="ページネーション">
+          <span class="pagination_prev">«</span>
+          <span class="pagination_num current">1</span>
+          <a class="pagination_num" href="#">2</a>
+          <a class="pagination_num" href="#">3</a>
+          <a class="pagination_next" href="#">次へ »</a>
+          <a class="page-item" href="#">最後 »</a>
+        </nav>
+      </main>
+      <aside class="parts222_sidebar">
+        <div class="parts222_sidebar_wrap">
+          <h3>最近の投稿</h3>
+          <ul>
+            <li><a href="/blog"><span class="parts222_sidebar_date">2026.00.00</span><p class="parts222_sidebar_post_title">最近の投稿のタイトルがここに入ります</p></a></li>
+            <li><a href="/blog"><span class="parts222_sidebar_date">2026.00.00</span><p class="parts222_sidebar_post_title">最近の投稿のタイトルがここに入ります</p></a></li>
+            <li><a href="/blog"><span class="parts222_sidebar_date">2026.00.00</span><p class="parts222_sidebar_post_title">最近の投稿のタイトルがここに入ります</p></a></li>
+            <li><a href="/blog"><span class="parts222_sidebar_date">2026.00.00</span><p class="parts222_sidebar_post_title">最近の投稿のタイトルがここに入ります</p></a></li>
+          </ul>
+        </div>
+        <div class="parts222_sidebar_wrap category_post_count">
+          <h3>カテゴリー</h3>
+          <ul>
+            <li><a href="/blog"><p class="parts222_sidebar_post_category">お知らせ</p><span class="parts222_sidebar_post_category_count">0</span></a></li>
+            <li><a href="/blog"><p class="parts222_sidebar_post_category">工法</p><span class="parts222_sidebar_post_category_count">0</span></a></li>
+            <li><a href="/blog"><p class="parts222_sidebar_post_category">求人</p><span class="parts222_sidebar_post_category_count">0</span></a></li>
+            <li><a href="/blog"><p class="parts222_sidebar_post_category">現場</p><span class="parts222_sidebar_post_category_count">0</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <!-- 🔒 LOCK END -->
+
+  <dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#1F63B5&quot;},&quot;beige&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#CBE0E9&quot;},&quot;dark&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#00293B&quot;},&quot;mustard&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2C6C7E&quot;},&quot;teal&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#3C6C82&quot;},&quot;textRevealSec&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:1.4,&quot;min&quot;:0.6,&quot;max&quot;:2.6,&quot;step&quot;:0.1}}">
+class Component extends DCLogic {
+  componentDidMount() { this._setupReveal(); }
+
+  _setupReveal() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const root = document.getElementById('top');
+    if (!root) return;
+    this._wave = 0;
+    const targets = [];
+    root.querySelectorAll('section, footer').forEach((sec) => {
+      sec.querySelectorAll('h1,h2,h3,h4,h5,p,li,a[data-hov],dt,dd').forEach((el) => {
+        if (el.dataset.rv) return;
+        el.dataset.rv = '1';
+        el.style.opacity = '0';
+        el.style.filter = 'blur(8px)';
+        el.style.transform = 'translateY(26px)';
+        el.style.willChange = 'opacity, transform, filter';
+        targets.push(el);
+      });
+    });
+    this._revealTargets = targets;
+    this._rio = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) this._reveal(en.target); });
+    }, { threshold: 0.16, rootMargin: '0px 0px -7% 0px' });
+    targets.forEach((el) => this._rio.observe(el));
+    this._revealInView();
+    this._onRevealScroll = () => this._revealInView();
+    window.addEventListener('scroll', this._onRevealScroll, { passive: true });
+    window.addEventListener('resize', this._onRevealScroll);
+    this._revealSafety = setTimeout(() => { (this._revealTargets || []).forEach((el) => this._reveal(el)); }, 3500);
+  }
+
+  _revealInView() {
+    const vh = window.innerHeight || 800;
+    (this._revealTargets || []).forEach((el) => {
+      if (el.dataset.rvDone) return;
+      const r = el.getBoundingClientRect();
+      if (r.top < vh * 0.92 && r.bottom > 0) this._reveal(el);
+    });
+  }
+
+  _reveal(el) { if (el.dataset.rvDone) return; if (this._rio) this._rio.unobserve(el); this._playReveal(el); }
+
+  _playReveal(el) {
+    if (el.dataset.rvDone) return;
+    el.dataset.rvDone = '1';
+    const dur = this.props.textRevealSec ?? 1.4;
+    el.style.animation = 'bleedReveal ' + dur + 's cubic-bezier(.22,.61,.36,1) ' + (this._wave * 0.08) + 's forwards';
+    this._wave++;
+    clearTimeout(this._waveT);
+    this._waveT = setTimeout(() => { this._wave = 0; }, 240);
+    el.addEventListener('animationend', () => { el.style.willChange = 'auto'; el.style.filter = 'none'; el.style.transform = 'none'; el.style.opacity = '1'; }, { once: true });
+  }
+
+  componentWillUnmount() {
+    if (this._rio) this._rio.disconnect();
+    if (this._onRevealScroll) { window.removeEventListener('scroll', this._onRevealScroll); window.removeEventListener('resize', this._onRevealScroll); }
+    clearTimeout(this._revealSafety);
+  }
+
+  renderVals() {
+    const accent = this.props.accent ?? '#1F63B5';
+    const beige = this.props.beige ?? '#CBE0E9';
+    const dark = this.props.dark ?? '#00293B';
+    const mustard = this.props.mustard ?? '#2C6C7E';
+    const teal = this.props.teal ?? '#3C6C82';
+    return {
+      accent, beige, dark, mustard, teal,
+      btnEnter: (e) => {
+        const t = e.currentTarget; const d = t.dataset.hov;
+        if (d === 'dark') { t.style.background = accent; }
+        else if (d === 'light') { t.style.background = accent; t.style.color = '#fff'; t.style.borderColor = accent; }
+        else if (d === 'teal') { t.style.background = teal; t.style.color = '#fff'; t.style.borderColor = teal; }
+      },
+      btnLeave: (e) => {
+        const t = e.currentTarget; const d = t.dataset.hov;
+        if (d === 'dark') { t.style.background = dark; }
+        else if (d === 'light') { t.style.background = '#fff'; t.style.color = '#00293B'; t.style.borderColor = '#fff'; }
+        else if (d === 'teal') { t.style.background = 'transparent'; t.style.color = '#fff'; t.style.borderColor = 'rgba(255,255,255,0.7)'; }
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

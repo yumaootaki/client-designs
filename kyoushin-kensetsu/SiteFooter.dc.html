@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+</helmet>
+<footer style="background:#00293B;color:#EEF6FA;padding:clamp(4rem,8vw,6.5rem) clamp(1.5rem,6vw,7rem) clamp(7rem,12vw,5rem);font-family:'Zen Kaku Gothic New',sans-serif">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(2.5rem,5vw,4rem);justify-content:space-between;align-items:start">
+      <div style="flex:1 1 280px;min-width:240px">
+        <div style="display:flex;align-items:center;gap:12px;margin:0 0 1.5rem">
+          <span style="display:flex;width:52px;height:52px;border-radius:50%;background:#fff;align-items:center;justify-content:center;flex:0 0 auto"><img src="images/logo-mark.png" alt="" style="display:block;width:44px;height:auto"></span>
+          <span style="display:flex;flex-direction:column;line-height:1.2">
+            <span style="font-weight:900;font-size:1.2rem;letter-spacing:0.06em;color:#fff">有限会社協進建設</span>
+            <span style="font-family:'Outfit',sans-serif;font-weight:600;font-size:0.7rem;letter-spacing:0.22em;color:#8FC3EE;margin-top:4px">KYOSHIN KENSETSU</span>
+          </span>
+        </div>
+        <p style="font-weight:500;font-size:0.86rem;line-height:1.95;color:rgba(255,255,255,0.78);margin:0">本社　〒123-0845<br>東京都足立区西新井本町1-24-26</p>
+        <p style="font-weight:500;font-size:0.86rem;line-height:1.95;color:rgba(255,255,255,0.78);margin:0.8rem 0 0">竹の塚営業所　〒121-0813<br>東京都足立区竹の塚2-29-14 聚仙ビル2階</p>
+        <p style="font-weight:500;font-size:0.86rem;line-height:1.95;color:rgba(255,255,255,0.78);margin:0.8rem 0 0">東京都知事許可 第124958号<br>東京都指定給水装置工事事業者／指定排水設備工事事業者</p>
+        <!-- 要取材：竹の塚住所・許可番号・指定番号（外部DB由来・要確認） -->
+      </div>
+      <nav aria-label="フッターメニュー" style="flex:1 1 220px;display:flex;flex-direction:column;gap:0.1rem">
+        <a href="/" style="color:rgba(255,255,255,0.86);text-decoration:none;font-size:0.92rem;padding:0.55rem 0;min-height:44px;display:flex;align-items:center;transition:color .3s" style-hover="color:#8FC3EE">TOP</a>
+        <a href="/recruit" style="color:rgba(255,255,255,0.86);text-decoration:none;font-size:0.92rem;padding:0.55rem 0;min-height:44px;display:flex;align-items:center;transition:color .3s" style-hover="color:#8FC3EE">求職者のみなさまへ</a>
+        <a href="/recruit/job" style="color:rgba(255,255,255,0.86);text-decoration:none;font-size:0.92rem;padding:0.55rem 0;min-height:44px;display:flex;align-items:center;transition:color .3s" style-hover="color:#8FC3EE">仕事を知る</a>
+        <a href="/recruit/requirements" style="color:rgba(255,255,255,0.86);text-decoration:none;font-size:0.92rem;padding:0.55rem 0;min-height:44px;display:flex;align-items:center;transition:color .3s" style-hover="color:#8FC3EE">募集要項・よくある質問</a>
+        <a href="/information" style="color:rgba(255,255,255,0.86);text-decoration:none;font-size:0.92rem;padding:0.55rem 0;min-height:44px;display:flex;align-items:center;transition:color .3s" style-hover="color:#8FC3EE">協進建設について</a>
+        <a href="/blog" style="color:rgba(255,255,255,0.86);text-decoration:none;font-size:0.92rem;padding:0.55rem 0;min-height:44px;display:flex;align-items:center;transition:color .3s" style-hover="color:#8FC3EE">ブログ</a>
+        <a href="/form/inquiry" style="color:rgba(255,255,255,0.86);text-decoration:none;font-size:0.92rem;padding:0.55rem 0;min-height:44px;display:flex;align-items:center;transition:color .3s" style-hover="color:#8FC3EE">お問い合わせ</a>
+      </nav>
+      <div style="flex:1 1 260px;min-width:240px">
+        <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.24em;color:#8FC3EE;margin:0 0 1.1rem">CONTACT</p>
+        <span style="display:block;font-weight:500;font-size:0.8rem;color:rgba(255,255,255,0.7);margin:0 0 0.25rem">採用・工事のご相談（電話）</span>
+        <a href="tel:0358515790" style="font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:600;letter-spacing:0.06em;white-space:nowrap;color:#fff;text-decoration:none;min-height:44px;display:inline-flex;align-items:center" style-hover="color:#8FC3EE">03-5851-5790</a>
+        <!-- 要取材：電話番号・受付時間（外部DB由来・要確認） -->
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:1.2rem;align-items:stretch;max-width:320px">
+          <a href="/recruit/requirements#entry" style="display:flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:999px;background:#1F63B5;color:#fff;font-weight:700;font-size:0.92rem;text-decoration:none" style-hover="opacity:0.88">応募・見学を申し込む →</a>
+          <a href="https://job.kensetsu-engine.jp/39g8gapD18PbdaHejlte" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:999px;border:1px solid rgba(255,255,255,.4);color:#fff;font-weight:700;font-size:0.92rem;text-decoration:none" style-hover="border-color:#8FC3EE">円陣求人で求人を見る ↗</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem 1.5rem;margin-top:clamp(2.5rem,5vw,3.5rem);padding-top:clamp(2rem,4vw,2.5rem);border-top:1px solid rgba(255,255,255,0.14)">
+      <p style="margin:0;font-family:'Outfit',sans-serif;letter-spacing:0.1em;color:rgba(255,255,255,0.66);font-size:0.8rem">© KYOSHIN KENSETSU Co., Ltd. All Rights Reserved.</p>
+      <nav style="display:flex;flex-wrap:wrap;gap:1.4rem">
+        <a href="/privacypolicy" style="color:rgba(255,255,255,0.72);text-decoration:none;font-size:0.8rem;white-space:nowrap;min-height:44px;display:flex;align-items:center" style-hover="color:#8FC3EE">プライバシーポリシー</a>
+        <a href="/sitemap" style="color:rgba(255,255,255,0.72);text-decoration:none;font-size:0.8rem;white-space:nowrap;min-height:44px;display:flex;align-items:center" style-hover="color:#8FC3EE">サイトマップ</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:520}}"></script>
+</body>
+</html>

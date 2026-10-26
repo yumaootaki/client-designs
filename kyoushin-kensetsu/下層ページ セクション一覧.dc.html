@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#DCE7EC;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.ph{background:#CBE0E9;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.05) 0 14px,rgba(0,0,0,0.04) 14px 28px);display:flex;align-items:center;justify-content:center;text-align:center;color:rgba(0,41,59,0.5);font-family:'Outfit',sans-serif;letter-spacing:0.16em;font-size:0.78rem;text-transform:uppercase}
+</style>
+</helmet>
+<div style="font-family:'Zen Kaku Gothic New',sans-serif;color:#00293B;padding:clamp(2.5rem,5vw,5rem) clamp(1rem,4vw,3.5rem) 6rem">
+
+  <!-- ===== ドキュメント・ヘッダー ===== -->
+  <div style="max-width:1180px;margin:0 auto clamp(3rem,6vw,5rem)">
+    <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;color:var(--accent,#A8456A);margin:0 0 1.1rem">Section Library · Lower Pages</p>
+    <h1 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.7rem,1.2rem + 1.8vw,2.6rem);line-height:1.45;letter-spacing:.02em;margin:0 0 1.4rem">下層ページ セクションデザイン一覧</h1>
+    <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(.95rem,.9rem + .3vw,1.08rem);line-height:2;color:#3C6C82;max-width:780px;margin:0 0 1.8rem">現状TOPデザインの世界観・配色・タイポを踏襲し、7ページ枠（採用主軸／受注サブ）の下層ページで使い回すセクションを20種に整理しました。各カードがそのまま下層ページの構成ブロックになります。ご確認のうえ、採用するセクションと配置を決めて本実装に進みます。</p>
+    <div style="display:flex;flex-wrap:wrap;gap:0.7rem">
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.78rem;letter-spacing:0.04em;color:#3C6C82;background:#fff;border:1px solid rgba(0,41,59,0.12);padding:0.5rem 1rem">枠2 採用情報 /recruit</span>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.78rem;letter-spacing:0.04em;color:#3C6C82;background:#fff;border:1px solid rgba(0,41,59,0.12);padding:0.5rem 1rem">枠3 仕事・キャリア /recruit/job</span>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.78rem;letter-spacing:0.04em;color:#3C6C82;background:#fff;border:1px solid rgba(0,41,59,0.12);padding:0.5rem 1rem">枠4 働き方・待遇 /recruit/workstyle</span>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.78rem;letter-spacing:0.04em;color:#3C6C82;background:#fff;border:1px solid rgba(0,41,59,0.12);padding:0.5rem 1rem">枠5 募集要項 /recruit/requirements</span>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.78rem;letter-spacing:0.04em;color:#3C6C82;background:#fff;border:1px solid rgba(0,41,59,0.12);padding:0.5rem 1rem">枠6 こだわり /work/commitment</span>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.78rem;letter-spacing:0.04em;color:#3C6C82;background:#fff;border:1px solid rgba(0,41,59,0.12);padding:0.5rem 1rem">枠7 業務案内 /work</span>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- GROUP 1 — 共通セクション -->
+  <!-- ============================================================= -->
+  <div style="max-width:1180px;margin:0 auto clamp(2rem,3vw,2.8rem);display:flex;align-items:baseline;gap:1.2rem;border-bottom:1px solid rgba(0,41,59,0.18);padding-bottom:1rem">
+    <span style="font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:600;color:var(--accent,#A8456A);letter-spacing:0.1em">A</span>
+    <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);letter-spacing:.02em;margin:0">共通セクション</h2>
+    <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.82rem;color:#4A7489;letter-spacing:0.04em">全下層ページで使用</span>
+  </div>
+
+  <!-- S01 下層ページヘッダー -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S01</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">下層ページヘッダー（パンくず＋ページタイトル）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">全ページ共通</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="position:relative;min-height:300px;display:flex;align-items:flex-end;overflow:hidden;background:#003953">
+        <div class="ph" style="position:absolute;inset:0">作品・現場のフルブリード写真</div>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.15) 40%,rgba(0,0,0,0.62) 100%)"></div>
+        <div style="position:relative;width:100%;padding:clamp(2rem,4vw,3.2rem) clamp(1.5rem,5vw,4.5rem) clamp(2.2rem,4vw,3rem);color:#fff">
+          <div style="display:flex;gap:0.55rem;align-items:center;font-family:'Outfit',sans-serif;font-size:0.8rem;letter-spacing:0.1em;color:rgba(255,255,255,0.85);margin-bottom:1.2rem">
+            <span>HOME</span><span style="opacity:0.6">/</span><span>RECRUIT</span>
+          </div>
+          <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#9BC2D2;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px)"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>Recruit</p>
+          <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);line-height:1.5;letter-spacing:.02em;margin:0;text-shadow:0 2px 22px rgba(0,0,0,0.4)">採用情報</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S02 リード文ブロック -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S02</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">リード文ブロック（中央寄せ・見出し導入）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">全ページ共通</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="background:#E6F3F9;padding:clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,4.5rem);text-align:center;border-radius:clamp(16px,2.4vw,28px)">
+        <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;color:var(--accent,#A8456A);margin:0 0 1.6rem">Introduction</p>
+        <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(1.05rem,.95rem + .6vw,1.35rem);line-height:2.05;letter-spacing:0.03em;color:#00293B;margin:0 auto;max-width:760px">経験も学歴も問いません。未経験はベテランが丁寧に指導します。「普通の塗装に飽きた」経験者も大歓迎。ここには、職人で終わらない仕事があります。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- S03 CTA二分岐 -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S03</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">CTA 二分岐（採用 / 受注）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">TOP・枠6 ほか</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="position:relative;overflow:hidden;color:#fff;padding:clamp(2.8rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem)">
+        <div class="ph" style="position:absolute;inset:0">背景写真（暗めオーバーレイ）</div>
+        <div style="position:absolute;inset:0;background:rgba(0,41,59,0.7)"></div>
+        <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.6rem">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:1rem;padding:clamp(1.6rem,3vw,2.2rem);background:rgba(0,0,0,0.28);border-top:3px solid var(--accent,#A8456A)">
+            <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#E9A8C2;margin:0">For job seekers</p>
+            <h4 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.3rem;line-height:1.5;margin:0">採用に応募・会社見学を相談する</h4>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.86rem;line-height:1.9;color:rgba(255,255,255,0.85);margin:0">電話：000-0000-0000（採用担当）</p>
+            <span style="margin-top:0.3rem;font-family:'Outfit',sans-serif;text-transform:uppercase;letter-spacing:0.16em;font-size:0.86rem;color:#00293B;background:#fff;padding:0.85rem 2.2rem">応募・見学を相談</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:1rem;padding:clamp(1.6rem,3vw,2.2rem);background:rgba(0,0,0,0.28);border-top:3px solid var(--teal,#3C6C82)">
+            <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.8);margin:0">For clients</p>
+            <h4 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.3rem;line-height:1.5;margin:0">お仕事のご依頼・無料相談</h4>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.86rem;line-height:1.9;color:rgba(255,255,255,0.85);margin:0">電話：00-0000-0000</p>
+            <span style="margin-top:0.3rem;font-family:'Outfit',sans-serif;text-transform:uppercase;letter-spacing:0.16em;font-size:0.86rem;color:#fff;border:1px solid rgba(255,255,255,0.7);padding:0.85rem 2.2rem">依頼・相談する</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S04 ページ内CTA（単一・採用主軸） -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S04</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">ページ内CTA（単一・帯）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠3〜5・枠7</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="background:#00293B;color:#EEF6FA;padding:clamp(2.6rem,5vw,3.6rem) clamp(1.5rem,5vw,4.5rem);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.6rem">
+        <div>
+          <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#E9A8C2;margin:0 0 0.7rem">Contact</p>
+          <h4 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.2rem,1rem + .7vw,1.5rem);line-height:1.5;margin:0">まずは会社見学だけでも、お気軽にご相談ください。</h4>
+        </div>
+        <span style="flex:0 0 auto;font-family:'Outfit',sans-serif;text-transform:uppercase;letter-spacing:0.16em;font-size:0.9rem;color:#00293B;background:#fff;padding:0.95rem 2.6rem">この内容で相談する</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- GROUP 2 — 採用ページ群 -->
+  <!-- ============================================================= -->
+  <div style="max-width:1180px;margin:clamp(3rem,5vw,4.5rem) auto clamp(2rem,3vw,2.8rem);display:flex;align-items:baseline;gap:1.2rem;border-bottom:1px solid rgba(0,41,59,0.18);padding-bottom:1rem">
+    <span style="font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:600;color:var(--accent,#A8456A);letter-spacing:0.1em">B</span>
+    <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);letter-spacing:.02em;margin:0">採用ページ群</h2>
+    <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.82rem;color:#4A7489;letter-spacing:0.04em">枠2〜5（主軸）</span>
+  </div>
+
+  <!-- S05 お悩み提示 -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S05</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">お悩み提示カード（求職者向け）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠2</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="padding:clamp(2.8rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem)">
+        <div style="text-align:center;margin-bottom:2.4rem">
+          <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;color:var(--teal,#3C6C82);margin:0 0 0.9rem">Your Concerns</p>
+          <h4 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.3rem,1.1rem + 1vw,1.8rem);line-height:1.6;margin:0">こんなお悩み、ありませんか？</h4>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem">
+          <div style="background:#E6F3F9;border-top:3px solid var(--accent,#A8456A);padding:clamp(1.8rem,3vw,2.4rem);border-radius:clamp(16px,2.4vw,28px)">
+            <p style="font-family:'Outfit',sans-serif;font-size:0.95rem;color:var(--accent,#A8456A);margin:0 0 1.2rem">For job seekers</p>
+            <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1rem">
+              <li style="display:flex;gap:0.7rem;font-weight:300;font-size:0.96rem;line-height:1.8;color:#1F4A5E"><span style="color:var(--accent,#A8456A);font-family:'Outfit',sans-serif;font-weight:600">—</span>普通の塗装の仕事に、正直もう飽きてきた</li>
+              <li style="display:flex;gap:0.7rem;font-weight:300;font-size:0.96rem;line-height:1.8;color:#1F4A5E"><span style="color:var(--accent,#A8456A);font-family:'Outfit',sans-serif;font-weight:600">—</span>未経験で続けられるか不安</li>
+              <li style="display:flex;gap:0.7rem;font-weight:300;font-size:0.96rem;line-height:1.8;color:#1F4A5E"><span style="color:var(--accent,#A8456A);font-family:'Outfit',sans-serif;font-weight:600">—</span>若手が少ない職場の雰囲気が心配</li>
+            </ul>
+          </div>
+          <div style="background:#E6F3F9;border-top:3px solid var(--mustard,#2C6C7E);padding:clamp(1.8rem,3vw,2.4rem);border-radius:clamp(16px,2.4vw,28px)">
+            <p style="font-family:'Outfit',sans-serif;font-size:0.95rem;color:var(--mustard,#2C6C7E);margin:0 0 1.2rem">For clients</p>
+            <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1rem">
+              <li style="display:flex;gap:0.7rem;font-weight:300;font-size:0.96rem;line-height:1.8;color:#1F4A5E"><span style="color:var(--mustard,#2C6C7E);font-family:'Outfit',sans-serif;font-weight:600">—</span>デザイン塗装ができる業者が見つからない</li>
+              <li style="display:flex;gap:0.7rem;font-weight:300;font-size:0.96rem;line-height:1.8;color:#1F4A5E"><span style="color:var(--mustard,#2C6C7E);font-family:'Outfit',sans-serif;font-weight:600">—</span>デザイン性と耐久性、どちらも妥協したくない</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S06 なぜエンジョイホームか（コピー＋画像） -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S06</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">テキスト＋画像（左右分割）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠2・枠3・枠6</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="display:flex;flex-wrap:wrap;background:#CBE0E9">
+        <div style="flex:1 1 360px;display:flex;align-items:center;padding:clamp(2.4rem,4vw,3.6rem)">
+          <div style="max-width:520px">
+            <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;color:var(--accent,#A8456A);margin:0 0 1.2rem">Why ENJOY HOME</p>
+            <h4 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.3rem,1.1rem + 1vw,1.8rem);line-height:1.6;margin:0 0 1.4rem">自分の手で、空間を作品に変える</h4>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:1rem;line-height:2.05;color:#3C6C82;margin:0">塗装は、レンガ調・大理石調・アンティーク仕上げなど、普通の塗装では味わえない手応えがあります。確かな技術で培った引き出しから、イメージを忠実に形にします。</p>
+          </div>
+        </div>
+        <div style="flex:1 1 360px;min-height:320px;position:relative">
+          <div class="ph" style="position:absolute;inset:0">職人・作品の写真（大判）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S07 働く魅力 3項目 -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S07</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">3項目（番号付き・ダーク）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠2 働く魅力 / 選ばれる理由</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="background:#00293B;color:#EEF6FA;padding:clamp(2.8rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem)">
+        <div style="text-align:center;margin-bottom:2.6rem">
+          <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;color:var(--mustard,#2C6C7E);margin:0 0 0.9rem">Our Appeal</p>
+          <h4 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.3rem,1.1rem + 1vw,1.8rem);margin:0">働く魅力</h4>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem">
+          <div style="display:flex;flex-direction:column;gap:1rem;padding-top:1.6rem;border-top:2px solid var(--accent,#A8456A)">
+            <span style="font-family:'Outfit',sans-serif;font-size:1.7rem;font-weight:500;color:var(--accent,#A8456A);line-height:1">01</span>
+            <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0">未経験はイチから</h5>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.95;color:#CBE0E9;margin:0">ベテランが丁寧に指導。経験者は培った技術を塗装で活かせます。</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1rem;padding-top:1.6rem;border-top:2px solid var(--mustard,#2C6C7E)">
+            <span style="font-family:'Outfit',sans-serif;font-size:1.7rem;font-weight:500;color:var(--mustard,#2C6C7E);line-height:1">02</span>
+            <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0">ここでしか積めない経験</h5>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.95;color:#CBE0E9;margin:0">大型物件・公共施設など特別な現場があります。</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1rem;padding-top:1.6rem;border-top:2px solid #E9A8C2">
+            <span style="font-family:'Outfit',sans-serif;font-size:1.7rem;font-weight:500;color:#E9A8C2;line-height:1">03</span>
+            <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0">プライベートも大切に</h5>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.95;color:#CBE0E9;margin:0">希望日の休暇取得や、学校行事への参加も事前相談で可能です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S08 子ページ誘導 3カード -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S08</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">子ページ誘導（3カード）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠2（→枠3〜5）</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="background:#E6F3F9;padding:clamp(2.8rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem);border-radius:clamp(16px,2.4vw,28px)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.6rem">
+          <a href="/recruit/job" style="text-decoration:none;color:inherit;background:#fff;border:1px solid rgba(0,41,59,0.1)">
+            <div class="ph" style="height:170px">仕事の写真</div>
+            <div style="padding:1.6rem">
+              <p style="font-family:'Outfit',sans-serif;font-size:0.86rem;color:var(--accent,#A8456A);margin:0 0 0.6rem">Job &amp; Career</p>
+              <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 0.7rem">仕事・キャリア</h5>
+              <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.88rem;line-height:1.8;color:#4A7489;margin:0">仕事の中身と将来像 →</p>
+            </div>
+          </a>
+          <a href="/recruit/workstyle" style="text-decoration:none;color:inherit;background:#fff;border:1px solid rgba(0,41,59,0.1)">
+            <div class="ph" style="height:170px">職場の写真</div>
+            <div style="padding:1.6rem">
+              <p style="font-family:'Outfit',sans-serif;font-size:0.86rem;color:var(--mustard,#2C6C7E);margin:0 0 0.6rem">Work Style</p>
+              <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 0.7rem">働き方・待遇</h5>
+              <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.88rem;line-height:1.8;color:#4A7489;margin:0">1日の流れ・待遇・雰囲気 →</p>
+            </div>
+          </a>
+          <a href="/recruit/requirements" style="text-decoration:none;color:inherit;background:#fff;border:1px solid rgba(0,41,59,0.1)">
+            <div class="ph" style="height:170px">募集の写真</div>
+            <div style="padding:1.6rem">
+              <p style="font-family:'Outfit',sans-serif;font-size:0.86rem;color:var(--teal,#3C6C82);margin:0 0 0.6rem">Requirements</p>
+              <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 0.7rem">募集要項</h5>
+              <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.88rem;line-height:1.8;color:#4A7489;margin:0">募集要項・選考の流れ →</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S09 仕事内容 3工法カード -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S09</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">3工法カード（仕事内容 / 業務）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠3・枠7</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="padding:clamp(2.8rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.8rem">
+          <div style="background:#fff;border:1px solid rgba(0,41,59,0.1)">
+            <div class="ph" style="height:190px">塗装の仕上げ</div>
+            <div style="padding:1.8rem">
+              <p style="font-family:'Outfit',sans-serif;font-size:0.86rem;color:var(--accent,#A8456A);margin:0 0 0.6rem">01 / Painting</p>
+              <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 0.9rem">塗装</h5>
+              <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.9;color:#3C6C82;margin:0">レンガ調・金属調・大理石調・木目調など、特別な質感や模様を表現する仕上げ。</p>
+            </div>
+          </div>
+          <div style="background:#fff;border:1px solid rgba(0,41,59,0.1)">
+            <div class="ph" style="height:190px">防水仕上げ</div>
+            <div style="padding:1.8rem">
+              <p style="font-family:'Outfit',sans-serif;font-size:0.86rem;color:var(--mustard,#2C6C7E);margin:0 0 0.6rem">02 / Aging</p>
+              <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 0.9rem">屋根塗装</h5>
+              <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.9;color:#3C6C82;margin:0">塗膜をあえて剥がす・重ねてアンティークの風合いに。飲食店・アパレルで人気。</p>
+            </div>
+          </div>
+          <div style="background:#fff;border:1px solid rgba(0,41,59,0.1)">
+            <div class="ph" style="height:190px">左官・洗い出し</div>
+            <div style="padding:1.8rem">
+              <p style="font-family:'Outfit',sans-serif;font-size:0.86rem;color:var(--teal,#3C6C82);margin:0 0 0.6rem">03 / Plastering</p>
+              <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 0.9rem">左官</h5>
+              <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.9;color:#3C6C82;margin:0">タイル調・石調の左官、御影石や大理石を混ぜた「洗い出し」など。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S10 キャリアステップ -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S10</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">キャリアステップ（横並びフロー）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠3</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="background:#E6F3F9;padding:clamp(2.8rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem);border-radius:clamp(16px,2.4vw,28px)">
+        <div style="text-align:center;margin-bottom:2.6rem">
+          <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;color:var(--accent,#A8456A);margin:0 0 0.9rem">Career Path</p>
+          <h4 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.3rem,1.1rem + 1vw,1.7rem);margin:0">未経験から職人へ</h4>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.4rem">
+          <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);padding:1.8rem;display:flex;flex-direction:column;gap:0.8rem;border-radius:clamp(16px,2.4vw,28px)">
+            <span style="font-family:'Outfit',sans-serif;font-size:0.78rem;letter-spacing:0.16em;color:var(--accent,#A8456A)">STEP 01</span>
+            <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0">一般塗装からスタート</h5>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.9rem;line-height:1.85;color:#3C6C82;margin:0">基礎を身につけながら現場に慣れていきます。</p>
+          </div>
+          <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);padding:1.8rem;display:flex;flex-direction:column;gap:0.8rem;border-radius:clamp(16px,2.4vw,28px)">
+            <span style="font-family:'Outfit',sans-serif;font-size:0.78rem;letter-spacing:0.16em;color:var(--mustard,#2C6C7E)">STEP 02</span>
+            <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0">専門技術を習得</h5>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.9rem;line-height:1.85;color:#3C6C82;margin:0">外壁・屋根・内装塗装の専門技術を磨きます。</p>
+          </div>
+          <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);padding:1.8rem;display:flex;flex-direction:column;gap:0.8rem;border-radius:clamp(16px,2.4vw,28px)">
+            <span style="font-family:'Outfit',sans-serif;font-size:0.78rem;letter-spacing:0.16em;color:var(--teal,#3C6C82)">STEP 03</span>
+            <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0">現場を任される職人へ</h5>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.9rem;line-height:1.85;color:#3C6C82;margin:0">確かな技術で、磨ける技術の幅が広がります。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S11 1日の流れ タイムライン -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S11</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">1日の流れ（タイムライン）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠4</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="padding:clamp(2.8rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem)">
+        <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;color:var(--accent,#A8456A);margin:0 0 2rem">A Day at ENJOY HOME</p>
+        <div style="display:flex;flex-direction:column">
+          <div style="display:flex;gap:1.6rem;align-items:flex-start;padding-bottom:1.8rem;border-left:1px solid rgba(0,41,59,0.15);padding-left:1.8rem;margin-left:0.5rem;position:relative">
+            <span style="position:absolute;left:-0.5rem;top:0.1rem;width:11px;height:11px;border-radius:50%;background:var(--accent,#A8456A)"></span>
+            <span style="flex:0 0 70px;font-family:'Outfit',sans-serif;font-size:1.05rem;color:var(--accent,#A8456A);letter-spacing:0.06em">8:00</span>
+            <div><h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.02rem;margin:0 0 0.3rem">出社・朝礼</h5><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.9rem;line-height:1.8;color:#3C6C82;margin:0">道具を準備し、その日の現場と段取りを確認します。</p></div>
+          </div>
+          <div style="display:flex;gap:1.6rem;align-items:flex-start;padding-bottom:1.8rem;border-left:1px solid rgba(0,41,59,0.15);padding-left:1.8rem;margin-left:0.5rem;position:relative">
+            <span style="position:absolute;left:-0.5rem;top:0.1rem;width:11px;height:11px;border-radius:50%;background:var(--mustard,#2C6C7E)"></span>
+            <span style="flex:0 0 70px;font-family:'Outfit',sans-serif;font-size:1.05rem;color:var(--mustard,#2C6C7E);letter-spacing:0.06em">9:00</span>
+            <div><h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.02rem;margin:0 0 0.3rem">現場作業（午前）</h5><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.9rem;line-height:1.8;color:#3C6C82;margin:0">下地づくりから仕上げまで、工程に沿って進めます。</p></div>
+          </div>
+          <div style="display:flex;gap:1.6rem;align-items:flex-start;padding-bottom:1.8rem;border-left:1px solid rgba(0,41,59,0.15);padding-left:1.8rem;margin-left:0.5rem;position:relative">
+            <span style="position:absolute;left:-0.5rem;top:0.1rem;width:11px;height:11px;border-radius:50%;background:var(--teal,#3C6C82)"></span>
+            <span style="flex:0 0 70px;font-family:'Outfit',sans-serif;font-size:1.05rem;color:var(--teal,#3C6C82);letter-spacing:0.06em">12:00</span>
+            <div><h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.02rem;margin:0 0 0.3rem">昼休憩</h5><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.9rem;line-height:1.8;color:#3C6C82;margin:0">しっかり休んで午後に備えます。</p></div>
+          </div>
+          <div style="display:flex;gap:1.6rem;align-items:flex-start;padding-left:1.8rem;margin-left:0.5rem;position:relative">
+            <span style="position:absolute;left:-0.5rem;top:0.1rem;width:11px;height:11px;border-radius:50%;background:#00293B"></span>
+            <span style="flex:0 0 70px;font-family:'Outfit',sans-serif;font-size:1.05rem;color:#00293B;letter-spacing:0.06em">17:00</span>
+            <div><h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.02rem;margin:0 0 0.3rem">片付け・退社</h5><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.9rem;line-height:1.8;color:#3C6C82;margin:0">※就業時間は現場により異なります。</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S12 待遇・福利厚生 -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S12</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">待遇・福利厚生（アイコングリッド）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠4</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="background:#E6F3F9;padding:clamp(2.8rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem);border-radius:clamp(16px,2.4vw,28px)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem">
+          <div style="background:#fff;border-left:3px solid var(--accent,#A8456A);padding:1.6rem;border-radius:clamp(16px,2.4vw,28px)"><h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.02rem;margin:0 0 0.5rem">社会保険完備</h5><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.88rem;line-height:1.8;color:#4A7489;margin:0">安心して長く働ける環境です。</p></div>
+          <div style="background:#fff;border-left:3px solid var(--mustard,#2C6C7E);padding:1.6rem;border-radius:clamp(16px,2.4vw,28px)"><h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.02rem;margin:0 0 0.5rem">昇給あり</h5><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.88rem;line-height:1.8;color:#4A7489;margin:0">技術と経験を正当に評価します。</p></div>
+          <div style="background:#fff;border-left:3px solid var(--teal,#3C6C82);padding:1.6rem;border-radius:clamp(16px,2.4vw,28px)"><h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.02rem;margin:0 0 0.5rem">諸手当</h5><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.88rem;line-height:1.8;color:#4A7489;margin:0">夜勤手当・通勤手当（要相談）。</p></div>
+          <div style="background:#fff;border-left:3px solid var(--accent,#A8456A);padding:1.6rem;border-radius:clamp(16px,2.4vw,28px)"><h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.02rem;margin:0 0 0.5rem">社内イベント</h5><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.88rem;line-height:1.8;color:#4A7489;margin:0">飲み会・お花見・歓迎会など。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S13 職場の雰囲気 写真ギャラリー -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S13</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">写真ギャラリー（雰囲気・実績）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠4・枠6</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="padding:clamp(2.8rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem)">
+        <div style="text-align:center;margin-bottom:2.2rem">
+          <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;color:var(--teal,#3C6C82);margin:0 0 0.9rem">Atmosphere</p>
+          <h4 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.3rem,1.1rem + 1vw,1.7rem);margin:0">職場の雰囲気</h4>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:130px;gap:0.9rem">
+          <div class="ph" style="grid-column:span 2;grid-row:span 2">大判写真</div>
+          <div class="ph">写真</div>
+          <div class="ph">写真</div>
+          <div class="ph">写真</div>
+          <div class="ph">写真</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S14 募集要項テーブル -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S14</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">募集要項テーブル（定義リスト）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠5・枠7（会社概要にも転用）</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="padding:clamp(2.8rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem)">
+        <dl style="margin:0;border-top:1px solid rgba(0,41,59,0.14)">
+          <div style="display:flex;flex-wrap:wrap;border-bottom:1px solid rgba(0,41,59,0.1)"><dt style="flex:0 0 180px;background:#E6F3F9;padding:1.2rem 1.4rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:0.96rem;color:#00293B">職種</dt><dd style="flex:1 1 300px;margin:0;padding:1.2rem 1.4rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.96rem;line-height:1.8;color:#3C6C82">現場スタッフ</dd></div>
+          <div style="display:flex;flex-wrap:wrap;border-bottom:1px solid rgba(0,41,59,0.1)"><dt style="flex:0 0 180px;background:#E6F3F9;padding:1.2rem 1.4rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:0.96rem;color:#00293B">雇用形態</dt><dd style="flex:1 1 300px;margin:0;padding:1.2rem 1.4rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.96rem;line-height:1.8;color:#3C6C82">正社員</dd></div>
+          <div style="display:flex;flex-wrap:wrap;border-bottom:1px solid rgba(0,41,59,0.1)"><dt style="flex:0 0 180px;background:#E6F3F9;padding:1.2rem 1.4rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:0.96rem;color:#00293B">募集資格</dt><dd style="flex:1 1 300px;margin:0;padding:1.2rem 1.4rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.96rem;line-height:1.8;color:#3C6C82">18歳〜・学歴不問・未経験OK（普通自動車免許あれば尚可）</dd></div>
+          <div style="display:flex;flex-wrap:wrap;border-bottom:1px solid rgba(0,41,59,0.1)"><dt style="flex:0 0 180px;background:#E6F3F9;padding:1.2rem 1.4rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:0.96rem;color:#00293B">給与</dt><dd style="flex:1 1 300px;margin:0;padding:1.2rem 1.4rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.96rem;line-height:1.8;color:#3C6C82">日給月給 8,000〜18,000円 ※経験・能力を考慮／研修3ヶ月（同条件）</dd></div>
+          <div style="display:flex;flex-wrap:wrap;border-bottom:1px solid rgba(0,41,59,0.1)"><dt style="flex:0 0 180px;background:#E6F3F9;padding:1.2rem 1.4rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:0.96rem;color:#00293B">休日</dt><dd style="flex:1 1 300px;margin:0;padding:1.2rem 1.4rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.96rem;line-height:1.8;color:#3C6C82">月5〜6日・大型連休 ※現場により異なる</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <!-- S15 選考フロー -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S15</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">選考フロー（番号ステップ）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠5</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="background:#00293B;color:#EEF6FA;padding:clamp(2.8rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem)">
+        <div style="text-align:center;margin-bottom:2.4rem">
+          <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;color:var(--mustard,#2C6C7E);margin:0 0 0.9rem">Flow</p>
+          <h4 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.3rem,1.1rem + 1vw,1.7rem);margin:0 0 1rem">選考の流れ</h4>
+          <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.9rem;color:#CBE0E9;margin:0">まずは会社見学だけでもOKです。</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:clamp(0.8rem,2.5vw,2.4rem);max-width:900px;margin:0 auto">
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;flex:1 1 120px;min-width:104px">
+            <span style="font-family:'Outfit',sans-serif;font-weight:400;font-size:clamp(2.1rem,1.6rem + 1.1vw,2.8rem);line-height:1;color:#EEF6FA">01</span>
+            <span style="width:26px;height:1px;background:var(--accent,#A8456A)"></span>
+            <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1rem;letter-spacing:0.06em;color:#EEF6FA;margin:0">応募</h5>
+          </div>
+          <span style="flex:0 0 auto;width:9px;height:9px;border-top:1px solid rgba(246,228,235,0.45);border-right:1px solid rgba(246,228,235,0.45);transform:rotate(45deg);margin-top:1.1rem"></span>
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;flex:1 1 120px;min-width:104px">
+            <span style="font-family:'Outfit',sans-serif;font-weight:400;font-size:clamp(2.1rem,1.6rem + 1.1vw,2.8rem);line-height:1;color:#EEF6FA">02</span>
+            <span style="width:26px;height:1px;background:var(--mustard,#2C6C7E)"></span>
+            <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1rem;letter-spacing:0.06em;color:#EEF6FA;margin:0">面接日決定</h5>
+          </div>
+          <span style="flex:0 0 auto;width:9px;height:9px;border-top:1px solid rgba(246,228,235,0.45);border-right:1px solid rgba(246,228,235,0.45);transform:rotate(45deg);margin-top:1.1rem"></span>
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;flex:1 1 120px;min-width:104px">
+            <span style="font-family:'Outfit',sans-serif;font-weight:400;font-size:clamp(2.1rem,1.6rem + 1.1vw,2.8rem);line-height:1;color:#EEF6FA">03</span>
+            <span style="width:26px;height:1px;background:var(--teal,#3C6C82)"></span>
+            <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1rem;letter-spacing:0.06em;color:#EEF6FA;margin:0">面接</h5>
+          </div>
+          <span style="flex:0 0 auto;width:9px;height:9px;border-top:1px solid rgba(246,228,235,0.45);border-right:1px solid rgba(246,228,235,0.45);transform:rotate(45deg);margin-top:1.1rem"></span>
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;flex:1 1 120px;min-width:104px">
+            <span style="position:relative;display:inline-flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:400;font-size:clamp(2.1rem,1.6rem + 1.1vw,2.8rem);line-height:1;color:var(--accent,#A8456A)">04</span>
+            <span style="width:26px;height:1px;background:var(--accent,#A8456A)"></span>
+            <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1rem;letter-spacing:0.06em;color:#E9A8C2;margin:0">内定</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- GROUP 3 — 業務・こだわりページ群 -->
+  <!-- ============================================================= -->
+  <div style="max-width:1180px;margin:clamp(3rem,5vw,4.5rem) auto clamp(2rem,3vw,2.8rem);display:flex;align-items:baseline;gap:1.2rem;border-bottom:1px solid rgba(0,41,59,0.18);padding-bottom:1rem">
+    <span style="font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:600;color:var(--accent,#A8456A);letter-spacing:0.1em">C</span>
+    <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);letter-spacing:.02em;margin:0">業務・こだわりページ群</h2>
+    <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.82rem;color:#4A7489;letter-spacing:0.04em">枠6〜7（受注・動機づけ）</span>
+  </div>
+
+  <!-- S16 こだわりブロック 交互 -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S16</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">こだわりブロック（番号＋画像・左右交互）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠6</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="display:flex;flex-wrap:wrap;align-items:stretch">
+        <div style="flex:1 1 340px;min-height:300px;position:relative"><div class="ph" style="position:absolute;inset:0">施工前後 / 工程ビジュアル</div></div>
+        <div style="flex:1 1 340px;display:flex;align-items:center;background:#E6F3F9;padding:clamp(2.4rem,4vw,3.4rem);border-radius:clamp(16px,2.4vw,28px)">
+          <div>
+            <span style="font-family:'Outfit',sans-serif;font-size:2.4rem;font-weight:500;color:var(--accent,#A8456A);line-height:1;display:block;margin-bottom:1rem">01</span>
+            <h4 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.2rem,1rem + .8vw,1.55rem);line-height:1.55;margin:0 0 1.2rem">唯一無二のデザインを、技術で再現する</h4>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:1rem;line-height:2.05;color:#3C6C82;margin:0">古びた風合いも、石や大理石のような質感も。確かな技術で培った引き出しから、イメージを忠実に形にします。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S17 特殊現場フィーチャー フルブリード -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S17</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">特殊現場フィーチャー（フルブリード）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠6・枠3</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="position:relative;min-height:340px;display:flex;align-items:center;overflow:hidden;color:#fff;padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem)">
+        <div class="ph" style="position:absolute;inset:0">施工現場の写真</div>
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,28,41,0.8) 0,rgba(0,28,41,0.45) 55%,rgba(0,28,41,0.15) 100%)"></div>
+        <div style="position:relative;max-width:600px">
+          <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;color:#E9A8C2;margin:0 0 1.4rem">Only here</p>
+          <h4 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.5rem,1.1rem + 1.6vw,2.2rem);line-height:1.55;margin:0 0 1.4rem">他では出会えない現場</h4>
+          <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(.95rem,.9rem + .3vw,1.1rem);line-height:2.05;color:rgba(255,255,255,0.92);margin:0">某有名大型物件製作会社で使われるセットの塗装など、特殊な現場を経験できるのがエンジョイホーム。各地など海外での仕事に携わることもあります。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S18 21施工認定 ブランドグリッド -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S18</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">21施工認定（ブランドグリッド）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠7（信頼の根拠）</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="background:#E6F3F9;padding:clamp(2.8rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem);border-radius:clamp(16px,2.4vw,28px)">
+        <div style="text-align:center;margin-bottom:2.4rem">
+          <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;color:var(--accent,#A8456A);margin:0 0 0.9rem">Our Strength</p>
+          <h4 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.3rem,1.1rem + 1vw,1.8rem);margin:0">確かな施工品質</h4>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0.9rem">
+          <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);height:74px;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.1em;font-size:0.92rem;color:#00293B">各種塗料</div>
+          <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);height:74px;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.1em;font-size:0.92rem;color:#00293B">建材</div>
+          <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);height:74px;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.1em;font-size:0.92rem;color:#00293B">MORTEX</div>
+          <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);height:74px;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.1em;font-size:0.92rem;color:#00293B">VeroMetal</div>
+          <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);height:74px;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.1em;font-size:0.92rem;color:#00293B">MATTEOBRIONI</div>
+          <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);height:74px;display:flex;align-items:center;justify-content:center;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.84rem;color:#4A7489">デザインコンクリート</div>
+        </div>
+        <p style="text-align:center;font-family:'Outfit',sans-serif;font-size:1rem;letter-spacing:0.08em;color:var(--accent,#A8456A);margin:1.6rem 0 0">and more — 幅広い施工に対応</p>
+        <p style="text-align:center;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.86rem;color:#4A7489;margin:1rem 0 0">※ 各種塗料・建材に対応していますです。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- S19 対応素材・建物・エリア 情報グリッド -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S19</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">対応素材・建物・エリア（情報グリッド）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠7</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="padding:clamp(2.8rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.6rem">
+          <div style="border-top:2px solid var(--accent,#A8456A);padding-top:1.4rem">
+            <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 1rem">対応建物</h5>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.95;color:#3C6C82;margin:0">店舗・商業施設／戸建て／マンション／ビル。家具や小物まで対応可能です。</p>
+          </div>
+          <div style="border-top:2px solid var(--mustard,#2C6C7E);padding-top:1.4rem">
+            <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 1rem">許可・対応エリア</h5>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.95;color:#3C6C82;margin:0">大阪府知事許可 第000000号。対応エリアは大阪府全域・近隣エリア。</p>
+          </div>
+          <div style="border-top:2px solid var(--teal,#3C6C82);padding-top:1.4rem">
+            <h5 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 1rem">業歴・拠点</h5>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.95;color:#3C6C82;margin:0">地域密着。大阪市を拠点に地域の現場へ。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S20 質感・カラーサンプルギャラリー -->
+  <div style="max-width:1180px;margin:0 auto clamp(2.6rem,5vw,4rem)">
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.9rem;margin-bottom:1.1rem">
+      <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:0.14em;color:var(--accent,#A8456A)">S20</span>
+      <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.04em;margin:0">質感・カラーサンプル（接写ギャラリー）</h3>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.74rem;color:#4A7489;letter-spacing:0.04em;border:1px solid rgba(0,41,59,0.18);padding:0.22rem 0.7rem;border-radius:1px">枠6・枠7</span>
+    </div>
+    <div style="background:#fff;border:1px solid rgba(0,41,59,0.1);box-shadow:0 1px 20px rgba(0,0,0,0.04);overflow:hidden">
+      <div style="background:#00293B;padding:clamp(2.8rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem)">
+        <div style="text-align:center;margin-bottom:2.2rem">
+          <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;color:var(--mustard,#2C6C7E);margin:0 0 0.9rem">Texture &amp; Color</p>
+          <h4 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.3rem,1.1rem + 1vw,1.7rem);color:#EEF6FA;margin:0">色と仕上げの引き出し</h4>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0.8rem">
+          <div class="ph" style="height:150px;background:#3C6C82">レンガ調</div>
+          <div class="ph" style="height:150px;background:#CBE0E9">大理石調</div>
+          <div class="ph" style="height:150px;background:#4A7489">金属調</div>
+          <div class="ph" style="height:150px;background:#2C6C7E">木目調</div>
+          <div class="ph" style="height:150px;background:#4A7489">洗い出し</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- フッターノート -->
+  <div style="max-width:1180px;margin:clamp(2rem,4vw,3.5rem) auto 0;padding-top:1.6rem;border-top:1px solid rgba(0,41,59,0.18)">
+    <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.86rem;line-height:1.9;color:#4A7489;margin:0">※ 写真はすべてプレースホルダーです。本実装時に施工写真・職人・事務所・各地小物などの素材を流し込みます。数値・条件は現行HPの事実値ベース、未確定項目（年収例・残業・有給取得率など）は取材確認後に追記します。施工実績・ブログ・お問い合わせ等の動的ページは CueZilla 仕様（実在クラス構造）で別途構築します。</p>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

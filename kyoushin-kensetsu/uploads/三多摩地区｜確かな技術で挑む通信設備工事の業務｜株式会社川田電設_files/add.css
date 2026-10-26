@@ -1,0 +1,1306 @@
+/* ===== 20_site.css ===== */
+/* ===== S00535 株式会社川田電設 site.css =====
+   受領14ページ＋SiteHeader部品の helmet 内スタイルを全ページ union。
+   ・まとめ書きは個別セレクタへ展開してから重複排除（食い違いは index の値を採用）。
+   ・出力順は「素の規則 → keyframes → メディアクエリ」＝メディアクエリが基底に踏まれない。
+   ・受領 image-slot 要素は img.kd-slot へ振り替え済み。
+   ・インラインの animation/transition はクラスへ退避済み（末尾）。CueZillaは style 属性から落とす。
+   ・style-hover / style-focus は :hover / :focus の生成クラスへ退避済み（末尾）。
+   ・★helmet の SP 上書きは main [style*="text-align:center"] のように**インラインstyleの文字列**に
+     依存している。変換ではインラインstyleを整形も並べ替えもしていない（animation/transition の
+     宣言だけを外科的に取り除いた）ので当たり続ける。以後の編集でも style 属性を整形しないこと。
+ */
+html{-webkit-text-size-adjust: 100%;overflow-x: hidden;}
+body{margin: 0; background: #ffffff; color: #00293B; font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif; overflow-x: clip;}
+*{box-sizing: border-box;}
+a{transition: color .32s cubic-bezier(.22,.7,.28,1), background-color .32s cubic-bezier(.22,.7,.28,1), border-color .32s cubic-bezier(.22,.7,.28,1), box-shadow .38s cubic-bezier(.22,.7,.28,1), transform .38s cubic-bezier(.22,.7,.28,1), opacity .32s ease;}
+a:hover{color: #A8456A;}
+:focus-visible{outline: 3px solid #00293B; outline-offset: 3px; border-radius: 4px;}
+[data-fvbase]{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform: scale(1.1);}
+[data-wipe]{animation: kd-wipe-text 1.5s cubic-bezier(.42,0,.3,1) backwards;}
+[data-wipebar]{position:absolute; top:2%; bottom:-6%; left:0; width:100%; background:#E296AE; transform: translateX(102%); animation: kd-wipe-bar 1.7s cubic-bezier(.42,0,.3,1) backwards; pointer-events:none;}
+[data-fvslide]{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; animation-duration:26s; animation-timing-function:linear; animation-iteration-count:infinite; will-change:opacity,transform;}
+[data-btnrow]{display: flex; flex-wrap: wrap; align-items: stretch; gap: 12px;}
+[data-btnrow] > a{flex: 0 1 auto;}
+[data-fixedbg]{background-attachment: fixed; background-size: cover; background-position: 50% 45%; background-repeat: no-repeat;}
+image-slot{background: #c9cec9 !important;}
+image-slot::part(ring){display: none !important;}
+image-slot::part(frame){background: transparent !important;}
+image-slot::part(empty){display: none !important;}
+image-slot::part(caption){display: none !important;}
+button{transition: color .32s cubic-bezier(.22,.7,.28,1), background-color .32s cubic-bezier(.22,.7,.28,1), border-color .32s cubic-bezier(.22,.7,.28,1), box-shadow .38s cubic-bezier(.22,.7,.28,1), transform .38s cubic-bezier(.22,.7,.28,1), opacity .32s ease;}
+a span[aria-hidden="true"]{transition: transform .38s cubic-bezier(.22,.7,.28,1), background-color .32s ease;}
+a:hover span[aria-hidden="true"]:not([data-caret]){transform: translateX(5px);}
+a:hover span[data-caret]{animation: kd-caret .62s cubic-bezier(.3,.7,.3,1);}
+div:hover > a > span[data-caret]{animation: kd-caret .62s cubic-bezier(.3,.7,.3,1);}
+[data-underline]{position: relative;}
+[data-underline]::after{content:''; position:absolute; left:0; right:0; bottom:2px; height:1.5px; background:currentColor; transform:scaleX(0); transform-origin:right center; transition:transform .38s cubic-bezier(.22,.7,.28,1);}
+[data-underline]:hover::after{transform:scaleX(1); transform-origin:left center;}
+[data-lift]{transition: transform .42s cubic-bezier(.22,.7,.28,1), box-shadow .42s cubic-bezier(.22,.7,.28,1), border-color .32s ease;}
+[data-lift]:hover{transform: translateY(-6px);}
+[data-lift] image-slot{transition: transform .6s cubic-bezier(.22,.7,.28,1);}
+[data-lift] img{transition: transform .6s cubic-bezier(.22,.7,.28,1);}
+[data-lift]:hover image-slot{transform: scale(1.045);}
+[data-lift]:hover img{transform: scale(1.045);}
+[data-nolift]{transition: none;}
+[data-nolift]:hover{transform: none; box-shadow: 0 14px 34px rgba(0,57,83,.06);}
+[data-nolift]:hover image-slot{transform: none;}
+[data-nolift]:hover img{transform: none;}
+span.line-chunk{display: inline-block; overflow-wrap: anywhere; word-break: normal;}
+[data-hscroll]{scrollbar-width:thin;scrollbar-color:#E296AE #F4E8EC}
+[data-hscroll]::-webkit-scrollbar{height:6px}
+[data-hscroll]::-webkit-scrollbar-track{background:#F4E8EC;border-radius:999px}
+[data-hscroll]::-webkit-scrollbar-thumb{background:#E296AE;border-radius:999px}
+[data-gradtext]{background-image:linear-gradient(100deg,#E5568A 0%,#F0709B 20%,#39BEE0 56%,#0A93E8 80%,#E5568A 100%);background-size:230% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:kd-grad 9s ease-in-out infinite alternate}
+[data-ghost]{paint-order:stroke fill;-webkit-paint-order:stroke fill;font-family:'Jost',sans-serif;font-weight:400;font-size:clamp(72px,13vw,200px);line-height:1.3;letter-spacing:.01em;white-space:nowrap;padding-right:.4em;color:#fff;-webkit-text-stroke:2.5px #E3B8CA;text-stroke:2.5px #E3B8CA}
+[data-ghost="aqua"]{-webkit-text-stroke-color:#8CCBE0}
+[data-ghost-track]{display:flex;width:max-content;will-change:transform}
+details[data-qa] > summary{list-style: none;}
+details[data-qa] > summary::-webkit-details-marker{display: none;}
+details[data-qa][open] > summary [data-chev]{transform: rotate(45deg);}
+summary{list-style: none; cursor: pointer;}
+summary::-webkit-details-marker{display: none;}
+details[open] summary span.kd-mark{transform: rotate(45deg);}
+@keyframes kd-fvdrift{from { transform: translateX(-3%) scale(1.1); } to { transform: translateX(3%) scale(1.1); }}
+@keyframes kd-fvslide-l{0%   { opacity:0; transform:translateX(4.5%) scale(1.1); }
+    6%   { opacity:1; }
+    31%  { opacity:1; }
+    32%  { opacity:0; }
+    100% { opacity:0; transform:translateX(-4.5%) scale(1.1); }}
+@keyframes kd-fvslide-r{0%   { opacity:0; transform:translateX(-4.5%) scale(1.1); }
+    6%   { opacity:1; }
+    31%  { opacity:1; }
+    32%  { opacity:0; }
+    100% { opacity:0; transform:translateX(4.5%) scale(1.1); }}
+@keyframes kd-fvslide-last{0%   { opacity:0; transform:translateX(-4.5%) scale(1.1); }
+    6%   { opacity:1; }
+    25%  { opacity:1; }
+    38%  { opacity:0; }
+    100% { opacity:0; transform:translateX(4.5%) scale(1.1); }}
+@keyframes kd-wipe-text{from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 -2% 0 0); }}
+@keyframes kd-wipe-bar{from { transform: translateX(-102%); } to { transform: translateX(102%); }}
+@keyframes kd-caret{0% { transform: translateY(0); } 40% { transform: translateY(5px); } 70% { transform: translateY(-1px); } 100% { transform: translateY(0); }}
+@keyframes kd-float{0%,100% { transform: translate3d(0,0,0) rotate(0deg); } 50% { transform: translate3d(0,-14px,0) rotate(8deg); }}
+@keyframes kd-float-slow{0%,100% { transform: translate3d(0,0,0); } 50% { transform: translate3d(10px,12px,0); }}
+@keyframes kd-blob{0%,100% { border-radius: 56% 44% 47% 53% / 52% 48% 52% 48%; } 50% { border-radius: 47% 53% 54% 46% / 47% 53% 47% 53%; }}
+@keyframes kd-marquee{from { transform: translateX(0); } to { transform: translateX(-50%); }}
+@keyframes kd-scrollline{0% { transform: translateX(-100%); } 55% { transform: translateX(250%); } 100% { transform: translateX(250%); }}
+@keyframes kd-grad{0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; }}
+@media (max-width: 640px){
+  [data-btnrow]{flex-direction: column; align-items: stretch;}
+  [data-btnrow] > a{width: 100% !important; margin-left: 0 !important; margin-right: 0 !important;}
+}
+@media (max-width: 900px), (hover: none){
+  [data-fixedbg]{background-attachment: scroll;}
+}
+@media (prefers-reduced-motion: reduce){
+  a{transition: none !important; transform: none !important;}
+  button{transition: none !important; transform: none !important;}
+  [data-lift]{transition: none !important; transform: none !important;}
+  [data-lift] img{transition: none !important; transform: none !important;}
+  [data-lift] image-slot{transition: none !important; transform: none !important;}
+  a span[aria-hidden="true"]{transition: none !important; transform: none !important;}
+}
+@supports not (-webkit-text-stroke: 2px #000){
+  [data-ghost]{color:#F3DCE5}
+  [data-ghost="aqua"]{color:#D5EDF6}
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation: none !important; transition: none !important;}
+}
+@media (max-width: 640px){
+  main [style*="text-align:center"]{text-align: left !important;}
+  main [style*="text-align: center"]{text-align: left !important;}
+  main a[href][style*="inline-flex"]{display: flex !important; width: fit-content; margin-left: auto !important; margin-right: auto !important;}
+  main [style*="margin:0 auto"]{margin-left: 0 !important; margin-right: 0 !important;}
+  main [style*="margin: 0px auto"]{margin-left: 0 !important; margin-right: 0 !important;}
+}
+@media (max-width: 820px){
+  [data-vgrid]{grid-template-columns: 1fr !important; direction: ltr !important;}
+}
+@media (max-width: 640px){
+  [data-tblrow]{display: block !important;}
+  [data-tblrow] > dt{padding: clamp(11px,2vw,14px) clamp(16px,2.4vw,22px) !important; font-size: 13px !important; letter-spacing: .04em; line-height: 1.5;}
+  [data-tblrow] > dd{padding: 5px clamp(16px,2.4vw,22px) clamp(14px,2.2vw,20px) !important;}
+}
+@media (max-width: 820px){
+  [data-welcomegrid]{grid-template-columns: 1fr !important;}
+}
+/* ===== 受領の dc 構文を納品DOMへ置き換えた分の土台 ===== */
+
+/* KEEP: PC / SP の出し分け。受領は JS の matchMedia(min-width:1000px) だった。
+   両方がDOMに残るので、片方を確実に消す指定が無いとメニューが二重に出る。
+   ★display:contents で包みを透過させる＝受領どおり nav / button がヘッダー行の直接の flex 子になる
+     （包みを display:flex にすると flex の入れ子が1段増えて配置がわずかにずれる）。 */
+.kd-nav-pc{display:none}
+.kd-nav-sp{display:contents}
+@media (min-width:1000px){
+  .kd-nav-pc{display:contents}
+  .kd-nav-sp{display:none}
+  .kd-drawer{display:none !important}
+}
+/* /KEEP */
+
+/* KEEP: PCのドロップダウン。受領は onMouseEnter/onFocus + JS state だった。
+   :focus-within を併記しているのでキーボードでも開く（受領JSは onFocus のみ対応だった）。
+   ★!important が必要：受領のパネルは display:flex を**インラインstyleで**持っており、
+     クラスの display:none では詳細度で勝てない（実測でメニューが開いたまま出た）。
+     開く側は (0,3,0) で閉じる側 (0,1,0) に勝つので、両方 !important でも順序は壊れない。 */
+.kd-submenu{display:none !important}
+.kd-hasmenu:hover>.kd-submenu,
+.kd-hasmenu:focus-within>.kd-submenu{display:flex !important}
+/* /KEEP */
+
+/* KEEP: SPドロワー。既定は非表示。BODY内JSが .is-open を付けて開く。
+   これが無いとドロワーが常時開いて画面を覆う。 */
+.kd-drawer{position:fixed;inset:0;z-index:60;pointer-events:none;visibility:hidden}
+.kd-drawer.is-open{pointer-events:auto;visibility:visible}
+.kd-drawer-scrim{position:absolute;inset:0;background:rgba(0,57,83,.32);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0}
+.kd-drawer.is-open .kd-drawer-scrim{opacity:1}
+.kd-drawer-panel{position:absolute;top:0;left:0;right:0;max-height:100vh;overflow:hidden;padding:calc(64px + clamp(14px,3vw,26px)) clamp(14px,4vw,30px) clamp(18px,3vw,28px);background:#fff;border-radius:0 0 clamp(24px,5vw,40px) clamp(24px,5vw,40px);box-shadow:0 24px 60px rgba(0,57,83,.18);transform:translateY(-14px) scale(.985);opacity:0;transform-origin:top center}
+.kd-drawer.is-open .kd-drawer-panel{transform:translateY(0) scale(1);opacity:1}
+/* 動きは「transition が実際に進む環境」でだけ足す（BODY内JS が html に .kd-trans を付ける）。
+   進まない環境で transition を掛けると開始値（opacity:0）で固まり、
+   ドロワーが**開いているのに中身が見えない**状態になる。 */
+.kd-trans .kd-drawer{transition:visibility .45s cubic-bezier(.2,.8,.22,1)}
+.kd-trans .kd-drawer-scrim{transition:opacity .45s cubic-bezier(.2,.8,.22,1)}
+.kd-trans .kd-drawer-panel{transition:transform .52s cubic-bezier(.2,.8,.22,1),opacity .38s cubic-bezier(.2,.8,.22,1)}
+/* /KEEP */
+
+/* ハンバーガー（3本線→×）。受領は JS が transform を計算していた */
+.kd-hb-bar{transition:transform .42s cubic-bezier(.2,.8,.22,1),opacity .22s cubic-bezier(.2,.8,.22,1),background-color .22s ease}
+[data-kd-burger][aria-expanded="true"] .kd-hb-top{transform:translateY(7px) rotate(45deg)}
+[data-kd-burger][aria-expanded="true"] .kd-hb-mid{opacity:0;transform:scaleX(.4)}
+[data-kd-burger][aria-expanded="true"] .kd-hb-bot{transform:translateY(-7px) rotate(-45deg);background:#00293B}
+
+/* KEEP: インタビューのアコーディオン（受領 recruit/style.html の panel0-2）。
+   ★HTMLは「開いた状態」で納品してある。閉じるのは BODY内JS の仕事。
+   ＝JSが動かなくてもインタビュー本文13問答は必ず読める（R-4）。 */
+.kd-acc-chev{transition:transform .35s cubic-bezier(.22,.7,.25,1)}
+.kd-acc-btn[aria-expanded="false"] .kd-acc-chev{transform:none}
+.kd-acc-btn[aria-expanded="true"] .kd-acc-chev{transform:rotate(45deg)}
+.kd-acc-panel.is-closed{max-height:0 !important;opacity:0}
+.kd-acc-panel.kd-anim{transition:max-height .55s cubic-bezier(.22,.7,.25,1),opacity .4s ease}
+/* /KEEP */
+
+/* ローディング（受領は dc props 2600ms）。既定 display:none ＝ JSが出さなければ出ない。
+   ★表示/非表示は BODY内JS がインラインstyleで行う（HTML側のインライン display:none に
+     クラスでは詳細度で勝てないため）。ここは中身の演出と抜けだけを持つ。 */
+.kd-loader.is-out{animation:kd-loader-out .9s cubic-bezier(.42,0,.3,1) forwards}
+.kd-loader.is-on .kd-loader-mark{animation:kd-loader-mark 1.1s cubic-bezier(.22,.7,.28,1) backwards}
+.kd-loader.is-on .kd-loader-bar{animation:kd-loader-bar 2.6s linear forwards}
+@keyframes kd-loader-out{from{clip-path:inset(0 0 0 0)}to{clip-path:inset(0 0 0 102%)}}
+@keyframes kd-loader-mark{from{opacity:.35;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes kd-loader-bar{from{width:0}to{width:100%}}
+@media (prefers-reduced-motion: reduce){ .kd-loader{display:none !important} }
+
+/* FV：受領 helmet の [data-wipe] / [data-wipebar] を使う。ローダーがある時だけ開始を遅らせる
+   （BODY内JSが html に .kd-splash を付ける＝JSが無ければ遅延0で即再生） */
+:root{--kd-fv-t0:0s}
+.kd-splash{--kd-fv-t0:2.7s}
+.kd-bar1{animation-delay:var(--kd-fv-t0)}
+.kd-wipe1{animation-delay:calc(var(--kd-fv-t0) + .17s)}
+.kd-bar2{animation-delay:calc(var(--kd-fv-t0) + .35s)}
+.kd-wipe2{animation-delay:calc(var(--kd-fv-t0) + .52s)}
+.kd-wipe3{animation-delay:calc(var(--kd-fv-t0) + .87s)}
+.kd-fv-rise1{animation:kd-fv-rise .9s cubic-bezier(.22,.7,.28,1) calc(var(--kd-fv-t0) + 1.05s) backwards}
+.kd-fv-rise2{animation:kd-fv-rise .9s cubic-bezier(.22,.7,.28,1) calc(var(--kd-fv-t0) + 1.25s) backwards}
+.kd-fv-img{animation:kd-fv-zoom 1.5s cubic-bezier(.22,.7,.28,1) var(--kd-fv-t0) backwards}
+@keyframes kd-fv-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes kd-fv-zoom{from{opacity:0;transform:scale(.965)}to{opacity:1;transform:scale(1)}}
+
+/* FVスライダー（受領はインラインの animation-name / animation-delay）。
+   CueZillaは style 属性から animation を落とすので、退避クラス（末尾の .kda*）で当てている。 */
+
+/* PARTNER のイラスト（受領は JS で広幅/狭幅を切替） */
+.kd-partner-illust{display:block;position:relative;width:min(420px,86%);max-width:none;margin:clamp(62px,11vw,96px) auto 0;pointer-events:none}
+@media (min-width:1000px){
+  .kd-partner-illust{position:absolute;z-index:2;right:calc(-1 * max(12px, 50vw - 640px));bottom:calc(-1 * clamp(70px,10vw,190px));width:min(760px,98%);margin:0}
+}
+
+/* 変換後 img（受領 image-slot）の土台と、素材待ちの空枠 */
+img.kd-slot{max-width:100%}
+.kd-slot-empty{min-height:180px}
+
+/* 電話リンク（受領は素のテキスト。R-24 で tel: に包んだぶんの見た目を継承させる） */
+a.kd-tel{color:inherit;text-decoration:none;white-space:nowrap}
+a.kd-tel:hover{color:#A8456A}
+
+/* プライバシーポリシー定型文（skin §10 が体裁を持つ。受領の器に入れているため上下余白だけ調整） */
+.kd-privacy .privacy__subtitle{margin-top:0}
+.kd-privacy .privacy-item:last-child{margin-bottom:0}
+
+/* 固定ヘッダーの実高さ（R-18：CueZillaが描画するページの潜り込み防止に skin が使う） */
+:root{--fixed-header-h:96px}
+@media (max-width:767px){ :root{--fixed-header-h:80px} }
+/* ===== インライン animation/transition の退避（CueZillaは style 属性から除去する） =====
+   3重クラス＝インライン相当の詳細度。FVスライダーの4枚とマーキー各ページ分もここで効く。 */
+.kda1.kda1.kda1{animation:kd-marquee 120s linear infinite;}
+.kda2.kda2.kda2{animation:kd-marquee 138s linear infinite;}
+.kda3.kda3.kda3{animation:kd-marquee 147s linear infinite;}
+.kda4.kda4.kda4{animation:kd-marquee 165s linear infinite;}
+.kda5.kda5.kda5{animation:kd-marquee 174s linear infinite;}
+.kda6.kda6.kda6{animation:kd-marquee 201s linear infinite;}
+.kda7.kda7.kda7{transition:transform .3s ease;}
+.kda8.kda8.kda8{animation:kd-marquee 129s linear infinite;}
+.kda9.kda9.kda9{animation:kd-marquee 156s linear infinite;}
+.kda10.kda10.kda10{transition:background .25s ease,border-color .25s ease;}
+.kda11.kda11.kda11{animation:kd-marquee 183s linear infinite;}
+.kda12.kda12.kda12{animation:kd-float-slow 17s ease-in-out infinite;}
+.kda13.kda13.kda13{animation:kd-blob 23s ease-in-out infinite reverse;}
+.kda14.kda14.kda14{animation:kd-scrollline 2.4s cubic-bezier(.6,0,.35,1) infinite;}
+.kda15.kda15.kda15{animation:kd-blob 24s ease-in-out infinite reverse;}
+.kda16.kda16.kda16{animation:kd-blob 30s ease-in-out infinite;}
+.kda17.kda17.kda17{animation:kd-blob 18s ease-in-out infinite;}
+.kda18.kda18.kda18{animation-name:kd-fvslide-l;animation-delay:0s;}
+.kda19.kda19.kda19{animation-name:kd-fvslide-r;animation-delay:6.5s;}
+.kda20.kda20.kda20{animation-name:kd-fvslide-l;animation-delay:13s;}
+.kda21.kda21.kda21{animation-name:kd-fvslide-last;animation-delay:19.5s;}
+.kda22.kda22.kda22{animation:kd-float-slow 21s ease-in-out infinite;}
+.kda23.kda23.kda23{animation:kd-float-slow 25s ease-in-out infinite reverse;}
+.kda24.kda24.kda24{animation:kd-float-slow 20s ease-in-out infinite;}
+.kda25.kda25.kda25{animation:kd-float-slow 26s ease-in-out infinite reverse;}
+.kda26.kda26.kda26{animation:kd-marquee 140s linear infinite;}
+.kda27.kda27.kda27{animation:kd-marquee 210s linear infinite;}
+.kda28.kda28.kda28{animation:kd-float-slow 19s ease-in-out infinite;}
+.kda29.kda29.kda29{animation:kd-float-slow 22s ease-in-out infinite;}
+.kda30.kda30.kda30{animation:kd-marquee 192s linear infinite;}
+.kda31.kda31.kda31{animation:kd-marquee 219s linear infinite;}
+/* ===== style-hover / style-focus 由来の生成クラス（3重クラス＋!important で inline に勝つ） ===== */
+.kdx1.kdx1.kdx1:hover{background:#FBEEF3!important;}
+.kdx2.kdx2.kdx2:hover{background:#8E3354!important;color:#fff!important;}
+.kdx3.kdx3.kdx3:focus{left:0!important;color:#fff!important;}
+.kdx4.kdx4.kdx4:hover{color:#F0B9CB!important;}
+.kdx5.kdx5.kdx5:hover{color:#A8456A!important;}
+.kdx6.kdx6.kdx6:hover{background:#075E8B!important;color:#fff!important;}
+.kdx7.kdx7.kdx7:hover{border-color:#E296AE!important;background:#FDF7F9!important;color:#00293B!important;}
+.kdx8.kdx8.kdx8:hover{background:#0A5170!important;color:#fff!important;}
+.kdx9.kdx9.kdx9:hover{background:rgba(255,255,255,.12)!important;color:#fff!important;}
+.kdx10.kdx10.kdx10:hover{color:#8E3354!important;}
+.kdx11.kdx11.kdx11:hover{color:#00293B!important;}
+.kdx12.kdx12.kdx12:hover{border-color:#8FD3E0!important;background:#F4FBFD!important;color:#00293B!important;}
+.kdx13.kdx13.kdx13:hover{background:#FBEEF3!important;color:#00293B!important;}
+.kdx14.kdx14.kdx14:hover{background:#EAF7FA!important;color:#00293B!important;}
+.kdx15.kdx15.kdx15:hover{background:#00293B!important;border-color:#00293B!important;color:#fff!important;}
+
+/* ===== 24_cuezilla-skin.css ===== */
+/* ============================================================
+   ★★★ このファイルは【全案件共通の資産】です。案件では編集しないでください ★★★
+   ------------------------------------------------------------
+   （Claude Code / Claude Design / 手作業、いずれの経路でも同じです）
+
+   ■ 案件ごとの調整は、必ず `override.css` に書いてください。
+     読み込み/結合順が  … → style.css → cuezilla-skin.css → 【override.css】  なので、
+     override.css に書いた指定は本ファイルに打ち消されません。**案件の上書きが効く唯一の場所です。**
+     （例: カード面を白にしたい → override.css に `:root{ --dyn-surface:#fff; }`）
+
+   ■ なぜ編集してはいけないか
+     本ファイルを案件で書き換えた瞬間、その案件の skin は共通資産から切り離されます。
+     以後、共通側で直した修正（カード高さの不揃い／サイドバーの可読性／
+     フォーム送信ボタンの崩れ 等）が **その案件には二度と届きません**。
+     実際に S01189 で本ファイルの §0 が案件調整で書き換えられ、共通修正が届かなくなりました。
+     「毎案件おなじ崩れを直している」の原因はこれです。
+
+   ■ 共通で直すべき崩れを見つけたら
+     案件で握り込まず、正本 `skin/cuezilla-skin.css` へ還流してください（全案件に効きます）。
+     還流し忘れると、次の同期でその修正は消えます。
+
+   詳細は R-30（70_運用ルール/運用ルール集.md）。
+   ============================================================ */
+
+/* ============================================================
+   CueZilla 動的パーツ スキンキット v1.0
+   ------------------------------------------------------------
+   目的: ブログ/施工実績(blog-ex)/お問い合わせ/パンくず/ページヘッダー等の
+         CueZilla 既定パーツを、サイトのトンマナ（ダーク/ライト・ブランド色・
+         フォント・角丸）に "自動で寄せる" 汎用CSS。案件ごとの調整を最小化する。
+
+   思想:
+     (1) 色は CueZilla テーマ変数(--main-color 等)から自動連動
+         → サイトのテーマ設定がそのまま skin にも効く（色は一元管理）
+     (2) フォント/角丸/グリッド幅はトークンで指定（テーマ変数に無いため）
+     (3) partsNNN は採番が可変だが接尾辞は共通(_post_wrap 等)
+         → 属性セレクタ [class*="_xxx"] で番号非依存に当てる（単一属性セレクタまで。積んで詳細度を稼がない）
+
+   ★適用範囲と安全契約（重要・memory: cuezilla-css-safety-contract）:
+     ・本skinは「CueZilla既定の動的パーツ」だけを寄せる。サイトのフリーコーディング設計には当てない
+       （生成サイトCSSは変数非依存＋具体値＋自作接頭辞クラスで組む＝構造的に非衝突・skinと干渉しない）。
+     ・[class*=…]を積んで詳細度を同点/超過させる手法は禁止（脆い・過剰マッチ・アーマーレース）。
+       単一の番号非依存セレクタ＋!important1個で当てる（theme_defaultは非importantなので確定勝ち）。
+     ・!important可は「レイヤーで越えられない相手」＝theme_default／body内インライン／BSユーティリティ／
+       .partsNNN_blog_＜ID＞(0,3,0) のみ。後者(0,3,0)+!importantには詳細度で負けるため、
+       負けた時だけ §14 の手順で実採番(0,3,1)を【案件CSS】に足して勝つ（汎用skinには番号を書かない）。
+     ・変数の注意：実機は body内コンポの style 要素の :root が7色(--main-color等)を撒きうる（490件中16件）。
+       →§0の--dyn-*はその頁で乗っ取られ得る。動的パーツの色合わせには許容だが、サイト設計の主機構にしない。
+
+   使い方:
+     1. §0 のトークンを案件に合わせて調整（ダーク/ライトはプリセットをコピー）
+     2. CueZilla テーマカラー(--main-color 等)をブランド値に設定
+     3. 本ファイルをサイト全体CSS(AddCssInfo)へ貼る（サイト固有のフリーコーディングCSSの後ろ）
+   ============================================================ */
+
+
+/* ============================================================
+   §0  トークン ─ ここだけ案件ごとに調整
+   ============================================================ */
+:root{
+  /* --- 色: CueZilla テーマ変数から自動取得（無い場合のフォールバック付き） ---
+     ※これらは【動的パーツの色合わせ用】。生成サイトCSSはこの変数に依存せず具体値で書く（安全契約）。
+       実機では body内コンポの style 要素の :root が --main-color 等を頁単位で上書きしうる＝--dyn-*も追従する。 */
+  --dyn-bg:        var(--background-color, #ffffff);   /* ページ/セクション背景 */
+  --dyn-surface:   var(--temporary-color, #f4f4f2);    /* カード/パネル/入力欄の面 */
+  --dyn-text:      var(--text-color, #222222);         /* 本文 */
+  --dyn-heading:   var(--text-color, #111111);         /* 見出し */
+  --dyn-muted:     var(--sub-color, #8a8a8a);          /* 補助/日付 */
+  --dyn-border:    var(--sub-color, #dddddd);          /* 罫線/枠 */
+  --dyn-accent:    var(--main-color, #1e3a5f);         /* アクセント（ボタン/チップ/見出しバー） */
+  --dyn-accent-2:  var(--link-color, var(--main-color, #1e3a5f)); /* リンク/ホバー */
+  --dyn-on-accent: #ffffff;                             /* アクセント面の上の文字 */
+
+  /* --- フォント（site.css の :root に定義があればそれを使用） ---
+     KEEP: ★既定を明朝にしない（2026-08-31 ディレクター判断）。旧既定は display と numeric が
+     `"Noto Serif JP","Yu Mincho",serif` / `"EB Garamond","Noto Serif JP",serif` ＝**明朝**で、
+     案件が `--font-*` を渡し忘れると**動的ページ（ブログ・施工実績）だけが明朝で出る**。
+     実測 S00757 スマイルカミオン: 記事タイトル・抜粋・タグ（display）7要素＋20要素、日付（numeric）各4要素が明朝になり、
+     ディレクター指摘「ブログページに明朝が活用されていますが、サイト全体のフォントで統一してください」を受けた。
+     ★渡し忘れは"案件のミス"だが、**気づけるのが公開直前の目視だけ**で、静的ページを見ている限り絶対に露見しない。
+     ＝**既定が事故を作っていた**ので、既定側を直す。方針は「今後進める案件がサイトに使用しているフォントで
+     反映される仕様にする」（ディレクター 2026-08-31）。
+     ★意図して明朝にしたい案件は、これまでどおり `--font-display` 等を渡せばそのまま効く（機構は不変）。
+     ★numeric は日付・英字ラベル用なので、和文本文より英字の顔が合う。sans を既定にしつつ英字を先頭へ置く。
+     ★既存の納品済み案件は影響を受けない（納品CSSは書き出し時にベイク済みで、再エクスポートしない限り変わらない）。 */
+  --dyn-font-display: var(--font-display, "Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif);
+  --dyn-font-body:    var(--font-body, "Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif);
+  --dyn-font-numeric: var(--font-numeric, "Helvetica Neue",Arial,"Noto Sans JP",sans-serif);
+  /* /KEEP */
+
+  /* --- 角丸（チップ/ボタン/カード）。角なしにするなら 0 --- */
+  --dyn-radius: 6px;
+  /* --- 一覧カードの最小幅 / 段組ギャップ --- */
+  --dyn-card-min: 300px;
+  --dyn-gap: 32px;
+}
+
+/* === テーマ プリセット（使う方を §0 の後にコピペして上書き） =========
+   【ダーク】
+   :root{
+     --dyn-bg:#0A0A0A; --dyn-surface:#111110; --dyn-text:#F4F1EC; --dyn-heading:#FAF7F1;
+     --dyn-muted:#8C857A; --dyn-border:#3A352D; --dyn-accent:#8E3A22; --dyn-accent-2:#B0533A;
+     --dyn-on-accent:#FAF7F1; --dyn-radius:0;
+   }
+   【ライト】
+   :root{
+     --dyn-bg:#ffffff; --dyn-surface:#f7f7f5; --dyn-text:#222222; --dyn-heading:#111111;
+     --dyn-muted:#8a8a8a; --dyn-border:#e3e3e3; --dyn-accent:#1e3a5f; --dyn-accent-2:#1e3a5f;
+     --dyn-on-accent:#ffffff; --dyn-radius:6px;
+   }
+   ※ CueZilla テーマ変数(--main-color 等)を設定する場合は §0 が自動連動するのでプリセット不要。
+   ============================================================ */
+
+
+/* ============================================================
+   §1  パンくず（CueZilla parts###_breadcrumb / p-breadcrumb）
+   実markup: div.parts###_breadcrumb.p-breadcrumb.c-breadcrumb
+             > ul.p-breadcrumb__inner(BreadcrumbList) > li.p-breadcrumb__item(ListItem)
+   CueZilla共通CSSにパンくず装飾は無い → skin側で横並び・区切り・配色を付与
+   ============================================================ */
+[class*="_breadcrumb"], .p-breadcrumb{ background:var(--dyn-bg) !important; }
+.p-breadcrumb__inner{
+  list-style:none; margin:0 auto; padding:14px 24px;
+  max-width:1200px; display:flex; flex-wrap:wrap; align-items:center;
+}
+.p-breadcrumb__item{
+  display:inline-flex; align-items:center;
+  color:var(--dyn-muted) !important; font-family:var(--dyn-font-body);
+  font-size:.78rem; letter-spacing:.04em;
+}
+.p-breadcrumb__item a{ color:var(--dyn-muted) !important; text-decoration:none; }
+.p-breadcrumb__item a:hover{ color:var(--dyn-accent-2) !important; text-decoration:underline; }
+.p-breadcrumb__item:last-child{ color:var(--dyn-text) !important; }   /* 現在地 */
+/* 区切り（2件目以降の左に縦罫線）※R-27対応（2026-08-26）
+   旧実装は `::before` の content 宣言（文字リテラル "›"）で区切りを描いていたが、AddCssInfo は
+   疑似要素の content 宣言をサニタイズで落とすため、実機では区切りが消えて
+   「ホーム私たちの歴史」のように語が詰まっていた。
+   ★実要素（＜span＞）へ昇格させず「content を使わない罫線」で代替した理由:
+     パンくずの運用第一候補は「CueZilla がページ階層から自動描画するパンくずパーツ」で、
+     その markup に区切り用の要素を挿す手段が無い。templates/breadcrumb.html（明示設置版）だけ
+     直しても自動描画側は直らないので、両経路に1本のCSSで効く手段を採った。
+     border / padding はサニタイズ後も残る（R-27「残る」側）。
+   ★物理プロパティ（border-left）で書く理由: サニタイズのホワイトリストに論理プロパティが
+     載っていない可能性を避ける。和文サイトは横書きLTR固定なので意味は同じ。 */
+.p-breadcrumb__item + .p-breadcrumb__item{
+  margin-left:.7em; padding-left:.7em;
+  border-left:1px solid var(--dyn-border) !important;
+}
+.p-breadcrumb meta{ display:none; }   /* schema.org の ＜meta itemprop="position"＞ は非表示 */
+
+
+/* ============================================================
+   §2  ページヘッダー（[class*="_article_header"]）画像上のタイトル
+   ============================================================ */
+[class*="_article_header"] .ja, [class*="_article_header"] h1, [class*="_article_header"] h2{
+  color:var(--dyn-heading) !important; font-family:var(--dyn-font-display) !important;
+  text-shadow:0 2px 14px rgba(0,0,0,.5) !important;
+}
+[class*="_article_header"] .en{ color:var(--dyn-muted) !important; font-family:var(--dyn-font-numeric) !important; letter-spacing:.1em; text-shadow:0 1px 10px rgba(0,0,0,.5) !important; }
+
+
+/* ============================================================
+   §3  ページネーション（2系統。テーマCSSの持ち方が違うので扱いを分ける＝崩れ防止）
+   ・.pagination_*（enjoyworks系）            … テーマが素 → 体裁＋色を一式付与
+   ・[class*="_pagenation"]（parts222/225/228系）… テーマが体裁を持つ（flex/padding/border/白黒ハードコード）
+        → レイアウト・サイズはテーマに任せ、ハードコードの白黒(#000/#fff)だけブランド色へ置換（最小限）。
+          a/.current 以外（余白用の素の ＜span＞）には触らない＝二重ボックス化を防ぐ。
+          --dyn-accent は §0 で var(--main-color) にバインド済み＝サイトのCMS色に自動一致（案件側の手当て不要）。
+   ============================================================ */
+/* (A) pagination_* 系：テーマ装飾が無いので一式付与 */
+.pagination_num, .pagination_prev, .pagination_next{
+  font-family:var(--dyn-font-numeric); color:var(--dyn-text) !important;
+ /* border:1px solid var(--dyn-border) !important;*/ border-radius:var(--dyn-radius);
+  min-width:40px; height:40px; display:inline-flex; align-items:center; justify-content:center; text-decoration:none;
+}
+.pagination_num.current{ background:var(--dyn-accent) !important; border-color:var(--dyn-accent) !important; color:var(--dyn-on-accent) !important; }
+.pagination_num:hover, .pagination_prev:hover, .pagination_next:hover{ border-color:var(--dyn-accent-2) !important; color:var(--dyn-accent-2) !important; }
+
+/* (B) _pagenation 系：色だけ寄せる（ジオメトリはテーマのまま＝箱を再定義しない） */
+[class*="_pagenation"] a{ border-color:var(--dyn-accent) !important; color:var(--dyn-text) !important; }
+[class*="_pagenation"] span.current, [class*="_pagenation"] .current, [class*="_pagenation"] .active{
+  background:var(--dyn-accent) !important; border-color:var(--dyn-accent) !important; color:var(--dyn-on-accent) !important;
+}
+[class*="_pagenation"] a:hover{ border-color:var(--dyn-accent-2) !important; color:var(--dyn-accent-2) !important; }
+.pe-none{ opacity:.3; pointer-events:none; }
+
+
+/* ============================================================
+   §4  ブログ / 施工実績(blog-ex) 一覧（番号非依存）
+   ============================================================ */
+/* 一覧セクションの地 */
+[class*="_post_list"], [class*="_post_wrap"]{ } /* 下で個別指定 */
+/* カード並び（最小幅を確保して細くなりすぎない） */
+[class*="_post_list"]{ /*display:grid !important; */grid-template-columns:repeat(auto-fill, minmax(var(--dyn-card-min), 1fr)) !important; gap:var(--dyn-gap) !important; }
+/* カード */
+[class*="_post_wrap"]{
+  /* カード等寸化：中身を縦に積み、内側の ＜a＞/本文枠を flex で伸長させて高さを揃える（S01189還流） */
+  /*display:flex !important;*/ flex-direction:column;
+  margin:0 !important;   /* theme_default の margin-bottom(55px等)残存で最終行カードだけ高さ不揃いになるのを打ち消す */
+  width:auto !important; /*max-width:none !important; */text-decoration:none;
+  background:var(--dyn-surface) !important; border:1px solid var(--dyn-border) !important;
+  border-radius:var(--dyn-radius); overflow:hidden;
+  transition:transform .3s ease, border-color .3s ease;
+}
+[class*="_post_wrap"]:hover{ transform:translateY(-4px); border-color:var(--dyn-accent-2) !important; }
+[class*="_post_wrap"] > a{ display:flex; flex-direction:column; flex:1 1 auto; color:inherit; }  /* カード全体ラップ＜a＞を縦伸長（内容を上下に満たす） */
+/* サムネ等寸化：グリッド列の幅から高さを算出（幅制約下＝§6.5の aspect-ratio×height 併用の罠には該当しない） */
+[class*="_post_img"]{ width:100%; display:block; border-radius:0; aspect-ratio:16/10; overflow:hidden; }
+[class*="_post_img"] img{ width:100%; height:100%; object-fit:cover; display:block; }
+/* カード内のテキストに左右余白 */
+[class*="_post_status"]{ border:none !important; background:transparent !important; margin:14px 16px 0 !important; padding:0 !important; display:flex !important; flex-wrap:wrap; justify-content:flex-start !important; gap:10px; align-items:center; }
+[class*="_post_status"]:has([class*="_title-excerpt"]){ display:block !important; }   /* parts228系「日付｜タイトル」の横並びを解除（:has非対応環境ではflex-wrapで折返し） */
+[class*="_post_title-excerpt"]{ padding:10px 16px 16px !important; flex:1 1 auto; }   /* 本文枠を伸長＝カード等寸化の要 */
+[class*="_post_status"]:has([class*="_title-excerpt"]) [class*="_title-excerpt"]{ padding:10px 0 16px !important; }   /* 施工実績は左端揃え */
+[class*="_post_title"]{ font-family:var(--dyn-font-display) !important; color:var(--dyn-heading) !important; font-weight:700 !important; line-height:1.5; }
+[class*="_post_excerpt"]{ color:var(--dyn-muted) !important; }
+[class*="_post_date"]{ font-family:var(--dyn-font-numeric) !important; color:var(--dyn-muted) !important; }
+/* カテゴリ/ステータスは1チップに。
+   テーマは既に _post_category に border:1px solid var(--main-color) を持つ＝枠を“足す”と2重になるので
+   同一要素に !important で単一の枠を確定（色は --dyn-accent=var(--main-color) で一致）。幅は % 制約を解除し content 幅に。 */
+[class*="_post_category"]:not([class*="_sidebar"]), [class*="_post_status"] > span:last-child{
+  /* :not(_sidebar) ＝ この§4チップ装飾が §5 の _sidebar_post_category_count へ漏れ二重適用されるのを防ぐ（S01189還流） */
+  width:auto; max-width:none !important;
+  background:var(--dyn-bg) !important; border:1px solid var(--dyn-accent) !important;
+  border-radius:var(--dyn-radius); padding:2px 8px; color:var(--dyn-accent) !important;
+}
+.parts-blog-ex-tag_wrap{ display:flex; flex-wrap:wrap; gap:6px; padding:0 16px 14px; }
+.parts-blog-ex_tag{ font-size:.72rem; color:var(--dyn-muted) !important; background:var(--dyn-surface) !important; border:1px solid var(--dyn-border); border-radius:var(--dyn-radius); padding:2px 8px; }
+
+/* --- 一覧パーツ固有の崩れ2点（実共有CSS=theme parts222/225/228 を突き合わせて確定）---
+   (a) 自動セクション見出し（「ブログ」「施工実績」等）の撤去：
+       テーマは `.parts222_section h2 / .parts228_section h2` に
+       color:var(--main-color)/font-size:35px/text-align:center を付与し、
+       一覧上部に大見出しを自動描画する。自前の下層ヘッダー(hero)と二重化＝崩れ。
+       → 一覧パーツ(_post_list を含む _section)直下の素の h2 だけ隠す。
+         残したいサイトは案件CSSで個別に復帰。`:has()` 非対応保険に f_meiryo 版も併記。 */
+[class*="_section"]:has([class*="_post_list"]) > h2,
+[class*="_section"] > h2.f_meiryo{ display:none !important; }
+/* (b) flex前提の余白スペーサー ::after の無効化：
+       テーマは `.parts228_post_list::after{content:"";width:32.465%}` で flex の最終行詰めをする。
+       §4 で _post_list を grid 化すると、この ::after が「空のゴースト列」になり最終行が片寄る。
+       → grid では不要なので除去（content:none で擬似要素自体を消す）。 */
+[class*="_post_list"]::after{ content:none !important; display:none !important; }
+
+
+/* ============================================================
+   §4-b  ブログ枠パーツ（parts131415_blog 系）＝ 内側でBootstrapが生きている型
+   ------------------------------------------------------------
+   §4 は parts222/225/228 の `_post_list` / `_post_wrap` 接尾辞を前提にしている。
+   parts131415_blog 系は接尾辞が違い（`.row.row-cols-lg-3 > .col > .card`）、§4のセレクタが
+   **1つも届かない**。そのため案件ごとに同じCSSを書き直す状態になっていた。
+   教訓: 70_運用ルール/デザイン教訓/cms-part-bootstrap-grid-collapses-cards.md
+         70_運用ルール/デザイン教訓/cms-part-heading-typography-override.md
+   （承認: 2026-09-01「A・B・C ＋ I ＋ G/H（受領チェック1項目）」）
+
+   (a) カードが列幅のさらに1/3に潰れる（独立3案件で真因一致: S02150・O01540・S00459）
+       パーツが吐く `.row.row-cols-1.row-cols-sm-2.row-cols-lg-3` は Bootstrap の
+       `.row-cols-lg-3 > *{flex:0 0 auto; width:33.3333%}` が生きたまま。案件側で `.row` を
+       grid 化しても **grid の子に残った width:33.3333% が「列幅の33.3%」として再び効く**ため、
+       341px の列の中でカードが 114px（サムネイル 52px）まで潰れる（実測 S02150 2026-08-25）。
+       ★崩れるのは実機だけで、受領データを単体で開くと正常に見える＝**受領物を見ている限り
+         絶対に気づけない**。だから案件ごとの気づきに任せず skin の既定にする。
+       → §4 の `_post_list` と同じ扱い（auto-fill グリッド＋子の幅指定を落とす）を対にして当てる。
+         **grid 化と子の無効化は必ずセット**。片方だけだと、grid 化なしで幅を落とせば1列に伸び、
+         幅を落とさず grid 化すれば上記の 1/3 潰れが起きる。
+       ★施工実績枠には当たらない。あちらは `.content.d-flex`（`.row` を持たない）で、
+         flex の子に幅を当てると3枚が横にあふれる。クラス名では枠を判別できない
+         （CMSが `parts131415_blog_DKhwGnz7DM` のように乱数の接尾辞を付け、作り直すと変わる）ため、
+         **`.row` を持つか＝中身で分岐している**。 */
+/*[class*="parts131415_blog"] .row{
+  display:grid !important;
+  grid-template-columns:repeat(auto-fill, minmax(var(--dyn-card-min), 1fr)) !important;
+  gap:var(--dyn-gap) !important;
+}
+[class*="parts131415_blog"] .row > *{
+  width:auto !important; max-width:none !important; min-width:0 !important;
+  flex:none !important; margin:0 !important; padding:0 !important;
+}*/
+
+/* (b) パーツ見出しがCMS既定の書体・色のまま出てブランドタイポから浮く（独立2案件: S00459・S01926）
+       レイアウト（配置・カラム）は案件CSSで整えられる一方、**パーツ自身が生成する見出し要素の
+       書体・色はパーツ内部に付いているため見落とされやすい**。結果「配置は整っているのに見出しだけ
+       フォントが違う・色が違う」という部分的な浮きが残る。
+       実測: S00459 `.design-parts-11 .parts-title` が色 #0E6FB8 のまま／
+             S01926 `.parts131415_blog_title_wrap .title` が明朝のまま（一度PC幅だけ直して
+             「全端末で適用」と差し戻された＝BP単位の個別対応では同じ穴が別BPで再発する）。
+       → §4 の `_post_title` / §5 の `_sidebar_post_title` と同じ扱いで、**書体と色だけ**を寄せる。
+       ★サイズ・寄せは案件ごとのデザイン判断なので skin では触らない（§4の既存方針と同じ）。
+         そちらは 30_コード生成/AI生成指示書_CueZilla.md 側の手順で担保する。
+       ★全BP共通で当たる（メディアクエリの外に置いてある）。
+       ★実測で確認できた2クラスだけに絞ってある。`.card-title` / `.card-text` は当てていない
+         （O01540 では `.card-title` が「濃緑地に白文字のチップ」＝見出しではなくラベルとして
+         使われており、`--dyn-heading` を当てると読めなくなる）。パーツが増えたら実機で確認して追記する。 */
+[class*="_blog_title_wrap"] .title,
+[class*="design-parts-"] .parts-title{
+  font-family:var(--dyn-font-display) !important; color:var(--dyn-heading) !important;
+}
+
+
+/* ============================================================
+   §5  サイドバー / 最近の投稿 / カテゴリ記事数
+   ============================================================ */
+[class*="_sidebar"], .recent_posts_wrap{ color:var(--dyn-text); }
+/* サイドバー見出し（「最近の投稿」「カテゴリ」）の可読性を確保。
+   theme_default は `.partsNNN_sidebar h3{ background-color:var(--main-color); color:#fff }` と
+   色を直当てするが、§12 の見出しリセットが**背景だけ**を transparent にするため、
+   ライト基調の案件では「白地に白文字」で消える（ダーク案件では地に映えるため露見しない）。
+   背景は戻さず（skinのフラット化方針を維持）、文字色だけトークンへ寄せて両基調で可読にする。
+   あわせて左右パディングも解除する：`padding:15px 20px` は**帯があった前提**の内側余白のため、
+   帯を透明化したまま残すと「見出しだけ20px字下げ」になり、直下の日付／タイトルと文頭がズレる。
+   （詳細ページ側の .recent_post_title には下で同じ手当てをしており、一覧側だけ取り残されていた） */
+[class*="_sidebar"] h3{ color:var(--dyn-heading) !important; padding-left:0 !important; padding-right:0 !important; }
+[class*="_sidebar_post_title"], .recent_post_title{ font-family:var(--dyn-font-display) !important; color:var(--dyn-heading) !important; }
+/* 「最近の投稿」見出し（詳細ページ側）の帯を外して一覧側と体裁を揃える。
+   theme_default は `.recent_posts_wrap .recent_post_title{ background-color:var(--main-color); color:#fff }` で帯を敷くが、
+   §12 の見出しリセットは (a) 包み(parts166_single_article / parts-blog-ex-single-wrap)が `_section` を含まない
+   (b) 要素が ＜div＞（h2/h3でない）── の2点で**届かず**、帯だけが生き残る。
+   一方すぐ上の §5 が文字色を --dyn-heading（＝ライトでは濃色）へ寄せるため「濃い帯に濃い文字」となり、
+   案件ごとに帯との視認性を見て文字色を手当てする必要があった。帯を外せば一覧（§12で帯が外れる）と揃い、手当ても不要になる。
+   ※帯を活かしたい案件は案件側で `background:var(--dyn-accent); color:var(--dyn-on-accent)` を再指定する。 */
+.recent_post_title{ background:transparent !important; padding-left:0 !important; }
+[class*="_sidebar_date"], .recent_post_date{ font-family:var(--dyn-font-numeric) !important; color:var(--dyn-muted) !important; }
+/* 記事li の区切り罫線：theme_default が #666 をハードコードしており地に合わず過剰に見える → トークンへ */
+[class*="_sidebar"] ul li, .recent_posts_wrap ul li{ border-bottom-color:var(--dyn-border) !important; }
+/* カテゴリ右の記事数を視認できるチップに */
+[class*="_sidebar_post_category_count"]{ background:var(--dyn-surface) !important; color:var(--dyn-text) !important; border:1px solid var(--dyn-border); border-radius:var(--dyn-radius); padding:0 8px !important; }
+/* カテゴリ一覧 li：theme_default 由来の左右縦罫線(1px solid #666)を除去（下罫線は区切りとして意図的に残す）。S01189還流 */
+[class*="category_post_count"] li{ border-left:0 !important; border-right:0 !important; }
+/* カテゴリ名と件数チップが重ならないよう両端寄せ。
+   あわせて左右パディングを解除：theme_default は `.category_post_count ul li a{ padding:15px 20px }` と
+   **帯／箱があった前提**の字下げを持つため、帯を外した状態では
+   カテゴリ名だけが 20px 右にずれ、見出し(h3)や「最近の投稿」リストと頭が揃わない。
+   上下15pxはタップ領域として残す。 */
+[class*="category_post_count"] li a{ display:flex; justify-content:space-between; align-items:center; gap:8px; padding-left:0 !important; padding-right:0 !important; }
+
+
+/* ============================================================
+   §6  詳細ページ（本文 / 署名 / SNS / 詳細内スライダー）
+   ============================================================ */
+.parts-blog-ex_text{ font-family:var(--dyn-font-body); color:var(--dyn-text) !important; line-height:1.9; }
+.parts-blog-ex_text h2, .parts-blog-ex_text h3{ font-family:var(--dyn-font-display) !important; color:var(--dyn-heading) !important; }
+.signature_wrap{ font-family:var(--dyn-font-display); color:var(--dyn-muted) !important; border-top:1px solid var(--dyn-border); padding-top:16px; }
+.slick-prev, .slick-next{ color:var(--dyn-accent-2) !important; }
+/* ※詳細本文の親ラッパーが固定class薄め。崩れる場合は実ページで本文コンテナを確認し追補 */
+
+
+/* ============================================================
+   §7  お問い合わせフォーム
+   ============================================================ */
+.contact_section, [class*="_section_form"], [class*="_section_content"], [class*="_content_wrap"], [class*="_content"]{ background:var(--dyn-bg) !important; color:var(--dyn-text) !important; }
+[class*="_form_wrap"]{ max-width:720px; margin:0 auto; }
+[class*="_form_wrap"] label, [class*="_form_wrap"] dt, [class*="_form_wrap"] .ja, [class*="_form_wrap"] .en{ color:var(--dyn-text) !important; }
+/* 入力欄を十分な大きさに（チェック/ラジオは除外） */
+[class*="_form_wrap"] dd input:not([type="checkbox"]):not([type="radio"]),
+[class*="_form_wrap"] dd select{ width:100% !important; max-width:none !important; padding:14px 16px !important; font-size:16px !important; min-height:54px !important; background:var(--dyn-surface) !important; color:var(--dyn-text) !important; border:1px solid var(--dyn-border) !important; border-radius:var(--dyn-radius); }
+[class*="_form_wrap"] textarea, .form_textarea textarea{ width:100% !important; padding:14px 16px !important; font-size:16px !important; min-height:220px !important; background:var(--dyn-surface) !important; color:var(--dyn-text) !important; border:1px solid var(--dyn-border) !important; border-radius:var(--dyn-radius); }
+/* チェックボックス/ラジオはサイズ統一 */
+[class*="_form_wrap"] input[type="checkbox"], [class*="_form_wrap"] input[type="radio"]{ width:18px !important; height:18px !important; min-height:0 !important; padding:0 !important; margin:0 8px 0 0 !important; vertical-align:-3px; accent-color:var(--dyn-accent); flex:none !important; }
+/* 必須バッジ: 文字を中央・折り返さない・角丸はトークン */
+.required{ display:inline-flex !important; align-items:center !important; justify-content:center !important; line-height:1 !important; white-space:nowrap !important; padding:6px 12px !important; border-radius:var(--dyn-radius) !important; background:var(--dyn-accent) !important; color:var(--dyn-on-accent) !important; }
+.error{ color:var(--dyn-accent-2) !important; }
+/* 「お問い合わせ内容」を囲む大きな箱(枠線)を撤去 */
+.form_textarea, .form_text_dt{ border:none !important; background:transparent !important; }
+/* 送信ボタン。★セレクタに包み(.contact_submit 自体)を含めないこと：
+   包みは複数ボタンを載せるレイアウト用のdivで、ここを accent で塗ると
+   (a) 完了ページ=藍の包みに藍のボタンが乗って同化し、ボタンが消えて見える
+   (b) 確認ページ=すぐ下でアウトライン化する「戻る」が藍地に濃色文字となり判読不能（実測 1.01:1）
+   になる。当てる先はボタン実体だけでよい（dynamic-form.md §1 の意図も「送信 .contact_submit input = accent地」）。 */
+.contact_submit button, .contact_submit input{ background:var(--dyn-accent) !important; color:var(--dyn-on-accent) !important; border:none !important; border-radius:var(--dyn-radius) !important; }
+/* 確認ページの「戻る」は副ボタン（送信＝アクセント／戻る＝アウトライン）＝誤導線防止 */
+.contact_submit input[name="back"]{ background:transparent !important; color:var(--dyn-text) !important; border:1px solid var(--dyn-border) !important; }
+/* 送信前 disabled（reCAPTCHA未完了）の見え方 */
+.contact_submit input[disabled]{ opacity:.5; cursor:not-allowed; }
+
+/* --- フォーム実コードで頻出するが §7本体に無かった部品（parts213等の実装を突き合わせ）--- */
+/* ファイル添付の自作UI：受領のインライン style が #eee 地・#999 文字・明るいグラデで固定し、
+   ダーク地で白い箱・低コントラストになる。トークンで地・枠・文字を寄せる（label_file_upload に限定）。 */
+.label_file_upload{ display:block; width:100%; padding:12px 14px; cursor:pointer;
+  background:var(--dyn-surface) !important; color:var(--dyn-text) !important;
+  border:1px solid var(--dyn-border) !important; border-radius:var(--dyn-radius); }
+.label_file_upload button{ background:var(--dyn-bg) !important; color:var(--dyn-text) !important;
+  border:1px solid var(--dyn-border) !important; border-radius:var(--dyn-radius) !important; pointer-events:none; }
+.label_file_upload span, #file-chosen, [id$="filechosen"]{ color:var(--dyn-muted) !important; }
+.des{ color:var(--dyn-muted) !important; }
+/* 注意書き（文字数制限・ファイル名規則等の補助）：色未指定/未定義var(--red)で可読性がばらつくため muted で固定（AA確保色） */
+.attention{ color:var(--dyn-muted) !important; }
+/* 郵便番号は narrow に保つ：上の入力欄ルール `[class*="_form_wrap"] dd input:not([checkbox]):not([radio])`
+   は (0,3,2)+!important で .zip も全幅化し〒[郵便番号][住所]を壊す。これに勝つよう :not() を重ねて
+   詳細度を (0,4,2) に上げて .zip だけ幅を戻す（parts219等 form_address系・番号非依存）。 */
+[class*="_form_wrap"] dd input.zip:not([type="checkbox"]):not([type="radio"]){ width:9em !important; max-width:9em !important; display:inline-block; margin-right:8px; }
+/* プライバシー同意 */
+.privacypolicy{ background:var(--dyn-surface) !important; border:1px solid var(--dyn-border); border-radius:var(--dyn-radius); padding:16px; color:var(--dyn-muted) !important; }
+.privacypolicy-link{ color:var(--dyn-accent-2) !important; }
+/* 電話/メール等の content バー（角丸はトークン） */
+[class*="_content"] [class*="btn"], [class*="_content"] a[class*="round"]{ border-radius:var(--dyn-radius) !important; }
+
+
+/* ============================================================
+   §7b  お問い合わせフォーム ─ wpcf7 / .formBox 系（第2系統）
+   ------------------------------------------------------------
+   【重要】フォームには構造が2系統ある（dynamic-harvest.js の「フォーム系統」で判定）：
+     ・§7  = parts_form/dl 系（[class*="_form_wrap"] / dt / dd / .required / .contact_submit）
+     ・§7b = wpcf7/.formBox 系（.formWrap > .formBox > dt>label>span.req + dd>input,
+              送信=input.wpcf7-submit。SEIKEN/協力会社フォーム等 Contact Form 7 由来）
+   §7 の `[class*="_form_wrap"]` は §7b 構造に当たらないため、当該系統では本セクションが要る。
+   いずれも番号非依存のセマンティッククラスで記述。
+   ============================================================ */
+.formWrapbg, .formWrap, .form, [class*="formSec"]{ background:var(--dyn-bg) !important; color:var(--dyn-text) !important; }
+.formWrap{ max-width:720px; margin:0 auto; }
+.formBox{ margin-bottom:20px; }
+.formBox dt, .formBox label{ color:var(--dyn-text) !important; }
+.formBox dd input:not([type="checkbox"]):not([type="radio"]),
+.formBox dd select,
+.formWrap input[type="text"], .formWrap input[type="email"], .formWrap input[type="tel"]{
+  width:100% !important; max-width:none !important; padding:14px 16px !important; font-size:16px !important;
+  min-height:54px !important; background:var(--dyn-surface) !important; color:var(--dyn-text) !important;
+  border:1px solid var(--dyn-border) !important; border-radius:var(--dyn-radius);
+}
+.formBox dd textarea, .formWrap textarea{
+  width:100% !important; padding:14px 16px !important; font-size:16px !important; min-height:220px !important;
+  background:var(--dyn-surface) !important; color:var(--dyn-text) !important;
+  border:1px solid var(--dyn-border) !important; border-radius:var(--dyn-radius);
+}
+.formWrap input[type="checkbox"], .formWrap input[type="radio"]{
+  width:18px !important; height:18px !important; min-height:0 !important; padding:0 !important; margin:0 8px 0 0 !important;
+  vertical-align:-3px; accent-color:var(--dyn-accent); flex:none !important;
+}
+/* 必須バッジ（wpcf7系は .req） */
+.req, .formBox .req{
+  display:inline-flex !important; align-items:center !important; justify-content:center !important; line-height:1 !important;
+  white-space:nowrap !important; padding:6px 12px !important; border-radius:var(--dyn-radius) !important;
+  background:var(--dyn-accent) !important; color:var(--dyn-on-accent) !important;
+}
+.wpcf7-not-valid-tip, .wpcf7-response-output{ color:var(--dyn-accent-2) !important; }
+/* 送信（Contact Form 7） */
+input.wpcf7-submit, .formWrap button[type="submit"]{
+  background:var(--dyn-accent) !important; color:var(--dyn-on-accent) !important;
+  border:none !important; border-radius:var(--dyn-radius) !important;
+  min-height:54px !important; padding:14px 28px !important; font-size:16px !important; cursor:pointer;
+}
+/* プライバシー同意（両系統共通の .privacypolicy* は §7 で適用済） */
+
+
+/* ============================================================
+   §14  自動CSSに負けた時の手順（R-27）※汎用アーマーは持たない＝安全契約
+   ------------------------------------------------------------
+   CueZilla は body内コンポの style 要素でパーツ単位に `.partsNNN_blog_＜ID＞ .card .card-body{…!important}`
+   等の高詳細度(0,3,0)+!important を吐く。§1〜§9 の単一属性セレクタ(0,1,0〜0,2,0)+!important は
+   同プロパティで【負ける】（症状：当てているのに反映されない＝崩れの常連）。
+
+   → 【禁止】[class*=…]を積んで(0,3,0)に並べる汎用アーマー（脆い・過剰マッチ・アーマーレース）。
+        ＝以前ここにあった `[class*="parts"][class*="_blog"] .card` 等は本契約により撤去した。
+        （theme_default 非importantへの色寄せは §8 の単一 `[class*="_blog"] .card`(0,2,0)+!important で足りる）
+   → 【正】負けたパーツだけ、harvestで実採番を取り【案件CSS】末尾に (0,3,1) を1個足して確実に勝つ：
+        section.parts131415_blog_xxxx .card .card-body{ … !important }   ← 実採番。構造変化に不感
+     ※ skin は全案件共通なので案件固有の番号は書かない（負けた時だけ案件側で対処）。
+     ※ 採番取得＝verify/dynamic-harvest.js。当て方＝50_CSS・動的ページ/動的ページCSS_実セレクタ参考.md §14。 */
+/* 見出しのテーマ装飾(角丸/中央寄せ/背景/罫線)残りをパーツ内でリセット（R-21）。
+   theme_default は非importantなので、単一 [class*="_section"] + !important で確定勝ち（[class*]を積まない）。 */
+[class*="_section"] h2, [class*="_section"] h3{
+  border-radius:0 !important; background:transparent !important; border:none !important; text-align:inherit !important;
+}
+
+
+/* ============================================================
+   §8  トップ用 お知らせ/ブログ teaser（notice-news / blog teaser）
+   ============================================================ */
+.parts040506_notice-news{ background:var(--dyn-bg) !important; color:var(--dyn-text) !important; }
+.parts040506_notice-news *{ color:var(--dyn-text) !important; }
+.parts040506_notice-news .title, .parts040506_notice-news .title a{ color:var(--dyn-heading) !important; }
+.parts040506_notice-news [class*="date"], .parts040506_notice-news .f_yugothic{ font-family:var(--dyn-font-numeric) !important; color:var(--dyn-muted) !important; }
+.parts040506_notice-news .more{ white-space:nowrap !important; color:var(--dyn-accent-2) !important; }
+.parts040506_notice-news a{ color:var(--dyn-accent-2) !important; }
+/* サムネ型ブログ teaser */
+[class*="_blog_title_wrap"]{ font-family:var(--dyn-font-display) !important; color:var(--dyn-heading) !important; }
+[class*="_blog_thumbnail"]{ border-radius:var(--dyn-radius); }
+/* teaser内が Bootstrap .card（既定で白）の場合のダーク/トーン化 */
+[class*="_blog"] .card{ background:var(--dyn-surface) !important; border-color:var(--dyn-border) !important; border-radius:var(--dyn-radius) !important; }
+[class*="_blog"] .card-title, [class*="_blog"] .card-text{ color:var(--dyn-text) !important; }
+[class*="_blog"] .card-title{ font-family:var(--dyn-font-display) !important; }
+
+
+/* ============================================================
+   §9  Bootstrap汎用クラスの地ならし（パーツ内に限定）
+       text-dark / bg-light 等がパーツ内でトーンを乱すのを抑える
+   ============================================================ */
+[class*="parts"] .text-dark{ color:var(--dyn-text) !important; }
+[class*="parts"] .bg-light{ background:var(--dyn-surface) !important; }
+.card-header.bg-light{ background:var(--dyn-accent) !important; color:var(--dyn-on-accent) !important; }
+
+
+/* ============================================================
+   §10  プライバシーポリシー（templates/privacy-policy.html のフリーコーディング設置版）
+   ※CueZilla既定パーツ(item_title/item_description)へ転記する場合は §5 等で別途適用される
+   ============================================================ */
+.privacy{ max-width:880px; margin:0 auto; padding:64px 24px; color:var(--dyn-text); font-family:var(--dyn-font-body); line-height:1.9; }
+.privacy__title{ font-family:var(--dyn-font-display); color:var(--dyn-heading); font-size:clamp(1.8rem,4vw,2.6rem); }
+.privacy__subtitle{ font-family:var(--dyn-font-display); color:var(--dyn-heading); font-size:1.2rem; margin-top:8px; }
+.privacy__lead{ color:var(--dyn-muted); margin:24px 0 40px; }
+.privacy-item{ margin-bottom:32px; }
+.privacy-item__title{ font-family:var(--dyn-font-display); color:var(--dyn-heading); border-left:3px solid var(--dyn-accent); padding-left:12px; margin-bottom:12px; }
+.privacy-item__body{ color:var(--dyn-text); }
+/* 原文の (1)(2)… 表記は【HTML側のテキスト】で持つ ※R-27対応（2026-08-26）
+   旧実装は `li::before` の content 宣言（`counter(pp)` を括弧で挟む）で番号を描いていたが、AddCssInfo は
+   content 宣言をサニタイズで落とす（counter() は content 専用なのでCSS単独の代替が無い）。実機では番号が消えたうえに
+   下のぶら下げインデントだけが残り、本文が左へはみ出していた。
+   ★番号を捨てず HTML テキストへ移した理由: 本文が「上記(1)から(6)に掲げるほか」と番号を参照しており、
+     番号は装飾ではなく文書の一部（消すと文意が壊れる）。会社承認の定型文なので表記も変えられない。
+     → templates/privacy-policy.html の各 ＜li＞ 先頭に "(1) " 等を直接書く形へ変更した。
+   ★ぶら下げインデント（padding-left / text-indent）は残す: 番号が行頭テキストになった今も、
+     折り返し行を本文位置に揃えるために必要（＝この2行が番号の受け皿）。
+     番号を持たない古い privacy HTML に当たると字下げだけが見えるので、その場合はCSSではなく
+     HTML側に番号を入れて直す。counter-reset / counter-increment は用が無くなったので外した。 */
+.privacy-item__list{ list-style:none; margin:8px 0; padding:0; }
+.privacy-item__list li{ padding-left:2.2em; text-indent:-2.2em; margin:4px 0; color:var(--dyn-text); }
+
+
+/* ============================================================
+   §11  下層ヘッダーパーツ（templates/subpage-header.html）
+   サイトヘッダーとパンくずの間。フリーコーディングで別パーツ化
+   ============================================================ */
+/* padding-top に固定ヘッダー高さ(--fixed-header-h)を加算＝固定ヘッダーへのめり込み防止。
+   固定ヘッダーが無いサイトは既定0で無影響。固定ヘッダー採用サイトは案件CSSで :root{ --fixed-header-h:88px } 等を設定（R-18）。 */
+.subpage-header{ position:relative; padding:calc(72px + var(--fixed-header-h, 0px)) 24px 72px; background:var(--dyn-surface); text-align:center; overflow:hidden; }
+.subpage-header__bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.45; z-index:0; }
+.subpage-header__inner{ position:relative; z-index:1; }
+.subpage-header__title{ font-family:var(--dyn-font-display); color:var(--dyn-heading); font-size:clamp(1.8rem,5vw,3rem); line-height:1.3; text-shadow:0 2px 14px rgba(0,0,0,.5); }
+.subpage-header__en{ font-family:var(--dyn-font-numeric); color:var(--dyn-muted); letter-spacing:.12em; margin-top:8px; }
+
+
+/* ============================================================
+   §12  システム定型ページ：送信完了(thanks) / 404
+   templates/thanks.html, templates/404.html 用。トークンスキン準拠
+   ============================================================ */
+.thanks, .notfound{ max-width:760px; margin:0 auto; padding:calc(80px + var(--fixed-header-h, 0px)) 24px 96px; text-align:center; }
+/* CueZilla 既定404（section.not-found）はレイアウトを変えず、固定ヘッダー分の上余白だけ確保（R-18） */
+.not-found{ padding-top: calc(var(--fixed-header-h, 0px) + 24px); }
+.thanks__title, .notfound__title{ font-family:var(--dyn-font-display); color:var(--dyn-heading); font-size:clamp(1.8rem,5vw,2.6rem); line-height:1.3; margin-bottom:28px; }
+.thanks__lead, .notfound__lead{ color:var(--dyn-text); line-height:2; margin-bottom:40px; }
+.thanks__action, .notfound__action{ margin-top:8px; }
+
+
+/* ============================================================
+   §13  Bootstrap(テーマ)既定の恒久打ち消し（R-20）
+   ------------------------------------------------------------
+   CueZillaテーマが読み込む Bootstrap の "素のタグ/汎用クラス" が
+   フリーHTMLに当たって崩す症状を、案件ごとの手当て無しで地ならしする。
+   ここは確認済みの実害2件（test0605）に限定して打ち消す。
+   ※「色/余白/タイポ」を意図して変える装飾は接頭辞クラス(.xw- 等)で
+     付け直す＝下記より高詳細度になり、本セクションに勝つ（壊さない）。
+   ============================================================ */
+/* (a) ＜mark＞ / .mark の黄ハイライト背景：ロゴや見出しが黄色い箱になる症状 → 無効化。
+       意図的なマーカー装飾は専用クラスで（Bootstrap名 .mark を流用しない＝R-20）。 */
+mark, .mark{
+  background-color:transparent !important; color:inherit !important;
+  padding:0 !important; border-radius:0 !important;
+}
+/* (b) a:hover が Bootstrap青(#0a58ca)になる症状 → 既定は「ホバーで色を変えない」。
+       !important は付けない＝個別のホバー装飾(接頭辞クラスや site.css の指定)が
+       そのまま勝ち、未指定リンクだけが青化を免れる（フォールバック）。 */
+a:hover{ color:inherit; }
+
+/* (c) 電話番号リンク(tel:)の最低タップ確保（R-24／§5.5-3）。
+       本文中インラインでも折り返さない。CTA/ボタン用途は接頭辞クラスで44px確保。 */
+a[href^="tel:"]{ white-space:nowrap; }
+
+
+/* ===== 25_追補-cuezilla-parts.css ===== */
+/* ===== 25_追補-cuezilla-parts.css =====
+   受領データ同梱の add.css（デザイナーがCueZillaの動的パーツ向けに書いた追補CSS）を**無改変**で置いたもの。
+   ファイル名に「追補」を含めることで convert.mjs の結合順が site(1) → skin(2) → 追補(3) になり、
+   skin の !important に踏まれずデザイナー意匠が残る（教訓
+   designer-add-css-covering-only-one-part-needs-skin-plus-tsuiho-order）。
+   ★詳細度で skin に負ける箇所だけを 29_override.css で当て直している（順序では勝てない分）。
+   ★配色の1点だけ受領HTMLと食い違う（--kd-ink: #003953 ／ 受領HTMLの同役割は #00293B）。
+     ここは書き換えず 29_override.css でトークンを上書きしている（教訓
+     designer-add-css-palette-can-be-stale-verify-against-received-html）。
+ */
+
+/* KEEP: デザイナー作の受領 add.css（無改変）。重複に見えても削除しないこと。
+   実パーツのクラス構造・省略表示・ブレークポイントはこれが正本で、作り直すと劣化する。 */
+/* === add.css 貼り付け ここから === */
+/* 株式会社川田電設 TOPページ 動的セクション
+   対象：新着情報（design-parts-52系） / 記事カード（parts131415_blog系）
+   ※固有IDサフィックスに依存しない [class*="..."] セレクタで指定 */
+
+/* ---------- 共通トークン ---------- */
+:root {
+  --kd-ink: #003953;
+  --kd-ink-deep: #00293B;
+  --kd-pink: #E296AE;          /* 装飾用（塗り・図形・チップ） */
+  --kd-pink-deep: #A8456A;     /* 白文字を乗せる用（コントラスト比4.5:1以上） */
+  --kd-pink-pale: #FBEEF3;
+  --kd-aqua: #8FD3E0;
+  --kd-aqua-pale: #EAF7FA;
+  --kd-body: #003953;
+  --kd-sub: #3C6C82;
+}
+
+/* ---------- 新着情報（NEWS帯）design-parts-52系 ---------- */
+[class*="design-parts-52"] {
+  background: transparent !important;
+  padding: 0 !important;
+  margin-top: calc(-1 * clamp(30px, 5vw, 64px)) !important;
+  position: relative !important;
+  z-index: 2 !important;
+  border: 0 !important;
+}
+[class*="design-parts-52"] .container {
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+  padding: 0 clamp(16px, 4vw, 32px) !important;
+}
+[class*="design-parts-52"] .content {
+  background: #fff !important;
+  border-radius: clamp(20px, 3vw, 32px) !important;
+  box-shadow: 0 18px 44px rgba(0, 57, 83, .13) !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;   /* stretchにしない＝ラベルが行数分に伸びるのを防ぐ */
+  gap: 12px 28px !important;
+  padding: 14px 0 !important;
+  height: auto !important;
+      padding: 14px 30px !important;
+}
+[class*="design-parts-52"] h4.banner-area {
+  margin: 0 !important;
+  flex: 0 0 auto !important;
+  min-width: 112px !important;
+  text-align: center !important;
+  background: var(--kd-pink-deep) !important;   /* 元パーツ直値 #bf172e を上書き */
+  color: #fff !important;
+  font-family: "Outfit", "Noto Sans JP", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: .2em !important;
+  padding: 9px 18px !important;
+  border-radius: 999px !important;
+  line-height: 1.4 !important;
+}
+[class*="design-parts-52"] ul {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex: 1 1 260px !important;
+  min-width: 0 !important;
+}
+[class*="design-parts-52"] ul li {
+  min-height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  border: 0 !important;
+}
+[class*="design-parts-52"] ul li a {
+  display: block !important;
+  width: 100% !important;
+  padding: 6px 0 !important;
+  color: var(--kd-ink) !important;
+  text-decoration: none !important;
+}
+[class*="design-parts-52"] ul li a:hover,
+[class*="design-parts-52"] ul li a:focus-visible { color: var(--kd-pink-deep) !important; }
+[class*="design-parts-52"] ul li a:focus-visible { outline: 3px solid var(--kd-pink) !important; outline-offset: 3px !important; }
+[class*="design-parts-52"] .parts-52-textarea {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: baseline !important;
+  gap: 6px 18px !important;
+}
+[class*="design-parts-52"] .parts-52-textarea .date {
+  flex: 0 0 auto !important;
+  font-family: "Outfit", "Noto Sans JP", sans-serif !important;
+  font-size: 13px !important;
+  letter-spacing: .06em !important;
+  color: #6E97AA !important;
+}
+[class*="design-parts-52"] .parts-52-textarea .d-inline-block {
+  font-weight: 500 !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+ /* color: #fff !important;*/
+}
+/* PC（992px以上）＝日付→タイトルの横1行・縦中央寄せ */
+@media (min-width: 992px) {
+  [class*="design-parts-52"] .content { flex-wrap: nowrap !important; }
+  [class*="design-parts-52"] ul li { min-height: 60px !important; }
+  [class*="design-parts-52"] .parts-52-textarea { flex-wrap: nowrap !important; }
+  [class*="design-parts-52"] .parts-52-textarea .d-inline-block {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* ---------- 記事カード（BLOG）parts131415_blog系 ---------- */
+/*[class*="parts131415_blog"] {
+  background: transparent !important;    元サイト固有の背景画像を上書き 
+  background-image: none !important;
+  position: relative !important;
+  z-index: 1 !important;
+  padding: clamp(64px, 10vw, 120px) clamp(16px, 4vw, 32px) !important;
+}*/
+[class*="parts131415_blog"] .container-lg {
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+[class*="parts131415_blog"] .parts131415_blog_title_wrap {
+  text-align: center !important;
+  margin-bottom: clamp(32px, 5vw, 52px) !important;
+}
+[class*="parts131415_blog"] .parts131415_blog_title_wrap h2 {
+  margin: 0 !important;
+  font-family: "Outfit", "Noto Sans JP", sans-serif !important;
+  font-weight: 300 !important;
+  font-size: clamp(28px, 4.8vw, 58px) !important;
+  letter-spacing: .06em !important;
+  line-height: 1 !important;
+  color: #3C6C82 !important;   /* 元パーツ直値 #ffffff を上書き */
+  border: 0 !important;
+  padding: 0 !important;
+}
+[class*="parts131415_blog"] .parts131415_blog_title_wrap p {
+  margin: 14px 0 0 !important;
+  font-size: clamp(14px, 2vw, 16px) !important;
+  line-height: 1.9 !important;
+  color: var(--kd-sub) !important;
+  text-wrap: pretty;
+}
+[class*="parts131415_blog"] .card {
+  height: 100% !important;
+  background: #fff !important;
+  border: 0 !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  box-shadow: 0 12px 30px rgba(0, 57, 83, .07) !important;
+  transition: transform .35s cubic-bezier(.22,.7,.25,1), box-shadow .35s ease;
+}
+[class*="parts131415_blog"] .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 57, 83, .12) !important;
+}
+[class*="parts131415_blog"] .card-body {
+  padding: clamp(20px, 2.6vw, 26px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+[class*="parts131415_blog"] h5.card-title {
+  margin: 0 !important;
+  align-self: flex-start !important;
+  text-align: left !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: .1em !important;
+  color: var(--kd-pink-deep) !important;
+  background: var(--kd-pink-pale) !important;
+  padding: 7px 16px !important;
+  border-radius: 999px !important;
+  line-height: 1.4 !important;
+}
+[class*="parts131415_blog"] .card-body a {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  text-decoration: none !important;
+  color: var(--kd-ink) !important;
+}
+[class*="parts131415_blog"] .card-body a:hover p.card-text { color: var(--kd-pink-deep) !important; }
+[class*="parts131415_blog"] p.card-text {
+  margin: 0 !important;
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+  color: inherit !important;
+  text-wrap: pretty;
+}
+/*[class*="parts131415_blog"] .parts131415_blog_thumbnail {
+  display: block !important;
+  width: 100% !important;
+  height: 240px !important;
+  overflow: hidden !important;
+  border-radius: 16px !important;
+  background: var(--kd-aqua-pale) !important;
+}*/
+[class*="parts131415_blog"] .parts131415_blog_thumbnail img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+@media (max-width: 575.98px) {
+  [class*="parts131415_blog"] .parts131415_blog_thumbnail { height: 205px !important; }
+}
+@media (min-width: 576px) and (max-width: 991.98px) {
+  [class*="parts131415_blog"] .parts131415_blog_thumbnail { height: 215px !important; }
+}
+
+/* 動きへの配慮 */
+@media (prefers-reduced-motion: reduce) {
+  [class*="parts131415_blog"] .card { transition: none !important; }
+  [class*="parts131415_blog"] .card:hover { transform: none !important; }
+}
+/* ---------- ブログ一覧 parts222系 ---------- */
+[class*="parts222_section"] { background: #fff !important; }
+[class*="parts222_section"] > h2 {
+  max-width: 1240px !important; margin: 0 auto clamp(24px,4vw,36px) !important;
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif !important;
+  font-weight: 900 !important; font-size: clamp(21px,3.8vw,32px) !important;
+  line-height: 1.45 !important; letter-spacing: .02em !important; color: var(--kd-ink) !important;
+  border: 0 !important; padding: 0 !important;
+}
+.parts222_wrap {
+  max-width: 1240px !important; margin: 0 auto !important;
+  display: flex !important; flex-wrap: wrap !important;
+  gap: clamp(28px,4vw,44px) !important; align-items: flex-start !important;
+}
+.parts222_main { flex: 1 1 min(100%,520px) !important; min-width: 0 !important; }
+.parts222_sidebar { flex: 1 1 min(100%,280px) !important; min-width: 0 !important; max-width: 100% !important; display: grid !important; gap: clamp(18px,2.6vw,26px) !important; align-content: start !important; }
+.parts222_post_list { /*display: grid !important; */grid-template-columns: repeat(auto-fit,minmax(min(100%,260px),1fr)) !important; gap: clamp(18px,2.6vw,26px) !important; }
+.parts222_post_wrap {
+  display: flex !important; flex-direction: column !important; background: #fff !important;
+  border: 1px solid #F1E3E8 !important; border-radius: 24px !important; overflow: hidden !important;
+  text-decoration: none !important; color: var(--kd-ink) !important;
+  box-shadow: 0 12px 30px rgba(0,57,83,.05) !important;
+  transition: transform .35s cubic-bezier(.22,.7,.25,1), box-shadow .35s ease;
+}
+.parts222_post_wrap:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,57,83,.11) !important; }
+.parts222_post_img { display: block !important; width: 100% !important; height: 210px !important; overflow: hidden !important; background: var(--kd-aqua-pale) !important; }
+.parts222_post_img img { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; }
+.parts222_post_status { display: flex !important; flex-wrap: wrap !important; align-items: center !important; gap: 10px !important; padding: clamp(16px,2.4vw,20px) clamp(18px,2.6vw,24px) 0 !important; }
+.parts222_post_date { font-family: "Outfit", "Noto Sans JP", sans-serif !important; font-size: 13px !important; letter-spacing: .06em !important; color: #255873 !important; }
+.parts222_post_category { font-size: 12px !important; font-weight: 700 !important; letter-spacing: .06em !important; color: var(--kd-pink-deep) !important; background: var(--kd-pink-pale) !important; padding: 6px 14px !important; border-radius: 999px !important; }
+.parts222_post_title-excerpt { display: block !important; padding: 12px clamp(18px,2.6vw,24px) clamp(20px,2.6vw,26px) !important; }
+.parts222_post_title { margin: 0 !important; font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif !important; font-weight: 700 !important; font-size: 17px !important; line-height: 1.7 !important; color: var(--kd-ink) !important; }
+.parts222_post_excerpt { display: none !important; }
+.parts222_pagenation { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; align-items: center !important; gap: 8px !important; margin-top: clamp(30px,4vw,46px) !important; }
+.parts222_pagenation a, .parts222_pagenation span {
+  min-width: 44px !important; min-height: 44px !important; display: flex !important;
+  align-items: center !important; justify-content: center !important; padding: 0 14px !important;
+ /* border: 1px solid #F0D3DE !important;*/ border-radius: 999px !important;
+  font-size: 13px !important; text-decoration: none !important; color: var(--kd-ink) !important;
+}
+.parts222_pagenation a:hover { border-color: var(--kd-pink) !important; background: var(--kd-pink-pale) !important; }
+.parts222_pagenation .pagination_num { font-family: "Outfit", "Noto Sans JP", sans-serif !important; font-size: 14px !important; padding: 0 !important; }
+.parts222_pagenation .pagination_num.current { background: var(--kd-pink-deep) !important; border-color: var(--kd-pink-deep) !important; color: #fff !important; font-weight: 700 !important; }
+.parts222_sidebar_wrap { background: #fff !important; border: 1px solid #F1E3E8 !important; border-radius: 24px !important; overflow: hidden !important; }
+.parts222_sidebar_wrap > h3 { margin: 0 !important; padding: 14px clamp(16px,2.4vw,22px) !important; background: var(--kd-pink-pale) !important; font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif !important; font-weight: 700 !important; font-size: 15px !important; letter-spacing: .04em !important; color: var(--kd-ink) !important; }
+.parts222_sidebar_wrap ul { list-style: none !important; margin: 0 !important; padding: 0 !important; }
+.parts222_sidebar_wrap li { border-bottom: 1px solid #F6F0F2 !important; }
+.parts222_sidebar_wrap li:last-child { border-bottom: 0 !important; }
+.parts222_sidebar_wrap li a { display: block !important; padding: 14px clamp(16px,2.4vw,22px) !important; min-height: 44px !important; text-decoration: none !important; color: var(--kd-ink) !important; }
+.parts222_sidebar_wrap li a:hover { background: #FDF7F9 !important; }
+.parts222_sidebar_date { display: block !important; font-family: "Outfit", "Noto Sans JP", sans-serif !important; font-size: 12px !important; letter-spacing: .06em !important; color: #255873 !important; }
+.parts222_sidebar_post_title { margin: 6px 0 0 !important; font-size: 14px !important; line-height: 1.7 !important; }
+.parts222_sidebar_wrap.category_post_count { border-color: #DCEEF3 !important; }
+.parts222_sidebar_wrap.category_post_count > h3 { background: var(--kd-aqua-pale) !important; }
+.parts222_sidebar_wrap.category_post_count li { border-bottom-color: #F1F7F9 !important; }
+.parts222_sidebar_wrap.category_post_count li a { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 12px !important; }
+.parts222_sidebar_wrap.category_post_count li a:hover { background: #F6FCFD !important; }
+.parts222_sidebar_post_category { margin: 0 !important; font-size: 14px !important; line-height: 1.6 !important; }
+.parts222_sidebar_post_category_count { flex: 0 0 auto !important; min-width: 30px !important; text-align: center !important; border: 1px solid #CFE3EA !important; border-radius: 8px !important; font-family: "Outfit", "Noto Sans JP", sans-serif !important; font-size: 12px !important; padding: 3px 6px !important; color: #2C6C7E !important; }
+
+/* ---------- フォーム parts213系（お問い合わせ）・parts219系（応募） ---------- */
+/* 囲みカード・背景塗り・影なしのフラットな入力欄のみ */
+.contact_section {
+  background: #fff !important; background-image: none !important;
+  border: 0 !important; border-radius: 0 !important; box-shadow: none !important;
+  padding: 0 clamp(16px,4vw,32px) clamp(56px,9vw,110px) !important;
+}
+.parts213_section_form, .parts219_section_form { max-width: 820px !important; margin: 0 auto !important; }
+.parts213_form_wrap, .parts219_form_wrap { background: transparent !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; padding: 0 !important; }
+.contact_section dl { margin: 0 0 clamp(18px,2.6vw,26px) 0 !important; }
+.contact_section dt { margin: 0 0 10px !important; padding: 0 !important; border: 0 !important; background: none !important; display: flex !important; flex-wrap: wrap !important; align-items: center !important; gap: 10px !important; font-weight: 700 !important; font-size: 15px !important; color: var(--kd-ink) !important; }
+.contact_section dd { margin: 0 !important; padding: 0 !important; border: 0 !important; background: none !important; }
+.contact_section .required { flex: 0 0 auto !important; font-size: 11px !important; font-weight: 700 !important; letter-spacing: .06em !important; color: #fff !important; background: var(--kd-pink-deep) !important; padding: 4px 10px !important; border-radius: 999px !important; }
+.contact_section .attention { display: block !important; font-weight: 400 !important; font-size: 13px !important; line-height: 1.8 !important; color: #B3243C !important; }
+.contact_section .form_text_dt { align-items: flex-start !important; }
+.contact_section input[type="text"], .contact_section input[type="email"], .contact_section input[type="tel"], .contact_section textarea {
+  width: 100% !important; min-height: 52px !important; padding: 14px 16px !important;
+  font-family: inherit !important; font-size: 16px !important; color: var(--kd-ink) !important;
+  background: #fff !important; border: 1px solid #CBD8DE !important; border-radius: 10px !important;
+  box-shadow: none !important;
+}
+.contact_section input.zip { width: min(100%,180px) !important; }
+.contact_section textarea { min-height: 180px !important; line-height: 1.9 !important; resize: vertical !important; }
+.contact_section input[type="file"] { width: 100% !important; min-height: 52px !important; padding: 12px 14px !important; font-family: inherit !important; font-size: 15px !important; color: var(--kd-ink) !important; background: #fff !important; border: 1px solid #CBD8DE !important; border-radius: 10px !important; }
+.contact_section input:focus-visible, .contact_section textarea:focus-visible { outline: 3px solid var(--kd-ink) !important; outline-offset: 2px !important; }
+.contact_section label { min-height: 44px !important; display: inline-flex !important; align-items: center !important; gap: 10px !important; font-size: 15px !important; color: var(--kd-ink) !important; }
+.contact_section input[type="checkbox"] { width: 20px !important; height: 20px !important; accent-color: var(--kd-pink-deep) !important; }
+.contact_section .error { margin: 8px 0 0 !important; font-size: 13px !important; color: #B3243C !important; }
+.contact_section .contact_submit { margin-top: clamp(26px,4vw,36px) !important; text-align: center !important; }
+.contact_section .contact_submit input[type="submit"] {
+  min-height: 56px !important; width: auto !important; padding: 0 44px !important;
+  font-family: inherit !important; font-size: 16px !important; font-weight: 700 !important;
+  color: #fff !important; background: var(--kd-pink-deep) !important;
+  border: 0 !important; border-radius: 999px !important; cursor: pointer !important;
+}
+.contact_section .contact_submit input[type="submit"]:hover { background: #8E3354 !important; }
+/* 導入文 parts210系 */
+.parts210_content_wrap { max-width: 820px !important; margin: 0 auto !important; }
+.parts210_content { font-size: clamp(15px,2.2vw,17px) !important; line-height: 2.1 !important; color: var(--kd-ink) !important; }
+/* === add.css 貼り付け ここまで === */
+/* /KEEP */
+
+
+/* ===== 29_override.css ===== */
+/* ===== S00535 株式会社川田電設 — override（案件の上書きはここだけ／R-30） =====
+   結合順: 20_site.css(1) → 24_cuezilla-skin.css(2) → 25_追補(受領add.css)(3) → 29_override(3)
+   ここに書くのは
+     (a) skin に詳細度で負ける受領意匠の当て直し
+     (b) 受領 add.css の配色ズレの補正
+     (c) CueZilla環境に合わせるための差分
+   だけ。skin 本体は編集しない（共通修正が届かなくなる）。
+ */
+
+/* KEEP: 受領 add.css の配色ズレの補正（1点だけ）。
+   add.css の --kd-ink は #003953 だが、受領HTMLの同じ役割（記事タイトル・フォームのラベル・
+   導入文・サイドバーのリンク）はすべて #00293B（受領HTML内で411回）。#003953 は受領HTMLに
+   1回も出てこない＝add.css 側が古い。add.css は書き換えず、ここでトークンだけ差し替える。
+   ★不要ならこのブロックごと削除すれば add.css の値に戻る。 */
+:root{ --kd-ink:#00293B; --kd-body:#00293B; }
+/* /KEEP */
+
+/* KEEP: CueZilla自動パンくずは全ページ非表示（R-10a）。
+   受領デザインが各ページに自前のパンくず（TOP ／ ページ名）を持っているため二重になる。 */
+[class*="_breadcrumb"], .p-breadcrumb, .c-breadcrumb{ display:none !important; }
+/* /KEEP */
+
+/* KEEP: テーマ(Bootstrap)の a:hover 青化への対処（R-20）。
+   受領CSSにも a:hover{color:#A8456A} はあるが、skin §13 の a:hover{color:inherit} と
+   詳細度が同じ(0,1,1)で skin が後に結合されるため負ける。ここで再宣言する。 */
+a:hover{ color:#A8456A; }
+/* /KEEP */
+
+/* ---------------------------------------------------------------
+   skin に詳細度で負ける受領意匠の当て直し（順序では勝てない分だけ）
+   ※どれも「受領デザイン（add.css / 受領HTMLのインライン値）へ戻す」目的。
+     実機投入後に harvestEW() で実DOMを採ったら、ここを起点に調整する（R-28）。
+   --------------------------------------------------------------- */
+
+/* ブログ一覧のカテゴリチップ。
+   skin §4 は [class*="_post_category"]:not([class*="_sidebar"]) (0,2,0) と
+   [class*="_post_status"]>span:last-child (0,2,1) で当てるため、
+   add.css の .parts222_post_category (0,1,0) が !important 同士で負ける。
+   受領の体裁（ピンク文字＋淡ピンク地＋枠なし＋丸角999px）へ戻す。 */
+[class*="parts222"] [class*="_post_status"] > span[class*="_post_category"]{
+  background:#FBEEF3 !important; border:0 !important; border-radius:999px !important;
+  color:#A8456A !important; padding:6px 14px !important; max-width:none !important;
+  font-size:12px !important; font-weight:700 !important; letter-spacing:.06em !important;
+}
+
+/* カード内テキストの字下げ。skin §4 の [class*="_post_status"]{margin:14px 16px 0 !important} が
+   残ると、add.css の padding と二重の字下げになる（教訓 designer-add-css-covering-only-one-part…）。 */
+[class*="parts222"] [class*="_post_status"]{ margin:0 !important; }
+
+/* サムネの比率。add.css は height:210px 固定、skin §4 は aspect-ratio:16/10 を当てる。
+   両方効くと環境によって高さが揺れるので、受領（固定高）に寄せて比率指定を無効化する。 */
+/*[class*="parts222"] [class*="_post_img"]{ aspect-ratio:auto !important; }*/
+
+/* サイドバーの区切り罫線。skin §5 の [class*="_sidebar"] ul li (0,1,2) が
+   add.css の .parts222_sidebar_wrap li (0,1,1) に勝つため、受領の淡い罫線へ戻す。 */
+[class*="parts222"] [class*="_sidebar"] ul li{ border-bottom-color:#F6F0F2 !important; }
+
+/* フォームの入力欄。skin §7 の
+   [class*="_form_wrap"] dd input:not([type=checkbox]):not([type=radio]) (0,3,2) が
+   add.css の .contact_section input[type="text"] (0,2,1) に勝つため、受領の体裁へ戻す。
+   ★type は網羅する（tel/number/url を落とすと電話番号欄だけ素のまま残る・R-28）。 */
+.contact_section [class*="_form_wrap"] dd input[type="text"],
+.contact_section [class*="_form_wrap"] dd input[type="email"],
+.contact_section [class*="_form_wrap"] dd input[type="tel"],
+.contact_section [class*="_form_wrap"] dd input[type="number"],
+.contact_section [class*="_form_wrap"] dd input[type="url"],
+.contact_section [class*="_form_wrap"] dd input:not([type]),
+.contact_section [class*="_form_wrap"] textarea{
+  min-height:52px !important; padding:14px 16px !important;
+  font-size:16px !important; color:#00293B !important; background:#fff !important;
+  border:1px solid #CBD8DE !important; border-radius:10px !important; box-shadow:none !important;
+}
+.contact_section [class*="_form_wrap"] textarea{ min-height:180px !important; line-height:1.9 !important; }
+/* 郵便番号は狭いまま（skin §7 が 9em に戻す指定を持つ。受領は min(100%,180px)） */
+.contact_section [class*="_form_wrap"] dd input.zip{ width:min(100%,180px) !important; max-width:180px !important; }
+
+/* ---------------------------------------------------------------
+   動的パーツの色を受領パレットへ寄せる（skinトークンの案件調整）
+   ★ここに書く値は「テーマカラー7値から導けないもの」だけ。
+     不要ならこのブロックごと削除すれば skin の既定（テーマ色連動）に戻る。
+   --------------------------------------------------------------- */
+:root{
+  /* skin は --dyn-border に --sub-color(#3C6C82) をそのまま使う。本文色として正しい値だが
+     1pxの罫線としては濃いので、受領デザインの罫線色（#DCE7EC 系）へ寄せる。 */
+  --dyn-border:#DCE7EC;
+  --dyn-radius:16px;      /* 受領はカード24px・チップ999px・入力欄10px。skin既定6pxより丸い側へ */
+  --dyn-card-min:272px;   /* 受領のグリッド最小幅（parts131415_blog の row は skin §4-b が grid 化する） */
+  --dyn-gap:28px;
+}
+
+/* KEEP: グリッド子要素の min-width:0（CSS Grid 既定の min-width:auto でカードが横にはみ出す）。
+   CMSが実画像を入れたときSP幅で必ず起きるので先に潰す。 */
+[class*="_post_list"] > *, [class*="parts131415_blog"] .row > *{ min-width:0 !important; }
+/* /KEEP */
+.parts219_section_form dl,.parts213_section_form dl{
+    display: block!important;
+}
+.parts219_section_form dt,.parts213_section_form dt{
+        justify-content: flex-start!important;
+}
+.parts131415_blog_GwgFCrkbDq .parts131415_blog_title_wrap{
+        display: none!important;
+}
+.parts131415_blog_GwgFCrkbDq.bg-color{
+        padding-top: 1px !important;
+    padding-bottom: 1px !important;
+}
+@media print, screen and (min-width: 960px){
+	.top-blog-img{
+	    object-position: 50% 55%!important;
+	}
+}
