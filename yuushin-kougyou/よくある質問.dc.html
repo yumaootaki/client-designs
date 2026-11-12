@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0A4DB3"/><text x="50" y="58" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="#3D8BFF" text-anchor="middle">YUSHIN</text></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;color:#1F2933;background:#fff;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal}
+:focus-visible{outline:3px solid #F07A28;outline-offset:3px}
+section a,section button,footer a,footer button{transition:opacity .2s ease}
+section a:hover,section button:hover,footer a:hover,footer button:hover{opacity:.78}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"未経験でも大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。最初は運搬・結束の補助から始め、先輩が現場で教えます。"}},{"@type":"Question","name":"何歳まで応募できますか？","acceptedAnswer":{"@type":"Answer","text":"年齢は問いません（18歳以上の方）。"}},{"@type":"Question","name":"休みはどのくらいありますか？","acceptedAnswer":{"@type":"Answer","text":"完全週休2日です。年末年始・夏季休暇、有給休暇もあります。"}},{"@type":"Question","name":"給料はいくらですか？","acceptedAnswer":{"@type":"Answer","text":"日給で未経験者12,000円〜、経験者14,000円〜です。皆勤手当20,000円、賞与年2回があります。"}},{"@type":"Question","name":"飯能市から遠くても働けますか？","acceptedAnswer":{"@type":"Answer","text":"寮・借り上げ社宅があります。"}},{"@type":"Question","name":"現場はどこですか？","acceptedAnswer":{"@type":"Answer","text":"関東一円の鉄道・高速道路・橋脚・浄水場などです。会社に集合して社用車で移動します。"}},{"@type":"Question","name":"資格がなくても応募できますか？","acceptedAnswer":{"@type":"Answer","text":"できます。入社後の資格取得費用は会社が全額負担します。"}},{"@type":"Question","name":"1日の勤務時間は？","acceptedAnswer":{"@type":"Answer","text":"8:00〜17:00です。"}},{"@type":"Question","name":"LINEで質問だけしてもいいですか？","acceptedAnswer":{"@type":"Answer","text":"はい。応募するか決めていなくても大丈夫です。"}},{"@type":"Question","name":"応募から入社までの流れは？","acceptedAnswer":{"@type":"Answer","text":"応募 → 面接・見学 → 採用のご連絡 → 入社です。"}},{"@type":"Question","name":"対応エリアはどこですか？","acceptedAnswer":{"@type":"Answer","text":"関東一円です。"}},{"@type":"Question","name":"どんな工事に対応できますか？","acceptedAnswer":{"@type":"Answer","text":"鉄道・高速道路・橋脚（耐震補強含む）・浄水場・ポンプ場などの公共構造物の鉄筋工事です。"}}]}</script>
+</helmet>
+
+<div data-screen-label="FAQ" style="position:relative">
+
+<dc-import name="SiteHeader" active="/faq" hint-size="100%,0"></dc-import>
+
+<!-- ===== 下層ヘッダー ===== -->
+<section style="position:relative;background:#06306E;color:#fff;overflow:hidden;padding:calc(clamp(64px,8vw,86px) + clamp(52px,8vw,96px)) clamp(20px,5vw,64px) clamp(52px,8vw,96px)">
+  <img src="assets/subhero.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(6,48,110,.92),rgba(6,48,110,.62) 60%,rgba(6,48,110,.34))"></div>
+  <div style="position:relative;max-width:1240px;margin:0 auto">
+    <nav aria-label="パンくず" style="font-size:13px;color:rgba(255,255,255,.7);margin-bottom:18px"><a href="/" style="color:rgba(255,255,255,.7)">トップ</a> ／ <span style="color:#fff">よくある質問</span></nav>
+    <span style="font-family:'Noto Sans JP',sans-serif;font-weight:900;color:rgba(255,255,255,.55);font-size:clamp(12px,2vw,15px);letter-spacing:.18em">FAQ</span>
+    <h1 style="margin:6px 0 0;font-weight:900;font-size:clamp(2rem,5.6vw,3.8rem);line-height:1.2">よくある質問</h1>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section style="position:relative;background:#fff;padding:clamp(64px,10vw,120px) clamp(20px,5vw,64px)">
+  <div style="max-width:900px;margin:0 auto">
+    <sc-for list="{{ groups }}" as="g" hint-placeholder-count="2">
+      <div style="margin-bottom:clamp(40px,6vw,72px)">
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:clamp(20px,3vw,32px)">
+          <span style="font-family:'Noto Sans JP',sans-serif;font-weight:900;color:#0A4DB3;font-size:13px;letter-spacing:.16em">{{ g.en }}</span>
+          <h2 style="margin:0;font-weight:900;font-size:clamp(1.4rem,3.4vw,2.1rem);color:#1F2933">{{ g.title }}</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+            <div style="border:1px solid rgba(10,77,179,.16);background:#fff">
+              <button onClick="{{ it.onToggle }}" aria-expanded="{{ it.open }}" style="width:100%;text-align:left;display:flex;align-items:center;gap:14px;padding:clamp(16px,2.4vw,22px) clamp(16px,2.5vw,26px);min-height:56px">
+                <span style="font-family:'Noto Sans JP',sans-serif;font-weight:900;color:#0A4DB3;font-size:clamp(18px,2.6vw,24px);flex:none">Q</span>
+                <span style="flex:1;font-weight:900;font-size:clamp(15px,2.2vw,18px);line-height:1.5;color:#1F2933">{{ it.q }}</span>
+                <span aria-hidden="true" style="{{ it.iconStyle }}">＋</span>
+              </button>
+              <sc-if value="{{ it.open }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;gap:14px;padding:0 clamp(16px,2.5vw,26px) clamp(18px,2.6vw,24px);background:#EEF4FC">
+                  <span style="font-family:'Noto Sans JP',sans-serif;font-weight:900;color:#0A4DB3;font-size:clamp(18px,2.6vw,24px);flex:none">A</span>
+                  <div style="flex:1;font-size:clamp(16px,2.1vw,16px);line-height:1.85;color:#333;padding-top:clamp(14px,2vw,20px)">
+                    <span>{{ it.a }}</span>
+                    <sc-if value="{{ it.hasLink }}" hint-placeholder-val="{{ false }}">
+                      <a href="{{ it.linkHref }}" style="display:inline-flex;align-items:center;gap:6px;color:#0A4DB3;font-weight:900;border-bottom:2px solid #3D8BFF;margin-left:6px" style-hover="">{{ it.linkLabel }}<span aria-hidden="true">→</span></a>
+                    </sc-if>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<dc-import name="CtaBand" heading="解決しない質問は、
+LINEでどうぞ。" sub="応募するか決めていなくても大丈夫です。" hint-size="100%,420px"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { open: {} };
+  toggle(id) { this.setState((s) => ({ open: Object.assign({}, s.open, { [id]: !s.open[id] }) })); }
+  renderVals() {
+    const open = this.state.open;
+    const RAW = [
+      { en: 'FOR APPLICANTS', title: '働きたい方', items: [
+        { id: 'w1', q: "未経験でも大丈夫ですか？", a: "はい。最初は運搬・結束の補助から始め、先輩が現場で教えます。" },
+        { id: 'w2', q: "何歳まで応募できますか？", a: "年齢は問いません（18歳以上の方）。" },
+        { id: 'w3', q: "休みはどのくらいありますか？", a: "完全週休2日です。年末年始・夏季休暇、有給休暇もあります。" },
+        { id: 'w4', q: "給料はいくらですか？", a: "日給で未経験者12,000円〜、経験者14,000円〜です。皆勤手当20,000円、賞与年2回があります。", hasLink: true, linkLabel: '募集要項を見る', linkHref: '/recruit' },
+        { id: 'w5', q: "飯能市から遠くても働けますか？", a: "寮・借り上げ社宅があります。" },
+        { id: 'w6', q: "現場はどこですか？", a: "関東一円の鉄道・高速道路・橋脚・浄水場などです。会社に集合して社用車で移動します。" },
+        { id: 'w7', q: "資格がなくても応募できますか？", a: "できます。入社後の資格取得費用は会社が全額負担します。" },
+        { id: 'w8', q: "1日の勤務時間は？", a: "8:00〜17:00です。" },
+        { id: 'w9', q: "応募前に見学できますか？", a: "見学をご希望の方は、LINE・お電話でお気軽にご相談ください。" },
+        { id: 'w10', q: "LINEで質問だけしてもいいですか？", a: "はい。応募するか決めていなくても大丈夫です。", hasLink: true, linkLabel: 'LINEで質問する', linkHref: 'https://lin.ee/8Wcjh7g' },
+        { id: 'w11', q: "応募から入社までの流れは？", a: "応募 → 面接・見学 → 採用のご連絡 → 入社です。" },
+      ] },
+      { en: 'FOR CLIENTS', title: '工事・協力会社の方', items: [
+        { id: 'c1', q: "対応エリアはどこですか？", a: "関東一円です。" },
+        { id: 'c2', q: "どんな工事に対応できますか？", a: "鉄道・高速道路・橋脚（耐震補強含む）・浄水場・ポンプ場などの公共構造物の鉄筋工事です。" },
+        { id: 'c3', q: "協力会社の募集条件は？", a: "詳しい条件は、お問い合わせフォーム・お電話でご相談ください。" },
+      ] },
+    ];
+    const groups = RAW.map((g) => ({
+      en: g.en, title: g.title,
+      items: g.items.map((it) => ({
+        q: it.q, a: it.a, hasLink: !!it.hasLink, linkLabel: it.linkLabel, linkHref: it.linkHref,
+        open: !!open[it.id],
+        iconStyle: { color: '#0A4DB3', fontWeight: 900, fontSize: '22px', flex: 'none', transition: 'transform .25s ease', transform: open[it.id] ? 'rotate(45deg)' : 'none' },
+        onToggle: () => this.toggle(it.id),
+      })),
+    }));
+    return { groups };
+  }
+}
+</script>
+</body>
+</html>

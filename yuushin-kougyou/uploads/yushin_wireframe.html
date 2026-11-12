@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>株式会社ユウシン工業 ワイヤーフレーム(14ページ・採用特化型)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --navy:#1E3A5F; --org:#F07A28; --bg:#FFFFFF; --sub:#F3F5F8; --ink:#1F2933; --mut:#6B7785;
+  --line:#D5DCE5; --ph:#E6EAF0; --note:#FFF5EB; --noteline:#F3C79E; --side:#1E3A5F; --sideink:#E8EEF6;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme: dark;
+    --navy:#9CBCE4; --org:#F28A44; --bg:#12161C; --sub:#1A2029; --ink:#E6EAF0; --mut:#9AA6B4;
+    --line:#2F3946; --ph:#252D38; --note:#2A2117; --noteline:#6E4C2B; --side:#0D1828; --sideink:#D5DFEB;
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.7}
+.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+nav.side{background:var(--side);color:var(--sideink);padding:20px 14px;position:sticky;top:0;height:100vh;overflow-y:auto}
+nav.side h1{font-size:15px;margin:0 0 4px;line-height:1.4}
+nav.side p{font-size:11px;opacity:.75;margin:0 0 16px}
+nav.side h2{font-size:11px;opacity:.7;margin:18px 0 6px;font-weight:500}
+nav.side button{display:block;width:100%;text-align:left;background:none;border:0;color:inherit;font:inherit;font-size:13px;padding:7px 10px;border-radius:4px;cursor:pointer}
+nav.side button:hover{background:rgba(255,255,255,.08)}
+nav.side button[aria-current="true"]{background:var(--org);color:#fff;font-weight:700}
+nav.side button:focus-visible,.btn:focus-visible{outline:2px solid var(--org);outline-offset:2px}
+nav.side .n{display:inline-block;width:22px;opacity:.7}
+main{padding:28px 32px 80px;max-width:1180px}
+article{display:none}
+article.on{display:block}
+.ph-head{border-bottom:3px solid var(--navy);padding-bottom:12px;margin-bottom:22px}
+.ph-head h2{margin:0;font-size:24px;color:var(--navy)}
+.ph-head .meta{color:var(--mut);font-size:12px;margin-top:4px}
+.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:10px;margin-right:6px;font-weight:700;vertical-align:middle}
+.tag.new{background:var(--org);color:#fff}
+.tag.old{background:var(--navy);color:var(--bg)}
+.purpose{background:var(--sub);border-left:4px solid var(--navy);padding:10px 14px;margin:0 0 22px;font-size:13px}
+.sec{display:grid;grid-template-columns:1fr 270px;gap:16px;margin-bottom:18px}
+.wire{border:1px solid var(--line);border-radius:6px;padding:16px;background:var(--bg)}
+.sl{font-size:12px;color:var(--mut);margin:0 0 10px;font-weight:700}
+.sl b{color:var(--navy);margin-right:6px}
+aside.note{background:var(--note);border:1px solid var(--noteline);border-radius:6px;padding:12px;font-size:12px;line-height:1.65;align-self:start}
+aside.note b{display:block;color:var(--org);font-size:11px;margin-top:6px}
+aside.note b:first-child{margin-top:0}
+.ph{background:var(--ph);border:1px dashed var(--mut);border-radius:4px;display:grid;place-items:center;color:var(--mut);font-size:12px;text-align:center;padding:8px;min-height:90px}
+.ph.tall{min-height:260px}.ph.mid{min-height:160px}.ph.sm{min-height:60px}
+.catch{font-size:22px;font-weight:900;color:var(--navy);line-height:1.45;margin:0 0 6px}
+.lead{color:var(--ink);margin:0 0 12px}
+.hero{position:relative}
+.hero .over{position:absolute;left:20px;bottom:20px;right:20px;background:rgba(255,255,255,.92);padding:14px 16px;border-radius:4px;color:#1F2933}
+.hero .over .catch{color:#1E3A5F}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.btn{display:inline-block;padding:9px 16px;border-radius:4px;font-weight:700;font-size:13px;text-decoration:none;border:2px solid var(--org);background:var(--org);color:#fff}
+.btn.o{background:transparent;color:var(--navy);border-color:var(--navy)}
+.btn.line{background:#06C755;border-color:#06C755}
+.g2,.g3,.g4,.g5{display:grid;gap:10px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
+.card{border:1px solid var(--line);border-radius:4px;padding:10px;font-size:12px}
+.card h5{margin:6px 0 2px;font-size:13px;color:var(--navy)}
+.card p{margin:0;color:var(--mut)}
+.stat{border:1px solid var(--line);padding:10px;text-align:center;border-radius:4px}
+.stat strong{display:block;font-size:20px;color:var(--navy)}
+.stat span{font-size:11px;color:var(--mut)}
+ol.tl{list-style:none;margin:0;padding:0;border-left:3px solid var(--org);margin-left:8px}
+ol.tl li{padding:4px 0 10px 16px;position:relative}
+ol.tl li::before{content:"";position:absolute;left:-8px;top:10px;width:13px;height:13px;border-radius:50%;background:var(--org)}
+ol.tl li strong{color:var(--navy);margin-right:8px}
+table.spec{width:100%;border-collapse:collapse;font-size:13px}
+table.spec th,table.spec td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+table.spec th{background:var(--sub);width:28%;color:var(--navy)}
+.tbl-wrap{overflow-x:auto}
+.q{border-bottom:1px solid var(--line);padding:8px 0}
+.q p{margin:0}
+.q .qq{font-weight:700;color:var(--navy)}
+.q .qq::before{content:"Q. ";color:var(--org)}
+.q .aa{color:var(--mut);font-size:12px}
+.q .aa::before{content:"A. ";font-weight:700}
+.chk{color:var(--org);font-weight:700;font-size:11px}
+.bar{background:var(--navy);color:#fff;border-radius:4px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.bar .t{font-weight:700}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:14px;padding:3px 10px;font-size:12px;margin:2px}
+.mini{font-size:12px;color:var(--mut)}
+.tabs{display:flex;gap:6px;margin-bottom:10px}
+.tabs span{padding:6px 14px;border-radius:4px 4px 0 0;border:1px solid var(--line);font-size:12px}
+.tabs span.on{background:var(--navy);color:var(--bg);border-color:var(--navy)}
+.legend{font-size:12px;color:var(--mut);margin:0 0 16px}
+select.mob{display:none}
+@media (max-width:900px){
+  .app{grid-template-columns:1fr}
+  nav.side{position:static;height:auto;padding:12px}
+  nav.side .list{display:none}
+  select.mob{display:block;width:100%;padding:8px;font:inherit;border-radius:4px}
+  main{padding:18px 14px 60px}
+  .sec{grid-template-columns:1fr}
+  .g3,.g4,.g5{grid-template-columns:repeat(2,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="app">
+<nav class="side" aria-label="ページ一覧">
+  <h1>株式会社ユウシン工業<br>ワイヤーフレーム</h1>
+  <p>14ページ構成(既存7+新規7)・採用特化型 A案<br>配色:紺×白+オレンジ差し色</p>
+  <select class="mob" id="mobsel" aria-label="ページを選択"></select>
+  <div class="list">
+    <h2>共通</h2>
+    <button data-p="common"><span class="n">–</span>共通パーツ・サイトマップ</button>
+    <h2>既存ページ(作り直し)</h2>
+    <button data-p="top"><span class="n">1</span>TOP</button>
+    <button data-p="work"><span class="n">2</span>業務案内</button>
+    <button data-p="recruit"><span class="n">3</span>採用情報(募集要項)</button>
+    <button data-p="jisseki"><span class="n">4</span>施工実績</button>
+    <button data-p="information"><span class="n">5</span>会社概要</button>
+    <button data-p="blog"><span class="n">6</span>ブログ</button>
+    <button data-p="contact"><span class="n">7</span>お問い合わせ</button>
+    <h2>新規ページ</h2>
+    <button data-p="message"><span class="n">8</span>求職者のみなさまへ</button>
+    <button data-p="day"><span class="n">9</span>1日の流れ</button>
+    <button data-p="staff"><span class="n">10</span>スタッフ紹介</button>
+    <button data-p="career"><span class="n">11</span>未経験から一人前まで</button>
+    <button data-p="environment"><span class="n">12</span>働く環境・待遇</button>
+    <button data-p="faq"><span class="n">13</span>よくある質問</button>
+    <button data-p="about"><span class="n">14</span>ユウシン工業について</button>
+  </div>
+</nav>
+
+<main>
+<p class="legend">灰色の点線枠は写真・動画の差し込み位置です。右側のオレンジ枠は「狙い・根拠」の注記で、本番サイトには表示しません。<span class="chk">【要確認】</span>はお客様へのヒアリング項目です。</p>
+
+<!-- ============ 共通 ============ -->
+<article id="common">
+  <div class="ph-head"><h2>共通パーツ・サイトマップ</h2><div class="meta">全ページ共通のヘッダー・フッター・スマホ固定バー</div></div>
+
+  <section class="sec"><div class="wire">
+    <p class="sl"><b>A</b>ヘッダー(PC)</p>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+      <div class="ph sm" style="min-width:160px">ロゴ|株式会社ユウシン工業</div>
+      <div class="mini">求職者のみなさまへ|1日の流れ|スタッフ紹介|業務案内|施工実績|会社概要|よくある質問</div>
+      <div class="btns" style="margin:0"><span class="btn line">LINEで質問</span><span class="btn">応募する</span></div>
+    </div>
+  </div><aside class="note"><b>狙い</b>グローバルナビの先頭を採用系にし、元請け向け(業務案内・施工実績)は後ろへ。応募ボタンは常に右上に固定。<b>根拠</b>主軸ニーズは採用(次世代2〜3名)。</aside></section>
+
+  <section class="sec"><div class="wire">
+    <p class="sl"><b>B</b>スマホ固定バー(画面下)</p>
+    <div class="g3"><span class="btn o" style="text-align:center">電話する</span><span class="btn line" style="text-align:center">LINEで質問</span><span class="btn" style="text-align:center">応募する</span></div>
+  </div><aside class="note"><b>狙い</b>既存の応募導線(フォーム・LINE・電話)を全ページで1タップに。<b>根拠</b>既存導線は維持の方針。</aside></section>
+
+  <section class="sec"><div class="wire">
+    <p class="sl"><b>C</b>フッター</p>
+    <div class="g3">
+      <div class="card"><h5>株式会社ユウシン工業</h5><p>埼玉県飯能市〇〇<br>TEL 〇〇-〇〇〇〇-〇〇〇〇<br>建設業許可番号 〇〇</p></div>
+      <div class="card"><h5>働きたい方へ</h5><p>求職者のみなさまへ/1日の流れ/スタッフ紹介/未経験から一人前まで/働く環境・待遇/採用情報/よくある質問</p></div>
+      <div class="card"><h5>会社・工事について</h5><p>ユウシン工業について/業務案内/施工実績/会社概要/ブログ/お問い合わせ/協力会社募集</p></div>
+    </div>
+    <div class="mini" style="margin-top:8px">TikTokアイコン/プライバシーポリシー/© Yushin Kogyo</div>
+  </div><aside class="note"><b>狙い</b>フッターを「働きたい方」と「工事・会社」で分け、元請け・協力会社も迷わない作りに。</aside></section>
+
+  <section class="sec"><div class="wire">
+    <p class="sl"><b>D</b>サイトマップ・URL</p>
+    <div class="tbl-wrap"><table class="spec">
+      <tr><th>/</th><td>TOP(既存)</td></tr>
+      <tr><th>/recruit/message</th><td>求職者のみなさまへ(新規・採用ハブ)</td></tr>
+      <tr><th>/recruit/day</th><td>1日の流れ(新規)</td></tr>
+      <tr><th>/recruit/staff</th><td>スタッフ紹介(新規)</td></tr>
+      <tr><th>/recruit/career</th><td>未経験から一人前まで(新規)</td></tr>
+      <tr><th>/recruit/environment</th><td>働く環境・待遇(新規)</td></tr>
+      <tr><th>/recruit</th><td>採用情報=募集要項・応募(既存)</td></tr>
+      <tr><th>/faq</th><td>よくある質問(新規)</td></tr>
+      <tr><th>/about</th><td>ユウシン工業について(新規)</td></tr>
+      <tr><th>/work</th><td>業務案内(既存)</td></tr>
+      <tr><th>/jisseki</th><td>施工実績(既存)</td></tr>
+      <tr><th>/information</th><td>会社概要(既存)</td></tr>
+      <tr><th>/blog</th><td>ブログ(既存・/column 統合)</td></tr>
+      <tr><th>/contact</th><td>お問い合わせ(既存)</td></tr>
+    </table></div>
+  </div><aside class="note"><b>狙い</b>採用系を /recruit/ 配下にまとめて「採用のサイト」としての評価をまとめる。<b>前提</b>現在 http のため SSL 化(https)を実施。既存URLは301リダイレクトで評価を引き継ぐ。</aside></section>
+</article>
+
+<!-- ============ 1 TOP ============ -->
+<article id="top">
+  <div class="ph-head"><h2><span class="tag old">既存</span>TOP</h2><div class="meta">/ |2026年10月:164回・平均12秒</div></div>
+  <div class="purpose">「何の会社で、誰を求めているか」を最初の画面で伝え、求職者を「求職者のみなさまへ」「1日の流れ」へ流す。元請け向けは下層へ。</div>
+
+  <section class="sec"><div class="wire hero">
+    <p class="sl"><b>1</b>ヒーロー</p>
+    <div class="ph tall">現場の大きな写真 or 短尺動画(高架・橋脚の鉄筋を組む職人の後ろ姿)</div>
+    <div class="over">
+      <p class="catch">道路も、線路も、橋も。<br>その中の鉄筋を組んでいます。</p>
+      <p class="lead" style="margin:0">埼玉・飯能から関東一円の公共インフラを支える鉄筋工事会社です。未経験から一緒に働く仲間を募集しています。</p>
+      <div class="btns"><span class="btn">応募する</span><span class="btn line">LINEで質問だけでもOK</span><span class="btn o">電話する</span></div>
+    </div>
+  </div><aside class="note"><b>狙い</b>12秒で離脱している状態を止める。最初の画面で「公共インフラ」「未経験OK」「応募方法」を全部見せる。<b>根拠</b>TOP 164回・12秒(2026年10月分析)。</aside></section>
+
+  <section class="sec"><div class="wire">
+    <p class="sl"><b>2</b>数字で見るユウシン工業</p>
+    <div class="g5">
+      <div class="stat"><strong>2003年</strong><span>創業</span></div>
+      <div class="stat"><strong>35年</strong><span>業歴のベテラン在籍</span></div>
+      <div class="stat"><strong>1級</strong><span>鉄筋施工技能士</span></div>
+      <div class="stat"><strong>完全週休2日</strong><span>働き方改革に対応</span></div>
+      <div class="stat"><strong>関東一円</strong><span>公共工事の現場</span></div>
+    </div>
+  </div><aside class="note"><b>狙い</b>会社の信頼と働きやすさを数字で一気に伝える。<b>根拠</b>会社概要・採用情報の記載/休日は「完全週休2日」で決定。</aside></section>
+
+  <section class="sec"><div class="wire">
+    <p class="sl"><b>3</b>こんな現場で働きます</p>
+    <div class="g4">
+      <div class="card"><div class="ph">写真</div><h5>鉄道</h5><p>高架橋などの構造物</p></div>
+      <div class="card"><div class="ph">写真</div><h5>高速道路</h5><p>道路構造物の鉄筋</p></div>
+      <div class="card"><div class="ph">写真</div><h5>橋脚・耐震補強</h5><p>大型の橋脚工事</p></div>
+      <div class="card"><div class="ph">写真</div><h5>浄水場・ポンプ場</h5><p>暮らしを支える施設</p></div>
+    </div>
+    <div class="btns"><span class="btn o">施工実績を見る</span></div>
+  </div><aside class="note"><b>狙い</b>求職者には「自分が関わる仕事のスケール」、元請けには実績として同時に効かせる。<b>根拠</b>先輩の声「大規模な現場がとても多い仕事です」(現サイト)。</aside></section>
+
+  <section class="sec"><div class="wire">
+    <p class="sl"><b>4</b>1日の流れ(抜粋)</p>
+    <ol class="tl">
+      <li><strong>朝</strong>飯能に集合、資材を積んで現場へ</li>
+      <li><strong>午前</strong>朝礼・安全確認のあと鉄筋の組立</li>
+      <li><strong>午後</strong>組立の続き・検査の準備</li>
+      <li><strong>夕方</strong>片付けて帰社・解散</li>
+    </ol>
+    <div class="btns"><span class="btn o">1日の流れを詳しく見る</span></div>
+  </div><aside class="note"><b>狙い</b>働くイメージを具体化。<b>根拠</b>2025/11/10に「一日の流れ」ページを提案済み/ChatGPTで就職先1位の同市他社は具体情報が紹介理由。</aside></section>
+
+  <section class="sec"><div class="wire">
+    <p class="sl"><b>5</b>先輩の声</p>
+    <div class="g3">
+      <div class="card"><div class="ph">顔写真</div><h5>業歴35年のベテラン</h5><p>「〇〇〇〇」ひとこと</p></div>
+      <div class="card"><div class="ph">顔写真</div><h5>川村 佑さん(2013年入社)</h5><p>「〇〇〇〇」ひとこと</p></div>
+      <div class="card"><div class="ph">顔写真</div><h5>〇〇さん(32歳・次世代)</h5><p>「〇〇〇〇」ひとこと</p></div>
+    </div>
+    <div class="btns"><span class="btn o">スタッフ紹介へ</span></div>
+  </div><aside class="note"><b>狙い</b>年代の違う3人で「若手も50代も働ける」を見せる。息子さんを次世代の顔に。<b>根拠</b>現状の先輩の声は1名のみ。<span class="chk">【要確認】息子さんの掲載可否・氏名</span></aside></section>
+
+  <section class="sec"><div class="wire">
+    <p class="sl"><b>6</b>未経験からのステップ</p>
+    <div class="g4">
+      <div class="card"><h5>入社〜3ヶ月</h5><p>運搬・結束の補助から</p></div>
+      <div class="card"><h5>〜1年</h5><p>図面を見て組めるように</p></div>
+      <div class="card"><h5>〜3年</h5><p>一通りの組立・資格取得</p></div>
+      <div class="card"><h5>職長</h5><p>班をまとめる立場へ</p></div>
+    </div>
+    <div class="btns"><span class="btn o">未経験から一人前までを見る</span></div>
+  </div><aside class="note"><b>狙い</b>「最初は補助から」と明記して未経験の不安を下げる。<b>根拠</b>同市の競合が「未経験は運搬・補助から」の具体性でAIに紹介されている(11/6確認)。期間は目安。</aside></section>
+
+  <section class="sec"><div class="wire">
+    <p class="sl"><b>7</b>待遇のハイライト</p>
+    <div class="g3">
+      <div class="stat"><strong>日給12,000円〜</strong><span>未経験(経験者14,000円〜)</span></div>
+      <div class="stat"><strong>完全週休2日</strong><span>休日</span></div>
+      <div class="stat"><strong>寮・社宅あり</strong><span>遠方からもOK</span></div>
+      <div class="stat"><strong>全額支援</strong><span>資格取得</span></div>
+      <div class="stat"><strong>20,000円</strong><span>皆勤手当</span></div>
+      <div class="stat"><strong>年2回</strong><span>賞与</span></div>
+    </div>
+    <div class="btns"><span class="btn o">働く環境・待遇を見る</span></div>
+  </div><aside class="note"><b>狙い</b>条件面を一目で。寮で「埼玉県全域・県外からの応募」も受ける。<b>根拠</b>現採用情報の記載/埼玉県で狙いたい(2025/11/10)。</aside></section>
+
+  <section class="sec"><div class="wire">
+    <p class="sl"><b>8</b>社員インタビュー動画</p>
+    <div class="g2"><div class="ph mid">TikTok 社員インタビュー動画 埋め込み</div><div class="ph mid">TikTok 動画2本目(あれば)</div></div>
+  </div><aside class="note"><b>狙い</b>既にある素材を活用。文章より雰囲気が伝わる。</aside></section>
+
+  <section class="sec"><div class="wire">
+    <div class="bar"><span class="t">鉄筋工の仕事や、ユウシン工業で働くことをもっと知りたい方へ</span><span class="btn">求職者のみなさまへ</span></div>
+  </div><aside class="note"><b>狙い</b>採用ハブへの大きな入口。</aside></section>
+
+  <section class="sec"><div class="wire">
+    <p class="sl"><b>10</b>工事のご依頼をお考えの方へ</p>
+    <div class="g2">
+      <div class="card"><div class="ph sm">写真</div><h5>業務案内</h5><p>鉄筋工事・耐震補強</p></div>
+      <div class="card"><div class="ph sm">写真</div><h5>施工実績</h5><p>鉄道・高速道路・橋脚・浄水場</p></div>
+    </div>
+  </div><aside class="note"><b>狙い</b>元請け向けはここでまとめて受ける。採用の流れを邪魔しない位置に。</aside></section>
+
+  <section class="sec"><div class="wire">
+    <p class="sl"><b>11</b>お知らせ・ブログ</p>
+    <div class="g3"><div class="card"><div class="ph sm">サムネ</div><h5>記事タイトル</h5><p>日付・カテゴリ</p></div><div class="card"><div class="ph sm">サムネ</div><h5>記事タイトル</h5><p>日付・カテゴリ</p></div><div class="card"><div class="ph sm">サムネ</div><h5>記事タイトル</h5><p>日付・カテゴリ</p></div></div>
+  </div><aside class="note"><b>狙い</b>更新が続いている会社であることを見せる。</aside></section>
+
+  <section class="sec"><div class="wire">
+    <p class="sl"><b>12</b>協力会社募集(小)</p>
+    <p class="mini" style="margin:0">鉄筋工事の協力会社さまも募集しています。<span class="btn o" style="margin-left:8px">協力会社のご相談</span>(→お問い合わせの「協力会社」へ)</p>
+  </div><aside class="note"><b>狙い</b>サブニーズなので1行+ボタンで十分。</aside></section>
+
+  <section class="sec"><div class="wire">
+    <p class="sl"><b>13</b>最終CTA+アクセス</p>
+    <p class="catch" style="font-size:18px">まずはLINEで質問だけでも大丈夫です。</p>
+    <div class="btns"><span class="btn">応募する</span><span class="btn line">LINEで質問</span><span class="btn o">電話する</span><span class="btn o">見学を相談する</span></div>
+    <div class="g2" style="margin-top:10px"><div class="ph mid">Googleマップ(飯能市)</div><div class="card"><h5>通勤圏の目安</h5><p>飯能市・入間市・狭山市・日高市・所沢市・青梅市 など<br>遠方の方は寮・借り上げ社宅あり</p></div></div>
+  </div><aside class="note"><b>狙い</b>応募のハードルを下げる(質問だけ・見学)。周辺市名で「埼玉県」「近隣市」の求人検索も拾う。<b>根拠</b>前回NG理由は費用対効果→応募数を増やす仕掛けを厚く。<span class="chk">【要確認】見学受け入れ可否</span></aside></section>
+</article>
+
+<!-- ============ 2 業務案内 ============ -->
+<article id="work">
+  <div class="ph-head"><h2><span class="tag old">既存</span>業務案内</h2><div class="meta">/work |15回・平均42秒</div></div>
+  <div class="purpose">元請け向けに「任せられる会社」の根拠を示す。現場写真と説明を追加。求職者にも仕事内容の説明として機能させる。</div>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>1</b>ページヒーロー</p><div class="ph mid">大型構造物の鉄筋写真</div><p class="catch" style="margin-top:10px">公共構造物の鉄筋工事を、関東一円で。</p></div><aside class="note"><b>狙い</b>何をやっている会社か一言で。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>2</b>鉄筋工事とは</p><p class="lead">コンクリートの中に入る鉄筋を、図面どおりに加工・組立する仕事です。完成すると見えなくなりますが、構造物の強さを決める大事な工程です。</p><div class="ph sm">図解:鉄筋 → 型枠 → コンクリート</div></div><aside class="note"><b>狙い</b>求職者・一般の方にもわかる説明。AIに引用されやすい定義文。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>3</b>対応する構造物</p>
+    <div class="g2">
+      <div class="card"><div class="ph">写真</div><h5>鉄道構造物</h5><p>説明文 2〜3行</p></div>
+      <div class="card"><div class="ph">写真</div><h5>高速道路</h5><p>説明文 2〜3行</p></div>
+      <div class="card"><div class="ph">写真</div><h5>橋脚・耐震補強</h5><p>説明文 2〜3行</p></div>
+      <div class="card"><div class="ph">写真</div><h5>浄水場・ポンプ場</h5><p>説明文 2〜3行</p></div>
+    </div></div><aside class="note"><b>狙い</b>現状は文字中心。写真+説明で42秒の滞在を伸ばす。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>4</b>施工の流れ</p><ol class="tl"><li><strong>1</strong>図面確認・打合せ</li><li><strong>2</strong>加工・搬入</li><li><strong>3</strong>組立</li><li><strong>4</strong>検査・引き渡し</li></ol><p class="chk">【要確認】実際の工程(加工は自社か)</p></div><aside class="note"><b>狙い</b>元請けが発注後をイメージできるように。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>5</b>体制と資格</p><div class="g3"><div class="stat"><strong>1級</strong><span>鉄筋施工技能士</span></div><div class="stat"><strong>35年</strong><span>業歴のベテラン</span></div><div class="stat"><strong>関東一円</strong><span>対応エリア</span></div></div><p class="mini">建設業許可番号:〇〇</p></div><aside class="note"><b>根拠</b>ChatGPTで「飯能市で鉄筋工事」1番目。紹介理由は公共構造物の実績・1級技能士(11/6確認)。この強みを明文化。</aside></section>
+
+  <section class="sec"><div class="wire"><div class="bar"><span class="t">工事のご相談・お見積り</span><span class="btn">お問い合わせ(工事のご相談)</span></div><p class="mini" style="margin-top:8px">小バナー:一緒に現場をつくる仲間を募集中 → 求職者のみなさまへ</p></div><aside class="note"><b>狙い</b>元請けCTA+採用への小さな導線。</aside></section>
+</article>
+
+<!-- ============ 3 採用情報 ============ -->
+<article id="recruit">
+  <div class="ph-head"><h2><span class="tag old">既存</span>採用情報(募集要項・応募)</h2><div class="meta">/recruit |19回・平均43秒</div></div>
+  <div class="purpose">魅力訴求は新規ページへ移し、ここは「条件を確認して応募する」ページに特化。</div>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>1</b>ページヒーロー</p><p class="catch">鉄筋工 募集要項</p><p class="lead">未経験・年齢不問。まずは質問だけでもお気軽にどうぞ。</p><div class="btns"><span class="btn">応募フォームへ</span><span class="btn line">LINEで応募・質問</span><span class="btn o">電話する</span></div></div><aside class="note"><b>狙い</b>このページに来た人は応募直前。迷わせない。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>2</b>募集要項</p><div class="tbl-wrap"><table class="spec">
+    <tr><th>職種</th><td>鉄筋工(見習い・経験者)</td></tr>
+    <tr><th>雇用形態</th><td>〇〇 <span class="chk">【要確認】</span></td></tr>
+    <tr><th>応募資格</th><td>年齢・経験不問/普通免許 〇〇 <span class="chk">【要確認】</span></td></tr>
+    <tr><th>給与</th><td>日給 未経験者12,000円〜/経験者14,000円〜</td></tr>
+    <tr><th>手当</th><td>皆勤手当20,000円/その他 〇〇</td></tr>
+    <tr><th>賞与</th><td>年2回</td></tr>
+    <tr><th>休日</th><td>完全週休2日</td></tr>
+    <tr><th>勤務時間</th><td>〇:〇〜〇:〇 <span class="chk">【要確認】</span></td></tr>
+    <tr><th>勤務地</th><td>関東一円の現場(集合は埼玉県飯能市)</td></tr>
+    <tr><th>福利厚生</th><td>寮・借り上げ社宅あり/資格取得費用 全額会社負担/社会保険 〇〇</td></tr>
+  </table></div></div><aside class="note"><b>根拠</b>現採用情報の記載内容。休日は「完全週休2日」で決定。<b>狙い</b>求人検索(Indeed等)と同じ並びで比較しやすく。JobPosting構造化データを設定。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>3</b>応募から入社までの流れ</p><ol class="tl"><li><strong>1</strong>応募(フォーム・LINE・電話)</li><li><strong>2</strong>面接・現場見学</li><li><strong>3</strong>採用のご連絡</li><li><strong>4</strong>入社・先輩と一緒に現場へ</li></ol></div><aside class="note"><b>狙い</b>応募後が見えると応募しやすい。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>4</b>応募フォーム</p><div class="ph mid">既存の応募フォーム(氏名・年齢・電話・メール・経験の有無・質問)</div></div><aside class="note"><b>狙い</b>既存フォームは維持。項目は最小限に。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>5</b>まだ迷っている方へ</p><div class="g4"><span class="pill">1日の流れ</span><span class="pill">スタッフ紹介</span><span class="pill">未経験から一人前まで</span><span class="pill">よくある質問</span></div></div><aside class="note"><b>狙い</b>迷った人を離脱させず、判断材料のページへ戻す。</aside></section>
+</article>
+
+<!-- ============ 4 施工実績 ============ -->
+<article id="jisseki">
+  <div class="ph-head"><h2><span class="tag old">既存</span>施工実績</h2><div class="meta">/jisseki |15回・平均16秒/現状 写真6件・説明なし</div></div>
+  <div class="purpose">写真に説明をつけ、元請けには実績、求職者には「こんな現場で働く」が伝わる形にする。</div>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>1</b>絞り込み</p><div><span class="pill">すべて</span><span class="pill">鉄道</span><span class="pill">高速道路</span><span class="pill">橋脚・耐震補強</span><span class="pill">浄水場・ポンプ場</span></div></div><aside class="note"><b>狙い</b>工事の種類で探せるように。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>2</b>実績カード(1件のテンプレート)</p>
+    <div class="g2"><div class="ph mid">現場写真(複数枚スライド)</div><div class="tbl-wrap"><table class="spec">
+      <tr><th>工事の種類</th><td>橋脚の耐震補強 など</td></tr>
+      <tr><th>場所</th><td>〇〇県(市区町村まで出せる場合のみ)</td></tr>
+      <tr><th>規模</th><td>鉄筋〇t/期間〇ヶ月 など</td></tr>
+      <tr><th>担当した工程</th><td>加工・組立 など</td></tr>
+      <tr><th>現場のひとこと</th><td>職人のコメント1〜2行</td></tr>
+    </table></div></div>
+    <p class="chk">【要確認】発注者の都合で掲載できない現場・写真の範囲</p></div><aside class="note"><b>狙い</b>16秒の離脱を改善。説明があることで検索・AIにも内容が伝わる。<b>根拠</b>写真6件のみ・説明なし(分析)。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>3</b>一覧</p><div class="g3"><div class="ph">実績1</div><div class="ph">実績2</div><div class="ph">実績3</div><div class="ph">実績4</div><div class="ph">実績5</div><div class="ph">実績6</div></div></div><aside class="note"><b>狙い</b>既存6件に説明をつけて移行。以降は追加していく。</aside></section>
+
+  <section class="sec"><div class="wire"><div class="g2"><div class="bar"><span class="t">この現場で一緒に働きませんか</span><span class="btn">求職者のみなさまへ</span></div><div class="bar"><span class="t">工事のご相談</span><span class="btn">お問い合わせ</span></div></div></div><aside class="note"><b>狙い</b>読み手が二通りなのでCTAも二つ。</aside></section>
+</article>
+
+<!-- ============ 5 会社概要 ============ -->
+<article id="information">
+  <div class="ph-head"><h2><span class="tag old">既存</span>会社概要</h2><div class="meta">/information |52回・平均25秒</div></div>
+  <div class="purpose">会社情報を整理。代表挨拶は「ユウシン工業について」へ移し、ここは短い導線にする。</div>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>1</b>会社情報</p><div class="tbl-wrap"><table class="spec">
+    <tr><th>会社名</th><td>株式会社ユウシン工業</td></tr>
+    <tr><th>代表者</th><td>〇〇</td></tr>
+    <tr><th>創業</th><td>2003年</td></tr>
+    <tr><th>所在地</th><td>埼玉県飯能市〇〇</td></tr>
+    <tr><th>事業内容</th><td>鉄筋工事(鉄道・高速道路・橋脚・浄水場・ポンプ場などの公共構造物)</td></tr>
+    <tr><th>対応エリア</th><td>関東一円</td></tr>
+    <tr><th>建設業許可</th><td>〇〇</td></tr>
+    <tr><th>有資格者</th><td>1級鉄筋施工技能士 ほか</td></tr>
+    <tr><th>従業員数</th><td>〇名 <span class="chk">【要確認】掲載する人数</span></td></tr>
+  </table></div></div><aside class="note"><b>狙い</b>Organization構造化データと揃え、AIが正確に会社情報を拾えるように。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>2</b>代表メッセージ(短縮)</p><div class="g2"><div class="ph">代表 顔写真</div><div><p class="lead">代表挨拶の冒頭2〜3行</p><span class="btn o">ユウシン工業について(全文)</span></div></div></div><aside class="note"><b>根拠</b>現在は代表挨拶に顔写真なし。顔を出すことで安心感。<span class="chk">【要確認】写真撮影</span></aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>3</b>アクセス</p><div class="ph mid">Googleマップ</div><p class="mini">最寄り駅・車でのアクセス</p></div><aside class="note"><b>狙い</b>面接・見学に来る人向け。</aside></section>
+</article>
+
+<!-- ============ 6 ブログ ============ -->
+<article id="blog">
+  <div class="ph-head"><h2><span class="tag old">既存</span>ブログ(お知らせ・コラム統合)</h2><div class="meta">/blog |最新 2026/09/09/協力会社コラムは2023/01で停止</div></div>
+  <div class="purpose">求人・鉄筋工の仕事の記事を軸にし、記事を読んだ人を採用ページへ送る。</div>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>1</b>カテゴリ</p><span class="pill">お知らせ</span><span class="pill">鉄筋工の仕事</span><span class="pill">現場レポート</span><span class="pill">採用・求人</span><span class="pill">協力会社</span></div><aside class="note"><b>狙い</b>/column を統合し、カテゴリで整理。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>2</b>記事一覧</p><div class="g3"><div class="card"><div class="ph sm">サムネ</div><h5>例:鉄筋工の仕事内容と1日の流れ</h5><p>鉄筋工の仕事</p></div><div class="card"><div class="ph sm">サムネ</div><h5>例:未経験から鉄筋工になるには</h5><p>採用・求人</p></div><div class="card"><div class="ph sm">サムネ</div><h5>例:鉄筋施工技能士の取り方</h5><p>鉄筋工の仕事</p></div></div></div><aside class="note"><b>狙い</b>「埼玉県 鉄筋工事 求人」等で20位以内に入っていないので、仕事・求人系の記事で入口を増やす。<b>根拠</b>求人KWは「飯能市 鉄筋工 求人」6位のみ(分析)。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>3</b>記事下の固定バナー</p><div class="bar"><span class="t">ユウシン工業では鉄筋工を募集しています(未経験OK)</span><span class="btn">求職者のみなさまへ</span></div></div><aside class="note"><b>狙い</b>記事から採用へ必ずつなぐ。</aside></section>
+</article>
+
+<!-- ============ 7 お問い合わせ ============ -->
+<article id="contact">
+  <div class="ph-head"><h2><span class="tag old">既存</span>お問い合わせ</h2><div class="meta">/contact |71回・平均15秒/フォーム完了34回(大半が直接訪問・中身要確認)</div></div>
+  <div class="purpose">入口で目的を3つに分け、応募・工事・協力会社が混ざらないようにする。</div>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>1</b>目的の選択</p><div class="g3">
+    <div class="card" style="border-color:var(--org)"><h5>働きたい・質問したい</h5><p>応募・見学・質問</p></div>
+    <div class="card"><h5>工事のご相談</h5><p>元請け・発注者さま</p></div>
+    <div class="card"><h5>協力会社として</h5><p>鉄筋工事の協力会社さま</p></div>
+  </div></div><aside class="note"><b>狙い</b>選んだ目的でフォーム項目を切り替え。分析で応募と問い合わせを分けて計測できる。<b>根拠</b>フォーム完了34回の中身が不明(分析)。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>2</b>電話・LINE</p><div class="g2"><div class="card"><h5>電話</h5><p>〇〇-〇〇〇〇-〇〇〇〇(受付時間 〇〇)</p></div><div class="card"><h5>LINE</h5><p>QRコード+友だち追加ボタン</p></div></div></div><aside class="note"><b>狙い</b>既存導線は維持。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>3</b>フォーム</p><div class="ph mid">選択した目的に応じたフォーム</div></div><aside class="note"><b>狙い</b>項目は少なく。送信後はサンクスページで計測。</aside></section>
+</article>
+
+<!-- ============ 8 求職者のみなさまへ ============ -->
+<article id="message">
+  <div class="ph-head"><h2><span class="tag new">新規</span>求職者のみなさまへ</h2><div class="meta">/recruit/message |採用PRハブ</div></div>
+  <div class="purpose">仕事の理解 → 魅力 → 詳しいページへの振り分け → 募集要項。採用サイトの玄関。</div>
+
+  <section class="sec"><div class="wire hero"><p class="sl"><b>1</b>ページヒーロー</p><div class="ph tall">職人が鉄筋を組む手元〜全景の写真</div><div class="over"><p class="catch">あなたが組んだ鉄筋が、<br>何十年も街を支えます。</p><p class="lead" style="margin:0">ユウシン工業は、次の世代を一緒につくる仲間を探しています。</p></div></div><aside class="note"><b>狙い</b>仕事の誇りを最初に。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>2</b>なぜ今、仲間を募集するのか</p><div class="g2"><div class="ph mid">代表 or 息子さんの写真</div><div><p class="lead">ベテランの技術を次の世代へつなぎたい。そしてもう1班つくり、より多くの現場を担える会社にしたい。そのために、2〜3名の仲間を募集しています。</p><p class="chk">【要確認】話し手(代表/息子さん)</p></div></div></div><aside class="note"><b>狙い</b>募集の理由が正直に書かれていると信頼される。<b>根拠</b>「すくなからず2〜3名は採用して次世代の人間も」「もう1班とかを作って」(2025/09/04)。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>3</b>鉄筋工ってどんな仕事?</p><ol class="tl"><li><strong>運ぶ</strong>鉄筋を現場の必要な場所へ</li><li><strong>組む</strong>図面どおりに並べ、結束して形にする</li><li><strong>確かめる</strong>本数・間隔を検査</li><li><strong>完成</strong>コンクリートが打たれ、構造物になる</li></ol></div><aside class="note"><b>狙い</b>知らない人にもわかる平易な説明。「鉄筋工とは」の検索・AI回答にも対応。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>4</b>この仕事の魅力</p><div class="g3">
+    <div class="card"><div class="ph sm">写真</div><h5>地図に残る仕事</h5><p>鉄道・高速道路・橋。完成した構造物を家族に見せられる</p></div>
+    <div class="card"><div class="ph sm">写真</div><h5>手に職・国家資格</h5><p>鉄筋施工技能士など。費用は会社が全額負担</p></div>
+    <div class="card"><div class="ph sm">写真</div><h5>顔が見える少人数</h5><p>ベテランが近くで教える。親子で働く会社</p></div>
+  </div></div><aside class="note"><b>狙い</b>魅力を3つに絞る。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>5</b>こんな人を待っています</p><ul style="margin:0;padding-left:18px"><li>未経験でも、体を動かす仕事がしたい方</li><li>手に職をつけて長く働きたい方</li><li>飯能・入間・狭山など地元で働きたい方</li><li>遠方から寮・社宅を使って働きたい方</li></ul></div><aside class="note"><b>狙い</b>自分ごと化。年齢不問を前提に。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>6</b>もっと知る(振り分け)</p><div class="g5">
+    <div class="card"><div class="ph sm">写真</div><h5>1日の流れ</h5></div>
+    <div class="card"><div class="ph sm">写真</div><h5>スタッフ紹介</h5></div>
+    <div class="card"><div class="ph sm">写真</div><h5>未経験から一人前まで</h5></div>
+    <div class="card"><div class="ph sm">写真</div><h5>働く環境・待遇</h5></div>
+    <div class="card"><div class="ph sm">写真</div><h5>よくある質問</h5></div>
+  </div></div><aside class="note"><b>狙い</b>知りたいことから選べるハブ。<b>根拠</b>過去案件の採用ページ定番構成(3/3社)。</aside></section>
+
+  <section class="sec"><div class="wire"><div class="bar"><span class="t">条件を確認して応募する</span><span class="btn">募集要項・応募へ</span></div><div class="btns"><span class="btn line">LINEで質問だけでもOK</span></div></div><aside class="note"><b>狙い</b>最後は必ず募集要項へ。</aside></section>
+</article>
+
+<!-- ============ 9 1日の流れ ============ -->
+<article id="day">
+  <div class="ph-head"><h2><span class="tag new">新規</span>1日の流れ</h2><div class="meta">/recruit/day</div></div>
+  <div class="purpose">朝の集合から帰社までを写真つきで。働くイメージを具体化し、応募前の離脱を防ぐ。</div>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>1</b>ページヒーロー</p><p class="catch">ある日の現場、朝から帰るまで</p><p class="lead">高速道路の橋脚工事の日を例に紹介します。</p></div><aside class="note"><b>狙い</b>具体的な1日を例に。<span class="chk">【要確認】例にする現場</span></aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>2</b>タイムライン</p>
+    <ol class="tl">
+      <li><strong>〇:〇〇 集合</strong>飯能の会社に集合、資材と道具を積み込み<div class="ph sm">写真</div></li>
+      <li><strong>〇:〇〇 現場へ移動</strong>社用車でみんなで移動</li>
+      <li><strong>8:00 朝礼</strong>元請けさんと朝礼・危険予知(KY)活動<div class="ph sm">写真</div></li>
+      <li><strong>午前 組立</strong>図面を確認しながら鉄筋を組む<div class="ph sm">写真</div></li>
+      <li><strong>12:00 昼休憩</strong>現場の休憩所でお昼</li>
+      <li><strong>午後 組立・検査準備</strong>本数・間隔をチェック<div class="ph sm">写真</div></li>
+      <li><strong>17:00 片付け</strong>道具をまとめて現場を出る</li>
+      <li><strong>〇:〇〇 帰社・解散</strong>翌日の段取りを確認して解散</li>
+    </ol>
+    <p class="chk">【要確認】集合・帰社時刻、直行直帰の有無、移動時間の目安</p>
+  </div><aside class="note"><b>狙い</b>時刻を入れると現実感が出る。<b>根拠</b>「一日の流れ」ページを2025/11/10に提案済み/現サイトに1日の流れがない。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>3</b>入社したばかりの人の1日</p><div class="card" style="border-color:var(--org)"><h5>最初は運搬と結束の補助から</h5><p>いきなり組立を任せることはありません。先輩の横で鉄筋を運び、結束を手伝いながら覚えていきます。</p></div></div><aside class="note"><b>根拠</b>同市の競合は「未経験は運搬・補助から」が紹介理由(ChatGPT 11/6確認)。同じ具体度で書く。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>4</b>大規模現場の様子</p><div class="g3"><div class="ph mid">現場全景</div><div class="ph mid">組立中</div><div class="ph mid">完成した構造物</div></div></div><aside class="note"><b>狙い</b>公共工事のスケール感を写真で。<span class="chk">【要確認】撮影・掲載OKの現場</span></aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>5</b>現場の場所と移動</p><p class="lead">現場は関東一円。社用車で乗り合わせて移動します。</p><p class="chk">【要確認】移動手当・車の免許の要否</p></div><aside class="note"><b>狙い</b>「遠くの現場に自分で行くのか」という不安に先回り。</aside></section>
+
+  <section class="sec"><div class="wire"><div class="bar"><span class="t">働く仲間の話も聞いてみる</span><span class="btn">スタッフ紹介へ</span></div><div class="btns"><span class="btn">応募する</span><span class="btn line">LINEで質問</span></div></div><aside class="note"><b>狙い</b>次に知りたいページへ。</aside></section>
+</article>
+
+<!-- ============ 10 スタッフ紹介 ============ -->
+<article id="staff">
+  <div class="ph-head"><h2><span class="tag new">新規</span>スタッフ紹介</h2><div class="meta">/recruit/staff</div></div>
+  <div class="purpose">年代の違う先輩を見せ、若手も50代も「自分も働ける」と思えるようにする。</div>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>1</b>ページヒーロー</p><div class="ph mid">集合写真</div><p class="catch" style="margin-top:10px">ユウシン工業で働く人たち</p></div><aside class="note"><b>狙い</b>チームの顔を最初に。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>2</b>スタッフ一覧</p><div class="g3">
+    <div class="card"><div class="ph">顔写真</div><h5>〇〇さん</h5><p>業歴35年/1級鉄筋施工技能士 〇〇</p></div>
+    <div class="card"><div class="ph">顔写真</div><h5>川村 佑さん</h5><p>2013年入社</p></div>
+    <div class="card"><div class="ph">顔写真</div><h5>〇〇さん</h5><p>32歳/次世代を担う</p></div>
+  </div></div><aside class="note"><b>根拠</b>現状の先輩の声は1名のみ/日本人スタッフは32歳の息子さん以外50歳以上(2025/09/04)。<span class="chk">【要確認】掲載する人・氏名・年代</span></aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>3</b>インタビュー(1人分のテンプレート ×3)</p>
+    <div class="g2"><div class="ph tall">現場での写真</div><div>
+      <div class="q"><p class="qq">ユウシン工業に入ったきっかけは?</p><p class="aa">回答</p></div>
+      <div class="q"><p class="qq">仕事でうれしいのはどんな時?</p><p class="aa">回答</p></div>
+      <div class="q"><p class="qq">大変なことは?</p><p class="aa">回答(正直に)</p></div>
+      <div class="q"><p class="qq">未経験の人に伝えたいこと</p><p class="aa">回答</p></div>
+    </div></div>
+  </div><aside class="note"><b>狙い</b>ベテラン=教える側の目線、川村さん=続けてきた理由、息子さん=これからの会社。3人で役割を分ける。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>4</b>動画で見る</p><div class="g2"><div class="ph mid">TikTok 社員インタビュー</div><div class="ph mid">TikTok 現場の様子</div></div></div><aside class="note"><b>狙い</b>既存のTikTok素材を再利用。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>5</b>チームの雰囲気</p><div class="g4"><div class="ph">休憩中</div><div class="ph">朝礼</div><div class="ph">作業中</div><div class="ph">会社前</div></div></div><aside class="note"><b>狙い</b>人間関係の不安を写真で和らげる。</aside></section>
+
+  <section class="sec"><div class="wire"><div class="btns"><span class="btn">応募する</span><span class="btn line">LINEで質問</span><span class="btn o">未経験から一人前までを見る</span></div></div><aside class="note"><b>狙い</b>次の判断材料へ。</aside></section>
+</article>
+
+<!-- ============ 11 未経験から一人前まで ============ -->
+<article id="career">
+  <div class="ph-head"><h2><span class="tag new">新規</span>未経験から一人前まで</h2><div class="meta">/recruit/career</div></div>
+  <div class="purpose">成長ステップと資格取得の全額支援で、未経験者の「自分にできるか」をなくす。</div>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>1</b>ページヒーロー</p><p class="catch">最初は運ぶことから。<br>焦らなくて大丈夫です。</p></div><aside class="note"><b>狙い</b>未経験者の不安に正面から答える。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>2</b>成長ステップ</p><ol class="tl">
+    <li><strong>入社〜3ヶ月</strong>鉄筋の運搬・結束の補助。道具と現場のルールを覚える</li>
+    <li><strong>〜1年</strong>図面の見方を覚え、簡単な部分の組立を任される</li>
+    <li><strong>〜3年</strong>一通りの組立ができる。技能士の資格に挑戦</li>
+    <li><strong>職長へ</strong>班をまとめ、後輩を育てる立場に</li>
+  </ol><p class="chk">【要確認】期間の目安・職長までの年数</p></div><aside class="note"><b>根拠</b>募集は「年齢・経験不問」/現サイトにキャリアの記載なし。もう1班つくる=職長候補が必要(2025/09/04)。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>3</b>取れる資格(費用は会社が全額負担)</p><div class="g3">
+    <div class="card"><h5>鉄筋施工技能士(2級・1級)</h5><p>国家資格</p></div>
+    <div class="card"><h5>玉掛け</h5><p>〇〇</p></div>
+    <div class="card"><h5>職長・安全衛生責任者教育</h5><p>〇〇</p></div>
+  </div><p class="chk">【要確認】支援対象の資格一覧</p></div><aside class="note"><b>根拠</b>資格取得は全額支援(現採用情報)/1級鉄筋施工技能士が在籍(会社概要)。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>4</b>給与の上がり方</p><div class="g3"><div class="stat"><strong>12,000円〜</strong><span>未経験スタート(日給)</span></div><div class="stat"><strong>14,000円〜</strong><span>経験者(日給)</span></div><div class="stat"><strong>〇〇円〜</strong><span>職長・資格取得後</span></div></div><p class="chk">【要確認】昇給の仕組み・資格手当の有無</p></div><aside class="note"><b>狙い</b>成長と収入をつなげて見せる。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>5</b>教える体制</p><div class="g2"><div class="ph mid">ベテランが教えている写真</div><p class="lead">業歴35年のベテランをはじめ、先輩が現場で直接教えます。</p></div></div><aside class="note"><b>狙い</b>「誰が教えてくれるのか」まで具体的に。</aside></section>
+
+  <section class="sec"><div class="wire"><div class="btns"><span class="btn">応募する</span><span class="btn line">LINEで質問</span><span class="btn o">働く環境・待遇を見る</span></div></div><aside class="note"><b>狙い</b>次へ。</aside></section>
+</article>
+
+<!-- ============ 12 働く環境・待遇 ============ -->
+<article id="environment">
+  <div class="ph-head"><h2><span class="tag new">新規</span>働く環境・待遇</h2><div class="meta">/recruit/environment</div></div>
+  <div class="purpose">休日・手当・寮をまとめて見せ、地元の人も遠方の人も応募できる会社だと伝える。</div>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>1</b>ページヒーロー</p><p class="catch">完全週休2日。寮・社宅もあります。</p></div><aside class="note"><b>狙い</b>一番の差別化ポイントを見出しに。<b>根拠</b>休日表記は「完全週休2日」で決定。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>2</b>待遇一覧</p><div class="g3">
+    <div class="stat"><strong>完全週休2日</strong><span>休日</span></div>
+    <div class="stat"><strong>日給12,000円〜</strong><span>経験者14,000円〜</span></div>
+    <div class="stat"><strong>20,000円</strong><span>皆勤手当</span></div>
+    <div class="stat"><strong>年2回</strong><span>賞与</span></div>
+    <div class="stat"><strong>全額負担</strong><span>資格取得</span></div>
+    <div class="stat"><strong>寮・社宅</strong><span>借り上げ社宅あり</span></div>
+  </div><p class="chk">【要確認】社会保険・長期休暇・支給品(作業着・道具)</p></div><aside class="note"><b>根拠</b>現採用情報の記載。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>3</b>寮・借り上げ社宅</p><div class="g2"><div class="ph mid">寮・社宅の写真</div><div><p class="lead">遠方からの方も安心して働けます。</p><p class="chk">【要確認】場所・費用・設備</p></div></div></div><aside class="note"><b>狙い</b>飯能市外・県外からの応募を受ける。<b>根拠</b>埼玉県で狙いたい(2025/11/10)。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>4</b>通える範囲</p><div class="g2"><div class="ph mid">飯能市中心の地図</div><div><p class="lead">飯能市・入間市・狭山市・日高市・所沢市・青梅市などから通っています。</p><p class="chk">【要確認】実際の通勤元</p></div></div></div><aside class="note"><b>狙い</b>近隣市名で「〇〇市 鉄筋工 求人」を拾う。<b>根拠</b>「飯能市 鉄筋工 求人」6位、「埼玉県 鉄筋工事 求人」は20位外。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>5</b>チームの雰囲気</p><div class="g2"><div class="ph mid">チーム写真</div><p class="lead">親子で働く、顔の見える少人数の会社です。〇〇〇〇(社内の雰囲気がわかるエピソード)</p></div></div><aside class="note"><b>狙い</b>条件だけでなく「誰と働くか」。</aside></section>
+
+  <section class="sec"><div class="wire"><div class="bar"><span class="t">条件を確認して応募する</span><span class="btn">募集要項・応募へ</span></div></div><aside class="note"><b>狙い</b>待遇を見た直後に応募へ。</aside></section>
+</article>
+
+<!-- ============ 13 FAQ ============ -->
+<article id="faq">
+  <div class="ph-head"><h2><span class="tag new">新規</span>よくある質問</h2><div class="meta">/faq |FAQPage構造化データ</div></div>
+  <div class="purpose">応募前の不安を一問一答で解消。AIに引用されやすい形で、回答は1〜2文で言い切る。</div>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>1</b>カテゴリ切替</p><div class="tabs"><span class="on">働きたい方</span><span>工事・協力会社の方</span></div></div><aside class="note"><b>狙い</b>求職者向けを先に。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>2</b>働きたい方への質問</p>
+    <div class="q"><p class="qq">未経験でも大丈夫ですか?</p><p class="aa">はい。最初は運搬・結束の補助から始め、先輩が現場で教えます。</p></div>
+    <div class="q"><p class="qq">何歳まで応募できますか?</p><p class="aa">年齢は問いません。</p></div>
+    <div class="q"><p class="qq">休みはどのくらいありますか?</p><p class="aa">完全週休2日です。</p></div>
+    <div class="q"><p class="qq">給料はいくらですか?</p><p class="aa">日給で未経験者12,000円〜、経験者14,000円〜です。皆勤手当20,000円、賞与年2回があります。</p></div>
+    <div class="q"><p class="qq">飯能市から遠くても働けますか?</p><p class="aa">寮・借り上げ社宅があります。</p></div>
+    <div class="q"><p class="qq">現場はどこですか?</p><p class="aa">関東一円の鉄道・高速道路・橋脚・浄水場などです。会社に集合して社用車で移動します。</p></div>
+    <div class="q"><p class="qq">資格がなくても応募できますか?</p><p class="aa">できます。入社後の資格取得費用は会社が全額負担します。</p></div>
+    <div class="q"><p class="qq">1日の勤務時間は?</p><p class="aa">〇:〇〇〜〇:〇〇です。<span class="chk">【要確認】</span></p></div>
+    <div class="q"><p class="qq">応募前に見学できますか?</p><p class="aa">〇〇<span class="chk">【要確認】</span></p></div>
+    <div class="q"><p class="qq">LINEで質問だけしてもいいですか?</p><p class="aa">はい。応募するか決めていなくても大丈夫です。</p></div>
+    <div class="q"><p class="qq">応募から入社までの流れは?</p><p class="aa">応募 → 面接・見学 → 採用のご連絡 → 入社です。</p></div>
+  </div><aside class="note"><b>根拠</b>「採用Q&amp;A」を2025/11/10に提案済み/FAQは過去案件6/6社で新設。<b>狙い</b>ChatGPT等で「飯能市で鉄筋工として就職」に答えられる材料を増やす。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>3</b>工事・協力会社の方への質問</p>
+    <div class="q"><p class="qq">対応エリアはどこですか?</p><p class="aa">関東一円です。</p></div>
+    <div class="q"><p class="qq">どんな工事に対応できますか?</p><p class="aa">鉄道・高速道路・橋脚(耐震補強含む)・浄水場・ポンプ場などの公共構造物の鉄筋工事です。</p></div>
+    <div class="q"><p class="qq">協力会社の募集条件は?</p><p class="aa">〇〇<span class="chk">【要確認】</span></p></div>
+  </div><aside class="note"><b>狙い</b>サブニーズはFAQで受ける(独立ページは作らない)。</aside></section>
+
+  <section class="sec"><div class="wire"><div class="btns"><span class="btn">応募する</span><span class="btn line">LINEで質問</span><span class="btn o">お問い合わせ</span></div></div><aside class="note"><b>狙い</b>解決しなかった質問はLINEへ。</aside></section>
+</article>
+
+<!-- ============ 14 ユウシン工業について ============ -->
+<article id="about">
+  <div class="ph-head"><h2><span class="tag new">新規</span>ユウシン工業について</h2><div class="meta">/about</div></div>
+  <div class="purpose">創業からのあゆみ・代表の想い・公共インフラを支える誇り。会社の「人柄」を伝えるページ。</div>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>1</b>ページヒーロー</p><div class="ph mid">完成した構造物の写真</div><p class="catch" style="margin-top:10px">見えなくなる仕事に、手を抜かない。</p></div><aside class="note"><b>狙い</b>鉄筋は完成後に見えなくなる。そこに誇りを持つ会社であることを一言で。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>2</b>代表メッセージ</p><div class="g2"><div class="ph tall">代表 顔写真</div><div><p class="lead">現在の代表挨拶をベースに、創業の想い・仕事への姿勢・これからの会社像(次世代・もう1班)を加えて再構成。</p><p class="mini">代表取締役 〇〇</p></div></div></div><aside class="note"><b>根拠</b>代表挨拶はあるが顔写真なし(会社概要)/会社の人格ページは過去案件6/6社。<span class="chk">【要確認】代表の撮影</span></aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>3</b>あゆみ</p><ol class="tl"><li><strong>2003年</strong>創業</li><li><strong>〇〇年</strong>〇〇(法人化・主な実績など)</li><li><strong>〇〇年</strong>〇〇</li><li><strong>現在</strong>関東一円の公共構造物を担当</li></ol><p class="chk">【要確認】沿革</p></div><aside class="note"><b>狙い</b>20年以上続いている会社という安心感。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>4</b>公共インフラを支える</p><div class="g4"><div class="card"><div class="ph sm">写真</div><h5>鉄道</h5></div><div class="card"><div class="ph sm">写真</div><h5>高速道路</h5></div><div class="card"><div class="ph sm">写真</div><h5>橋脚</h5></div><div class="card"><div class="ph sm">写真</div><h5>浄水場</h5></div></div></div><aside class="note"><b>狙い</b>求職者には誇り、元請けには実績。</aside></section>
+
+  <section class="sec"><div class="wire"><p class="sl"><b>5</b>次の世代へ</p><div class="g2"><div class="ph mid">息子さんの写真</div><p class="lead">次の世代を担う〇〇から、これから入る人へのメッセージ。</p></div></div><aside class="note"><b>狙い</b>会社の未来を見せる。採用ページへの橋渡し。<span class="chk">【要確認】掲載可否</span></aside></section>
+
+  <section class="sec"><div class="wire"><div class="g2"><div class="bar"><span class="t">一緒に働く仲間を募集中</span><span class="btn">求職者のみなさまへ</span></div><div class="bar"><span class="t">会社情報</span><span class="btn">会社概要</span></div></div></div><aside class="note"><b>狙い</b>採用と会社情報の両方へ。</aside></section>
+</article>
+
+</main>
+</div>
+<script>
+(function(){
+  const btns=[...document.querySelectorAll('nav.side button')];
+  const sel=document.getElementById('mobsel');
+  btns.forEach(b=>{const o=document.createElement('option');o.value=b.dataset.p;o.textContent=b.textContent.replace(/^\s*[–\d]+/,'').trim();sel.appendChild(o);});
+  function show(id){
+    if(!document.getElementById(id)) id='top';
+    document.querySelectorAll('article').forEach(a=>a.classList.toggle('on',a.id===id));
+    btns.forEach(b=>b.setAttribute('aria-current',b.dataset.p===id?'true':'false'));
+    sel.value=id; window.scrollTo(0,0);
+  }
+  btns.forEach(b=>b.addEventListener('click',()=>{location.hash=b.dataset.p;}));
+  sel.addEventListener('change',()=>{location.hash=sel.value;});
+  window.addEventListener('hashchange',()=>show(location.hash.slice(1)));
+  show(location.hash.slice(1)||'top');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+</helmet>
+<section style="position:relative;background:#0A4DB3;color:#fff;padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);overflow:hidden;text-align:center;font-family:'Noto Sans JP',sans-serif">
+  <span aria-hidden="true" style="position:absolute;bottom:clamp(8px,2vw,20px);right:clamp(8px,2vw,24px);font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:clamp(54px,12vw,150px);color:rgba(255,255,255,.06);line-height:.8;max-width:100%;overflow:hidden">JOIN US</span>
+  <div style="position:relative;max-width:760px;margin:0 auto">
+    <span style="font-family:'Noto Sans JP',sans-serif;font-weight:900;color:#fff;font-size:clamp(12px,2vw,15px);letter-spacing:.16em">JOIN US</span>
+    <h2 style="margin:12px 0 0;font-weight:900;font-size:clamp(1.8rem,5vw,3.2rem);line-height:1.35;white-space:pre-line">{{ heading }}</h2>
+    <p style="margin:18px 0 0;font-size:clamp(15px,2.4vw,18px);color:rgba(255,255,255,.85);white-space:pre-line">{{ sub }}</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:clamp(28px,4vw,42px)">
+      <a href="/recruit#apply" style="background:#F07A28;color:#1F2933;font-weight:900;font-size:clamp(16px,2.4vw,18px);padding:18px 30px;border-radius:4px;display:flex;justify-content:center;align-items:center;gap:10px;width:260px;max-width:100%" style-hover="background:#D9661A">応募する<span aria-hidden="true">→</span></a>
+      <a href="https://lin.ee/8Wcjh7g" style="background:#06C755;color:#fff;font-weight:900;font-size:clamp(16px,2.4vw,18px);padding:18px 30px;border-radius:4px;display:flex;justify-content:center;align-items:center;width:260px;max-width:100%" style-hover="opacity:.88">LINEで質問</a>
+      <a href="tel:042-978-6466" style="border:2px solid rgba(255,255,255,.5);border-radius:4px;color:#fff;font-weight:700;padding:12px 26px;display:flex;flex-direction:column;justify-content:center;align-items:center;line-height:1.25;width:260px;max-width:100%" style-hover="border-color:#fff">
+        <span style="font-weight:900;font-size:clamp(20px,3.6vw,26px);letter-spacing:.02em">042-978-6466</span>
+        <span style="font-size:12px;opacity:.85">受付 8:00〜17:00（土日休み）</span>
+      </a>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1240,&quot;height&quot;:420},&quot;heading&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;まずはLINEで質問だけでも大丈夫です。&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;sub&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;応募フォーム・LINE・お電話、どれからでもどうぞ。&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      heading: this.props.heading || 'まずはLINEで質問だけでも大丈夫です。',
+      sub: this.props.sub || '応募フォーム・LINE・お電話、どれからでもどうぞ。',
+    };
+  }
+}
+</script>
+</body>
+</html>

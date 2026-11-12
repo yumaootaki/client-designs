@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0A4DB3"/><text x="50" y="58" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="#3D8BFF" text-anchor="middle">YUSHIN</text></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;color:#1F2933;background:#fff;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none}
+span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal}
+:focus-visible{outline:3px solid #F07A28;outline-offset:3px}
+section a,section button,footer a,footer button{transition:opacity .2s ease}
+section a:hover,section button:hover,footer a:hover,footer button:hover{opacity:.78}
+#hero3{--xt:100%;--xb:97%;--yb:57%;--y0:75%;--badge:clamp(92px,22vw,116px);--tick:clamp(20px,5vw,28px)}
+@media (min-width:600px){#hero3{--xt:92%;--xb:74%;--yb:78%;--y0:96%}}
+@media (min-width:900px){#hero3{--xt:70%;--xb:56%;--yb:100%;--y0:100%;--badge:clamp(116px,11vw,152px);--tick:28px}}
+@keyframes hero3Zoom{from{transform:scale(1.05)}to{transform:scale(1.14)}}
+@keyframes hero3MarqL{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@keyframes hero3MarqR{from{transform:translate3d(-50%,0,0)}to{transform:translate3d(0,0,0)}}
+@keyframes hero3Spin{to{transform:rotate(360deg)}}
+@keyframes hero3Up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes hero3Paint{0%{stroke-dashoffset:var(--len)}1%{stroke-dashoffset:var(--len)}8%{stroke-dashoffset:0}36%{stroke-dashoffset:0}45%{stroke-dashoffset:calc(var(--len) * -1)}100%{stroke-dashoffset:calc(var(--len) * -1)}}
+@keyframes hero3Sweep{0%{transform:translate3d(-7%,-3%,0) rotate(-1.6deg) scale(1.05)}8%{transform:translate3d(0,0,0) rotate(0deg) scale(1)}36%{transform:translate3d(0,0,0) rotate(0deg) scale(1)}45%{transform:translate3d(5%,2%,0) rotate(1.2deg) scale(1.02)}100%{transform:translate3d(5%,2%,0) rotate(1.2deg) scale(1.02)}}
+@keyframes hero3SweepUp{0%{transform:translate3d(-5%,7%,0) rotate(1.8deg) scale(1.05)}8%{transform:translate3d(0,0,0) rotate(0deg) scale(1)}36%{transform:translate3d(0,0,0) rotate(0deg) scale(1)}45%{transform:translate3d(4%,-4%,0) rotate(-1.2deg) scale(1.02)}100%{transform:translate3d(4%,-4%,0) rotate(-1.2deg) scale(1.02)}}
+@keyframes heroUp{from{opacity:0;transform:translateY(46px)}to{opacity:1;transform:none}}
+@keyframes scrollcue{0%{transform:translateY(0);opacity:.9}70%{opacity:.1}100%{transform:translateY(15px);opacity:0}}
+@keyframes heroCharIn{from{opacity:0}to{opacity:1}}
+@keyframes heroDraw{to{stroke-dashoffset:0}}
+@keyframes heroFloat{from{translate:0 -10px}to{translate:0 12px}}
+@keyframes heroMarqV{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,-50%,0)}}
+@keyframes heroScrollLine{0%{transform:translateY(-100%)}100%{transform:translateY(240%)}}
+.m-card{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
+.m-card:hover{transform:translateY(-6px) !important;box-shadow:0 22px 44px rgba(6,48,110,.18)}
+.m-card img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.m-card:hover img{transform:scale(1.07)}
+@keyframes mDot{0%{box-shadow:0 0 0 0 rgba(240,122,40,.55)}70%{box-shadow:0 0 0 12px rgba(240,122,40,0)}100%{box-shadow:0 0 0 0 rgba(240,122,40,0)}}
+@keyframes mGrid{from{background-position:0 0,0 0}to{background-position:48px 48px,48px 48px}}
+@keyframes mKen{from{transform:scale(1.04)}to{transform:scale(1.16)}}
+@keyframes mShine{from{transform:translateX(-120%) skewX(-20deg)}to{transform:translateX(320%) skewX(-20deg)}}
+.m-btn{position:relative;overflow:hidden}
+.m-btn::after{content:"";position:absolute;top:0;bottom:0;left:0;width:30%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:translateX(-120%) skewX(-20deg);animation:mShine 3.6s ease-in-out 1.6s infinite}
+@media (prefers-reduced-motion: reduce){.m-btn::after{display:none}}
+.hero-vmarq,.hero4-photos{display:none}
+@media (min-width:900px){
+  .hero-vmarq,.hero4-photos{display:block}
+  .hero4-strip{display:none}
+  .hero4-copy{align-items:flex-start !important;text-align:left !important;max-width:calc(100% - clamp(400px,50vw,860px) - clamp(64px,6.4vw,104px) + clamp(40px,6vw,120px));container-type:inline-size;padding-bottom:clamp(110px,12vw,150px) !important}
+  .hero4-btns{justify-content:flex-start !important}
+  .hero4-h1{font-size:clamp(34px,11cqw,80px) !important}
+}
+@media (max-width:1024px){.reason-row{flex-direction:column}.reason-row>div{flex:1 1 auto !important;width:100%}.reason-photo{order:-1;aspect-ratio:3/2 !important}.issue-photo{aspect-ratio:4/3 !important}}
+/* ===== CMS dynamic sections (Cuezilla) — add.css basis ===== */
+[class*="design-parts-52"]{background:#fff !important;border-bottom:1px solid rgba(10,77,179,.12);padding:0 !important}
+[class*="design-parts-52"] .container{max-width:1320px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+[class*="design-parts-52"] .content{display:flex;align-items:center;gap:clamp(14px,3vw,36px);flex-wrap:wrap;padding:14px 0}
+[class*="design-parts-52"] h4.banner-area{margin:0;font-family:"Noto Sans JP",sans-serif;font-weight:400;letter-spacing:.14em;font-size:14px;color:#1F2933;background:#3D8BFF !important;padding:9px 18px;line-height:1;flex:none}
+[class*="design-parts-52"] ul.mb-0{list-style:none;margin:0;padding:0;flex:1 1 auto;min-width:0}
+[class*="design-parts-52"] li a{display:flex;align-items:center;gap:clamp(12px,2.5vw,26px);min-height:48px;color:#1F2933;flex-wrap:wrap}
+[class*="design-parts-52"] .parts-52-textarea{display:flex;align-items:center;gap:clamp(12px,2.5vw,26px);flex-wrap:wrap}
+[class*="design-parts-52"] span.date{font-family:"Noto Sans JP",sans-serif;letter-spacing:.06em;color:#0A4DB3;font-size:15px;flex:none}
+[class*="design-parts-52"] span.d-inline-block{font-size:clamp(16px,2.4vw,16px);font-weight:500;color:#1F2933;overflow:hidden;text-overflow:ellipsis}
+[class*="design-parts-52"] li a:hover span.d-inline-block{color:#0A4DB3;text-decoration:underline;text-underline-offset:4px}
+/* blog cards（parts228系・写真上／更新日あり） */
+[class*="parts228"].parts228_section{background:#EEF4FC;padding:clamp(72px,10vw,120px) clamp(20px,5vw,64px)}
+[class*="parts228"] .parts228_wrap{max-width:1240px;margin:0 auto}
+.top-blog-head{margin:0 0 clamp(28px,4vw,48px)}
+.top-blog-head h2{font-family:"Noto Sans JP",sans-serif;font-weight:400;letter-spacing:.06em;font-size:clamp(40px,7.5vw,80px);color:#0A4DB3;line-height:1;margin:-0.18em 0 0}
+.top-blog-head p{margin:8px 0 0;font-weight:700;color:#0A4DB3;letter-spacing:.04em;font-size:14px}
+[class*="parts228"] .parts228_post_list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2.5vw,32px)}
+[class*="parts228"] .parts228_post_wrap{min-width:0;background:#fff;box-shadow:0 16px 40px rgba(6,48,110,.10);transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
+[class*="parts228"] .parts228_post_wrap:hover{transform:translateY(-8px);box-shadow:0 26px 54px rgba(6,48,110,.20)}
+[class*="parts228"] .parts228_post_img{display:block;overflow:hidden}
+[class*="parts228"] .parts228_post_img img,[class*="parts228"] .parts228_post_img image-slot{width:100%;height:240px;object-fit:cover;display:block}
+[class*="parts228"] .parts228_post_status{padding:16px 22px 0}
+[class*="parts228"] .parts228_post_date{font-family:"Noto Sans JP",sans-serif;letter-spacing:.04em;color:#0A4DB3;font-size:14px}
+[class*="parts228"] .parts228_post_title-excerpt{padding:6px 22px 24px}
+[class*="parts228"] .parts228_post_title{margin:0;font-weight:700;font-size:16px;line-height:1.6;color:#1F2933}
+.top-blog-more{margin-top:clamp(28px,4vw,44px)}
+.top-blog-more a{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:15px 30px;background:#0A4DB3;color:#fff;font-weight:900;font-size:15px}
+.top-blog-more a:hover{background:#06306E}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+</style>
+</helmet>
+
+<div data-screen-label="トップ" style="position:relative">
+
+<dc-import name="SiteHeader" active="/" hint-size="100%,0"></dc-import>
+
+<!-- ============ HERO（白地・コピー＋下から上へ流れる写真＋上昇する▲＋高架橋のライン描画） ============ -->
+<section id="hero3" data-screen-label="ヒーロー" aria-label="メインビジュアル" class="hero4" style="position:relative;isolation:isolate;overflow:hidden;min-height:max(660px,100svh);background:#fff">
+
+  <!-- 背景：高架橋の橋脚が立ち上がり、鉄筋かご・桁・クレーンが線で描かれていく -->
+  <div aria-hidden="true" style="position:absolute;z-index:0;left:0;right:0;bottom:0;display:flex;justify-content:center;pointer-events:none">
+    <svg viewBox="0 0 1440 660" preserveAspectRatio="xMidYMax meet" style="width:max(100%,900px);flex:none;height:auto;opacity:.14">
+      <path d="M0,640 L1440,640" pathLength="1" fill="none" stroke="#0A4DB3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.2s cubic-bezier(.55,0,.2,1) 0.10s forwards"></path><path d="M116,640 L124,300 M184,640 L176,300" pathLength="1" fill="none" stroke="#0A4DB3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.3s cubic-bezier(.55,0,.2,1) 0.50s forwards"></path><path d="M90,300 L210,300 L196,270 L104,270 Z" pathLength="1" fill="none" stroke="#0A4DB3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 0.9s cubic-bezier(.55,0,.2,1) 1.50s forwards"></path><path d="M436,640 L444,300 M504,640 L496,300" pathLength="1" fill="none" stroke="#0A4DB3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.3s cubic-bezier(.55,0,.2,1) 0.85s forwards"></path><path d="M410,300 L530,300 L516,270 L424,270 Z" pathLength="1" fill="none" stroke="#0A4DB3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 0.9s cubic-bezier(.55,0,.2,1) 1.85s forwards"></path><path d="M756,640 L764,300 M824,640 L816,300" pathLength="1" fill="none" stroke="#0A4DB3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.3s cubic-bezier(.55,0,.2,1) 1.20s forwards"></path><path d="M730,300 L850,300 L836,270 L744,270 Z" pathLength="1" fill="none" stroke="#0A4DB3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 0.9s cubic-bezier(.55,0,.2,1) 2.20s forwards"></path><path d="M1076,640 L1084,300 M1144,640 L1136,300" pathLength="1" fill="none" stroke="#0A4DB3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.3s cubic-bezier(.55,0,.2,1) 1.55s forwards"></path><path d="M1050,300 L1170,300 L1156,270 L1064,270 Z" pathLength="1" fill="none" stroke="#0A4DB3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 0.9s cubic-bezier(.55,0,.2,1) 2.55s forwards"></path><path d="M444,340 H496 M444,366 H496 M444,392 H496 M444,418 H496 M444,444 H496 M444,470 H496 M444,496 H496 M444,522 H496 M444,548 H496 M444,574 H496 M444,600 H496 M444,626 H496 M450,320 V640 M460,320 V640 M470,320 V640 M480,320 V640 M490,320 V640" pathLength="1" fill="none" stroke="#0A4DB3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.8s cubic-bezier(.55,0,.2,1) 2.20s forwards"></path><path d="M40,270 L1400,270 M40,236 L1400,236 M40,236 L40,270 M1400,236 L1400,270" pathLength="1" fill="none" stroke="#0A4DB3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.6s cubic-bezier(.55,0,.2,1) 2.40s forwards"></path><path d="M60,236 V214 M100,236 V214 M140,236 V214 M180,236 V214 M220,236 V214 M260,236 V214 M300,236 V214 M340,236 V214 M380,236 V214 M420,236 V214 M460,236 V214 M500,236 V214 M540,236 V214 M580,236 V214 M620,236 V214 M660,236 V214 M700,236 V214 M740,236 V214 M780,236 V214 M820,236 V214 M860,236 V214 M900,236 V214 M940,236 V214 M980,236 V214 M1020,236 V214 M1060,236 V214 M1100,236 V214 M1140,236 V214 M1180,236 V214 M1220,236 V214 M1260,236 V214 M1300,236 V214 M1340,236 V214 M1380,236 V214 M40,214 H1400" pathLength="1" fill="none" stroke="#0A4DB3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.6s cubic-bezier(.55,0,.2,1) 3.40s forwards"></path><path d="M1300,640 V90 M1290,640 V90 M1300,120 L1290,140 L1300,160 L1290,180 L1300,200 M1170,90 H1420 M1295,90 L1340,60 L1420,90 M1205,90 V170 M1197,170 h16 v14 h-16 Z" pathLength="1" fill="none" stroke="#0A4DB3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1;animation:heroDraw 1.6s cubic-bezier(.55,0,.2,1) 3.80s forwards"></path>
+    </svg>
+  </div>
+
+  <!-- ▲ 下から上へ流れる三角 -->
+  <div aria-hidden="true" style="position:absolute;z-index:1;top:0;bottom:0;left:6%;width:clamp(44px,6.4vw,104px);overflow:visible;pointer-events:none">
+    <div style="height:200%;display:flex;flex-direction:column;animation:heroMarqV 24s linear infinite;will-change:transform"><div style="height:50%;position:relative"><div style="position:absolute;top:70%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(44px,6.4vw,104px);height:auto;display:block;overflow:visible;animation:hero3Spin 36s linear infinite"><polygon points="50,8 94,86 6,86" fill="none" stroke="#3D8BFF" stroke-width="6" stroke-linejoin="round"></polygon></svg></div></div><div style="height:50%;position:relative"><div style="position:absolute;top:70%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(44px,6.4vw,104px);height:auto;display:block;overflow:visible;animation:hero3Spin 36s linear infinite"><polygon points="50,8 94,86 6,86" fill="none" stroke="#3D8BFF" stroke-width="6" stroke-linejoin="round"></polygon></svg></div></div></div>
+  </div>
+  <div aria-hidden="true" style="position:absolute;z-index:1;top:0;bottom:0;left:22%;width:clamp(22px,2.6vw,40px);overflow:visible;pointer-events:none">
+    <div style="height:200%;display:flex;flex-direction:column;animation:heroMarqV 32s linear infinite;will-change:transform"><div style="height:50%;position:relative"><div style="position:absolute;top:20%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(22px,2.6vw,40px);height:auto;display:block;overflow:visible;animation:hero3Spin 32s linear infinite reverse"><polygon points="50,8 94,86 6,86" fill="#0A4DB3" stroke="#0A4DB3" stroke-width="0" stroke-linejoin="round"></polygon></svg></div></div><div style="height:50%;position:relative"><div style="position:absolute;top:20%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(22px,2.6vw,40px);height:auto;display:block;overflow:visible;animation:hero3Spin 32s linear infinite reverse"><polygon points="50,8 94,86 6,86" fill="#0A4DB3" stroke="#0A4DB3" stroke-width="0" stroke-linejoin="round"></polygon></svg></div></div></div>
+  </div>
+  <div aria-hidden="true" style="position:absolute;z-index:1;top:0;bottom:0;left:38%;width:clamp(56px,9vw,150px);overflow:visible;pointer-events:none">
+    <div style="height:200%;display:flex;flex-direction:column;animation:heroMarqV 38s linear infinite;will-change:transform"><div style="height:50%;position:relative"><div style="position:absolute;top:60%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(56px,9vw,150px);height:auto;display:block;overflow:visible;animation:hero3Spin 28s linear infinite"><polygon points="50,8 94,86 6,86" fill="#3D8BFF" stroke="#3D8BFF" stroke-width="0" stroke-linejoin="round"></polygon></svg></div></div><div style="height:50%;position:relative"><div style="position:absolute;top:60%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(56px,9vw,150px);height:auto;display:block;overflow:visible;animation:hero3Spin 28s linear infinite"><polygon points="50,8 94,86 6,86" fill="#3D8BFF" stroke="#3D8BFF" stroke-width="0" stroke-linejoin="round"></polygon></svg></div></div></div>
+  </div>
+  <div aria-hidden="true" style="position:absolute;z-index:1;top:0;bottom:0;left:54%;width:clamp(28px,3.4vw,56px);overflow:visible;pointer-events:none">
+    <div style="height:200%;display:flex;flex-direction:column;animation:heroMarqV 20s linear infinite;will-change:transform"><div style="height:50%;position:relative"><div style="position:absolute;top:30%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(28px,3.4vw,56px);height:auto;display:block;overflow:visible;animation:hero3Spin 20s linear infinite reverse"><polygon points="50,8 94,86 6,86" fill="none" stroke="#0A4DB3" stroke-width="6" stroke-linejoin="round"></polygon></svg></div></div><div style="height:50%;position:relative"><div style="position:absolute;top:30%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(28px,3.4vw,56px);height:auto;display:block;overflow:visible;animation:hero3Spin 20s linear infinite reverse"><polygon points="50,8 94,86 6,86" fill="none" stroke="#0A4DB3" stroke-width="6" stroke-linejoin="round"></polygon></svg></div></div></div>
+  </div>
+  <div aria-hidden="true" style="position:absolute;z-index:1;top:0;bottom:0;left:74%;width:clamp(48px,7vw,120px);overflow:visible;pointer-events:none">
+    <div style="height:200%;display:flex;flex-direction:column;animation:heroMarqV 46s linear infinite;will-change:transform"><div style="height:50%;position:relative"><div style="position:absolute;top:76%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(48px,7vw,120px);height:auto;display:block;overflow:visible;animation:hero3Spin 30s linear infinite"><polygon points="50,8 94,86 6,86" fill="none" stroke="#0A4DB3" stroke-width="6" stroke-linejoin="round"></polygon></svg></div></div><div style="height:50%;position:relative"><div style="position:absolute;top:76%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(48px,7vw,120px);height:auto;display:block;overflow:visible;animation:hero3Spin 30s linear infinite"><polygon points="50,8 94,86 6,86" fill="none" stroke="#0A4DB3" stroke-width="6" stroke-linejoin="round"></polygon></svg></div></div></div>
+  </div>
+  <div aria-hidden="true" style="position:absolute;z-index:1;top:0;bottom:0;left:90%;width:clamp(24px,3vw,48px);overflow:visible;pointer-events:none">
+    <div style="height:200%;display:flex;flex-direction:column;animation:heroMarqV 28s linear infinite;will-change:transform"><div style="height:50%;position:relative"><div style="position:absolute;top:10%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(24px,3vw,48px);height:auto;display:block;overflow:visible;animation:hero3Spin 24s linear infinite reverse"><polygon points="50,8 94,86 6,86" fill="#3D8BFF" stroke="#3D8BFF" stroke-width="0" stroke-linejoin="round"></polygon></svg></div></div><div style="height:50%;position:relative"><div style="position:absolute;top:10%;left:0"><svg viewBox="0 0 100 100" style="width:clamp(24px,3vw,48px);height:auto;display:block;overflow:visible;animation:hero3Spin 24s linear infinite reverse"><polygon points="50,8 94,86 6,86" fill="#3D8BFF" stroke="#3D8BFF" stroke-width="0" stroke-linejoin="round"></polygon></svg></div></div></div>
+  </div>
+
+  <!-- PC：写真コラージュが下から上へ流れる -->
+  <div class="hero4-photos" aria-hidden="false" style="position:absolute;z-index:2;top:0;bottom:0;right:clamp(64px,6.4vw,104px);width:clamp(400px,50vw,860px);overflow:hidden;pointer-events:none;animation:hero3Up 1.2s .8s cubic-bezier(.2,.7,.2,1) both">
+    <div style="display:flex;flex-direction:column;animation:heroMarqV 70s linear infinite;will-change:transform"><div style="display:flex;flex-wrap:wrap;align-items:flex-start;padding-bottom:8%"><div style="width:50%;margin-left:6%;margin-top:4%;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-tie.jpg" alt="結束線で鉄筋を結ぶ手元" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:32%;margin-left:6%;margin-top:22%;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-team-deck.jpg" alt="床版の鉄筋を組むスタッフたち" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:40%;margin-left:0%;margin-top:8%;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-deck-mount.jpg" alt="山あいの高速道路の床版鉄筋" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:52%;margin-left:6%;margin-top:2%;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-cage.jpg" alt="組み上がった鉄筋かご" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:76%;margin-left:14%;margin-top:8%;aspect-ratio:16/10;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-two.jpg" alt="鉄筋の上で相談する2人のスタッフ" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:36%;margin-left:4%;margin-top:8%;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-bridge.jpg" alt="下から見上げた高架橋" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:44%;margin-left:12%;margin-top:18%;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-worker1.jpg" alt="鉄筋を結束する若手スタッフ" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:66%;margin-left:2%;margin-top:8%;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-viaduct.jpg" alt="建設中の高架橋の橋脚" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:34%;margin-left:18%;margin-top:8%;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-walk.jpg" alt="鉄筋の上を歩くスタッフ" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:36%;margin-left:8%;margin-top:20%;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-deck-grid.jpg" alt="格子状に組まれた床版の鉄筋" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div></div><div aria-hidden="true" style="display:flex;flex-wrap:wrap;align-items:flex-start;padding-bottom:8%"><div style="width:50%;margin-left:6%;margin-top:4%;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-curve-wall.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:32%;margin-left:6%;margin-top:22%;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-measure.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:40%;margin-left:0%;margin-top:8%;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-pier-scaffold.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:52%;margin-left:6%;margin-top:2%;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-tying.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:76%;margin-left:14%;margin-top:8%;aspect-ratio:16/10;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-deck-blue.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:36%;margin-left:4%;margin-top:8%;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-wall-worker.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:44%;margin-left:12%;margin-top:18%;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-crane.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:66%;margin-left:2%;margin-top:8%;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-veteran.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:34%;margin-left:18%;margin-top:8%;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-tie.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="width:36%;margin-left:8%;margin-top:20%;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;box-shadow:0 14px 34px rgba(6,48,110,.12)"><img src="assets/y-team-deck.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div></div></div>
+  </div>
+
+  <!-- 右端：縦マーキー -->
+  <div class="hero-vmarq" aria-hidden="true" style="position:absolute;z-index:1;top:0;bottom:0;right:clamp(10px,1.6vw,24px);width:clamp(40px,4.2vw,60px);overflow:hidden;pointer-events:none">
+    <div style="display:flex;flex-direction:column;animation:heroMarqV 36s linear infinite;will-change:transform">
+      <span style="writing-mode:vertical-rl;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:clamp(34px,3.8vw,54px);letter-spacing:.08em;color:#0A4DB3;opacity:.14;white-space:nowrap;padding-bottom:.4em">REBAR WORKS ✦ RAILWAY ✦ HIGHWAY ✦ BRIDGE ✦ </span>
+      <span style="writing-mode:vertical-rl;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:clamp(34px,3.8vw,54px);letter-spacing:.08em;color:#0A4DB3;opacity:.14;white-space:nowrap;padding-bottom:.4em">REBAR WORKS ✦ RAILWAY ✦ HIGHWAY ✦ BRIDGE ✦ </span>
+    </div>
+  </div>
+
+  <div class="hero4-inner" style="position:relative;z-index:3;min-height:inherit;display:flex;flex-direction:column;justify-content:center">
+    <!-- コピー -->
+    <div class="hero4-copy" style="width:100%;padding:clamp(112px,15vw,150px) clamp(24px,6vw,72px) clamp(28px,4vw,40px);text-align:center;display:flex;flex-direction:column;align-items:center">
+      <p style="margin:0 0 clamp(22px,3.4vw,34px);font-weight:900;font-size:clamp(15px,2.2vw,19px);letter-spacing:.12em;color:#0A4DB3;animation:hero3Up .8s .1s cubic-bezier(.2,.7,.2,1) both"><span style="background:linear-gradient(transparent 62%,#3D8BFF 62%);padding:0 .3em"><span class="line-chunk">埼玉・飯能から</span><span class="line-chunk">関東一円の公共インフラへ</span></span></p>
+      <h1 class="hero4-h1" style="margin:0;font-weight:900;color:#06306E;font-size:clamp(30px,8.4vw,64px);line-height:1.45;letter-spacing:.02em;animation:hero3Up .9s .25s cubic-bezier(.2,.7,.2,1) both"><span class="line-chunk">道路も、線路も、橋も。</span><br><span class="line-chunk">その中の<span style="color:#0A4DB3;font-size:1.12em;line-height:1;display:inline-block;border-bottom:clamp(4px,.6vw,8px) solid #3D8BFF;padding:0 .04em .04em">鉄筋</span>を</span><span class="line-chunk">組んでいます。</span></h1>
+      <p style="margin:clamp(22px,3.4vw,34px) 0 0;font-weight:700;font-size:clamp(16px,2.2vw,20px);line-height:1.8;color:#1F2933;animation:hero3Up .9s .4s cubic-bezier(.2,.7,.2,1) both"><span class="line-chunk">埼玉・飯能から関東一円の公共インフラを支える</span><span class="line-chunk">鉄筋工事会社です。</span><br><span class="line-chunk">未経験から一緒に働く仲間を</span><span class="line-chunk">募集しています。</span></p>
+      <p style="margin:clamp(12px,1.8vw,18px) 0 0;font-family:'Noto Sans JP',sans-serif;font-weight:900;font-weight:400;font-size:clamp(11px,1.3vw,13px);letter-spacing:.14em;line-height:1.9;color:#0A4DB3;animation:hero3Up .9s .52s cubic-bezier(.2,.7,.2,1) both"><span class="line-chunk">REINFORCING BAR WORKS ／ RAILWAY · HIGHWAY · BRIDGE PIER</span><br><span class="line-chunk">HANNO, SAITAMA ／ SINCE 2003</span></p>
+      <div class="hero4-btns" style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:clamp(26px,4vw,40px);animation:hero3Up .9s .64s cubic-bezier(.2,.7,.2,1) both">
+        <a class="m-btn" href="/recruit#apply" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:14px 28px;border-radius:4px;background:#F07A28;color:#1F2933;font-weight:900;font-size:15px" style-hover="background:#D9661A">応募する<span aria-hidden="true">→</span></a>
+        <a href="https://lin.ee/8Wcjh7g" style="display:inline-flex;align-items:center;min-height:52px;padding:14px 24px;border-radius:4px;background:#06C755;color:#fff;font-weight:900;font-size:15px" style-hover="opacity:.88">LINEで質問だけでもOK</a>
+        <a href="tel:042-978-6466" style="display:inline-flex;align-items:center;min-height:52px;padding:12px 22px;border-radius:4px;border:2px solid #0A4DB3;color:#0A4DB3;font-weight:900;font-size:15px" style-hover="background:#0A4DB3;color:#fff">電話する</a>
+      </div>
+    </div>
+
+    <!-- SP：写真が横に流れる -->
+    <div class="hero4-strip" aria-hidden="false" style="position:relative;overflow:hidden;padding:clamp(8px,3vw,20px) 0 clamp(96px,22vw,120px);pointer-events:none;animation:hero3Up 1s .7s cubic-bezier(.2,.7,.2,1) both">
+      <div style="display:flex;width:max-content;animation:hero3MarqL 50s linear infinite;will-change:transform"><div style="display:flex;gap:14px;padding-right:14px;align-items:flex-end"><div style="flex:none;height:30vw;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;margin-bottom:0vw"><img src="assets/y-deck-mount.jpg" alt="山あいの高速道路の床版鉄筋" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:24vw;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;margin-bottom:6vw"><img src="assets/y-cage.jpg" alt="組み上がった鉄筋かご" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:28vw;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;margin-bottom:2vw"><img src="assets/y-two.jpg" alt="鉄筋の上で相談する2人のスタッフ" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:22vw;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;margin-bottom:8vw"><img src="assets/y-bridge.jpg" alt="下から見上げた高架橋" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:32vw;aspect-ratio:16/10;overflow:hidden;background:#E9EDF1;margin-bottom:0vw"><img src="assets/y-worker1.jpg" alt="鉄筋を結束する若手スタッフ" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:26vw;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;margin-bottom:4vw"><img src="assets/y-viaduct.jpg" alt="建設中の高架橋の橋脚" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:30vw;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;margin-bottom:0vw"><img src="assets/y-walk.jpg" alt="鉄筋の上を歩くスタッフ" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:24vw;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;margin-bottom:6vw"><img src="assets/y-deck-grid.jpg" alt="格子状に組まれた床版の鉄筋" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:28vw;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;margin-bottom:2vw"><img src="assets/y-curve-wall.jpg" alt="曲面の壁に組まれた鉄筋" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:22vw;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;margin-bottom:8vw"><img src="assets/y-measure.jpg" alt="鉄筋の上に置かれた図面とメジャー" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div></div><div aria-hidden="true" style="display:flex;gap:14px;padding-right:14px;align-items:flex-end"><div style="flex:none;height:30vw;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;margin-bottom:0vw"><img src="assets/y-pier-scaffold.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:24vw;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;margin-bottom:6vw"><img src="assets/y-tying.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:28vw;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;margin-bottom:2vw"><img src="assets/y-deck-blue.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:22vw;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;margin-bottom:8vw"><img src="assets/y-wall-worker.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:32vw;aspect-ratio:16/10;overflow:hidden;background:#E9EDF1;margin-bottom:0vw"><img src="assets/y-crane.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:26vw;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;margin-bottom:4vw"><img src="assets/y-veteran.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:30vw;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;margin-bottom:0vw"><img src="assets/y-tie.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:24vw;aspect-ratio:3/2;overflow:hidden;background:#E9EDF1;margin-bottom:6vw"><img src="assets/y-team-deck.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:28vw;aspect-ratio:3/4;overflow:hidden;background:#E9EDF1;margin-bottom:2vw"><img src="assets/y-deck-mount.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;height:22vw;aspect-ratio:4/3;overflow:hidden;background:#E9EDF1;margin-bottom:8vw"><img src="assets/y-cage.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div></div></div>
+    </div>
+  </div>
+
+  <!-- SCROLL -->
+  <a href="#works" aria-label="施工実績セクションへ移動" style="position:absolute;z-index:4;left:50%;bottom:0;width:60px;margin-left:-30px;display:flex;flex-direction:column;align-items:center;gap:10px;padding-top:8px;min-height:44px;color:#0A4DB3">
+    <span style="font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:12px;letter-spacing:.24em">SCROLL</span>
+    <span aria-hidden="true" style="position:relative;display:block;width:1px;height:clamp(44px,7vw,70px);background:rgba(10,77,179,.22);overflow:hidden"><span style="position:absolute;left:0;top:0;width:1px;height:45%;background:#0A4DB3;animation:heroScrollLine 2s cubic-bezier(.6,0,.3,1) infinite"></span></span>
+  </a>
+
+  <!-- 新着情報はヒーロー直下の CMS帯（design-parts-52）が正。ヒーロー内には重複させない。 -->
+</section>
+
+<!-- ============ NEWS帯 (design-parts-52) ============ -->
+<section class="design-parts-52_xxx design-parts-52 bg-color">
+  <div class="container">
+    <div class="content mx-auto">
+      <h4 class="banner-area">NEWS</h4>
+      <ul class="mb-0">
+        <!-- CMS LOOP START -->
+        <li>
+          <a href="#">
+            <span class="parts-52-textarea">
+              <span class="date">2025.06.18</span>
+              <span class="d-inline-block">ホームページをリニューアルしました。</span>
+            </span>
+          </a>
+        </li>
+        <!-- CMS LOOP END -->
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 数字で見るユウシン工業 ============ -->
+<section data-countup-section style="position:relative;background:#fff;padding:clamp(56px,8vw,100px) clamp(20px,5vw,64px)"><div style="max-width:1200px;margin:0 auto">
+<div data-reveal data-reveal-delay="0" style="margin-bottom:clamp(28px,4vw,48px);text-align:center;"><span style="font-weight:900;font-size:13px;letter-spacing:.16em;color:#0A4DB3">NUMBERS</span><h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.6rem,4.4vw,2.6rem);line-height:1.4;color:#0A4DB3">数字で見るユウシン工業</h2></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:clamp(10px,1.6vw,16px)"><div data-reveal data-reveal-delay="110" style="border:1px solid #D5DCE5;border-radius:4px;padding:clamp(20px,3vw,30px) 14px;text-align:center;display:flex;flex-direction:column;gap:8px;justify-content:center"><span style="font-weight:900;color:#0A4DB3;font-size:clamp(24px,3.6vw,38px);line-height:1.15"><span data-count="2003">2003</span><span style="font-size:.5em;margin-left:2px">年</span></span><span style="font-size:14px;font-weight:700;color:#1F2933">創業</span></div><div data-reveal data-reveal-delay="220" style="border:1px solid #D5DCE5;border-radius:4px;padding:clamp(20px,3vw,30px) 14px;text-align:center;display:flex;flex-direction:column;gap:8px;justify-content:center"><span style="font-weight:900;color:#0A4DB3;font-size:clamp(24px,3.6vw,38px);line-height:1.15"><span data-count="35">35</span><span style="font-size:.5em;margin-left:2px">年</span></span><span style="font-size:14px;font-weight:700;color:#1F2933">業歴のベテラン在籍</span></div><div data-reveal data-reveal-delay="330" style="border:1px solid #D5DCE5;border-radius:4px;padding:clamp(20px,3vw,30px) 14px;text-align:center;display:flex;flex-direction:column;gap:8px;justify-content:center"><span style="font-weight:900;color:#0A4DB3;font-size:clamp(24px,3.6vw,38px);line-height:1.15">1級<span style="font-size:.5em;margin-left:2px"></span></span><span style="font-size:14px;font-weight:700;color:#1F2933">鉄筋施工技能士</span></div><div data-reveal data-reveal-delay="440" style="border:1px solid #D5DCE5;border-radius:4px;padding:clamp(20px,3vw,30px) 14px;text-align:center;display:flex;flex-direction:column;gap:8px;justify-content:center"><span style="font-weight:900;color:#0A4DB3;font-size:clamp(24px,3.6vw,38px);line-height:1.15">完全週休2日<span style="font-size:.5em;margin-left:2px"></span></span><span style="font-size:14px;font-weight:700;color:#1F2933">働き方改革に対応</span></div><div data-reveal data-reveal-delay="550" style="border:1px solid #D5DCE5;border-radius:4px;padding:clamp(20px,3vw,30px) 14px;text-align:center;display:flex;flex-direction:column;gap:8px;justify-content:center"><span style="font-weight:900;color:#0A4DB3;font-size:clamp(24px,3.6vw,38px);line-height:1.15">関東一円<span style="font-size:.5em;margin-left:2px"></span></span><span style="font-size:14px;font-weight:700;color:#1F2933">公共工事の現場</span></div></div>
+</div></section>
+
+<!-- ============ 大型マーキー（装飾） ============ -->
+<div aria-hidden="true" style="background:#fff;overflow:hidden;padding:clamp(10px,2vw,24px) 0 clamp(18px,3vw,36px);display:flex;flex-direction:column;gap:4px">
+  <div style="display:flex;width:max-content;animation:hero3MarqL 40s linear infinite;will-change:transform"><span style="font-weight:900;font-size:clamp(44px,9vw,120px);line-height:1.05;letter-spacing:.02em;white-space:nowrap;padding-right:.3em;color:transparent;-webkit-text-stroke:2px #0A4DB3">REBAR WORKS ✦ RAILWAY ✦ HIGHWAY ✦ BRIDGE PIER ✦ WATER PLANT ✦ </span><span style="font-weight:900;font-size:clamp(44px,9vw,120px);line-height:1.05;letter-spacing:.02em;white-space:nowrap;padding-right:.3em;color:transparent;-webkit-text-stroke:2px #0A4DB3">REBAR WORKS ✦ RAILWAY ✦ HIGHWAY ✦ BRIDGE PIER ✦ WATER PLANT ✦ </span></div>
+  <div style="display:flex;width:max-content;animation:hero3MarqR 52s linear infinite;will-change:transform"><span style="font-weight:900;font-size:clamp(44px,9vw,120px);line-height:1.05;letter-spacing:.02em;white-space:nowrap;padding-right:.3em;color:#0A4DB3">REBAR WORKS ✦ RAILWAY ✦ HIGHWAY ✦ BRIDGE PIER ✦ WATER PLANT ✦ </span><span style="font-weight:900;font-size:clamp(44px,9vw,120px);line-height:1.05;letter-spacing:.02em;white-space:nowrap;padding-right:.3em;color:#0A4DB3">REBAR WORKS ✦ RAILWAY ✦ HIGHWAY ✦ BRIDGE PIER ✦ WATER PLANT ✦ </span></div>
+</div>
+
+<!-- ============ こんな現場で働きます ============ -->
+<section  style="position:relative;background:#EEF4FC;padding:clamp(64px,10vw,128px) clamp(20px,5vw,64px)"><div style="max-width:1200px;margin:0 auto"><div data-reveal data-reveal-delay="0" style="margin-bottom:clamp(28px,4vw,48px);"><span style="font-weight:900;font-size:13px;letter-spacing:.16em;color:#0A4DB3">OUR SITES</span><h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.6rem,4.4vw,2.6rem);line-height:1.4;color:#0A4DB3">こんな現場で働きます</h2><p style="margin:14px 0 0;max-width:720px;font-size:clamp(15px,2.2vw,17px);line-height:1.9;color:#1F2933">鉄道・高速道路・橋脚・浄水場。完成したら見えなくなる、構造物の「骨組み」をつくっています。</p></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:clamp(16px,2.4vw,28px)"><article data-reveal data-reveal-delay="110" class="m-card" style="background:#fff;border:1px solid #D5DCE5;border-radius:4px;overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:4px;background:#DCE7F7"><img src="assets/y-deck-blue.jpg" alt="高架の床版に並んだ鉄筋" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div><div style="padding:18px 20px 22px"><h3 style="margin:0;font-weight:900;font-size:clamp(17px,2.4vw,20px);color:#0A4DB3">鉄道</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.8;color:#1F2933">高架橋などの鉄道構造物。線路の下にある大きな骨組みを組みます。</p></div></article><article data-reveal data-reveal-delay="220" class="m-card" style="background:#fff;border:1px solid #D5DCE5;border-radius:4px;overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:4px;background:#DCE7F7"><img src="assets/y-deck-mount.jpg" alt="高速道路の床版に組まれた鉄筋" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div><div style="padding:18px 20px 22px"><h3 style="margin:0;font-weight:900;font-size:clamp(17px,2.4vw,20px);color:#0A4DB3">高速道路</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.8;color:#1F2933">道路の床版や壁の鉄筋。長く、まっすぐな現場が続きます。</p></div></article><article data-reveal data-reveal-delay="330" class="m-card" style="background:#fff;border:1px solid #D5DCE5;border-radius:4px;overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:4px;background:#DCE7F7"><img src="assets/y-pier-scaffold.jpg" alt="足場に囲まれた大型の橋脚" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div><div style="padding:18px 20px 22px"><h3 style="margin:0;font-weight:900;font-size:clamp(17px,2.4vw,20px);color:#0A4DB3">橋脚・耐震補強</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.8;color:#1F2933">大きな橋脚や、既存の橋脚を強くする耐震補強の工事です。</p></div></article><article data-reveal data-reveal-delay="440" class="m-card" style="background:#fff;border:1px solid #D5DCE5;border-radius:4px;overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:4px;background:#DCE7F7"><img src="assets/y-curve-wall.jpg" alt="曲面の壁に組まれた鉄筋" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div><div style="padding:18px 20px 22px"><h3 style="margin:0;font-weight:900;font-size:clamp(17px,2.4vw,20px);color:#0A4DB3">浄水場・ポンプ場</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.8;color:#1F2933">水を届ける施設の壁や床。暮らしに欠かせない現場です。</p></div></article></div>
+<div style="margin-top:clamp(24px,3.5vw,36px)"><a href="/blog-ex/instance" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:4px;border:2px solid #0A4DB3;color:#0A4DB3;font-weight:900;font-size:15px" style-hover="background:#0A4DB3;color:#fff">施工実績を見る<span aria-hidden="true">→</span></a></div></div></section>
+
+<!-- ============ 1日の流れ（抜粋）============ -->
+<section  style="position:relative;background:#fff;padding:clamp(64px,10vw,128px) clamp(20px,5vw,64px)"><div style="max-width:1200px;margin:0 auto"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(28px,5vw,64px);align-items:center">
+<div><div data-reveal data-reveal-delay="0" style="margin-bottom:clamp(28px,4vw,48px);"><span style="font-weight:900;font-size:13px;letter-spacing:.16em;color:#0A4DB3">A DAY</span><h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.6rem,4.4vw,2.6rem);line-height:1.4;color:#0A4DB3">1日の流れ</h2><p style="margin:14px 0 0;max-width:720px;font-size:clamp(15px,2.2vw,17px);line-height:1.9;color:#1F2933">朝は飯能の会社に集合して、みんなで現場へ向かいます。</p></div>
+<ol data-tl style="position:relative;list-style:none;margin:0;padding:0 0 0 22px;border-left:3px solid #DCE7F7;display:flex;flex-direction:column;gap:18px"><li aria-hidden="true" style="position:absolute;left:-3px;top:0;width:3px;height:100%;background:#F07A28;transform-origin:top;transform:scaleY(var(--p,1));list-style:none"></li><li data-tl-item style="position:relative;transition:opacity .5s ease,transform .5s ease"><span aria-hidden="true" data-tl-dot style="position:absolute;left:-31px;top:6px;width:15px;height:15px;border-radius:50%;background:#F07A28;transition:transform .4s cubic-bezier(.3,1.6,.5,1),background .3s"></span><span style="font-weight:900;color:#0A4DB3;margin-right:12px">朝</span><span style="font-size:16px">飯能に集合、資材を積んで現場へ</span></li><li data-tl-item style="position:relative;transition:opacity .5s ease,transform .5s ease"><span aria-hidden="true" data-tl-dot style="position:absolute;left:-31px;top:6px;width:15px;height:15px;border-radius:50%;background:#F07A28;transition:transform .4s cubic-bezier(.3,1.6,.5,1),background .3s"></span><span style="font-weight:900;color:#0A4DB3;margin-right:12px">午前</span><span style="font-size:16px">朝礼・安全確認のあと鉄筋の組立</span></li><li data-tl-item style="position:relative;transition:opacity .5s ease,transform .5s ease"><span aria-hidden="true" data-tl-dot style="position:absolute;left:-31px;top:6px;width:15px;height:15px;border-radius:50%;background:#F07A28;transition:transform .4s cubic-bezier(.3,1.6,.5,1),background .3s"></span><span style="font-weight:900;color:#0A4DB3;margin-right:12px">午後</span><span style="font-size:16px">組立の続き・検査の準備</span></li><li data-tl-item style="position:relative;transition:opacity .5s ease,transform .5s ease"><span aria-hidden="true" data-tl-dot style="position:absolute;left:-31px;top:6px;width:15px;height:15px;border-radius:50%;background:#F07A28;transition:transform .4s cubic-bezier(.3,1.6,.5,1),background .3s"></span><span style="font-weight:900;color:#0A4DB3;margin-right:12px">夕方</span><span style="font-size:16px">片付けて帰社・解散</span></li></ol>
+<div style="margin-top:clamp(24px,3.5vw,34px)"><a href="/recruit/day" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:4px;border:2px solid #0A4DB3;color:#0A4DB3;font-weight:900;font-size:15px" style-hover="background:#0A4DB3;color:#fff">1日の流れを詳しく見る<span aria-hidden="true">→</span></a></div></div>
+<div data-scrub-img style="will-change:transform,clip-path"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:4px;background:#DCE7F7"><img src="assets/y-team-deck.jpg" alt="床版の鉄筋を組むスタッフたち" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div></div></div></div></section>
+
+<!-- ============ 先輩の声 ============ -->
+<section  style="position:relative;background:#EEF4FC;padding:clamp(64px,10vw,128px) clamp(20px,5vw,64px)"><div style="max-width:1200px;margin:0 auto"><div data-reveal data-reveal-delay="0" style="margin-bottom:clamp(28px,4vw,48px);"><span style="font-weight:900;font-size:13px;letter-spacing:.16em;color:#0A4DB3">VOICE</span><h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.6rem,4.4vw,2.6rem);line-height:1.4;color:#0A4DB3">先輩の声</h2><p style="margin:14px 0 0;max-width:720px;font-size:clamp(15px,2.2vw,17px);line-height:1.9;color:#1F2933">年代も経験もさまざま。ベテランから次の世代まで、同じ現場で働いています。</p></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(16px,2.4vw,28px)"><figure data-voice="left" class="m-card" style="will-change:transform,opacity;margin:0;background:#fff;border:1px solid #D5DCE5;border-radius:4px;overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:4px;background:#DCE7F7"><img src="assets/y-veteran.jpg" alt="スタッフ（業歴35年のベテラン）" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div><figcaption style="padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px"><span style="align-self:flex-start;background:#0A4DB3;color:#fff;font-weight:700;font-size:13px;padding:5px 12px;border-radius:4px">業歴35年のベテラン</span><span style="font-weight:900;font-size:18px;color:#0A4DB3">ベテラン職人</span><span style="font-size:15px;line-height:1.85;color:#1F2933">設計図を正確に読み取り、丁寧かつ迅速に組み上げる。その技術を、若手に現場で直接伝えています。</span></figcaption></figure><figure data-voice="up" class="m-card" style="will-change:transform,opacity;margin:0;background:#fff;border:1px solid #D5DCE5;border-radius:4px;overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:4px;background:#DCE7F7"><img src="assets/y-kawamura.jpg" alt="川村 佑さん（2013年入社）" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div><figcaption style="padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px"><span style="align-self:flex-start;background:#0A4DB3;color:#fff;font-weight:700;font-size:13px;padding:5px 12px;border-radius:4px">2013年入社</span><span style="font-weight:900;font-size:18px;color:#0A4DB3">川村 佑さん</span><span style="font-size:15px;line-height:1.85;color:#1F2933">「大規模な現場がとても多い仕事です。みんなが使うものを手がけるので、完成した時の達成感は別格です。」</span></figcaption></figure><figure data-voice="right" class="m-card" style="will-change:transform,opacity;margin:0;background:#fff;border:1px solid #D5DCE5;border-radius:4px;overflow:hidden;display:flex;flex-direction:column"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:4px;background:#DCE7F7"><img src="assets/y-measure.jpg" alt="スタッフ（32歳・次世代を担う）" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div><figcaption style="padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px"><span style="align-self:flex-start;background:#0A4DB3;color:#fff;font-weight:700;font-size:13px;padding:5px 12px;border-radius:4px">32歳・次世代を担う</span><span style="font-weight:900;font-size:18px;color:#0A4DB3">次世代スタッフ</span><span style="font-size:15px;line-height:1.85;color:#1F2933">ベテランの技術を受け継ぎ、もう1班つくるために、これからのユウシン工業を担います。</span></figcaption></figure></div>
+<div style="margin-top:clamp(24px,3.5vw,36px)"><a href="/recruit/staff" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:4px;border:2px solid #0A4DB3;color:#0A4DB3;font-weight:900;font-size:15px" style-hover="background:#0A4DB3;color:#fff">スタッフ紹介へ<span aria-hidden="true">→</span></a></div></div></section>
+
+<!-- ============ 未経験からのステップ ============ -->
+<section  style="position:relative;background:#fff;padding:clamp(64px,10vw,128px) clamp(20px,5vw,64px)"><div style="max-width:1200px;margin:0 auto"><div data-reveal data-reveal-delay="0" style="margin-bottom:clamp(28px,4vw,48px);"><span style="font-weight:900;font-size:13px;letter-spacing:.16em;color:#0A4DB3">STEP</span><h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.6rem,4.4vw,2.6rem);line-height:1.4;color:#0A4DB3">未経験からのステップ</h2><p style="margin:14px 0 0;max-width:720px;font-size:clamp(15px,2.2vw,17px);line-height:1.9;color:#1F2933">最初は運ぶことから。焦らなくて大丈夫です。（期間は目安です）</p></div>
+<div data-steps style="position:relative"><div aria-hidden="true" style="height:6px;border-radius:3px;background:#DCE7F7;margin:0 0 clamp(16px,2.4vw,24px);overflow:hidden"><div data-step-fill style="height:100%;width:100%;background:linear-gradient(90deg,#3D8BFF,#F07A28);transform-origin:left;transform:scaleX(var(--p,1))"></div></div><ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(12px,2vw,18px)"><li data-step class="m-card" style="transition:border-color .4s,transform .5s cubic-bezier(.2,.7,.2,1),opacity .5s,box-shadow .4s;background:#fff;border:1px solid #D5DCE5;border-top:4px solid #0A4DB3;border-radius:4px;padding:clamp(20px,3vw,28px)"><span data-step-no style="display:inline-block;transition:color .3s,transform .4s cubic-bezier(.3,1.6,.5,1);font-weight:900;font-size:13px;letter-spacing:.14em;color:#0A4DB3">STEP 1</span><p style="margin:6px 0 0;font-weight:900;font-size:clamp(18px,2.6vw,22px);color:#0A4DB3">入社〜3ヶ月</p><p style="margin:8px 0 0;font-size:15px;color:#1F2933">運搬・結束の補助から</p></li><li data-step class="m-card" style="transition:border-color .4s,transform .5s cubic-bezier(.2,.7,.2,1),opacity .5s,box-shadow .4s;background:#fff;border:1px solid #D5DCE5;border-top:4px solid #0A4DB3;border-radius:4px;padding:clamp(20px,3vw,28px)"><span data-step-no style="display:inline-block;transition:color .3s,transform .4s cubic-bezier(.3,1.6,.5,1);font-weight:900;font-size:13px;letter-spacing:.14em;color:#0A4DB3">STEP 2</span><p style="margin:6px 0 0;font-weight:900;font-size:clamp(18px,2.6vw,22px);color:#0A4DB3">〜1年</p><p style="margin:8px 0 0;font-size:15px;color:#1F2933">図面を見て組めるように</p></li><li data-step class="m-card" style="transition:border-color .4s,transform .5s cubic-bezier(.2,.7,.2,1),opacity .5s,box-shadow .4s;background:#fff;border:1px solid #D5DCE5;border-top:4px solid #0A4DB3;border-radius:4px;padding:clamp(20px,3vw,28px)"><span data-step-no style="display:inline-block;transition:color .3s,transform .4s cubic-bezier(.3,1.6,.5,1);font-weight:900;font-size:13px;letter-spacing:.14em;color:#0A4DB3">STEP 3</span><p style="margin:6px 0 0;font-weight:900;font-size:clamp(18px,2.6vw,22px);color:#0A4DB3">〜3年</p><p style="margin:8px 0 0;font-size:15px;color:#1F2933">一通りの組立・資格取得</p></li><li data-step class="m-card" style="transition:border-color .4s,transform .5s cubic-bezier(.2,.7,.2,1),opacity .5s,box-shadow .4s;background:#fff;border:1px solid #D5DCE5;border-top:4px solid #0A4DB3;border-radius:4px;padding:clamp(20px,3vw,28px)"><span data-step-no style="display:inline-block;transition:color .3s,transform .4s cubic-bezier(.3,1.6,.5,1);font-weight:900;font-size:13px;letter-spacing:.14em;color:#0A4DB3">STEP 4</span><p style="margin:6px 0 0;font-weight:900;font-size:clamp(18px,2.6vw,22px);color:#0A4DB3">職長</p><p style="margin:8px 0 0;font-size:15px;color:#1F2933">班をまとめる立場へ</p></li></ol></div>
+<div style="margin-top:clamp(24px,3.5vw,36px)"><a href="/recruit/career" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:4px;border:2px solid #0A4DB3;color:#0A4DB3;font-weight:900;font-size:15px" style-hover="background:#0A4DB3;color:#fff">未経験から一人前までを見る<span aria-hidden="true">→</span></a></div></div></section>
+
+<!-- ============ 待遇のハイライト ============ -->
+<section data-countup-machine style="position:relative;overflow:hidden;background-color:#0A4DB3;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.07) 0 2px,transparent 2px 48px),repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 2px,transparent 2px 48px);animation:mGrid 6s linear infinite;color:#fff;padding:clamp(64px,10vw,128px) clamp(20px,5vw,64px)"><div style="max-width:1200px;margin:0 auto">
+<div data-reveal data-reveal-delay="0" style="margin-bottom:clamp(28px,4vw,48px);"><span style="font-weight:900;font-size:13px;letter-spacing:.16em;color:#9CC4FF">BENEFITS</span><h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.6rem,4.4vw,2.6rem);line-height:1.4;color:#fff">待遇のハイライト</h2><p style="margin:14px 0 0;max-width:720px;font-size:clamp(15px,2.2vw,17px);line-height:1.9;color:rgba(255,255,255,.88)">条件面も、正直にお伝えします。</p></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(10px,1.6vw,16px)"><div data-reveal data-reveal-delay="110" style="border:1px solid rgba(255,255,255,.22);border-radius:4px;padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:6px"><span style="font-weight:900;font-size:clamp(22px,3.4vw,32px);line-height:1.2">日給12,000円〜</span><span style="font-size:14px;color:rgba(255,255,255,.85)">未経験（経験者14,000円〜）</span></div><div data-reveal data-reveal-delay="220" style="border:1px solid rgba(255,255,255,.22);border-radius:4px;padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:6px"><span style="font-weight:900;font-size:clamp(22px,3.4vw,32px);line-height:1.2">完全週休2日</span><span style="font-size:14px;color:rgba(255,255,255,.85)">休日</span></div><div data-reveal data-reveal-delay="330" style="border:1px solid rgba(255,255,255,.22);border-radius:4px;padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:6px"><span style="font-weight:900;font-size:clamp(22px,3.4vw,32px);line-height:1.2">寮・社宅あり</span><span style="font-size:14px;color:rgba(255,255,255,.85)">遠方からもOK</span></div><div data-reveal data-reveal-delay="440" style="border:1px solid rgba(255,255,255,.22);border-radius:4px;padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:6px"><span style="font-weight:900;font-size:clamp(22px,3.4vw,32px);line-height:1.2">全額会社負担</span><span style="font-size:14px;color:rgba(255,255,255,.85)">資格取得費用</span></div><div data-reveal data-reveal-delay="550" style="border:1px solid rgba(255,255,255,.22);border-radius:4px;padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:6px"><span style="font-weight:900;font-size:clamp(22px,3.4vw,32px);line-height:1.2">20,000円</span><span style="font-size:14px;color:rgba(255,255,255,.85)">皆勤手当</span></div><div data-reveal data-reveal-delay="0" style="border:1px solid rgba(255,255,255,.22);border-radius:4px;padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:6px"><span style="font-weight:900;font-size:clamp(22px,3.4vw,32px);line-height:1.2">年2回</span><span style="font-size:14px;color:rgba(255,255,255,.85)">賞与</span></div></div>
+<div style="margin-top:clamp(24px,3.5vw,36px)"><a href="/recruit/environment" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:4px;border:2px solid #fff;color:#fff;font-weight:900;font-size:15px" style-hover="background:#fff;color:#0A4DB3">働く環境・待遇を見る<span aria-hidden="true">→</span></a></div>
+</div></section>
+
+<!-- ============ 写真リボン（装飾） ============ -->
+<div aria-hidden="true" style="background:#fff;overflow:hidden;padding:clamp(40px,6vw,80px) 0 0">
+  <div style="display:flex;align-items:center;width:max-content;animation:hero3MarqL 60s linear infinite;will-change:transform"><div style="display:flex;gap:12px;padding-right:12px"><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/3;align-self:flex-end;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-tie.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/5;align-self:flex-start;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-cage.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/3;align-self:flex-end;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-two.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/5;align-self:flex-start;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-viaduct.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/3;align-self:flex-end;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-walk.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/5;align-self:flex-start;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-deck-grid.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/3;align-self:flex-end;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-worker1.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/5;align-self:flex-start;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-bridge.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/3;align-self:flex-end;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-curve-wall.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/5;align-self:flex-start;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-team-deck.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div></div><div style="display:flex;gap:12px;padding-right:12px"><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/3;align-self:flex-end;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-tie.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/5;align-self:flex-start;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-cage.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/3;align-self:flex-end;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-two.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/5;align-self:flex-start;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-viaduct.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/3;align-self:flex-end;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-walk.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/5;align-self:flex-start;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-deck-grid.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/3;align-self:flex-end;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-worker1.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/5;align-self:flex-start;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-bridge.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/3;align-self:flex-end;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-curve-wall.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:none;width:clamp(200px,24vw,340px);aspect-ratio:4/5;align-self:flex-start;border-radius:4px;overflow:hidden;background:#DCE7F7"><img src="assets/y-team-deck.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div></div></div>
+</div>
+
+<!-- ============ 社員インタビュー動画（TikTok）============ -->
+<section  style="position:relative;background:#fff;padding:clamp(64px,10vw,128px) clamp(20px,5vw,64px)"><div style="max-width:1200px;margin:0 auto"><div data-reveal data-reveal-delay="0" style="margin-bottom:clamp(28px,4vw,48px);"><span style="font-weight:900;font-size:13px;letter-spacing:.16em;color:#0A4DB3">MOVIE</span><h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.6rem,4.4vw,2.6rem);line-height:1.4;color:#0A4DB3">社員インタビューを動画で</h2><p style="margin:14px 0 0;max-width:720px;font-size:clamp(15px,2.2vw,17px);line-height:1.9;color:#1F2933">現場の雰囲気や先輩の話を、TikTokで公開しています。</p></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2.4vw,28px)"><a data-reveal data-reveal-delay="110" class="m-card" href="https://www.tiktok.com/@kensetsu_engine_recruit" style="position:relative;display:block;border-radius:4px;overflow:hidden;color:#fff" style-hover="opacity:.9"><div style="position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;border-radius:4px;background:#DCE7F7"><img src="assets/y-kawamura2.jpg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div><span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,48,110,0) 30%,rgba(6,48,110,.85))"></span><span style="position:absolute;left:20px;right:20px;bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:12px"><span style="font-weight:900;font-size:clamp(16px,2.4vw,20px)">社員インタビュー動画</span><span style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:#fff;color:#0A4DB3;font-size:18px;flex:none" aria-hidden="true">▶</span></span></a><a data-reveal data-reveal-delay="220" class="m-card" href="https://www.tiktok.com/@kensetsu_engine_recruit" style="position:relative;display:block;border-radius:4px;overflow:hidden;color:#fff" style-hover="opacity:.9"><div style="position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;border-radius:4px;background:#DCE7F7"><img src="assets/y-two.jpg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div><span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,48,110,0) 30%,rgba(6,48,110,.85))"></span><span style="position:absolute;left:20px;right:20px;bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:12px"><span style="font-weight:900;font-size:clamp(16px,2.4vw,20px)">現場の様子</span><span style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:#fff;color:#0A4DB3;font-size:18px;flex:none" aria-hidden="true">▶</span></span></a></div>
+<!-- 要取材：TikTok動画の個別URL（埋め込み用）を受領後に埋め込みへ差し替え --></div></section>
+
+<!-- ============ 求職者のみなさまへ（バナー）============ -->
+<section style="position:relative;overflow:hidden;background:#06306E;color:#fff;padding:clamp(64px,9vw,110px) clamp(20px,5vw,64px)">
+  <div data-parallax="0.18" style="position:absolute;inset:-12% 0;will-change:transform"><img src="assets/y-group.jpg" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;display:block;animation:mKen 18s ease-in-out infinite alternate"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,48,110,.94),rgba(6,48,110,.7) 60%,rgba(6,48,110,.45))"></div>
+  <div style="position:relative;max-width:1200px;margin:0 auto">
+    <span style="font-weight:900;font-size:13px;letter-spacing:.16em;color:#9CC4FF">FOR APPLICANTS</span>
+    <h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.5rem,4vw,2.4rem);line-height:1.45"><span class="line-chunk">鉄筋工の仕事や、</span><span class="line-chunk">ユウシン工業で働くことを</span><br><span class="line-chunk">もっと知りたい方へ</span></h2>
+    <a class="m-btn" href="/recruit/message" style="margin-top:clamp(22px,3vw,32px);display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:14px 30px;border-radius:4px;background:#F07A28;color:#1F2933;font-weight:900;font-size:16px" style-hover="background:#D9661A">求職者のみなさまへ<span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<!-- ============ 工事のご依頼をお考えの方へ ============ -->
+<section  style="position:relative;background:#EEF4FC;padding:clamp(64px,10vw,128px) clamp(20px,5vw,64px)"><div style="max-width:1200px;margin:0 auto"><div data-reveal data-reveal-delay="0" style="margin-bottom:clamp(28px,4vw,48px);"><span style="font-weight:900;font-size:13px;letter-spacing:.16em;color:#0A4DB3">FOR CLIENTS</span><h2 style="margin:8px 0 0;font-weight:900;font-size:clamp(1.6rem,4.4vw,2.6rem);line-height:1.4;color:#0A4DB3">工事のご依頼をお考えの方へ</h2><p style="margin:14px 0 0;max-width:720px;font-size:clamp(15px,2.2vw,17px);line-height:1.9;color:#1F2933">元請け・発注者さま向けのご案内です。</p></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(16px,2.4vw,28px)"><a data-reveal data-reveal-delay="110" class="m-card" href="/work" style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:center;background:#fff;border:1px solid #D5DCE5;border-radius:4px;overflow:hidden;color:#1F2933" style-hover="border-color:#0A4DB3"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:4px;background:#DCE7F7"><img src="assets/y-viaduct.jpg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div><span style="padding:18px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-weight:900;font-size:clamp(17px,2.4vw,20px);color:#0A4DB3">業務案内 →</span><span style="font-size:14px">鉄筋工事・耐震補強</span></span></a><a data-reveal data-reveal-delay="220" class="m-card" href="/blog-ex/instance" style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:center;background:#fff;border:1px solid #D5DCE5;border-radius:4px;overflow:hidden;color:#1F2933" style-hover="border-color:#0A4DB3"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:4px;background:#DCE7F7"><img src="assets/y-bridge.jpg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div><span style="padding:18px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-weight:900;font-size:clamp(17px,2.4vw,20px);color:#0A4DB3">施工実績 →</span><span style="font-size:14px">鉄道・高速道路・橋脚・浄水場</span></span></a></div></div></section>
+
+<!-- ============ BLOG (parts228系・写真上／更新日あり) ============ -->
+<!-- 🔒 CMS固定領域（parts228系）：構造/クラス 変更禁止・承認/解除なし。見た目はadd.cssのみ -->
+<!-- 🔒 LOCK START -->
+<section class="parts228_section">
+  <div class="parts228_wrap">
+    <div class="top-blog-head">
+      <h2>BLOG</h2>
+      <p>お知らせ・鉄筋工の仕事・現場レポート</p>
+    </div>
+    <div class="parts228_main">
+      <ul class="parts228_post_list">
+        <!-- CMS LOOP START -->
+        <sc-for list="{{ blogs }}" as="b" hint-placeholder-count="3">
+          <li class="parts228_post_wrap">
+            <a class="parts228_post_img" href="#">
+              <image-slot id="{{ b.slot }}" style="width:100%;height:240px" shape="rect" fit="cover" placeholder="{{ b.slotLabel }}"></image-slot>
+            </a>
+            <div class="parts228_post_status">
+              <span class="parts228_post_date">{{ b.date }}</span>
+            </div>
+            <div class="parts228_post_title-excerpt">
+              <h3 class="parts228_post_title"><a href="#">{{ b.title }}</a></h3>
+            </div>
+          </li>
+        </sc-for>
+        <!-- CMS LOOP END -->
+      </ul>
+    </div>
+    <div class="top-blog-more"><a href="/blog">ブログ一覧を見る<span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+<!-- 🔒 LOCK END -->
+
+<!-- ============ 協力会社募集（小）============ -->
+<section style="background:#fff;padding:clamp(28px,4vw,40px) clamp(20px,5vw,64px);border-top:1px solid #D5DCE5"><div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between">
+  <p style="margin:0;font-weight:700;font-size:clamp(15px,2.2vw,17px);color:#1F2933">鉄筋工事の協力会社さまも募集しています。</p>
+  <a href="/form/inquiry" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:4px;border:2px solid #0A4DB3;color:#0A4DB3;font-weight:900;font-size:15px" style-hover="background:#0A4DB3;color:#fff">協力会社のご相談<span aria-hidden="true">→</span></a>
+</div></section>
+
+<!-- ============ 最終CTA＋アクセス ============ -->
+<section style="position:relative;background:#0A4DB3;color:#fff;padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px)"><div style="max-width:1200px;margin:0 auto">
+  <div style="text-align:center">
+    <span style="font-weight:900;font-size:13px;letter-spacing:.16em;color:#9CC4FF">JOIN US</span>
+    <h2 style="margin:10px 0 0;font-weight:900;font-size:clamp(1.6rem,4.6vw,2.8rem);line-height:1.4"><span class="line-chunk">まずはLINEで</span><span class="line-chunk">質問だけでも大丈夫です。</span></h2>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:clamp(24px,3.6vw,36px)">
+      <a class="m-btn" href="/recruit#apply" style="min-height:52px;padding:14px 30px;border-radius:4px;background:#F07A28;color:#1F2933;font-weight:900;font-size:16px;display:inline-flex;align-items:center;gap:10px" style-hover="background:#D9661A">応募する<span aria-hidden="true">→</span></a>
+      <a href="https://lin.ee/8Wcjh7g" style="min-height:52px;padding:14px 26px;border-radius:4px;background:#06C755;color:#fff;font-weight:900;font-size:16px;display:inline-flex;align-items:center" style-hover="opacity:.88">LINEで質問</a>
+      <a href="tel:042-978-6466" style="min-height:52px;padding:12px 24px;border-radius:4px;border:2px solid #fff;color:#fff;font-weight:900;font-size:16px;display:inline-flex;align-items:center" style-hover="background:#fff;color:#0A4DB3">電話する 042-978-6466</a>
+      <a href="/form/inquiry" style="min-height:52px;padding:12px 24px;border-radius:4px;border:2px solid rgba(255,255,255,.6);color:#fff;font-weight:900;font-size:16px;display:inline-flex;align-items:center" style-hover="border-color:#fff">見学を相談する</a>
+    </div>
+  </div>
+  <!-- 要取材：見学の受け入れ可否 -->
+  <div style="margin-top:clamp(36px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(16px,2.4vw,28px)">
+    <div style="position:relative;width:100%;aspect-ratio:16/10;border-radius:4px;overflow:hidden;background:#06306E"><iframe title="株式会社ユウシン工業の地図" src="https://maps.google.com/maps?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%E9%A3%AF%E8%83%BD%E5%B8%82%E5%B9%B3%E6%9D%BE299-7&amp;z=14&amp;output=embed" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>
+    <div style="background:#fff;color:#1F2933;border-radius:4px;padding:clamp(22px,3vw,32px)">
+      <h3 style="margin:0;font-weight:900;font-size:clamp(17px,2.4vw,20px);color:#0A4DB3">通勤圏の目安</h3>
+      <p style="margin:12px 0 0;font-size:16px;line-height:1.9">飯能市・入間市・狭山市・日高市・所沢市・青梅市 など</p>
+      <p style="margin:10px 0 0;font-size:15px;line-height:1.85">遠方の方には寮・借り上げ社宅があります。</p>
+      <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid #D5DCE5;font-size:14px;line-height:1.8">〒357-0014 埼玉県飯能市平松299-7</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ FOOTER（共通部品） ============ -->
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    vw: (typeof window !== 'undefined' ? window.innerWidth : 1280),
+    scrolled: false,
+    menuOpen: false,
+    openNav: null,
+    acc: null,
+    stat1: 16,
+    stat2: 0,
+    stat3: 15,
+    counted: false,
+    ctaBtnW: '300px',
+    stat4: 4,
+    stat5: 5,
+  };
+
+  // （旧ヒーローの文字送りアニメ用データ。現ヒーローでは未使用）
+  HERO_GROUPS = [
+    { type: 'chunk', text: '正確な施工が、' },
+    { type: 'br' },
+    { type: 'chunk', text: '次の仕事に' },
+    { type: 'space' },
+    { type: 'chunk', text: 'つながる。' },
+  ];
+
+  _calibrateBrush() {
+    document.querySelectorAll('#hero3 path[data-brush]').forEach((el) => {
+      if (el.dataset.calibrated) return;
+      const len = Math.ceil(el.getTotalLength()) + 40;
+      el.style.setProperty('--len', len);
+      el.style.strokeDasharray = len;
+      el.style.strokeDashoffset = len;
+      el.setAttribute('visibility', 'visible');
+      el.dataset.calibrated = '1';
+    });
+  }
+
+  componentDidMount() {
+    setTimeout(() => this._initMotion(), 150);
+    setTimeout(() => this._calibrateBrush(), 30);
+    setTimeout(() => this._calibrateBrush(), 600);
+    this._onScroll = () => {
+      const s = window.scrollY > 40;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    this._onResize = () => { this.setState({ vw: window.innerWidth }); this._measureCta(); };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onResize);
+
+    // CTAボタン：両ボタンの自然幅を測り、長い方に合わせる
+    setTimeout(() => this._measureCta(), 90);
+    setTimeout(() => this._measureCta(), 700);
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(() => this._measureCta()); }
+
+    // 数字カウントアップ（画面内に入ったら0→確定値）。reduced-motion時は確定値のまま
+    const reduceN = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceN) {
+      this.setState({ stat1: 0, stat2: 10, stat3: 0, stat4: 0, stat5: 0 });
+      setTimeout(() => {
+        const el = document.querySelector('[data-countup-section]');
+        if (!el) { this.setState({ stat1: 16, stat2: 0, stat3: 15 }); }
+        else {
+        const io = new IntersectionObserver((ents) => {
+          ents.forEach((e) => {
+            if (e.isIntersecting && !this._counting) {
+              this._counting = true;
+              this._runCount();
+              io.disconnect();
+            }
+          });
+        }, { threshold: 0.01, rootMargin: '0px 0px -25% 0px' });
+        io.observe(el);
+        this._io2 = io;
+        // フォールバック：万一オブザーバが発火しない場合のみ、確定値を表示（アニメは画面内トリガーに任せる）
+        this._countSafety = setTimeout(() => { if (!this._counting) { this.setState({ stat1: 16, stat2: 0, stat3: 15 }); } }, 12000);
+        }
+        // エリア・建物種別の数字
+        const mel = document.querySelector('[data-countup-machine]');
+        if (!mel) { this.setState({ stat4: 4, stat5: 3 }); }
+        else {
+          const mio = new IntersectionObserver((ents) => {
+            ents.forEach((e) => {
+              if (e.isIntersecting && !this._countingM) {
+                this._countingM = true;
+                this._runCountM();
+                mio.disconnect();
+              }
+            });
+          }, { threshold: 0.01, rootMargin: '0px 0px -10% 0px' });
+          mio.observe(mel);
+          this._io3 = mio;
+          this._countSafetyM = setTimeout(() => { if (!this._countingM) { this.setState({ stat4: 4, stat5: 3 }); } }, 12000);
+        }
+      }, 80);
+    }
+
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) {
+      setTimeout(() => {
+        const els = [].slice.call(document.querySelectorAll('[data-reveal]'));
+        els.forEach((el) => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(38px)';
+          el.style.transition = 'opacity .85s cubic-bezier(.2,.7,.2,1), transform .85s cubic-bezier(.2,.7,.2,1)';
+          const d = el.getAttribute('data-reveal-delay');
+          if (d) el.style.transitionDelay = d + 'ms';
+        });
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.style.opacity = '1';
+              e.target.style.transform = 'none';
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+        els.forEach((el) => io.observe(el));
+        this._io = io;
+        this._safety = setTimeout(() => {
+          els.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none'; });
+        }, 3000);
+      }, 60);
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onResize);
+    if (this._io) this._io.disconnect();
+    if (this._io2) this._io2.disconnect();
+    if (this._io3) this._io3.disconnect();
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._rafM) cancelAnimationFrame(this._rafM);
+    if (this._countSafety) clearTimeout(this._countSafety);
+    if (this._countSafetyM) clearTimeout(this._countSafetyM);
+    if (this._safety) clearTimeout(this._safety);
+  }
+
+  _measureCta() {
+    if (this.state.ctaBtnW !== '300px') this.setState({ ctaBtnW: '300px' });
+  }
+
+  _initMotion() {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    // 数字カウントアップ
+    [].slice.call(document.querySelectorAll('[data-count]')).forEach((el) => {
+      const to = parseInt(el.getAttribute('data-count'), 10);
+      const from = to > 1000 ? to - 60 : 0;
+      el.textContent = String(from);
+      const io = new IntersectionObserver((en) => {
+        if (!en[0].isIntersecting) return;
+        io.disconnect();
+        const t0 = performance.now(), dur = 1600;
+        const step = (t) => {
+          const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+          el.textContent = String(Math.round(from + (to - from) * e));
+          if (k < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      }, { threshold: 0.4 });
+      io.observe(el);
+    });
+    // スクロール連動（1日の流れ／先輩の声／ステップ）
+    const clamp = (v) => Math.max(0, Math.min(1, v));
+    const prog = (el, start, span) => { const r = el.getBoundingClientRect(), vh = window.innerHeight; return clamp((vh * start - r.top) / (r.height * span + vh * 0.25)); };
+    const tl = document.querySelector('[data-tl]');
+    const tlItems = [].slice.call(document.querySelectorAll('[data-tl-item]'));
+    const tlImg = document.querySelector('[data-scrub-img]');
+    const voices = [].slice.call(document.querySelectorAll('[data-voice]'));
+    const steps = document.querySelector('[data-steps]');
+    const stepItems = [].slice.call(document.querySelectorAll('[data-step]'));
+    const scrub = () => {
+      if (tl) {
+        const p = prog(tl, 0.8, 0.9);
+        tl.style.setProperty('--p', p.toFixed(3));
+        tlItems.forEach((li, i) => {
+          const on = p >= (i + 0.35) / tlItems.length;
+          li.style.opacity = on ? '1' : '.3';
+          li.style.transform = on ? 'none' : 'translateX(14px)';
+          const dot = li.querySelector('[data-tl-dot]');
+          if (dot) { dot.style.transform = on ? 'scale(1.25)' : 'scale(.7)'; dot.style.background = on ? '#F07A28' : '#C9D6EA'; }
+        });
+      }
+      if (tlImg) {
+        const p = prog(tlImg, 1, 0.6);
+        tlImg.style.clipPath = 'inset(0 0 0 ' + ((1 - p) * 100).toFixed(1) + '%)';
+        tlImg.style.transform = 'translate3d(' + ((1 - p) * 40).toFixed(1) + 'px,0,0)';
+      }
+      voices.forEach((el, i) => {
+        const p = prog(el, 1, 0.5), d = el.getAttribute('data-voice'), k = 1 - p;
+        const x = d === 'left' ? -80 * k : d === 'right' ? 80 * k : 0;
+        const y = d === 'up' ? 90 * k : 30 * k;
+        el.style.opacity = (0.15 + p * 0.85).toFixed(3);
+        el.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px,0) rotate(' + ((d === 'left' ? -3 : d === 'right' ? 3 : 0) * k).toFixed(2) + 'deg)';
+        const img = el.querySelector('img');
+        if (img) img.style.clipPath = 'inset(' + (k * 100).toFixed(1) + '% 0 0 0)';
+      });
+      if (steps) {
+        const p = prog(steps, 0.85, 0.9);
+        steps.style.setProperty('--p', p.toFixed(3));
+        stepItems.forEach((li, i) => {
+          const on = p >= (i + 0.5) / stepItems.length;
+          li.style.borderTopColor = on ? '#F07A28' : '#0A4DB3';
+          li.style.opacity = on ? '1' : '.45';
+          li.style.transform = on ? 'none' : 'translateY(18px)';
+          li.style.boxShadow = on ? '0 14px 30px rgba(6,48,110,.12)' : 'none';
+          const no = li.querySelector('[data-step-no]');
+          if (no) { no.style.color = on ? '#C2560F' : '#0A4DB3'; no.style.transform = on ? 'scale(1.15)' : 'none'; }
+        });
+      }
+    };
+    let sTick = false;
+    this._onScrub = () => { if (!sTick) { sTick = true; requestAnimationFrame(() => { sTick = false; scrub(); }); } };
+    window.addEventListener('scroll', this._onScrub, { passive: true });
+    window.addEventListener('resize', this._onScrub);
+    scrub();
+    // パララックス
+    const px = [].slice.call(document.querySelectorAll('[data-parallax]'));
+    if (px.length) {
+      let ticking = false;
+      const run = () => {
+        ticking = false;
+        const vh = window.innerHeight;
+        px.forEach((el) => {
+          const r = el.parentElement.getBoundingClientRect();
+          if (r.bottom < 0 || r.top > vh) return;
+          const f = parseFloat(el.getAttribute('data-parallax')) || 0.15;
+          el.style.transform = 'translate3d(0,' + ((r.top + r.height / 2 - vh / 2) * -f).toFixed(1) + 'px,0)';
+        });
+      };
+      this._onPx = () => { if (!ticking) { ticking = true; requestAnimationFrame(run); } };
+      window.addEventListener('scroll', this._onPx, { passive: true });
+      run();
+    }
+  }
+
+  _runCount() {
+    const targets = [16, 0, 15];
+    const dur = 2000;
+    const start = (typeof performance !== 'undefined' ? performance.now() : Date.now());
+    const ease = (t) => 1 - Math.pow(1 - t, 3);
+    const step = (now) => {
+      const p = Math.min(1, (now - start) / dur);
+      const k = ease(p);
+      // 02（事故件数）は目標0のため、10→0のカウントダウンで動かす
+      this.setState({ stat1: Math.round(targets[0] * k), stat2: Math.round(10 * (1 - k)), stat3: Math.round(targets[2] * k) });
+      if (p < 1) { this._raf = requestAnimationFrame(step); }
+      else { this.setState({ counted: true }); }
+    };
+    this._raf = requestAnimationFrame(step);
+  }
+
+  _runCountM() {
+    const t = [4, 5];
+    const dur = 1100;
+    const start = (typeof performance !== 'undefined' ? performance.now() : Date.now());
+    const ease = (x) => 1 - Math.pow(1 - x, 3);
+    const step = (now) => {
+      const p = Math.min(1, (now - start) / dur);
+      const k = ease(p);
+      this.setState({ stat4: Math.round(t[0] * k), stat5: Math.round(t[1] * k) });
+      if (p < 1) { this._rafM = requestAnimationFrame(step); }
+    };
+    this._rafM = requestAnimationFrame(step);
+  }
+
+  renderVals() {
+    const vw = this.state.vw;
+    const isMobile = vw < 1200;
+    const isDesktop = !isMobile;
+    const openNav = this.state.openNav;
+    const acc = this.state.acc;
+
+    // ヒーローCTA：狭幅では縦積み、それ以外は長いボタンに合わせた等幅2カラム
+    const stackButtons = vw < 600;
+    const heroBtnWrapStyle = stackButtons
+      ? { opacity: 0, animation: 'heroUp .9s cubic-bezier(.2,.7,.2,1) .65s forwards', display: 'grid', gridTemplateColumns: '1fr', gap: '14px', width: '100%', marginTop: 'clamp(30px,4.5vw,44px)' }
+      : { opacity: 0, animation: 'heroUp .9s cubic-bezier(.2,.7,.2,1) .65s forwards', display: 'inline-grid', gridAutoFlow: 'column', gridAutoColumns: '1fr', gap: '14px', marginTop: 'clamp(30px,4.5vw,44px)' };
+
+    // ヒーロー見出し：CSSスタガーで1文字ずつ横に出現
+    const reduceMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let charIdx = 0;
+    const heroKids = [];
+    this.HERO_GROUPS.forEach((g, gi) => {
+      if (g.type === 'br') { heroKids.push(React.createElement('br', { key: 'br' + gi })); return; }
+      if (g.type === 'space') { heroKids.push('\u3000'); return; }
+      const chars = g.text.split('').map((ch, j) => {
+        const delay = 0.45 + charIdx * 0.06;
+        charIdx++;
+        const style = { color: '#fff' };
+        if (!reduceMotion) { style.opacity = 0; style.animation = 'heroCharIn .5s ease ' + delay.toFixed(2) + 's forwards'; }
+        return React.createElement('span', { key: 'c' + gi + '_' + j, style: style }, ch);
+      });
+      heroKids.push(React.createElement('span', { key: 'g' + gi, className: 'line-chunk' }, chars));
+    });
+    const heroTitle = React.createElement(React.Fragment, null, heroKids);
+
+    const NAV = [];
+
+    const navItems = NAV.map((n, i) => ({
+      label: n.label,
+      href: n.href,
+      children: n.children || [],
+      hasChildren: !!(n.children && n.children.length),
+      open: openNav === i && !!(n.children && n.children.length),
+      accOpen: acc === i,
+      accClosed: acc !== i,
+      onEnter: () => this.setState({ openNav: i }),
+      onLeave: () => this.setState({ openNav: null }),
+      onToggleAcc: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ acc: acc === i ? null : i }); },
+    }));
+
+    const footerLinks = [];
+
+    const worksGridStyle = isDesktop
+      ? { display: 'grid', gridTemplateColumns: 'minmax(260px,330px) 1fr', gap: 'clamp(32px,5vw,72px)', alignItems: 'start' }
+      : { display: 'grid', gridTemplateColumns: '1fr', gap: 'clamp(28px,5vw,40px)' };
+    const worksStickyStyle = isDesktop ? { position: 'sticky', top: '104px' } : { position: 'static' };
+
+    const permitPanelStyle = { position: 'relative', zIndex: 1, background: '#0A4DB3', color: '#fff', padding: 'clamp(30px,4vw,56px)' };
+    const permitMediaStyle = isDesktop
+      ? { position: 'relative', zIndex: 2, margin: '0 0 0 -64px' }
+      : { position: 'relative', zIndex: 2, margin: '-28px auto 0', width: 'min(96%,560px)' };
+
+    const entries = [];
+
+    // CMS（ブログ）出力のダミー。実データはCMSで置換される
+    const blogs = [
+      { date: '0000.00.00', title: 'ブログ記事のタイトルがここに入ります', slot: 'works-1', slotLabel: 'ブログサムネイル①' },
+      { date: '0000.00.00', title: 'ブログ記事のタイトルがここに入ります', slot: 'works-2', slotLabel: 'ブログサムネイル②' },
+      { date: '0000.00.00', title: 'ブログ記事のタイトルがここに入ります', slot: 'works-3', slotLabel: 'ブログサムネイル③' },
+    ];
+
+    return {
+      isMobile,
+      isDesktop,
+      heroTitle,
+      heroBtnWrapStyle,
+      ctaBtnW: this.state.ctaBtnW,
+      stat1: this.state.stat1,
+      stat2: this.state.stat2,
+      stat3: this.state.stat3,
+      stat4: this.state.stat4,
+      stat5: this.state.stat5,
+      headerSolid: this.state.scrolled || this.state.menuOpen,
+      headerGradient: !(this.state.scrolled || this.state.menuOpen),
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false, acc: null }),
+      navItems,
+      footerLinks,
+      worksGridStyle,
+      worksStickyStyle,
+      permitPanelStyle,
+      permitMediaStyle,
+      entries,
+      blogs,
+    };
+  }
+}
+</script>
+</body>
+</html>
