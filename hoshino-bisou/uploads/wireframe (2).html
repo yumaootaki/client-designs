@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>星野美装 ワイヤーフレーム(7ページ)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --kinari:#f7f2e6;--kinari-200:#ede5d2;--white:#fff;--line:#ddd3be;
+  --wakakusa:#9bc46a;--wakakusa-100:#e7f0d6;--green-700:#3f6b22;--green-900:#2f5418;
+  --ink:#3a3428;--ink-muted:#6e6555;--yamabuki:#f4c95d;
+  --r-sm:8px;--r-md:16px;--r-lg:24px;--r-pill:999px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#e9e4d8;color:var(--ink);font:15px/1.8 "Noto Sans JP",sans-serif}
+h1,h2,h3,.maru{font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif}
+a{color:var(--green-700)}
+/* tool bar */
+.tool{position:sticky;top:0;z-index:50;background:var(--ink);color:#fff;padding:8px 16px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tool b{margin-right:10px;font-size:13px}
+.tool a{color:#fff;text-decoration:none;font-size:13px;padding:4px 12px;border-radius:var(--r-pill);border:1px solid #6e6555}
+.tool a.on{background:var(--wakakusa);color:var(--ink);border-color:var(--wakakusa)}
+.tool label{margin-left:auto;font-size:12px;display:flex;gap:6px;align-items:center}
+.wrap{max-width:1180px;margin:20px auto;padding:0 16px}
+.brief{background:#fff;border-radius:var(--r-md);padding:20px 24px;margin-bottom:20px;font-size:14px}
+.brief h2{margin:0 0 8px;font-size:18px}
+.brief table{border-collapse:collapse;width:100%;font-size:13px;margin-top:8px}
+.brief td,.brief th{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+.brief th{background:var(--kinari)}
+/* site frame */
+.site{background:var(--kinari);border-radius:var(--r-md);overflow:hidden;box-shadow:0 2px 12px rgba(58,52,40,.12)}
+.page{display:none}.page.on{display:block}
+header.g{background:#fff;display:flex;align-items:center;gap:16px;padding:12px 24px;border-bottom:1px solid var(--line)}
+.logo{font-family:"Zen Maru Gothic";font-weight:900;font-size:20px;color:var(--green-900)}
+.logo small{display:block;font-size:11px;font-weight:500;color:var(--ink-muted)}
+header nav{display:flex;gap:14px;font-size:13px;margin-left:auto;flex-wrap:wrap}
+header nav a{color:var(--ink);text-decoration:none}
+.hd-tel{background:var(--yamabuki);border-radius:var(--r-pill);padding:6px 14px;font-weight:700;font-size:13px}
+.btn{display:inline-block;border-radius:var(--r-pill);padding:12px 24px;font-weight:700;text-decoration:none;border:0}
+.btn-g{background:var(--green-700);color:#fff}
+.btn-y{background:var(--yamabuki);color:var(--ink)}
+.btn-o{background:#fff;color:var(--green-700);border:2px solid var(--green-700)}
+.crumb{font-size:12px;color:var(--ink-muted);padding:8px 24px;background:#fff}
+section.s{padding:48px 32px;position:relative}
+section.s.alt{background:var(--kinari-200)}
+section.s.tint{background:var(--wakakusa-100)}
+.s h2{font-size:26px;margin:0 0 6px;text-align:center}
+.s h2+.lead{text-align:center;color:var(--ink-muted);margin:0 0 24px;font-size:14px}
+.en{display:block;text-align:center;font-size:12px;letter-spacing:.2em;color:var(--green-700);font-weight:700}
+.ph{background:repeating-linear-gradient(45deg,#d9d2c2 0 10px,#e2dccd 10px 20px);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;text-align:center;color:#6e6555;font-size:12px;padding:12px;min-height:120px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:#fff;border-radius:var(--r-lg);padding:20px;border:1px solid var(--line)}
+.card h3{margin:0 0 6px;font-size:17px;color:var(--green-900)}
+.pill{display:inline-block;background:var(--wakakusa-100);color:var(--green-900);border-radius:var(--r-pill);padding:2px 12px;font-size:12px;font-weight:700}
+.pill.y{background:var(--yamabuki);color:var(--ink)}
+.note{border:2px dashed #c0782f;background:#fff8ec;border-radius:var(--r-sm);padding:8px 12px;font-size:12px;line-height:1.6;margin:16px 0 0;color:#5a3d1c}
+.note b{color:#8a4a12}
+body.hide-notes .note{display:none}
+.tbd{background:#fde3e3;color:#9b1c1c;border-radius:4px;padding:0 4px;font-size:.9em;font-weight:700}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center;padding:40px 32px;background:var(--kinari)}
+.hero h1{font-size:34px;line-height:1.4;margin:8px 0 12px;color:var(--green-900)}
+.badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.badge{background:#fff;border:2px solid var(--wakakusa);border-radius:var(--r-pill);padding:8px 18px;font-weight:700;font-size:14px}
+table.pt{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);font-size:14px}
+table.pt th,table.pt td{padding:12px;border-bottom:1px solid var(--line);text-align:center}
+table.pt thead th{background:var(--green-700);color:#fff}
+table.pt tr.rec td{background:var(--wakakusa-100);font-weight:700}
+.steps{counter-reset:st;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.step{background:#fff;border-radius:var(--r-md);padding:14px;border:1px solid var(--line);font-size:13px}
+.step::before{counter-increment:st;content:"STEP " counter(st);display:block;font-weight:700;color:var(--green-700);font-size:12px}
+details{background:#fff;border-radius:var(--r-md);border:1px solid var(--line);padding:12px 16px;margin-bottom:8px}
+summary{font-weight:700;cursor:pointer}
+summary::before{content:"Q. ";color:var(--green-700)}
+.check{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.check .card{text-align:center;padding:14px}
+.cta{background:var(--green-700);color:#fff;text-align:center;padding:40px 24px}
+.cta h2{color:#fff}
+.cta .tel{font-size:30px;font-weight:900;font-family:"Zen Maru Gothic"}
+footer.g{background:var(--ink);color:#ece5d4;padding:28px 32px;font-size:13px;display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
+footer.g a{color:#ece5d4}
+.spbar{background:var(--yamabuki);display:flex;justify-content:space-around;padding:10px;font-weight:700;font-size:14px}
+.spbar span{opacity:.6;font-weight:400;font-size:11px}
+.menu-item{display:grid;grid-template-columns:260px 1fr;gap:20px;background:#fff;border-radius:var(--r-lg);padding:20px;border:1px solid var(--line);margin-bottom:16px}
+.menu-item .ph{min-height:160px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}
+form .f{display:grid;grid-template-columns:200px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+form .in{background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);height:38px}
+.req{background:#c0582c;color:#fff;font-size:11px;border-radius:4px;padding:0 6px;margin-left:6px}
+@media(max-width:900px){.hero,.g2,.g3,.g4,.steps,.check,.menu-item,footer.g,form .f{grid-template-columns:1fr}header nav{display:none}}
+</style>
+</head>
+<body>
+<div class="tool">
+  <b>星野美装 WF</b>
+  <a href="#top" data-p="top">TOP</a>
+  <a href="#menu" data-p="menu">工事メニュー</a>
+  <a href="#price" data-p="price">料金の目安</a>
+  <a href="#guide" data-p="guide">ご依頼を検討中の方へ</a>
+  <a href="#company" data-p="company">会社概要</a>
+  <a href="#blog" data-p="blog">ブログ(施工事例)</a>
+  <a href="#contact" data-p="contact">お問い合わせ</a>
+  <label><input type="checkbox" id="nt" checked> 注釈を表示</label>
+</div>
+
+<div class="wrap">
+<div class="brief">
+  <h2>方針(11/16 壁打ちで確定)</h2>
+  <table>
+    <tr><th style="width:150px">主軸</th><td>受注:高崎市の戸建て塗装の集客(理想は戸建て・中規模アパート 月3棟)</td></tr>
+    <tr><th>ページ構成</th><td>固定4ページ(TOP・会社概要・お問い合わせ・ブログ)+選定3ページ(<b>料金の目安/ご依頼を検討中の方へ/工事メニュー</b>)= 7ページ。<br>施工事例は独立ページにせず、<b>ブログの「施工事例」カテゴリ</b>で積み上げる(月1サポートの施工実績3記事/月を充てる)。TOP・工事メニュー・料金の目安から最新の事例を呼び出す</td></tr>
+    <tr><th>デザイン</th><td>親しみやすい可愛い系 → <b>若草グリーン×生成り</b>。丸ゴシック見出し(Zen Maru Gothic)・大きめの角丸・差し色は山吹。信頼感は代表の顔・資格・許可番号・3回塗りの事実で出す</td></tr>
+    <tr><th>書かないこと</th><td>事故・入院・従業員ゼロの話。「代表の星野が自ら現場に立つ」は自社施工の強みとして出す</td></tr>
+    <tr><th>料金</th><td>群馬県の相場をもとに<b>暫定で仮置き</b>(くらしのマーケット・ミツモアの群馬県データ)。社長の確認後に差し替え</td></tr>
+    <tr><th>赤字の項目</th><td><span class="tbd">要確認</span> = 11/17の2次アポで本人に確認すること(電話番号/料金/写真の枚数/顔写真の撮影/独立した年)</td></tr>
+  </table>
+</div>
+
+<div class="site">
+<header class="g">
+  <div class="logo">星野美装<small>高崎市の外壁・屋根塗装|株式会社 星野美装</small></div>
+  <nav><a href="#menu">工事メニュー</a><a href="#price">料金の目安</a><a href="#blog">施工事例</a><a href="#guide">ご依頼を検討中の方へ</a><a href="#company">会社概要</a><a href="#blog">ブログ</a></nav>
+  <span class="hd-tel">☎ <span class="tbd">要確認</span></span>
+  <a class="btn btn-g" href="#contact" style="padding:8px 16px;font-size:13px">無料見積り</a>
+</header>
+
+<!-- ============ TOP ============ -->
+<div class="page" id="p-top">
+  <div class="hero">
+    <div>
+      <span class="pill">群馬県高崎市の塗装店</span>
+      <h1>高崎の家を、<br>自分たちの手で、ていねいに。</h1>
+      <p>外壁・屋根塗装は下請けに出さず、すべて自社で施工します。<br>1級建築塗装技能士の代表 星野が、現地調査から仕上げまで担当します。</p>
+      <p><a class="btn btn-y" href="#contact">☎ 電話で相談する</a> <a class="btn btn-g" href="#contact">無料見積りを依頼</a></p>
+    </div>
+    <div class="ph" style="min-height:300px">【写真】代表の星野が足場の上で刷毛を持ち、こちらに笑顔を向けている1枚。背景に塗り替え後の明るい外壁</div>
+  </div>
+  <div class="note"><b>狙い</b>:「高崎市 外壁塗装」の入口。最初の画面で「自社施工」「1級技能士」「電話・見積り」を見せる。H1・titleに「高崎市 外壁塗装・屋根塗装」を入れる。<b>根拠</b>:議事録の強み「下請けに出さない自社施工と丁寧な仕事」/AI診断「代表者の顔写真なし」</div>
+
+  <section class="s" style="padding:24px 32px">
+    <div class="badges">
+      <span class="badge">独立21年目</span><span class="badge">1級建築塗装技能士</span><span class="badge">建設業許可 群馬県知事(27)第23651号</span><span class="badge">下請けに出さない自社施工</span>
+    </div>
+  </section>
+
+  <section class="s alt">
+    <span class="en">CHECK</span><h2>こんな症状、ありませんか?</h2><p class="lead">ひとつでも当てはまったら、塗り替えを考える時期です</p>
+    <div class="check">
+      <div class="card"><div class="ph" style="min-height:90px">【写真】色あせ・チョーキング</div><b>壁を触ると白い粉がつく</b></div>
+      <div class="card"><div class="ph" style="min-height:90px">【写真】外壁のひび</div><b>ひび割れがある</b></div>
+      <div class="card"><div class="ph" style="min-height:90px">【写真】コーキングの切れ</div><b>目地のゴムが切れている</b></div>
+      <div class="card"><div class="ph" style="min-height:90px">【写真】天井のシミ</div><b>雨漏り・天井のシミ</b></div>
+    </div>
+    <p style="text-align:center;margin-top:16px"><a href="#menu">→ 症状別の工事メニューを見る</a></p>
+  </section>
+
+  <section class="s">
+    <span class="en">REASON</span><h2>星野美装が選ばれる3つの理由</h2><p class="lead"> </p>
+    <div class="grid g3">
+      <div class="card"><div class="ph">【写真】代表が自ら施工中</div><h3>1. 下請けに出さない自社施工</h3><p>見積りから仕上げまで、頼まれた家は自分たちの手で塗ります。</p></div>
+      <div class="card"><div class="ph">【写真】下地処理(ケレン・補修)のアップ</div><h3>2. いちばん大事な下地処理</h3><p>塗装の差は下地で決まり、数年後に目に見えてきます。だから下地処理にいちばん時間をかけます。</p></div>
+      <div class="card"><div class="ph">【写真】下塗り・中塗り・上塗りの3段階</div><h3>3. 必ず3回塗り</h3><p>中塗りで止めると、2〜3年で色落ちに差が出ます。下塗り・中塗り・上塗りの3回塗りを守ります。</p></div>
+    </div>
+    <div class="note"><b>根拠</b>:現行サイト住宅塗装ページ「塗装の工程で一番大事な下地処理」「中塗りで止めると2〜3年経ってから色落ちなどに大きく差」。地元密着(高崎市下小塙町)は4つ目として足してもよい</div>
+  </section>
+
+  <section class="s tint">
+    <span class="en">PRICE</span><h2>料金の目安(30坪の戸建て・足場込み)</h2><p class="lead">塗料のグレードで選べます。くわしくは料金の目安ページへ</p>
+    <div class="grid g4">
+      <div class="card" style="text-align:center"><span class="pill">ウレタン</span><p class="maru" style="font-size:22px;font-weight:900;margin:6px 0">55〜65万円</p></div>
+      <div class="card" style="text-align:center;border:3px solid var(--green-700)"><span class="pill y">人気 コミコミプラン</span><br><span class="pill">シリコン</span><p class="maru" style="font-size:22px;font-weight:900;margin:6px 0">65〜80万円</p></div>
+      <div class="card" style="text-align:center"><span class="pill">フッ素</span><p class="maru" style="font-size:22px;font-weight:900;margin:6px 0">80〜100万円</p></div>
+      <div class="card" style="text-align:center"><span class="pill">無機</span><p class="maru" style="font-size:22px;font-weight:900;margin:6px 0">95〜120万円</p></div>
+    </div>
+    <p style="text-align:center;margin-top:16px"><a class="btn btn-o" href="#price">料金の目安をくわしく見る</a></p>
+    <div class="note"><b>暫定</b>:群馬県の相場から仮置き。<span class="tbd">要確認</span> 社長の実際の価格帯に差し替え。AI診断「費用の質問では料金表を公開している会社が紹介されていました」</div>
+  </section>
+
+  <section class="s">
+    <span class="en">WORKS</span><h2>施工事例</h2><p class="lead">高崎市・近隣の施工事例を、ビフォーアフターでご紹介します</p>
+    <div class="grid g3">
+      <div class="card"><div class="ph">【写真】Before|After 2枚並び</div><span class="pill">高崎市○○町</span> <span class="pill">外壁・屋根</span><h3>木造2階建て・30坪/シリコン</h3><p style="font-size:13px">工期 約○日|費用 ○○万円台</p></div>
+      <div class="card"><div class="ph">【写真】Before|After</div><span class="pill">高崎市○○町</span><h3>事例2</h3></div>
+      <div class="card"><div class="ph">【写真】Before|After</div><span class="pill">○○市</span><h3>事例3</h3></div>
+    </div>
+    <p style="text-align:center;margin-top:16px"><a class="btn btn-o" href="#blog">施工事例をもっと見る</a></p>
+    <div class="note"><b>運用</b>:ブログの「施工事例」カテゴリの最新3件を自動表示。公開時は進行中の住宅2件+入院前の現場写真で3〜5件から始める <span class="tbd">要確認 写真の枚数</span>。AI診断の目安20件 → 月3記事で約6〜7ヶ月</div>
+  </section>
+
+  <section class="s alt">
+    <span class="en">FLOW</span><h2>ご依頼の流れ</h2><p class="lead"> </p>
+    <div class="steps">
+      <div class="step">お問い合わせ(電話・フォーム)</div><div class="step">現地調査・建物診断(無料)</div><div class="step">お見積り・色決め</div><div class="step">ご契約・近隣へのごあいさつ</div>
+    </div>
+    <p style="text-align:center;margin-top:16px"><a href="#guide">→ 工事の流れ・よくある質問を見る</a></p>
+  </section>
+
+  <section class="s">
+    <span class="en">VOICE</span><h2>お客様の声(Googleの口コミ)</h2><p class="lead">いただいた口コミには、ひとつずつお返事しています</p>
+    <div class="grid g2">
+      <div class="card">★★★★★ <p>【Google口コミ本文を引用】</p><p style="font-size:12px;color:var(--ink-muted)">星野美装からの返信あり</p></div>
+      <div class="card">★★★★★ <p>【Google口コミ本文を引用】</p></div>
+    </div>
+    <div class="note"><b>根拠</b>:Googleマップ口コミ2件(5.0・返信済み)。よく紹介される会社は115〜816件 → 完工ごとの口コミ依頼(QRカード)をセットで提案</div>
+  </section>
+
+  <section class="s tint">
+    <span class="en">FAQ</span><h2>よくある質問(抜粋)</h2><p class="lead"> </p>
+    <details><summary>見積りや現地調査にお金はかかりますか?</summary><p>【回答】<span class="tbd">要確認</span></p></details>
+    <details><summary>工事中、家にいなくても大丈夫ですか?</summary><p>【回答】</p></details>
+    <details><summary>外壁塗装は何年ごとに必要ですか?</summary><p>塗料によりますが、目安は10〜15年です。</p></details>
+    <p style="text-align:center"><a href="#guide">→ よくある質問をすべて見る</a></p>
+  </section>
+
+  <section class="s">
+    <span class="en">BLOG</span><h2>現場ブログ</h2><p class="lead"> </p>
+    <div class="grid g3"><div class="card"><div class="ph" style="min-height:90px">サムネイル</div><b>記事タイトル</b></div><div class="card"><div class="ph" style="min-height:90px">サムネイル</div><b>記事タイトル</b></div><div class="card"><div class="ph" style="min-height:90px">サムネイル</div><b>記事タイトル</b></div></div>
+  </section>
+
+  <section class="s alt">
+    <span class="en">AREA</span><h2>対応エリア</h2><p class="lead">高崎市を中心に、近隣の市町村にうかがいます</p>
+    <div class="grid g2"><div class="card"><p><b>高崎市</b> 全域<br>近隣:前橋市・安中市・藤岡市・富岡市・玉村町 など <span class="tbd">要確認</span></p></div><div class="ph" style="min-height:180px">Googleマップ埋め込み(高崎市下小塙町882)</div></div>
+  </section>
+</div>
+
+<!-- ============ 工事メニュー ============ -->
+<div class="page" id="p-menu">
+  <div class="crumb">TOP > 工事メニュー</div>
+  <section class="s">
+    <span class="en">MENU</span><h2>工事メニュー</h2><p class="lead">外壁・屋根の塗装から、防水・コーキング・雨漏りまで。家まわりのことは、まとめてご相談ください</p>
+    <div class="grid g4" style="font-size:13px;text-align:center">
+      <a class="card" href="#menu">外壁塗装</a><a class="card" href="#menu">屋根塗装</a><a class="card" href="#menu">吹付塗装</a><a class="card" href="#menu">コーキング</a>
+      <a class="card" href="#menu">防水工事</a><a class="card" href="#menu">雨漏り調査・建物診断</a><a class="card" href="#menu">ひび割れ補修・補強</a><a class="card" href="#menu">そのほかの工事</a>
+    </div>
+    <div class="note"><b>狙い</b>:工事ごとの検索(「高崎市 屋根塗装」「高崎 雨漏り 調査」「コーキング 打ち替え 高崎」)の受け皿。1ページ内のアンカーで分け、各項目にh2・料金の目安・関連する施工事例を置く。<b>根拠</b>:会社概要の工事内容(住宅塗装・吹付塗装・コーキング・土木耐震補強・炭素繊維シート補強・クラック注入・リフォーム・フローリング補修・建物劣化調査・雨漏調査)</div>
+  </section>
+
+  <section class="s alt">
+    <div class="menu-item"><div class="ph">【写真】塗り替え後の外壁(明るい色)</div><div><h3 class="maru" style="font-size:22px;margin:0">外壁塗装</h3><div class="tags"><span class="pill">こんな症状に</span> 色あせ・チョーキング・ひび・カビ</div><p>下地処理と3回塗りで、10〜15年もつ外壁に。塗料はウレタン・シリコン・フッ素・無機の4種からお選びいただけます。</p><p style="font-size:13px">費用の目安:30坪 55〜120万円(足場込み・塗料による)<span class="tbd">暫定</span> <a href="#price">→ 料金の目安</a>|<a href="#blog">→ 外壁塗装の施工事例</a></p></div></div>
+    <div class="menu-item"><div class="ph">【写真】屋根塗装の施工中</div><div><h3 class="maru" style="font-size:22px;margin:0">屋根塗装</h3><div class="tags"><span class="pill">こんな症状に</span> 色あせ・サビ・コケ</div><p>外壁と同時に行えば、足場代が1回分で済みます。</p><p style="font-size:13px">費用の目安:外壁とセットで +20〜35万円 <span class="tbd">暫定</span> <a href="#price">→ 料金の目安</a></p></div></div>
+    <div class="menu-item"><div class="ph">【写真】吹付塗装の作業</div><div><h3 class="maru" style="font-size:22px;margin:0">吹付塗装</h3><p>模様のある外壁や広い面に。仕上がりの風合いを残して塗り替えます。</p></div></div>
+    <div class="menu-item"><div class="ph">【写真】古いコーキングを撤去している手元</div><div><h3 class="maru" style="font-size:22px;margin:0">コーキング(シーリング)打ち替え</h3><div class="tags"><span class="pill">こんな症状に</span> 目地のひび・すき間・はがれ</div><p>サイディングの目地から雨水が入るのを防ぎます。塗装とあわせての施工がおすすめです。</p><p style="font-size:13px">費用の目安:<span class="tbd">要確認</span></p></div></div>
+    <div class="menu-item"><div class="ph">【写真】ベランダ防水の仕上がり</div><div><h3 class="maru" style="font-size:22px;margin:0">防水工事(ベランダ・屋上)</h3><p>ベランダや陸屋根の防水層を新しくし、雨水の入り口をふさぎます。</p></div></div>
+    <div class="menu-item"><div class="ph">【写真】建物を点検する代表</div><div><h3 class="maru" style="font-size:22px;margin:0">雨漏り調査・建物劣化調査</h3><p>建物メンテナンス(マイホームドクター)の資格をもつ代表が、どこから傷んでいるかを調べてご報告します。</p><p style="font-size:13px">費用:<span class="tbd">要確認(無料かどうか)</span></p></div></div>
+    <div class="menu-item"><div class="ph">【写真】クラック注入の作業</div><div><h3 class="maru" style="font-size:22px;margin:0">ひび割れ補修・補強</h3><p>クラック注入、炭素繊維シート補強、耐震補強に対応します。</p></div></div>
+    <div class="menu-item"><div class="ph">【写真】フローリング補修</div><div><h3 class="maru" style="font-size:22px;margin:0">そのほかの工事</h3><p>リフォーム・フローリング補修・工場の機械塗装など。まずはご相談ください。</p></div></div>
+    <div class="note"><b>旧URLのリダイレクト(301)</b>:/painting.html → 工事メニュー#外壁塗装|/waterproof.html → #防水|/reinforcement.html → #補修・補強|/survey.html → #雨漏り調査|/case/ → ブログ(施工事例)|/outline.html → 会社概要|/contact/ → お問い合わせ</div>
+  </section>
+</div>
+
+<!-- ============ 料金の目安 ============ -->
+<div class="page" id="p-price">
+  <div class="crumb">TOP > 料金の目安</div>
+  <section class="s">
+    <span class="en">PRICE</span><h2>料金の目安</h2><p class="lead">30坪(外壁 約100㎡)の戸建て・足場込みの価格帯です。お家の形や傷み具合で変わるため、正確な金額は無料の現地調査のあとにお出しします</p>
+    <table class="pt">
+      <thead><tr><th>塗料</th><th>耐用年数の目安</th><th>30坪・足場込み</th><th>こんな方に</th></tr></thead>
+      <tr><td><b>ウレタン</b></td><td>約8〜10年</td><td><b>55〜65万円</b></td><td>費用をおさえたい方</td></tr>
+      <tr class="rec"><td>シリコン <span class="pill y">人気|コミコミプラン</span></td><td>約10〜15年</td><td>65〜80万円</td><td>はじめての塗り替えに</td></tr>
+      <tr><td><b>フッ素</b></td><td>約15〜20年</td><td><b>80〜100万円</b></td><td>塗り替えの回数を減らしたい方</td></tr>
+      <tr><td><b>無機</b></td><td>約20〜25年</td><td><b>95〜120万円</b></td><td>長く住み続ける家に</td></tr>
+    </table>
+    <p style="font-size:13px;margin-top:10px">すべてのプランに含まれるもの:足場の組み立て・メッシュシート/高圧洗浄/下地処理(ひび補修・ケレン)/下塗り・中塗り・上塗りの3回塗り/雨どい・破風などの付帯部塗装/近隣へのごあいさつ</p>
+    <div class="note"><b>暫定の根拠</b>:群馬県の30坪の外壁塗装相場 約63〜78万円(足場・付帯部込み、ミツモア)、60〜100万円(くらしのマーケット)、塗料別の㎡単価(同)。<span class="tbd">要確認</span> 社長の実際の価格・「コミコミプラン」の中身と金額・含まれる範囲。<b>根拠</b>:AI診断「料金の目安なし」/次回持参物「暫定の料金表(30坪・約100㎡、足場込み)」</div>
+  </section>
+  <section class="s alt">
+    <h2>そのほかの工事の目安</h2><p class="lead"> </p>
+    <table class="pt"><thead><tr><th>工事</th><th>目安</th></tr></thead>
+      <tr><td>屋根塗装(外壁とセット)</td><td>+20〜35万円 <span class="tbd">暫定</span></td></tr>
+      <tr><td>コーキング打ち替え</td><td><span class="tbd">要確認</span></td></tr>
+      <tr><td>ベランダ防水</td><td><span class="tbd">要確認</span></td></tr>
+      <tr><td>雨漏り調査・建物診断</td><td><span class="tbd">要確認(無料?)</span></td></tr>
+    </table>
+  </section>
+  <section class="s">
+    <h2>見積書の見方・安すぎる見積りに注意</h2><p class="lead">他社の見積りと比べるときのポイント</p>
+    <div class="grid g3">
+      <div class="card"><h3>塗る回数が書いてあるか</h3><p>「3回塗り」と書かれていない見積りは、中塗りを省いていることがあります。</p></div>
+      <div class="card"><h3>下地処理が入っているか</h3><p>洗浄・ひび補修・ケレンが「一式」だけになっていないか確認しましょう。</p></div>
+      <div class="card"><h3>誰が塗るのか</h3><p>下請けに出すと、その分の中間マージンが上乗せされます。</p></div>
+    </div>
+    <div class="note"><b>狙い</b>:「高崎市 外壁塗装 費用/相場」の受け皿。比較検討中の人に、3回塗り・下地処理・自社施工の違いを価格と並べて見せる</div>
+  </section>
+  <section class="s tint"><h2>この価格帯で塗った施工事例</h2><p class="lead">ブログ「施工事例」から費用帯つきで表示</p><div class="grid g3"><div class="ph">事例カード</div><div class="ph">事例カード</div><div class="ph">事例カード</div></div></section>
+</div>
+
+<!-- ============ ご依頼を検討中の方へ ============ -->
+<div class="page" id="p-guide">
+  <div class="crumb">TOP > ご依頼を検討中の方へ</div>
+  <section class="s">
+    <span class="en">FOR YOU</span><h2>ご依頼を検討中の方へ</h2><p class="lead">はじめての塗り替えでも安心してご相談いただけるよう、私たちの約束と工事の流れをまとめました</p>
+    <div class="grid g2">
+      <div class="ph" style="min-height:260px">【写真】代表 星野の顔写真(作業着・笑顔・腕を組まない)<span class="tbd">要確認 撮影可否</span></div>
+      <div><h3 class="maru" style="font-size:22px;color:var(--green-900)">代表の星野が、自ら現場に立ちます</h3><p>30歳で独立して21年。頼まれた家は、下請けに出さず自分たちの手で塗ってきました。見積りをした人間が、そのまま現場で刷毛を持ちます。だから、仕上がりに言い訳はしません。</p><p style="text-align:right">代表 星野竜一</p></div>
+    </div>
+    <div class="note"><b>根拠</b>:議事録「社長は51歳、30歳で独立して21年目」・強み「下請けに出さない自社施工」。文面は案(本人の言葉に差し替え)</div>
+  </section>
+  <section class="s alt">
+    <span class="en">PROMISE</span><h2>星野美装の4つの約束</h2><p class="lead"> </p>
+    <div class="grid g4">
+      <div class="card"><h3>下請けに出さない</h3><p>中間マージンがなく、伝えたことが職人にそのまま伝わります。</p></div>
+      <div class="card"><h3>下地処理に時間をかける</h3><p>誰の目にも残らない工程こそ、手を抜きません。</p></div>
+      <div class="card"><h3>3回塗りを守る</h3><p>下塗り・中塗り・上塗りを、写真に残してご報告します。<span class="tbd">要確認</span></p></div>
+      <div class="card"><h3>塗り終わってからも</h3><p>気になることがあれば、いつでもご連絡ください。<span class="tbd">保証の有無・年数 要確認</span></p></div>
+    </div>
+  </section>
+  <section class="s">
+    <span class="en">FLOW</span><h2>工事の流れ</h2><p class="lead">お問い合わせから完成まで</p>
+    <div class="steps">
+      <div class="step">お問い合わせ</div><div class="step">現地調査・建物診断</div><div class="step">お見積り・ご提案</div><div class="step">色決め・ご契約</div>
+      <div class="step">近隣へのごあいさつ</div><div class="step">足場組み・高圧洗浄</div><div class="step">下地処理・養生</div><div class="step">下塗り・中塗り・上塗り</div>
+      <div class="step">付帯部の塗装</div><div class="step">点検・手直し</div><div class="step">足場解体・清掃</div><div class="step">完成・お引き渡し</div>
+    </div>
+    <div class="note"><b>移植</b>:現行サイト住宅塗装ページの「お問い合わせ〜完成の12工程」を本文ごと移す(上は仮の12工程)。各工程に写真1枚+工期の目安</div>
+  </section>
+  <section class="s tint">
+    <span class="en">FAQ</span><h2>よくある質問</h2><p class="lead"> </p>
+    <details><summary>見積りや現地調査にお金はかかりますか?</summary><p>【回答】<span class="tbd">要確認</span></p></details>
+    <details><summary>外壁塗装は何年ごとに必要ですか?</summary><p>塗料によりますが、目安は10〜15年です。</p></details>
+    <details><summary>30坪の家で費用はどのくらいですか?</summary><p>足場込みで55〜120万円が目安です(塗料による)。→ 料金の目安</p></details>
+    <details><summary>工事期間はどのくらいですか?</summary><p>【回答】<span class="tbd">要確認</span></p></details>
+    <details><summary>工事中、家にいなくても大丈夫ですか?</summary><p>【回答】</p></details>
+    <details><summary>雨の日は工事をしますか?</summary><p>【回答】</p></details>
+    <details><summary>色はどうやって決めればいいですか?</summary><p>【回答】色見本・カラーシミュレーションの有無 <span class="tbd">要確認</span></p></details>
+    <details><summary>なぜ3回塗りが必要なのですか?</summary><p>中塗りで止めると、2〜3年で色落ちなどに大きな差が出るためです。</p></details>
+    <details><summary>下請けに出さないと何が違うのですか?</summary><p>【回答】中間マージン・伝達のずれがない</p></details>
+    <details><summary>近所へのあいさつはしてもらえますか?</summary><p>【回答】</p></details>
+    <details><summary>支払い方法は?ローンは使えますか?</summary><p>【回答】<span class="tbd">要確認</span></p></details>
+    <details><summary>アパートや工場の塗装も頼めますか?</summary><p>はい。戸建てのほか、アパートや工場の機械塗装も行っています。</p></details>
+    <div class="note"><b>根拠</b>:AI診断「よくある質問なし」→ 10問以上を一問一答で。FAQPage の構造化データを入れる</div>
+  </section>
+</div>
+
+<!-- ============ 会社概要 ============ -->
+<div class="page" id="p-company">
+  <div class="crumb">TOP > 会社概要</div>
+  <section class="s">
+    <span class="en">MESSAGE</span><h2>代表あいさつ</h2><p class="lead"> </p>
+    <div class="grid g2"><div class="ph" style="min-height:280px">【写真】代表 星野竜一の顔写真</div><div><p>【代表メッセージ:本人の言葉で200〜300字。独立した理由/仕事で大事にしていること(下地処理・3回塗り)/高崎のお客様へ】</p><p style="text-align:right">株式会社 星野美装 代表 星野竜一</p></div></div>
+  </section>
+  <section class="s alt">
+    <h2>会社情報</h2><p class="lead"> </p>
+    <table class="pt" style="text-align:left">
+      <tr><th style="width:200px;background:var(--wakakusa-100)">会社名</th><td style="text-align:left">株式会社 星野美装</td></tr>
+      <tr><th style="background:var(--wakakusa-100)">代表者</th><td style="text-align:left">星野竜一</td></tr>
+      <tr><th style="background:var(--wakakusa-100)">所在地</th><td style="text-align:left">〒<span class="tbd">要確認</span> 群馬県高崎市下小塙町882</td></tr>
+      <tr><th style="background:var(--wakakusa-100)">電話 / FAX</th><td style="text-align:left">TEL <span class="tbd">027-334-5346 / 027-344-5346 のどちらか</span> / FAX 027-315-5346</td></tr>
+      <tr><th style="background:var(--wakakusa-100)">創業</th><td style="text-align:left"><span class="tbd">要確認</span>年(代表が30歳で独立、21年目)</td></tr>
+      <tr><th style="background:var(--wakakusa-100)">事業内容</th><td style="text-align:left">住宅塗装・吹付塗装・コーキング・防水工事・土木耐震補強・炭素繊維シート補強・クラック注入・リフォーム・フローリング補修・建物劣化調査・雨漏調査</td></tr>
+      <tr><th style="background:var(--wakakusa-100)">資格</th><td style="text-align:left">1級建築塗装技能士/建物メンテナンス(マイホームドクター)</td></tr>
+      <tr><th style="background:var(--wakakusa-100)">許可</th><td style="text-align:left">建設業許可 群馬県知事(27)第23651号</td></tr>
+      <tr><th style="background:var(--wakakusa-100)">対応エリア</th><td style="text-align:left">高崎市を中心に近隣市町村 <span class="tbd">要確認</span></td></tr>
+    </table>
+    <div class="note"><b>根拠</b>:AI診断「顔写真・メッセージ・創業年・施工件数なし」「電話番号の表記が2通り」→ 1つに統一し、全ページ・Googleビジネスプロフィールとそろえる。LocalBusiness(HousePainter)の構造化データを入れる</div>
+  </section>
+  <section class="s"><h2>アクセス</h2><p class="lead"> </p><div class="ph" style="min-height:220px">Googleマップ埋め込み</div></section>
+</div>
+
+<!-- ============ ブログ ============ -->
+<div class="page" id="p-blog">
+  <div class="crumb">TOP > ブログ</div>
+  <section class="s">
+    <span class="en">BLOG</span><h2>施工事例・現場ブログ</h2><p class="lead"> </p>
+    <div class="tags" style="justify-content:center"><span class="pill y">すべて</span><span class="pill">施工事例</span><span class="pill">現場レポート</span><span class="pill">塗料と費用の話</span><span class="pill">お家のお悩み</span></div>
+    <div class="grid g3" style="margin-top:16px">
+      <div class="card"><div class="ph">Before|After</div><span class="pill">施工事例</span><h3>高崎市○○町 外壁・屋根塗装(シリコン)</h3></div>
+      <div class="card"><div class="ph">施工中写真</div><span class="pill">現場レポート</span><h3>下地処理って何をするの?</h3></div>
+      <div class="card"><div class="ph">サムネイル</div><span class="pill">塗料と費用の話</span><h3>シリコンとフッ素、どちらを選ぶ?</h3></div>
+    </div>
+    <div class="note"><b>狙い</b>:施工事例を独立ページにせず、ブログの1カテゴリで積み上げる(工事メニュー・料金の目安・TOPから呼び出す)。ブログ更新は提案商材に含む</div>
+  </section>
+  <section class="s alt">
+    <h2>施工事例の記事テンプレート</h2><p class="lead">1件ごとにこの型で書く(AIに引用されやすい書き方)</p>
+    <div class="grid g2">
+      <div class="ph" style="min-height:220px">Before / After のスライダー</div>
+      <table class="pt" style="text-align:left">
+        <tr><th style="background:var(--wakakusa-100)">地域</th><td>高崎市○○町</td></tr>
+        <tr><th style="background:var(--wakakusa-100)">建物</th><td>木造2階建て・築○年・○坪</td></tr>
+        <tr><th style="background:var(--wakakusa-100)">工事内容</th><td>外壁塗装・屋根塗装・コーキング打ち替え</td></tr>
+        <tr><th style="background:var(--wakakusa-100)">使った塗料</th><td>○○(シリコン)</td></tr>
+        <tr><th style="background:var(--wakakusa-100)">工期</th><td>約○日</td></tr>
+        <tr><th style="background:var(--wakakusa-100)">費用帯</th><td>○○万円台</td></tr>
+      </table>
+    </div>
+    <p>本文:ご依頼のきっかけ → 現地調査でわかったこと → 下地処理・3回塗りの工程写真 → 仕上がり → 代表のひとこと(+お客様の声があれば)</p>
+    <div class="note"><b>根拠</b>:AI診断「施工事例が1件も載っていない」(8点中0点)、文章つき事例20件以上が目安</div>
+  </section>
+</div>
+
+<!-- ============ お問い合わせ ============ -->
+<div class="page" id="p-contact">
+  <div class="crumb">TOP > お問い合わせ</div>
+  <section class="s">
+    <span class="en">CONTACT</span><h2>お問い合わせ・無料見積り</h2><p class="lead">現地調査・お見積りは無料です <span class="tbd">要確認</span>。しつこい営業はいたしません</p>
+    <div class="grid g2">
+      <div class="card" style="text-align:center"><p class="maru" style="margin:0">お電話でのご相談</p><p class="maru" style="font-size:28px;font-weight:900;margin:4px 0">☎ <span class="tbd">要確認</span></p><p style="font-size:13px">受付 <span class="tbd">要確認</span>|作業中で出られないときは折り返します</p></div>
+      <div class="card" style="text-align:center"><p class="maru" style="margin:0">FAX</p><p class="maru" style="font-size:24px;font-weight:900;margin:4px 0">027-315-5346</p></div>
+    </div>
+    <form onsubmit="event.preventDefault()" style="margin-top:24px;background:#fff;border-radius:var(--r-lg);padding:20px 24px">
+      <div class="f"><b>お名前<span class="req">必須</span></b><div class="in"></div></div>
+      <div class="f"><b>電話番号<span class="req">必須</span></b><div class="in"></div></div>
+      <div class="f"><b>メールアドレス</b><div class="in"></div></div>
+      <div class="f"><b>工事場所(市町村)<span class="req">必須</span></b><div class="in"></div></div>
+      <div class="f"><b>建物の種類</b><div>□ 戸建て □ アパート・マンション □ 店舗・工場 □ その他</div></div>
+      <div class="f"><b>気になるところ</b><div>□ 外壁 □ 屋根 □ コーキング □ ベランダ・防水 □ 雨漏り □ その他</div></div>
+      <div class="f"><b>写真(任意)</b><div class="in" style="display:flex;align-items:center;padding:0 10px;font-size:12px;color:var(--ink-muted)">ファイルを選択(気になる箇所の写真があれば)</div></div>
+      <div class="f"><b>ご希望・ご質問</b><div class="in" style="height:100px"></div></div>
+      <p style="text-align:center"><span class="btn btn-g">入力内容を確認する</span></p>
+    </form>
+    <div class="note"><b>狙い</b>:入力項目を必要最小限に。電話が主の層(50代以上の施主)を想定し、電話番号を大きく。<b>根拠</b>:AI診断「電話番号の表記が2通り」→ 統一</div>
+  </section>
+</div>
+
+<!-- 共通 CTA・フッター -->
+<div class="cta">
+  <h2>塗り替えのご相談・お見積りは無料です</h2>
+  <p>「うちはまだ大丈夫?」の確認だけでもお気軽に</p>
+  <p class="tel">☎ <span class="tbd" style="font-size:18px">要確認</span></p>
+  <a class="btn btn-y" href="#contact">無料見積りを依頼する</a>
+</div>
+<footer class="g">
+  <div><div class="logo" style="color:#ece5d4">星野美装</div><p>株式会社 星野美装<br>群馬県高崎市下小塙町882<br>TEL 要確認 / FAX 027-315-5346<br>建設業許可 群馬県知事(27)第23651号</p></div>
+  <div><a href="#top">TOP</a> / <a href="#menu">工事メニュー</a> / <a href="#price">料金の目安</a> / <a href="#guide">ご依頼を検討中の方へ</a> / <a href="#company">会社概要</a> / <a href="#blog">ブログ</a> / <a href="#contact">お問い合わせ</a></div>
+</footer>
+<div class="spbar">☎ 電話する <span>|スマホ時 画面下部に固定|</span> 無料見積り</div>
+</div><!-- /site -->
+</div><!-- /wrap -->
+
+<script>
+const pages=["top","menu","price","guide","company","blog","contact"];
+function show(){const h=(location.hash||"#top").slice(1);const id=pages.includes(h)?h:"top";
+document.querySelectorAll(".page").forEach(p=>p.classList.toggle("on",p.id==="p-"+id));
+document.querySelectorAll(".tool a").forEach(a=>a.classList.toggle("on",a.dataset.p===id));window.scrollTo(0,0);}
+addEventListener("hashchange",show);show();
+document.getElementById("nt").addEventListener("change",e=>document.body.classList.toggle("hide-notes",!e.target.checked));
+</script>
+</body>
+</html>

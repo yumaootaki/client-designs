@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+</helmet>
+<header style="position:fixed;top:0;left:0;right:0;z-index:50;padding:clamp(8px,1.4vw,16px) clamp(10px,2.4vw,24px);pointer-events:none">
+  <div style="pointer-events:auto;max-width:1360px;margin:0 auto;min-height:64px;padding:8px clamp(12px,2vw,20px);background:#fff;border-radius:999px;box-shadow:0 10px 30px rgba(58,52,40,.10);display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:'Noto Sans JP',sans-serif;color:#3A3428">
+    <a href="/" aria-label="株式会社 星野美装 トップへ" style="display:flex;align-items:center;color:inherit;text-decoration:none;flex-shrink:0;min-height:44px;padding-left:6px">
+      <img src="images/hoshino-logo.png" alt="星野美装" style="display:block;width:clamp(120px,14vw,150px);height:auto">
+    </a>
+    <sc-if value="{{ showDesktopNav }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="メインメニュー" style="display:flex;align-items:center;gap:0">
+        <a href="/menu" style="padding:10px 10px;font-size:14px;font-weight:700;color:#3A3428;text-decoration:none;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s" style-hover="background:#E7F0D6;color:#2F5418">工事メニュー</a>
+        <a href="/price" style="padding:10px 10px;font-size:14px;font-weight:700;color:#3A3428;text-decoration:none;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s" style-hover="background:#E7F0D6;color:#2F5418">料金の目安</a>
+        <a href="/blog/works" style="padding:10px 10px;font-size:14px;font-weight:700;color:#3A3428;text-decoration:none;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s" style-hover="background:#E7F0D6;color:#2F5418">施工事例</a>
+        <a href="/consider" style="padding:10px 10px;font-size:14px;font-weight:700;color:#3A3428;text-decoration:none;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s" style-hover="background:#E7F0D6;color:#2F5418">ご依頼を検討中の方へ</a>
+        <a href="/information" style="padding:10px 10px;font-size:14px;font-weight:500;color:#3A3428;text-decoration:none;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s" style-hover="background:#E7F0D6;color:#2F5418">会社概要</a>
+        <a href="/blog" style="padding:10px 10px;font-size:14px;font-weight:500;color:#3A3428;text-decoration:none;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s" style-hover="background:#E7F0D6;color:#2F5418">ブログ</a>
+        <a href="/form/inquiry" style="padding:10px 10px;font-size:14px;font-weight:500;color:#3A3428;text-decoration:none;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s" style-hover="background:#E7F0D6;color:#2F5418">お問い合わせ</a>
+        <a href="tel:0273345346" style="margin-left:8px;min-height:46px;display:flex;flex-direction:column;justify-content:center;padding:0 18px;background:#F4C95D;color:#3A3428;text-decoration:none;border-radius:999px;white-space:nowrap;line-height:1.1" style-hover="opacity:.88"><span style="font-size:10px;font-weight:700">お電話・ご相談無料</span><span style="font-family:'Zen Maru Gothic',sans-serif;font-size:17px;font-weight:900;letter-spacing:.03em">027-334-5346</span></a>
+        <a href="/form/inquiry" style="margin-left:6px;min-height:46px;display:flex;align-items:center;padding:0 20px;background:#3F6B22;color:#fff;font-size:14px;font-weight:700;text-decoration:none;border-radius:999px;white-space:nowrap" style-hover="background:#2F5418">無料見積り</a>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <button type="button" onClick="{{ toggleMenu }}" aria-label="{{ burgerLabel }}" aria-expanded="{{ menuOpen }}" style="position:relative;z-index:80;width:48px;height:48px;border:1px solid #DDD3BE;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;flex-shrink:0">
+        <span aria-hidden="true" style="width:20px;height:2px;display:block;border-radius:2px;background:#3A3428"></span>
+        <span aria-hidden="true" style="width:20px;height:2px;display:block;border-radius:2px;background:#3A3428"></span>
+        <span aria-hidden="true" style="width:20px;height:2px;display:block;border-radius:2px;background:#9BC46A"></span>
+      </button>
+    </sc-if>
+  </div>
+</header>
+<!-- 要取材：電話番号（027-334-5346 / 027-344-5346 のどちらか）。確定後に全ページ一括置換 -->
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:45;font-family:'Noto Sans JP',sans-serif">
+    <div onClick="{{ closeMenu }}" style="position:absolute;inset:0;background:rgba(58,52,40,.35)"></div>
+    <nav aria-label="メインメニュー" style="position:absolute;top:calc(64px + 2 * clamp(8px,1.4vw,16px));left:clamp(10px,2.4vw,24px);right:clamp(10px,2.4vw,24px);max-height:calc(100svh - 64px - 4 * clamp(8px,1.4vw,16px) - 64px);overflow-y:auto;background:#fff;border-radius:24px;box-shadow:0 24px 60px rgba(58,52,40,.18);padding:clamp(18px,4vw,28px)">
+      <span style="display:block;font-family:'Zen Maru Gothic',sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;color:#3F6B22;margin-bottom:10px">MENU</span>
+      <div style="display:flex;flex-direction:column">
+        <a href="/" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:48px;padding:11px 6px;font-size:15px;font-weight:700;color:#3A3428;text-decoration:none;border-bottom:1px solid #EDE5D2">TOP</a>
+        <a href="/menu" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:48px;padding:11px 6px;font-size:15px;font-weight:700;color:#3A3428;text-decoration:none;border-bottom:1px solid #EDE5D2">工事メニュー</a>
+        <a href="/price" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:48px;padding:11px 6px;font-size:15px;font-weight:700;color:#3A3428;text-decoration:none;border-bottom:1px solid #EDE5D2">料金の目安</a>
+        <a href="/blog/works" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:48px;padding:11px 6px;font-size:15px;font-weight:700;color:#3A3428;text-decoration:none;border-bottom:1px solid #EDE5D2">施工事例</a>
+        <a href="/consider" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:48px;padding:11px 6px;font-size:15px;font-weight:700;color:#3A3428;text-decoration:none;border-bottom:1px solid #EDE5D2">ご依頼を検討中の方へ</a>
+        <a href="/information" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:48px;padding:11px 6px;font-size:15px;font-weight:700;color:#3A3428;text-decoration:none;border-bottom:1px solid #EDE5D2">会社概要</a>
+        <a href="/blog" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:48px;padding:11px 6px;font-size:15px;font-weight:700;color:#3A3428;text-decoration:none;border-bottom:1px solid #EDE5D2">ブログ</a>
+        <a href="/form/inquiry" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:48px;padding:11px 6px;font-size:15px;font-weight:700;color:#3A3428;text-decoration:none;border-bottom:1px solid #EDE5D2">お問い合わせ</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px;margin-top:clamp(14px,2.6vw,22px)">
+        <a href="tel:0273345346" style="display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:12px;background:#F4C95D;color:#3A3428;font-weight:700;font-size:15px;text-decoration:none;border-radius:999px">電話 <span style="font-family:'Zen Maru Gothic',sans-serif;font-weight:900">027-334-5346</span></a>
+        <a href="/form/inquiry" onClick="{{ closeMenu }}" style="display:flex;align-items:center;justify-content:center;min-height:52px;padding:12px;background:#3F6B22;color:#fff;font-weight:700;font-size:15px;text-decoration:none;border-radius:999px">無料見積りを申し込む</a>
+      </div>
+    </nav>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:10px;right:10px;bottom:10px;z-index:44;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;font-family:'Noto Sans JP',sans-serif">
+    <a href="tel:0273345346" style="min-height:54px;display:flex;align-items:center;justify-content:center;gap:6px;background:#F4C95D;color:#3A3428;text-decoration:none;font-weight:700;font-size:0.98rem;border-radius:999px;box-shadow:0 12px 28px rgba(58,52,40,.18)">電話する</a>
+    <a href="/form/inquiry" style="min-height:54px;display:flex;align-items:center;justify-content:center;gap:6px;background:#3F6B22;color:#fff;text-decoration:none;font-weight:700;font-size:0.98rem;border-radius:999px;box-shadow:0 12px 28px rgba(63,107,34,.3)">無料見積り</a>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:96}}">
+class Component extends DCLogic {
+  state = { isMobile: false, menuOpen: false };
+  componentDidMount() {
+    this._onResize = () => {
+      const m = window.innerWidth < 1240;
+      if (m !== this.state.isMobile) this.setState({ isMobile: m, menuOpen: m ? this.state.menuOpen : false });
+    };
+    this._onKey = (e) => { if (e.key === 'Escape' && this.state.menuOpen) this.setState({ menuOpen: false }); };
+    window.addEventListener('resize', this._onResize);
+    window.addEventListener('keydown', this._onKey);
+    this._onResize();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+    window.removeEventListener('keydown', this._onKey);
+  }
+  renderVals() {
+    return {
+      isMobile: this.state.isMobile,
+      showDesktopNav: !this.state.isMobile,
+      menuOpen: this.state.menuOpen,
+      burgerLabel: this.state.menuOpen ? 'メニューを閉じる' : 'メニューを開く',
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>
