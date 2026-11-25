@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" type="image/png" sizes="48x48" href="images/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="COSMO電設">
+<meta property="og:image" content="images/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#ffffff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal}
+@keyframes bleedReveal{0%{opacity:0;transform:translateY(26px);filter:blur(8px)}100%{opacity:1;transform:translateY(0);filter:blur(0)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;scroll-behavior:auto !important;transition:none !important}}
+</style>
+<script src="nav-router.js"></script>
+</helmet>
+<div id="top" style="--accent:{{ accent }};--beige:{{ beige }};--dark:{{ dark }};--mustard:{{ mustard }};--teal:{{ teal }};font-family:'Zen Kaku Gothic New',sans-serif;color:#00293B;overflow-x:hidden;position:relative">
+
+  <dc-import name="SiteHeader" accent="{{ accent }}" hint-size="100%,0px" style="display:block;height:0"></dc-import>
+
+  <section id="pagehead" data-screen-label="下層ヘッダー" style="position:relative;padding-top:calc(64px + 2 * clamp(8px,1.4vw,16px));margin-bottom:clamp(1rem,3vw,2.4rem)">
+    <div aria-hidden="true" style="position:absolute;top:0;left:0;right:clamp(20px,5vw,80px);bottom:0;overflow:hidden;border-radius:0 0 clamp(40px,7vw,90px) 0;background-color:#EEEEEE;background-image:radial-gradient(#FFFFFF 1.8px,transparent 1.8px),radial-gradient(#FFFFFF 1.8px,transparent 1.8px);background-size:22px 22px,22px 22px;background-position:0 0,11px 11px;pointer-events:none"><div role="img" aria-label="画像" style="position:absolute;inset:0;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);opacity:.7;-webkit-mask-image:linear-gradient(102deg,rgba(0,0,0,0) 22%,rgba(0,0,0,.5) 54%,#000 90%);mask-image:linear-gradient(102deg,rgba(0,0,0,0) 22%,rgba(0,0,0,.5) 54%,#000 90%);display:flex;align-items:center;justify-content:flex-end;padding-right:12%;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div></div>
+    <div style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(2.4rem,6vw,4.5rem) clamp(1.5rem,6vw,7rem) clamp(2.6rem,5vw,4rem)">
+      <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#3C6C82;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px)"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>Recruit</p>
+      <h1 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.9rem,1.2rem + 3vw,3.4rem);line-height:1.35;letter-spacing:.02em;color:#00293B;margin:0">採用情報</h1>
+      <nav aria-label="パンくず" style="display:flex;flex-wrap:wrap;gap:0.6rem;align-items:center;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.8rem;letter-spacing:0.06em;color:#255873;margin-top:clamp(1.4rem,3vw,2rem)">
+        <a href="/" style="color:inherit;text-decoration:none">HOME</a><span aria-hidden="true" style="color:#E296AE">／</span><span>RECRUIT</span>
+      </nav>
+    </div>
+  </section>
+
+  <section style="background:var(--accent,#A8456A);padding:clamp(3.4rem,6vw,5.2rem) clamp(1.5rem,6vw,7rem);text-align:center">
+    <div style="max-width:820px;margin:0 auto">
+      <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#9BC2D2;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px)"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>Introduction</p>
+      <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);line-height:1.6;letter-spacing:.02em;color:#ffffff;margin:0 0 1.8rem">未経験から、<span class="line-chunk">プロの塗装職人へ</span><br>大阪で育つ、塗装の仕事</h2>
+      <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(1rem,.93rem + .4vw,1.18rem);line-height:2.1;letter-spacing:0.03em;color:#ffffff;margin:0">経験も学歴も問いません。未経験はベテランの先輩同行（OJT）で丁寧に育てます。「もっと人の役に立つ仕事がしたい」経験者も大歓迎。ここには、長く誇りを持って働ける仕事があります。</p>
+    </div>
+  </section>
+
+  <section style="background:var(--beige,#CBE0E9);display:flex;flex-wrap:wrap">
+    <div style="flex:1 1 380px;display:flex;align-items:center;padding-top:clamp(2.8rem,6vw,5rem);padding-bottom:clamp(2.8rem,6vw,5rem);padding-right:clamp(2rem,5vw,4.5rem);padding-left:max(clamp(1.5rem,6vw,7rem), calc((100vw - 1280px) / 2))">
+      <div style="max-width:560px">
+        <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#3C6C82;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px)"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>Why Us</p>
+        <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);line-height:1.6;letter-spacing:.02em;color:#00293B;margin:0 0 1.4rem">自分の手で、<span class="line-chunk">街並みを彩る</span></h2>
+        <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(.95rem,.9rem + .3vw,1.05rem);line-height:2.1;letter-spacing:0.02em;color:#3C6C82;margin:0">外壁・屋根から内装まで、お客様の大切な建物を塗り替え、長く守る仕事です。大阪市を中心に地域に根ざし、住宅・店舗・マンションのご相談から施工、アフターまで一貫して手がけます。</p>
+      </div>
+    </div>
+    <div style="flex:1 1 380px;position:relative;min-height:clamp(320px,42vw,560px)">
+      <div aria-hidden="true" style="position:absolute;inset:clamp(1.2rem,3.4vw,3rem);background:#F7DDE8;border-radius:47% 53% 54% 46% / 47% 53% 47% 53%;transform:translate(clamp(10px,1.6vw,26px),clamp(14px,2vw,30px));pointer-events:none"></div>
+      <div aria-hidden="true" style="position:absolute;inset:clamp(1.2rem,3.4vw,3rem);border:3px solid #E9A8C2;border-radius:52% 48% 50% 50% / 49% 51% 49% 51%;transform:translate(calc(-1 * clamp(8px,1.4vw,22px)),calc(-1 * clamp(8px,1.2vw,18px)));pointer-events:none"></div>
+      <div role="img" aria-label="画像" style="position:absolute;inset:clamp(1.2rem,3.4vw,3rem);border-radius:56% 44% 47% 53% / 52% 48% 52% 48%;box-shadow:0 34px 78px rgba(0,57,83,.18);overflow:hidden;object-fit:cover;object-position:50% 70%;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div>
+    </div>
+  </section>
+
+  <section style="background:var(--dark,#00293B);color:#EEF6FA;padding:clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,7rem)">
+    <div style="max-width:1280px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:clamp(2.6rem,5vw,4rem)">
+        <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#3C6C82;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px);justify-content:center"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>Our Appeal</p>
+        <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);letter-spacing:.02em;margin:0">働く魅力</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(1.6rem,3vw,2.4rem)">
+        <div style="display:flex;flex-direction:column;gap:1rem;padding-top:1.7rem;border-top:2px solid var(--accent,#A8456A)">
+          <span style="font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:500;color:var(--accent,#A8456A);line-height:1">01</span>
+          <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.03em;margin:0">未経験はイチから、経験者は技術を活かして</h3>
+          <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.95;color:#CBE0E9;margin:0">ベテランの先輩同行（OJT）で丁寧に育てます。これまでの経験を塗装の現場で活かしたい経験者も大歓迎です。</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem;padding-top:1.7rem;border-top:2px solid var(--mustard,#2C6C7E)">
+          <span style="font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:500;color:var(--mustard,#2C6C7E);line-height:1">02</span>
+          <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.03em;margin:0">地域に根ざした、やりがいのある仕事</h3>
+          <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.95;color:#CBE0E9;margin:0">地元のお客様と長くお付き合いし、「ありがとう」を直接いただける仕事です。</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem;padding-top:1.7rem;border-top:2px solid var(--teal,#3C6C82)">
+          <span style="font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:500;color:#E9A8C2;line-height:1">03</span>
+          <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:0.03em;margin:0">プライベートも大切にできる</h3>
+          <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.95;color:#CBE0E9;margin:0">事前相談で希望日の休暇取得や、子どもの学校行事への参加も可能です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--beige,#CBE0E9);padding:clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,7rem)">
+    <div style="max-width:980px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:clamp(2.4rem,4vw,3.4rem)">
+        <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#3C6C82;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px);justify-content:center"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>Welcome</p>
+        <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);letter-spacing:.02em;color:#00293B;margin:0">こんな方を歓迎します</h2>
+      </div>
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1rem">
+        <li style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid rgba(0,41,59,0.08);padding:clamp(1.2rem,2.4vw,1.6rem) clamp(1.4rem,3vw,2rem);border-radius:clamp(16px,2.4vw,28px)"><span style="font-family:'Outfit',sans-serif;font-size:1.3rem;color:var(--accent,#A8456A);line-height:1.4;flex:0 0 auto">01</span><span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(.97rem,.92rem + .3vw,1.08rem);line-height:1.85;color:#3C6C82">普通の仕事に物足りなさを感じている方</span></li>
+        <li style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid rgba(0,41,59,0.08);padding:clamp(1.2rem,2.4vw,1.6rem) clamp(1.4rem,3vw,2rem);border-radius:clamp(16px,2.4vw,28px)"><span style="font-family:'Outfit',sans-serif;font-size:1.3rem;color:var(--accent,#A8456A);line-height:1.4;flex:0 0 auto">02</span><span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(.97rem,.92rem + .3vw,1.08rem);line-height:1.85;color:#3C6C82">ものづくり・塗装が好きな方</span></li>
+        <li style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid rgba(0,41,59,0.08);padding:clamp(1.2rem,2.4vw,1.6rem) clamp(1.4rem,3vw,2rem);border-radius:clamp(16px,2.4vw,28px)"><span style="font-family:'Outfit',sans-serif;font-size:1.3rem;color:var(--accent,#A8456A);line-height:1.4;flex:0 0 auto">03</span><span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(.97rem,.92rem + .3vw,1.08rem);line-height:1.85;color:#3C6C82">未経験から手に職をつけたい方／経験を活かしたい方</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="background-color:#E6F3F9;background-image:radial-gradient(#FFFFFF 1.8px,transparent 1.8px),radial-gradient(#FFFFFF 1.8px,transparent 1.8px);background-size:22px 22px,22px 22px;background-position:0 0,11px 11px;padding:clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,7rem)">
+    <div style="max-width:1280px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:clamp(2.4rem,4vw,3.4rem)">
+        <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#3C6C82;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px);justify-content:center"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>More to know</p>
+        <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);letter-spacing:.02em;color:#00293B;margin:0">もっと知る</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(1.4rem,3vw,1.8rem)">
+        <a href="/recruit/job" style="text-decoration:none;color:inherit;background:#fff;border:1px solid rgba(0,41,59,0.1);transition:box-shadow .3s,transform .3s" style-hover="box-shadow:0 12px 30px rgba(0,0,0,0.1);transform:translateY(-3px)">
+          <div style="position:relative;height:180px;border-radius:clamp(14px,2vw,22px);overflow:hidden"><div role="img" aria-label="画像" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div></div>
+          <div style="padding:1.7rem">
+            <p style="font-family:'Outfit',sans-serif;font-size:0.88rem;color:var(--accent,#A8456A);margin:0 0 0.6rem">Job &amp; Career</p>
+            <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 0.7rem">仕事・キャリア</h3>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.9rem;line-height:1.8;color:#4A7489;margin:0">仕事の中身と将来像 →</p>
+          </div>
+        </a>
+        <a href="/recruit/workstyle" style="text-decoration:none;color:inherit;background:#fff;border:1px solid rgba(0,41,59,0.1);transition:box-shadow .3s,transform .3s" style-hover="box-shadow:0 12px 30px rgba(0,0,0,0.1);transform:translateY(-3px)">
+          <div style="position:relative;height:180px;border-radius:clamp(14px,2vw,22px);overflow:hidden"><div role="img" aria-label="画像" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div></div>
+          <div style="padding:1.7rem">
+            <p style="font-family:'Outfit',sans-serif;font-size:0.88rem;color:var(--mustard,#2C6C7E);margin:0 0 0.6rem">Work Style</p>
+            <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 0.7rem">働き方・待遇</h3>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.9rem;line-height:1.8;color:#4A7489;margin:0">1日の流れ・待遇・雰囲気 →</p>
+          </div>
+        </a>
+        <a href="/recruit/requirements" style="text-decoration:none;color:inherit;background:#fff;border:1px solid rgba(0,41,59,0.1);transition:box-shadow .3s,transform .3s" style-hover="box-shadow:0 12px 30px rgba(0,0,0,0.1);transform:translateY(-3px)">
+          <div style="position:relative;height:180px;border-radius:clamp(14px,2vw,22px);overflow:hidden"><div role="img" aria-label="画像" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div></div>
+          <div style="padding:1.7rem">
+            <p style="font-family:'Outfit',sans-serif;font-size:0.88rem;color:var(--teal,#3C6C82);margin:0 0 0.6rem">Requirements</p>
+            <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 0.7rem">募集要項</h3>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.9rem;line-height:1.8;color:#4A7489;margin:0">募集要項・選考の流れ →</p>
+          </div>
+        </a>
+        <a href="/work/commitment" style="text-decoration:none;color:inherit;background:#fff;border:1px solid rgba(0,41,59,0.1);transition:box-shadow .3s,transform .3s" style-hover="box-shadow:0 12px 30px rgba(0,0,0,0.1);transform:translateY(-3px)">
+          <div style="position:relative;height:180px;border-radius:clamp(14px,2vw,22px);overflow:hidden"><div role="img" aria-label="画像" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div></div>
+          <div style="padding:1.7rem">
+            <p style="font-family:'Outfit',sans-serif;font-size:0.88rem;color:var(--accent,#A8456A);margin:0 0 0.6rem">Commitment</p>
+            <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 0.7rem">こだわり</h3>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.9rem;line-height:1.8;color:#4A7489;margin:0">塗装の魅力・現場のリアル →</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,7rem)">
+    <div style="max-width:880px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:clamp(2.4rem,4vw,3.4rem)">
+        <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#3C6C82;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px);justify-content:center"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>Recruit FAQ</p>
+        <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);letter-spacing:.02em;color:#00293B;margin:0">採用FAQ</h2>
+      </div>
+      <dl style="margin:0;display:flex;flex-direction:column;gap:0.9rem">
+        <div style="border:1px solid rgba(0,41,59,0.1);padding:clamp(1.3rem,3vw,1.7rem) clamp(1.4rem,3vw,2rem)">
+          <dt style="display:flex;gap:0.85rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1rem,.95rem + .3vw,1.12rem);color:#00293B;margin:0 0 0.7rem"><span style="font-family:'Outfit',sans-serif;color:var(--accent,#A8456A)">Q.</span>未経験でも応募できますか？</dt>
+          <dd style="margin:0;padding-left:1.7rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.97rem;line-height:1.95;color:#3C6C82">はい。学歴不問・未経験歓迎で、先輩同行（OJT）でイチから指導します。</dd>
+        </div>
+        <div style="border:1px solid rgba(0,41,59,0.1);padding:clamp(1.3rem,3vw,1.7rem) clamp(1.4rem,3vw,2rem)">
+          <dt style="display:flex;gap:0.85rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1rem,.95rem + .3vw,1.12rem);color:#00293B;margin:0 0 0.7rem"><span style="font-family:'Outfit',sans-serif;color:var(--accent,#A8456A)">Q.</span>経験者は活かせますか？</dt>
+          <dd style="margin:0;padding-left:1.7rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.97rem;line-height:1.95;color:#3C6C82">はい。これまでの塗装・建築の経験を、外壁・内装の現場で活かせます。</dd>
+        </div>
+        <div style="border:1px solid rgba(0,41,59,0.1);padding:clamp(1.3rem,3vw,1.7rem) clamp(1.4rem,3vw,2rem)">
+          <dt style="display:flex;gap:0.85rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1rem,.95rem + .3vw,1.12rem);color:#00293B;margin:0 0 0.7rem"><span style="font-family:'Outfit',sans-serif;color:var(--accent,#A8456A)">Q.</span>必要な資格は？</dt>
+          <dd style="margin:0;padding-left:1.7rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.97rem;line-height:1.95;color:#3C6C82">不問です。普通自動車免許があれば尚可。</dd>
+        </div>
+        <div style="border:1px solid rgba(0,41,59,0.1);padding:clamp(1.3rem,3vw,1.7rem) clamp(1.4rem,3vw,2rem)">
+          <dt style="display:flex;gap:0.85rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1rem,.95rem + .3vw,1.12rem);color:#00293B;margin:0 0 0.7rem"><span style="font-family:'Outfit',sans-serif;color:var(--accent,#A8456A)">Q.</span>どんな現場が多いですか？</dt>
+          <dd style="margin:0;padding-left:1.7rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.97rem;line-height:1.95;color:#3C6C82">戸建住宅・店舗・マンションの外壁・屋根・内装塗装が中心です。</dd>
+        </div>
+        <div style="border:1px solid rgba(0,41,59,0.1);padding:clamp(1.3rem,3vw,1.7rem) clamp(1.4rem,3vw,2rem)">
+          <dt style="display:flex;gap:0.85rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1rem,.95rem + .3vw,1.12rem);color:#00293B;margin:0 0 0.7rem"><span style="font-family:'Outfit',sans-serif;color:var(--accent,#A8456A)">Q.</span>見学だけでも可能ですか？</dt>
+          <dd style="margin:0;padding-left:1.7rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.97rem;line-height:1.95;color:#3C6C82">可能です。まずは会社見学からでもOKです。</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section style="background:var(--accent,#A8456A);color:#fff;padding:clamp(2.8rem,5vw,3.8rem) clamp(1.5rem,6vw,7rem)">
+    <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.8rem">
+      <div>
+        <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#9BC2D2;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px)"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>Recruit</p>
+        <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);line-height:1.5;margin:0 0 0.6rem">まずは会社見学から、<span class="line-chunk">お気軽にご相談ください。</span></h2>
+        <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.8;color:rgba(255,255,255,0.82);margin:0">電話：000-0000-0000（採用担当）</p>
+      </div>
+      <a href="/form/inquiry" onMouseEnter="{{ btnEnter }}" onMouseLeave="{{ btnLeave }}" data-hov="light" style="flex:0 0 auto;display:inline-block;text-align:center;min-width:240px;font-family:'Outfit',sans-serif;text-transform:uppercase;letter-spacing:0.16em;font-size:0.9rem;color:#00293B;background:#fff;border:1px solid #fff;text-decoration:none;padding:1rem 2.6rem;transition:background .3s,color .3s,border-color .3s;border-radius:clamp(16px,2.4vw,28px)">応募・見学を相談</a>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#A8456A&quot;},&quot;beige&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#CBE0E9&quot;},&quot;dark&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#00293B&quot;},&quot;mustard&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2C6C7E&quot;},&quot;teal&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#3C6C82&quot;},&quot;textRevealSec&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:1.4,&quot;min&quot;:0.6,&quot;max&quot;:2.6,&quot;step&quot;:0.1}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this._setupReveal();
+  }
+
+  _setupReveal() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const root = document.getElementById('top');
+    if (!root) return;
+    this._wave = 0;
+    const targets = [];
+    root.querySelectorAll('section, footer').forEach((sec) => {
+      sec.querySelectorAll('h1,h2,h3,h4,h5,p,li,a[data-hov],dt,dd').forEach((el) => {
+        if (el.dataset.rv) return;
+        el.dataset.rv = '1';
+        el.style.opacity = '0';
+        el.style.filter = 'blur(8px)';
+        el.style.transform = 'translateY(26px)';
+        el.style.willChange = 'opacity, transform, filter';
+        targets.push(el);
+      });
+    });
+    this._revealTargets = targets;
+    this._rio = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) this._reveal(en.target); });
+    }, { threshold: 0.16, rootMargin: '0px 0px -7% 0px' });
+    targets.forEach((el) => this._rio.observe(el));
+    this._revealInView();
+    this._onRevealScroll = () => this._revealInView();
+    window.addEventListener('scroll', this._onRevealScroll, { passive: true });
+    window.addEventListener('resize', this._onRevealScroll);
+    this._revealSafety = setTimeout(() => {
+      (this._revealTargets || []).forEach((el) => this._reveal(el));
+    }, 3500);
+  }
+
+  _revealInView() {
+    const vh = window.innerHeight || 800;
+    (this._revealTargets || []).forEach((el) => {
+      if (el.dataset.rvDone) return;
+      const r = el.getBoundingClientRect();
+      if (r.top < vh * 0.92 && r.bottom > 0) this._reveal(el);
+    });
+  }
+
+  _reveal(el) {
+    if (el.dataset.rvDone) return;
+    if (this._rio) this._rio.unobserve(el);
+    this._playReveal(el);
+  }
+
+  _playReveal(el) {
+    if (el.dataset.rvDone) return;
+    el.dataset.rvDone = '1';
+    const dur = this.props.textRevealSec ?? 1.4;
+    el.style.animation = 'bleedReveal ' + dur + 's cubic-bezier(.22,.61,.36,1) ' + (this._wave * 0.08) + 's forwards';
+    this._wave++;
+    clearTimeout(this._waveT);
+    this._waveT = setTimeout(() => { this._wave = 0; }, 240);
+    el.addEventListener('animationend', () => {
+      el.style.willChange = 'auto';
+      el.style.filter = 'none';
+      el.style.transform = 'none';
+      el.style.opacity = '1';
+    }, { once: true });
+  }
+
+  componentWillUnmount() {
+    if (this._rio) this._rio.disconnect();
+    if (this._onRevealScroll) {
+      window.removeEventListener('scroll', this._onRevealScroll);
+      window.removeEventListener('resize', this._onRevealScroll);
+    }
+    clearTimeout(this._revealSafety);
+  }
+
+  renderVals() {
+    const accent = this.props.accent ?? '#A8456A';
+    const beige = this.props.beige ?? '#CBE0E9';
+    const dark = this.props.dark ?? '#00293B';
+    const mustard = this.props.mustard ?? '#2C6C7E';
+    const teal = this.props.teal ?? '#3C6C82';
+    return {
+      accent, beige, dark, mustard, teal,
+      btnEnter: (e) => {
+        const t = e.currentTarget; const d = t.dataset.hov;
+        if (d === 'dark') { t.style.background = accent; }
+        else if (d === 'light') { t.style.background = accent; t.style.color = '#fff'; t.style.borderColor = accent; }
+        else if (d === 'teal') { t.style.background = teal; t.style.color = '#fff'; t.style.borderColor = teal; }
+      },
+      btnLeave: (e) => {
+        const t = e.currentTarget; const d = t.dataset.hov;
+        if (d === 'dark') { t.style.background = dark; }
+        else if (d === 'light') { t.style.background = '#fff'; t.style.color = '#00293B'; t.style.borderColor = '#fff'; }
+        else if (d === 'teal') { t.style.background = 'transparent'; t.style.color = '#fff'; t.style.borderColor = 'rgba(255,255,255,0.7)'; }
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

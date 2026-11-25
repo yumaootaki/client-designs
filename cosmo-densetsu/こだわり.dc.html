@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" type="image/png" sizes="48x48" href="images/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="COSMO電設">
+<meta property="og:image" content="images/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#ffffff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+span.line-chunk{display:inline-block;overflow-wrap:anywhere;word-break:normal}
+@keyframes bleedReveal{0%{opacity:0;transform:translateY(26px);filter:blur(8px)}100%{opacity:1;transform:translateY(0);filter:blur(0)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;scroll-behavior:auto !important;transition:none !important}}
+</style>
+<script src="nav-router.js"></script>
+</helmet>
+<div id="top" style="--accent:{{ accent }};--beige:{{ beige }};--dark:{{ dark }};--mustard:{{ mustard }};--teal:{{ teal }};font-family:'Zen Kaku Gothic New',sans-serif;color:#00293B;overflow-x:hidden;position:relative">
+
+  <dc-import name="SiteHeader" accent="{{ accent }}" hint-size="100%,0px" style="display:block;height:0"></dc-import>
+
+  <section id="pagehead" data-screen-label="下層ヘッダー" style="position:relative;padding-top:calc(64px + 2 * clamp(8px,1.4vw,16px));margin-bottom:clamp(1rem,3vw,2.4rem)">
+    <div aria-hidden="true" style="position:absolute;top:0;left:0;right:clamp(20px,5vw,80px);bottom:0;overflow:hidden;border-radius:0 0 clamp(40px,7vw,90px) 0;background-color:#EEEEEE;background-image:radial-gradient(#FFFFFF 1.8px,transparent 1.8px),radial-gradient(#FFFFFF 1.8px,transparent 1.8px);background-size:22px 22px,22px 22px;background-position:0 0,11px 11px;pointer-events:none"><div role="img" aria-label="画像" style="position:absolute;inset:0;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);opacity:.7;-webkit-mask-image:linear-gradient(102deg,rgba(0,0,0,0) 22%,rgba(0,0,0,.5) 54%,#000 90%);mask-image:linear-gradient(102deg,rgba(0,0,0,0) 22%,rgba(0,0,0,.5) 54%,#000 90%);display:flex;align-items:center;justify-content:flex-end;padding-right:12%;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div></div>
+    <div style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(2.4rem,6vw,4.5rem) clamp(1.5rem,6vw,7rem) clamp(2.6rem,5vw,4rem)">
+      <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#3C6C82;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px)"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>Commitment</p>
+      <h1 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.9rem,1.2rem + 3vw,3.4rem);line-height:1.35;letter-spacing:.02em;color:#00293B;margin:0">塗装のこだわり</h1>
+      <nav aria-label="パンくず" style="display:flex;flex-wrap:wrap;gap:0.6rem;align-items:center;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.8rem;letter-spacing:0.06em;color:#255873;margin-top:clamp(1.4rem,3vw,2rem)"><a href="/" style="color:inherit;text-decoration:none">HOME</a><span aria-hidden="true" style="color:#E296AE">／</span><a href="/work" style="color:inherit;text-decoration:none">WORK</a><span aria-hidden="true" style="color:#E296AE">／</span><span>COMMITMENT</span></nav>
+    </div>
+  </section>
+
+  <section style="background:var(--accent,#A8456A);padding:clamp(3.4rem,6vw,5.2rem) clamp(1.5rem,6vw,7rem);text-align:center">
+    <div style="max-width:820px;margin:0 auto">
+      <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin:0 0 1.6rem">Introduction</p>
+      <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(1rem,.93rem + .4vw,1.18rem);line-height:2.1;letter-spacing:0.03em;color:#ffffff;margin:0">塗装は、言葉だけでは伝わりにくい仕事です。<br class="line-chunk">だからこそ、現場と実例で魅力をお見せします。</p>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,7rem)">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:clamp(2.4rem,4vw,3.4rem)">
+        <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#3C6C82;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px);justify-content:center"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>What is Painting</p>
+        <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);letter-spacing:.02em;color:#00293B;margin:0 0 1.4rem">塗装とは</h2>
+        <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(.97rem,.92rem + .35vw,1.1rem);line-height:2.1;letter-spacing:0.02em;color:#3C6C82;margin:0 auto;max-width:760px">塗料と技術で、レンガ・金属・大理石・木目などの質感を再現する仕上げです。普通の塗装が「塗って保護する」のに対し、塗装は「素材そのものに見せる・空間を演出する」のが役割です。</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(1.2rem,3vw,1.6rem)">
+        <div style="background:#E6F3F9;border-top:2px solid var(--accent,#A8456A);padding:1.9rem;border-radius:clamp(16px,2.4vw,28px)">
+          <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 0.8rem;color:#00293B">塗装</h3>
+          <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.9;color:#3C6C82;margin:0">レンガ調・金属調・大理石調・木目調などの装飾仕上げ。</p>
+        </div>
+        <div style="background:#E6F3F9;border-top:2px solid var(--mustard,#2C6C7E);padding:1.9rem;border-radius:clamp(16px,2.4vw,28px)">
+          <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 0.8rem;color:#00293B">防水工事</h3>
+          <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.9;color:#3C6C82;margin:0">時を重ねたような、アンティークの風合いを再現します。</p>
+        </div>
+        <div style="background:#E6F3F9;border-top:2px solid var(--teal,#3C6C82);padding:1.9rem;border-radius:clamp(16px,2.4vw,28px)">
+          <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.15rem;margin:0 0 0.8rem;color:#00293B">左官</h3>
+          <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.9;color:#3C6C82;margin:0">石調・タイル調の左官。御影石・大理石を混ぜた「洗い出し」も。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;display:flex;flex-wrap:wrap;align-items:stretch">
+    <div style="flex:1 1 380px;position:relative;min-height:clamp(300px,40vw,520px)"><div aria-hidden="true" style="position:absolute;inset:clamp(1.2rem,3.4vw,3rem);background:#F7DDE8;border-radius:47% 53% 54% 46% / 47% 53% 47% 53%;transform:translate(clamp(10px,1.6vw,26px),clamp(14px,2vw,30px));pointer-events:none"></div><div aria-hidden="true" style="position:absolute;inset:clamp(1.2rem,3.4vw,3rem);border:3px solid #E9A8C2;border-radius:52% 48% 50% 50% / 49% 51% 49% 51%;transform:translate(calc(-1 * clamp(8px,1.4vw,22px)),calc(-1 * clamp(8px,1.2vw,18px)));pointer-events:none"></div><div role="img" aria-label="画像" style="position:absolute;inset:clamp(1.2rem,3.4vw,3rem);border-radius:56% 44% 47% 53% / 52% 48% 52% 48%;box-shadow:0 34px 78px rgba(0,57,83,.18);overflow:hidden;object-fit:cover;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div></div>
+    <div style="flex:1 1 380px;display:flex;align-items:center;background:#E6F3F9;padding:clamp(2.6rem,5vw,4rem) clamp(1.8rem,4vw,3.4rem);border-radius:clamp(16px,2.4vw,28px)">
+      <div style="max-width:520px">
+        <span style="font-family:'Outfit',sans-serif;font-size:2.4rem;font-weight:500;color:var(--accent,#A8456A);line-height:1;display:block;margin-bottom:1rem">01</span>
+        <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);line-height:1.55;margin:0 0 1.2rem">唯一無二のデザインを、技術で再現する</h2>
+        <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(.95rem,.9rem + .3vw,1.05rem);line-height:2.05;color:#3C6C82;margin:0">古びた風合いも、石や大理石のような質感も。確かな技術で培った引き出しから、イメージを忠実に形にします。</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;display:flex;flex-wrap:wrap-reverse;align-items:stretch">
+    <div style="flex:1 1 380px;display:flex;align-items:center;background:var(--dark,#00293B);color:#EEF6FA;padding:clamp(2.6rem,5vw,4rem) clamp(1.8rem,4vw,3.4rem)">
+      <div style="max-width:520px">
+        <span style="font-family:'Outfit',sans-serif;font-size:2.4rem;font-weight:500;color:var(--mustard,#2C6C7E);line-height:1;display:block;margin-bottom:1rem">02</span>
+        <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);line-height:1.55;margin:0 0 1.2rem">他では出会えない現場</h2>
+        <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(.95rem,.9rem + .3vw,1.05rem);line-height:2.05;color:#CBE0E9;margin:0">某有名大型物件製作会社で使われるセットの塗装など、特殊な現場を経験できるのがエンジョイホーム。各地など海外での仕事に携わることもあります。</p>
+      </div>
+    </div>
+    <div style="flex:1 1 380px;position:relative;min-height:clamp(300px,40vw,520px)"><div aria-hidden="true" style="position:absolute;inset:clamp(1.2rem,3.4vw,3rem);background:#F7DDE8;border-radius:47% 53% 54% 46% / 47% 53% 47% 53%;transform:translate(clamp(10px,1.6vw,26px),clamp(14px,2vw,30px));pointer-events:none"></div><div aria-hidden="true" style="position:absolute;inset:clamp(1.2rem,3.4vw,3rem);border:3px solid #E9A8C2;border-radius:52% 48% 50% 50% / 49% 51% 49% 51%;transform:translate(calc(-1 * clamp(8px,1.4vw,22px)),calc(-1 * clamp(8px,1.2vw,18px)));pointer-events:none"></div><div role="img" aria-label="画像" style="position:absolute;inset:clamp(1.2rem,3.4vw,3rem);border-radius:56% 44% 47% 53% / 52% 48% 52% 48%;box-shadow:0 34px 78px rgba(0,57,83,.18);overflow:hidden;object-fit:cover;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div></div>
+  </section>
+
+  <section style="background:#fff;display:flex;flex-wrap:wrap;align-items:stretch">
+    <div style="flex:1 1 380px;position:relative;min-height:clamp(300px,40vw,520px)"><div aria-hidden="true" style="position:absolute;inset:clamp(1.2rem,3.4vw,3rem);background:#F7DDE8;border-radius:47% 53% 54% 46% / 47% 53% 47% 53%;transform:translate(clamp(10px,1.6vw,26px),clamp(14px,2vw,30px));pointer-events:none"></div><div aria-hidden="true" style="position:absolute;inset:clamp(1.2rem,3.4vw,3rem);border:3px solid #E9A8C2;border-radius:52% 48% 50% 50% / 49% 51% 49% 51%;transform:translate(calc(-1 * clamp(8px,1.4vw,22px)),calc(-1 * clamp(8px,1.2vw,18px)));pointer-events:none"></div><div role="img" aria-label="画像" style="position:absolute;inset:clamp(1.2rem,3.4vw,3rem);border-radius:56% 44% 47% 53% / 52% 48% 52% 48%;box-shadow:0 34px 78px rgba(0,57,83,.18);overflow:hidden;object-fit:cover;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div></div>
+    <div style="flex:1 1 380px;display:flex;align-items:center;background:var(--beige,#CBE0E9);padding:clamp(2.6rem,5vw,4rem) clamp(1.8rem,4vw,3.4rem)">
+      <div style="max-width:520px">
+        <span style="font-family:'Outfit',sans-serif;font-size:2.4rem;font-weight:500;color:var(--teal,#3C6C82);line-height:1;display:block;margin-bottom:1rem">03</span>
+        <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);line-height:1.55;margin:0 0 1.2rem">世界観のある会社</h2>
+        <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(.95rem,.9rem + .3vw,1.05rem);line-height:2.05;color:#3C6C82;margin:0">雑誌掲載や区民祭りへの出店など、塗装の枠を超えた活動も。代表が各地で選んだ小物が並ぶ事務所そのものが、デザインへのこだわりを体現しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background-color:#E6F3F9;background-image:radial-gradient(#FFFFFF 1.8px,transparent 1.8px),radial-gradient(#FFFFFF 1.8px,transparent 1.8px);background-size:22px 22px,22px 22px;background-position:0 0,11px 11px;padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,7rem)">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:clamp(2rem,4vw,2.8rem)">
+        <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#3C6C82;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px);justify-content:center"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>Reliable foundation</p>
+        <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);letter-spacing:.02em;color:#00293B;margin:0">確かな基盤</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(1rem,2.5vw,1.6rem)">
+        <div style="text-align:center;padding:1.6rem 1rem;background:#fff;border:1px solid rgba(0,41,59,0.08);border-radius:clamp(16px,2.4vw,28px)"><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.3rem,1.1rem + .8vw,1.7rem);color:var(--accent,#A8456A);margin:0 0 0.4rem">地域密着</p><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.88rem;line-height:1.7;color:#4A7489;margin:0">積み重ねてきた実績</p></div>
+        <div style="text-align:center;padding:1.6rem 1rem;background:#fff;border:1px solid rgba(0,41,59,0.08);border-radius:clamp(16px,2.4vw,28px)"><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.3rem,1.1rem + .8vw,1.7rem);color:var(--accent,#A8456A);margin:0 0 0.4rem">豊富な実績</p><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.88rem;line-height:1.7;color:#4A7489;margin:0">の施工認定</p></div>
+        <div style="text-align:center;padding:1.6rem 1rem;background:#fff;border:1px solid rgba(0,41,59,0.08);border-radius:clamp(16px,2.4vw,28px)"><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.1rem,.95rem + .7vw,1.45rem);color:var(--accent,#A8456A);margin:0 0 0.4rem">第000000号</p><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.88rem;line-height:1.7;color:#4A7489;margin:0">大阪府知事許可</p></div>
+        <div style="text-align:center;padding:1.6rem 1rem;background:#fff;border:1px solid rgba(0,41,59,0.08);border-radius:clamp(16px,2.4vw,28px)"><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.3rem,1.1rem + .8vw,1.7rem);color:var(--accent,#A8456A);margin:0 0 0.4rem">大阪府全域・近隣エリア</p><p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.88rem;line-height:1.7;color:#4A7489;margin:0">対応エリア</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--dark,#00293B);padding:clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,7rem)">
+    <div style="max-width:1280px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:clamp(2.2rem,4vw,3rem)">
+        <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#3C6C82;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px);justify-content:center"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>Texture &amp; Color</p>
+        <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);color:#EEF6FA;margin:0">色と仕上げの引き出し</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0.9rem">
+        <div style="position:relative;height:clamp(130px,18vw,170px);border-radius:clamp(14px,2vw,22px);overflow:hidden"><div role="img" aria-label="画像" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div></div>
+        <div style="position:relative;height:clamp(130px,18vw,170px);border-radius:clamp(14px,2vw,22px);overflow:hidden"><div role="img" aria-label="画像" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div></div>
+        <div style="position:relative;height:clamp(130px,18vw,170px);border-radius:clamp(14px,2vw,22px);overflow:hidden"><div role="img" aria-label="画像" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div></div>
+        <div style="position:relative;height:clamp(130px,18vw,170px);border-radius:clamp(14px,2vw,22px);overflow:hidden"><div role="img" aria-label="画像" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div></div>
+        <div style="position:relative;height:clamp(130px,18vw,170px);border-radius:clamp(14px,2vw,22px);overflow:hidden"><div role="img" aria-label="画像" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,7rem)">
+    <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(2rem,4vw,3.4rem)">
+      <div>
+        <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#3C6C82;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px)"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>Difference</p>
+        <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);line-height:1.5;letter-spacing:.02em;color:#00293B;margin:0 0 1.3rem">一般的な塗装会社との違い</h2>
+        <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(.95rem,.9rem + .3vw,1.05rem);line-height:2.1;color:#3C6C82;margin:0">「同じ色に塗る」だけでなく、「どんな質感・どんな空気感にするか」までデザインできる。だから、デザイン性を求める店舗・商業施設・住宅から選ばれています。</p>
+      </div>
+      <div>
+        <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#3C6C82;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px)"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>For these places</p>
+        <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);line-height:1.5;letter-spacing:.02em;color:#00293B;margin:0 0 1.3rem">こんな場所・ご要望に</h2>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0.85rem">
+          <li style="display:flex;gap:0.8rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(.95rem,.9rem + .3vw,1.05rem);line-height:1.8;color:#3C6C82"><span style="color:var(--teal,#3C6C82);flex:0 0 auto">—</span>店舗・商業施設のエントランスや内装</li>
+          <li style="display:flex;gap:0.8rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(.95rem,.9rem + .3vw,1.05rem);line-height:1.8;color:#3C6C82"><span style="color:var(--teal,#3C6C82);flex:0 0 auto">—</span>飲食店・アパレルの世界観づくり</li>
+          <li style="display:flex;gap:0.8rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(.95rem,.9rem + .3vw,1.05rem);line-height:1.8;color:#3C6C82"><span style="color:var(--teal,#3C6C82);flex:0 0 auto">—</span>住宅のアクセントウォール</li>
+          <li style="display:flex;gap:0.8rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:clamp(.95rem,.9rem + .3vw,1.05rem);line-height:1.8;color:#3C6C82"><span style="color:var(--teal,#3C6C82);flex:0 0 auto">—</span>家具・建具のリメイク など</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section style="background-color:#E6F3F9;background-image:radial-gradient(#FFFFFF 1.8px,transparent 1.8px),radial-gradient(#FFFFFF 1.8px,transparent 1.8px);background-size:22px 22px,22px 22px;background-position:0 0,11px 11px;padding:clamp(3.4rem,6vw,5rem) clamp(1.5rem,6vw,7rem)">
+    <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:clamp(1.6rem,3vw,2.6rem)">
+      <div style="max-width:640px">
+        <p style="font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,1rem + 2.6vw,3.2rem);font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.05;color:#3C6C82;margin:0 0 clamp(.9rem,2vw,1.4rem);display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.5vw,16px)"><span aria-hidden="true" style="width:clamp(11px,1.5vw,15px);height:clamp(11px,1.5vw,15px);border-radius:50%;background:#E296AE;display:block;flex:0 0 auto"></span>Service</p>
+        <h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.75rem,1.15rem + 2.4vw,3rem);line-height:1.5;letter-spacing:.02em;color:#00293B;margin:0 0 1.1rem">対応工事・取扱ブランド・<span class="line-chunk">対応エリア</span></h2>
+        <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:2;letter-spacing:0.02em;color:#3C6C82;margin:0">外壁・屋根・内装塗装の工法や、確かな施工品質、対応建物・対応エリアは「業務案内」でご確認いただけます。</p>
+      </div>
+      <a href="/work" onMouseEnter="{{ btnEnter }}" onMouseLeave="{{ btnLeave }}" data-hov="dark" style="flex:0 0 auto;display:inline-block;text-align:center;min-width:240px;font-family:'Outfit',sans-serif;text-transform:uppercase;letter-spacing:0.16em;font-size:0.9rem;color:#fff;background:var(--dark,#00293B);border:1px solid var(--dark,#00293B);text-decoration:none;padding:1rem 2.6rem;transition:background .3s,color .3s,border-color .3s">業務案内を見る</a>
+    </div>
+  </section>
+
+  <section style="position:relative;overflow:hidden;color:#fff;padding:0 clamp(1.5rem,6vw,7rem)">
+    <div role="img" aria-label="画像" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#DCEAF2;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.4) 0 12px,rgba(168,69,106,0.08) 12px 24px);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;letter-spacing:0.28em;text-transform:uppercase;font-size:0.78rem;color:#3C6C82">Image</div>
+    <div style="position:absolute;inset:0;background:rgba(0,41,59,0.7);pointer-events:none"></div>
+    <div style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(4rem,8vw,6.5rem) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(1.6rem,3.5vw,3rem)">
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:1.1rem;padding:clamp(1.8rem,3vw,2.4rem);background:rgba(0,0,0,0.3);border-top:3px solid var(--accent,#A8456A)">
+        <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#E9A8C2;margin:0">For job seekers</p>
+        <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.2rem,1rem + .7vw,1.5rem);line-height:1.5;margin:0">この現場で働く</h3>
+        <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.9;color:rgba(255,255,255,0.85);margin:0">憧れを仕事にしませんか。採用情報はこちら。</p>
+        <a href="/recruit" onMouseEnter="{{ btnEnter }}" onMouseLeave="{{ btnLeave }}" data-hov="light" style="margin-top:0.3rem;display:inline-block;text-align:center;min-width:220px;font-family:'Outfit',sans-serif;text-transform:uppercase;letter-spacing:0.16em;font-size:0.9rem;color:#00293B;background:#fff;border:1px solid #fff;text-decoration:none;padding:0.95rem 2.4rem;transition:background .3s,color .3s,border-color .3s;border-radius:clamp(16px,2.4vw,28px)">採用情報を見る</a>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:1.1rem;padding:clamp(1.8rem,3vw,2.4rem);background:rgba(0,0,0,0.3);border-top:3px solid var(--teal,#3C6C82)">
+        <p style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.8);margin:0">For clients</p>
+        <h3 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(1.2rem,1rem + .7vw,1.5rem);line-height:1.5;margin:0">デザインを相談する</h3>
+        <p style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:0.95rem;line-height:1.9;color:rgba(255,255,255,0.85);margin:0">イメージを形にします。お気軽にご相談ください。</p>
+        <a href="/form/inquiry" onMouseEnter="{{ btnEnter }}" onMouseLeave="{{ btnLeave }}" data-hov="teal" style="margin-top:0.3rem;display:inline-block;text-align:center;min-width:220px;font-family:'Outfit',sans-serif;text-transform:uppercase;letter-spacing:0.16em;font-size:0.9rem;color:#fff;background:transparent;border:1px solid rgba(255,255,255,0.7);text-decoration:none;padding:0.95rem 2.4rem;transition:background .3s,color .3s,border-color .3s">デザインを相談する</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#A8456A&quot;},&quot;beige&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#CBE0E9&quot;},&quot;dark&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#00293B&quot;},&quot;mustard&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2C6C7E&quot;},&quot;teal&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#3C6C82&quot;},&quot;textRevealSec&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:1.4,&quot;min&quot;:0.6,&quot;max&quot;:2.6,&quot;step&quot;:0.1}}">
+class Component extends DCLogic {
+  componentDidMount() { this._setupReveal(); }
+
+  _setupReveal() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const root = document.getElementById('top');
+    if (!root) return;
+    this._wave = 0;
+    const targets = [];
+    root.querySelectorAll('section, footer').forEach((sec) => {
+      sec.querySelectorAll('h1,h2,h3,h4,h5,p,li,a[data-hov],dt,dd').forEach((el) => {
+        if (el.dataset.rv) return;
+        el.dataset.rv = '1';
+        el.style.opacity = '0';
+        el.style.filter = 'blur(8px)';
+        el.style.transform = 'translateY(26px)';
+        el.style.willChange = 'opacity, transform, filter';
+        targets.push(el);
+      });
+    });
+    this._revealTargets = targets;
+    this._rio = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) this._reveal(en.target); });
+    }, { threshold: 0.16, rootMargin: '0px 0px -7% 0px' });
+    targets.forEach((el) => this._rio.observe(el));
+    this._revealInView();
+    this._onRevealScroll = () => this._revealInView();
+    window.addEventListener('scroll', this._onRevealScroll, { passive: true });
+    window.addEventListener('resize', this._onRevealScroll);
+    this._revealSafety = setTimeout(() => { (this._revealTargets || []).forEach((el) => this._reveal(el)); }, 3500);
+  }
+
+  _revealInView() {
+    const vh = window.innerHeight || 800;
+    (this._revealTargets || []).forEach((el) => {
+      if (el.dataset.rvDone) return;
+      const r = el.getBoundingClientRect();
+      if (r.top < vh * 0.92 && r.bottom > 0) this._reveal(el);
+    });
+  }
+
+  _reveal(el) { if (el.dataset.rvDone) return; if (this._rio) this._rio.unobserve(el); this._playReveal(el); }
+
+  _playReveal(el) {
+    if (el.dataset.rvDone) return;
+    el.dataset.rvDone = '1';
+    const dur = this.props.textRevealSec ?? 1.4;
+    el.style.animation = 'bleedReveal ' + dur + 's cubic-bezier(.22,.61,.36,1) ' + (this._wave * 0.08) + 's forwards';
+    this._wave++;
+    clearTimeout(this._waveT);
+    this._waveT = setTimeout(() => { this._wave = 0; }, 240);
+    el.addEventListener('animationend', () => { el.style.willChange = 'auto'; el.style.filter = 'none'; el.style.transform = 'none'; el.style.opacity = '1'; }, { once: true });
+  }
+
+  componentWillUnmount() {
+    if (this._rio) this._rio.disconnect();
+    if (this._onRevealScroll) { window.removeEventListener('scroll', this._onRevealScroll); window.removeEventListener('resize', this._onRevealScroll); }
+    clearTimeout(this._revealSafety);
+  }
+
+  renderVals() {
+    const accent = this.props.accent ?? '#A8456A';
+    const beige = this.props.beige ?? '#CBE0E9';
+    const dark = this.props.dark ?? '#00293B';
+    const mustard = this.props.mustard ?? '#2C6C7E';
+    const teal = this.props.teal ?? '#3C6C82';
+    return {
+      accent, beige, dark, mustard, teal,
+      btnEnter: (e) => {
+        const t = e.currentTarget; const d = t.dataset.hov;
+        if (d === 'dark') { t.style.background = accent; }
+        else if (d === 'light') { t.style.background = accent; t.style.color = '#fff'; t.style.borderColor = accent; }
+        else if (d === 'teal') { t.style.background = teal; t.style.color = '#fff'; t.style.borderColor = teal; }
+      },
+      btnLeave: (e) => {
+        const t = e.currentTarget; const d = t.dataset.hov;
+        if (d === 'dark') { t.style.background = dark; }
+        else if (d === 'light') { t.style.background = '#fff'; t.style.color = '#00293B'; t.style.borderColor = '#fff'; }
+        else if (d === 'teal') { t.style.background = 'transparent'; t.style.color = '#fff'; t.style.borderColor = 'rgba(255,255,255,0.7)'; }
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

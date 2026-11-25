@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COSMO電設 建設会社向けサイト ワイヤーフレーム(全7ページ)</title>
+<style>
+:root{--ink:#2b2b2e;--sub:#6a6b70;--line:#d9dadd;--bg:#eef0f2;--dark:#26272b;--red:#9e1b2c;}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:var(--ink);background:var(--bg)}
+nav.side{position:fixed;left:0;top:0;bottom:0;width:250px;background:var(--dark);color:#fff;overflow-y:auto;padding:22px 0 40px}
+nav.side .ttl{padding:0 20px 16px;font-size:13px;line-height:1.6;border-bottom:1px solid #44464c;margin-bottom:10px}
+nav.side .ttl b{display:block;font-size:16px;margin-bottom:4px}
+nav.side .grp{font-size:11px;color:#a9abb1;padding:14px 20px 4px}
+nav.side a{display:block;color:#e6e6e8;text-decoration:none;padding:9px 20px;font-size:14px;border-left:3px solid transparent;cursor:pointer}
+nav.side a:hover{background:#33353a}
+nav.side a.on{background:#3a3c42;border-left-color:#c42a3a;color:#fff;font-weight:700}
+main{margin-left:250px;padding:32px 44px 100px;max-width:1150px}
+@media(max-width:860px){nav.side{position:static;width:100%;bottom:auto}main{margin:0;padding:18px}}
+.page{display:none}.page.active{display:block}
+.page-head{border-bottom:2px solid #333;margin:0 0 22px;padding-bottom:12px}
+.page-head h1{font-size:23px;margin:0 0 6px}
+.page-head .meta{font-size:13px;color:var(--sub);line-height:1.8}
+.legend{font-size:13px;background:#fff;border:1px solid var(--line);padding:12px 16px;margin-bottom:22px;line-height:1.9}
+.sec{background:#fff;border:1px solid var(--line);margin:0 0 18px;padding:24px 28px}
+.sec.dk{background:#3a3b40;color:#f1f1f1;border-color:#3a3b40}
+.sec.dk .note{background:#4a2a30;color:#f6dfe2}
+.sh{display:inline-block;font-size:12px;color:#fff;background:#5a5b60;padding:3px 10px;margin-bottom:14px}
+.sec.dk .sh{background:#9e1b2c}
+h2{font-size:20px;margin:4px 0 12px;line-height:1.6}
+h3{font-size:16px;margin:16px 0 8px;line-height:1.6}
+p,li,dd{font-size:14.5px;line-height:1.95}
+.lead{font-size:16px;line-height:2}
+.note{border-left:3px solid var(--red);background:#fbf2f3;padding:10px 14px;font-size:13px;color:#5b2830;margin-top:16px;line-height:1.85}
+.note b{color:var(--red)}
+.img{background:repeating-linear-gradient(45deg,#e4e5e8 0 10px,#eceef0 10px 20px);border:1px dashed #9a9ca2;color:#5d5f64;font-size:12px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;min-height:150px;line-height:1.7}
+.img.tall{min-height:280px}.img.sm{min-height:110px}
+.btn{display:inline-block;border:2px solid #333;padding:10px 22px;margin:8px 10px 0 0;font-size:14px;font-weight:700;background:#fff;color:#333}
+.btn.p{background:#333;color:#fff}
+.sec.dk .btn{border-color:#fff;background:transparent;color:#fff}.sec.dk .btn.p{background:#fff;color:#26272b}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:760px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);padding:16px;background:#fff;color:var(--ink)}
+.card h3{margin-top:4px}
+.card p{font-size:14px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin-top:6px}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;line-height:1.8}
+th{background:#f3f4f5;width:26%;font-weight:700}
+.sec.dk th,.sec.dk td{border-color:#5a5b60}.sec.dk th{background:#46474c}
+.tbd{background:#fff0b3;color:#5a4a00;padding:0 4px;border-radius:2px}
+.faq dt{font-weight:700;margin-top:18px;font-size:15px;line-height:1.8}
+.faq dt::before{content:"Q. ";color:var(--red)}
+.faq dd{margin:6px 0 0;padding-left:1.6em;text-indent:-1.6em}
+.faq dd::before{content:"A. ";font-weight:700}
+.num{font-size:28px;font-weight:700;line-height:1.2}
+.step{display:flex;gap:14px;border:1px solid var(--line);padding:14px;margin-bottom:10px}
+.step .n{flex:0 0 38px;height:38px;background:#333;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+.step p{margin:4px 0 0;font-size:14px}
+.tag{display:inline-block;font-size:12px;border:1px solid #888;padding:1px 8px;margin:0 4px 4px 0}
+.ng{border:2px solid #9e1b2c;padding:14px 18px;background:#fff}
+.ng li{font-size:14.5px}
+.form .row{display:grid;grid-template-columns:210px 1fr;gap:10px;border-bottom:1px solid var(--line);padding:12px 0;font-size:14px}
+.form .row .in{border:1px solid #aaa;min-height:34px;background:#fafafa;padding:6px 10px;color:#888;font-size:13px}
+.req{font-size:11px;background:#9e1b2c;color:#fff;padding:1px 6px;margin-left:6px}
+@media(max-width:760px){.form .row{grid-template-columns:1fr}}
+.cable{display:flex;height:10px;margin:6px 0 4px;max-width:420px}
+.cable span:nth-child(1){flex:4;background:#26272b}.cable span:nth-child(2){flex:2;background:#6a6b70}
+.cable span:nth-child(3){flex:2;background:#fff;border:1px solid #bbb}.cable span:nth-child(4){flex:1.2;background:#9e1b2c}
+small.c{display:block;color:var(--sub);font-size:12px;line-height:1.7}
+ul.chk{padding-left:1.2em}
+</style>
+</head>
+<body>
+<nav class="side">
+  <div class="ttl"><b>COSMO電設</b>建設会社向けサイト<br>ワイヤーフレーム(全7ページ)<br>2026-11-12 作成</div>
+  <div class="grp">設計</div>
+  <a data-p="p0" class="on">サイトマップ・設計方針</a>
+  <a data-p="p00">共通要素(ヘッダー/フッター)</a>
+  <div class="grp">固定4ページ</div>
+  <a data-p="p1">1. TOP</a>
+  <a data-p="p5">5. 会社概要</a>
+  <a data-p="p6">6. ブログ</a>
+  <a data-p="p7">7. お問い合わせ</a>
+  <div class="grp">選定3ページ</div>
+  <a data-p="p2">2. 建設会社の方へ</a>
+  <a data-p="p3">3. 施工実績</a>
+  <a data-p="p4">4. よくある質問</a>
+</nav>
+<main>
+
+<!-- ================= サイトマップ ================= -->
+<section class="page active" id="p0">
+  <div class="page-head"><h1>サイトマップ・設計方針</h1>
+  <div class="meta">COSMO電設(代表 大橋 明)/埼玉県志木市/電気工事業<br>現行コーポレートサイト(https://www.cosmo-den.com/)は残し、元請・建設会社向けの受注特化サイトを別ドメインで新設する。</div></div>
+
+  <div class="legend"><span class="tbd">黄色マーカー</span>=お客様に確認して埋める項目(2次アポで確認)/<b style="color:#9e1b2c">赤線のメモ</b>=設計意図・根拠(お客様には見せない)/斜線ボックス=写真・画像の配置場所</div>
+
+  <div class="sec"><span class="sh">サイトの目的</span>
+    <h2>元請の発注担当者が「この会社なら任せられる」と判断して、迷わず相談できるサイト</h2>
+    <p>見てほしい人は、ゼネコン・サブコン・設備会社で電気工事の協力会社を探している工事担当者・発注担当者。病院・工場・倉庫・公共施設といった箱物の新築・改修で、高圧まで任せられる電気工事店を探している人です。</p>
+    <h3>3つの設計方針</h3>
+    <ul>
+      <li><b>頼める範囲と頼めない範囲を、最初にはっきり見せる。</b>箱物・高圧・都内23区を前面に出し、木造戸建・住宅リフォーム・テナント原状回復は対応外と明記する。対応外の問い合わせを減らし、本当に相談したい元請だけが連絡しやすくする。</li>
+      <li><b>「まず常用1日から」で、初めての元請でも試しやすくする。</b>請負だけでなく常用(応援)の入口を用意し、現場で腕と段取りを見てもらってから継続の請負につなげる。</li>
+      <li><b>判断材料を文章で残す。</b>施工実績は建物種別・場所・工事内容・時期を1件ずつ文章にし、FAQで発注前の疑問に先回りして答える。人にもAI検索にも拾われる状態をつくる。</li>
+    </ul>
+  </div>
+
+  <div class="sec"><span class="sh">ページ一覧</span>
+    <table>
+      <tr><th>ページ</th><td><b>役割</b></td><td><b>主な行き先(CTA)</b></td></tr>
+      <tr><th>1. TOP(/)</th><td>3秒で「都内の箱物・高圧に強い電気工事店」と伝え、各ページへ振り分ける</td><td>建設会社の方へ/施工実績/お問い合わせ・電話</td></tr>
+      <tr><th>2. 建設会社の方へ(/for-contractors)<br><small class="c">選定①・最重要</small></th><td>発注担当者向けのハブ。対応建物・対応工事・高圧・依頼の形(請負/常用)・エリア・対応外・流れを1ページに集約</td><td>お問い合わせ(請負/常用)・電話</td></tr>
+      <tr><th>3. 施工実績(/works)<br><small class="c">選定②</small></th><td>建物種別・場所・工事内容・時期を文章で書いた実績集。「この規模を任せられるか」の判断材料</td><td>お問い合わせ</td></tr>
+      <tr><th>4. よくある質問(/faq)<br><small class="c">選定③</small></th><td>対応範囲・エリア・高圧・常用・見積りなど16問。問い合わせ前の不安と対応外の依頼を減らす。FAQ構造化データでAI検索対策</td><td>お問い合わせ</td></tr>
+      <tr><th>5. 会社概要(/company)</th><td>代表メッセージ・経歴・資格・許可・体制で信用の根拠を集約(AI診断「信用できる根拠×」を解消)</td><td>お問い合わせ/円陣ONE紹介記事</td></tr>
+      <tr><th>6. ブログ(/blog)</th><td>現場レポートと元請向けのお役立ち記事で検索流入を集め、2〜4へ送る。月1サポートで更新</td><td>建設会社の方へ/お問い合わせ</td></tr>
+      <tr><th>7. お問い合わせ(/contact)</th><td>入口で対応工事・エリアを確認してもらい、種別(請負/常用/その他)を選んで送信</td><td>送信・電話</td></tr>
+    </table>
+    <div class="note"><b>現行サイトとのつなぎ方</b>:新サイトのフッターに「一般のお客様(住宅の家電取付など)はこちら」→ cosmo-den.com。現行サイトの「建設業者の方」分岐 → 新サイトへのリンク差し替えはRM社側の修正が必要(可否・費用を確認)。<br><b>採用</b>:今は優先度が低いため専用ページは作らず、会社概要の下部で一言+お問い合わせへ。</div>
+  </div>
+
+  <div class="sec"><span class="sh">AI診断(33点)の×・△との対応</span>
+    <table>
+      <tr><th>施工事例 △</th><td>3. 施工実績で1件ごとに建物種別・場所・工事内容・時期を文章化</td></tr>
+      <tr><th>料金の目安 ×</th><td>2. 建設会社の方へ「ご依頼の形」と4. FAQで、見積り無料・概算提出の目安日数・常用の単価目安(<span class="tbd">掲載可否を確認</span>)を掲載</td></tr>
+      <tr><th>よくある質問 ×</th><td>4. よくある質問を16問で新設+FAQPage構造化データ</td></tr>
+      <tr><th>信用できる根拠 ×</th><td>5. 会社概要に代表写真・業界歴26年・第一種電気工事士・建設業許可・登録電気工事業者を集約。TOPにも数字で表示</td></tr>
+      <tr><th>Googleマップ登録なし</th><td>サイト外。Googleビジネスプロフィールの新規登録を2次アポで提案(会社概要の地図・NAP表記と統一)</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ================= 共通要素 ================= -->
+<section class="page" id="p00">
+  <div class="page-head"><h1>共通要素(ヘッダー/フッター/スマホ固定ボタン)</h1><div class="meta">全ページ共通。</div></div>
+
+  <div class="sec"><span class="sh">ヘッダー(PC)</span>
+    <div class="g2" style="grid-template-columns:1.2fr 2fr;align-items:center">
+      <div class="img sm">ロゴ<br>COSMO電設<br><small>(現行ロゴを流用 <span class="tbd">データ受領</span>)</small></div>
+      <div>
+        <p style="margin:0">建設会社の方へ/施工実績/よくある質問/会社概要/ブログ</p>
+        <p style="margin:6px 0 0"><b>電話 <span class="tbd">000-0000-0000</span></b>(受付 <span class="tbd">8:00〜18:00</span>)<span class="btn p">工事のご相談</span></p>
+      </div>
+    </div>
+    <div class="note">発注担当者は現場から電話で連絡することが多いので、電話番号を常に見える位置に置く。ボタン名は「お問い合わせ」ではなく「工事のご相談」にして、B2B向けサイトだとひと目で分かるようにする。</div>
+  </div>
+
+  <div class="sec"><span class="sh">スマホ固定ボタン(画面下)</span>
+    <div class="g2"><div class="card" style="text-align:center"><b>電話で相談</b></div><div class="card" style="text-align:center;background:#333;color:#fff"><b>工事のご相談(フォーム)</b></div></div>
+    <div class="note">ヘッダーはハンバーガーメニュー。画面下に2ボタンを固定。</div>
+  </div>
+
+  <div class="sec dk"><span class="sh">フッター</span>
+    <div class="g3">
+      <div><p style="margin:0"><b>COSMO電設</b><br>代表 大橋 明<br>〒<span class="tbd">000-0000</span> 埼玉県志木市本町<span class="tbd">番地</span><br>TEL <span class="tbd">000-0000-0000</span></p>
+      <p style="font-size:13px;margin:8px 0 0">建設業許可 <span class="tbd">埼玉県知事許可(般-○)第○○○○号</span><br>登録電気工事業者 <span class="tbd">登録番号</span></p></div>
+      <div><p style="margin:0">建設会社の方へ<br>施工実績<br>よくある質問<br>会社概要<br>ブログ<br>お問い合わせ</p></div>
+      <div><p style="margin:0">対応エリア:東京23区を中心に、埼玉県南部ほか(その他はご相談ください)</p>
+      <p style="font-size:13px;margin:12px 0 0">一般のお客様(住宅の家電取付など)は<br><u>COSMO電設 コーポレートサイト</u>へ</p></div>
+    </div>
+    <div class="note">許可番号・登録番号は現行サイト /company に掲載済みのものを転記。NAP(社名・住所・電話)はGoogleビジネスプロフィールと完全一致させる。</div>
+  </div>
+</section>
+
+<!-- ================= TOP ================= -->
+<section class="page" id="p1">
+  <div class="page-head"><h1>1. TOP</h1><div class="meta">役割:3秒で「都内の箱物・高圧に強い電気工事店」と伝え、各ページへ振り分ける。<br>想定タイトル:都内の病院・工場・倉庫の電気工事|高圧ケーブル端末処理|COSMO電設(埼玉県志木市)</div></div>
+
+  <div class="sec dk"><span class="sh">① メインビジュアル</span>
+    <div class="g2" style="grid-template-columns:1.1fr 1fr;align-items:center">
+      <div>
+        <h2 style="font-size:26px;line-height:1.6">病院、工場、倉庫、公共施設。<br>高圧まで、段取りごとお任せください。</h2>
+        <p>東京23区を中心に、箱物の新築・改修の電気工事を請け負っています。業界歴26年の第一種電気工事士が、幹線・動力・盤まわりから高圧ケーブルの端末処理まで、現場に入って責任を持って仕上げます。</p>
+        <span class="btn p">工事のご相談</span><span class="btn">電話 <span class="tbd">000-0000-0000</span></span>
+      </div>
+      <div class="img tall">代表が現場で作業している写真<br>(高圧ケーブル端末処理、または盤まわりの作業。手元と顔が分かる構図)<br><span class="tbd">撮影 or 既存57枚から選定</span></div>
+    </div>
+    <div class="cable"><span></span><span></span><span></span><span></span></div>
+    <div class="note">黒地は現行サイトの雰囲気を引き継ぐため、MVとフッターに限定。以降のセクションは白地中心で「少し明るめ・読みやすく」。MV下にケーブル段剥ぎライン(外装→遮へい→絶縁→導体)をシグネチャーとして配置。</div>
+  </div>
+
+  <div class="sec"><span class="sh">② 数字で見るCOSMO電設</span>
+    <div class="g4">
+      <div class="card"><div class="num">26年</div><p style="margin:4px 0 0">15歳で電気工事の世界に入ってからの現場経験</p></div>
+      <div class="card"><div class="num">第一種</div><p style="margin:4px 0 0">第一種電気工事士。高圧の受変電設備まで対応</p></div>
+      <div class="card"><div class="num">建設業許可</div><p style="margin:4px 0 0">電気工事業 <span class="tbd">許可番号</span>。登録電気工事業者</p></div>
+      <div class="card"><div class="num"><span class="tbd">○○</span>件</div><p style="margin:4px 0 0">箱物の電気工事の実績(<span class="tbd">工事経歴資料から集計</span>)</p></div>
+    </div>
+    <div class="note">AI診断「信用できる根拠×」への対応。年商は掲載しない。4つ目は工事経歴資料から件数を出せない場合「対応した建物種別数」や「取引先数」に差し替え。</div>
+  </div>
+
+  <div class="sec"><span class="sh">③ 対応できる建物・工事</span>
+    <h2>箱物の電気工事を、新築・改修どちらも</h2>
+    <div class="g4">
+      <div class="card"><div class="img sm">病院の写真</div><h3>病院・医療施設</h3><p>停電できない時間帯を避けた工程づくりと、医療機器まわりの電源工事に対応します。</p></div>
+      <div class="card"><div class="img sm">工場の写真</div><h3>工場</h3><p>動力幹線、生産設備への配線、計装工事まで。稼働中の改修工事にも対応します。</p></div>
+      <div class="card"><div class="img sm">倉庫の写真</div><h3>倉庫・物流施設</h3><p>大空間の照明・幹線・コンセント配線を、工期に合わせて段取りよく進めます。</p></div>
+      <div class="card"><div class="img sm">公共施設の写真</div><h3>公共施設</h3><p>学校・庁舎などの新築・改修。書類や検査の流れにも慣れています。</p></div>
+    </div>
+    <p style="margin-top:14px"><span class="tag">幹線・動力</span><span class="tag">配線・配管</span><span class="tag">分電盤・制御盤まわり</span><span class="tag">仮設電気</span><span class="tag">計装</span><span class="tag">高圧ケーブル端末処理</span></p>
+    <span class="btn p">対応工事の詳細を見る(建設会社の方へ)</span>
+  </div>
+
+  <div class="sec"><span class="sh">④ 高圧ケーブル端末処理</span>
+    <div class="g2" style="align-items:center">
+      <div class="img">高圧ケーブル端末処理の作業写真(段剥ぎ・端末処理材の取付けが分かるアップ)</div>
+      <div><h2>高圧ケーブルの端末処理も、自社で</h2>
+      <p>高圧ケーブルの端末処理は、仕上がりの精度がそのまま設備の安全につながる工事です。COSMO電設では、第一種電気工事士の代表が自ら施工します。受変電設備まわりの工事をまとめてお任せいただけるので、元請様が別の業者を手配する手間が減ります。</p>
+      <span class="btn">高圧工事について見る</span></div>
+    </div>
+    <div class="note">他社と差がつく強み。「高圧ケーブル 端末処理 東京」などの検索キーワードの受け皿にもする。対応できる電圧・ケーブル種別は<span class="tbd">確認</span>して2.建設会社の方へに記載。</div>
+  </div>
+
+  <div class="sec"><span class="sh">⑤ 施工実績ピックアップ</span>
+    <h2>施工実績</h2>
+    <div class="g3">
+      <div class="card"><div class="img sm">写真</div><p style="margin:8px 0 0"><span class="tag">病院</span><span class="tag">改修</span><br><b><span class="tbd">○○区</span> 総合病院 改修工事</b><br>幹線張替え、高圧ケーブル端末処理/<span class="tbd">20XX年</span></p></div>
+      <div class="card"><div class="img sm">写真</div><p style="margin:8px 0 0"><span class="tag">工場</span><span class="tag">新築</span><br><b><span class="tbd">○○区</span> 食品工場 新築工事</b><br>動力幹線、制御盤まわり、計装/<span class="tbd">20XX年</span></p></div>
+      <div class="card"><div class="img sm">写真</div><p style="margin:8px 0 0"><span class="tag">倉庫</span><span class="tag">新築</span><br><b><span class="tbd">○○区</span> 物流倉庫 新築工事</b><br>照明・コンセント・幹線、仮設電気/<span class="tbd">20XX年</span></p></div>
+    </div>
+    <span class="btn p">施工実績をすべて見る</span>
+    <div class="note">工事経歴資料から代表的な3件を選ぶ。現場名・元請名は出さず「区+建物種別」で表記(掲載範囲は<span class="tbd">確認</span>)。</div>
+  </div>
+
+  <div class="sec"><span class="sh">⑥ 選ばれる理由</span>
+    <h2>COSMO電設が元請様に選ばれる理由</h2>
+    <div class="g3">
+      <div class="card"><h3>確かな技術と技能</h3><p>15歳から26年、箱物の現場で積み重ねてきた技術があります。見えなくなる配線・配管こそ丁寧に。検査で手戻りが出ない仕上がりを大切にしています。</p></div>
+      <div class="card"><h3>現場を回す段取り力</h3><p>他業種との取り合いや工程の変更を先読みして動きます。電気工事が原因で全体の工程が止まらないよう、着工前の打合せから準備します。</p></div>
+      <div class="card"><h3>要望に応え、提案する</h3><p>元請様のご要望はまず聞き、可能な限り応えます。そのうえで、より良い納まりや手順があれば、監督さんに「提案」としてお伝えします。</p></div>
+    </div>
+    <div class="note">履歴の強み「技術・技能の高さ」「段取り力」「元請の要望を聞き可能な限り応える」「年下の監督にも提案の形で伝える」をそのまま3つに。</div>
+  </div>
+
+  <div class="sec"><span class="sh">⑦ ご依頼の形</span>
+    <h2>請負でも、常用でも</h2>
+    <div class="g2">
+      <div class="card"><h3>請負工事</h3><p>図面をもとにお見積りし、電気工事一式または部分的な範囲を請け負います。材料手配から施工、検査対応まで責任を持って進めます。</p></div>
+      <div class="card"><h3>常用(応援)</h3><p>人手が足りない日だけの応援も承ります。初めてのお取引は、まず常用で現場に入らせていただき、仕事ぶりを見てからのご判断でも構いません。</p></div>
+    </div>
+    <div class="note">「単発で終わる」課題への対策。常用を「お試しの入口」として位置づけ、継続の請負につなげる。</div>
+  </div>
+
+  <div class="sec"><span class="sh">⑧ 対応エリア・対応していない工事</span>
+    <div class="g2">
+      <div><h3>対応エリア</h3><p><b>東京23区を中心に対応しています。</b><br>埼玉県南部(東京寄りのエリア)も対応可能です。その他の地域は、工事の規模や内容によってご相談ください。</p><div class="img sm">エリア図(23区を濃く、埼玉南部を薄く)</div></div>
+      <div class="ng"><h3 style="margin-top:0">対応していない工事</h3><ul><li>木造戸建住宅の電気工事</li><li>住宅のリフォーム・リノベーション</li><li>テナントの原状回復工事</li></ul><p style="font-size:13px;margin:0">一般のお客様の家電取付は、近隣のみコーポレートサイトで承っています。</p></div>
+    </div>
+    <div class="note">現行サイトは「埼玉・千葉・東京・神奈川」表記だが、商談内容(23区メイン/埼玉は東京寄り可/三多摩は基本不可)に合わせて絞る。三多摩は「その他はご相談」に含める。</div>
+  </div>
+
+  <div class="sec"><span class="sh">⑨ よくある質問(抜粋4問)</span>
+    <dl class="faq">
+      <dt>高圧の工事も依頼できますか?</dt><dd>はい。高圧ケーブルの端末処理を含め、第一種電気工事士の代表が施工します。</dd>
+      <dt>常用(応援)だけでも頼めますか?</dt><dd>はい。1日からお受けしています。</dd>
+      <dt>対応エリアはどこまでですか?</dt><dd>東京23区が中心です。埼玉県南部も対応します。その他はご相談ください。</dd>
+      <dt>見積りは無料ですか?</dt><dd>無料です。図面をいただいてから<span class="tbd">○営業日</span>を目安に概算をお出しします。</dd>
+    </dl>
+    <span class="btn">よくある質問をすべて見る</span>
+  </div>
+
+  <div class="sec"><span class="sh">⑩ 代表メッセージ抜粋</span>
+    <div class="g2" style="grid-template-columns:1fr 2fr;align-items:center">
+      <div class="img">代表 大橋 明の写真(作業着・現場)</div>
+      <div><p class="lead">「現場がスムーズに回ること。それが元請さんにとって一番の安心だと思っています。言われたことはできる限り形にして、もっと良いやり方があれば提案します。一度きりではなく、次の現場でも声をかけてもらえる電気屋でいたいです。」</p><p>COSMO電設 代表 大橋 明</p><span class="btn">会社概要を見る</span></div>
+    </div>
+    <div class="note">文面は履歴をもとにした下書き。<span class="tbd">社長ご本人の言葉で確認・修正</span>。</div>
+  </div>
+
+  <div class="sec"><span class="sh">⑪ ブログ新着</span>
+    <div class="g3"><div class="card"><div class="img sm">サムネイル</div><p style="margin:8px 0 0">記事タイトル</p></div><div class="card"><div class="img sm">サムネイル</div><p style="margin:8px 0 0">記事タイトル</p></div><div class="card"><div class="img sm">サムネイル</div><p style="margin:8px 0 0">記事タイトル</p></div></div>
+    <span class="btn">ブログ一覧へ</span>
+  </div>
+
+  <div class="sec dk"><span class="sh">⑫ お問い合わせCTA</span>
+    <h2>電気工事の協力会社をお探しの元請様へ</h2>
+    <p>図面がまだ固まっていない段階でも構いません。工事の内容・場所・工期を教えていただければ、対応できるかどうかをすぐにお返事します。</p>
+    <span class="btn p">工事のご相談(フォーム)</span><span class="btn">電話 <span class="tbd">000-0000-0000</span></span>
+  </div>
+</section>
+
+<!-- ================= 建設会社の方へ ================= -->
+<section class="page" id="p2">
+  <div class="page-head"><h1>2. 建設会社の方へ(選定①・最重要ページ)</h1><div class="meta">役割:発注担当者向けのハブ。「頼める範囲」「頼めない範囲」「頼み方」を1ページで判断できるようにする。<br>想定タイトル:電気工事の協力会社をお探しの建設会社様へ|東京23区・高圧対応|COSMO電設</div></div>
+
+  <div class="sec dk"><span class="sh">① ページヘッダー</span>
+    <h2>電気工事の協力会社をお探しの建設会社様へ</h2>
+    <p>病院・工場・倉庫・公共施設の新築・改修工事で、電気工事をお任せいただける協力会社を探している元請様・設備会社様へ。COSMO電設が対応できる工事と、ご依頼の方法をまとめました。</p>
+    <div class="cable"><span></span><span></span><span></span><span></span></div>
+  </div>
+
+  <div class="sec"><span class="sh">② このページで分かること(ページ内リンク)</span>
+    <p><span class="tag">対応できる建物</span><span class="tag">対応工事</span><span class="tag">高圧ケーブル端末処理</span><span class="tag">ご依頼の形(請負・常用)</span><span class="tag">対応エリア</span><span class="tag">対応していない工事</span><span class="tag">ご依頼の流れ</span></p>
+    <div class="note">発注担当者は自分の確認したい項目だけを見るので、ページ内リンクで飛べるようにする。</div>
+  </div>
+
+  <div class="sec"><span class="sh">③ 対応できる建物</span>
+    <h2>箱物の新築・改修工事に対応しています</h2>
+    <table>
+      <tr><th>病院・医療施設</th><td>停電作業の時間帯調整、医療機器まわりの電源、非常用電源系統の配線。稼働中の病院の改修工事にも対応します。</td></tr>
+      <tr><th>工場</th><td>動力幹線、生産設備への電源供給、制御盤まわりの配線、計装工事。ライン停止日に合わせた短期集中の工事も相談できます。</td></tr>
+      <tr><th>倉庫・物流施設</th><td>大空間の照明設備、幹線、コンセント、搬送設備への電源。高所作業を含む工事も段取りよく進めます。</td></tr>
+      <tr><th>公共施設</th><td>学校・庁舎・福祉施設などの新築・改修。施工体制や書類、検査への対応にも慣れています。</td></tr>
+      <tr><th>その他の建物</th><td>事務所ビル・店舗併用ビルなど、鉄骨造・RC造の非住宅建物。<span class="tbd">対応範囲を確認</span></td></tr>
+    </table>
+  </div>
+
+  <div class="sec"><span class="sh">④ 対応工事</span>
+    <h2>対応工事の一覧</h2>
+    <table>
+      <tr><th>幹線・動力工事</th><td>受変電設備から各分電盤・動力盤までの幹線敷設、動力設備への配線。</td></tr>
+      <tr><th>配線・配管工事</th><td>電灯・コンセント・弱電の配線と、隠ぺい・露出配管、ケーブルラック敷設。</td></tr>
+      <tr><th>盤まわり工事</th><td>分電盤・制御盤の据付けと結線、既設盤の改修・増設。</td></tr>
+      <tr><th>仮設電気工事</th><td>工事現場の仮設受電・仮設照明・仮設コンセント。工期を通じた仮設計画のご相談にも乗ります。</td></tr>
+      <tr><th>計装工事</th><td>工場・設備の計測機器やセンサーまわりの配線・配管。</td></tr>
+      <tr><th>高圧ケーブル端末処理</th><td>高圧ケーブルの端末処理・接続。代表が自ら施工します(詳しくは下記)。</td></tr>
+    </table>
+    <div class="note">現行サイト /business の工事種別を、箱物・B2B向けに再構成。一般住宅の家電設置は載せない。</div>
+  </div>
+
+  <div class="sec"><span class="sh">⑤ 高圧ケーブル端末処理</span>
+    <div class="g2" style="align-items:start">
+      <div><div class="img">端末処理の工程写真(段剥ぎ→処理材取付け→完成)を3枚並べる</div><div class="cable" style="margin-top:12px"><span></span><span></span><span></span><span></span></div><small class="c">ケーブル段剥ぎライン(サイト全体のシグネチャー)はこの工事の段剥ぎをモチーフにしています</small></div>
+      <div><h2>高圧ケーブルの端末処理も、まとめてお任せください</h2>
+      <p>高圧ケーブルの端末処理は、絶縁や遮へいの処理の精度が、そのまま設備の安全と寿命につながる工事です。施工は第一種電気工事士の代表が担当します。</p>
+      <p>幹線や受変電設備まわりの工事と一緒にお任せいただければ、元請様が高圧の専門業者を別に手配する必要がなくなり、工程の調整もシンプルになります。</p>
+      <table><tr><th>対応内容</th><td><span class="tbd">屋内・屋外終端/直線接続 など</span></td></tr><tr><th>対応ケーブル</th><td><span class="tbd">6.6kV CVT など</span></td></tr></table></div>
+    </div>
+    <div class="note">対応範囲の詳細は2次アポで確認。分からない段階では「代表が自ら施工」の事実だけで十分訴求できる。</div>
+  </div>
+
+  <div class="sec"><span class="sh">⑥ ご依頼の形(請負・常用)</span>
+    <h2>現場の状況に合わせて、2つの形でお受けします</h2>
+    <div class="g2">
+      <div class="card"><h3>請負工事</h3><p>図面・仕様書をもとにお見積りし、電気工事一式、または幹線のみ・高圧のみといった部分的な範囲を請け負います。材料の手配から施工、検査への立ち会いまで責任を持って進めます。</p>
+      <table><tr><th>お見積り</th><td>無料。図面受領から<span class="tbd">○営業日</span>を目安に概算提出</td></tr><tr><th>図面がない場合</th><td>現地調査のうえお見積り</td></tr></table></div>
+      <div class="card"><h3>常用(応援)</h3><p>「この日だけ人が足りない」「この工程だけ手伝ってほしい」というときの応援も承ります。初めてのお取引では、まず常用で現場に入らせていただき、技術と段取りを見ていただいてから、請負をご検討いただく形も歓迎です。</p>
+      <table><tr><th>単価の目安</th><td><span class="tbd">1人工 ○○,○○○円〜(掲載可否を確認)</span></td></tr><tr><th>人数</th><td><span class="tbd">1〜2名(代表+専属1名)</span></td></tr></table></div>
+    </div>
+    <div class="note">AI診断「料金の目安×」への対応。単価を出せない場合は「見積り無料・概算の目安日数・常用は1日から」のみ掲載。</div>
+  </div>
+
+  <div class="sec"><span class="sh">⑦ 対応エリア</span>
+    <div class="g2" style="align-items:center">
+      <div class="img">エリア図(東京23区を濃く、埼玉県南部を薄く。志木市の拠点にピン)</div>
+      <div><h2>東京23区を中心に対応しています</h2>
+      <p>拠点は埼玉県志木市。東京23区内の現場を中心にお受けしています。</p>
+      <table><tr><th>主な対応エリア</th><td>東京23区</td></tr><tr><th>対応可能</th><td>埼玉県南部(東京寄りのエリア)</td></tr><tr><th>ご相談</th><td>その他の地域は、工事の規模・内容・工期によってご相談ください</td></tr></table></div>
+    </div>
+  </div>
+
+  <div class="sec"><span class="sh">⑧ 対応していない工事</span>
+    <div class="ng">
+      <h2 style="margin-top:0">次の工事はお受けしていません</h2>
+      <ul><li>木造戸建住宅の新築・改修の電気工事</li><li>住宅のリフォーム・リノベーションに伴う電気工事</li><li>テナントの原状回復工事</li><li>個人宅・店舗単独でのEV充電設備の設置(<span class="tbd">建物の新築・改修工事に含まれる場合は対応可か確認</span>)</li></ul>
+      <p style="margin:0">箱物の工事に集中することで、お受けした現場の品質と段取りを守っています。ご理解をお願いいたします。<br><small class="c">一般のお客様の家電取付(近隣のみ)は、コーポレートサイトで承っています。</small></p>
+    </div>
+    <div class="note">履歴「対応外の依頼が多いのが不満」への直接の対策。断る理由を「品質を守るため」と前向きに書く。</div>
+  </div>
+
+  <div class="sec"><span class="sh">⑨ ご依頼の流れ</span>
+    <h2>ご相談から着工までの流れ</h2>
+    <div class="step"><div class="n">1</div><div><b>お問い合わせ</b><p>フォームまたはお電話で、工事の場所・建物種別・工期・工事内容を教えてください。対応できるかどうかを先にお返事します。</p></div></div>
+    <div class="step"><div class="n">2</div><div><b>図面・現場の確認</b><p>図面・仕様書をお送りいただくか、必要に応じて現地を確認します。</p></div></div>
+    <div class="step"><div class="n">3</div><div><b>お見積り</b><p>無料でお見積りします。概算は<span class="tbd">○営業日</span>が目安です。</p></div></div>
+    <div class="step"><div class="n">4</div><div><b>工程の打合せ</b><p>他業種との取り合い、停電作業の日程、材料の搬入などを着工前にすり合わせます。</p></div></div>
+    <div class="step"><div class="n">5</div><div><b>施工・検査</b><p>工程どおりに施工し、検査への立ち会いまで対応します。変更があれば早めにご相談します。</p></div></div>
+    <div class="step"><div class="n">6</div><div><b>完了報告・次の現場へ</b><p>完了後に施工内容をご報告します。次の現場でもお声がけいただけるよう、引き渡しまで丁寧に仕上げます。</p></div></div>
+  </div>
+
+  <div class="sec dk"><span class="sh">⑩ CTA</span>
+    <h2>まずは対応できるかどうか、お気軽にお問い合わせください</h2>
+    <p>「この工事、頼めますか?」の一言からで構いません。</p>
+    <span class="btn p">請負工事のご相談</span><span class="btn p">常用(応援)のご相談</span><span class="btn">電話 <span class="tbd">000-0000-0000</span></span>
+    <div class="note">ボタンごとにフォームの種別を自動選択(?type=ukeoi / ?type=jouyou)。</div>
+  </div>
+</section>
+
+<!-- ================= 施工実績 ================= -->
+<section class="page" id="p3">
+  <div class="page-head"><h1>3. 施工実績(選定②)</h1><div class="meta">役割:「この規模・この建物を任せられるか」を判断できる実績集。1件ごとに建物種別・場所・工事内容・時期を文章で書く。<br>想定タイトル:施工実績|病院・工場・倉庫・公共施設の電気工事|COSMO電設</div></div>
+
+  <div class="sec dk"><span class="sh">① ページヘッダー</span>
+    <h2>施工実績</h2>
+    <p>COSMO電設がこれまでに携わった、箱物の電気工事の一部をご紹介します。建物の種類、場所、工事の内容と、現場でどのように段取りしたかを1件ずつまとめています。</p>
+  </div>
+
+  <div class="sec"><span class="sh">② 絞り込み</span>
+    <p><b>建物:</b><span class="tag">すべて</span><span class="tag">病院・医療施設</span><span class="tag">工場</span><span class="tag">倉庫・物流施設</span><span class="tag">公共施設</span><span class="tag">その他</span><br>
+    <b>工事:</b><span class="tag">新築</span><span class="tag">改修</span><span class="tag">高圧</span><span class="tag">仮設</span><span class="tag">計装</span></p>
+  </div>
+
+  <div class="sec"><span class="sh">③ 実績1件の書き方(全件この形式で統一)</span>
+    <div class="g2" style="grid-template-columns:1fr 1.4fr">
+      <div><div class="img tall">メイン写真(全景または作業中)<br>+サブ写真2〜3枚</div></div>
+      <div>
+        <p style="margin:0"><span class="tag">病院・医療施設</span><span class="tag">改修</span><span class="tag">高圧</span></p>
+        <h2><span class="tbd">東京都○○区</span> 総合病院 電気設備改修工事</h2>
+        <table>
+          <tr><th>建物</th><td>病院(<span class="tbd">RC造 地上○階</span>)</td></tr>
+          <tr><th>場所</th><td>東京都<span class="tbd">○○区</span></td></tr>
+          <tr><th>工事区分</th><td>改修</td></tr>
+          <tr><th>担当範囲</th><td>幹線張替え、分電盤更新、高圧ケーブル端末処理</td></tr>
+          <tr><th>時期・工期</th><td><span class="tbd">20XX年○月〜○月(約○か月)</span></td></tr>
+        </table>
+        <p><b>工事のポイント</b><br>病院を稼働させたまま進める改修工事でした。停電作業は外来のない夜間と休日に集約し、病棟ごとに切替えの順番を事前に元請様・病院の設備担当者と打合せ。各回の停電時間を予定内に収めました。<span class="tbd">(工事経歴資料・社長ヒアリングで実話に差し替え)</span></p>
+      </div>
+    </div>
+    <div class="note">AI診断「写真57枚だが工事内容・地域・工期の説明なし」への対応。「工事のポイント」で段取り力を毎回見せる。現場名・元請名は伏せ、区+建物種別で表記(掲載範囲を<span class="tbd">確認</span>)。</div>
+  </div>
+
+  <div class="sec"><span class="sh">④ 実績一覧(初期掲載 6件以上)</span>
+    <div class="g3">
+      <div class="card"><div class="img sm">写真</div><p style="margin:8px 0 0"><span class="tag">病院</span><span class="tag">改修</span><br><b><span class="tbd">○○区</span> 総合病院 電気設備改修</b><br>幹線張替え、高圧端末処理/<span class="tbd">20XX年</span></p></div>
+      <div class="card"><div class="img sm">写真</div><p style="margin:8px 0 0"><span class="tag">工場</span><span class="tag">新築</span><br><b><span class="tbd">○○区</span> 工場 新築電気工事</b><br>動力幹線、制御盤まわり、計装/<span class="tbd">20XX年</span></p></div>
+      <div class="card"><div class="img sm">写真</div><p style="margin:8px 0 0"><span class="tag">倉庫</span><span class="tag">新築</span><br><b><span class="tbd">○○区</span> 物流倉庫 新築電気工事</b><br>照明・幹線・コンセント/<span class="tbd">20XX年</span></p></div>
+      <div class="card"><div class="img sm">写真</div><p style="margin:8px 0 0"><span class="tag">公共施設</span><span class="tag">改修</span><br><b><span class="tbd">○○区</span> 区立施設 改修工事</b><br>照明LED化、分電盤更新/<span class="tbd">20XX年</span></p></div>
+      <div class="card"><div class="img sm">写真</div><p style="margin:8px 0 0"><span class="tag">工場</span><span class="tag">改修</span><br><b><span class="tbd">○○区</span> 工場 ライン増設工事</b><br>動力配線、計装/<span class="tbd">20XX年</span></p></div>
+      <div class="card"><div class="img sm">写真</div><p style="margin:8px 0 0"><span class="tag">その他</span><span class="tag">仮設</span><br><b><span class="tbd">○○区</span> 新築現場 仮設電気</b><br>仮設受電・仮設照明/<span class="tbd">20XX年</span></p></div>
+    </div>
+    <div class="note">掲載候補は受領済みの工事経歴資料から選定。建物種別ごとに最低1件ずつそろえる。以降はブログ(月1サポートの施工実績3記事枠)で追加していく。</div>
+  </div>
+
+  <div class="sec"><span class="sh">⑤ 現場写真ギャラリー</span>
+    <div class="g4"><div class="img sm">写真</div><div class="img sm">写真</div><div class="img sm">写真</div><div class="img sm">写真</div></div>
+    <div class="note">現行サイトの写真57枚から、文章付きの実績にできなかった写真をここにまとめる(各写真に建物種別と工事内容の短いキャプションを付ける)。</div>
+  </div>
+
+  <div class="sec dk"><span class="sh">⑥ CTA</span>
+    <h2>同じような工事をご検討中の元請様へ</h2>
+    <p>建物の種類と工事の内容を教えていただければ、近い実績をもとにご説明します。</p>
+    <span class="btn p">工事のご相談</span><span class="btn">建設会社の方へ</span>
+  </div>
+</section>
+
+<!-- ================= よくある質問 ================= -->
+<section class="page" id="p4">
+  <div class="page-head"><h1>4. よくある質問(選定③)</h1><div class="meta">役割:問い合わせ前の不安を解消し、対応外の依頼を減らす。FAQPage構造化データでAI検索にも拾われる状態に。<br>想定タイトル:よくある質問|電気工事のご依頼について|COSMO電設</div></div>
+
+  <div class="sec dk"><span class="sh">① ページヘッダー</span>
+    <h2>よくある質問</h2>
+    <p>元請様・建設会社様からよくいただくご質問をまとめました。ここにない内容は、お気軽にお問い合わせください。</p>
+  </div>
+
+  <div class="sec"><span class="sh">② カテゴリ(ページ内リンク)</span>
+    <p><span class="tag">対応範囲</span><span class="tag">高圧工事</span><span class="tag">対応エリア</span><span class="tag">ご依頼の形</span><span class="tag">お見積り・料金</span><span class="tag">会社・資格</span></p>
+  </div>
+
+  <div class="sec"><span class="sh">③ 対応範囲</span>
+    <dl class="faq">
+      <dt>どのような建物の電気工事に対応していますか?</dt><dd>病院・医療施設、工場、倉庫・物流施設、学校や庁舎などの公共施設といった、鉄骨造・RC造の非住宅建物(いわゆる箱物)の新築・改修工事に対応しています。</dd>
+      <dt>どのような工事を依頼できますか?</dt><dd>幹線・動力工事、配線・配管工事、分電盤・制御盤まわりの工事、仮設電気工事、計装工事、高圧ケーブルの端末処理です。電気工事一式でも、部分的な範囲でもお受けします。</dd>
+      <dt>一般住宅の電気工事はお願いできますか?</dt><dd>木造戸建住宅の電気工事、住宅のリフォーム・リノベーション、テナントの原状回復工事はお受けしていません。箱物の工事に集中することで、現場の品質と段取りを守っています。なお、近隣の一般のお客様の家電取付はコーポレートサイトで承っています。</dd>
+      <dt>EV充電設備の設置はできますか?</dt><dd>個人宅や店舗単独でのEV充電設備の設置はお受けしていません。<span class="tbd">建物の新築・改修工事の一部として含まれる場合はご相談ください(対応可否を確認)</span>。</dd>
+    </dl>
+  </div>
+
+  <div class="sec"><span class="sh">④ 高圧工事</span>
+    <dl class="faq">
+      <dt>高圧の工事も依頼できますか?</dt><dd>はい。高圧ケーブルの端末処理を含め、第一種電気工事士の代表が施工します。幹線や受変電設備まわりの工事とまとめてお任せいただけます。</dd>
+      <dt>高圧ケーブルの端末処理だけでも頼めますか?</dt><dd>はい、端末処理のみのご依頼もお受けします。<span class="tbd">対応できるケーブル・電圧は確認のうえ記載</span>。</dd>
+    </dl>
+  </div>
+
+  <div class="sec"><span class="sh">⑤ 対応エリア</span>
+    <dl class="faq">
+      <dt>対応エリアはどこまでですか?</dt><dd>東京23区を中心に対応しています。拠点が埼玉県志木市のため、埼玉県南部の東京寄りのエリアも対応可能です。その他の地域は、工事の規模・内容・工期によってご相談ください。</dd>
+    </dl>
+  </div>
+
+  <div class="sec"><span class="sh">⑥ ご依頼の形</span>
+    <dl class="faq">
+      <dt>常用(応援)だけでも依頼できますか?</dt><dd>はい。1日からお受けしています。初めてのお取引では、まず常用で現場に入らせていただき、仕事ぶりを見ていただいてから請負をご検討いただく形も歓迎です。</dd>
+      <dt>何人で対応していますか?人数が必要な現場は?</dt><dd>代表と専属の職人の<span class="tbd">2名体制</span>です。人数が必要な現場は、<span class="tbd">信頼できる協力業者と体制を組んで対応します(確認)</span>。まずは現場の規模と工期をお知らせください。</dd>
+      <dt>急ぎの工事や、工期が短い現場にも対応できますか?</dt><dd>工程が決まっていれば、できる限り調整します。停電作業や夜間・休日の作業が必要な現場にも対応した経験があります。早めにご相談いただくほど、確実に段取りできます。</dd>
+      <dt>一度きりではなく、継続してお願いしたいのですが。</dt><dd>ありがたいお話です。次の現場の予定が分かった段階でご連絡いただければ、優先的に日程を調整します。</dd>
+    </dl>
+  </div>
+
+  <div class="sec"><span class="sh">⑦ お見積り・料金</span>
+    <dl class="faq">
+      <dt>見積りは無料ですか?どのくらいで出ますか?</dt><dd>お見積りは無料です。図面・仕様書をいただいてから<span class="tbd">○営業日</span>を目安に概算をお出しします。</dd>
+      <dt>図面がなくても相談できますか?</dt><dd>はい。改修工事などで図面がない場合は、現地を確認したうえでお見積りします。</dd>
+      <dt>常用の単価はいくらですか?</dt><dd><span class="tbd">1人工 ○○,○○○円〜が目安です(掲載可否を確認。出さない場合は「現場の内容によりお見積りします」)</span>。</dd>
+    </dl>
+  </div>
+
+  <div class="sec"><span class="sh">⑧ 会社・資格</span>
+    <dl class="faq">
+      <dt>保有している資格・許可を教えてください。</dt><dd>代表は第一種電気工事士です。建設業許可(電気工事業 <span class="tbd">許可番号</span>)を取得し、登録電気工事業者として登録しています。</dd>
+      <dt>公共工事の実績はありますか?</dt><dd>はい。学校・庁舎などの公共施設の新築・改修工事に携わっています。<span class="tbd">(実績の有無と書き方を確認)</span></dd>
+    </dl>
+    <div class="note">計16問(AI診断の推奨「10問以上」を満たす)。回答は1〜3文で結論を先に書く(AIが引用しやすい形)。FAQPage の JSON-LD を全問で出力。</div>
+  </div>
+
+  <div class="sec dk"><span class="sh">⑨ CTA</span>
+    <h2>ここにないご質問も、お気軽にどうぞ</h2>
+    <span class="btn p">工事のご相談</span><span class="btn">電話 <span class="tbd">000-0000-0000</span></span>
+  </div>
+</section>
+
+<!-- ================= 会社概要 ================= -->
+<section class="page" id="p5">
+  <div class="page-head"><h1>5. 会社概要</h1><div class="meta">役割:「誰が施工するのか」を見せて信用の根拠を集約する(AI診断「信用できる根拠×」の解消)。<br>想定タイトル:会社概要・代表メッセージ|COSMO電設(埼玉県志木市)</div></div>
+
+  <div class="sec dk"><span class="sh">① ページヘッダー</span>
+    <h2>会社概要</h2>
+    <p>COSMO電設は、代表 大橋 明が2019年に独立して立ち上げた電気工事会社です。</p>
+  </div>
+
+  <div class="sec"><span class="sh">② 代表メッセージ</span>
+    <div class="g2" style="grid-template-columns:1fr 1.6fr;align-items:start">
+      <div class="img tall">代表 大橋 明の写真<br>(作業着。現場での立ち姿+顔がはっきり分かるもの)<br><span class="tbd">撮影</span></div>
+      <div>
+        <h2>次の現場でも、声をかけてもらえる電気屋でありたい</h2>
+        <p>15歳でこの仕事に入り、26年間、病院や工場、倉庫、公共施設といった現場で電気工事に携わってきました。2019年に独立し、COSMO電設を立ち上げました。</p>
+        <p>私が大切にしているのは、現場がスムーズに回ることです。電気工事は、他の業種との取り合いや工程の変更が多い仕事です。だからこそ、先を読んで準備し、電気が原因で全体の工程が止まらないように動きます。</p>
+        <p>元請さんのご要望は、まずしっかり聞いて、できる限り形にします。そのうえで、もっと良い納まりや手順があれば、監督さんの年齢に関係なく「提案」としてお伝えしています。言われたとおりにやるだけでなく、一緒に現場を良くしていける関係でいたいと思っています。</p>
+        <p>一度きりのお付き合いではなく、「次の現場もCOSMOさんに」と言っていただけるよう、一件一件の現場に責任を持って向き合います。</p>
+        <p style="text-align:right">COSMO電設 代表 大橋 明</p>
+      </div>
+    </div>
+    <div class="note">履歴の人物像(26年の経歴・独立・要望に応える姿勢・提案の形で伝える)から作った下書き。<span class="tbd">社長ご本人の言葉で確認・修正</span>。円陣ONE紹介記事のインタビュー内容と表現をそろえる。</div>
+  </div>
+
+  <div class="sec"><span class="sh">③ 代表プロフィール</span>
+    <table>
+      <tr><th>代表</th><td>大橋 明(おおはし あきら)<span class="tbd">読み確認</span></td></tr>
+      <tr><th>経歴</th><td>15歳で電気工事の道に入る。病院・工場・倉庫・公共施設などの電気工事に従事し、現場経験26年。2019年に独立、COSMO電設を創業。<span class="tbd">20XX年</span>に建設業許可を取得</td></tr>
+      <tr><th>保有資格</th><td>第一種電気工事士<span class="tbd">(その他の資格:施工管理技士・高圧ケーブル工事技能認定など確認)</span></td></tr>
+    </table>
+  </div>
+
+  <div class="sec"><span class="sh">④ 大切にしていること</span>
+    <div class="g3">
+      <div class="card"><h3>見えなくなる所こそ丁寧に</h3><p>天井や壁の中に隠れる配線・配管ほど、手を抜かずに施工します。検査で手戻りが出ない仕上がりが、元請様の工程を守ります。</p></div>
+      <div class="card"><h3>段取りで現場を助ける</h3><p>着工前の打合せで、取り合いと工程を確認します。変更が出たときも、早めにご相談して代わりの段取りを考えます。</p></div>
+      <div class="card"><h3>聞いて、応えて、提案する</h3><p>ご要望は可能な限り形にします。より良い方法があれば、押しつけではなく提案としてお伝えします。</p></div>
+    </div>
+  </div>
+
+  <div class="sec"><span class="sh">⑤ 会社概要</span>
+    <table>
+      <tr><th>屋号</th><td>COSMO電設</td></tr>
+      <tr><th>代表</th><td>大橋 明</td></tr>
+      <tr><th>創業</th><td>2019年</td></tr>
+      <tr><th>所在地</th><td>〒<span class="tbd">000-0000</span> 埼玉県志木市本町<span class="tbd">番地</span></td></tr>
+      <tr><th>電話</th><td><span class="tbd">000-0000-0000</span>(受付 <span class="tbd">8:00〜18:00</span>)</td></tr>
+      <tr><th>事業内容</th><td>病院・工場・倉庫・公共施設などの電気工事(幹線・動力、配線・配管、盤まわり、仮設電気、計装、高圧ケーブル端末処理)</td></tr>
+      <tr><th>建設業許可</th><td><span class="tbd">埼玉県知事許可(般-○)第○○○○号 電気工事業</span></td></tr>
+      <tr><th>登録電気工事業者</th><td><span class="tbd">登録番号</span></td></tr>
+      <tr><th>体制</th><td>代表+専属の職人 <span class="tbd">1名</span></td></tr>
+      <tr><th>対応エリア</th><td>東京23区を中心に、埼玉県南部(その他はご相談)</td></tr>
+      <tr><th>コーポレートサイト</th><td>https://www.cosmo-den.com/</td></tr>
+    </table>
+    <div class="note">許可番号・登録番号は現行サイト /company から転記。Googleビジネスプロフィールと表記を完全一致させる。</div>
+  </div>
+
+  <div class="sec"><span class="sh">⑥ これからのCOSMO電設</span>
+    <h2><span class="tbd">これから目指す姿(社長ヒアリング)</span></h2>
+    <p><span class="tbd">例:都内の箱物で「電気はCOSMOに」と言ってもらえる元請様を増やし、継続のお取引を土台に体制を広げていく。2030年に向けた目標があれば掲載。</span></p>
+  </div>
+
+  <div class="sec"><span class="sh">⑦ 一緒に働く仲間(小さく)</span>
+    <p>COSMO電設では、一緒に現場に入る仲間も募集しています。電気工事の経験がある方、箱物の現場で腕を磨きたい方は、お問い合わせフォームの「その他」からご連絡ください。</p>
+    <div class="note">採用は優先度低のため、この1ブロックのみ。既存の求人ポータルへのリンクがあれば併記。</div>
+  </div>
+
+  <div class="sec"><span class="sh">⑧ アクセス・関連リンク</span>
+    <div class="g2"><div class="img">Googleマップ埋め込み(Googleビジネスプロフィール登録後)</div>
+    <div><p>円陣ONEで代表のインタビュー記事を公開しています。</p><span class="btn">円陣ONE 紹介記事を読む</span><p style="margin-top:14px">一般のお客様向けのご案内は、コーポレートサイトをご覧ください。</p><span class="btn">コーポレートサイト</span></div></div>
+  </div>
+</section>
+
+<!-- ================= ブログ ================= -->
+<section class="page" id="p6">
+  <div class="page-head"><h1>6. ブログ</h1><div class="meta">役割:現場レポートと元請向けのお役立ち記事で検索流入を集め、建設会社の方へ・施工実績・FAQへ送る。月1サポート(毎月1記事/施工実績なら3記事)+公式LINEからの社長投稿で更新。<br>想定タイトル:ブログ|COSMO電設</div></div>
+
+  <div class="sec dk"><span class="sh">① ページヘッダー</span>
+    <h2>ブログ</h2>
+    <p>現場の様子や、電気工事を発注される方に役立つ情報をお届けします。</p>
+  </div>
+
+  <div class="sec"><span class="sh">② カテゴリ</span>
+    <p><span class="tag">現場レポート</span><span class="tag">高圧・技術</span><span class="tag">発注担当者の方へ</span><span class="tag">お知らせ</span></p>
+  </div>
+
+  <div class="sec"><span class="sh">③ 記事一覧(1列リスト+サイドにカテゴリ・人気記事)</span>
+    <div class="g2" style="grid-template-columns:2fr 1fr">
+      <div>
+        <div class="card" style="display:flex;gap:12px;margin-bottom:10px"><div class="img sm" style="flex:0 0 140px;min-height:90px">サムネ</div><p style="margin:0"><small class="c">20XX.XX.XX/現場レポート</small><b>記事タイトル</b><br><span style="font-size:13px">抜粋(80字程度)</span></p></div>
+        <div class="card" style="display:flex;gap:12px;margin-bottom:10px"><div class="img sm" style="flex:0 0 140px;min-height:90px">サムネ</div><p style="margin:0"><small class="c">20XX.XX.XX/高圧・技術</small><b>記事タイトル</b><br><span style="font-size:13px">抜粋(80字程度)</span></p></div>
+        <div class="card" style="display:flex;gap:12px"><div class="img sm" style="flex:0 0 140px;min-height:90px">サムネ</div><p style="margin:0"><small class="c">20XX.XX.XX/発注担当者の方へ</small><b>記事タイトル</b><br><span style="font-size:13px">抜粋(80字程度)</span></p></div>
+      </div>
+      <div class="card"><b>カテゴリ</b><p style="font-size:13px">現場レポート/高圧・技術/発注担当者の方へ/お知らせ</p><b>代表インタビュー</b><div class="img sm" style="min-height:80px;margin-top:6px">円陣ONE 紹介記事バナー</div></div>
+    </div>
+  </div>
+
+  <div class="sec"><span class="sh">④ 記事下の共通CTA(全記事に自動で表示)</span>
+    <div class="card"><p style="margin:0"><b>電気工事の協力会社をお探しの元請様へ</b><br>東京23区を中心に、病院・工場・倉庫・公共施設の電気工事を請け負っています。高圧ケーブルの端末処理、常用(応援)のご依頼もお受けします。</p><span class="btn p">工事のご相談</span><span class="btn">対応工事を見る</span></div>
+  </div>
+
+  <div class="sec"><span class="sh">⑤ 初期記事テーマ案(12本)</span>
+    <table>
+      <tr><th>発注担当者の方へ</th><td>
+        ・電気工事の協力会社を選ぶときに確認したい5つのポイント<br>
+        ・請負と常用(応援)の違い。どちらで頼むべきかの考え方<br>
+        ・病院の改修で電気工事を進めるときの段取り(停電作業の計画)<br>
+        ・稼働中の工場で電気工事を行うときの注意点<br>
+        ・電気工事の見積りをスムーズに出してもらうために用意したい資料</td></tr>
+      <tr><th>高圧・技術</th><td>
+        ・高圧ケーブルの端末処理とは。施工の流れと品質を左右するポイント<br>
+        ・工事現場の仮設電気の計画で押さえておきたいこと<br>
+        ・計装工事とは。電気工事との違いと依頼の範囲</td></tr>
+      <tr><th>現場レポート</th><td>
+        ・<span class="tbd">○○区</span> 総合病院 改修工事のレポート(施工実績と連動)<br>
+        ・<span class="tbd">○○区</span> 物流倉庫 新築工事のレポート<br>
+        ・<span class="tbd">○○区</span> 工場 ライン増設工事のレポート</td></tr>
+      <tr><th>お知らせ</th><td>・建設会社様向けサイトを公開しました(円陣ONE 代表インタビュー記事へのリンク)</td></tr>
+    </table>
+    <div class="note">「高圧ケーブル 端末処理」「病院 電気工事 協力会社」「電気工事 常用 東京」など、元請の担当者が検索する言葉を狙う。各記事から2〜4ページへ内部リンク。キーワードは公開前に調査ツールで検索量を確認。</div>
+  </div>
+</section>
+
+<!-- ================= お問い合わせ ================= -->
+<section class="page" id="p7">
+  <div class="page-head"><h1>7. お問い合わせ</h1><div class="meta">役割:送信前に対応範囲を確認してもらい、対応外の問い合わせを減らす。種別(請負/常用/その他)で受け分ける。<br>想定タイトル:工事のご相談・お問い合わせ|COSMO電設</div></div>
+
+  <div class="sec dk"><span class="sh">① ページヘッダー</span>
+    <h2>工事のご相談・お問い合わせ</h2>
+    <p>工事の場所・建物の種類・工期・工事内容を教えてください。対応できるかどうかを、先にお返事します。</p>
+  </div>
+
+  <div class="sec"><span class="sh">② お電話</span>
+    <p class="lead"><b>TEL <span class="tbd">000-0000-0000</span></b>(受付 <span class="tbd">8:00〜18:00</span>)<br><small class="c">現場作業中で出られない場合は、折り返しご連絡します。</small></p>
+  </div>
+
+  <div class="sec"><span class="sh">③ 送信前のご確認</span>
+    <div class="g2">
+      <div class="card"><h3>お受けしている工事</h3><p>病院・工場・倉庫・公共施設など箱物の新築・改修の電気工事(幹線・動力、配線・配管、盤まわり、仮設、計装、高圧ケーブル端末処理)<br>対応エリア:東京23区中心、埼玉県南部(その他はご相談)</p></div>
+      <div class="ng"><h3 style="margin-top:0">お受けしていない工事</h3><p style="margin:0">木造戸建住宅の電気工事/住宅のリフォーム・リノベーション/テナントの原状回復/個人宅・店舗単独のEV充電設備の設置</p></div>
+    </div>
+    <div class="note">履歴「対応外の依頼が多い」への最後の関門。フォームの直前に置く。</div>
+  </div>
+
+  <div class="sec form"><span class="sh">④ フォーム</span>
+    <div class="row"><div>ご相談の種別<span class="req">必須</span></div><div class="in">○ 請負工事のご相談 ○ 常用(応援)のご相談 ○ その他(協力業者・採用など)</div></div>
+    <div class="row"><div>会社名<span class="req">必須</span></div><div class="in">株式会社○○建設</div></div>
+    <div class="row"><div>ご担当者名<span class="req">必須</span></div><div class="in"></div></div>
+    <div class="row"><div>電話番号<span class="req">必須</span></div><div class="in">日中つながりやすい番号</div></div>
+    <div class="row"><div>メールアドレス<span class="req">必須</span></div><div class="in"></div></div>
+    <div class="row"><div>現場の所在地<span class="req">必須</span></div><div class="in">例:東京都○○区</div></div>
+    <div class="row"><div>建物の種類<span class="req">必須</span></div><div class="in">□病院・医療施設 □工場 □倉庫・物流施設 □公共施設 □その他</div></div>
+    <div class="row"><div>新築・改修</div><div class="in">○新築 ○改修 ○未定</div></div>
+    <div class="row"><div>工期・作業予定日</div><div class="in">例:20XX年○月〜○月/常用の場合は日付と人数</div></div>
+    <div class="row"><div>ご相談内容<span class="req">必須</span></div><div class="in" style="min-height:110px">工事内容・範囲など</div></div>
+    <div class="row"><div>図面・資料の添付</div><div class="in">ファイルを選択(PDF・画像/<span class="tbd">○MBまで</span>)</div></div>
+    <p style="text-align:center"><span class="btn p">内容を確認する</span></p>
+    <div class="note">URLパラメータで種別を自動選択(建設会社の方へのボタンから遷移時)。現場所在地と建物種別を必須にして、エリア外・対応外を社長が一目で判断できるようにする。</div>
+  </div>
+
+  <div class="sec"><span class="sh">⑤ 送信後の流れ</span>
+    <div class="step"><div class="n">1</div><div><b>受付メール</b><p>送信後すぐに、受付完了のメールが自動で届きます。</p></div></div>
+    <div class="step"><div class="n">2</div><div><b>対応可否のご連絡</b><p><span class="tbd">1〜2営業日</span>以内に、対応できるかどうかをお電話またはメールでお知らせします。</p></div></div>
+    <div class="step"><div class="n">3</div><div><b>図面確認・お見積り</b><p>対応可能な場合は、図面の確認や現地調査に進みます。</p></div></div>
+  </div>
+
+  <div class="sec"><span class="sh">⑥ 一般のお客様へ</span>
+    <p>住宅の家電取付など、一般のお客様からのご依頼(近隣のみ)はコーポレートサイトで承っています。</p><span class="btn">コーポレートサイトへ</span>
+  </div>
+</section>
+
+</main>
+<script>
+document.querySelectorAll('nav.side a').forEach(function(a){
+  a.addEventListener('click',function(){
+    document.querySelectorAll('nav.side a').forEach(function(x){x.classList.remove('on')});
+    a.classList.add('on');
+    document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
+    document.getElementById(a.dataset.p).classList.add('active');
+    window.scrollTo(0,0);
+  });
+});
+</script>
+</body>
+</html>

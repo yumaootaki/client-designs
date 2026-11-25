@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho+B1:wght@600;700;800&amp;display=swap" rel="stylesheet">
+</helmet>
+<header style="position:fixed;top:0;left:0;right:0;z-index:75;background:rgba(255,255,255,0.96);border-bottom:1px solid #DCDDE0;font-family:'Noto Sans JP',sans-serif;color:#26272B">
+  <div style="min-height:76px;padding:0 clamp(1rem,3vw,2.75rem);display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="/" style="display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:44px;color:#26272B;text-decoration:none;flex-shrink:0">
+      <span style="font-family:'Shippori Mincho B1',serif;font-weight:800;font-size:clamp(1.3rem,2.6vw,1.75rem);letter-spacing:0.06em;line-height:1;white-space:nowrap">COSMO<span style="color:#9E1B2C">電設</span></span>
+      <span style="font-size:0.66rem;font-weight:700;letter-spacing:0.14em;color:#6A6B70;white-space:nowrap">建設会社様向け 電気工事</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:10px">
+      <sc-if value="{{ showTel }}" hint-placeholder-val="{{ true }}">
+        <a href="tel:00000000000" style="display:flex;flex-direction:column;justify-content:center;min-height:44px;padding:0 14px;color:#26272B;text-decoration:none;white-space:nowrap">
+          <span style="font-family:'Shippori Mincho B1',serif;font-weight:800;font-size:1.2rem;letter-spacing:0.06em;line-height:1.2">000-0000-0000</span>
+          <span style="font-size:0.68rem;color:#6A6B70">受付 ○:○○〜○○:○○</span>
+        </a>
+      </sc-if>
+      <sc-if value="{{ showCta }}" hint-placeholder-val="{{ true }}">
+        <a href="/form/inquiry" style="display:inline-flex;align-items:center;height:48px;padding:0 24px;background:#C42A3A;border:1px solid #C42A3A;color:#fff;font-weight:700;font-size:0.92rem;letter-spacing:0.06em;text-decoration:none;white-space:nowrap;transition:background .25s" style-hover="background:#9E1B2C">工事のご相談</a>
+      </sc-if>
+      <button type="button" onClick="{{ toggleMenu }}" aria-label="{{ burgerLabel }}" aria-expanded="{{ menuOpen }}" style="display:flex;align-items:center;justify-content:center;gap:10px;width:116px;height:48px;border:1px solid #26272B;border-radius:0;background:{{ btnBg }};color:{{ btnFg }};font-family:'Shippori Mincho B1',serif;font-weight:700;font-size:0.82rem;letter-spacing:0.22em;cursor:pointer;flex-shrink:0;transition:background .25s,color .25s">
+        <span aria-hidden="true" style="display:flex;flex-direction:column;gap:5px">
+          <span style="display:block;width:20px;height:2px;background:currentColor"></span>
+          <span style="display:block;width:20px;height:2px;background:currentColor"></span>
+          <span style="display:block;width:12px;height:2px;background:#C42A3A"></span>
+        </span>{{ btnText }}
+      </button>
+    </div>
+  </div>
+</header>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <nav aria-label="メインメニュー" style="position:fixed;top:77px;left:0;right:0;bottom:0;z-index:70;overflow-y:auto;background:#1D1E21;color:#fff;padding:clamp(28px,6vw,72px) clamp(1.25rem,6vw,5rem) 120px;font-family:'Noto Sans JP',sans-serif">
+    <div aria-hidden="true" style="position:absolute;top:6%;left:-2%;display:flex;flex-direction:column;font-family:'Shippori Mincho B1',serif;font-weight:800;font-size:clamp(3rem,10vw,8rem);line-height:1.05;white-space:nowrap;color:transparent;pointer-events:none">
+      <span style="-webkit-text-stroke:1px rgba(255,255,255,.07)">COSMO DENSETSU</span>
+      <span style="-webkit-text-stroke:1px rgba(224,96,108,.12);margin-left:-3vw">ELECTRICAL WORKS</span>
+    </div>
+    <p style="position:relative;margin:0 0 clamp(28px,5vw,48px);font-family:'Shippori Mincho B1',serif;font-weight:600;letter-spacing:.3em;font-size:13px;color:#C9CACE">MENU</p>
+    <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(32px,5vw,64px);max-width:1180px">
+      <div>
+        <p style="margin:0 0 10px;font-family:'Shippori Mincho B1',serif;font-weight:600;letter-spacing:.26em;font-size:12px;color:#E0606C">FOR CONTRACTORS</p>
+        <a href="/for-contractors" onClick="{{ closeMenu }}" style="display:block;font-family:'Shippori Mincho B1',serif;font-weight:800;font-size:clamp(1.7rem,1.2rem + 2vw,2.5rem);line-height:1.4;color:#fff;text-decoration:none;margin-bottom:18px" style-hover="color:#E0606C">建設会社の方へ</a>
+        <div style="display:flex;flex-direction:column;border-left:1px solid #44464C;padding-left:18px">
+          <a href="/for-contractors#works" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:44px;font-size:15px;color:#E4E5E8;text-decoration:none" style-hover="color:#fff">対応工事</a>
+          <a href="/for-contractors#high-voltage" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:44px;font-size:15px;color:#E4E5E8;text-decoration:none" style-hover="color:#fff">高圧ケーブル端末処理</a>
+          <a href="/for-contractors#flow" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:44px;font-size:15px;color:#E4E5E8;text-decoration:none" style-hover="color:#fff">ご依頼の流れ</a>
+        </div>
+      </div>
+      <div>
+        <p style="margin:0 0 10px;font-family:'Shippori Mincho B1',serif;font-weight:600;letter-spacing:.26em;font-size:12px;color:#E0606C">COMPANY</p>
+        <div style="display:flex;flex-direction:column">
+          <a href="/" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:48px;font-size:18px;color:#fff;text-decoration:none;border-bottom:1px solid #34363B" style-hover="color:#E0606C">ホーム</a>
+          <a href="/blog-ex/instance" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:48px;font-size:18px;color:#fff;text-decoration:none;border-bottom:1px solid #34363B" style-hover="color:#E0606C">施工実績</a>
+          <a href="/faq" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:48px;font-size:18px;color:#fff;text-decoration:none;border-bottom:1px solid #34363B" style-hover="color:#E0606C">よくある質問</a>
+          <a href="/company" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:48px;font-size:18px;color:#fff;text-decoration:none;border-bottom:1px solid #34363B" style-hover="color:#E0606C">会社概要</a>
+          <a href="/blog" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:48px;font-size:18px;color:#fff;text-decoration:none;border-bottom:1px solid #34363B" style-hover="color:#E0606C">ブログ</a>
+          <a href="https://www.cosmo-den-lp.com/" target="_blank" rel="noopener" onClick="{{ closeMenu }}" style="display:flex;align-items:center;gap:8px;min-height:48px;font-size:18px;color:#fff;text-decoration:none;border-bottom:1px solid #34363B" style-hover="color:#E0606C">採用情報<span aria-hidden="true" style="font-size:.75em">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <p style="margin:0 0 10px;font-family:'Shippori Mincho B1',serif;font-weight:600;letter-spacing:.26em;font-size:12px;color:#E0606C">CONTACT</p>
+        <a href="/form/inquiry" onClick="{{ closeMenu }}" style="display:flex;align-items:center;justify-content:center;min-height:56px;margin-bottom:22px;background:#C42A3A;color:#fff;font-weight:700;font-size:16px;letter-spacing:.06em;text-decoration:none" style-hover="background:#9E1B2C">工事のご相談・お問い合わせ</a>
+        <div style="border-top:1px solid #44464C;padding-top:18px">
+          <p style="margin:0 0 6px;font-family:'Shippori Mincho B1',serif;font-weight:800;font-size:20px;letter-spacing:.06em">COSMO電設</p>
+          <p style="margin:0 0 12px;font-size:13px;line-height:1.8;color:#C9CACE">埼玉県志木市本町○○<br>TEL <a href="tel:00000000000" style="color:#fff">000-0000-0000</a>（受付 ○:○○〜○○:○○）</p>
+          <a href="/privacypolicy" onClick="{{ closeMenu }}" style="display:inline-flex;align-items:center;min-height:44px;font-size:13px;color:#C9CACE" style-hover="color:#fff">プライバシーポリシー</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</sc-if>
+
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:0;right:0;bottom:0;z-index:44;display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;border-top:1px solid #DCDDE0;padding-bottom:env(safe-area-inset-bottom);font-family:'Noto Sans JP',sans-serif">
+    <a href="tel:00000000000" style="display:flex;align-items:center;justify-content:center;min-height:60px;background:#26272B;color:#fff;font-weight:700;font-size:0.95rem;letter-spacing:.04em;text-decoration:none">電話で相談</a>
+    <a href="/form/inquiry" style="display:flex;align-items:center;justify-content:center;min-height:60px;background:#C42A3A;color:#fff;font-weight:700;font-size:0.95rem;letter-spacing:.04em;text-decoration:none">工事のご相談</a>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:96}}">
+class Component extends DCLogic {
+  state = { w: 1280, menuOpen: false };
+
+  componentDidMount() {
+    this._onResize = () => this.setState({ w: window.innerWidth });
+    this._onKey = (e) => { if (e.key === 'Escape' && this.state.menuOpen) this.setMenu(false); };
+    window.addEventListener('resize', this._onResize);
+    window.addEventListener('keydown', this._onKey);
+    this._onResize();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+    window.removeEventListener('keydown', this._onKey);
+    document.body.style.overflow = '';
+  }
+
+  setMenu(open) {
+    document.body.style.overflow = open ? 'hidden' : '';
+    this.setState({ menuOpen: open });
+  }
+
+  renderVals() {
+    const { w, menuOpen } = this.state;
+    return {
+      isMobile: w < 768,
+      showTel: w >= 1100,
+      showCta: w >= 768,
+      menuOpen,
+      burgerLabel: menuOpen ? 'メニューを閉じる' : 'メニューを開く',
+      btnText: menuOpen ? 'CLOSE' : 'MENU',
+      btnBg: menuOpen ? '#26272B' : '#fff',
+      btnFg: menuOpen ? '#fff' : '#26272B',
+      toggleMenu: () => this.setMenu(!menuOpen),
+      closeMenu: () => this.setMenu(false),
+    };
+  }
+}
+</script>
+</body>
+</html>
